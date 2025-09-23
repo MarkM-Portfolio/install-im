@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2001, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="iso.kits" default="development" basedir=".">
+	<!-- Includes -->
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+	<import file="${env.WPLC_IMPORT}/nojavadoc.xml"/>
+	<import file="${env.WPLC_IMPORT}/noprocess_nls.xml"/>
+	<import file="${env.WPLC_IMPORT}/noperformance.xml"/>
+
+	<!-- mkisofs location to build iso  for Windows -->
+	<property name="mkisofs" value="${env.ALT_TOOLS}/MKISOFS/w32/mkisofs.exe"/>
+
+	<!-- This file lists specifics for building the particular isos -->
+	<property name="KITPROPERTYFILE" value="kit.properties" />
+	<property name="dir.setup" value="${env.BUILD_HOME}" />
+	<property name="dir.post" value="${env.BUILD_HOME}" />
+	<property file="${KITPROPERTYFILE}"/>
+
+	<!-- This file contains the common logic for building the various media kits. To create a custom media kit ONLY the build,xml properties have to be changed.-->
+	<import file="kitcreator.xml"/>
+
+	<!-- Set up the updatesite and deploy directories -->
+
+	<target name="clean" description="Removes all completekit files">
+		<delete dir="${dir.build}"/>
+	</target>
+
+	<target name="development">
+		<!--antcall target="img-all"/-->
+	</target>
+
+	<target name="production" depends="development"/>
+
+	<target name="generateISO" >
+		<antcall target="img-iso"/>
+	</target>
+
+	<target name="generateWebKit" >
+		<antcall target="img-download"/>
+	</target>
+
+</project>

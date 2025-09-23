@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: {0} DTD dizinini kullanarak {1} belgesi yüklenirken kural dışı durum oluştu
+WVER0101E.explanation=Bu kural dışı durum, belirtilen belgenin yüklenememesine neden oldu.
+WVER0101E.useraction=Kullanıcının yapması gerekenler, oluşan kural dışı duruma bağlıdır.  Genellikle, belirtilen dosyanın varolduğunu ve biçiminin doğru olduğunu doğrulamak gerekir.  Ek bilgi için destek görevlilerine başvurun.
+
+# 
+WVER0102E=WVER0102E: {0} DTD dizinini kullanarak {1} belgesi yüklenirken kural dışı durum oluştu.  Sistem tanıtıcısı {2} ve genel tanıtıcı {3} ayarlıydı.  Hata {4} numaralı satır ve {5} numaralı kolonda oluştu.
+WVER0102E.explanation=Bu kural dışı durum, belirtilen belgenin yüklenememesine neden oldu.
+WVER0102E.useraction=Kullanıcının yapması gerekenler, oluşan kural dışı duruma bağlıdır.  Genellikle, belirtilen dosyanın varolduğunu ve biçiminin doğru olduğunu doğrulamak gerekir.  Ek bilgi için destek görevlilerine başvurun.
+
+# 
+WVER0104E=WVER0104E: {0} tipinde bir kök belge öğesi yaratılırken kural dışı durum oluştu
+WVER0104E.explanation=Bir kök belge öğesi yaratılırken kural dışı durum oluştu
+WVER0104E.useraction=Kullanıcının yapması gerekenler, oluşan kural dışı duruma bağlıdır.  En sık karşılaşılan durum, XML ayrıştırıcısı yapılanışının geçersiz olmasıdır.  Java sistem özelliklerinin geçersiz bir ayrıştırıcı yapılanışı yaratmadığını doğrulayın.  Ek bilgi için destek görevlilerine başvurun.
+
+# 
+WVER0105E=WVER0105E: Bir XML modeli nesnesi (tipi {0}) yaratılırken kural dışı durum oluştu
+WVER0105E.explanation=Bir XML modeli nesnesi yaratılırken kural dışı durum oluştu.
+WVER0105E.useraction=Kullanıcının yapması gerekenler, oluşan kural dışı duruma bağlıdır.  En sık karşılaşılan durum, belirtilen tipin ayarlı sınıf yolunda olmamasıdır.  Ek bilgi için destek görevlilerine başvurun.
+
+# 
+WVER0106E=WVER0106E: {0} yalın tipine sahip bir nesneye öğe yerleştirme girişiminde bulunuldu.
+WVER0106E.explanation=Bu bir iç hatadır.
+WVER0106E.useraction=Ek bilgi için destek görevlilerine başvurun.
+
+# 
+WVER0107E=WVER0107E: {0} dosyasına sürüm bilgilerini yazma girişimi sırasında kural dışı durum oluştu
+WVER0107E.explanation=Belirtilen dosyaya yazma girişimi sırasında kural dışı durum oluştu.
+WVER0107E.useraction=Kullanıcının yapması gerekenler, oluşan kural dışı duruma bağlıdır.  Genellikle, belirtilen dosyanın yazılabilir olduğunu ve bu dosya için yeterli yer bulunduğunu doğrulamanız gerekir.
+
+# 
+WVER0108E=WVER0108E: Varlık çözme işlemi gerçekleştirilirken kural dışı durum oluştu; kullanılan genel tanıtıcı {0}, sistem tanıtıcısı {1} ve eşlenen dosya adı {2}
+WVER0108E.explanation=Ürün bilgilerinin ayrıştırılması sırasında DTD bilgileri çözülürken kural dışı durum oluştu.  Belirtilen DTD çözülemedi.
+WVER0108E.useraction=Kullanıcının yapması gerekenler, oluşan kural dışı duruma bağlıdır.
+
+# 
+WVER0201E=WVER0201E: ''{1}'' tipinde öğenin içinde ''{0}'' özniteliği eksik
+WVER0201E.explanation=Belirtilen öznitelik, belirtilen tipteki öğe için geçerli bir öznitelik değil.
+WVER0201E.useraction=Öznitelik bilgilerini düzeltmek için XML dosyasını güncelleyin.
+
+#
+WVER0202E=WVER0202E: Dengesiz öğe yapısı: Fazladan öğe kapanışı.
+WVER0202E.explanation=Ürün bilgileri içeren bir XML dosyasında hatalı öğe yapısı var.
+WVER0202E.useraction=Öğe yapısını düzeltmek için XML dosyasını güncelleyin.
+
+#
+WVER0203E=WVER0203E: Dengesiz öğe yapısı: Öğe kapanışları eksik.
+WVER0203E.explanation=Ürün bilgileri içeren bir XML dosyasında hatalı öğe yapısı var.
+WVER0203E.useraction=Öğe yapısını düzeltmek için XML dosyasını güncelleyin.
+
+#
+WVER0204E=WVER0204E: ''{0}'' öğesi kök öğe olarak geçerli değil
+WVER0204E.explanation=Ürün bilgileri içeren bir XML dosyasında hatalı öğe yapısı var.
+WVER0204E.useraction=Öğe yapısını düzeltmek için XML dosyasını güncelleyin.
+
+#
+WVER0205E=WVER0205E: ''{0}'' öğesi, ''{1}'' öğesinin içinde geçerli değil
+WVER0205E.explanation=Ürün bilgileri içeren bir XML dosyasında hatalı öğe yapısı var.
+WVER0205E.useraction=Öğe yapısını düzeltmek için XML dosyasını güncelleyin.
+
+#
+WVER0206E=WVER0206E: ''{1}'' öğesi içindeyken ''{0}'' öğesini kapatma girişimi
+WVER0206E.explanation=Ürün bilgileri içeren bir XML dosyasında hatalı öğe yapısı var.
+WVER0206E.useraction=Öğe yapısını düzeltmek için XML dosyasını güncelleyin.

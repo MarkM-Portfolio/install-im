@@ -1,0 +1,28 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- (C) Copyright IBM Corp. 2006                                      -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="prereqs.install/wkplc.parser"
+           type="binary"
+           description="libraries for the iudd parser"
+           spec-version="1.0"
+           build-version=""
+           owner="Barry Pellas"
+           owner-email="bpellas@us.ibm.com">
+   <output-group name="compile">
+      <output type="jar" visibility="public" platform="all" location="lib/jdom.jar"/>
+      <output type="jar" visibility="public" platform="all" location="lib/parser.jar"/>
+   </output-group>
+
+</component>
+

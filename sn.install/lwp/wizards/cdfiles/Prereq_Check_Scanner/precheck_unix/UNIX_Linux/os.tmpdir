@@ -1,0 +1,124 @@
+#!/bin/bash
+
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+str=""
+
+s="/tmp"
+while [ -h "$s" ]
+do
+    previous="$s"
+    s=`readlink "$s"`
+    level=$(($level+1))
+done
+ls -ld $s > /$TMP_DIR/prs.tmp_dir
+char1=""
+
+#declare -a s
+
+element=0
+
+#echo ${#s}
+
+if [ ${#s} -eq 4 ]; then
+	char1=${s:$element:1}
+	 ((element++))
+fi
+
+while [ $element -le $((${#s} - 1)) ]
+do
+	case ${s:$element:1} in
+		"7") str=$str"rwx";;
+		"6") str=$str"rw-";;
+		"5") str=$str"r-x";;
+		"4") str=$str"r--";;
+		"3") str=$str"-wx";;
+		"2") str=$str"-w-";;
+		"1") str=$str"--x";;
+		"0") str=$str"---";;
+	esac
+  
+  ((element++))
+done
+
+if [ ${#char1} -eq 1 ]; then
+	str=`echo $str | sed '$s/.$//'` 
+	str=$str"t"
+fi
+
+#str=`echo $str | sed '$s/.$//'` 
+
+#str=$str"t"
+
+str2=`cat /$TMP_DIR/prs.tmp_dir`
+
+firstword=`echo $str2 | cut -c 1-10`
+
+char2=""
+
+bformat=""
+
+result=""
+
+element1=0
+
+if [ ${#firstword} -eq 10 ]; then
+	char2=${firstword:$element1:1}
+	 ((element1++))
+fi
+
+while [ $element1 -le $((${#firstword} - 1)) ]
+do
+	case ${firstword:$element1:1} in
+		"w") bformat=$bformat"1";;
+		"x") bformat=$bformat"1";;
+		"r") bformat=$bformat"1";;
+		"t") bformat=$bformat"1"
+		     result="1";;
+		"-") bformat=$bformat"0";;
+	esac
+  
+  ((element1++))
+done
+
+tmpres=""
+
+strtmp=""
+
+if [ ${#bformat} -eq 9 ]; then
+	strtmp=`echo $bformat | cut -c 1-3`
+	tmpres=`echo "ibase=2;obase=A;$strtmp" | bc`
+	result=$result"`echo $tmpres | cut -c 1`"   
+
+	strtmp=`echo $bformat | cut -c 4-6`
+	tmpres=`echo "ibase=2;obase=A;$strtmp" | bc`
+	result=$result"`echo $tmpres | cut -c 1`"
+
+	strtmp=`echo $bformat | cut -c 7-9`
+	tmpres=`echo "ibase=2;obase=A;$strtmp" | bc`
+	result=$result"`echo $tmpres | cut -c 1`"
+fi
+
+echo $result
+
+#res=`cat /tmp/tmp_dir | grep $str | cut -d' ' -f1`
+
+#if [ $res ]; then
+# echo "True"
+#else
+# echo "False"
+#fi
+
+#if [ $result == $s ]; then
+# echo "Available"
+#else
+# echo "Unavailable, /tmp has $result permissions"
+#fi

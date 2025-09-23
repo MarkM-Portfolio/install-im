@@ -1,0 +1,175 @@
+#!/bin/sh
+
+# Default add-on script to configure a NIC.  This script must be run as root!
+
+# NIC add-on scripts are responsible for configuring the network adapter.
+#
+# Add-on scripts are invoked one time when the virtual machine is initialized,
+# before any script packages are run.  Note that add-on scripts are NOT
+# invoked each time the virtual machine boots.  If initialization logic needs
+# to run each time the virtual machine is booted, the add-on script is
+# responsible for placing the necessary hooks in the operating system startup
+# logic.  Any such hooks must NOT rely on the presence of this script or any
+# additional files or directories from the add-on, as those files will be
+# deleted from the virtual machine after this script exits.
+#
+# In addition to any additional parameters defined by the add-on, all NIC
+# addon scripts are provided with the following environment variables:
+#
+# DOMAIN - Domain name associated with the NIC.
+#
+# GATEWAY - Router associated with the IP group to which the NIC is attached.
+#   Note that in most cases the default will have already been set when the
+#   virtual image's built-in NIC was configured.
+#
+# HOSTNAME - Host name associated with the IP address assigned to the NIC.
+#   Note that this is just the host name, not the fully-qualified domain name.
+#
+# IPADDR - IP address to be assigned to the NIC.
+#
+# NETMASK - Network mask to be assigned to the NIC.
+#
+# MAC - The MAC address of the NIC.  Add-on scripts should use the MAC to
+#   identify which operating system device should be configured.
+#
+# PRI_DNS - Primary DNS associated with the IP group to which the NIC is
+#   attached.  Note that in most cases the DNS client will have already been
+#   configured with the DNS associated with the virtual image's built-in NIC.
+#
+# SEC_DNS - Secondary DNS associated with the IP group to which the NIC is
+#   attached.  Note that in most cases the DNS client will have already been
+#   configured with the DNS associated with the virtual image's built-in NIC.
+
+
+# find interface that matches MAC
+
+platform=`/bin/uname -i`
+if [ "$platform" == "s390x" ];
+then
+    device=`echo $MAC | cut -d':' -f1`
+    vswitch=`echo $MAC | cut -d':' -f2`
+    
+    device=`echo $device| tr '[:upper:]' '[:lower:]'`
+    readchannel="0.0.$device";
+    let writechannel=0x$device+1
+    writechannel=`printf "0.0.%04x" $writechannel`
+    let controlchannel=0x$device+2
+    controlchannel=`printf "0.0.%04x" $controlchannel`
+
+    # find layer2 or 3
+    /sbin/modprobe vmcp
+    /sbin/vmcp q vswitch $vswitch | grep Accounting | grep ETHERNET 
+    if [ $? -eq 0 ]; then
+        echo switch $vswitch is configured layer2
+        layer2="yes";
+    else
+        echo switch $vswitch is configured layer3
+        layer2="no";
+    fi
+    # activate device
+    if [ -f /etc/SuSE-release ]; 
+    then
+        if [ "$layer2" == "yes" ]; then
+            /sbin/qeth_configure -l -p dontcare -n 0 $readchannel $writechannel $controlchannel 1
+        else
+            /sbin/qeth_configure -p dontcare -n 0 $readchannel $writechannel $controlchannel 1
+        fi
+    else
+        echo $readchannel,$writechannel,$controlchannel > /sys/bus/ccwgroup/drivers/qeth/group
+        if [ "$layer2" == "yes" ]; then
+            echo 1 > /sys/bus/ccwgroup/drivers/qeth/$readchannel/layer2
+        fi
+        sleep 5
+        echo 1 > /sys/bus/ccwgroup/drivers/qeth/$readchannel/online
+    fi
+    INTF=`cat /sys/devices/qeth/$readchannel/if_name`
+else
+    echo "*** searching for NIC with MAC address ${MAC}"
+    INTF=$(/sbin/ifconfig -a | grep -i "Ethernet[[:space:]][[:space:]]*HWaddr[[:space:]][[:space:]]*${MAC}[[:space:]]*$" | sed -e 's/\s.*//')
+fi
+
+if [ -z "$INTF" ]
+then
+    echo "*** could not identify interface associated with MAC address ${MAC} in:" >&2
+    /sbin/ifconfig -a >&2
+    exit 1
+fi
+  
+
+# SuSE
+if [ -f /etc/SuSE-release ]
+then
+    # SuSE >= 11?
+    if [ $(sed -e '/VERSION/!d' -e 's/.*\s//' /etc/SuSE-release) -ge 11 ]
+    then
+        echo "*** configuring ${INTF} with IP address ${IPADDR}/${NETMASK}"
+        INTFNUM=$(echo ${INTF} | sed -e 's/.*[^[:digit:]]\([[:digit:]][[:digit:]]*\)$/\1/')
+        cat >/etc/sysconfig/network/ifcfg-${INTF} <<EOF
+TYPE=Ethernet
+DEVICE='${INTF}'
+BOOTPROTO='static'
+BROADCAST=''
+ETHTOOL_OPTIONS=''
+IPADDR='${IPADDR}'
+MTU=''
+NETMASK='${NETMASK}'
+NETWORK=''
+REMOTE_IPADDR=''
+STARTMODE='auto'
+USERCONTROL='no'
+ONBOOT=yes
+_nm_name='static-${INTFNUM}'
+EOF
+        echo "*** activating ${INTF}"
+        env -i /sbin/ifup $INTF
+
+    else
+        echo "*** don't know how to set up SuSE < 11" >&2
+    fi
+
+# RedHat
+elif [ -f /etc/redhat-release ]
+then
+    echo "*** configuring ${INTF} with IP address ${IPADDR}/${NETMASK}"
+    INTFNUM=$(echo ${INTF} | sed -e 's/.*[^[:digit:]]\([[:digit:]][[:digit:]]*\)$/\1/')
+    eval $(ipcalc -bn ${IPADDR} ${NETMASK})
+    cat >/etc/sysconfig/network-scripts/ifcfg-${INTF} <<EOF
+TYPE=Ethernet
+DEVICE=${INTF}
+BOOTPROTO=none
+BROADCAST=${BROADCAST}
+IPADDR=${IPADDR}
+NETMASK=${NETMASK}
+NETWORK=${NETWORK}
+STARTMODE='auto'
+USERCONTROL='no'
+ONBOOT=yes
+_nm_name='static-${INTFNUM}'
+EOF
+    if [ "$platform" == "s390x" ];
+    then
+        cat >>/etc/sysconfig/network-scripts/ifcfg-${INTF} <<EOF
+NETTYPE=qeth
+SUBCHANNELS=${readchannel},${writechannel},${controlchannel}
+EOF
+        if [ "$layer2" == "yes" ]; then
+            echo "layer2=1" >>/etc/sysconfig/network-scripts/ifcfg-${INTF}
+        fi
+    fi
+
+    if [ -n "${GATEWAY}" ]
+    then
+        echo "*** configuring routes on ${INTF} with gateway ${GATEWAY}"
+        cat >/etc/sysconfig/network-scripts/route-${INTF} <<EOF
+ADDRESS0=${IPADDR}
+NETMASK0=${NETMASK}
+GATEWAY0=${GATEWAY}
+EOF
+    fi
+
+    echo "*** activating ${INTF}"
+    env -i /sbin/ifup $INTF
+    
+else
+    echo "*** don't know how to setup NIC on this operating system" >&2
+fi

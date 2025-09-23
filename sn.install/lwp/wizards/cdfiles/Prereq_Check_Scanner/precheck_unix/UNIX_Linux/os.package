@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+
+type=`uname`
+#PROD_NAME=`echo $1 | cut -d'-' -f1`
+PROD_NAME=$1
+#echo $PROD_NAME
+if [ "$type" = "AIX" ]; then
+   rpm -q $PROD_NAME > /$TMP_DIR/prs.package.txt 2>/dev/null
+   Package=`cat /$TMP_DIR/prs.package.txt | sed -n '$p' | cut -d' ' -f1 | grep $PROD_NAME`
+    if [ "$Package" = "" ]; then
+   lslpp -l | grep $PROD_NAME > /$TMP_DIR/prs.package.txt 2>/dev/null
+   Package=`cat /$TMP_DIR/prs.package.txt | sort -r | uniq | grep " $PROD_NAME " | tr -s "       " " " | awk '{ print $1"-"$2}'`
+     fi
+fi
+
+if [ "$type" = "HP-UX" ]; then
+   swlist  -l product $PROD_NAME > /$TMP_DIR/prs.package.txt 2>/dev/null
+   Package=`cat /$TMP_DIR/prs.package.txt | sed '/^$/d'  | sed -n '$p' | grep -v "^#" | tr -s "	" " " | tr -s "        " " " | sed 's/^[ \t]*//' |  cut -d' ' -f1`
+fi
+if [ "$type" = "Linux" ]; then
+   rpm -q $PROD_NAME > /$TMP_DIR/prs.package.txt
+   Package=`cat /$TMP_DIR/prs.package.txt | sed -n '1{p;q}' | cut -d' ' -f1`
+fi
+
+if [ "$type" = "SunOS" ]; then
+     pkginfo | grep $PROD_NAME > /$TMP_DIR/prs.package.txt
+     Package=`cat /$TMP_DIR/prs.package.txt | sort -r | awk '{print$2}' | uniq | grep "^$PROD_NAME$"`
+fi
+if [ "$Package" = "package" ]; then
+  echo "$Msg_UNAVAILABLE"
+exit
+fi
+
+#echo "$Package"
+if [ $Package ]; then
+RPM_VERSION=$Package
+STR_BASE_ACCEPTABLE_VER=$1
+
+len=`echo $STR_BASE_ACCEPTABLE_VER | wc -m`
+len=$(($len-1))
+#echo $len
+STR_VERSION_TYPE=`echo $STR_BASE_ACCEPTABLE_VER | cut -c $len`
+#echo $STR_VERSION_TYPE
+#echo $STR_BASE_ACCEPTABLE_VER
+if [[ "$STR_VERSION_TYPE" == "+" || "$STR_VERSION_TYPE" == "-" ]]; then
+  if  [[ "$RPM_VERSION" < "$STR_BASE_ACCEPTABLE_VER" ]]; then
+        if [[ "$STR_VERSION_TYPE" == "+" ]]; then
+                echo "$RPM_VERSION"
+        else
+                 echo "$RPM_VERSION"
+	fi
+    else if [[ "$STR_VERSION_TYPE" = "-" ]]; then
+                 echo "$RPM_VERSION"
+        else
+                 echo "$RPM_VERSION"
+	fi
+fi
+else if [[ "$RPM_VERSION" == "$STR_BASE_ACCEPTABLE_VER" ]]; then
+         echo "$RPM_VERSION"
+     else
+         echo "$RPM_VERSION"
+     fi
+fi
+else
+ echo "$Msg_UNAVAILABLE"
+fi
+rm -rf /$TMP_DIR/prs.package.txt

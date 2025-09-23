@@ -1,0 +1,99 @@
+#!/bin/bash
+
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+# Make sure we get file name as command line argument
+
+cat /etc/hosts > /$TMP_DIR/prs.hosts_format
+
+
+type=`uname`
+#Finding the default system details
+localHost="127.0.0.1"
+
+if [ "$type" = "AIX" ]; then
+        hostName=`hostname`
+        tmpIpAdd=`host $hostName | sed 's/,//g' | awk '{print $3}'`
+else
+
+        hostName=`hostname`
+        tmpIpAdd=`host $hostName | awk '{print $4}'`
+fi
+
+grep ^127 /$TMP_DIR/prs.hosts_format > /$TMP_DIR/prs.test
+grep "$tmpIpAdd" /$TMP_DIR/prs.hosts_format >> /$TMP_DIR/prs.test
+
+#cat /$TMP_DIR/test | sed 's/\( \{1,\}\)/\Z/g' | sed 's/Z/	/g' > /$TMP_DIR/test1
+#cat /$TMP_DIR/test | sed 's/\( \{1,\}\)/	/g' > /$TMP_DIR/test1
+FILE=/$TMP_DIR/prs.test
+
+# Check that file exists and is readable
+[ ! -f $FILE ] && { echo "$FILE: does not exist"; exit 1; }
+[ ! -r $FILE ] && { echo "$FILE: cannot be read"; exit 2; }
+
+#Open file for reading
+
+exec 3< $FILE
+
+result="PASS"
+
+numLine=`cat /$TMP_DIR/prs.test | wc -l` 
+#echo $localHost
+#echo $tmpIpAdd
+if [ $numLine -eq 2 ]; then
+#Process file line by line
+while read -u 3 line
+do
+	firstchar=`echo $line | cut -c 1`
+#echo "line - "$line
+	if [ $firstchar ]; then
+
+		if [ $firstchar != "#" -a $firstchar != ":" ]; then
+ 		SaveIFS=$IFS
+		IFS="	"
+#echo ${#line}
+		#tmpStr=`expr substr "$line" 1 ${#line}`
+              lentmpStr=`echo $line | wc -w`
+#echo $tmpStr
+	#	declare -a Array=( $tmpStr )
+	#	IFS=$SaveIFS
+
+#echo ${Array[0]}","${Array[1]}","${Array[2]}
+
+#		if [ ${#Array[*]} -eq 3 ]; then
+#			if [ ${Array[0]} ]; then
+#				if [ ${Array[1]} ]; then
+#					if [ ${Array[2]} ]; then
+#echo "line - "$line
+#						if [ ${Array[0]} = $localHost -o ${Array[0]} = $tmpIpAdd ]; then
+							result="$Msg_TRUE"
+#						fi
+#					fi
+#				fi
+#			fi
+if [ $lentmpStr -eq 3 ]; then
+                   result="$Msg_TRUE"
+		else
+			result="$Msg_FALSE"
+			break ;
+		fi
+	fi
+	fi
+
+done
+else
+ result="$Msg_FALSE"
+fi
+echo $result
+
+# Close file after reading
+exec 3<&-
+rm -f /$TMP_DIR/prs.test
+exit 0

@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Сбой установки исправления: исключительная ситуация при обновлении хронологии событий в {0}
+WUPD0200E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации. 
+WUPD0200E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0201E=WUPD0201E: Сбой установки исправления: исключительная ситуация при открытии файла протокола {0}
+WUPD0201E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации. 
+WUPD0201E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0211E=WUPD0211E: Сбой установки исправления: исключительная ситуация при получении информации о компонентах текущего обновления
+WUPD0211E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации. 
+WUPD0211E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0212E=WUPD0212E: Сбой установки исправления: компонент {0} указан как часть обновления, однако его образ не найден.
+WUPD0212E.explanation=Недоступен фрагмент исправления, применяемый для обновления указанного компонента.
+WUPD0212E.useraction=Эта неполадка свидетельствует о внутренней ошибке. Обратитесь в службу поддержки IBM для получения дополнительной информации.
+
+WUPD0214E=WUPD0214E: Сбой установки исправления: исключительная ситуация при регистрации применения исправления {0} из файла JAR исправления {1}
+WUPD0214E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации. 
+WUPD0214E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0215E=WUPD0215E: Сбой установки исправления: не удалось установить компонент {0}.
+WUPD0215E.explanation=Ознакомьтесь с дополнительной информацией в протоколе установки и файле хронологии событий.
+WUPD0215E.useraction=Ознакомьтесь с дополнительной информацией в протоколе установки и файле хронологии событий.
+
+WUPD0216E=WUPD0216E: Сбой установки исправления: исключительная ситуация при добавлении отметки о применении исправления {0} к компоненту {1}
+WUPD0216E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации. 
+WUPD0216E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+
+WUPD0220E=WUPD0220E: Сбой удаления исправления: не найден файл исправления {0}.
+WUPD0220E.explanation=Была сделана попытка удалить исправление, которое не помечено как установленное.
+WUPD0220E.useraction=Эта неполадка свидетельствует о внутренней ошибке. Не пытайтесь удалить неустановленные исправления.
+
+WUPD0221E=WUPD0221E: Сбой удаления исправления: не удалось прочитать файл исправления {0}.
+WUPD0221E.explanation=Файл указанного исправления нечитаем. Операция удаления прервана.
+WUPD0221E.useraction=Проверьте правильность файла исправления.
+
+WUPD0222E=WUPD0222E: Сбой удаления исправления: исключительная ситуация при очистке информации о применении исправления {0}
+WUPD0222E.explanation=Удаление исправления не выполнено из-за возникшей исключительной ситуации. 
+WUPD0222E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0223E=WUPD0223E: Сбой удаления исправления: не удалось удалить обновление компонента {1} для исправления {0}.
+WUPD0223E.explanation=Указанный компонент был обновлен при применении заданного исправления. Это обновление компонента не удалось удалить.
+WUPD0223E.useraction=Эта неполадка свидетельствует о внутренней ошибке. Обратитесь в службу поддержки IBM для получения дополнительной информации.
+
+WUPD0224E=WUPD0224E: Сбой удаления исправления: исключительная ситуация при очистке информации о применении исправления {0} в компоненте {1}
+WUPD0224E.explanation=Удаление исправления не выполнено из-за возникшей исключительной ситуации. 
+WUPD0224E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0232E=WUPD0232E: Сбой обновления исправления: исключительная ситуация при получении содержимого исправления {0}, компонент {1}, файл JAR исправления {2}, запись {3}
+WUPD0232E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации. 
+WUPD0232E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0233E=WUPD0233E: Сбой обновления исправления: исключительная ситуация во время предварительной обработки содержимого исправления {0}, компонент {1}
+WUPD0233E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации.
+WUPD0233E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0234E=WUPD0234E: Сбой обновления исправления: исключительная ситуация при обработке содержимого исправления {0}, компонент {1}
+WUPD0234E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации.
+WUPD0234E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0235E=WUPD0235E: Сбой обновления исправления: не удалось обработать исправление {0}, компонент {1}. Сведения об обработке приведены в файле протокола {2}.
+WUPD0235E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации.
+WUPD0235E.useraction=Ознакомьтесь с информацией об обработке в указанном файле протокола.
+
+WUPD0236E=WUPD0236E: Сбой обновления исправления: исключительная ситуация при подготовке каталогов резервной копии и протокола
+WUPD0236E.explanation=Установка исправления не выполнена из-за возникшей исключительной ситуации.
+WUPD0236E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0237E=WUPD0237E: Сбой удаления исправления: исключительная ситуация во время предварительной обработки содержимого исправления {0}, компонент {1}
+WUPD0237E.explanation=Удаление исправления не выполнено из-за возникшей исключительной ситуации.
+WUPD0237E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0238E=WUPD0238E: Сбой удаления исправления: исключительная ситуация при обработке содержимого исправления {0}, компонент {1}
+WUPD0238E.explanation=Удаление исправления не выполнено из-за возникшей исключительной ситуации.
+WUPD0238E.useraction=Дополнительные сведения приведены в описании исключительной ситуации.
+
+WUPD0239E=WUPD0239E: Сбой удаления исправления: не удалось обработать исправление {0}, компонент {1}. Сведения об обработке приведены в файле протокола {2}.
+WUPD0239E.explanation=Удаление исправления не выполнено из-за возникшей исключительной ситуации.
+WUPD0239E.useraction=Дополнительные сведения приведены в файле протокола.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} из {1}) Выполняется установка исправления {2}.
+prefix.efix.revert   =({0} из {1}) Восстановление исправления {2}.
+prefix.efix.uninstall=({0} из {1}) Удаление исправления {2}.
+
+#NOTAMSG
+prepare.update.install  =подготовка к установке
+prepare.update.uninstall=подготовка к удалению
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =установка компонента {0} из {1}
+component.update.uninstall=удаление компонента {0} из {1}
+
+#NOTAMSG
+complete.update.install  =завершение установки
+complete.update.uninstall=завершение удаления
+
+#NOTAMSG
+result.cancelled.install=Установка отменена
+result.succeeded.install=Установка успешно выполнена
+result.failed.install=Установка не выполнена
+
+result.cancelled.uninstall=Удаление отменено
+result.succeeded.uninstall=Удаление успешно выполнено
+result.failed.uninstall=Удаление не выполнено

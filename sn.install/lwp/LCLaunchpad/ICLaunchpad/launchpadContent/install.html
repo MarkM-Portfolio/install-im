@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML LANG="en">
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2014                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+
+<!-- REMEMBER TO REMOVE THIS LINE BELOW  -->
+
+
+</head>
+
+<script src="../jscp.js" language="javascript">
+
+<%@ include file="global.head" %>
+
+<% loadCSSfiles(DEFAULTCSS, "content.css"); %>
+
+<body>
+
+<h1><%= property('install_title') %></h1>
+<p>
+	<font color="red"><%= property('install_note') %></font>
+</p>
+<p>
+	<img src="./images/extwebsite_16.gif" alt="<%= property('altImageText') %>">&nbsp;<A href="javascript:void 0" onclick="runProgram(null,command('lcApp'), BACKGROUND, VISIBLE, this)"><%= property('install_text') %></A>
+	<br/><br/>
+	<%= property('install_wizard_info') %>
+</p>
+																				                                                                          	
+</body>
+</script>
+</html>

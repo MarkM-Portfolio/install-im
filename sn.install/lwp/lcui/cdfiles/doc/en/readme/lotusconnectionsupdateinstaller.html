@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- 5724-S68                                                          -->
+<!-- 5724-S68                                                          -->
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2007" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2007" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="IBM Connections Update Installer README" />
+<meta name="abstract" content="This document describes the IBM Connections update installer application." />
+<meta name="description" content="This document describes the IBM Connections update installer application." />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="lotusconnectionsupdateinstaller" />
+<meta name="DC.Language" content="en-us" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<link rel="stylesheet" type="text/css" href="./ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="./websphere.css" />
+<title>IBM Connections Update Installer
+README</title>
+</head>
+<body id="lotusconnectionsupdateinstaller"><a name="lotusconnectionsupdateinstaller"><!-- --></a>
+<h1 class="topictitle1">IBM <span>Connections </span> Update Installer
+README</h1>
+<div>
+  <p>This document describes the <span>IBM<sup>®</sup> Connections </span> update
+installer application.</p>
+  <p><em>Last updated:</em> Sep 22, 2011</p>
+  <p>This section describes the <span>Connections </span> update
+installer application, which can be used to install interim or cumulative
+fixes on the IBM Connection product. The application can
+also be used to uninstall fixes. This section provides examples of the command
+syntax used by the update installer.</p>
+  <p>This section is a reference for the <b>updateWizard</b> command
+and its parameters. For detailed instructions on using the update
+installer, always refer to the README file provided with the interim or cumulative
+fix.</p>
+  <div class="section"><h4 class="sectiontitle">Contents</h4><ul>
+    <li><a href="#lotusconnectionsupdateinstaller__download">Downloading the IBM Connections Update Installer</a></li>
+    <li><a href="#lotusconnectionsupdateinstaller__update">Using the updateWizard command</a> </li>
+<li><a href="#lotusconnectionsupdateinstaller__version">Product version and history information</a></li>
+<li><a href="#lotusconnectionsupdateinstaller__files">Application files, logs and storage locations</a></li>
+</ul>
+</div>
+<div class="section" id="lotusconnectionsupdateinstaller__download"><a name="lotusconnectionsupdateinstaller__download"><!-- --></a>
+<h4 class="sectiontitle">Downloading the IBM Connections Update Installer</h4>
+<div class="p">Download
+the <b>UpdateInstaller.zip</b> file which contains the IBM Connections
+Update Installer application from the appropriate support
+page:
+<ul>
+  <li><a href="http://www-3.ibm.com/software/genservers/lotusconnections/support/" target="_blank">&lt;need IBM Connections customer support link&gt; </a></li>
+</ul>
+</div>
+<div class="p">Although the update installer files can be unpacked  anywhere on the machine, we  recommend placing the files in the <i> IBMConnections_root/update</i> directory.
+<i>IBMConnections_root</i> is your IBM Connections product installation directory, normally, this would be <i>IBM\IBM-Connections</i>. Interim fixes can be downloaded to the <i>updateinstaller/fixes</i> directory.
+If  different
+directories are used, adjust the instructions accordingly. 
+<div class="note">
+  <p class="notetitle">&nbsp;</p>
+  <p class="notetitle">Notes: </p>
+  <ul><li>On <span>Microsoft Windows</span> platforms,
+the <samp class="codeph">pkunzip</samp> utility might not decompress the download image
+correctly. Use another utility (such as <samp class="codeph">WinZip</samp>) to unzip
+the image.</li></br>
+  </ul>
+</div>
+</div>
+<div class="p">The following are the main files associated with
+the IBM Connections Update Installer:
+  <div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr valign="bottom"><th valign="bottom" width="44%" id="d0e128">File name</th>
+<th valign="bottom" width="55%" id="d0e130">File location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" width="44%" headers="d0e128 ">lcui.jar</td>
+<td valign="top" width="55%" headers="d0e130 "><samp class="codeph">/updateinstaller/lib</samp></td>
+</tr>
+<tr><td valign="top" width="44%" headers="d0e128 "><p>updateWizard.sh <br />
+or<br />
+updateWizard.bat</p>
+</td>
+<td valign="top" width="55%" headers="d0e130 "><samp class="codeph">/updateinstaller</samp></td>
+</tr>
+<tr><td valign="top" width="44%" headers="d0e128 ">fix Java archive (JAR) files</td>
+<td valign="top" width="55%" headers="d0e130 "><samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"></a></span>/update/fixes</samp></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The update installer records processing results in log files
+in the <i>IBMConnection_root/version/log</i> directory.
+Backup files created during the installation of interim fixes
+are stored in the <i>IBMConnections_root/version/backup</i> directory.
+These files are required to uninstall an interim fix.</p>
+</div>
+<div class="section" id="lotusconnectionsupdateinstaller__update"><a name="lotusconnectionsupdateinstaller__update"><!-- --></a>
+<h4 class="sectiontitle">Using the updateWizard command</h4>
+<p><!-- -->
+</a><strong>Do not launch multiple copies of the
+update installer at one time.</strong> The update installer cannot be launched
+concurrently with itself. Performing more than one update at the same time
+can lead to a failed or faulty installation.</p>
+<p><strong>Validate security settings for IBM Connections after performing an update.</strong> Changes you may have made to the settings could be overwritten by the update. For example, even if you explicitly disabled the All Authenticated role, the update enables it by default.</p>
+<dl><dt class="dlterm">Installation roots </dt>
+<dd><var class="varname">IBMConnections_root</var>  represents the directory where <span>IBM Connections</span> is installed. By default,
+this varies per  operating system:
+  <ul>
+    <li><strong><span>AIX</span></strong>: <span class="filepath">/usr/IBM/IBM-Connections</span></li>
+    <li><strong><span>UNIX</span> and <span>Linux</span></strong>: <span class="filepath">/opt/IBM/IBM-Connections </span></li>
+    <li><strong><span>Windows</span></strong>: <span class="filepath"><var class="varname">drive</var>:\Program
+Files\IBM\IBM-Connections</span></li>
+    </ul>
+</dd>
+</dl>
+<dl><dt class="dlterm" id="lotusconnectionsupdateinstaller__space"><a name="lotusconnectionsupdateinstaller__space"><!-- --></a>Space requirements </dt>
+<dd>Space requirements vary depending on what you are installing. The size
+of each download is available on the <a href="lotusconnectionsupdateinstaller.html#lotusconnectionsupdateinstaller__download">Support</a> site.
+After unpacking the ZIP file you download, delete the ZIP file to free space.
+ Space is also required for backup files in the <i>IBMConnections_root/version/backup</i> directory.</dd>
+</dl>
+<dl><dt class="dlterm">Prerequisite Java environment setting</dt>
+<dd>Set up the Java environment for the update installer:<ol><li>Open a command line window.</li>
+<li>Change directory to the <i>app_server_root/bin</i> directory,
+where <i>app_server_root</i> is the installation directory of the <span>WebSphere
+Application Server</span> that
+is associated with IBM Connections.</li>
+<li>Issue the appropriate command:<ul><li><strong><span>UNIX</span></strong>: <samp class="codeph">.(space)./setupCmdLine.sh</samp><div class="note"><span class="notetitle">Note:</span> When running this command in a UNIX shell, be sure to use the syntax <samp class="codeph">.(space)./setupCmdLine.sh</samp>.
+If you do not precede the command with the period and space, the Java™ environment
+will not be properly set for the active shell.</div>
+</li>
+<li><strong><span>Linux</span></strong>: <samp class="codeph">source
+setupCmdLine.sh</samp></li>
+<li><strong><span>Windows</span></strong>: <samp class="codeph">setupCmdLine.bat</samp></li>
+</ul>
+</li>
+</ol>
+</dd>
+<dt class="dlterm">Command name </dt>
+<dd><samp class="codeph">updateWizard.{sh|bat}</samp> </dd><br />
+<dt class="dlterm">Command parameters</dt>
+<dd>Given certain command parameters, the <samp class="codeph">updateWizard</samp> command
+can:
+  <ul><li>Install or uninstall interim or cumulative fixes</li>
+<li>Provide information about the update state of applied interim or cumulative
+fixes</li>
+</ul>
+<p>The following table describes the parameters that can be used with
+the <samp class="codeph">updateWizard</samp> command. Variables in the parameter column
+are show italicized, like <var class="varname">this</var>.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr valign="bottom"><th valign="bottom" width="101" id="d0e524">Parameter</th>
+<th valign="bottom" width="391" id="d0e526">Description</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="101" headers="d0e524 ">-? </td>
+<td valign="top" width="391" headers="d0e526 ">Shows command usage</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">/?</td>
+<td valign="top" width="391" headers="d0e526 "><p>Shows command usage on <span>Windows</span> platforms
+only. Not supported for <span>Linux</span> and <span>UNIX</span>-based platforms.</p></td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-configProperties <var class="varname">propertyFile</var>.properties </td>
+<td valign="top" width="391" headers="d0e526 ">Specifies an externally supplied properties file containing <span>IBM Connections </span> properties and values.
+  <div class="p"></div>
+<div class="p">When specifying properties in a file, the following conventions
+should be observed:  <ul><li>Values identified for properties should not have trailing spaces</li>
+<li>Do not enclose values in quotation marks</li>
+<li>When typing directories, use a forward slash (/) instead of a backward
+slash (\), regardless of the operating system used</li>
+</ul>
+</div></td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-fix </td>
+<td valign="top" width="391" headers="d0e526 ">Interim fix only. Identifies the update as an interim
+fix update.</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-fixDetails</td>
+<td valign="top" width="391" headers="d0e526 ">Interim fix only. Displays interim fix detail information.</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-fixDir</td>
+<td valign="top" width="391" headers="d0e526 ">Interim fix only. Specifies the fully qualified directory
+where you download interim fixes. This directory is usually the <i>IBMConnections_root/update/fixes</i> directory</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-fixes</td>
+<td valign="top" width="391" headers="d0e526 ">Interim fix only. Specifies a fix to install or uninstall. </td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-help</td>
+<td valign="top" width="391" headers="d0e526 ">Shows command usage</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">/help</td>
+<td valign="top" width="391" headers="d0e526 ">Shows command usage</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-install</td>
+<td valign="top" width="391" headers="d0e526 ">Installs the update, either interim fix or fixpack</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-installDir</td>
+<td valign="top" width="391" headers="d0e526 ">Specifies the fully qualified installation root of the <span>IBM Connections</span> product</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-uninstall</td>
+<td valign="top" width="391" headers="d0e526 ">Uninstalls the identified fix</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-uninstallAll</td>
+<td valign="top" width="391" headers="d0e526 ">Interim fix only. Specifies to uninstall all applied
+interim fixes.</td>
+</tr>
+<tr><td valign="top" width="101" headers="d0e524 ">-usage</td>
+<td valign="top" width="391" headers="d0e526 ">Shows command usage</td>
+</tr>
+<tr>
+  <td valign="top" headers="d0e524 ">-wasUserId</td>
+  <td valign="top" headers="d0e526 ">WebSphere Application Server administrator ID </td>
+</tr>
+<tr>
+  <td valign="top" headers="d0e524 ">-wasPassword</td>
+  <td valign="top" headers="d0e526 ">WebSphere Application Server administrator password </td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd>
+<dt class="dlterm">Examples of command parameter syntax</dt>
+<dd><p>The following table of examples provides the syntax of various parameters
+used with the update installer. In each example, optional parameters are enclosed
+by brackets ([ ]). Values that you supply are italicized, like <var class="varname">this</var>.
+Choices are denoted by the pipe symbol (|).</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr valign="bottom"><th valign="bottom" width="80" id="d0e746">Parameter function</th>
+<th valign="bottom" width="810" id="d0e748">Syntax example</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="80" headers="d0e746 ">Help</td>
+<td valign="top" width="810" headers="d0e748 "><samp class="codeph">updateWizard  -help | -? | /help | -usage</samp></td>
+</tr>
+<tr><td valign="top" width="80" headers="d0e746 ">Fix processing</td>
+<td valign="top" width="810" headers="d0e748 "><pre>updateWizard -installDir "<var class="varname">fully qualified IBM Connections installation directory</var>"
+             -fix
+             -fixDir "<var class="varname">fully qualified fix repository root</var>" 
+                     usually <samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"><var class="varname">IBMConnections_root</var></a></span>/update/fixes</samp>
+             -install | -uninstall | uninstallAll
+             -fixes <var class="varname">ifix</var>
+             -wasUserID <var class="varname">userid</var>
+             -wasPassword <var class="varname">password</var>
+            [-configProperties "<var class="varname">property file name and path</var>"]
+            [-fixDetails]</pre>
+ </td>
+</tr>
+<tr><td valign="top" width="80" headers="d0e746 ">View applied fixes</td>
+<td valign="top" width="810" headers="d0e748 "><pre>updateWizard -fix 
+             -installDir "<var class="varname">fully qualified IBM Connections installation directory</var>"</pre>
+</td>
+</tr>
+<tr><td valign="top" width="80" headers="d0e746 ">View available fixes</td>
+<td valign="top" width="810" headers="d0e748 "><pre>updateWizard -fix 
+             -installDir "<var class="varname">fully qualified IBM Connections installation directory</var>"
+             -fixDir "<var class="varname">fully qualified fix repository root</var>" 
+                      usually <samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"><var class="varname">IBMConnections_root</var></a></span>/update/fixes</samp></pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd>
+<dt class="dlterm">Examples of useful commands with parameters</dt>
+<dd>The following examples assume that:   <ul><li>The installation root is the C:\Program Files\IBM\IBM-Connections directory. </li>
+<li>The fix repository is the C:\Program Files\IBM\IBM-Connections\update\fixes
+directory.</li>
+</ul>
+<div class="note"><span class="notetitle">Note:</span> The examples are split onto more than one line for visual clarity,
+but the command and associated parameters would be entered on one line during
+actual usage.</div>
+<dl><dt class="dlterm">Installing a fix</dt>
+<dd>
+  <pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" 
+          -fixDir "C:\Program Files\IBM\IBM-Connections\update\fixes" 
+          -install 
+          -fixes Fix1
+          -wasUserID wasadminid
+          -wasPassword wasadminpassword
+ </pre>
+</dd>
+<dt class="dlterm">Installing a  fix and displaying fix details</dt>
+<dd><pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" 
+          -fixDir "C:\Program Files\IBM\IBM-Connections\update\fixes" 
+          -install 
+          -fixes Fix1 
+          -fixDetails
+          -wasUserID wasadminid
+          -wasPassword wasadminpassword
+</pre>
+</dd>
+<dt class="dlterm">Installing a  fix and using a separate properties
+file</dt>
+<dd><pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" 
+          -fixDir "C:\Program Files\IBM\IBM-Connections\update\fixes" 
+          -install 
+          -fixes Fix1
+          -wasUserID wasadminid
+          -wasPassword wasadminpassword		   
+          -configProperties .\myProp.properties</pre>
+</dd><dd><pre></pre></dd><dt class="dlterm">Uninstalling a  fix</dt>
+<dd><pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" 
+          -fixDir "C:\Program Files\IBM\IBM-Connections\update\fixes" 
+          -uninstall 
+          -fixes Fix1
+          -wasUserID wasadminid
+          -wasPassword wasadminpassword</pre></dd>
+		<dd></dd>
+		<dt class="dlterm">Uninstalling a fix and displaying fix details</dt>
+		<dd><pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" 
+          -fixDir "C:\Program Files\IBM\IBM-Connections\update\fixes" 
+          -uninstall 
+          -fixes Fix1 
+          -fixDetails
+          -wasUserID wasadminid
+          -wasPassword wasadminpassword</pre></dd>
+          <dd></dd>
+<dt class="dlterm">Uninstalling a fix using a separate properties file</dt>
+<dd><pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" 
+          -fixDir "C:\Program Files\IBM\IBM-Connections\update\fixes" 
+          -uninstall 
+          -fixes Fix1
+          -wasUserID wasadminid
+          -wasPassword wasadminpassword		   
+          -configProperties .\myProp.properties</pre>
+</dd><dd></dd>
+<dt class="dlterm">Viewing a list of installed fixes</dt>
+<dd><pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" </pre>
+</dd><dd></dd>
+<dt class="dlterm">Viewing a list of fixes available in the repository</dt>
+<dd><pre>C:\Program Files\IBM\IBM-Connections\update&gt; updateWizard -fix 
+          -installDir "C:\Program Files\IBM\IBM-Connections" 
+          -fixDir "C:\Program Files\IBM\IBM-Connections\update\fixes" </pre>
+</dd><dd></dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="lotusconnectionsupdateinstaller__version"><a name="lotusconnectionsupdateinstaller__version"><!-- --></a><h4 class="sectiontitle">Product version and history information</h4><p>The <i>IBMConnections_root/version</i> directory
+in the installation root contains important data about <span>IBM Connections</span> and
+its installed components, such as the build version and build date. This information
+is included in the <var class="varname">[product]</var>.product and <var class="varname">[component]</var>.component
+files.</p>
+<p>The <i>IBMConnections_root/version/history</i> directory
+in the installation root contains a collection of records for installed fixes. This information is included in the <var class="varname">[interim fixID]</var>.efixApplied, <var class="varname">[interim
+fixID]</var>.efixDriver</p>
+<p>A driver file has useful information
+about the entire contents of an interim fix. The applied file
+has relevant information about the fixes that are currently applied.</p>
+<p>The event.history
+file contains a detailed log about updates you have applied, either successfully
+or unsuccessfully. Time-stamped, detailed logs record each update process
+in the <i>IBMConnections_root/version/log</i> directory
+of the installation root. </p>
+</div>
+<div class="section" id="lotusconnectionsupdateinstaller__files"><a name="lotusconnectionsupdateinstaller__files"><!-- --></a><h4 class="sectiontitle">Application files, logs and storage locations</h4><p>This
+section describes the XML data files that store product information for <span>IBM Connections</span>. By default, the
+document type declarations (DTDs) for these files are in the <i>IBMConnections_root/version/dtd</i> folder
+of the installation root directory.</p>
+<div class="p">This section includes:   <ul><li><a href="#lotusconnectionsupdateinstaller__prodinfo">A list of product information
+files and file locations</a></li>
+<li><a href="#lotusconnectionsupdateinstaller__logs">A description of logs and component
+backups</a></li>
+<li><a href="#lotusconnectionsupdateinstaller__storage">A list of storage locations</a></li>
+</ul>
+</div>
+<p id="lotusconnectionsupdateinstaller__prodinfo"><a name="lotusconnectionsupdateinstaller__prodinfo"><!-- --></a><strong>Product information files</strong></p>
+<div class="p">There are
+two kinds of product information files: <ul>
+  <li>Files in the <i>IBMConnections_root/version</i> directory
+that store version information</li>
+  <li>Files in the <i>IBMConnections_root/version/history</i> directory
+that store version history information</li>
+</ul>
+</div>
+<p><strong>Version information</strong></p>
+<div class="p">The following XML files represent installed items and
+installation events:<dl>
+  <dt class="dlterm"><var class="varname">product-id.</var>Product</dt>
+  <dd>This file indicates the particular <span>IBM Connections</span> feature
+that is installed. Data in the file indicates the version, build date, and
+build level. For example, the file might be named <samp class="codeph">activities.product</samp>,
+which indicates that the installed feature is <span>IBM Connections Activities </span>.
+An example of the file follows:
+<pre>&lt;!DOCTYPE product SYSTEM "product.dtd"&gt;
+&lt;product name="IBM Connections activities"&gt;
+  &lt;id&gt;activities&lt;/id&gt;
+  &lt;version&gt;1.0.0.0&lt;/version&gt;
+  &lt;build-info date="08/08/2007" 
+              level="08181252"/&gt;
+&lt;/product&gt;</pre>
+</dd>
+<dt class="dlterm"><var class="varname">component-name.</var>Component</dt>
+<dd>These component files indicate the presence of an installed component,
+which is part of the feature. Data in the file indicates the component build
+date, build version, component name, and product version. For example, the
+file might be named <samp class="codeph">blogs.component</samp>, which indicates that
+the <span>IBM Connections</span> blogs component
+is installed. An example of the file follows:
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE component PUBLIC "componentId" "component.dtd"&gt;
+&lt;component build-date="2007-07-15" build-version="1.0.0.0" name="blogs" spec-version="1.0"/&gt;</pre>
+</dd>
+<dt class="dlterm"><var class="varname">fix-id</var>.efix</dt>
+<dd>These fix files indicate the presence of an installed interim fix.</dd>
+</div>
+<p><strong>History information</strong></p>
+<div class="p">This file stores version
+history information:<dl><dt class="dlterm">event.history</dt>
+<dd>This file lists update events that have occurred. An update event is an
+operation that installs or uninstalls an interim fix. The file
+is sorted by the date and time of the events that are listed.</dd>
+</dl>
+</div>
+<div class="p">The following XML files in the <i>IBMConnections_root/version/history</i> directory
+describe fixes that are currently installed. These XML files
+are related to installation items by the primary ID information, which is
+indicated by italicized text like <strong><var class="varname">this</var></strong>.<dl><dt class="dlterm"> <var class="varname">fix-id</var>.efixDriver</dt>
+<dd>Fix-driver defining information</dd>
+<dt class="dlterm"><var class="varname">fix-id</var>.efixApplied</dt>
+<dd>Fix installation details</dd>
+</dl>
+</div>
+<p id="lotusconnectionsupdateinstaller__logs"><a name="lotusconnectionsupdateinstaller__logs"><!-- --></a><strong>Logs and component backups</strong></p>
+<div class="p"><span>IBM Connections</span> products use two other
+directories when performing update operations, for logging and backups. By
+default, the two directories are relative to the product version directory,
+as follows:
+  <dl><dt class="dlterm">IBMConnections_root/version/log</dt>
+<dd>Product updates log directory. <span>IBM Connections</span> products
+store log files to document component, interim fix operations
+and updates.</dd>
+<dt class="dlterm">IBMConnections_root/version/backup</dt>
+<dd>Product updates backup directory. <span>IBM Connections</span> products
+back up components before applying interim fixes. If you uninstall
+an interim fix, <span>IBM Connections</span> products
+restore the backed-up component JAR file.</dd>
+</dl>
+</div>
+<p><strong>Examples of log file names</strong></p>
+<div class="p">Interim fix
+log file names are named as follows:<pre><var class="varname">timeStamp</var>_<var class="varname">fixId</var>_<var class="varname">operation</var>.log</pre>
+where
+these naming conventions are used:<dl><dt class="dlterm"><samp class="codeph"><var class="varname">timeStamp</var></samp></dt>
+<dd>YYYYMMDD_HHMMSS<p>For example: 20020924_211832 is 24-Sep-2002, 9:18:32
+pm, GMT. All time stamps are in GMT.</p>
+</dd>
+<dt class="dlterm"><samp class="codeph"><var class="varname">fixId</var></samp></dt>
+<dd>Interim fix ID<p>For example: PQ77683_LC100_iFix is an interim
+fix ID.</p>
+ </dd>
+<dt class="dlterm"><samp class="codeph"><var class="varname">operation</var></samp></dt>
+<dd>The operation is either install or uninstall<p>For example: <i>IBMConnections_root</i>/version/log/20030915_144857_PQ77683_LC100_iFix_install.log</p>
+</dd>
+</dl>
+</div>
+<div class="p">Here are some examples of log file names for common
+IBM Connections Update Installer operations:<dl><dt class="dlterm">Interim fix install and uninstall</dt>
+<dd><samp class="codeph"><var class="varname">timeStamp</var>_<var class="varname">fixId</var>_<var class="varname">operation</var>.log</samp>  <p>For
+example: <i>IBMConnections_root</i>/version/log/20030915_144857_PQ77683_LC100_iFix_install.log
+and <i>IBMConnections_root</i>/version/log/20030915_162140_PQ77683_LC100_iFix_uninstall.log</p>
+</dd>
+<dt class="dlterm">Interim fix component install and uninstall</dt>
+<dd><samp class="codeph"><var class="varname">timeStamp</var>_<var class="varname">fixId</var>_<var class="varname">operation</var>.log</samp>
+<p>For
+example: <i>IBMConnections_root</i>/version/log/20030915_144857_PQ77683_LC100_iFix_Config_install.log
+and <i>IBMConnections_root</i>/version/log/20030915_162140_PQ77683_LC100_iFix_Config_uninstall.log </p>
+</dd>
+</dl>
+</div>
+<p><strong>Examples of backup file names</strong></p>
+<div class="p">Backup JAR
+files are named as follows:<pre><var class="varname">timeStamp</var>_<var class="varname">fixId</var>_<var class="varname">operation</var>_undo.jar</pre>
+or<pre><var class="varname">timeStamp</var>_<var class="varname">fixId</var>_<var class="varname">operation</var>_undo.jar</pre>
+</div>
+<p>For
+example: 20030915_144857_PQ77683_LC100_iFix_Config_undo.jar </p>
+<p>Do not delete
+a backup Java archive (JAR) file. You cannot remove a component update if
+the corresponding backup JAR file is not present.</p>
+<p>Update processing
+might also use a temporary directory, if necessary. A Java property specifies
+this directory, as described in the next section.</p>
+<p id="lotusconnectionsupdateinstaller__storage"><a name="lotusconnectionsupdateinstaller__storage"><!-- --></a><strong>Storage
+locations</strong></p>
+<div class="p">Product information files are located relative to the <span>IBM Connections</span> product installation root.
+Default file paths are as follows:<dl><dt class="dlterm">Version directory</dt>
+<dd><i>IBMConnections_root</i>/version</dd>
+<dt class="dlterm">History directory</dt>
+<dd><i>IBMConnections_root</i>/version/history</dd>
+<dt class="dlterm">Updates log directory</dt>
+<dd><i>IBMConnections_root</i>/version/log</dd>
+<dt class="dlterm">Updates backup directory</dt>
+<dd><i>IBMConnections_root</i>/version/backup</dd>
+<dt class="dlterm">DTD directory</dt>
+<dd><i>IBMConnections_root</i>/version/dtd</dd>
+<dt class="dlterm">Temporary directory </dt>
+<dd>Specified by the <samp class="codeph">java.io.tmpdir</samp> Java system property</dd>
+</dl>
+</div>
+</div>
+<div class="section"><h4 class="sectiontitle">Notices and trademarks</h4></div>
+<div class="section"><p>(c) Copyright IBM Corporation 2000, 2007.</p>
+<p>U.S.
+Government Users Restricted Rights - Use, duplication or disclosure restricted
+by GSA ADP Schedule Contract with IBM Corp.</p>
+<p>This information was developed
+for products and services offered in the U.S.A. IBM may not offer the products,
+services, or features discussed in this documentation in other countries.
+Consult your local IBM representative for information on the products and
+services currently available in your area. Any reference to an IBM product,
+program, or service is not intended to state or imply that only that IBM product,
+program, or service may be used. Any functionally equivalent product, program,
+or service that does not infringe any IBM intellectual property right may
+be used instead. However, it is the user's responsibility to evaluate and
+verify the operation of any non-IBM product, program, or service.</p>
+<p>IBM may
+have patents or pending patent applications covering subject matter described
+in this documentation. The furnishing of this documentation does not give
+you any license to these patents. You can send license inquiries, in writing,
+to:</p>
+<div class="p"><p><em>IBM Director of Licensing <br />
+IBM Corporation <br />
+North Castle Drive <br />
+Armonk, NY 10504-1785 <br />
+U.S.A.</em></p>
+</div>
+<p>For license inquiries regarding double-byte (DBCS)
+information, contact the IBM Intellectual Property Department in your country
+or send inquiries, in writing, to: </p>
+<p><em>IBM World Trade Asia Corporation<br />
+Licensing<br />
+2-31 Roppongi 3-chome, Minato-ku <br />
+Tokyo 106, Japan </em></p>
+<p><strong>The following paragraph does not apply to the United Kingdom
+or any other country where such provisions are inconsistent with local law:</strong> INTERNATIONAL
+BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OR CONDITIONS OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS
+FOR A PARTICULAR PURPOSE. Some states do not allow disclaimer of express or
+implied warranties in certain transactions, therefore, this statement may
+not apply to you.</p>
+<p>This information could include technical inaccuracies
+or typographical errors. Changes are periodically made to the information
+herein; these changes will be incorporated in new editions of the publication. IBM may
+make improvements and/or changes in the product(s) and/or the program(s) described
+in this publication at any time without notice.</p>
+<p>Any references in this
+information to non-IBM Web sites are provided for convenience only and do
+not in any manner serve as an endorsement of those Web sites. The materials
+at those Web sites are not part of the materials for this IBM product and
+use of those Web sites is at your own risk. Licensees of this program who
+wish to have information about it for the purpose of enabling: (i) the exchange
+of information between independently created programs and other programs (including
+this one) and (ii) the mutual use of the information which has been exchanged,
+should contact:</p>
+<div class="p"><p><em>Vice President<br />
+Intellectual Property &amp; Licensing<br />
+North Castle Drive<br />
+Armonk, New York 10504<br />
+<br />
+U.S.A.</em></p>
+</div>
+<p>Such information may be available, subject to appropriate
+terms and conditions, including in some cases, payment of a fee.</p>
+<p>The
+licensed program described in this documentation and all licensed material
+available for it are provided by IBM under terms of the IBM Customer Agreement, IBM International
+Program License Agreement or any equivalent agreement between us.</p>
+<p>Any
+performance data contained herein was determined in a controlled environment.
+Therefore, the results obtained in other operating environments may vary significantly.
+Some measurements may have been made on development-level systems and there
+is no guarantee that these measurements will be the same on generally available
+systems. Furthermore, some measurements may have been estimated through extrapolation.
+Actual results may vary. Users of this document should verify the applicable
+data for their specific environment.</p>
+<p>Information concerning non-IBM
+products was obtained from the suppliers of those products, their published
+announcements or other publicly available sources. IBM has not tested those products and cannot
+confirm the accuracy of performance, compatibility or any other claims related
+to non-IBM products. Questions on the capabilities of non-IBM products should
+be addressed to the suppliers of those products.</p>
+<p>All statements regarding
+IBM's future direction or intent are subject to change or withdrawal without
+notice, and represent goals and objectives only.This information contains
+examples of data and reports used in daily business operations. To illustrate
+them as completely as possible, the examples may include the names of individuals,
+companies, brands, and products. All of these names are fictitious and any
+similarity to the names and addresses used by an actual business enterprise
+is entirely coincidental.</p>
+</div>
+<div class="section"><h4 class="sectiontitle">Trademarks and service marks</h4><p>The
+following are trademarks in the United States, other countries, or both.</p>
+<p>AIX<sup>®</sup>, DB2<sup>®</sup>, IBM,
+the IBM logo, iSeries™, i5/OS<sup>®</sup>, OS/390<sup>®</sup>, OS/400<sup>®</sup>, RS/6000<sup>®</sup>, RACF<sup>®</sup>, Tivoli<sup>®</sup>, WebSphere,
+ and z/OS<sup>®</sup> are
+trademarks of the IBM Corporation in the United States, other countries,
+ or both.</p>
+<p>Lotus<sup>®</sup>, Notes<sup>®</sup>, Domino<sup>®</sup>, QuickPlace<sup>®</sup>, Sametime<sup>®</sup>, Lotus
+Discovery Server™ are trademarks or registered trademarks of IBM Corporation
+and/or Lotus Development
+Corporation in the United States, other countries, or both.</p>
+<p>Solaris, Java™,
+and all Java-based trademarks and logos are trademarks of Sun Microsystems,
+Inc. in the United States, other countries, or both.</p>
+<p>Microsoft<sup>®</sup>, Windows<sup>®</sup>, Windows
+NT<sup>®</sup>, and the Windows logo are trademarks of Microsoft Corporation
+in the United States, other countries, or both.</p>
+<p>Linux<sup>®</sup> is a registered
+trademark of Torvalds in the United States, other countries, or both.</p>
+<p>Intel<sup>®</sup>, Intel
+Inside<sup>®</sup> (logos), MMX and Pentium<sup>®</sup> are trademarks of Intel Corporation in the United States,
+other countries, or both.</p>
+<p>Other company, product, and service names
+may be trademarks or service marks of others.</p>
+<p>See <a href="http://www.ibm.com/legal/copytrade.html" target="_blank">www.ibm.com/legal/copytrade.html</a> for
+additional trademarks.</p>
+</div>
+</div>
+</body>
+</html>

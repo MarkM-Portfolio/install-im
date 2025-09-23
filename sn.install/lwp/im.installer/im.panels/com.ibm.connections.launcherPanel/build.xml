@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * IBM Licensed Material
+ * 
+ * Copyright IBM Corp. 2006, 2016                                    
+ * 
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has been
+ * deposited with the U.S. Copyright Office.
+ * 
+-->
+<project name="im.installer/im.panels/com.ibm.connections.launcherPanel" default="development" basedir="."> 
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+
+	<!--
+	Following target overrides package_extra.xml/createjarOriginal
+	-->
+	<target name="createjarOriginal" depends="init.createjarOriginal" description="creates a jar file" if="output.jar.and.createOriginal" >
+		<antcall target="crConvert_1to3"><param name="dir.ToConvert" value="${dir.classes}"/></antcall>
+		<!--<delete dir="${dir.jar.tmpout}"/>-->
+		<copy todir="${dir.jar.tmpout}" preservelastmodified="true">
+			<fileset dir="${dir.classes}" excludes="${global.exclude.pattern}"/>
+		</copy>
+		<if><available file="${dir.prop.out}/${dir.src.name}"/>
+			<then>
+				<!-- inlcude property files, which are generated at build time, into the jar file -->
+				<copy todir="${dir.jar.tmpout}" preservelastmodified="true">
+					<fileset dir="${dir.prop.out}/${dir.src.name}" includes="**/*.properties" excludes="${jar.exclude.pattern},${props.exclude.pattern},${global.exclude.pattern}"/>
+				</copy>
+			</then>
+		</if>
+		<if><available file="${dir.src}"/>
+			<then>
+				<copy todir="${dir.jar.tmpout}" preservelastmodified="true">
+					<fileset dir="${dir.src}" includes="${include.pattern}" excludes="${jar.exclude.pattern},${props.exclude.pattern},${global.exclude.pattern},${lang.props.excludes},${lang.dirs.excludes}"/>  
+				</copy>
+			</then>
+		</if>
+		<antcall target="crConvert_1to3"><param name="dir.ToConvert" value="${dir.jar.tmpout}"/></antcall>
+
+		<mkdir dir="${dir.lib}"/>
+		<jar jarfile="${output.jar}" index="${local.jar.indexing}" basedir="${dir.jar.tmpout}" update="yes" manifest="${dir.build}/manifest.mf" manifestencoding="UTF-8" excludes="${global.exclude.pattern}"/>
+	</target>
+	
+	<property name="prejar.override" value="prejar.override"/>
+	<target name="prejar.override">
+		<copy todir="${dir.jar.tmpout}" >
+			<fileset file="plugin.xml" />
+		</copy>
+	</target>
+	
+	<property name="output.jar" value="${dir.lib}/com.ibm.connections.launcherPanel.jar"/>
+	<property name="mf.copy.done" value="true"/>
+	<property name="manifest.file" value="META-INF/MANIFEST.MF" />
+
+	<import file="${env.WPLC_IMPORT}/check.xml"/>
+	<import file="${env.WPLC_IMPORT}/compile.xml"/>
+	<import file="${env.WPLC_IMPORT}/rmic.xml"/>
+	<import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+	<import file="${env.WPLC_IMPORT}/javadoc.xml"/>
+	<import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+	<import file="${env.WPLC_IMPORT}/clean.xml"/>
+	<import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+	<import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+	<import file="${env.WPLC_IMPORT}/performance.xml"/>  
+</project>

@@ -1,0 +1,77 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (WAS Update Installation)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/ioservices.IOServicesNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0100 to 0199.
+
+WUPD0100E=WUPD0100E: Se ha intentado leer el directorio ''{0}'', que no existe.
+WUPD0100E.explanation=Este problema indica un error interno.
+WUPD0100E.useraction=Póngase en contacto con el servicio de soporte de IBM para obtener más información.
+
+WUPD0101E=WUPD0101E: Se ha intentado leer el directorio ''{0}'', que no es un directorio.
+WUPD0101E.explanation=Este problema indica un error interno.
+WUPD0101E.useraction=Póngase en contacto con el servicio de soporte de IBM para obtener más información.
+
+WUPD0102E=WUPD0102E: NO se puede encontrar la entrada JAR ''{0}'' en el archivo JAR ''{1}''.
+WUPD0102E=Se esperaba la entrada indicada en el archivo JAR indicado.  Este problema indica un error interno.
+WUPD0102E=Póngase en contacto con el servicio de soporte de IBM para obtener más información.
+
+WUPD0103E=WUPD0103E: No se ha podido crear el directorio de salida, ''{0}''.
+WUPD0103E=No se ha podido crear el directorio indicado.
+WUPD0103E=Verifique que el directorio indicado se pueda crear.
+
+WUPD0104E=WUPD0104E: El directorio de salida, ''{0}'', exista como un archivo.
+WUPD0104E=Se está intentando utilizar la entidad indicada como directorio, pero ya existe un archivo con ese nombre.
+WUPD0104E=Elija otro directorio de salida o elimine el archivo indicado.

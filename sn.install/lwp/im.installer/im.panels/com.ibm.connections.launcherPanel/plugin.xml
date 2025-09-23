@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.ibm.cic.agent.ui.launcher">
+         <launcher
+               id="script.install.launcher">
+            <platform
+                  os="aix,linux" ignoreAdminCheck="true" workingDirectory="${profile:user.connections.install.location}">
+                  <exec
+                        command="${profile:user.connections.install.location}/bin/post-install-launcher.sh">
+                        <arg>${profile:user.was.install.location}</arg>
+                        <arg>${profile:user.connections.install.location}</arg>
+                        <arg>${profile:user.was.adminuser.id}</arg>
+                        <arg>${decrypt:${profile:user.was.adminuser.password}}</arg>
+                        <arg>${profile:user.was.wasSoapPort}</arg>
+                  </exec>
+            </platform>
+            <platform
+                  os="win32" ignoreAdminCheck="true" workingDirectory="${profile:user.connections.install.location.win32format}">
+                  <exec
+                        command="${profile:user.connections.install.location.win32format}${system:file.separator}bin${system:file.separator}post-install-launcher.bat">
+                        <arg>${profile:user.was.install.location.win32format}</arg>
+                        <arg>${profile:user.connections.install.location.win32format}</arg>
+                        <arg>${profile:user.was.adminuser.id}</arg>
+                        <arg>${decrypt:${profile:user.was.adminuser.password}}</arg>
+                        <arg>${profile:user.was.wasSoapPort}</arg>
+                  </exec>
+            </platform>
+         </launcher>
+         <launcherOfferingBinding
+               label="Jython script installer"
+               launcherId="script.install.launcher"
+               offeringId="com.ibm.connections"
+               offeringVersion="[5.0.0,6.0.0)">
+         </launcherOfferingBinding>
+   </extension>
+</plugin>

@@ -1,0 +1,392 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WASProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Nu s-a putut determina directorul versiune.
+WVER0001E.explanation=Directorul versiune este localizat în funcţie de proprietatea sistem java 'was.version.dir' sau ca  '<root>\\properties\\version', unde <root> este directorul luat dintr-una din proprietăţile sistem java 'was.install.root' sau 'server.root'.  Aceste proprietăţi sunt examinate în ordine şi prima valoare proprietate disponibilă este luată.  Eroare indică că nici una din proprietăţile sistem java nu este setată, cu consecinţa că directorul versiune nu a putut fi determinat.
+WVER0001E.useraction=Asiguraţi-vă că una din proprietăţile sistem java este setată.  Proprietatea sistem java trebuie setată ori prin configuraţie proces ori ca opţiune la un proces lansat din linia de comandă.
+
+# 
+WVER0002E=WVER0002E: Extensie fişier versiune produs nerecunoscută ''{0}''.
+WVER0002E.explanation=La încărcarea informaţiilor de versiune, aceste informaţii sunt stocate în fişiere care au extensii specifice.  Extensiile determină tipul de informaţii stocate în fiecare fişier.  Extensii valide sunt '.websphere', '.component', '.product', '.efix' şi '.extension'.  A fost făcută o încercare de a încărca un fişier care conţine informaţii de versiune unde extensia fişierului nu este printe extensiile valide.
+WVER0002E.useraction=Aceasta indică o eroare internă.
+
+# 
+WVER0003I=WVER0003I: Folosire: versionInfo ( [ -format <text | html> ] [ -file <output file> ] [ -long ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Acest mesaj informaţional descrie opţiunile programului utilitar versionInfo.  Programul utilitar versionInfo acceptă cinci argumente cuvânt cheie opţional, unul care specifică formatul de ieşire, unul care specifică un fişier de ieşire, unul care afişează corecţiile efix, unul care afişează detaliile corecţiilor efix, unul care afişează componente şi unul care este folosit pentru a afişa informaţii de folosire.
+WVER0003I.useraction=Nu este necesară nici o acţiune utilizator.  Mesajul de informaţii de folosire este afişat la cerere.
+
+# 
+WVER0004E=WVER0004E: Eroare la scrierea raportului de versiune la {0}: {1}
+WVER0004E.explanation=Eroarea specificată a avut loc la scrierea unui raport de versiune în fişierul specificat.
+WVER0004E.useraction=Acţiunea corectivă depinde de specificele erori care a avut loc.  În particular, asiguraţi-vă că înfişierul specificat se poate scrie şi că există spaţiu suficient pentru raport.
+
+# 
+WVER0005E=WVER0005E: Nu a fost specificată nici o valoare pentru opţiunea ''{0}''
+WVER0005E.explanation=Opţiunea listată necesită o valoare.  (Folosiţi '-help' sau '-usage' pentru a afişa informaţii de folosire.)
+WVER0005E.useraction=Specificaţi o valoare pentru opţiunea listată.
+
+# 
+WVER0006E=WVER0006E: Valoarea ''{0}'' nu este o valoare de format validă.
+WVER0006E.explanation=Valorile de format valid sunt 'text' şi 'html'.  Valoarea specificată nu este una din aceste valori.  (Folosiţi '-help' sau '-usage' pentru a afişa informaţii de folosire.)
+WVER0006E.useraction=Modificaţi valoarea de format la una din valorile valide, 'text' sau 'html'.
+
+# 
+WVER0007E=WVER0007E: Opţiunea ''{0}'' nu este validă.
+WVER0007E.explanation=Opţiunea specificată nu este validă.  (Folosiţi '-help' sau '-usage' pentru a afişa informaţii de folosire.)
+WVER0007E.useraction=Schimbaţi pentru a folosi o opţiune validă.
+
+# 
+WVER0008I=WVER0008I: Opţiunea '-format' specifică formatul de ieşire, 'text' sau 'html'.  Opţiunea '-file' specifică un fişier de ieşire.  Trebuie furnizat un nume de fişier cu opţiunea '-file'.  Opţiunea '-long' face ca toate informaţiile efix, ptf şi de componentă să fie afişate.  Opţiunea '-efixes' face ca toate corecţiile efix să fie afişate.  Opţiunea '-efixDetail' face ca toate detaliile efix să fie afişate.  Opţiunea '-ptfs' face ca PTF-urile să fie afişate.  Opţiunea'-ptfDetail' face ca detaliile PTF să fie afişate.  Opţiunea '-components' face ca componentele să fie afişate.  Opţiunea'-componentDetail' face afişarea detaliilor componentelor.  Opţiunea '-help' face afişarea textului ajutător.  Opţiunea'-usage' face afiaşrea acestui text de folosire.
+WVER0008I.explanation=Mesajul descrie opţiunile valide ale programului utilitar versionInfo.
+WVER0008I.useraction=Nu este necesară nici o acţiune utilizator.  Mesajul de informaţii de folosire este afişat la cerere.
+
+# 
+WVER0009E=WVER0009E: Eroare la scrierea raportului de versiune la {0}.  Textul erorii nu poate fi afişat, dar este de tipul {1}.  O a doua eroare de tipul {2}, a apărut la extragerea textului erorii.
+WVER0009E.explanation=A avut loc o eroare la scrierea raportul de versiune în fişierul specificat. A avut loc o a doua eroare la extragerea textului erorii.
+WVER0009E.useraction=Nu este disponibilă nici o acţiune utilizator.  Vă rugăm încercaţi din nou operaţia cerută sau contactaţi suportul pentru ajutor suplimentar.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; Toate drepturile rezervate.
+WVER0010I.explanation=Aceasta este o declaraţie standard de copyright.
+WVER0010I.useraction=Nu este necesară nici o acţiune utilizator.  Acesta este un mesaj informativ.
+
+# 
+WVER0011I=WVER0011I: WebSphere Application Server ediţia 5.0
+WVER0011I.explanation=Aceasta este o declaraţie standard de descriere produs.
+WVER0011I.useraction=Nu este necesară nici o acţiune utilizator.  Acesta este un mesaj informativ.
+
+# 
+WVER0012I=WVER0012I: VersionInfo reporter versiunea {0}, datată {1}
+WVER0012I.explanation=Aceasta este o declaraţie standard de descriere modul.
+WVER0012I.useraction=Nu este necesară nici o acţiune utilizator.  Acesta este un mesaj informativ.
+
+# 
+WVER0013E=WVER0013E: A avut loc o excepţie la citirea {0}
+WVER0013E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0013E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0014E=WVER0014E: A avut loc o excepţie la citirea {0}
+WVER0014E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0014E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0015E=WVER0015E: A apărut o excepţie în timpul procesării informaţiilor de versiune
+WVER0015E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0015E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0016E=WVER0016E: Au apărut excepţii în timpul procesării informaţiilor de versiune
+WVER0016E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0016E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0017E=WVER0017E: Nu s-a putut determina directorul istorice actualizare.
+WVER0017E.explanation=Directorul de istorice este localizat în funcţie de proprietatea sistem java 'was.version.log.dir' sau ca directorul 'log' al directorului de versiune.  Nici proprietatea 'was.version.log.dir' nici directorul versiune nu sunt setate.
+WVER0017E.useraction=Asiguraţi-vă că directorul versiune este setat sau setaţi proprietatea sistem java 'was.version.log.dir'.
+
+# 
+WVER0018E=WVER0018E: Nu s-a putut determina directorul actualizare salvări de rezervă.
+WVER0018E.explanation=Directorul de rezervă este localizat în funcţie de proprietatea sistem java 'was.version.backup.dir' sau ca directorul 'log' al directorului de versiune.  Nici proprietatea 'was.version.backup.dir' nici directorul versiune nu sunt setate.
+WVER0018E.useraction=Asiguraţi-vă că directorul versiune este setat sau setaţi proprietatea sistem java 'was.version.backup.dir'.
+
+# 
+WVER0019E=WVER0019E: Nu s-a putut determina directorul DTD pentru informaţiile de versiune produs.
+WVER0019E.explanation=Directorul DTD este localizat în funcţie de proprietatea sistem java 'was.version.dtd.dir' sau ca directorul 'dtd' al directorului de versiune.  Nici proprietatea 'was.version.dtd.dir' nici directorul versiune nu sunt setate.
+WVER0019E.useraction=Asiguraţi-vă că directorul versiune este setat sau setaţi proprietatea sistem java 'was.version.dtd.dir'.
+
+# 
+WVER0021E=WVER0021E: Au apărut erori recuperabile la parsarea informaţiilor efix.
+WVER0021E.explanation=Erorile, a căror listă urmează, au apărut la parsarea informaţiilor efix.  Consultaţi erorile listate pentru informaţii suplimentare.
+WVER0021E.useraction=Consultaţi erorile listate pentru acţiuni utilizator sugestate.
+
+# 
+WVER0022E=WVER0022E: A apărut o eroare la citirea informaţiilor produs. Eroarea este recuperabilă; parsarea a fost continuată.  Eroare a apărut în entitatea cu ID-ul sistem {0} şi ID-ul public {1}, pe linia cu numărul {2} şi numărul de coloană {3}: {4}
+WVER0022E.explanation=Entitatea specificată are structură care nu este validă, după cum este descris de eroareaspecificată.  Totuşi, eroarea nu a fost fatală şi parsarea a fost continuată.
+WVER0022E.useraction=Fişierul specificat ar trebui revăzut şi, dacă este posibil, corectat.
+
+# 
+WVER0023E=WVER0023E: Au apărut avertismente la parsarea informaţiilor produs.
+WVER0023E.explanation=Avertismentele, a căror listă urmează, au apărut la parsarea informaţiilor produs.  Consultaţi avertismentele listate pentru informaţii suplimentare.
+WVER0023E.useraction=Consultaţi avertismentele listate pentru acţiuni utilizator sugerate.
+
+# 
+WVER0024E=WVER0024E: A apărut un avertisment la citirea informaţiilor produs. Avertismentul a apărut în entitatea cu ID-ul sistem {0} şi ID-ul public {1}, pe linia cu numărul {2} şi numărul de coloană {3}: {4}
+WVER0024E.explanation=Entitatea specificată are structură care nu este validă, după cum este descris de aertismentul specificat.  Totuşi, avertismentul nu a fost fatal şi parsarea a fost continuată.
+WVER0024E.useraction=Fişierul specificat ar trebui revăzut şi, dacă este posibil, corectat.
+
+# 
+WVER0029E=WVER0029E: Nu s-a putut înlătura corecţia efix {0} stocată în fişierul {2}.
+WVER0029E.explanation=Fişierul numit nu a putut fi înlăturat.
+WVER0029E.useraction=Asiguraţi-vă că fişierul destinaţie poate fi înlăturat.
+
+# 
+WVER0030E=WVER0030E: Au apărut erori recuperabile la parsarea informaţiilor PTF.
+WVER0030E.explanation=Erorile, a căror listă urmează, au apărut la parsarea informaţiilor PTF.  Consultaţi erorile listate pentru informaţii suplimentare.
+WVER0030E.useraction=Consultaţi erorile listate pentru acţiuni utilizator sugestate.
+
+# 
+WVER0031E=WVER0031E: Nu s-a putut înregistra aplicaţia pe PTF-ul {0} pe componenta {1} în fişierul {2}.  Fişierul numit nu a putut fi salvat.
+WVER0031E.explanation=Fişierul numit nu a putut fi salvat.
+WVER0031E.useraction=Asiguraţi-vă că fişierul destinaţie nu este protejat la scriere şi că este disponibil spaţiu pentru un nou fişier.
+
+# 
+WVER0035E=WVER0035E: Nu s-a putut înlătura PTF-ul {0} stocat în fişierul {2}.
+WVER0035E.explanation=Fişierul numit nu a putut fi înlăturat.
+WVER0035E.useraction=Asiguraţi-vă că fişierul destinaţie poate fi înlăturat.
+
+# 
+WVER0040E=WVER0040E: Directorul versiune specificat ''{0}'' nu există.
+WVER0040E.explanation=Directorul versiune nu există.
+WVER0040E.useraction=Asiguraţi-vă că directorul specificat este un director versiune produs valid.
+
+# 
+WVER0041E=WVER0041E: Directorul versiune specificat ''{0}'' nu este un director.
+WVER0041E.explanation=Directorul versiune nu este un director.
+WVER0041E.useraction=Asiguraţi-vă că directorul specificat este un director versiune produs valid.
+
+# 
+WVER0042E=WVER0042E: Directorul DTD specificat ''{0}'' nu există.
+WVER0042E.explanation=Directorul DTD nu există.
+WVER0042E.useraction=Asiguraţi-vă că directorul specificat este un director DTD produs valid.
+
+# 
+WVER0043E=WVER0043E: Directorul DTD specificat ''{0}'' nu este un director.
+WVER0043E.explanation=Directorul DTD nu este un director.
+WVER0043E.useraction=Asiguraţi-vă că directorul specificat este un director DTD produs valid.
+
+# 
+WVER0044E=WVER0044E: Directorul istoric specificat ''{0}'' nu a putut fi creat
+WVER0044E.explanation=Directorul DTD nu este un director.
+WVER0044E.useraction=Asiguraţi-vă că directorul specificat este un director DTD produs valid.
+
+# 
+WVER0045E=WVER0045E: Directorul istoric specificat ''{0}'' nu este un director.
+WVER0045E.explanation=Directorul DTD nu este un director.
+WVER0045E.useraction=Asiguraţi-vă că directorul specificat este un director DTD produs valid.
+
+# 
+WVER0046E=WVER0046E: Directorul de rezervă specificat ''{0}'' nu a putut fi creat
+WVER0046E.explanation=Directorul DTD nu este un director.
+WVER0046E.useraction=Asiguraţi-vă că directorul specificat este un director DTD produs valid.
+
+# 
+WVER0047E=WVER0047E: Directorul de rezervă specificat ''{0}'' nu este un director.
+WVER0047E.explanation=Directorul DTD nu este un director.
+WVER0047E.useraction=Asiguraţi-vă că directorul specificat este un director DTD produs valid.
+
+# 
+WVER0048E=WVER0048E: Directorul produs specificat ''{0}'' nu există.
+WVER0048E.explanation=Directorul produs nu există.
+WVER0048E.useraction=Asiguraţi-vă că directorul produs este un director produs valid.
+
+# 
+WVER0049E=WVER0049E: Directorul produs specificat ''{0}'' nu este un director.
+WVER0049E.explanation=Directorul produs nu este un director.
+WVER0049E.useraction=Asiguraţi-vă că directorul specificat este un director produs valid.
+
+
+
+
+label.standard.out=Ieşirea standard
+
+listing.nested.error={0}: {1}
+
+report.header=Raport stare instalare produs IBM WebSphere Application Server
+report.footer=Terminare raport stare instalare
+
+info.report.on=Raport la data şi ora {0}
+
+info.source=Instalare
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Director produs
+label.version.dir=Director versiune
+label.version.dtd.dir=Director DTD
+label.version.log.dir=Director istoric
+label.version.backup.dir=Director salvare de rezervă
+label.version.tmp.dir=Director TMP
+
+info.platform=Platformă instalare
+label.name=Nume
+label.version=Versiune
+
+info.technology=Listă tehnologie
+label.installed=instalat
+
+info.product=Produs instalat
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=Nivel build
+label.build.date=Dată build
+
+info.component=Componentă instalată
+label.component.name=Nume componentă
+label.spec.version=Versiune spec
+label.build.version=Versiune build
+# label.build.date=Build Date
+
+info.update.on.component=Instalat actualizare componentă
+#label.component.name=Component Name
+label.update.type=Tip actualizare
+label.update.type.efix=efix
+label.update.type.ptf=PTF
+
+label.efix.id=EFix ID
+label.ptf.id=PTF ID
+
+label.update.effect=Efect actualizare
+
+label.is.required=Este necesar
+label.is.optional=Este opţional
+
+label.is.external=Este extern
+label.root.property.file=Fişier proprietate root
+label.root.property.name=Nume proprietate root
+label.root.property.value=Valoare proprietate root
+
+label.is.custom=Este personalizat
+
+label.log.file.name=Nume fişier istoric
+label.backup.file.name=Nume fişier salvare de rezervă
+label.install.date=Dată instalare
+
+label.initial.spec.version=Versiune spec iniţială
+label.initial.build.date=Dată de build iniţială
+label.initial.build.version=Versiune de build iniţială
+
+label.final.spec.version=Versiune spec finală
+label.final.build.date=Dată de build finală
+label.final.build.version=Versiune de build finală
+
+info.extension=Instalat extensie
+# label.name=Name
+# label.id=ID
+
+info.efix=Instalat EFix
+# label.id=ID
+label.short.description=Descriere
+label.is.trial=Este demo
+label.expiration.date=Dată expirare
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Expoziţie
+
+label.apar=APAR
+label.apar.number=Număr
+label.apar.date=Dată
+label.apar.short.description=Descriere
+label.apar.long.description=Expoziţie
+
+label.supported.platforms=Platforme suportate
+label.supported.products=Platforme suportate
+
+label.efix.efix.prereqs=Cerinţe preliminare de corecţii EFix
+
+label.component.updates=Actualizări componente
+label.component.requires=Necesită {0} v {1}
+
+label.becomes=devine spec {0}, build {1} pe {2}
+
+label.custom.properties=Proprietăţi personalizate
+
+info.ptf=Instalat PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=EFix-uri incluse
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=adevărat
+label.false=fals
+
+label.is.absent=absent
+label.is.installed=instalat pe {0}
+
+label.update.effect.add=adăugare
+label.update.effect.replace=înlocuire
+label.update.effect.remove=înlăturare
+label.update.effect.patch=patch
+label.update.effect.unknown=necunoscut
+
+label.is.negative=negativ
+label.is.positive=pozitiv
+
+label.is.required.tag=necesar
+label.if.possible.tag=dacă este posibil
+label.is.optional.tag=opţional
+label.is.recommended.tag=recomandat
+
+label.is.custom.tag=actualizare personalizată
+label.is.standard.tag=actualizare standard

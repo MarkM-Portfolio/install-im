@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2006" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="Hints and Tips for the Classic Express Launchpad Template" />
+<meta name="abstract" content="The Classic Express Launchpad Template provides you with a starting point for creating a setup launchpad that you can use with Express branded products." />
+<meta name="description" content="The Classic Express Launchpad Template provides you with a starting point for creating a setup launchpad that you can use with Express branded products." />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="en-us" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>Hints and Tips for the Express Launchpad Template</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">Hints and Tips for the Classic Express Launchpad Template</h1>
+<div><p>The Classic Express Launchpad Template provides you with a starting point
+for creating a setup launchpad that you can use with Express branded products.</p>
+<p> This template has code that you can use to start a product's installation
+program, display documentation, and provide localized content.</p>
+<p>Things to note about the Classic Express Launchpad Template:</p>
+<ul><li>All commands and programs used are defined in launchpadContent/global.properties.</li>
+<li>The sample applications are included on DISK1 in the Disk Layout page.
+To add custom installation programs or applications, define the application
+in launchpadContent\global.properties (following the examples for the sample
+applications). Import the applications to the appropriate disk in the project
+using the controls found on the disk layout tab.</li>
+<li>All HTML files use the same stylesheet (content.css) which resides in
+the launchpadContent directory.</li>
+</ul>
+<p>The Classic Express Launchpad Template contains the following pages:</p>
+<ul><li><strong>Welcome</strong> - The welcome page typically provides an overview of the
+product and an explanation of the features of the launchpad.  The welcome
+page should be concise, yet offer the user options for finding more information
+about the product by offering a link to the product Web site that is displayed
+in a new browser window. The welcome page features code to bring up an external
+Web site in a browser.  Use the <samp class="codeph">viewPage()</samp> function to display
+new windows instead of JavaScript's <samp class="codeph">window.open()</samp> because <samp class="codeph">window.open()</samp> is more likely to be blocked by a popup blocker.</li>
+<li><strong>Release Information</strong> - The release information page typically provides
+information that is specific to a unique release of a product.  For example,
+installation concerns, changes in prerequisites, major features or fixes that
+have been addressed in the release, and similar content is appropriate for
+a release information page.  The release information page features code to
+view a PDF and run an application.</li>
+<li><strong>Prerequisite Information</strong> - The prerequisites page typically provides
+a control for running a prerequisites verification program that determines
+if system prerequisites exist on the computer, and returns a list of any prerequisites
+that it does not detect.  The prerequisite information page features code
+to view a PDF and run an application.</li>
+<li><strong>Installation Scenario</strong> - Installation scenarios content typically
+provides the various approaches to installing a product that a user can take.
+Users can choose a specific installation scenario based on the way that he
+or she intends to use the product.  This content explains the differences
+in various installation scenarios that a user can choose, and provides information
+about why a user would choose one installation scenario over any other.  Not
+every product features installation scenarios.  If you are customizing the
+Classic Express Launchpad Template for such a product, you can remove this
+section from the navigation. The installation scenarios page features code
+to run a custom program with an argument.</li>
+<li><strong>Migration Information</strong> - Migration content typically explains a
+migration path that a user needs to take to upgrade from an earlier version
+of a product to a newer one. If migration information is not relevant to a
+specific product, this content should be removed from the navigation. The
+migration information page features code to view a PDF and run an application.</li>
+<li><strong>Install</strong> - The product installation page typically provides a control
+for initiating a product installation. You can add multiple product installation
+pages to a setup launchpad to support the installations of multiple products.
+The installation page features code to start a product installation.</li>
+<li><strong>Exit</strong> - The exit link on the navigation menu exits the launchpad.</li>
+</ul>
+</div>
+</body>
+</html>

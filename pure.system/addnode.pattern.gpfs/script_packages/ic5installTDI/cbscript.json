@@ -1,0 +1,15 @@
+[
+   {
+      "command": "\/tmp\/ic5installTDI\/ic5installTDI.sh",
+      "commandargs": "auto",
+      "description": "This script package installs TDI 7.1.1 for IBM Connections 5.0",
+      "execmode": 3,
+      "filename": "ic5installTDI.zip",
+      "location": "\/tmp\/ic5installTDI",
+      "log": "\/tmp\/ic5installTDI\/logs",
+      "name": "ic5installTDI",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION"
+   }
+]

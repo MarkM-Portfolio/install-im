@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WASHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WASProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WASHistory.java:
+#
+WVER0201E=WVER0201E: Nelze určit adresář historie; adresář produktu nebylo možné určit
+WVER0201E.explanation=Adresář historie je podadresář adresáře produktu. Viz vysvětlení chyby, která nastala při určení adresáře produktu, kde jsou další informace.
+WVER0201E.useraction=Postupujte podle pokynů, které se objeví u chyby verze.
+
+# 
+WVER0202E=WVER0202E: Nelze zavést informace o historii
+WVER0202E.explanation=Informace o historii nebylo možné zavést ze souboru historie {0}. Konkrétní podrobnosti jsou podle chyby, která nastala.
+WVER0202E.useraction=Ujistěte se, že soubor historie je čitelný a má správný formát.
+
+# 
+WVER0203E=WVER0203E: Došlo k výjimce při čtení {0}
+WVER0203E.explanation=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+WVER0203E.useraction=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+
+# 
+WVER0204E=WVER0204E: Došlo k výjimce při vytváření adresáře historie {0}
+WVER0204E.explanation=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+WVER0204E.useraction=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+
+# 
+WVER0205E=WVER0205E: Došlo k výjimce při vytváření zálohy souboru historie {0} do {1}
+WVER0205E.explanation=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+WVER0205E.useraction=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+
+# 
+WVER0206E=WVER0206E: Došlo k výjimce při zápisu historie události {0}
+WVER0206E.explanation=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+WVER0206E.useraction=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Všechna práva vyhrazena.
+WVER0210I.explanation=Toto je standardní prohlášení o autorských právech.
+WVER0210I.useraction=Není potřeba žádná akce uživatele. Toto je informativní zpráva.
+
+# 
+WVER0211I=WVER0211I: Aplikační server WebSphere Application Server verze 5.0
+WVER0211I.explanation=Toto je standardní prohlášení o popisu produktu.
+WVER0211I.useraction=Není potřeba žádná akce uživatele. Toto je informativní zpráva.
+
+# 
+WVER0212I=WVER0212I: Verze vykazujícího modulu HistoryInfo {0}, datovaná {1}
+WVER0212I.explanation=Toto je standardní prohlášení o popisu modulu.
+WVER0212I.useraction=Není potřeba žádná akce uživatele. Toto je informativní zpráva.
+
+# 
+WVER0225E=WVER0225E: Pro argument ''{0}'' nebyla zadaná žádná hodnota
+WVER0225E.explanation=Uvedený argument vyžaduje hodnotu. (K zobrazení informací o používání zvolte '-help' nebo '-usage'.)
+WVER0225E.useraction=Zadejte hodnotu pro uvedený argument.
+
+# 
+WVER0226E=WVER0226E: Hodnota ''{0}'' není platnou hodnotou formátu.
+WVER0226E.explanation=Platné hodnoty formátu jsou 'text' a 'html'. Zadaná hodnota není žádnou z těchto hodnot. (K zobrazení informací o používání zvolte '-help' nebo '-usage'.)
+WVER0226E.useraction=Změňte hodnotu formátu na některou z platných hodnot, 'text' nebo 'html'.
+
+# 
+WVER0228E=WVER0228E: Argument ''{0}'' není platným argumentem.
+WVER0228E.explanation=Zadaný argument není platný. (K zobrazení informací o používání zvolte '-help' nebo '-usage'.)
+WVER0228E.useraction=Změňte argument na platný.
+
+# 
+WVER0230I=WVER0230I: Použití: historyInfo ( [ -format <text | html> ] [ -file <výstupní soubor> ] [ -updateId <ID_aktualizace> ] [ -component <název_komponenty> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Tato informativní zpráva popisuje argumenty pro obslužný program historyInfo. Obslužný program historyInfo přijímá pět nepovinných argumentů s klíčovým slovem, z nichž  jeden popisuje výstupní formát, jeden zadává výstupní soubor, jeden zobrazuje pouze události pojící se se zadanou opravou efix, jeden zobrazuje pouze události pojící se zadanou komponentou a jeden používaný k zobrazení informací o používání. (K zobrazení dalších informací použijte '-usage' nebo '-help'.)
+WVER0230I.useraction=Není potřeba žádná akce uživatele. Informační zpráva o použití se zobrazí na požádání.
+
+# 
+WVER0231I=WVER0231I: Argument '-format' se používá k zadání výstupního formátu, který musí být zadán buď jako 'text', nebo 'html'. Argument '-file' se používá k zadání výstupního souboru. Název souboru musí být zadán. Argument '-updateId' se používá k zadání ID aktualizace, což omezí zobrazované události. Argument '-component' se používá k zadání názvu komponenty, což omezí zobrazované události. Argument '-help' se používá k zobrazení informace o verzi. Argument '-usage' se používá k zobrazení této informativní zprávy.
+WVER0231I.explanation=Zpráva popisuje platné argumenty pro obslužný program versionInfo.
+WVER0231I.useraction=Není potřeba žádná akce uživatele. Informační zpráva o použití se zobrazí na požádání.
+
+# 
+WVER0240E=WVER0240E: Chyba při zápisu zprávy o verzi do {0}: {1}
+WVER0240E.explanation=Uvedená chyba se vyskytla při zápisu sestavy historie do uvedeného souboru.
+WVER0240E.useraction=Nápravná akce závisí na konkrétních vlastnostech chyby, k níž došlo. Zejména zkontrolujte, zda je zadaný soubor schopný zápisu a zda je pro sestavu dostupný dostatečný prostor.
+
+# 
+WVER0241E=WVER0241E: Chyba při zápisu sestavy historie do {0}. Text chyby nelze zobrazit, je však typu {1}. Druhá chyba, typu {2}, nastala při načítání textu chyby.
+WVER0241E.explanation=Došlo k chybě při zápisu sestavy historie do zadaného souboru. Vyskytla se druhá chyba při načítání textu chyby.
+WVER0241E.useraction=Není k dispozici žádná akce uživatele. Zopakujte požadovanou činnost, nebo kontaktujte podporu, kde dostanete další pomoc.
+
+# 
+WVER0242E=WVER0242E: Došlo k výjimce při zpracování informace o historii
+WVER0242E.explanation=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+WVER0242E.useraction=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+
+# 
+WVER0243E=WVER0243E: Došlo k výjimkám při zpracování informace o historii
+WVER0243E.explanation=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+WVER0243E.useraction=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+
+# 
+WVER0261E=WVER0261E: Nelze zaznamenat aplikaci opravy efix {0} na komponentě {1} v souboru {2}. Pojmenovaný soubor nebylo možné uložit.
+WVER0261E.explanation=Pojmenovaný soubor nebylo možné uložit.
+WVER0261E.useraction=Zajistěte, aby cílový soubor byl schopný zápisu a aby pro nový soubor byl dostupný prostor.
+
+# 
+WVER0262E=WVER0262E: Nelze zaznamenat odebrání aplikace opravy efix {0} na komponentě {1} v souboru {2}. Pojmenovaný soubor nebylo možné uložit.
+WVER0262E.explanation=Pojmenovaný soubor nebylo možné uložit.
+WVER0262E.useraction=Zajistěte, aby cílový soubor byl schopný zápisu a aby pro nový soubor byl dostupný prostor.
+
+# 
+WVER0263E=WVER0263E: Nelze zaznamenat odebrání aplikace opravy {0} na komponentě {1} uložené v souboru {2}. Pojmenovaný soubor nebylo možné odebrat.
+WVER0263E.explanation=Pojmenovaný soubor nebylo možné odebrat.
+WVER0263E.useraction=Zajistěte, aby cílový soubor bylo možné odebrat.
+
+# 
+WVER0264E=WVER0264E: Nelze zaznamenat odebrání aplikace opravy efix {0} z komponenty {1} -- v záznamu není žádná aplikace.
+WVER0264E.explanation=Komponenta nemá žádný záznam o aplikaci zadané opravy eFix. Informace o produktu může být poškozena, nebo mohlo dojít k interní chybě
+WVER0264E.useraction=Potřebujete-li další informace, kontaktujte podporu.
+
+# 
+WVER0265E=WVER0265E: Nelze odebrat ovladač opravy efix {0} uložený v souboru {2}.
+WVER0265E.explanation=Pojmenovaný soubor nebylo možné odebrat.
+WVER0265E.useraction=Zajistěte, aby cílový soubor bylo možné odebrat.
+
+# 
+WVER0266E=WVER0266E: Vyskytly se nenapravitelné chyby při analýze informace o ovladači PTF.
+WVER0266E.explanation=Chyby, jejichž seznam následuje, se vyskytly při analýze informace PTF. Další informace naleznete v uvedených chybách.
+WVER0266E.useraction=Navrhované akce uživatele naleznete v uvedených chybách.
+
+# 
+WVER0267E=WVER0267E: Nelze zaznamenat odebrání aplikace PTF {0} na komponentě {1} v souboru {2}. Pojmenovaný soubor nebylo možné uložit.
+WVER0267E.explanation=Pojmenovaný soubor nebylo možné uložit.
+WVER0267E.useraction=Zajistěte, aby cílový soubor byl schopný zápisu a aby pro nový soubor byl dostupný prostor.
+
+# 
+WVER0268E=WVER0268E: Nelze zaznamenat odebrání aplikace PTF {0} na komponentě {1} uložené v souboru {2}. Pojmenovaný soubor nebylo možné odebrat.
+WVER0268E.explanation=Pojmenovaný soubor nebylo možné odebrat.
+WVER0268E.useraction=Zajistěte, aby cílový soubor bylo možné odebrat.
+
+# 
+WVER0269E=WVER0269E: Nelze zaznamenat odebrání aplikace PTF {0} z komponenty {1} -- v záznamu není žádná aplikace.
+WVER0269E.explanation=Komponenta nemá žádný záznam o aplikaci zadaného PTF. Informace o produktu může být poškozena, nebo mohlo dojít k interní chybě
+WVER0269E.useraction=Potřebujete-li další informace, kontaktujte podporu.
+
+# 
+WVER0270E=WVER0270E: Nelze odebrat ovladač PTF {0} uložený v souboru {2}.
+WVER0270E.explanation=Pojmenovaný soubor nebylo možné odebrat.
+WVER0270E.useraction=Zajistěte, aby cílový soubor bylo možné odebrat.
+
+# 
+WVER0271E=WVER0271E: Nerozpoznaná přípona souboru historie produktu ''{0}''.
+WVER0271E.explanation=Při načítání informace o historii je tato informace uložena v souborech, které mají konkrétní přípony. Tyto přípony určují typ informace uložené v každém souboru. Platnými příponami jsou '.efixDriver', '.efixApplied', '.ptfDriver' a '.ptfApplied'. Byl učiněn pokus o načtení souboru obsahujícího informace o verzi, kde přípona názvu souboru není jednou z platných přípon.
+WVER0271E.useraction=To ukazuje na interní chybu.
+
+# 
+WVER0272E=WVER0272E: Došlo k výjimce při čtení {0}
+WVER0272E.explanation=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+WVER0272E.useraction=Podívejte se na vnořené podrobnosti o výjimce, kde jsou další informace.
+
+label.standard.out=Standardní výstup
+
+listing.nested.error={0}: {1}
+
+report.header=Sestava historie aplikačního serveru WebSphere Application Server
+report.header.update=Sestava historie aplikačního serveru WebSphere Application Server pro aktualizaci {0}
+report.header.component=Sestava historie aplikačního serveru WebSphere Application Server pro komponentu {0}
+report.header.update.component=Sestava historie aplikačního serveru WebSphere Application Server pro aktualizaci {0} a komponentu {1}
+
+warning.no.events=Varování: K dispozici nejsou žádné události.
+warning.no.events.for.component=Varování: Pro komponentu {0} nejsou k dispozici žádné události.
+warning.no.events.for.update=Varování: Pro aktualizaci {0} nejsou k dispozici žádné události.
+warning.no.events.for.update.component=Varování: Pro aktualizaci {0} a komponentu {1} nejsou k dispozici žádné události.
+
+info.report.on=Sestava k datu a času {0}
+
+report.footer=Konec sestavy historie
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Instalace
+label.product.dir=Adresář produktu
+label.version.dir=Adresář verze
+label.version.dtd.dir=Adresář DTD
+label.version.log.dir=Adresář protokolu
+label.version.backup.dir=Záložní adresář
+label.version.tmp.dir=Adresář TMP
+label.version.history.dir=Adresář historie
+label.version.history.file=Soubor historie
+
+info.event=Instalační událost
+info.component.event=Instalační událost komponenty
+
+label.efix.id=ID opravy eFix
+label.ptf.id=ID PTF
+label.unknown.id=Neznámé ID
+
+label.action=Akce
+
+label.start.time.stamp=Čas zahájení
+label.end.time.stamp=Čas ukončení
+
+label.log.file.name=Název protokolového souboru
+
+
+label.component.name=Název komponenty
+
+label.is.custom=Je vlastní
+label.primary.content=Primární obsah
+
+label.update.type=Aktualizovat akci
+
+label.is.external=Je externí
+label.root.property.file=Soubor kořenové vlastností
+label.root.property.name=Název kořenové vlastnosti
+label.root.property.value=Hodnota kořenové vlastnosti
+
+label.backup.file.name=Název záložního souboru
+label.result=Výsledek
+label.result.message=Výsledná zpráva
+
+label.initial.version=Počáteční verze
+label.initial.spec.version=Počáteční specifikace
+label.initial.build.date=Počáteční datum sestavení
+
+label.final.version=Konečná verze
+label.final.spec.version=Specifikace konečné verze
+label.final.build.date=Konečné datum sestavení
+
+
+label.install.action=instalovat
+label.uninstall.action=odinstalovat
+label.selective.install.action=selektivně instalovat
+label.selective.uninstall.action=selektivně odinstalovat
+label.unknown.action=*** NEZNÁMÁ ČINNOST UDÁLOSTI ***
+
+label.update.add.tag=přidat
+label.update.replace.tag=nahradit
+label.update.remove.tag=odebrat
+label.update.patch.tag=oprava
+label.update.composite.tag=složený
+label.update.unknown.tag=*** NEZNÁMÝ TYP AKTUALIZACE ***
+
+label.result.succeeded.tag=proběhlo úspěšně
+label.result.failed.tag=selhalo
+label.result.cancelled.tag=stornováno
+label.result.unknown.tag=*** NEZNÁMÝ VÝSLEDEK UDÁLOSTI ***
+
+label.true=true
+label.false=false

@@ -1,0 +1,32 @@
+[
+   {
+      "command": "\/tmp\/ic5prepareDB2\/ic5prepareDB2.sh",
+      "commandargs": "auto",
+      "description": "This script package installs the specified application",
+      "execmode": 3,
+      "filename": "ic5prepareDB2.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         }
+      ],
+      "location": "\/tmp\/ic5prepareDB2",
+      "log": "\/tmp\/ic5prepareDB2\/logs",
+      "name": "ic5prepareDB2",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

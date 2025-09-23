@@ -1,0 +1,28 @@
+### Importing new Pattern for GIS_IC5_System_Pattern
+#
+Description:
+In the actual state of pattern development it is important, to follow the instructions for importing new pattern.
+While importing new pattern versions over existing pattern/script packages, it may be that packages will not be overwritten with the new versions,
+so it may results in inconsistence ....
+
+The best and safest way is:
+- Delete the System Pattern itself first, than delete all script-packages and addons, which are part of the pattern.
+- Delete or backup Property-File on NFS Server in /nfsshare/pureshare/config/<project-name>/i5pattern.properties
+	( this is an important step, while developing the pattern, there are many major changes in this file )
+- Delete the IBM Connections Shared Directory!! --> /nfsshare/icdata/<project-name>
+- Import the new version pattern....
+- Change IP Adresses of NFS Server in all pattern PARTS to YOUR NFS Server. Maybe edit the PROJECTNAME variable....
+- Deploy....
+
+Update 1.08.2014: 
+We now have implemented the WAS & IC Fix installation. The WAS Fixes are part of the sctipt package, but the IC fixes are outside of the packages.
+You have to download the fixes from software account ( riedel )  an place them to the NFS dir: <SHARE>/icfixes/ ....
+
+Update 6.08.2014:
+1) There is a new fix available, which replaces one of the former Fix Package. You should download the two fixes from RIEDEL account and place them to the
+    <SHARE>/icfixes directory.... The two fixes have to be: 
+    5.0.0.0-IC-Multi-IFLO80688.jar
+    5.0.0.0-IC-Multi-IFLO80990.jar
+
+2) It is mandatory, if you use two deployments of the "Core" Pattern, that you use two different "PROJECTNAMES", as the IC shared directory will conflicts with
+    the first CORE pattern deployment....

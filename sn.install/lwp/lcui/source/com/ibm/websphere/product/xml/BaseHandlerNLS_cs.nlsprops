@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Při zavádění dokumentu {1} pomocí adresáře DTD {0} došlo k výjimce
+WVER0101E.explanation=Označená výjimka způsobila, že zavedení specifikovaného dokumentu selhalo.
+WVER0101E.useraction=Konkrétní akce uživatele závisejí na výjimce, k níž došlo. Zejména zkontrolujte, zda je specifikovaný soubor dostupný a zda má náležitý formát. Potřebujete-li další informace, kontaktujte podporu.
+
+# 
+WVER0102E=WVER0102E: Při zavádění dokumentu {1} pomocí adresáře DTD {0} došlo k výjimce. Bylo nastaveno systémové ID {2} a veřejné ID {3}. Došlo k chybě na řádku číslo {4} a ve sloupci číslo {5}.
+WVER0102E.explanation=Označená výjimka způsobila, že zavedení specifikovaného dokumentu selhalo.
+WVER0102E.useraction=Konkrétní akce uživatele závisejí na výjimce, k níž došlo. Zejména zkontrolujte, zda je specifikovaný soubor dostupný a zda má náležitý formát. Potřebujete-li další informace, kontaktujte podporu.
+
+# 
+WVER0104E=WVER0104E: Při vytváření prvku kořenového dokumentu typu {0} došlo k výjimce
+WVER0104E.explanation=Označená výjimka nastala při vytváření prvku kořenového dokumentu.
+WVER0104E.useraction=Konkrétní akce uživatele závisejí na výjimce, k níž došlo. Nejčastěji je neplatná konfigurace syntaktického analyzátoru XML. Přesvědčte se, že vlastnosti systému java nevytvářejí neplatnou konfiguraci syntaktického analyzátoru. Potřebujete-li další informace, kontaktujte podporu.
+
+# 
+WVER0105E=WVER0105E: Při vytváření modelového objektu XML (typu {0}) došlo k výjimce
+WVER0105E.explanation=Označená výjimka nastala při pokusu o vytvoření modelového objektu XML.
+WVER0105E.useraction=Konkrétní akce uživatele závisejí na výjimce, k níž došlo. Nejčastěji není označený typ na nastavené cestě třídy dostupný. Potřebujete-li další informace, kontaktujte podporu.
+
+# 
+WVER0106E=WVER0106E: Byl učiněn pokus o umístění prvku do objektu, který je jednoduchého typu {0}
+WVER0106E.explanation=Jedná se o interní chybu.
+WVER0106E.useraction=Potřebujete-li další informace, kontaktujte podporu.
+
+# 
+WVER0107E=WVER0107E: Při pokusu o zápis informace o verzi do souboru {0} došlo k výjimce
+WVER0107E.explanation=Označená výjimka nastala při pokusu o zápis do specifikovaného souboru.
+WVER0107E.useraction=Konkrétní akce uživatele závisejí na výjimce, k níž došlo. Zejména zkontrolujte, zda je specifikovaný soubor schopný zápisu a zda je pro označený soubor dostupný dostatečný prostor.
+
+# 
+WVER0108E=WVER0108E: Při rozlišování entity s veřejným ID {0}, systémovým ID {1} a s názvem mapovaného souboru {2} došlo k výjimce
+WVER0108E.explanation=Označená výjimka nastala při rozpoznání informace DTD v probíhající analýze informace o produktu. Označené DTD nebylo možné rozpoznat.
+WVER0108E.useraction=Konkrétní akce uživatele závisejí na výjimce, k níž došlo.
+
+# 
+WVER0201E=WVER0201E: Chybějící atribut ''{0}'' v prvku typu ''{1}''
+WVER0201E.explanation=Pojmenovaný atribut není platným atributem specifikovaného typu prvku.
+WVER0201E.useraction=Aktualizujte soubor XML a opravte informaci o atributu.
+
+#
+WVER0202E=WVER0202E: Nevyrovnaná struktura prvku: Dodatečná uzavření prvku.
+WVER0202E.explanation=Soubor XML, který obsahuje informace o produktu, má nesprávnou strukturu prvku.
+WVER0202E.useraction=Aktualizujte soubor XML, a tím opravíte strukturu prvku.
+
+#
+WVER0203E=WVER0203E: Nevyrovnaná struktura prvku: Chybí uzavření prvku.
+WVER0203E.explanation=Soubor XML, který obsahuje informace o produktu, má nesprávnou strukturu prvku.
+WVER0203E.useraction=Aktualizujte soubor XML, a tím opravíte strukturu prvku.
+
+#
+WVER0204E=WVER0204E: Prvek ''{0}'' není platný jako kořenový prvek
+WVER0204E.explanation=Soubor XML, který obsahuje informace o produktu, má nesprávnou strukturu prvku.
+WVER0204E.useraction=Aktualizujte soubor XML, a tím opravíte strukturu prvku.
+
+#
+WVER0205E=WVER0205E: Prvek ''{0}'' není platný v prvku ''{1}''
+WVER0205E.explanation=Soubor XML, který obsahuje informace o produktu, má nesprávnou strukturu prvku.
+WVER0205E.useraction=Aktualizujte soubor XML, a tím opravíte strukturu prvku.
+
+#
+WVER0206E=WVER0206E: Pokus o zavření prvku ''{0}'', zatímco je v prvku ''{1}''
+WVER0206E.explanation=Soubor XML, který obsahuje informace o produktu, má nesprávnou strukturu prvku.
+WVER0206E.useraction=Aktualizujte soubor XML, a tím opravíte strukturu prvku.

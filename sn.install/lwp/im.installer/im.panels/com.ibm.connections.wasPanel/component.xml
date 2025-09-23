@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="im.installer/im.panels/com.ibm.connections.wasPanel" description="wasConfiguration" spec-version="${app.comp.version}" disabled="false">
+	<output-group name="dist">
+		<output type="jar" visibility="public" platform="all" location="${env.LWP_COMP_BUILD}/lib/com.ibm.connections.wasPanel.jar"/>
+	</output-group>
+	
+	<dependency name="im.installer/im.panels/com.ibm.connections.panelUtil" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.panelUtil/lib" type="jar" version="${app.comp.version}" />
+	<dependency name="prereq.depcheck" type="jar" version="6.0" />
+	<dependency name="prereq.able" type="jar" version="1.0" />
+</component>

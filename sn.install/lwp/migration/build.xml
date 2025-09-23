@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited 2007, 2021                     -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="migration" default="development" basedir=".">
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+	<import file="${env.WPLC_IMPORT}/copyright.xml"/>
+	<import file="${env.WPLC_IMPORT}/clean.xml"/>
+	<import file="${env.WPLC_IMPORT}/check.xml"/>
+	<import file="${env.WPLC_IMPORT}/ismp_targets.xml" />
+	<import file="${env.WPLC_IMPORT}/nojavadoc.xml" />
+
+	<target name="development" description="Performs a developement build of a single component." depends="make_jar_file"/>
+	<target name="production" description="Performs a production build of a single component." depends="make_jar_file"/>
+
+	<target name="default">
+		<antcall target="make_jar_file"></antcall>
+	</target>
+	<target name="init">
+		<locateComponent component="migration" property="migration" locatebuilddir="true" />
+
+		<property name="dir.base" value="${basedir}" />
+		<property name="dir.base.src" value="${dir.base}/source" />
+		<property name="dir.base.resource" value="${dir.base}/resources" />
+		<property name="dir.base.cdfiles" value="${dir.base}/cdfiles" />
+
+		<property name="path.build" value="." />
+
+		<property name="dir.build.base" value="${dir.build}" />
+		<property name="dir.build.jarbase" value="${dir.build.base}/jarbase" />
+		<property name="dir.build.cdfiles" value="${dir.build.base}/cdfiles" />
+		<property name="dir.build.lib" value="${dir.build.cdfiles}/lib" />
+		<property name="dir.build.zip" value="${env.BUILD_HOME}/WebKits/migration" />
+		<property name="name.zip" value="Migration.zip" />
+		<property name="name.jar" value="lc_migration.jar" />
+		<property name="file.build.jar" location="${dir.build.lib}/${name.jar}" />
+		<property name="file.build.zip" location="${dir.build.zip}/${name.zip}" />
+
+		<property name="dir.migration.xslt" value="${dir.build}/../im.installer/im.assembler/setup/xslt" />
+
+<!--		<antcall target="crConvert_1to3">
+			<param name="dir.ToConvert" value="${dir.base}" />
+		</antcall>
+-->
+	</target>
+
+	<!-- compile -->
+	<target name="compile" depends="init">
+		<delete dir="${dir.build.jarbase}" failonerror="false" />
+		<mkdir dir="${dir.build.jarbase}" />
+		<copy todir="${dir.build.jarbase}">
+			<fileset dir="${dir.base.resource}">
+				<include name="**/*.properties" />
+				<include name="**/*.JPG" />
+				<include name="**/*.GIF" />
+				<include name="**/*.filter"/>
+				<include name="**/*.py"/>
+				<!--<exclude name="**/*_*.properties"/>-->
+			</fileset>
+		</copy>
+		<!--<copy todir="${dir.build.jarbase}">
+			<fileset dir="${dir.base.resource}">
+				<include name="**/*_en.properties"/>
+			</fileset>
+		</copy>-->
+		<javac srcdir="${dir.base.src}" destdir="${dir.build.jarbase}" classpath="${path.build}" fork="yes" verbose="no" executable="${env.JAVA_HOME}/bin/javac">
+			<!--<compilerarg value="-deprecation"/>-->
+		</javac>
+	</target>
+
+	<!-- copy cd files -->
+	<target name="copy_cd_files" depends="compile">
+		<delete dir="${dir.build.cdfiles}" failonerror="false" />
+		<mkdir dir="${dir.build.cdfiles}" />
+		<copy todir="${dir.build.cdfiles}">
+			<fileset dir="${dir.base.cdfiles}">
+				<include name="**/**" />
+				<exclude name="**/.copyarea.db" />
+			</fileset>
+		</copy>
+		<antcall target="format_sh_files"></antcall>
+	</target>
+
+
+	<!-- make jar -->
+	<target name="make_jar_file" depends="copy_cd_files">
+		<mkdir dir="${dir.build.lib}"/>
+		<jar basedir="${dir.build.jarbase}" destfile="${file.build.jar}" />
+
+		<delete dir="${dir.build.base}/tmp" failonerror="false" />
+		<mkdir dir="${dir.build.base}/tmp/migration"/>
+		<mkdir dir="${dir.build.base}/tmp/migration/xslt"/>
+		<copy todir="${dir.build.base}/tmp/migration">
+			<fileset dir="${dir.build.cdfiles}">
+				<include name="**/**" />
+				<exclude name="**/.copyarea.db" />
+			</fileset>
+		</copy>
+		<echo file="${dir.build}/migration.properties">
+dir=${dir.migration.xslt}
+migration=${migration}
+		</echo>
+		<copy todir="${dir.build.base}/tmp/migration/xslt">
+			<fileset dir="${dir.migration.xslt}">
+				<include name="**/**" />
+			</fileset>
+		</copy>
+
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/tools/migration">
+			<fileset dir="${dir.build.base}/tmp/migration" />
+		</copy>
+	</target>
+
+	<!-- format sh -->
+	<target name="format_sh_files" >
+		<fixcrlf srcdir="${dir.build.cdfiles}" eol="lf" includes="**/*.sh"/>
+		<chmod dir="${dir.build.cdfiles}" includes="**/*.sh" perm="777"/>
+	</target>
+
+	<!-- zip
+	<target name="make_zip_file" depends="make_jar_file">
+		<delete file="${dir.build.zip}" failonerror="false" />
+		<mkdir dir="${dir.build.zip}"/>
+		<zip basedir="${dir.build.cdfiles}" destfile="${file.build.zip}" includes="**" />
+	</target>
+	-->
+</project>

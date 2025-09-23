@@ -1,0 +1,15 @@
+[
+  {
+      "name": "GPFS Install - 1.0.0.3",
+      "version": "1.0.0.3",
+      "description": "This script package installs the GPFS version 3.5.0-17.",
+      "command": "python /tmp/gpfs/gpfsInstall/gpfsInstall.py",
+      "log": "/tmp/gpfs/gpfsInstall/logs",
+      "location": "/tmp/gpfs/gpfsInstall/",
+      "timeout": "1800000",
+      "commandargs": "",
+      "keys":
+      [
+      ]
+  }
+]

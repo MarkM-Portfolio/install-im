@@ -1,0 +1,216 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- <property name="war.work.dir" value="${WpsInstallLocation}/config/tmp"/>    -->
+
+<target name="action-determine-war-work-dir">
+  <condition property="war.work.dir" value="c:/wartmp">
+      <os family="windows"/>
+  </condition>
+
+  <property name="war.work.dir" value="${java.io.tmpdir}"/>
+
+   
+</target>
+
+         
+<target name="action-check-update-war-parameters">
+ <fail message="'iFixValue' not specified (value='${iFixValue}')" unless="iFixValue"/>
+ <fail message="'iFixWarLocation' not specified (value='${iFixWarLocation}')" unless="iFixWarLocation"/>
+ <fail message="'iFixWarName' not specified (value='${iFixWarName}')" unless="iFixWarName"/>
+ <fail message="'serviceJarName' not specified (value='${serviceJarName}')" unless="serviceJarName"/>
+</target>
+
+<target name="action-check-unconfig-war-parameters">
+ <fail message="'iFixValue' not specified (value='${iFixValue}')" unless="iFixValue"/>
+ <fail message="'iFixWarLocation' not specified (value='${iFixWarLocation}')" unless="iFixWarLocation"/>
+ <fail message="'iFixWarName' not specified (value='${iFixWarName}')" unless="iFixWarName"/>
+</target>
+
+
+
+<target name="action-check-config-update-war-parameter-values">
+     <condition property="iFixWarFilePresent">
+        <available file="${iFixWarLocation}/${iFixWarName}"/>
+    </condition>
+    <condition property="serviceJarNamePresent">
+        <available file="${serviceJarName}"/>
+    </condition>
+    <fail message="'War location and War Name do not point to valid location'  (value='${iFixWarLocation}/${iFixWarName}')" unless="iFixWarFilePresent"/>
+    <fail message="'serviceJarName' does not point to valid location (value='${serviceJarName}')" unless="serviceJarNamePresent"/>
+</target>
+
+<target name="action-check-unconfig-war-parameter-values">
+    <condition property="iFixWarFilePresent">
+        <available file="${iFixWarLocation}/${iFixWarName}"/>
+    </condition>
+    <fail message="'War location and War Name do not point to valid location'  (value='${iFixWarLocation}/${iFixWarName}')" unless="iFixWarFilePresent"/>
+</target>
+
+
+<target name="process-war-changes" depends="action-determine-war-work-dir" >
+  <antcall target="action-check-update-war-parameters" />
+  <antcall target="action-check-config-update-war-parameter-values" />
+  <copy file="${iFixWarLocation}/${iFixWarName}" tofile="${WpsInstallLocation}/config/fixes/backup/${iFixValue}/${iFixWarName}" overwrite="false"/>
+  <antcall target="action-clean-temp-directories" />
+  <antcall target="action-create-working-ear" />
+  <antcall target="action-collapse-the-War" />
+  
+  <antcall target="action-get-signed-jar" />
+ 
+
+  
+  <antcall target="action-expand-the-War-All" />
+  <antcall target="action-signed-jar" />
+  <antcall target="action-copy-signed-jar" />
+  
+  <antcall target="action-unjar-changes-and-copy" />
+  <antcall target="action-collapse-the-War-after-update" />
+  <antcall target="action-expand-the-War-after-update" />
+  <antcall target="action-copy-updated-war" />
+  <antcall target="action-clean-temp-directories" />
+ 
+</target>
+
+<target name="process-unconfig-war-changes">
+  <antcall target="action-check-unconfig-war-parameters" />
+  <antcall target="action-check-unconfig-war-parameter-values" />
+  <copy file="${WpsInstallLocation}/config/fixes/backup/${iFixValue}/${iFixWarName}" tofile="${iFixWarLocation}/${iFixWarName}" overwrite="true"/>
+</target>
+
+
+<target name="action-clean-temp-directories" >
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}" />
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_Collapse" />
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll" />
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_Changes" />
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_Temp_Changes" />
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandWar" />
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandSignedJar" />
+</target>
+
+
+<target name="action-create-working-ear" >
+  <mkdir dir="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF" />
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="false"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[<!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN" "http://java.sun.com/dtd/application_1_3.dtd">]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[<application id="Application_ID">]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[ <display-name>appearance_war</display-name>]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[<module id="WebModule_1116885854969">]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[ <web>]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[<web-uri>appearance.war</web-uri>]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[<context-root>/wps/PA_1_0_3H</context-root>]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[</web>]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[</module>]]></concat>
+  <concat destfile="${war.work.dir}/${iFixValue}_${iFixWarName}/META-INF/application.xml" append="true"><![CDATA[</application>]]></concat>
+  <copy file="${iFixWarLocation}/${iFixWarName}" todir="${war.work.dir}/${iFixValue}_${iFixWarName}" />
+</target>
+            
+<target name="action-collapse-the-War" >
+   <echo message="action-collapse-the-War"/>
+   <exec executable="${WasHome}/bin/EARExpander${was.platform.script.ext}" dir="${WasHome}/bin" failonerror="yes"> 
+   <arg value="-ear"/>
+   <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}_Collapse/${iFixWarName}.ear"/>
+   <arg value="-operationDir" />
+   <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}" />
+   <arg value="-operation"/>
+   <arg value="collapse"/>
+  </exec>
+</target>
+
+<target name="action-collapse-the-War-after-update" >
+   <echo message="action-collapse-the-War-after-update"/>
+   <exec executable="${WasHome}/bin/EARExpander${was.platform.script.ext}" dir="${WasHome}/bin" failonerror="yes"> 
+   <arg value="-ear"/>
+   <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}_Collapse/${iFixWarName}_updated.ear"/>
+   <arg value="-operationDir" />
+   <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll" />
+   <arg value="-operation"/>
+   <arg value="collapse"/>
+  </exec>
+</target>
+
+
+ 
+<target name="action-get-signed-jar" if="getSignedJarLocationAndName" >
+    <echo message="action-get-signed-jar"/>
+    <unjar src="${iFixWarLocation}/${iFixWarName}"  dest="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandSignedJar" /> 
+
+</target>
+
+
+<target name="action-expand-the-War-All" >
+    <echo message="action-expand-the-War-All"/>
+    <exec executable="${WasHome}/bin/EARExpander${was.platform.script.ext}" dir="${WasHome}/bin" failonerror="yes"> 
+    <arg value="-ear"/>
+    <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}_Collapse/${iFixWarName}.ear"/>
+    <arg value="-operationDir" />
+    <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll" />
+    <arg value="-operation"/>
+    <arg value="expand"/>
+   </exec>
+</target>
+
+<target name="action-signed-jar" if="signedJarLocationAndName">
+  <echo message="action-signed-jar"/>
+  <available file="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}/${signedJarLocationAndName}/META-INF/MANIFEST.MF"            property="signedJarLocationAndNameExists"  />  
+   <fail message="'signedJarLocationAndName' does not exist specified (value='${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}/${signedJarLocationAndName}/META-INF/MANIFEST.MF')" unless="signedJarLocationAndNameExists"/>
+   <unjar src="${serviceJarName}"  dest="${war.work.dir}/${iFixValue}_${iFixWarName}_Temp_Changes" /> 
+   <available file="${war.work.dir}/${iFixValue}_${iFixWarName}_Temp_Changes/${signedJarLocationAndName}"            property="signedJarChangesExist"  />  
+   <fail message="'signed Jar changes ' do not exist specified (value='${war.work.dir}/${iFixValue}_${iFixWarName}_Temp_Changes/${signedJarLocationAndName}')" unless="signedJarChangesExist"/>
+  <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}/${signedJarLocationAndName}" failonerror="true" />  
+</target>
+
+<target name="action-copy-signed-jar" if="getSignedJarLocationAndName">
+  <echo message="action-copy-signed-jar"/>
+  <available file="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}/${getSignedJarLocationAndName}/META-INF/MANIFEST.MF"            property="getSignedJarLocationAndNameExists"  />  
+   <fail message="'getSignedJarLocationAndName' does not exist specified (value='${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}/${getSignedJarLocationAndName}/META-INF/MANIFEST.MF')" unless="getSignedJarLocationAndNameExists"/>
+
+   
+
+   <unjar src="${serviceJarName}"  dest="${war.work.dir}/${iFixValue}_${iFixWarName}_Temp_Changes" /> 
+   <available file="${war.work.dir}/${iFixValue}_${iFixWarName}_Temp_Changes/${getSignedJarLocationAndName}"            property="signedJarChangesExist"  />  
+   <fail message="'signed Jar changes ' do exist specified (value='${war.work.dir}/${iFixValue}_${iFixWarName}_Temp_Changes/${getSignedJarLocationAndName}')" if="signedJarChangesExist"/>
+  
+   <delete dir="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}/${getSignedJarLocationAndName}" failonerror="true" />   
+
+
+    <copy  file="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandSignedJar/${getSignedJarLocationAndName}" tofile="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}/${getSignedJarLocationAndName}" overwrite="true" preservelastmodified="true" />
+
+</target>
+
+
+<target name="action-expand-the-War-after-update" >
+    <echo message="action-expand-the-War-after-update"/>
+    <exec executable="${WasHome}/bin/EARExpander${was.platform.script.ext}" dir="${WasHome}/bin" failonerror="yes"> 
+    <arg value="-ear"/>
+    <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}_Collapse/${iFixWarName}_updated.ear"/>
+    <arg value="-operationDir" />
+    <arg value="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandWar" />
+    <arg value="-operation"/>
+    <arg value="expand"/>
+    <arg value="-expansionFlags"/>
+    <arg value="war"/>
+    </exec>
+</target>
+
+
+<target name="action-copy-updated-war" >
+  <copy file="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandWar/${iFixWarName}" tofile="${iFixWarLocation}/${iFixWarName}" overwrite="true"/>
+ </target>
+
+<target name="action-unjar-changes-and-copy" >
+    <unjar src="${serviceJarName}"  dest="${war.work.dir}/${iFixValue}_${iFixWarName}_Changes" /> 
+    <copy todir="${war.work.dir}/${iFixValue}_${iFixWarName}_ExpandAll/${iFixWarName}"  overwrite="true" >
+         <fileset dir="${war.work.dir}/${iFixValue}_${iFixWarName}_Changes"/>
+    </copy>
+</target>

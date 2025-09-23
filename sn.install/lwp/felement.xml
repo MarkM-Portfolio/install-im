@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2002, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<felement name="sn.install" description="install" owner="" owner-email="" version="005.000" build-platform="single" execution-platform="all">
+	
+	<dependency name="prereqs.install" version=">=002.500" build-stream="IC10.0_IM_Install" build-level="LAST"/>
+	
+	<dependency name="prereqs.infra" version="006.100" build-stream="INF6.1.0.2" build-level="LAST"/>
+	<build-label value="INF6.1.0.2_20090608.1815" build-stream="INF6.1.0.2" state="live"/>
+	
+	<dependency name="prereq" version="006.001" build-stream="PRQ6102" build-level="LAST"/>
+	<build-label value="prq6102_20090415.1402" build-stream="PRQ6102" state="live"/>
+	
+	<dependency name="sn.metrics" version="001.001" build-stream="IC10.0_Metrics" build-level="LAST"/>
+	<build-label build-stream="IC10.0_Metrics" state="BVT"/>
+	
+	<dependency name="sn.infra" version="001.000" build-stream="IC10.0_Infra" build-level="LAST"/>
+	<build-label build-stream="IC10.0_Infra" state="BVT"/>
+	
+	<dependency name="sn.live" version="003.50" build-stream="IC10.0_Connections" build-level="LAST"/>
+	<build-label build-stream="IC10.0_Connections" state="live"/>
+</felement>

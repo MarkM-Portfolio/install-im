@@ -1,0 +1,391 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Nie można określić katalogu wersji.
+WVER0001E.explanation=Położenie katalogu wersji jest określone przez właściwość systemową języka Java was.version.dir albo jako <katalog_główny>\\properties\\version, gdzie element <katalog_główny> jest pobierany z właściwości systemowej języka Java was.install.root lub server.root. Właściwości te są sprawdzane w podanej wyżej kolejności; używana jest pierwsza dostępna właściwość. Ten komunikat o błędzie wskazuje, że żadna z wyżej wymienionych właściwości systemowych języka Java nie jest ustawiona. Powoduje to, że odnalezienie katalogu wersji nie jest możliwe.
+WVER0001E.useraction=Sprawdź, czy została ustawiona co najmniej jedna z wyżej wymienionych właściwości systemowych języka Java. Właściwość systemową języka Java można ustawić przez skonfigurowanie procesu, lub podając jej wartość jako opcję procesu uruchamianego z poziomu wiersza komend.
+
+# 
+WVER0002E=WVER0002E: Nieznane rozszerzenie nazwy pliku wersji produktu {0}.
+WVER0002E.explanation=Ładowane informacje o wersji są przechowywane w plikach o określonych rozszerzeniach nazw. Rozszerzenia te określają typ informacji przechowywanych w poszczególnych plikach. Poprawne rozszerzenia są następujące: .websphere, .component, .product, .fix, .efix oraz .extension. Usiłowano załadować plik zawierający informacje o wersji, ale rozszerzenie nazwy pliku jest niepoprawne.
+WVER0002E.useraction=Ten komunikat świadczy o wystąpieniu błędu wewnętrznego.
+
+# 
+WVER0003I=WVER0003I: Składnia: versionInfo ( [ -format <text | html> ] [ -file <plik_wyjściowy> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Ten komunikat informacyjny opisuje opcje programu narzędziowego versionInfo. Uruchamiając program narzędziowy versionInfo, można podać opcje umożliwiające określenie formatu danych wyjściowych, określenie nazwy pliku wyjściowego, wyświetlenie poprawek, wyświetlenie szczegółowych informacji o poprawkach, wyświetlenie komponentów oraz wyświetlenie informacji o składni programu.
+WVER0003I.useraction=Od użytkownika nie jest wymagana żadna akcja. Komunikat zawierający informacje o składni jest wyświetlany na żądanie użytkownika.
+
+# 
+WVER0004E=WVER0004E: Błąd podczas zapisywania raportu wersji w pliku {0}: {1}
+WVER0004E.explanation=Błąd wystąpił podczas zapisywania raportu wersji w określonym pliku.
+WVER0004E.useraction=Akcja, jaką należy podjąć w celu usunięcia przyczyny błędu, zależy od rodzaju błędu, który wystąpił. W szczególności sprawdź, czy określony plik jest dostępny do zapisu oraz czy ilość wolnego miejsca jest wystarczająca do zapisania raportu.
+
+# 
+WVER0005E=WVER0005E: Nie określono wartości dla opcji {0}.
+WVER0005E.explanation=Wymieniona opcja wymaga podania wartości. (Można użyć argumentu -help lub -usage, aby wyświetlić informacje o składni).
+WVER0005E.useraction=Określ wartość dla wymienionej opcji.
+
+# 
+WVER0006E=WVER0006E: Wartość {0} nie jest poprawną wartością formatu.
+WVER0006E.explanation=Poprawne wartości formatu to text i html. Podana wartość nie jest jedną z tych wartości. (Można użyć argumentu -help lub -usage, aby wyświetlić informacje o składni).
+WVER0006E.useraction=Podaj poprawną wartość formatu: text lub html.
+
+# 
+WVER0007E=WVER0007E: Opcja {0} jest niepoprawna.
+WVER0007E.explanation=Określona opcja jest niepoprawna.  (Można użyć argumentu -help lub -usage, aby wyświetlić informacje o składni).
+WVER0007E.useraction=Użyj poprawnej opcji.
+
+# 
+WVER0008I=WVER0008I: Opcja -format określa format wyjściowy. Można podać wartość text lub html. Opcja -file umożliwia określenie nazwy pliku wyjściowego. Wraz z opcją -file należy podać nazwę pliku. Opcja -long umożliwia wyświetlenie informacji o wszystkich poprawkach elektronicznych i PTF oraz o komponentach. Opcja -fixes umożliwia wyświetlenie wszystkich poprawek. Opcja -fixDetail umożliwia wyświetlenie szczegółowych informacji o poprawkach. Opcja -ptfs umożliwia wyświetlenie poprawek PTF. Opcja -ptfDetail umożliwia wyświetlenie szczegółowych informacji o poprawkach PTF. Opcja -components umożliwia wyświetlenie komponentów. Opcja -componentDetail umożliwia wyświetlenie szczegółowych informacji o komponentach. Użycie opcji -help powoduje wyświetlenie tekstu pomocy. Użycie opcji -usage powoduje wyświetlenie tego komunikatu o składni programu.
+WVER0008I.explanation=Ten komunikat zawiera opis poprawnych opcji programu narzędziowego versionInfo.
+WVER0008I.useraction=Od użytkownika nie jest wymagana żadna akcja. Komunikat zawierający informacje o składni jest wyświetlany na żądanie użytkownika.
+
+# 
+WVER0009E=WVER0009E: Błąd podczas zapisywania raportu wersji w pliku {0}. Nie można wyświetlić tekstu komunikatu o błędzie. Typ błędu: {1}.  Podczas pobierania tekstu komunikatu o błędzie wystąpił kolejny błąd typu {2}.
+WVER0009E.explanation=Błąd wystąpił podczas zapisywania raportu wersji w określonym pliku. Podczas pobierania tekstu komunikatu o błędzie wystąpił kolejny błąd.
+WVER0009E.useraction=Nie są dostępne informacje o wymaganej akcji. Spróbuj ponownie wykonać operację lub skontaktuj się z działem wsparcia technicznego w celu uzyskania pomocy.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; Wszelkie prawa zastrzeżone.
+WVER0010I.explanation=Są to standardowe informacje o prawach autorskich.
+WVER0010I.useraction=Od użytkownika nie jest wymagana żadna akcja. To jest komunikat informacyjny.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=To jest standardowy opis produktu.
+WVER0011I.useraction=Od użytkownika nie jest wymagana żadna akcja. To jest komunikat informacyjny.
+
+# 
+WVER0012I=WVER0012I: VersionInfo Reporter wersja {0}, data: {1}
+WVER0012I.explanation=To jest standardowy opis modułu.
+WVER0012I.useraction=Od użytkownika nie jest wymagana żadna akcja. To jest komunikat informacyjny.
+
+# 
+WVER0013E=WVER0013E: Wystąpił wyjątek podczas odczytywania obiektu {0}.
+WVER0013E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0013E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0014E=WVER0014E: Wystąpił wyjątek podczas odczytywania obiektu {0}.
+WVER0014E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0014E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0015E=WVER0015E: Wystąpił wyjątek podczas przetwarzania informacji o wersji.
+WVER0015E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0015E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0016E=WVER0016E: Wystąpiły wyjątki podczas przetwarzania informacji o wersji.
+WVER0016E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0016E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0017E=WVER0017E: Nie można określić katalogu dzienników aktualizacji.
+WVER0017E.explanation=Położenie katalogu dzienników jest określane przez właściwość systemową języka Java was.version.log.dir lub jako podkatalog katalogu wersji o nazwie log. Nie została ustawiona ani właściwość was.version.log.dir, ani ścieżka do katalogu wersji.
+WVER0017E.useraction=Sprawdź, czy katalog wersji został ustawiony, albo ustaw wartość zmiennej systemowej języka Java was.version.log.dir.
+
+# 
+WVER0018E=WVER0018E: Nie można określić katalogu kopii zapasowych aktualizacji.
+WVER0018E.explanation=Położenie katalogu kopii zapasowych jest określane przez właściwość systemową języka Java was.version.backup.dir lub jako podkatalog katalogu wersji o nazwie log.  Nie została ustawiona ani właściwość was.version.backup.dir, ani ścieżka do katalogu wersji.
+WVER0018E.useraction=Sprawdź, czy katalog wersji został ustawiony, albo ustaw wartość zmiennej systemowej języka Java was.version.backup.dir.
+
+# 
+WVER0019E=WVER0019E: Nie można określić katalogu DTD dla informacji o wersji produktu.
+WVER0019E.explanation=Położenie katalogu DTD jest określane przez właściwość systemową języka Java was.version.dtd.dir lub jako podkatalog katalogu wersji o nazwie dtd. Nie została ustawiona ani właściwość was.version.dtd.dir, ani ścieżka do katalogu wersji.
+WVER0019E.useraction=Sprawdź, czy katalog wersji został ustawiony, albo ustaw wartość zmiennej systemowej języka Java was.version.dtd.dir.
+
+# 
+WVER0021E=WVER0021E: Wystąpiły błędy naprawialne podczas analizowania informacji o poprawce.
+WVER0021E.explanation=Poniżej została wyświetlona lista błędów, które wystąpiły podczas analizowania informacji o poprawce. Dodatkowe informacje znajdują się w wyświetlonych komunikatach o błędach.
+WVER0021E.useraction=Informacje o sugerowanych działaniach znajdują się w wyświetlonych komunikatach o błędach.
+
+# 
+WVER0022E=WVER0022E: Wystąpił błąd podczas odczytywania informacji o produkcie. Można naprawić ten błąd. Analizowanie informacji będzie kontynuowane. Błąd wystąpił w jednostce o identyfikatorze systemowym {0} i identyfikatorze publicznym {1}, w wierszu numer {2}, w kolumnie numer {3}: {4}
+WVER0022E.explanation=Błąd wskazuje, że struktura określonej jednostki jest niepoprawna. Błąd nie był krytyczny - kontynuowano analizowanie informacji.
+WVER0022E.useraction=Sprawdź określony plik i w razie potrzeby usuń przyczynę błędu.
+
+# 
+WVER0023E=WVER0023E: Wystąpiły ostrzeżenia podczas analizowania informacji o produkcie.
+WVER0023E.explanation=Poniżej została wyświetlona lista ostrzeżeń, które wystąpiły podczas analizowania informacji o produkcie. Dodatkowe informacje znajdują się w wyświetlonych ostrzeżeniach.
+WVER0023E.useraction=Informacje o sugerowanych działaniach znajdują się w wyświetlonych komunikatach ostrzeżeń.
+
+# 
+WVER0024E=WVER0024E: Wystąpiło ostrzeżenie podczas odczytywania informacji o produkcie. Ostrzeżenie wystąpiło w jednostce o identyfikatorze systemowym {0} i identyfikatorze publicznym {1}, w wierszu numer {2}, w kolumnie numer {3}: {4}
+WVER0024E.explanation=Ostrzeżenie wskazuje, że struktura określonej jednostki jest niepoprawna. Ostrzeżenie nie jest błędem krytycznym - kontynuowano analizowanie informacji.
+WVER0024E.useraction=Sprawdź określony plik i w razie potrzeby usuń przyczynę błędu.
+
+# 
+WVER0029E=WVER0029E: Nie można usunąć poprawki {0} przechowywanej w pliku {2}.
+WVER0029E.explanation=Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0029E.useraction=Sprawdź, czy usunięcie pliku docelowego jest dozwolone.
+
+# 
+WVER0030E=WVER0030E: Wystąpiły błędy naprawialne podczas analizowania informacji o poprawce PTF.
+WVER0030E.explanation=Poniżej została wyświetlona lista błędów, które wystąpiły podczas analizowania informacji o poprawce PTF. Dodatkowe informacje znajdują się w wyświetlonych komunikatach o błędach.
+WVER0030E.useraction=Informacje o sugerowanych działaniach znajdują się w wyświetlonych komunikatach o błędach.
+
+# 
+WVER0031E=WVER0031E: Nie można zarejestrować zastosowania poprawki elektronicznej {0} do komponentu {1} w pliku {2}. Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0031E.explanation=Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0031E.useraction=Sprawdź, czy plik docelowy jest dostępny do zapisu oraz czy ilość wolnego miejsca jest wystarczająca do zapisania nowego pliku.
+
+# 
+WVER0035E=WVER0035E: Nie można usunąć poprawki PTF {0} przechowywanej w pliku {2}.
+WVER0035E.explanation=Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0035E.useraction=Sprawdź, czy usunięcie pliku docelowego jest dozwolone.
+
+# 
+WVER0040E=WVER0040E: Określony katalog wersji {0} nie istnieje.
+WVER0040E.explanation=Katalog wersji nie istnieje.
+WVER0040E.useraction=Sprawdź, czy określono poprawny katalog wersji produktu.
+
+# 
+WVER0041E=WVER0041E: Określona ścieżka katalogu wersji {0} nie jest katalogiem.
+WVER0041E.explanation=Ścieżka katalogu wersji nie jest katalogiem.
+WVER0041E.useraction=Sprawdź, czy określono poprawny katalog wersji produktu.
+
+# 
+WVER0042E=WVER0042E: Określony katalog DTD {0} nie istnieje.
+WVER0042E.explanation=Katalog DTD nie istnieje.
+WVER0042E.useraction=Sprawdź, czy określono poprawny katalog DTD produktu.
+
+# 
+WVER0043E=WVER0043E: Określona ścieżka katalogu DTD {0} nie jest katalogiem.
+WVER0043E.explanation=Ścieżka katalogu DTD nie jest katalogiem.
+WVER0043E.useraction=Sprawdź, czy określono poprawny katalog DTD produktu.
+
+# 
+WVER0044E=WVER0044E: Nie można utworzyć określonego katalogu dzienników {0}.
+WVER0044E.explanation=Ścieżka katalogu DTD nie jest katalogiem.
+WVER0044E.useraction=Sprawdź, czy określono poprawny katalog DTD produktu.
+
+# 
+WVER0045E=WVER0045E: Określona ścieżka katalogu dzienników {0} nie jest katalogiem.
+WVER0045E.explanation=Ścieżka katalogu DTD nie jest katalogiem.
+WVER0045E.useraction=Sprawdź, czy określono poprawny katalog DTD produktu.
+
+# 
+WVER0046E=WVER0046E: Nie można utworzyć określonego katalogu kopii zapasowych {0}.
+WVER0046E.explanation=Ścieżka katalogu DTD nie jest katalogiem.
+WVER0046E.useraction=Sprawdź, czy określono poprawny katalog DTD produktu.
+
+# 
+WVER0047E=WVER0047E: Określona ścieżka katalogu kopii zapasowych {0} nie jest katalogiem.
+WVER0047E.explanation=Ścieżka katalogu DTD nie jest katalogiem.
+WVER0047E.useraction=Sprawdź, czy określono poprawny katalog DTD produktu.
+
+# 
+WVER0048E=WVER0048E: Określony katalog produktu {0} nie istnieje.
+WVER0048E.explanation=Katalog produktu nie istnieje.
+WVER0048E.useraction=Sprawdź, czy określono poprawny katalog produktu.
+
+# 
+WVER0049E=WVER0049E: Określona ścieżka katalogu produktu {0} nie jest katalogiem.
+WVER0049E.explanation=Ścieżka katalogu produktu nie jest katalogiem.
+WVER0049E.useraction=Sprawdź, czy określono poprawny katalog produktu.
+
+
+
+
+label.standard.out=Wyjście standardowe
+
+listing.nested.error={0}: {1}
+
+report.header=Raport o stanie instalacji produktu IBM WebSphere Portal
+report.footer=Końcowy raport o stanie instalacji
+
+info.report.on=Data i godzina raportu: {0}
+
+info.source=Instalacja
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Katalog produktu
+label.version.dir=Katalog wersji
+label.version.dtd.dir=Katalog DTD
+label.version.log.dir=Katalog dzienników
+label.version.backup.dir=Katalog kopii zapasowych
+label.version.tmp.dir=Katalog tymczasowy
+
+info.platform=Platforma instalacji
+label.name=Nazwa
+label.version=Wersja
+info.technology=Lista technologii
+label.installed=Zainstalowano
+
+info.product=Zainstalowany produkt
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=Wersja kompilacji
+label.build.date=Data kompilacji
+
+info.component=Zainstalowany komponent
+label.component.name=Nazwa komponentu
+label.configtasks=Czynność konfiguracyjna
+label.spec.version=Wersja specyfikacji
+label.build.version=Wersja kompilacji
+# label.build.date=Build Date
+
+info.update.on.component=Zainstalowana aktualizacja komponentu
+#label.component.name=Component Name
+label.update.type=Typ aktualizacji
+label.update.type.efix=poprawka
+label.update.type.ptf=poprawka PTF
+
+label.efix.id=Identyfikator poprawki
+label.ptf.id=Identyfikator poprawki PTF
+
+label.update.effect=Wynik aktualizacji
+
+label.is.required=Wymagana
+label.is.optional=Opcjonalna
+
+label.is.external=Zewnętrzna
+label.root.property.file=Plik właściwości głównej
+label.root.property.name=Nazwa właściwości głównej
+label.root.property.value=Wartość właściwości głównej
+
+label.is.custom=Niestandardowa
+
+label.log.file.name=Nazwa pliku dziennika
+label.backup.file.name=Nazwa pliku kopii zapasowej
+label.install.date=Data instalacji
+
+label.initial.spec.version=Wersja specyfikacji początkowej
+label.initial.build.date=Data kompilacji początkowej
+label.initial.build.version=Wersja kompilacji początkowej
+
+label.final.spec.version=Wersja specyfikacji końcowej
+label.final.build.date=Data kompilacji końcowej
+label.final.build.version=Wersja kompilacji końcowej
+
+info.extension=Zainstalowane rozszerzenie
+# label.name=Name
+# label.id=ID
+
+info.efix=Zainstalowana poprawka
+# label.id=ID
+label.short.description=Opis
+label.is.trial=Wersja próbna
+label.expiration.date=Data ważności
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Opis szczegółowy
+
+label.apar=APAR
+label.apar.number=Numer
+label.apar.date=Data
+label.apar.short.description=Opis
+label.apar.long.description=Opis szczegółowy
+
+label.supported.platforms=Obsługiwane platformy
+label.supported.products=Obsługiwane platformy
+
+label.efix.efix.prereqs=Poprawki wymagane wstępnie
+
+label.component.updates=Aktualizacje komponentów
+label.component.requires=Wymaganie: {0} wersja {1}
+
+label.becomes=specyfikacja docelowa: {0}, kompilacja: {1} data: {2}
+
+label.custom.properties=Właściwości niestandardowe
+
+info.ptf=Zainstalowane poprawki PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Dostarczone poprawki
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=prawda
+label.false=fałsz
+label.is.absent=brak
+label.is.installed=zainstalowano: {0}
+
+label.update.effect.add=dodaj
+label.update.effect.replace=zastąp
+label.update.effect.remove=usuń
+label.update.effect.patch=poprawka
+label.update.effect.unknown=brak informacji
+
+label.is.negative=nie
+label.is.positive=tak
+
+label.is.required.tag=wymagane
+label.if.possible.tag=wskazane
+label.is.optional.tag=opcjonalne
+label.is.recommended.tag=zalecane
+
+label.is.custom.tag=aktualizacja niestandardowa
+label.is.standard.tag=aktualizacja standardowa

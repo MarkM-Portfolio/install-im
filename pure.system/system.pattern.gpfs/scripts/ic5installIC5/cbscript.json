@@ -1,0 +1,32 @@
+[
+   {
+      "command": "\/tmp\/ic5installIC5\/ic5installIC5.sh",
+      "commandargs": "auto",
+      "description": "This script pakage prepares the WAS\/Linux environment and afterwards installs Connections 5",
+      "execmode": 3,
+      "filename": "ic5installIC5.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         }
+      ],
+      "location": "\/tmp\/ic5installIC5",
+      "log": "\/tmp\/ic5installIC5\/logs",
+      "name": "ic5installIC5",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

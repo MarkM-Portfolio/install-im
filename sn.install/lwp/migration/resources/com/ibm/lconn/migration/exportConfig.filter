@@ -1,0 +1,56 @@
+## ***************************************************************** */
+##                                                                   */
+## IBM Confidential                                                  */
+##                                                                   */
+## OCO Source Materials                                              */
+##                                                                   */
+## (C) Copyright IBM Corp. 2008                                      */
+##                                                                   */
+## The source code for this program is not published or otherwise    */
+## divested of its trade secrets, irrespective of what has been      */
+## deposited with the U.S. Copyright Office.                         */
+##                                                                   */
+## ***************************************************************** */
+LOG ========== Starting to export configuration ===============
+CONDITION NULL
+CONDITION activities.installed true
+#CONDITION activities.version 2.0.0
+LOG ========== Activities =====================================
+FILE_COPY ${activities.cell.config.home.federated}/oa-config.xml>>migrationData/source/config/activities/oa-config.xml
+FILE_COPY ${activities.cell.config.home.federated}/extern/oa-jobs.xml>>migrationData/source/config/activities/extern/oa-jobs.xml
+FILE_COPY ${activities.home}/activities.properties>>migrationData/source/config/activities/activities.properties
+
+
+CONDITION NULL
+CONDITION blogs.installed true
+#CONDITION blogs.version 2.0.0
+LOG ========== Blogs ==========================================
+FILE_COPY ${blogs.home}/blogs.properties>>migrationData/source/config/blogs/blogs.properties
+
+CONDITION NULL
+CONDITION communities.installed true
+#CONDITION communities.version 2.0.0
+LOG ========== Communities ====================================
+FILE_COPY ${communities.home}/communities.properties>>migrationData/source/config/communities/communities.properties
+
+CONDITION NULL
+CONDITION dogear.installed true
+#CONDITION dogear.version 2.0.0
+LOG ========== Dogear =========================================
+FILE_COPY ${dogear.home}/dogear.properties>>migrationData/source/config/dogear/dogear.properties
+FILE_COPY ${dogear.cell.config.home.federated}/dogear-config-cell.xml>>migrationData/source/config/dogear/dogear-config-cell.xml
+FILE_COPY ${dogear.node.config.home.federated}/dogear-config-node.xml>>migrationData/source/config/dogear/dogear-config-node.xml
+
+CONDITION NULL
+CONDITION profiles.installed true
+#CONDITION profiles.version 2.0.0
+LOG ========== Profiles =======================================
+FILE_COPY ${profiles.home}/profiles.properties>>migrationData/source/config/profiles/profiles.properties
+
+CONDITION NULL
+CONDITION homepage.installed true
+#CONDITION homepage.version 2.0.0
+LOG ========== Homepage =======================================
+FILE_COPY ${homepage.home}/homepage.properties>>migrationData/source/config/homepage/homepage.properties
+LOG ========== Export configuration completed =================
+

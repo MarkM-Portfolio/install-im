@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WASHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WASProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WASHistory.java:
+#
+WVER0201E=WVER0201E: Unable to determine the history directory; the product directory could not be determined
+WVER0201E.explanation=The history directory is a subdirectory of the product directory.  See the explanation for the error that occurred when determining the product directory for more information.
+WVER0201E.useraction=Follow the instructions that appear with the version error.
+
+# 
+WVER0202E=WVER0202E: Unable to load the history information
+WVER0202E.explanation=History information could not be loaded from the history file {0}.  Particular details are according to the error that occurred.
+WVER0202E.useraction=Make sure that the history file is readable, and has a correct format.
+
+# 
+WVER0203E=WVER0203E: An exception occurred while reading {0}
+WVER0203E.explanation=Please refer to the nested exception details for further information.
+WVER0203E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0204E=WVER0204E: An exception occurred while create history directory {0}
+WVER0204E.explanation=Please refer to the nested exception details for further information.
+WVER0204E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0205E=WVER0205E: An exception occurred while creating a backup for history file {0} to {1}
+WVER0205E.explanation=Please refer to the nested exception details for further information.
+WVER0205E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0206E=WVER0206E: An exception occurred while writing event history {0}
+WVER0206E.explanation=Please refer to the nested exception details for further information.
+WVER0206E.useraction=Please refer to the nested exception details for further information.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0210I.explanation=This is a standard copyright statement.
+WVER0210I.useraction=No user action is required.  This is an informational message.
+
+# 
+WVER0211I=WVER0211I: WebSphere Application Server Release 5.0
+WVER0211I.explanation=This is a standard product description statement.
+WVER0211I.useraction=No user action is required.  This is an informational message.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter Version {0}, Dated {1}
+WVER0212I.explanation=This is a standard module description statement.
+WVER0212I.useraction=No user action is required.  This is an informational message.
+
+# 
+WVER0225E=WVER0225E: No value was specified for the ''{0}'' argument
+WVER0225E.explanation=The listed argument requires an value.  (Use '-help' or '-usage' to display usage information.)
+WVER0225E.useraction=Specify a value for the listed argument.
+
+# 
+WVER0226E=WVER0226E: The value ''{0}'' is not valid format value.
+WVER0226E.explanation=The valid format values are 'text' and 'html'.  The value specified is not one of these values.  (Use '-help' or '-usage' to display usage information.)
+WVER0226E.useraction=Change the format value to one of the valid values, 'text' or 'html'.
+
+# 
+WVER0228E=WVER0228E: The argument ''{0}'' is not a valid argument.
+WVER0228E.explanation=The specified argument is not valid.  (Use '-help' or '-usage' to display usage information.)
+WVER0228E.useraction=Change the argument to a valid argument.
+
+# 
+WVER0230I=WVER0230I: Usage: historyInfo ( [ -format <text | html> ] [ -file <output file> ] [ -updateId <updateId> ] [ -component <componentName> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=This informational message describes the arguments to the historyInfo utility program.  The historyInfo utility program accepts five optional keyword arguments, one which specifies the output format, one which specifies an output file, one which displays only those events which are associated with a specified efix, one which displays only those events which are associated with a specified component, and one which is used to display usage information.  (Use '-usage' or '-help' to display additional information.)
+WVER0230I.useraction=No user action is required.  The usage information message is displayed upon request.
+
+# 
+WVER0231I=WVER0231I: The '-format' argument is used to specify the output format, which must be specified as one of 'text' or 'html'.  The '-file' argument is used to specify an output file.  A file name must be provided.  The '-updateId' argument is used to specify the ID of an update, which will restrict the events which are displayed.  The '-component' argument is used to specify the name of a component, which will restrict the events which are displayed.  The '-help' argument is used to display version information.  The '-usage' argument is used to display this information message.
+WVER0231I.explanation=The message describes the valid arguments to the versionInfo utility program.
+WVER0231I.useraction=No user action is required.  The usage information message is displayed upon request.
+
+# 
+WVER0240E=WVER0240E: Error writing version report to {0}: {1}
+WVER0240E.explanation=The specified error occurred while writing out the history report to the specified file.
+WVER0240E.useraction=Corrective action depends on the specifics of the error which occurred.  In particular, make sure that the specified file is writable and that sufficient space is available for the report.
+
+# 
+WVER0241E=WVER0241E: Error writing history report to {0}.  The text of the error cannot be displayed, but is of type {1}.  A second error, of type {2}, occurred while retrieving the error text.
+WVER0241E.explanation=An error occurred while writing out a history report to the specified file.  A second error occurred while retrieving the text of the error.
+WVER0241E.useraction=No user action is available.  Please retry the requested operation, or contact support for further assistance.
+
+# 
+WVER0242E=WVER0242E: An exception occurred while processing history information
+WVER0242E.explanation=Please refer to the nested exception details for further information.
+WVER0242E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0243E=WVER0243E: Exceptions occurred while processing history information
+WVER0243E.explanation=Please refer to the nested exception details for further information.
+WVER0243E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0261E=WVER0261E: Unable to record the application of efix {0} on component {1} in file {2}.  The named file could not be saved.
+WVER0261E.explanation=The named file could not be saved.
+WVER0261E.useraction=Ensure that the target file is writable, and that space is available for a new file.
+
+# 
+WVER0262E=WVER0262E: Unable to record the removal of the application of efix {0} on component {1} in file {2}.  The named file could not be saved.
+WVER0262E.explanation=The named file could not be saved.
+WVER0262E.useraction=Ensure that the target file is writable, and that space is available for a new file.
+
+# 
+WVER0263E=WVER0263E: Unable to record the removal of the application of efix {0} on component {1} stored in file {2}.  The named file could not be removed.
+WVER0263E.explanation=The named file could not be removed.
+WVER0263E.useraction=Ensure that the target file can be removed.
+
+# 
+WVER0264E=WVER0264E: Unable to record the removal of the application of efix {0} on component {1} -- no application is on record.
+WVER0264E.explanation=The component has no record of an application of the specified efix.  The product information may be corrupt, or an internal error may have occurred
+WVER0264E.useraction=Please contact support for additional information.
+
+# 
+WVER0265E=WVER0265E: Unable to remove efix driver {0} stored in file {2}.
+WVER0265E.explanation=The named file could not be removed.
+WVER0265E.useraction=Ensure that the target file can be removed.
+
+# 
+WVER0266E=WVER0266E: Recoverable errors occurred while parsing PTF Driver information.
+WVER0266E.explanation=The errors, a list of which follows, occurred while parsing PTF information.  Refer to the listed errors for additional information.
+WVER0266E.useraction=Refer to the listed errors for suggested user actions.
+
+# 
+WVER0267E=WVER0267E: Unable to record the removal of the application of PTF {0} on component {1} in file {2}.  The named file could not be saved.
+WVER0267E.explanation=The named file could not be saved.
+WVER0267E.useraction=Ensure that the target file is writable, and that space is available for a new file.
+
+# 
+WVER0268E=WVER0268E: Unable to record the removal of the application of PTF {0} on component {1} stored in file {2}.  The named file could not be removed.
+WVER0268E.explanation=The named file could not be removed.
+WVER0268E.useraction=Ensure that the target file can be removed.
+
+# 
+WVER0269E=WVER0269E: Unable to record the removal of the application of PTF {0} on component {1} -- no application is on record.
+WVER0269E.explanation=The component has no record of an application of the specified PTF.  The product information may be corrupt, or an internal error may have occurred
+WVER0269E.useraction=Please contact support for additional information.
+
+# 
+WVER0270E=WVER0270E: Unable to remove PTF Driver {0} stored in file {2}.
+WVER0270E.explanation=The named file could not be removed.
+WVER0270E.useraction=Ensure that the target file can be removed.
+
+# 
+WVER0271E=WVER0271E: Unrecognized product history file extension ''{0}''.
+WVER0271E.explanation=When loading history information, this information is stored in files having specific extensions.  The extensions determine the type of information stored in each file.  Valid extensions are '.efixDriver', '.efixApplied', '.ptfDriver', and '.ptfApplied'.  An attempt was made to load a file containing version information where the extension of the file is not one of the valid extensions.
+WVER0271E.useraction=This indicates an internal error.
+
+# 
+WVER0272E=WVER0272E: An exception occurred while reading {0}
+WVER0272E.explanation=Please refer to the nested exception details for further information.
+WVER0272E.useraction=Please refer to the nested exception details for further information.
+
+label.standard.out=Standard Output
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Application Server History Report
+report.header.update=IBM WebSphere Application Server History Report for Update {0}
+report.header.component=IBM WebSphere Application Server History Report for Component {0}
+report.header.update.component=IBM WebSphere Application Server History Report for Update {0} and Component {1}
+
+warning.no.events=Warning: No events are available.
+warning.no.events.for.component=Warning: No events are available for component {0}.
+warning.no.events.for.update=Warning: No events are available for update {0}.
+warning.no.events.for.update.component=Warning: No events are available for update {0} and component {1}.
+
+info.report.on=Report at date and time {0}
+
+report.footer=End History Report
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Installation
+label.product.dir=Product Directory
+label.version.dir=Version Directory
+label.version.dtd.dir=DTD Directory
+label.version.log.dir=Log Directory
+label.version.backup.dir=Backup Directory
+label.version.tmp.dir=TMP Directory
+label.version.history.dir=History Directory
+label.version.history.file=History File
+
+info.event=Installation Event
+info.component.event=Component Installation Event
+
+label.efix.id=EFix ID
+label.ptf.id=PTF ID
+label.unknown.id=Unknown ID
+
+label.action=Action
+
+label.start.time.stamp=Start Time
+label.end.time.stamp=End Time
+
+label.log.file.name=Log File Name
+
+
+label.component.name=Component Name
+
+label.is.custom=Is Custom
+label.primary.content=Primary Content
+
+label.update.type=Update Action
+
+label.is.external=Is External
+label.root.property.file=Root Property File
+label.root.property.name=Root Property Name
+label.root.property.value=Root Property Value
+
+label.backup.file.name=Backup File Name
+label.result=Result
+label.result.message=Result Message
+
+label.initial.version=Initial Version
+label.initial.spec.version=Initial Specification
+label.initial.build.date=Initial Build Date
+
+label.final.version=Final Version
+label.final.spec.version=Final Version Specification
+label.final.build.date=Final Build Date
+
+
+label.install.action=install
+label.uninstall.action=uninstall
+label.selective.install.action=selective install
+label.selective.uninstall.action=selective uninstall
+label.unknown.action=*** UNKNOWN EVENT ACTION ***
+
+label.update.add.tag=add
+label.update.replace.tag=replace
+label.update.remove.tag=remove
+label.update.patch.tag=patch
+label.update.composite.tag=composite
+label.update.unknown.tag=*** UNKNOWN UPDATE TYPE ***
+
+label.result.succeeded.tag=succeeded
+label.result.failed.tag=failed
+label.result.cancelled.tag=cancelled
+label.result.unknown.tag=*** UNKNOWN EVENT RESULT ***
+
+label.true=true
+label.false=false

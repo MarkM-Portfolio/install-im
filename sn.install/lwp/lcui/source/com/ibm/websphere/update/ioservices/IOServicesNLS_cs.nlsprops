@@ -1,0 +1,77 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (WAS Update Installation)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/ioservices.IOServicesNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0100 to 0199.
+
+WUPD0100E=WUPD0100E: Pokus o čtení z adresáře ''{0}'', který neexistuje.
+WUPD0100E.explanation=Tento problém ukazuje na interní chybu.
+WUPD0100E.useraction=Potřebujete-li další informace, kontaktujte podporu IBM.
+
+WUPD0101E=WUPD0101E: Pokus o čtení z adresáře ''{0}'', který není adresářem.
+WUPD0101E.explanation=Tento problém ukazuje na interní chybu.
+WUPD0101E.useraction=Potřebujete-li další informace, kontaktujte podporu IBM.
+
+WUPD0102E=WUPD0102E: Nelze nalézt položku JAR ''{0}'' v souboru JAR ''{1}''.
+WUPD0102E=Pojmenovaná položka byla očekávána v pojmenovaném souboru JAR. Tento problém ukazuje na interní chybu.
+WUPD0102E=Potřebujete-li další informace, kontaktujte podporu IBM.
+
+WUPD0103E=WUPD0103E: Výstupní adresář ''{0}'' nebylo možné vytvořit.
+WUPD0103E=Pojmenovaný adresář nebylo možné vytvořit.
+WUPD0103E=Zajistěte, aby pojmenovaný adresář bylo možné vytvořit.
+
+WUPD0104E=WUPD0104E: Výstupní adresář ''{0}'' existuje jako soubor.
+WUPD0104E=Pokus o použití pojmenované entity jako adresáře, ale s tímto názvem již existuje soubor.
+WUPD0104E=Zvolte jiný výstupní adresář nebo pojmenovaný soubor přejmenujte.

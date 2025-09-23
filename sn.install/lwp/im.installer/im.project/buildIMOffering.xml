@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="buildCE" name="Build">
+	<property environment="env" />
+	<property name="cic.authoring.project" value="${basedir}"/>
+	<property name="cic.im.target" value="1.8.5.1"/>
+	<property name="cic.copy.artifacts" value="false"/>
+	<property name="cic.output.repository" value="${env.LWP_HOME}/setup/HCL_Connections_Install/HCLConnections"/>
+	<!--<loadproperties srcfile="${dir.build}/var.properties"></loadproperties>-->
+	
+	<target depends="" name="build.Connections">
+		<echo message="cic.authoring.project: ${cic.authoring.project}" />
+		<echo message="basedir: ${basedir}" />
+		<mkdir dir="${cic.output.repository}" />
+		<!--<cic.build qualifier="${qualifier}" suppressapicheckerrors="true" >-->
+		<cic.build qualifier="${qualifier}" suppressapicheckerrors="true" imtarget="${cic.im.target}" disable133prereqcheck="true" disable130prereqcheck="true">
+			<metadata path="./com.ibm.connections.off"/>
+			<metadata path="./com.ibm.connections.main.asy"/>
+			<metadata path="./com.ibm.connections.content.shu">
+				<variable file="${dir.build}/var.properties"/>
+			</metadata>
+			<artifact path="./" recursive="true"/>
+			<artifact path="${dir.build}/" recursive="true" />
+			<output artifactDestination="${cic.output.repository}" copyArtifacts="${cic.copy.artifacts}" metadataDestination="${cic.output.repository}">
+				<offering id="com.ibm.connections" tolerance="[0.0.0,0.0.0]"/>
+			</output>
+		</cic.build>
+	</target>
+	
+	<target depends="" name="clean.Connections">
+		<delete dir="${cic.output.repository}">
+			<include name="**/*.assembly"/>
+			<include name="**/*.offering"/>
+			<include name="**/*.su"/>
+			<include name="**/atoc.xml"/>
+			<include name="**/*.xml"/>
+			<include name="repository.config"/>
+			<include name="repository.xml"/>
+			<include name="**/*.jar"/>
+			<exclude name="**/build.xml"/>
+		</delete>
+	</target>
+	
+	<target depends="build.Connections" name="buildCE"/>
+	
+	<target depends="clean.Connections" name="CleanAll"/>
+</project>

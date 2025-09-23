@@ -1,0 +1,31 @@
+[
+   {
+      "command": "\/tmp\/ic5optionalTasksIC5\/ic5optionalTasksIC5.sh",
+      "description": "Optional tasks for Connections 5 installation",
+      "execmode": 3,
+      "filename": "ic5optionalTasksIC5.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         }
+      ],
+      "location": "\/tmp\/ic5optionalTasksIC5",
+      "log": "\/tmp\/ic5optionalTasksIC5\/logs",
+      "name": "ic5optionalTasksIC5",
+      "ostype": "linux\/unix",
+      "timeout": 9000000,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

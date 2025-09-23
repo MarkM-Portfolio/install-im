@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="ICLaunchpad" default="development" >
+	
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+	<import file="${env.WPLC_IMPORT}/check.xml"/>
+	<import file="${env.WPLC_IMPORT}/compile.xml"/>
+	<import file="${env.WPLC_IMPORT}/rmic.xml"/>
+	<import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+	<import file="${env.WPLC_IMPORT}/nojavadoc.xml"/>
+	<import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+	<import file="${env.WPLC_IMPORT}/clean.xml"/> 
+	<import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+	<import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+	
+	<property environment="env" />
+	<property name="precompile.override" value="all"/>
+	<locateComponent component="build" property="build.home" />
+<!--	<locateComponent component="db2v95" property="db2v95.home" locatebuilddir="true"/>-->
+	<property name="repoDir" value="${build.home}/configEngine/repo" />
+	<!--property name="PD_HOME" value="C:\Program Files\IBM\Package Developer" /-->
+	<property name="lp.output.dir" value="${env.LWP_HOME}/setup/HCL_Connections_Install" />
+	<!--locateComponent component="mirrorScript" property="mirrorScript" /-->
+
+	
+	<target name="development" depends="buildLaunchpad, moveLaunchpad" />
+	<target name="production" depends="buildLaunchpad, moveLaunchpad" />
+	
+	<!--mimic the command below:
+		java -cp %ECLIPSE_HOME%\startup.jar org.eclipse.core.launcher.Main 
+		-application com.ibm.eec.launchpad.headless.exporter 
+		-data lpwas -project <project name> -exportLocation <export directory> -->
+	
+	<target name="buildLaunchpad" >
+		<delete dir="${lp.output.dir}/launchpad" />
+		<echo message="beginning launchpad import..." />
+		<echo message="PD_HOME is ${PD_HOME}" />
+		<exec executable="java">
+			<arg value="-classpath" />
+			<!--<arg value="${PD_HOME}/startup.jar" />-->
+			<arg value="${PD_HOME}/plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar" />
+			<arg value="org.eclipse.core.launcher.Main" />
+			<arg value="-application" />
+			<arg value="com.ibm.eec.launchpad.headless.importer" />
+			<arg value="-data" />
+			<arg value="." />
+			<arg value="-project" />
+			<arg value="ICLaunchpad" />
+			<arg value="-consoleLog" />
+			
+		</exec>
+		
+		<echo message="end launchpad import" />
+		<echo message="beginning launchpad export..." />
+		<exec executable="java">
+			<arg value="-classpath" />
+			<!--<arg value="${PD_HOME}/startup.jar" />-->
+			<arg value="${PD_HOME}/plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar" />
+			<arg value="org.eclipse.core.launcher.Main" />
+			<arg value="-application" />
+			<arg value="com.ibm.eec.launchpad.headless.exporter" />
+			<arg value="-data" />
+			<arg value="." />
+			<arg value="-project" />
+			<arg value="ICLaunchpad" />
+			<arg value="-exportLocation" />
+			<arg value="${lp.output.dir}" />
+		</exec>
+		<echo message="end launchpad export, located in dir ${lp.output.dir}. " />
+	</target>
+	
+	
+	<target name="moveLaunchpad" >
+		<echo message="copy launchpad output files to ${lp.output.dir}" />
+		
+		<copy todir="${lp.output.dir}" overwrite="true">
+			<fileset dir="${lp.output.dir}/disk1">
+			</fileset>
+		</copy>
+		
+		<echo message="delete ${lp.output.dir}/disk1" />
+		<delete dir="${lp.output.dir}/disk1" />
+	</target>
+</project>

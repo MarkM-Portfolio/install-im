@@ -1,0 +1,94 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+#set -n
+####This is For getting the OS Update####
+
+###Getting the Values from Config Files####
+MultipleValFound=`echo "$1" | grep ","`
+if [ $MultipleValFound ]; then
+	ExpVal=`echo "$1" | cut -d "," -f1`
+	ExpVal1=`echo "$1" | cut -d "," -f2`
+else
+	ExpVal=$1
+fi
+operator=eq 
+if [ "`uname`" = AIX ]; then
+	ActualSP=`oslevel -s | cut -d "-" -f3`
+	ActualTL=`oslevel -s | cut -d "-" -f2`
+	ExpTL=`echo $ExpVal |  sed 's/TL/TL /g' | cut -d " " -f2`
+	###refining for + functionality ####
+	PlusFound=`echo $ExpTL | grep "+"`
+	if [ $PlusFound ]; then
+		ExpTL=`echo $ExpTL | sed 's/.$//g'`
+		operator=ge
+	fi
+	if [ $ActualTL -$operator $ExpTL ]; then
+
+		if [ $ActualTL -eq $ExpTL ]; then
+			if [ $ExpVal1 ]; then		
+				ExpSP=`echo $ExpVal1 | sed 's/SP/SP /g' | cut -d " " -f2`
+				###refining for + functionality ####
+				PlusFound=`echo $ExpSP | grep "+"`
+				if [ $PlusFound ]; then
+					ExpSP=`echo $ExpSP | sed 's/.$//g'`
+					operator=ge
+				else
+					operator=eq
+				fi
+				if [ $ActualSP -$operator $ExpSP ]; then
+					echo "$Msg_AVAILABLE"
+				else
+					echo "$Msg_UNAVAILABLE"
+				fi
+			else
+				echo "$Msg_AVAILABLE"
+			fi
+		else
+			echo "$Msg_AVAILABLE"
+		fi
+	else
+		echo "$Msg_UNAVAILABLE"
+	fi
+else
+	IsSUSE=`cat /etc/issue | grep "SUSE" | cut -d " " -f1`
+	if [ $IsSUSE ]; then
+		ActualSP=`cat /etc/SuSE-release | sed -n '3p' | cut -d "=" -f2`
+		ExpSP=`echo $ExpVal | sed 's/SP/SP /g' | cut -d " " -f2`
+		###refining for + functionality ####
+		PlusFound=`echo $ExpSP | grep "+"`
+		if [ $PlusFound ]; then
+			ExpSP=`echo $ExpSP | sed 's/.$//g'`
+			operator=ge
+		fi
+		if [ $ActualSP -$operator $ExpSP ]; then
+			echo "$Msg_AVAILABLE"
+		else
+			echo "$Msg_UNAVAILABLE"
+		fi
+	else
+		####Checking for Update####
+		UpdateFound=`cat /etc/issue | grep -i update | cut -d " " -f1`
+		if [ $UpdateFound ]; then
+			ActualUpdate=`cat /etc/issue | sed -n 1p | sed 's/[Uu]pdate/[Uu]pdate+/g' | cut -d "+" -f2 | sed 's/ //g' | cut -c -1`
+			ExpUpdate=`echo $ExpVal | sed 's/U/U /g' | cut -d " " -f2`
+	                ###refining for + functionality ####
+        	        PlusFound=`echo $ExpUpdate | grep "+"`
+            	    	if [ $PlusFound ]; then
+                	        ExpUpdate=`echo $ExpUpdate | sed 's/.$//g'`
+                        	operator=ge
+                	fi
+                	if [ $ActualUpdate -$operator $ExpUpdate ]; then
+                        	echo "$Msg_AVAILABLE"
+                	else
+                        	echo "$Msg_UNAVAILABLE"
+                	fi
+
+		fi	
+	fi
+fi

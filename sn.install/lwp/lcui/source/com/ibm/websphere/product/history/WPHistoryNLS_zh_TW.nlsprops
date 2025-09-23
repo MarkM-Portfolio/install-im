@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: 無法判斷歷程目錄；無法判斷產品目錄
+WVER0201E.explanation=歷程目錄是產品目錄的子目錄。如需詳細資訊，請參閱判斷產品目錄時發生錯誤的說明。
+WVER0201E.useraction=遵循和版本錯誤一起出現的指示。
+
+# 
+WVER0202E=WVER0202E: 無法載入歷程資訊
+WVER0202E.explanation=無法從歷程檔案 {0} 載入歷程資訊。特定的明細取決於發生的錯誤。
+WVER0202E.useraction=請確定歷程檔案是可讀取的，並且有正確的格式。
+
+# 
+WVER0203E=WVER0203E: 讀取 {0} 時，發生異常狀況
+WVER0203E.explanation=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+WVER0203E.useraction=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+
+# 
+WVER0204E=WVER0204E: 建立歷程目錄 {0} 時，發生異常狀況
+WVER0204E.explanation=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+WVER0204E.useraction=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+
+# 
+WVER0205E=WVER0205E: 將歷程檔案 {0} 的備份建立在 {1} 時，發生異常狀況
+WVER0205E.explanation=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+WVER0205E.useraction=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+
+# 
+WVER0206E=WVER0206E: 寫入事件歷程 {0} 時，發生異常狀況
+WVER0206E.explanation=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+WVER0206E.useraction=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0210I.explanation=這是一個標準的版權聲明。
+WVER0210I.useraction=使用者不需執行任何動作。這是一個參考訊息。
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=這是一個標準的產品說明。
+WVER0211I.useraction=使用者不需執行任何動作。這是一個參考訊息。
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter 第 {0} 版，日期 {1}
+WVER0212I.explanation=這是一個標準的模組說明。
+WVER0212I.useraction=使用者不需執行任何動作。這是一個參考訊息。
+
+# 
+WVER0225E=WVER0225E: 未指定 ''{0}'' 引數的值
+WVER0225E.explanation=列示的引數需要一個值。（請利用 '-help' 或 '-usage' 來顯示用法資訊。）
+WVER0225E.useraction=為列示的引數指定一個值。
+
+# 
+WVER0226E=WVER0226E: ''{0}'' 值不是有效的格式值。
+WVER0226E.explanation=有效的格式值有 'text' 和 'html'。指定的值不是這些值的其中一個。（請利用 '-help' 或 '-usage' 來顯示用法資訊。）
+WVER0226E.useraction=請將格式值改成有效值 'text' 或 'html' 其中之一。
+
+# 
+WVER0228E=WVER0228E: ''{0}'' 引數不是有效的引數。
+WVER0228E.explanation=指定的引數無效。（請利用 '-help' 或 '-usage' 來顯示用法資訊。）
+WVER0228E.useraction=將引數變更為一個有效的引數。
+
+# 
+WVER0230I=WVER0230I: 用法：historyInfo ( [ -format <text | html> ] [ -file <output file> ] [ -updateId <updateId> ] [ -component <componentName> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=此參考訊息說明 historyInfo 公用程式的引數。historyInfo 公用程式接受五個選用性關鍵字引數，一個指定輸出格式、一個指定輸出檔、一個顯示只與指定之修正程式相關的那些事件、一個顯示只與指定之元件相關的那些事件，以及一個用來顯示用法的資訊。（請利用 '-usage' 或 '-help' 來顯示其他資訊。）
+WVER0230I.useraction=使用者不需執行任何動作。發出要求後，會立即顯示用法參考訊息。
+
+# 
+WVER0231I=WVER0231I: '-format' 引數用來指定輸出格式，這必須指定成 'text' 或 'html' 之一。'-file' 引數用來指定輸出檔。必須提供一個檔案名稱。'-updateId' 引數用來指定更新 ID，這會限制顯示的事件。'-component' 引數用來指定元件名稱，這會限制顯示的事件。'-help' 引數用來顯示版本資訊。'-usage' 引數用來顯示這個參考訊息。
+WVER0231I.explanation=訊息會說明 versionInfo 公用程式的有效引數。
+WVER0231I.useraction=使用者不需執行任何動作。發出要求後，會立即顯示用法參考訊息。
+
+# 
+WVER0240E=WVER0240E: 將版本報告寫入 {0} 時，發生錯誤：{1}
+WVER0240E.explanation=將歷程報告寫出至指定的檔案時，發生特定錯誤。
+WVER0240E.useraction=更正動作取決於發生的特定錯誤。特別是，請確定指定的檔案是可寫入的，並有足夠的空間供報告使用。
+
+# 
+WVER0241E=WVER0241E: 將歷程報告寫入 {0} 時，發生錯誤。無法顯示錯誤的文字，但其屬於類型 {1}。擷取錯誤文字時，發生類型 {2} 的次要錯誤。
+WVER0241E.explanation=將歷程報告寫出至指定的檔案時，發生錯誤。擷取錯誤文字時，發生次要錯誤。
+WVER0241E.useraction=沒有可用的使用者動作。請重試所要求的作業，或聯絡支援中心以取得進一步的協助。
+
+# 
+WVER0242E=WVER0242E: 處理歷程資訊時，發生異常狀況
+WVER0242E.explanation=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+WVER0242E.useraction=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+
+# 
+WVER0243E=WVER0243E: 處理歷程資訊時，發生異常狀況
+WVER0243E.explanation=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+WVER0243E.useraction=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+
+# 
+WVER0261E=WVER0261E: 無法將 {1} 元件修正程式 {0} 應用程式記錄在 {2} 檔中。無法儲存具名的檔案。
+WVER0261E.explanation=無法儲存具名的檔案。
+WVER0261E.useraction=請確定目標檔是可寫入的，並且有可用的空間供新檔案使用。
+
+# 
+WVER0262E=WVER0262E: 無法將 {1} 元件修正程式 {0} 的應用程式移除作業記錄在 {2} 檔中。無法儲存具名的檔案。
+WVER0262E.explanation=無法儲存具名的檔案。
+WVER0262E.useraction=請確定目標檔是可寫入的，並且有可用的空間供新檔案使用。
+
+# 
+WVER0263E=WVER0263E: 無法記錄 {2} 檔所儲存的 {1} 元件修正程式 {0} 的應用程式移除作業。無法移除具名的檔案。
+WVER0263E.explanation=無法移除具名的檔案。
+WVER0263E.useraction=請確定目標檔可以移除。
+
+# 
+WVER0264E=WVER0264E: 無法記錄 {1} 元件修正程式 {0} 的應用程式移除作業 -- 沒有應用程式記錄。
+WVER0264E.explanation=元件沒有指定之修正程式的應用程式記錄。產品資訊可能毀損，或是發生內部錯誤
+WVER0264E.useraction=如需其他資訊，請聯絡支援中心。
+
+# 
+WVER0265E=WVER0265E: 無法移除 {2} 檔所儲存的修正程式驅動程式 {0}。
+WVER0265E.explanation=無法移除具名的檔案。
+WVER0265E.useraction=請確定目標檔可以移除。
+
+# 
+WVER0266E=WVER0266E: 剖析 PTF 驅動程式資訊時，發生可回復的錯誤。
+WVER0266E.explanation=剖析 PTF 資訊時，發生如下清單所列示的錯誤。如需其他資訊，請參閱所列示的錯誤。
+WVER0266E.useraction=如需建議的使用者動作，請參閱所列示的錯誤。
+
+# 
+WVER0267E=WVER0267E: 無法將 {1} 元件 PTF {0} 的應用程式移除作業記錄在 {2} 檔中。無法儲存具名的檔案。
+WVER0267E.explanation=無法儲存具名的檔案。
+WVER0267E.useraction=請確定目標檔是可寫入的，並且有可用的空間供新檔案使用。
+
+# 
+WVER0268E=WVER0268E: 無法記錄 {2} 檔所儲存的 {1} 元件 PTF {0} 的應用程式移除作業。無法移除具名的檔案。
+WVER0268E.explanation=無法移除具名的檔案。
+WVER0268E.useraction=請確定目標檔可以移除。
+
+# 
+WVER0269E=WVER0269E: 無法記錄 {1} 元件 PTF {0} 的應用程式移除作業 -- 沒有應用程式記錄。
+WVER0269E.explanation=元件沒有指定之 PTF 的應用程式記錄。產品資訊可能毀損，或是發生內部錯誤
+WVER0269E.useraction=如需其他資訊，請聯絡支援中心。
+
+# 
+WVER0270E=WVER0270E: 無法移除 {2} 檔所儲存的 PTF 驅動程式 {0}。
+WVER0270E.explanation=無法移除具名的檔案。
+WVER0270E.useraction=請確定目標檔可以移除。
+
+# 
+WVER0271E=WVER0271E: 無法辨識產品歷程檔案副檔名 ''{0}''。
+WVER0271E.explanation=載入歷程資訊時，此資訊儲存在具有特定副檔名的檔案中。副檔名決定儲存在每一個檔案中的資訊類型。有效的副檔名如下：'.fixDriver'、'.fixApplied'、'.efixDriver'、'.efixApplied'、'.ptfDriver' 和 '.ptfApplied'。試圖要載入一個含有版本資訊的檔案，但此檔案的副檔名不是有效的副檔名之一。
+WVER0271E.useraction=此問題指示一個內部錯誤。
+
+# 
+WVER0272E=WVER0272E: 讀取 {0} 時，發生異常狀況
+WVER0272E.explanation=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+WVER0272E.useraction=如需進一步的資訊，請參閱置於其中的異常狀況明細。
+
+label.standard.out=標準輸出
+
+listing.nested.error={0}：{1}
+
+report.header=IBM WebSphere Portal 歷程報告
+report.header.update=更新 {0} 的 IBM WebSphere Portal Server 歷程報告
+report.header.component=元件 {0} 的 IBM WebSphere Portal 歷程報告
+report.header.update.component=更新 {0} 及元件 {1} 的 IBM WebSphere Portal 歷程報告
+
+warning.no.events=警告：沒有可用的事件。
+warning.no.events.for.component=警告：元件 {0} 沒有可用的事件。
+warning.no.events.for.update=警告：更新 {0} 沒有可用的事件。
+warning.no.events.for.update.component=警告：更新 {0} 及元件 {1} 沒有可用的事件。
+
+info.report.on=於日期與時間 {0} 時報告
+
+report.footer=結束歷程報告
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=安裝
+label.product.dir=產品目錄
+label.version.dir=版本目錄
+label.version.dtd.dir=DTD 目錄
+label.version.log.dir=日誌目錄
+label.version.backup.dir=備份目錄
+label.version.tmp.dir=TMP 目錄
+label.version.history.dir=歷程目錄
+label.version.history.file=歷程檔案
+
+info.event=安裝事件
+info.component.event=元件安裝事件
+
+label.efix.id=修正程式 ID
+label.ptf.id=PTF ID
+label.unknown.id=不明的 ID
+
+label.action=動作
+
+label.start.time.stamp=開始時間
+label.end.time.stamp=結束時間
+
+label.log.file.name=日誌檔名稱
+
+
+label.component.name=元件名稱
+
+label.is.custom=是自訂的
+label.primary.content=主要內容
+
+label.update.type=更新動作
+
+label.is.external=是外部的
+label.root.property.file=Root 內容檔
+label.root.property.name=Root 內容名稱
+label.root.property.value=Root 內容值
+
+label.backup.file.name=備份檔名稱
+label.result=結果
+label.result.message=結果訊息
+
+label.initial.version=起始版本
+label.initial.spec.version=起始規格
+label.initial.build.date=起始建置日期
+
+label.final.version=最終版本
+label.final.spec.version=最終版本規格
+label.final.build.date=最終建置日期
+
+
+label.install.action=安裝
+label.uninstall.action=解除安裝
+label.selective.install.action=選擇性安裝
+label.selective.uninstall.action=選擇性解除安裝
+label.unknown.action=*** 不明的事件動作 ***
+
+label.update.add.tag=新增
+label.update.replace.tag=取代
+label.update.remove.tag=移除
+label.update.patch.tag=修補
+label.update.composite.tag=組合
+label.update.unknown.tag=*** 不明的更新類型 ***
+
+label.result.succeeded.tag=成功
+label.result.failed.tag=失敗
+label.result.cancelled.tag=已取消
+label.result.unknown.tag=*** 不明的事件結果 ***
+
+label.true=true
+label.false=false

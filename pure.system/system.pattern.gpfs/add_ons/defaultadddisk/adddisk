@@ -1,0 +1,441 @@
+#!/bin/sh
+
+# Default add-on script to configure a disk.  This script must be run as root!
+
+# Disk add-on scripts are responsible for configuring the disk.
+#
+# Add-on scripts are invoked one time when the virtual machine is initialized,
+# before any script packages are run.  Note that add-on scripts are NOT
+# invoked each time the virtual machine boots.  If initialization logic needs
+# to run each time the virtual machine is booted, the add-on script is
+# responsible for placing the necessary hooks in the operating system startup
+# logic.  Any such hooks must NOT rely on the presence of this script or any
+# additional files or directories from the add-on, as those files will be
+# deleted from the virtual machine after this script exits.
+#
+# The default disk add-on script allows the user to enter the following
+# parameters.  User-defined add-on scripts may define additional parameters,
+# but must minimally specify DISK_SIZE_GB.  All parameters are passed to
+# scripts as environment variables.
+#
+# DISK_SIZE_GB - Size of the disk, in gigabytes (2^30 bytes)
+#
+# FILESYSTEM_TYPE - Filesystem type, assumed to be a valid argument for the -t
+#   option of mkfs.  If not supplied, the disk is not formatted or mounted.
+#
+# MOUNT_POINT - Mount point for the new disk.  The mount point directory is
+#   created if it does not already exist.  An entry specifying the device and
+#   the mount point is added to /etc/fstab and the disk is mounted.  If not
+#   supplied, the disk is not mounted.
+#
+# VOLUME_GROUP - Volume group name. The volume group will be created if
+#   it does not exist and will be extended with the new physical volume 
+#
+# DEVICE_ID - Only provided for zVM disks.  Device id(s) of the zVM minidiscs
+#   that were allocated for this zLinux disk
+#
+# OWNER - This is an optional parameter. By default, the new mount point directory
+#   is owned by root. If OWNER is specified, this user becomes the owner of the
+#   new mount point directory.
+
+activate_device()
+{
+    if [ -f /etc/SuSE-release ];
+    then
+        echo "*** activating SuSE $1 ***"
+        /sbin/dasd_configure 0.0.$1 1 0
+    else        
+        if [ -f /sbin/cio_ignore ]; then 
+            echo "*** Found a RH62 System and removing disk $1 from ignore list ***"
+            /sbin/cio_ignore -r $1
+        fi
+        echo "*** Bringing the device $1 online ***"
+        /sbin/chccwdev -e $1
+    fi
+    return $?
+}
+
+format_device()
+{
+    echo "/sbin/dasdfmt -v -b 4096 -f $1 -y"
+    /sbin/dasdfmt -v -b 4096 -f $1 -y
+    if [ $? == 2 ]; then
+        echo "*** udevadm settle --timeout=10 ***"
+        udevadm settle --timeout=10
+        echo "*** udevadm returns $? ***"
+        /sbin/dasdfmt -v -b 4096 -f $1 -y
+        if [ $? == 2 ]; then
+            echo "*** udevadm settle --timeout=30 ***"
+            udevadm settle --timeout=30
+            echo "*** udevadm returns $? ***"
+            /sbin/dasdfmt -v -b 4096 -f $1 -y
+            if [ $? == 2 ]; then
+                echo "*** udevadm settle --timeout=180 ***"
+                udevadm settle --timeout=180
+                echo "*** udevadm returns $? ***"
+                /sbin/dasdfmt -v -b 4096 -f $1 -y
+            fi
+        fi
+    fi
+    local frc=$?
+    if [ $frc != 0 ]; then
+        echo "*** dasdfmt returned $frc ***"
+    fi
+    return $frc
+}
+
+partition_device()
+{
+    echo "/sbin/fdasd -r -a $1"
+    /sbin/fdasd -r -a $1
+    local prc=$?
+    echo "*** fdasd returns $prc ***"
+    if [ $prc == 255 ]; then
+        echo "*** udevadm settle --timeout=10 ***"
+        udevadm settle --timeout=10
+        echo "*** udevadm returns $? ***"
+        /sbin/fdasd -r -a $1
+        prc=$?
+        echo "*** fdasd returns $prc ***"
+        if [ $prc == 255 ]; then
+            echo "*** udevadm settle --timeout=30 ***"
+            udevadm settle --timeout=30
+            echo "*** udevadm returns $? ***"
+            /sbin/fdasd -r -a $1
+            prc=$?
+            echo "*** fdasd returns $prc ***"
+            if [ $prc == 255 ]; then
+                echo "*** udevadm settle --timeout=180 ***"
+                udevadm settle --timeout=180
+                echo "*** udevadm returns $? ***"
+                /sbin/fdasd -r -a $1
+            fi
+        fi
+    fi
+    if [ $prc != 0 ]; then
+        echo "*** fdasd returned $prc ***"
+    fi
+    return $prc
+}
+
+echo "*** Disk size:           ${DISK_SIZE_GB}GiB ***"
+echo "*** File system type:    ${FILESYSTEM_TYPE} ***"
+echo "*** Mount point:         ${MOUNT_POINT} ***"
+echo "*** Volume group:        ${VOLUME_GROUP} ***"
+echo "*** Owner:         	   ${OWNER} ***"
+
+echo "*** re-scanning SCSI bus to detect new disks"
+for HOST in /sys/class/scsi_host/*; do
+    echo "- - -" > $HOST/scan
+done
+
+echo "*** searching for uninitialized disk of size ${DISK_SIZE_GB}GiB"
+
+platform=`/bin/uname -i`
+retcode=0
+
+if [ "$platform" == "s390x" ]; then
+    echo "*** Original Device id:   ${DEVICE_ID} ***"
+    # if there are /'s in the device id, take the last element
+    LASTEL=`echo $DEVICE_ID | awk -F/ '{print $NF}'`
+    echo "*** Last element of device id:     ${LASTEL} ***"
+    
+    # if there is a '_' in the device id, then create an LVM disk
+    LVM=`echo $LASTEL | awk -F_ '{print NF-1}'`
+    if [ $LVM -eq 0 ]; then
+        # this is a standard deploy
+        LASTEL=`printf %04x 0x$LASTEL`
+        echo "*** Formatted Device id: ${LASTEL} ***"
+        activate_device $LASTEL
+        retcode=$?
+        if [ $retcode != 0 ]; then
+            echo "*** activate_device returned $retcode, exiting ***"
+            exit $retcode;
+        fi
+
+        DEVICE="/dev/"`cat /proc/dasd/devices | grep $LASTEL | awk '{ print $7 }'`
+        if [ -n "$DEVICE" ]
+        then
+            echo "*** formatting disk at ${DEVICE} ***"
+            format_device $DEVICE
+            retcode=$?
+            if [ $retcode != 0 ]; then
+                echo "*** format_device returned $retcode, exiting ***"
+                exit $retcode;
+            fi
+            sync
+            
+            echo "*** partitioning disk at ${DEVICE} ***"
+            partition_device $DEVICE
+            retcode=$?
+            if [ $retcode != 0 ]; then
+                echo "*** partition_device returned $retcode, exiting ***"
+                exit $retcode;
+            fi
+            sync
+            
+            sleep 20
+        else
+            echo "*** could not determine disk device ***" >&2
+            exit 2;
+        fi
+    else
+        # this is an LVM deploy
+        devs=""
+        for deviceid in `echo $LASTEL | awk 'BEGIN { FS="_"; OFS=" " } { $1=$1; print $0 }'`
+        do
+            echo "*** Raw Device id:      ${deviceid} ***"
+            deviceid=`printf %04x 0x$deviceid`
+            echo "*** Formatted Device id:${deviceid} ***"
+            # activate device
+            activate_device $deviceid
+            retcode=$?
+            if [ $retcode != 0 ]; then
+                echo "*** activate_device returned $retcode, exiting ***"
+                exit $retcode;
+            fi
+
+            DEVICE="/dev/"`cat /proc/dasd/devices | grep $deviceid | awk '{ print $7 }'`
+            if [ -n "$DEVICE" ]
+            then
+                echo "*** formatting disk at ${DEVICE} ***"
+                format_device $DEVICE
+                retcode=$?
+                if [ $retcode != 0 ]; then
+                    echo "*** format_device returned $retcode, exiting ***"
+                    exit $retcode;
+                fi
+                sync
+                
+                echo "*** partitioning disk at ${DEVICE} ***"
+                partition_device $DEVICE
+                retcode=$?
+                if [ $retcode != 0 ]; then
+                    echo "*** partition_device returned $retcode, exiting ***"
+                    exit $retcode;
+                fi
+                sync
+                
+                # accumulate the list of devices
+                devs="$devs ${DEVICE}1"
+                echo "*** current list of devices: ${devs} ***"
+            else
+                echo "*** could not determine disk device ***" >&2
+                exit 2;
+            fi
+        done
+        
+        # get the last element of the mountpoint to use for volume group naming
+        mplel=`echo ${MOUNT_POINT} | awk 'BEGIN { FS="/"; } { print $NF}'`
+        echo "*** last element of mount point: $mplel ***"
+        vg=vg${mplel}`echo $RANDOM % 90 + 10 | bc `
+        echo "*** volume group name: $vg ***"
+        echo "*** list of devices for LVM: $devs ***"
+        echo "*** pvcreate $devs ***"
+        pvcreate $devs
+        echo "*** pvscan ***"
+        pvscan
+        echo "*** vgcreate $vg $devs ***"
+        vgcreate $vg $devs
+        retcode=$?
+        if [ $retcode != 0 ]; then
+            echo "*** vgcreate returned $retcode, exiting ***"
+            exit $retcode;
+        fi
+        echo "*** vgdisplay /dev/$vg ***"
+        vgdisplay /dev/$vg
+        echo "*** lvcreate -l 100%FREE -n vol1 $vg ***"
+        lvcreate -l 100%FREE -n vol1 $vg
+        retcode=$?
+        if [ $retcode != 0 ]; then
+            echo "*** lvcreate returned $retcode, exiting ***"
+            exit $retcode;
+        fi
+        echo "*** lvdisplay /dev/$vg/vol1 ***"
+        lvdisplay /dev/$vg/vol1
+        DEVICE=/dev/$vg/vol
+        echo "*** DEVICE set to $DEVICE ***"
+    fi
+else
+    DEVICE=$(sfdisk -s 2>/dev/null | grep $(($DISK_SIZE_GB * 1024 * 1024))'$' | sed -e 's/:.*//' | sort | while read dev
+    do
+        if ! parted $dev print >/dev/null; then
+            echo $dev
+            break
+        fi
+    done)
+
+    if [ -n "$DEVICE" ]
+    then
+        vgdisplay | grep "UUID"
+        if [ $? -eq 0 ]; then
+           IS_LVM_MANAGED="true"
+        fi  
+                
+        echo "*** partitioning disk at ${DEVICE}"
+        parted -s $DEVICE mktable msdos
+        parted -s $DEVICE mkpart primary ${FILESYSTEM_TYPE} 2048s 100%
+        if [ "$IS_LVM_MANAGED" == "true" ]; then
+           parted $DEVICE set 1 lvm on
+        fi   
+        sync
+        
+        if [ "$IS_LVM_MANAGED" == "true" ]; then
+             pvcreate ${DEVICE}1
+             if [ $? -ne 0 ]; then
+                  echo "failed to create physical volume ${DEVICE}1"
+                  exit 2
+             fi
+             pvscan | grep ${DEVICE}1
+             if [ $? -ne 0 ]; then                  
+                  index=0
+                  while [ $index -lt 6  ]; do
+                      echo "failed to find the physical volume ${DEVICE}1, sleeping 10s"
+                      sleep 10
+                      pvscan | grep ${DEVICE}1
+                      if [ $? -ne 0 ]; then
+                           let index++
+                      else
+                           break     
+                      fi                   
+                  done
+                  if [ $index -eq 6 ]; then
+                       echo "failed to find the physical volume ${DEVICE}1"
+                       exit 2
+                  fi     
+             fi
+             
+             ROOT_LV_PATH=`cat /etc/fstab | awk '{print $1,$2}' | grep -w '/$' | awk '{print $1}'`
+             VG_NAME=$VOLUME_GROUP                          
+             if [ -n "$MOUNT_POINT" ]; then
+                  cat /etc/fstab | awk '{print $2}' | grep -w "${MOUNT_POINT}$\|${MOUNT_POINT}/$"
+                  if [ $? -eq 0 ]; then
+                       LV_PATH=`cat /etc/fstab | awk '{print $1,$2}' | grep -w "${MOUNT_POINT}$\|${MOUNT_POINT}/$" | awk '{print $1}'`
+                       echo "$MOUNT_POINT is mounted to $LV_PATH"
+                       VG_NAME=`lvdisplay $LV_PATH  | grep "VG Name" | awk '{print $3}'`
+                       NEW_MOUNT_POINT="false"
+                  else
+                       echo "$MOUNT_POINT is a new mount point"
+                       NEW_MOUNT_POINT="true"    
+                  fi
+             fi
+             
+             if [ -z "$VG_NAME" ]; then
+                  echo "use root volume group" 
+                  VG_NAME=`lvdisplay $ROOT_LV_PATH  | grep "VG Name" | awk '{print $3}'`
+                  if [ -z "$VG_NAME" ]; then
+                      VG_NAME=vg_${RANDOM}
+                  fi
+             fi
+             
+             vgdisplay | grep "VG Name *$VG_NAME$"
+             if [ $? -ne 0 ]; then
+                  echo "The volume group does not exist, create new volume group"
+                  vgcreate  $VG_NAME ${DEVICE}1
+             else
+                  echo "extend volume group $VG_NAME"
+                  vgextend $VG_NAME ${DEVICE}1     
+             fi     
+                          
+             if [ "$MOUNT_POINT" == "" ]; then
+	              echo "No mountpoint specified, skipping creating a filesystem"
+	              exit 0
+             fi      
+             
+             if [ "$NEW_MOUNT_POINT" == "false" ]; then
+                  echo "extend the partition $LV_PATH"     
+                  lvextend -l +100%FREE $LV_PATH
+                  resize2fs $LV_PATH
+                  exit 0
+             else
+                  echo "create a new partition"
+                  LV_NAME=LV${RANDOM}
+                  lvcreate -l 100%FREE -n $LV_NAME $VG_NAME
+                  LV_PATH=`lvdisplay | grep "$LV_NAME" | grep "LV Path" | awk '{print $3}'`
+                  if [ "$LV_PATH" == "" ]; then
+                      LV_PATH=`lvdisplay | grep "$LV_NAME" | awk '{print $3}'`
+                  fi
+                  echo "new partition $LV_PATH was created"    
+             fi    
+                              
+         fi       
+    else
+        echo "*** could not determine disk device" >&2
+        exit 2;
+    fi
+fi
+
+if [ -n "$FILESYSTEM_TYPE" ]
+then
+    PARTITION=${DEVICE}1
+    if [ "$IS_LVM_MANAGED" == "true" ]; then
+         if [ -n "$LV_PATH" ]; then
+            PARTITION=$LV_PATH
+         else
+            echo "LV_PATH is null, exit"
+            exit 2
+         fi      
+    fi
+    echo "*** formatting ${PARTITION} with ${FILESYSTEM_TYPE} filesystem"
+    mkfs -t "$FILESYSTEM_TYPE" ${PARTITION} 2>&1
+
+    if [ -n "$MOUNT_POINT" ]
+    then
+        echo "*** mounting ${PARTITION} at ${MOUNT_POINT}"
+        mkdir -p "$MOUNT_POINT"
+        echo "${PARTITION}    ${MOUNT_POINT}  ${FILESYSTEM_TYPE}  auto    1 2" >>/etc/fstab
+        mount "$MOUNT_POINT"
+    fi
+fi
+
+#-----------------------------------------------------------------------------------------------
+# For RHEL on System z, we need to do a few more things to persist the changes for the next IPL.
+#-----------------------------------------------------------------------------------------------
+
+if [ -f /etc/redhat-release ] && [ "$platform" == "s390x" ]; then
+    for deviceid in `echo $LASTEL | awk 'BEGIN { FS="_"; OFS=" " } { $1=$1; print $0 }'`
+    do
+        if [ -f /etc/dasd.conf ]; then
+            # Update dasd.conf to add the dev no for the new 
+            echo "*** Updating dasd.conf for $deviceid ***"
+            echo "0.0.$deviceid use_diag=0 readonly=0 erplog=0 failfast=0" >> /etc/dasd.conf
+        else
+            # Update modprobe.conf to add the dev no for older Red Hat Releases
+            MODPROBE_CONF=/etc/modprobe.conf
+
+            # Add the device number to the modprobe.conf file.
+            echo "*** Updating mobprobe.config for $deviceid ***"
+            dasd_mod_options=`cat ${MODPROBE_CONF}|grep dasd_mod`
+            new_dasd_mod_options="${dasd_mod_options},$deviceid"
+            sed -i "s/${dasd_mod_options}/${new_dasd_mod_options}/" $MODPROBE_CONF
+        fi 
+    done
+                
+    # Get the default value from the zipl boot loader file
+    ZIPL_DEFAULT=`cat /etc/zipl.conf  |grep default= |cut -d= -f 2`
+
+    # move the current initrd file, run mkinitrd to pickup changes to the dasd.conf
+    # Run zipl to save changes to initrd for next ipl
+    echo "*** Running mkinitrd ***"
+    if [ -f /boot/initrd-${ZIPL_DEFAULT}.img ]; then
+        mv /boot/initrd-${ZIPL_DEFAULT}.img  /boot/initrd-${ZIPL_DEFAULT}.img.old
+    fi
+    cd /boot && /sbin/mkinitrd initrd-${ZIPL_DEFAULT}.img ${ZIPL_DEFAULT}
+    echo "*** Running zipl ***"
+    /sbin/zipl      
+fi  
+
+#-----------------------------------------------------------------------------------------------
+# If OWNER is specified, change ownership of the mount point.
+#-----------------------------------------------------------------------------------------------
+if [ -n "$OWNER" ]
+then
+    echo "*** changing ownership of ${MOUNT_POINT} to ${OWNER}"
+    chown -R "$OWNER" "$MOUNT_POINT"
+	rc=$?
+	if [ $rc != 0 ]; then
+	    echo "*** Unable to change ownership of $MOUNT_POINT to $OWNER ***"
+	    echo "*** Return code $rc ***"
+	fi
+	echo "*** Owner changed successfully"    
+fi

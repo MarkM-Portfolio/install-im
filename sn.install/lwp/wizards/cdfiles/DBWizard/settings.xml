@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<section name="settings">
+	<section name="FeatureSelection">
+		<item key="dbUserName" value=""/>
+		<item key="createDbFilePath" value=""/>
+		<item key="featureName" value="activities"/>
+	</section>
+	<section name="Temp">
+		<item key="installedFeatures" value=""/>
+	</section>
+	<section name="CreateDeleteOption">
+		<item key="actionName" value="create"/>
+	</section>
+	<section name="DBMSInstallDirSelection">
+		<item key="dbType" value="db2"/>
+		<item key="installDir" value=""/>
+	</section>
+	<section name="DBInstance">
+		<item key="IS_REMOTE" value="no"/>
+		<item key="instanceName" value=""/>
+		<item key="accountName" value=""/>
+	</section>
+</section>

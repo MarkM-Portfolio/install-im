@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Невозможно определить каталог версии.
+WVER0001E.explanation=Расположение каталога версии определяется в соответствии с системным параметром java 'was.version.dir', либо как '<корневой каталог>\\properties\\version', где <корневой каталог> -  это каталог из системного параметра java 'was.install.root' или 'server.root'. Эти свойства проверяются последовательно и применяется первое доступное свойство. Если возникает ошибка, это означает, что оба из этих системных свойств java не заданы; в данном случае определить каталог версии нельзя.
+WVER0001E.useraction=Убедитесь, что одно из этих системных свойств java задано. Системное свойство java необходимо задать при настройке процесса или в качестве опции процесса, запущенного из командной строки.
+
+# 
+WVER0002E=WVER0002E: Неизвестное расширение файла версии продукта ''{0}''.
+WVER0002E.explanation=Загружаемые данные о версии продукта хранятся в файлах со специальными расширениями. Расширение указывает на тип информации, хранящейся в каждом из файлов. Допустимые расширения: '.websphere', '.component', '.product', '.fix', '.efix' и '.extension'. Файл, содержащий информацию о версии, с недопустимым расширением загрузить нельзя.
+WVER0002E.useraction=Внутренняя ошибка.
+
+# 
+WVER0003I=WVER0003I: Формат: versionInfo ( [ -format <text | html> ] [ -file <файл вывода> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=В этом сообщении описаны опции утилиты versionInfo. Утилита versionInfo поддерживает дополнительные опции, с помощью которых можно задавать формат вывода, файл вывода, вывод исправлений, сведений об исправлениях, вывод компонентов и текста справки.
+WVER0003I.useraction=Действия пользователя не требуются. Справочная информация отображается по запросу.
+
+# 
+WVER0004E=WVER0004E: Ошибка при записи о версии отчета в {0}: {1}
+WVER0004E.explanation=Ошибка возникла при записи отчета о версии в указанный файл.
+WVER0004E.useraction=Действия по устранению зависят от типа возникшей ошибки. Необходимо убедиться, что данный файл доступен для записи и дисковый накопитель содержит достаточно свободного пространства для записи данных.
+
+# 
+WVER0005E=WVER0005E: Не указано значение опции ''{0}''
+WVER0005E.explanation=Необходимо задать значение указанной опции.  (Для просмотра справочной информации укажите аргумент '-help' или '-usage').
+WVER0005E.useraction=Укажите значение опции.
+
+# 
+WVER0006E=WVER0006E: Недопустимое значение формата ''{0}''.
+WVER0006E.explanation=Допустимые значения формата: 'text' и 'html'. Указанное значение отличается от допустимых. (Для просмотра справочной информации укажите аргумент '-help' или '-usage').
+WVER0006E.useraction=Укажите допустимое значение формата ('text' или 'html').
+
+# 
+WVER0007E=WVER0007E: Указана недопустимая опция ''{0}''.
+WVER0007E.explanation=Указана недопустимая опция. (Для просмотра справочной информации укажите аргумент '-help' или '-usage').
+WVER0007E.useraction=Укажите допустимую опцию.
+
+# 
+WVER0008I=WVER0008I: Опция '-format' позволяет выбрать формат вывода - 'text' или 'html'. Опция '-file' задает файл вывода. Вместе с опцией '-file' должно быть указано имя файла. Опция '-long' позволяет просмотреть информацию о всех исправлениях, пакетах обслуживания и компонентах. С помощью опции '-fixes' можно просмотреть исправления. С помощью опции '-fixDetail' можно просмотреть подробную информацию об исправлениях. С помощью опции '-ptfs' можно просмотреть все PTF. С помощью опции '-ptfDetail' можно просмотреть подробную информацию о PTF. С помощью опции '-components' можно просмотреть компоненты. С помощью опции '-componentDetail' можно просмотреть подробную информацию о компонентах. С помощью опции '-help' можно просмотреть справочную информацию. С помощью опции '-usage' можно просмотреть данную справку.
+WVER0008I.explanation=Сообщение содержит информацию о допустимых опциях утилиты versionInfo.
+WVER0008I.useraction=Действия пользователя не требуются. Справочная информация отображается по запросу.
+
+# 
+WVER0009E=WVER0009E: Произошла ошибка при сохранении отчета о версии в {0}. Ошибка типа {1}. Просмотреть  текст сообщения об ошибке нельзя.  Вторая ошибка (типа {2}) возникла при получении текста сообщения об ошибке.
+WVER0009E.explanation=При записи отчета о версии в указанный файл возникла ошибка. Вторая ошибка возникла при получении текста сообщения об ошибке.
+WVER0009E.useraction=Участие пользователя не требуется. Повторите операцию или обратитесь в службу поддержки.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0010I.explanation=Это стандартное заявление об авторских правах.
+WVER0010I.useraction=Действия пользователя не требуются. Это информационное сообщение.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=Это стандартное описание продукта.
+WVER0011I.useraction=Действия пользователя не требуются. Это информационное сообщение.
+
+# 
+WVER0012I=WVER0012I: Программа создания отчетов VersionInfo версии {0}, дата {1}
+WVER0012I.explanation=Это стандартное описание модуля.
+WVER0012I.useraction=Действия пользователя не требуются. Это информационное сообщение.
+
+# 
+WVER0013E=WVER0013E: Возникла исключительная ситуация при чтении {0}
+WVER0013E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0013E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0014E=WVER0014E: Возникла исключительная ситуация при чтении {0}
+WVER0014E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0014E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0015E=WVER0015E: При обработке информации о версии произошла исключительная ситуация
+WVER0015E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0015E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0016E=WVER0016E: При обработке информации о версии произошло несколько исключительных ситуаций
+WVER0016E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0016E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0017E=WVER0017E: Невозможно определить каталог протоколов обновления.
+WVER0017E.explanation=Каталог протоколов определяется системным свойством java 'was.version.log.dir'; кроме того, протоколы могут храниться в подкаталоге 'log' каталога версии.  Свойство 'was.version.log.dir' и каталог версии не заданы.
+WVER0017E.useraction=Убедитесь в том, что задан каталог версии, либо задайте системное свойство java 'was.version.log.dir'.
+
+# 
+WVER0018E=WVER0018E: Не удалось определить каталог резервных копий обновлений.
+WVER0018E.explanation=Каталог резервных копий определяется системным свойством java 'was.version.log.dir'; кроме того, копии могут храниться в подкаталоге 'log' каталога версии.  Свойство 'was.version.backup.dir' и каталог версии не заданы.
+WVER0018E.useraction=Убедитесь в том, что задан каталог версии, либо задайте системное свойство java 'was.version.backup.dir'.
+
+# 
+WVER0019E=WVER0019E: Не удалось определить каталог DTD сведений о версии продукта.
+WVER0019E.explanation=Каталог DTD определяется системным свойством java 'was.version.log.dir'; кроме того, определения типов документов (DTD) могут храниться в подкаталоге 'log' каталога версии.  Свойство 'was.version.dtd.dir' и каталог версии не заданы.
+WVER0019E.useraction=Убедитесь в том, что задан каталог версии, либо задайте системное свойство java 'was.version.dtd.dir'.
+
+# 
+WVER0021E=WVER0021E: При синтаксическом анализе информации об исправлении возникли устранимые ошибки.
+WVER0021E.explanation=Ошибки, список которых приведен ниже, возникли при анализе сведений об исправлениях. Дополнительная информация приведена в тексте связанных сообщений об ошибках.
+WVER0021E.useraction=Возможные действия пользователя описаны в перечисленных сообщениях об ошибках.
+
+# 
+WVER0022E=WVER0022E: Ошибка при чтении информации о продукте. Ошибка исправима; анализ был продолжен. Ошибка возникла при обработке объекта с ИД системы {0} и общим ИД {1}, в строке {2} и столбце {3}: {4}
+WVER0022E.explanation=Указанный объект обладает недопустимой структурой; соответствующая информация приведена в сообщении об ошибке. Тем не менее, эта ошибка не является критичной и анализ был продолжен.
+WVER0022E.useraction=Указанный файл необходимо обновить, и, если это возможно, исправить.
+
+# 
+WVER0023E=WVER0023E: В ходе обработки информации о продукте были выданы предупреждения.
+WVER0023E.explanation=Предупреждения, список которых приведен ниже, возникли при анализе сведений о продукте. Дополнительная информация приведена в перечисленных предупреждающих сообщениях.
+WVER0023E.useraction=Возможные действия пользователя описаны в перечисленных предупреждающих сообщениях.
+
+# 
+WVER0024E=WVER0024E: Выдано предупреждение при чтении информации о продукте. Предупреждение было получено при обработке объекта с ИД системы {0} и общим ИД {1}, в строке {2} и столбце {3}: {4}
+WVER0024E.explanation=Указанный объект обладает недопустимой структурой; соответствующая информация приведена в предупреждающем сообщении. Тем не менее, эта ошибка не является критичной и анализ был продолжен.
+WVER0024E.useraction=Указанный файл необходимо обновить, и, если это возможно, исправить.
+
+# 
+WVER0029E=WVER0029E: Невозможно удалить исправление {0} из файла {2}.
+WVER0029E.explanation=Указанный файл невозможно удалить.
+WVER0029E.useraction=Убедитесь в том, что целевой файл можно удалить.
+
+# 
+WVER0030E=WVER0030E: При синтаксическом анализе информации о PTF возникли устранимые ошибки.
+WVER0030E.explanation=При синтаксическом анализе информации PTF возникли устранимые ошибки, список которых приведен ниже. Дополнительная информация приведена в тексте связанных сообщений об ошибках.
+WVER0030E.useraction=Возможные действия пользователя описаны в перечисленных сообщениях об ошибках.
+
+# 
+WVER0031E=WVER0031E: Не удалось зарегистрировать применение PTF {0} для компонента {1} в файле {2}. Указанный файл невозможно сохранить.
+WVER0031E.explanation=Указанный файл невозможно сохранить.
+WVER0031E.useraction=Убедитесь, что целевой файл доступен для записи и на диске достаточно свободного места для его сохранения.
+
+# 
+WVER0035E=WVER0035E: Невозможно удалить PTF {0} из файла {2}.
+WVER0035E.explanation=Указанный файл невозможно удалить.
+WVER0035E.useraction=Убедитесь в том, что целевой файл можно удалить.
+
+# 
+WVER0040E=WVER0040E: Указанный каталог версии ''{0}'' не существует.
+WVER0040E.explanation=Каталог версии не существует.
+WVER0040E.useraction=Убедитесь, что указанный каталог является допустимым каталогом версии продукта.
+
+# 
+WVER0041E=WVER0041E: Указанный каталог версии ''{0}'' не является каталогом.
+WVER0041E.explanation=Каталог версии не является каталогом.
+WVER0041E.useraction=Убедитесь, что указанный каталог является допустимым каталогом версии продукта.
+
+# 
+WVER0042E=WVER0042E: Указанный каталог DTD ''{0}'' не существует.
+WVER0042E.explanation=Каталог DTD не существует.
+WVER0042E.useraction=Убедитесь, что указан допустимый каталог DTD продукта.
+
+# 
+WVER0043E=WVER0043E: Указанный каталог DTD ''{0}'' не является каталогом.
+WVER0043E.explanation=Каталог DTD не является каталогом.
+WVER0043E.useraction=Убедитесь, что указан допустимый каталог DTD продукта.
+
+# 
+WVER0044E=WVER0044E: Не удалось создать указанный каталог протокола ''{0}''
+WVER0044E.explanation=Каталог DTD не является каталогом.
+WVER0044E.useraction=Убедитесь, что указан допустимый каталог DTD продукта.
+
+# 
+WVER0045E=WVER0045E: Указанный каталог протокола ''{0}'' не является каталогом.
+WVER0045E.explanation=Каталог DTD не является каталогом.
+WVER0045E.useraction=Убедитесь, что указан допустимый каталог DTD продукта.
+
+# 
+WVER0046E=WVER0046E: Не удалось создать указанный каталог резервных копий ''{0}''
+WVER0046E.explanation=Каталог DTD не является каталогом.
+WVER0046E.useraction=Убедитесь, что указан допустимый каталог DTD продукта.
+
+# 
+WVER0047E=WVER0047E: Указанный каталог резервных копий ''{0}'' не является каталогом.
+WVER0047E.explanation=Каталог DTD не является каталогом.
+WVER0047E.useraction=Убедитесь, что указан допустимый каталог DTD продукта.
+
+# 
+WVER0048E=WVER0048E: Указанный каталог продукта ''{0}'' не существует.
+WVER0048E.explanation=Каталог продукта не существует.
+WVER0048E.useraction=Убедитесь, что задан допустимый каталог продукта.
+
+# 
+WVER0049E=WVER0049E: Указанный каталог продукта ''{0}'' не является каталогом.
+WVER0049E.explanation=В качестве каталога продукта указан не каталог.
+WVER0049E.useraction=Убедитесь, что задан допустимый каталог продукта.
+
+
+
+
+label.standard.out=Стандартный вывод
+
+listing.nested.error={0}: {1}
+
+report.header=Отчет о состоянии установки продукта IBM WebSphere Portal
+report.footer=Конец отчета о состоянии установки
+
+info.report.on=Дата и время отчета: {0}
+
+info.source=Установка
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Каталог продукта
+label.version.dir=Каталог версии
+label.version.dtd.dir=Каталог DTD
+label.version.log.dir=Каталог протоколов
+label.version.backup.dir=Каталог резервных копий
+label.version.tmp.dir=Каталог TMP
+
+info.platform=Платформа установки
+label.name=Имя
+label.version=Версия
+
+info.technology=Список технологий
+label.installed=установлен
+
+info.product=Установленный продукт
+# label.name=Name
+# label.version=Version
+label.id=ИД
+label.build.level=Уровень компиляции
+label.build.date=Дата компиляции
+
+info.component=Установленный компонент
+label.component.name=Имя компонента
+label.configtasks=Задачи настройки
+label.spec.version=Версия спецификации
+label.build.version=Версия компиляции
+# label.build.date=Build Date
+
+info.update.on.component=Установленное обновление для компонента
+#label.component.name=Component Name
+label.update.type=Тип обновления
+label.update.type.efix=исправление
+label.update.type.ptf=PTF
+
+label.efix.id=ИД исправления
+label.ptf.id=ИД PTF
+
+label.update.effect=Действие обновления
+
+label.is.required=Обязательное
+label.is.optional=Необязательное
+
+label.is.external=Внешнее
+label.root.property.file=Файл корневого параметра
+label.root.property.name=Имя корневого параметра
+label.root.property.value=Значение корневого параметра
+
+label.is.custom=Пользовательское
+
+label.log.file.name=Имя файла протокола
+label.backup.file.name=Имя файла резервной копии
+label.install.date=Дата установки
+
+label.initial.spec.version=Исходная версия спецификации
+label.initial.build.date=Дата создания исходной версии
+label.initial.build.version=Версия исходной компиляции
+
+label.final.spec.version=Окончательная версия спецификации
+label.final.build.date=Дата создания окончательной версии
+label.final.build.version=Окончательная версия программного кода
+
+info.extension=Установленное расширение
+# label.name=Name
+# label.id=ID
+
+info.efix=Установленное исправление
+# label.id=ID
+label.short.description=Описание
+label.is.trial=Пробное
+label.expiration.date=Срок хранения
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Образец
+
+label.apar=APAR
+label.apar.number=Число
+label.apar.date=Дата
+label.apar.short.description=Описание
+label.apar.long.description=Образец
+
+label.supported.platforms=Поддерживаемые платформы
+label.supported.products=Поддерживаемые платформы
+
+label.efix.efix.prereqs=Необходимые предварительные исправления
+
+label.component.updates=Обновления компонентов
+label.component.requires=Необходимо: {0} версии {1}
+
+label.becomes=соответствует спецификации {0}, компиляция {1} в {2}
+
+label.custom.properties=Пользовательские параметры
+
+info.ptf=Установленный PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Включенные исправления
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=true
+label.false=false
+
+label.is.absent=отсутствует
+label.is.installed=установлен {0}
+
+label.update.effect.add=добавление
+label.update.effect.replace=замена
+label.update.effect.remove=удаление
+label.update.effect.patch=исправление
+label.update.effect.unknown=неизвестно
+
+label.is.negative=отрицательный
+label.is.positive=положительный
+
+label.is.required.tag=обязательное
+label.if.possible.tag=если возможно
+label.is.optional.tag=необязательный
+label.is.recommended.tag=рекомендуется
+
+label.is.custom.tag=пользовательское обновление
+label.is.standard.tag=стандартное обновление

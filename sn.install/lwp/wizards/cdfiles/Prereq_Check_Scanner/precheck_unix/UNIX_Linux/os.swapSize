@@ -1,0 +1,37 @@
+#!/bin/bash
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+res=`uname`
+if [ "$res" = "AIX" ] ; then
+	ram=`bootinfo -r`
+	s1=`lsps -a | awk '{print $4}' | sed '1d' | sed 's/MB//g'`
+	swap=`expr $s1 \* 1024`
+elif [ "$res" = "SunOS" ] ; then
+	ram=`prtconf | grep Mem | awk '{print $3 }'`
+	swap=`top -d1 | grep -w "total swap" | awk '{print $8}' | sed 's/M//g'`
+else
+	ram=`cat /proc/meminfo | grep MemTotal | awk {'print $2'}`
+	swap=`cat /proc/meminfo | grep SwapTotal | awk {'print $2'}`
+	
+fi
+#echo "RAM="$ram
+#echo "SWAP="$swap	
+if [ "$1" = "True" -o "$1" = "False" ]; then
+ram2=`echo $ram*2 | bc -l`
+ if [ $swap -ge  $ram2 ] ; then
+	echo "$Msg_TRUE"
+ else
+	echo "$Msg_FALSE"
+ fi
+else
+swap1=`echo $swap/1024/1024 | bc`
+echo $swap1"GB"
+fi

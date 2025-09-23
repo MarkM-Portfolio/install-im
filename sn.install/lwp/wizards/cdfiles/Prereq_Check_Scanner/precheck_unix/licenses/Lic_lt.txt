@@ -1,0 +1,274 @@
+Tarptautin� programos licencin� sutartis
+
+1 dalis - Bendrosios s�lygos
+
+ATSISI�SDAMAS, DIEGDAMAS, KOPIJUODAMAS, PASIEKDAMAS PROGRAM�, SPAUSDAMAS MYGTUK� �SUTINKU� AR KITAIS B�DAIS NAUDODAMAS PROGRAM�, LICENCIATAS SUTINKA SU �IOS SUTARTIES S�LYGOMIS.JEIGU SU �IOS LICENCIJOS S�LYGOMIS SUTINKATE LICENCIATO VARDU, J�S PAREI�KIATE IR GARANTUOJATE, KAD PRISIIMATE VIS� ATSAKOMYB� U� �I� S�LYG� LAIKYM�SI. JEIGU NESUTINKATE SU �IOMIS S�LYGOMIS,
+
+- NESI�SKITE, NEDIEKITE, NEKOPIJUOKITE, NEBANDYKITE PASIEKTI PROGRAMOS, NESPAUSKITE MYGTUKO �SUTINKU� IR NESINAUDOKITE PROGRAMA; IR
+
+- NEDELSDAMI GR��INKITE NENAUDOTAS LAIKMENAS, DOKUMENTACIJ� IR NUOSAVYB�S TEIS�S DOKUMENT� �ALIAI, I� KURIOS JUOS GAVOTE, KAD SUSIGR��INTUM�TE U� PROGRAM� SUMOK�TUS PINIGUS. JEI PROGRAMA BUVO ATSISI�STA, SUNAIKINKITE VISAS PROGRAMOS KOPIJAS.
+
+1. Apibr��imai
+
+��galiotas naudojimas� - numatytas lygis, apibr��iantis, kaip Licenciatas gali paleisti ir vykdyti Program�. �is lygis gali b�ti nustatomas pagal naudotoj� skai�i�, paslaug� vienet� milijonus (MSU), procesoriaus vert�s vienetus (PVU) arba kitus naudojimo lygius, kuriuos nurodo IBM.
+
+�IBM� - Tarptautin� verslo ma�in� korporacija arba vienas i� jos filial�.
+
+�Licencijos informacija� (LI) - dokumentas, kuriame pateikta specifin� informacija apie Program� ir papildomos s�lygos. Programos LI galima rasti internete, adresu: www.ibm.com/software/sla. LI taip pat galima rasti Programos kataloge, panaudojus sistemin� komand�, arba lankstinuke, kuris prid�tas prie Programos.
+
+�Programa� - �ie i�vardinti dalykai, j� originalai ir visos i�samios arba dalin�s kopijos: 1) kompiuterio skaitomos instrukcijos ir duomenys, 2) komponentai, failai ir moduliai, 3) garsin� ir vaizdin� med�iaga (pvz., vaizdai, tekstas, �ra�ai ar paveiksl�liai), ir 4) susijusi licencijos med�iaga (tokia, kaip raktai ir dokumentacija).
+
+�Nuosavyb�s teis�s dokumentas� (�NTD�) - dokumentas, �rodantis, kad Licenciatas yra �galiotasis naudotojas. NTD taip pat �rodo, kad Licenciatas gal�s naudotis garantiniu aptarnavimu, b�sim� naujinim� kainomis, jei tokie bus i�leisti, ir galimais specialiais ir reklaminiais pasi�lymais. Jeigu IBM nepateikia Licenciatui NTD, tada IBM vietoj NTD gali priimti original� pirkimo kvit� ar kit� pirkimo dokument� i� �alies (arba IBM, arba jos platintojo), i� kurios Licenciatas �sigijo Program�, su s�lyga, kad dokumente nurodytas Programos pavadinimas bei suteiktos �galioto naudojimo s�lygos.
+
+�Garantijos laikas� - vieni metai nuo datos, kai Licenciatui suteikta licencija.
+
+2. Sutarties strukt�ra
+
+�i� sutart� sudaro 1 dalis - Bendrosios s�lygos, 2 dalis - Konkre�iai �aliai taikomos s�lygos (jei toki� yra), LI ir NTD, ir tai yra galutinis susitarimas tarp Licenciato ir IBM d�l naudojimosi Programa. Ji pakei�ia bet kok� ankstesn� �odin� ar ra�tin� bendravim� tarp Licenciato ir IBM, kuri� metu buvo aptariamas Licenciato naudojimasis Programa. 2 dalies s�lygos pakei�ia arba modifikuoja 1 dalies s�lygas. Atsiradus bet kokiems prie�taravimams, remiamasi LI.
+
+3. Licencijos suteikimas
+
+Programa yra IBM arba IBM platintojo nuosavyb�, ginama autori� teisi�, naudojimuisi ja suteikiama licencija, bet ji n�ra parduodama.
+
+IBM suteikia Licenciatui nei�imtin� licencij� 1) naudotis Programa pagal �galioto naudojimo s�lygas, nurodytas NTD, 2) daryti ir diegti kopijas, kurios pad�t� �galiotai naudotis programa, ir 3) daryti atsargin� kopij� su s�lyga, kad
+
+a. Licenciatas teis�tai �sigijo Program� ir laikosi �ios Sutarties s�lyg�;
+
+b. atsargin� kopija nepaleid�iama, nebent neveikia pati Programa, kurios atsargin� kopija sukurta;
+
+c. Licenciatas ant kiekvienos Programos i�samios ar dalin�s kopijos nurodo vis� autoriaus teisi� informacij� bei kitus nuosavyb�s �enklus;
+
+d. Licenciatas u�tikrina, kad kiekvienas, kuris naudojasi Programa (vietine ar nuotoline prieiga) 1) naudojasi tik Licenciato vardu ir 2) laikosi �ios Sutarties s�lyg�;
+
+e. Licenciatas 1) nenaudoja, nekopijuoja, nekei�ia ir neplatina Programos, nebent tai ai�kiai leid�iama �ioje Sutartyje; 2) nebando i�ardyti, dekompiliuoti, versti ar atkurti Programos kodo, nebent tai ai�kiai leid�ia �statymai ir nesuteikiama teis� atsisakyti sutartyse; 3) nenaudoja joki� Programos komponent�, fail�, moduli�, garsinio ir vaizdinio turinio ar susijusios licencijuotos med�iagos atskirai nuo Programos; ir 4) nei�duoda licencijos tre�iajai �aliai, nenuomoja ir i�perkamosios nuomos pagrindais nesuteikia Programos; ir
+
+f. jei Licenciatas �gyja �i� Program� kaip Pagalbin� program�, Licenciatas naudoja �i� Program� tik kaip pagalbin� priemon�, palaikan�i� Pagrindin� program�, jai taikomi bet kokie Pagrindin�s programos licencijos apribojimai, arba, jei Licenciatas �gyja �i� program� kaip Pagrindin� program�, Licenciatas naudoja visas Pagalbines programas tik �iai Programai palaikyti, jai taikomi bet kokie �ios Sutarties apribojimai. �iame punkte �f� �Pagalbin� programa� yra Programa, kuri yra kitos IBM Programos (�Pagrindin�s programos�) dalis ir kuri Pagrindin�s programos LI yra nurodoma kaip Pagalbin� programa. (Nor�damas gauti atskir� Pagalbin�s programos licencij� be �i� apribojim�, Licenciatas tur�t� susisiekti �alimi, i� kurios �sigijo Pagalbin� program�.)
+
+�i licencija taikoma kiekvienai Licenciato padarytai Programos kopijai.
+
+3.1 Pakeitimai, atnaujinimai, pataisos ir taisymai
+
+3.1.1 Pakeitimai
+
+Jei Programa pakei�iama kita Programa, pakeistos Programos licencija yra nedelsiant nutraukiama.
+
+3.1.2 Atnaujinimai, pataisos ir taisymai
+
+Kai Licenciatas gauna Programos atnaujinim�, patais� ar pataisym�, Licenciatas sutinka su bet kokiomis papildomomis ar skirtingomis s�lygomis, taikomomis �iems atnaujinimas, pataisoms ar pataisymams, kurios yra nurodytos LI. Jei nepateikta joki� papildom� ar pakeist� s�lyg�, tuomet atnaujinimui, pataisai ar pataisymui taikomos tik �ios Sutarties s�lygos. Jei Programa pakei�iama atnaujinimu, Licenciatas sutinka nedelsdamas nutraukti pakeistos Programos naudojim�.
+
+3.2 Fiksuotos trukm�s licencijos
+
+Jei IBM suteikia Programai fiksuotos trukm�s licencij�, Licenciato licencija baigia galioti, pasibaigus fiksuotam laikotarpiui, nebent Licenciatas ir IBM susitaria j� atnaujinti.
+
+3.3 Terminas ir sutarties nutraukimas
+
+�i sutartis galioja tol, kol yra nutraukiama.
+
+IBM gali nutraukti Licenciato licencij�, jei Licenciatas nesilaiko Sutarties s�lyg�.
+
+Jei licencija yra nutraukiama bet kurios �alies iniciatyva d�l bet kokios prie�asties, Licenciatas sutinka nedelsdamas nutraukti Programos naudojim� ir sunaikinti visas turimas Programos kopijas. Jei tam tikros Sutarties s�lygos d�l savo pob�d�io i�lieka galioti po Sutarties nutraukimo, jos galioja, kol bus �vykdytos, ir taikomos abiej� �ali� atitinkamiems teisi� per�m�jams ir �galiotiniams.
+
+4. Mok�jimas
+
+Mok�jimas priklauso nuo �galioto naudojimo pob�d�io, kuris yra apra�ytas NTD. IBM neteikia kredit�, jei v�luojama sumok�ti, ir negr��ina jau sumok�t� pinig�, i�skyrus atvejus, apra�ytus Sutartyje.
+
+Jei Licenciatas nori i�pl�sti savo �galioto naudojimo ribas, Licenciatas turi i� anksto prane�ti IBM arba �galiotam IBM atstovui ir apmok�ti visas susijusias i�laidas.
+
+5. Mokes�iai
+
+Jeigu kuri nors vald�ios institucija taiko Programai muit�, mokes�ius ar kitoki� rinkliav�, i�skyrus tuos, kurie skai�iuojami nuo IBM grynojo pelno, Licenciatas sutinka sumok�ti s�skaitoje fakt�roje nurodyt� sum� arba pateikti atleidimo nuo mokes�i� dokumentus. Nuo Programos �sigijimo dienos Licenciatas yra atsakingas u� bet kokius Programos nuosavyb�s mokes�ius. Jeigu kuri nors vald�ios institucija taiko muit�, mokes�ius ar kitoki� rinkliav� u� Programos import�, eksport�, persiuntim�, prieig� ar naudojim� u� valstyb�s, kurioje Licenciatui suteikta licencija, rib�, Licenciatas sutinka sumok�ti paskirt� sum�.
+
+6. Pinig� gr��inimo garantija
+
+Jei pradinis Licenciatas d�l koki� nors prie�as�i� yra nepatenkintas Programa, jis gali per 30 dien� nuo NTD gavimo datos nutraukti licencij� ir susigr��inti pinigus, kuriuos mok�jo u� Program�, su s�lyga, kad Licenciatas gr��ina Program� ir NTD tai �aliai, i� kurios j� �sigijo. Jei suteikta fiksuotos trukm�s licencija, kuri� galima prat�sti, Licenciatas gali susigr��inti pinigus tik tuo atveju, jei Programa ir jos NTD sugr��indami per pirm�sias 30 pirmojo termino dien�. Jeigu Licenciatas Program� atsisiunt�, jis turi susisiekti su j� i�davusia �alimi ir i� jos gauti pinig� susigr��inimo instrukcijas.
+
+7. Programos perleidimas
+
+Licenciatas gali perleisti Program� bei visas savo licencines teises ir �sipareigojimus kitai �aliai tik tuo atveju, jei ta �alis sutinka su �ios Sutarties s�lygomis. Jei kuri nors �alis d�l tam tikr� prie�as�i� licencij� nutraukia, Licenciatas nebegali perleisti Programos tre�iajai �aliai. Licenciatas negali perleisti dalies 1) Programos ar 2) Programos �galioto naudojimo. Perleisdamas Program�, Licenciatas kartu su LI ir NTD taip pat privalo perleisti spausdint� �ios Sutarties kopij�. I� karto po perleidimo Licenciato licencija yra nutraukiama.
+
+8. Garantija ir i�imtys
+
+8.1 Ribota garantija
+
+IBM garantuoja, kad Programa, jei ji naudojama numatytoje veikimo aplinkoje, atitinka specifikacijas. Programos specifikacijos ir nurodytos veikimo aplinkos informacija yra pateikta Programos dokumentacijoje (tokioje kaip �read-me� failas) arba kituose informacijos �altiniuose, kuriuos i�leido IBM (pvz., prane�ime). Licenciatas sutinka, kad tokia dokumentacija ir kitas Programos turinys pateikiami tik angl� kalba, nebent vietos �statymai reikalauja kitaip, nesuteikiama teis� sutartyje to atsisakyti arba apriboti.
+
+Garantija galioja tik nemodifikuotai Programos daliai. IBM negarantuoja, kad Programa veiks be trik�i� ir klaid� ar kad IBM pa�alins visus Programos defektus. Licenciatas yra atsakingas u� naudojimosi Programa rezultatus.
+
+Garantiniu periodu IBM suteikia Licenciatui nemokam� prieig� prie IBM duomen� bazi�, kuriose yra informacija apie �inomus Programos defektus, j� taisymus, apribojimus ir ap�jimus. Detalesn�s informacijos rasite IBM Programos palaikymo vadove internete, adresu: www.ibm.com/software/support.
+
+Jei Garantiniu laikotarpiu Programa neveikia, kaip buvo garantuota, ir problemos negalima i�spr�sti, naudojantis IBM duomen� baz�se esan�ia informacija, Licenciatas gali gr��inti Program� ir jos NTD �aliai (arba IBM, arba jos atstovui), i� kurios Licenciatas �sigijo Program�, ir susigr��inti pinigus. Gr��inus Program�, Licenciato licencija nutraukiama. Jeigu Licenciatas Program� atsisiunt�, jis turi susisiekti su j� i�davusia �alimi ir i� jos gauti pinig� susigr��inimo instrukcijas.
+
+8.2 I�imtys
+
+�IOS GARANTIJOS YRA LICENCIATO I�IMTIN�S GARANTIJOS IR PAKEI�IA VISAS KITAS GARANTIJAS AR S�LYGAS, I�REIK�TAS AR NUMANOMAS, �SKAITANT, BET NEAPSIRIBOJANT, BET KOKIAS NUMANOMAS TINKAMUMO PREKYBAI, PATENKINAMOS KOKYB�S, TINKAMUMO TAM TIKRAI PASKIR�IAI IR BET KOKIAS NUOSAVYB�S IR NEPA�EID�IAMUMO GARANTIJAS AR S�LYGAS. KAI KURIOSE JURISDIKCIJOSE NELEID�IAMA NE�TRAUKTI I�REIK�T� AR NUMANOM� GARANTIJ�, TOD�L AUK��IAU I�VARDYTOS I�IMTYS LICENCIATUI GALI B�TI NETAIKOMOS. TOKIU ATVEJU �I� GARANTIJ� TAIKYMAS APRIBOJAMAS GARANTIJOS LAIKOTARPIO TRUKME. �IAM LAIKOTARPIUI PRA�JUS, NEBETAIKOMOS JOKIOS GARANTIJOS. KAI KURIOSE VALSTYB�SE AR JURISDIKCIJOSE NELEID�IAMA RIBOTI NUMANOMOS GARANTIJOS TRUKM�S, TOD�L AUK��IAU PATEIKTI APRIBOJIMAI LICENCIATUIGALI B�TI NETAIKOMI.
+
+�IOS GARANTIJOS SUTEIKIA LICENCIATUI APIBR��TAS JURIDINES TEISES. LICENCIATAS TAIP PAT GALI TUR�TI KIT� TEISI�, KURIOS SKIRSIS PRIKLAUSOMAI NUO JURISDIKCIJOS.
+
+GARANTIJAS, NURODYTAS 8 SKYRIUJE (GARANTIJOS IR I�IMTYS), SUTEIKIA TIK �IBM�. APRIBOJIMAI, PAMIN�TI 8.2 POSKYRYJE (I�IMTYS), TAIP PAT TAIKOMI IR �IBM� TIEK�JAMS, VEIKIANTIEMS KAIP TRE�IOJI �ALIS. TOKIE TIEK�JAI VEIKIA BE JOKI� GARANTIJ� AR S�LYG�. �IS PARAGRAFAS NEPANAIKINA �IBM� GARANTINI� �SIPAREIGOJIM�, NURODYT� �IOJE SUTARTYJE.
+
+9. Licenciato duomenys ir duomen� baz�s
+
+Siekdama pad�ti Licenciatui i�spr�sti su Programa susijusias problemas, IBM gali papra�yti, kad Licenciatas 1) leist� IBM nuotoliniu b�du prisijungti prie Licenciato sistemos arba 2) atsi�st� savo informacij� ar sistemos duomenis � IBM. Ta�iau IBM neprivalo teikti tokios pagalbos, nebent IBM ir Licenciatas pasira�o atskir� susitarim�, kuriame IBM sutinka teikti Licenciatui tokio pob�d�io technin� pagalb�, kuri n�ra numatyta �ios Sutarties IBM garantiniuose �sipareigojimuose. Bet kokiu atveju IBM naudoja informacij� apie klaidas ir problemas savo produktams ir paslaugoms tobulinti ir techninei pagalbai teikti. Licenciatas sutinka su tokia IBM, IBM juridini� asmen� ir subrangov� (veikian�i� ne tik Licenciato valstyb�je) veikla.
+
+Licenciatas lieka atsakingas u� 1) bet kokius duomenis ar kit� bet kurios duomen� baz�s turin�, kur� jis padaro prieinam� IBM, 2) duomen� prieigos, apsaugos, kodavimo, naudojimo bei duomen� perdavimo (�skaitant ir bet kokius asmeninius duomenis) proced�r� ir kontrol�s pasirinkim� ir vykdym� ir 3) vis� duomen� bazi� ir vis� saugom� duomen� atsargini� kopij� suk�rim� bei j� atstatym�. Licenciatas nesi�s ir nesuteiks IBM prieigos prie asmenin�s informacijos, nepriklausomai nuo to, kokios formos ji yra, ir bus atsakingas u� pagr�stas i�laidas, kurias IBM patirs d�l tokios informacijos klaidingo perdavimo IBM arba jei IBM prarast� ar paskelbt� toki� informacij�, taip pat ir i�laidas, susijusias su tre�i�j� �ali� i�keltais ie�kiniais.
+
+10. Atsakomyb�s apribojimas
+
+Apribojimai, pateikti 10 skyriuje (Atsakomyb�s apribojimas) yra taikomi tiek, kiek leid�ia taikomi �statymai ir neleid�iama atsisakyti sutartyse.
+
+10.1 Dalykai, u� kuriuos IBM atsakinga
+
+Gali susiklostyti tokios aplinkyb�s, kad d�l IBM ar kit� �sipareigojim� nevykdymo Licenciatui b�t� suteikta teis� gauti �alos atlyginim� i� IBM. Neatsi�velgiant � pagrind�, pagal kur� Licenciatas gauna teis� reikalauti i� IBM atlyginti �al� (�skaitant esmin� pa�eidim�, aplaidum�, fakt� i�kraipym� arba kit� sutarties ar civilin�s teis�s pa�eidim�), i�skyrus bet koki� atsakomyb�, kurios negalima atsisakyti arba apriboti remiantis atitinkamais �statymais, visa IBM atsakomyb� d�l vis� pretenzij�, susijusi� su kiekviena Programa, nevir�ys a) �alos d�l k�no su�alojimo (�skaitant mirt�), �alos nekilnojamajam turtui ir materialiajam asmeniniam turtui atlyginimo; b) bet kokios kitos faktin�s tiesiogin�s �alos, �skaitant mokes�ius (jei u� Program� mokama fiksuotais terminais, taikomi 12 m�nesi� mokes�iai) u� Program�, d�l kurios pateiktas ie�kinys.
+
+�is apribojimas taip pat taikomas visiems IBM Programos k�r�jams ir tiek�jams. Tai yra did�iausia IBM ir jos Programos k�r�j� ir tiek�j� kolektyvin�s atsakomyb�s suma.
+
+10.2 Dalykai, u� kuriuos IBM n�ra atsakinga
+
+JOKIU ATVEJU IBM, JOS PROGRAMOS K�R�JAI AR TIEK�JAI N�RA ATSAKINGI U� �IUOS DALYKUS, NET JEI JIEMS BUVO PRANE�TA APIE TOKI� APLINKYBI� ATSIRADIMO GALIMYB�:
+
+a. DUOMEN� PRARADIM� AR SUGADINIM�;
+
+b. SPECIALIUOSIUS, ATSITIKTINIUS, BAUDINIUS AR NETIESIOGINIUS NUOSTOLIUS, ARBA BET KOKIUS PRIE�ASTINIUS EKONOMINIUS NUOSTOLIUS; ARBA
+
+c. PRARAST� PELN�, VERSL�, PAJAMAS, PRESTI�� AR PLANUOTAS SUTAUPYTI L��AS.
+
+11. S�lyg� laikymosi tikrinimas
+
+11 skyriuje (S�lyg� laikymosi tikrinimas), �IPLA Programos s�lygos� rei�kia 1) �i� Sutart� ir jos pataisymus bei IBM pateiktus sandorio dokumentus, ir 2) IBM programin�s �rangos politik�, kuri� galima rasti IBM Programin�s �rangos politikos svetain�je (www.ibm.com/softwarepolicies), �skaitant, bet neapsiribojant, politik�, susijusi� su atsargin�mis kopijomis, pagalbin�s talpos kain� nustatymu bei informacijos perk�limu.
+
+11 skyriuje pateikiamos teis�s ir �sipareigojimai taikomi vis� Programos licencijos galiojimo laik� bei dvejus metus po galiojimo pabaigos.
+
+11.1 Tikrinimo procesas
+
+Licenciatas sutinka sukurti, i�saugoti ir pateikti IBM bei jos auditoriams tikslias ra�ytines ataskaitas, sistemos �ranki� i�vestis ir kit� sistemos informacij�, kuri leist� �vertinti, ar Licenciatas, naudodamasis visomis Programomis, laikosi IPLA programos s�lyg�, �skaitant, bet neapsiribojant, vis� IBM licencijavimo ir kain� nustatymo s�lyg�. Licenciatas yra atsakingas, kad 1) tai nevir�yt� jo �galioto naudojimo rib� ir 2) atitikt� IPLA Programos s�lygas.
+
+Priimtinai persp�jusi, IBM gali patikrinti, kaip Licenciatas laikosi IPLA programos s�lyg� visose darbo vietose ir visose aplinkose, kuriose Licenciatas naudojasi Programomis (bet kokiu tikslu), kurioms taikomos IPLA programos s�lygos. Toks patikrinimas bus atliktas taip, kad kuo ma�iau sutrikdyt� Licenciato veikl�, ir gali b�ti atliekamas Licenciato patalpose darbo valandomis. Tikrinti IBM gali samdyti nepriklausom� auditori�, jei IBM ir auditorius yra pasira�� konfidencialumo sutart�.
+
+11.2 Sprendimas
+
+IBM prane� apie tai Licenciatui ra�tu. Licenciatas sutinka nedelsiant tiesiogiai IBM padengti i�laidas, kurias IBM nurodo s�skaitoje fakt�roje, u� 1) bet kok� naudojimosi pervir��, 2) palaikym�, suteikt� �iam pervir�iui per naudojimo laikotarp� arba dvejus metus, atsi�velgiant � tai, kuris laikotarpis trumpesnis, ir 3) kitas i�laidas bei �sipareigojimus, nustatytus per tikrinim�.
+
+12. Tre�i�j� �ali� pastabos
+
+Programoje gali b�ti tre�i�j� �ali� kodas, kur� IBM, ne tre�ioji �alis, suteikia Licenciatui, remdamasi �ia Sutartimi. Jei yra pastab� apie tre�i�j� �ali� kod� (�Tre�i�j� �ali� pastabos�), ji �traukta tik Licenciatui informuoti. �i� pastab� reik�t� ie�koti Programos Pastab� faile (-uose). Informacija, kaip gauti �altinio kod� tam tikram tre�iosios �alies kodui, pateikta skyriuje �Tre�i�j� �ali� pastabos�. Jei Tre�i�j� �ali� pastabose IBM tre�iosios �alies kod� nurodo kaip �Modifikuojam� tre�iosios �alies kod��, IBM leid�ia Licenciatui 1) modifikuoti Modifikuojam� tre�iosios �alies kod� ir 2) atkurti kod� t� Programos moduli�, kurie tiesiogiai siejasi su Modifikuojamu tre�iosios �alies kodu, su s�lyga, kad tai daroma tik norint suderinti Licenciato modifikacijas su tre�iosios �alies kodu. IBM aptarnavimo ir technin�s pagalbos �sipareigojimai, jei tokie yra, taikomi tik nemodifikuotai Programai.
+
+13. Bendrosios nuostatos
+
+a. Joks �ios Sutarties punktas neturi �takos �statym� numatytoms vartotoj� teis�ms, kurias sutartis gal�t� panaikinti ar apriboti.
+
+b. Tais atvejais, kai Licenciatui IBM Programas pateikia materialios formos, IBM savo siuntimo ir pristatymo �sipareigojimus �vykdo, perdavusi Programas IBM paskirtam ve��jui, nebent Licenciatas ir IBM ra�ti�kai susitar� kitaip.
+
+c. Jeigu kuri nors �ios Sutarties nuostata laikoma netekusi galios ar neturinti ie�kinin�s galios, kitos �ios Sutarties nuostatos lieka galioti.
+
+d. Licenciatas sutinka laikytis vis� taikom� eksporto ir importo �statym� bei taisykli�, tarp j� JAV embargo ir sankcij� taisykli� bei eksporto draudim� tam tikriems galutiniams vartotojams.
+
+e. Licenciatas �galioja Tarptautin� verslo ma�in� korporacij� ir jos filialus (bei j� teisi� per�m�jus, rangovus ir IBM verslo partnerius) laikyti ir naudoti Licenciato verslo sandorio informacij�, nepriklausomai nuo sandori� vietos, susijusi� su IBM produktais ir paslaugomis, arba IBM ir Licenciato verslo ry�iams palaikyti.
+
+f. Kiekviena �alis, prie� i�keldama ie�kin� kitai �aliai d�l Sutarties �sipareigojim� nevykdymo, pirmiausia suteikia galimyb� �vykdyti tuos �sipareigojimus. �alys bando gera valia i�spr�sti i�kilusius gin�us, nesutarimus ar ie�kinius, susijusius su �ia Sutartimi.
+
+g. Jei kitaip nereikalauja taikomi �statymai, ir tai nepanaikina bei neapriboja sutarties �sipareigojim�, 1) n� viena �alis nesiims joki� teisini� veiksm� d�l jokio ie�kinio, susijusio su �ia Sutartimi, jei yra pra�j� dveji metai nuo �vykio prad�ios; ir 2) pasibaigus �iam terminui bet koks ie�kinys ir su juo susijusios atitinkamos teis�s netenka galios.
+
+h. Nei Licenciatas, nei IBM neatsako u� savo �sipareigojim� nevykdym� d�l nuo �ali� nepriklausan�i� prie�as�i�.
+
+i. �ioje Sutartyje nenumatomos jokios tre�i�j� �ali� teis�s ar veiksmai, ir IBM n�ra atsakinga u� jokius tre�i�j� �ali� ie�kinius, pateiktus Licenciatui, i�skyrus atvejus, nurodytus 10.1 poskyryje (Dalykai, u� kuriuos IBM atsakinga), kai IBM juridi�kai atsako tre�iajai �aliai u� k�no su�alojimus (tarp j� ir mirt�) ar turtin� �al�.
+
+j. Pasira�ydamos �i� Sutart�, n� viena �alis nesitiki �sipareigojim� vykdymo, nenumatyto Sutartyje, �skaitant, bet neapsiribojant, �sipareigojim�, susijusi� su: 1) Programos veikimu, jei tai nenurodyta 8 skyriuje (Garantijos ir i�imtys) ; 2) kit� �ali� patirtimi ar rekomendacijomis; arba 3) bet kokiais Licenciato gautais rezultatais.
+
+k. Programoms reklamuoti, parduoti ar aptarnauti IBM yra pasira�iusi sutartis su tam tikromis organizacijomis (vadinamomis IBM verslo partneriais). IBM verslo partneriai yra nepriklausomos ir atskirai nuo IBM veikian�ios institucijos. IBM n�ra atsakinga u� IBM verslo Partneri� veiksmus ar parei�kimus, ar j� �sipareigojimus Licenciatui.
+
+l. Licencijos ir intelektin�s nuosavyb�s nuostoli� kompensacijos s�lygos, nurodytos kitose Licenciato sutartyse su IBM (tokiose, kaip IBM kliento sutartis) netaikomos �ios Sutarties suteikiamos Programos licencijoms.
+
+14. Geografin� veiklos sfera ir taikoma teis�
+
+14.1 Taikoma teis�
+
+Abi �alys sutinka, kad vykdydamos, ai�kindamos ir �gyvendindamos visas Licenciato ir IBM teises, prievoles ir �sipareigojimus, kylan�ius ar susijusius su �ios Sutarties turiniu, taikys valstyb�s, kurioje Licenciatas �sigijo Programos licencij�, �statymus, nepaisant teis�s princip� prie�taravim�.
+
+Jungtini� Taut� Konvencija d�l tarptautini� preki� pirkimo ir pardavimo sutar�i� netaikoma.
+
+14.2 Jurisdikcija
+
+Visos teis�s, prievol�s ir �sipareigojimai yra pavald�s Valstyb�s, kurioje Licenciatas �gijo Programos licencij�, teismams.
+
+2 dalis - konkre�iai �aliai taikomos s�lygos
+
+�ios s�lygos pakei�ia arba modifikuoja toliau i�vardytose �alyse suteikt� licencij� s�lygas, nurodytas 1 dalyje. Visos 1 dalyje nurodytos s�lygos, kuri� �ios pataisos nepakei�ia, i�lieka nepakeistos ir galiojan�ios. 2 dalis i�d�stoma taip:
+
+- 1 dalies 14 skyriaus (Taikoma teis� ir jurisdikcija) su �alimis susijusios pataisos ir
+
+- Europos, Vidurini� Ryt� ir Afrikos �alyse taikomos kit� Sutarties s�lyg� pataisos.
+
+1 dalies 14 skyriaus (Taikoma teis� ir jurisdikcija) su �alimis susijusios pataisos
+
+14.1 Taikoma teis�
+
+Skyriaus 14.1 Taikoma teis� 1 pastraipos fraz� �valstyb�s, kurioje Licenciatas �sigijo Programos licencij�, �statymus� pakei�iama �iomis fraz�mis (atitinkamai pagal �al�):
+
+EUROPA, VIDURINIAI RYTAI IR AFRIKA
+
+Lietuvoje: Suomijos �statymus.
+
+14.3 Arbitra�as
+
+�i pastraipa pridedama kaip naujas poskyris 14.3 Arbitra�as, nes ji taikoma �alims, toliau i�skirtoms pary�kintuoju �riftu. �io 14.3 poskyrio nuostatos turi auk�tesn� teisin� gali� nei poskyrio 14.2 Jurisdikcija nuostatos iki ribos, numatytos taikomuose vietos teis�s aktuose ir reglamentuose:
+
+EUROPA, VIDURINIAI RYTAI IR AFRIKA
+
+Lietuva:
+
+Visi su �ia Sutartimi susij� gin�ai bus galutinai sprend�iami arbitra�o teisme, kuris vyks Helsinkyje, Suomijoje, remiantis tuo metu galiojan�iais Suomijos arbitra�o teis�s aktais. Kiekviena �alis paskirs vien� arbitr�. Arbitrai kartu paskirs pirminink�. Jei arbitrams nepavyks susitarti ir paskirti pirmininko, j� paskirs Helsinkio centriniai pramon�s ir prekybos r�mai.
+
+EUROPOS, VIDURINI� RYT� IR AFRIKOS (EMEA) �ALIMS TAIKOMOS PATAISOS
+
+EUROPOS S�JUNGOS VALSTYB�S NAR�S
+
+8. Garantija ir i�imtys
+
+Prie skyriaus 8. Garantija ir i�imtys pridedama �i informacija:
+
+Europos S�jungoje (ES) vartotojai turi juridines teises, kurios apibr��iamos pagal vietos teis�s aktus, taikomus plataus vartojimo preki� pardavimui. Nuostatos, i�vardytos �iame skyriuje 8. Garantija ir i�imtys, �ioms teis�ms neturi jokios �takos. Ribotoji garantija taikoma visame pasaulyje.
+
+13. Bendrosios nuostatos
+
+13.e punkt� pakei�ia tokia informacija:
+
+(1) Apibr��tys - �iam 13.e punktui taikomos tokios papildomos apibr��tys:
+
+(a) Verslo kontaktin� informacija - su verslu susijusi kontaktin� informacija, kuri� Licenciatas pateikia IBM: Licenciato darbuotoj� ir subrangov� vardai, pareigos, darbo viet� adresai, telefono numeriai ir el. pa�to adresai. Austrijoje, Italijoje ir �veicarijoje verslo kontaktin� informacija apima ir informacij� apie Klient� ir jo subrangovus kaip juridinius asmenis (pavyzd�iui, duomenis apie Kliento pajamas ir kit� su sandoriais susijusi� informacij�).
+
+(b) Verslo kontaktiniai asmenys - Licenciato darbuotojai ir subrangovai, su kuriais susijusi verslo kontaktin� informacija.
+
+(c) Duomen� apsaugos institucija - institucija, �steigta remiantis konkre�ios �alies duomen� apsaugos ir elektronini� ry�i� teis�s aktais, arba ne ES �alies institucija, atsakinga u� asmens duomen� apsaug� toje �alyje, arba (bet kurioje i� anks�iau pamin�t� �ali�) tinkama tvarka paskirtas tokias pareigas perimantis subjektas.
+
+(d) Duomen� apsaugos ir elektronini� ry�i� teis�s aktai - (i) taikomi galiojantys vietos teis�s aktai ir nuostatos, pagal kurias vykdomi ES direktyvos 95/46/EB (d�l asmen� apsaugos tvarkant asmens duomenis ir d�l laisvo toki� duomen� jud�jimo) ir ES direktyvos 2002/58/EB (d�l asmens duomen� tvarkymo ir privatumo apsaugos elektronini� ry�i� sektoriuje) reikalavimai, arba (ii) ne ES �ali� teis�s aktai ir (arba) nuostatos, susijusios su asmens duomen� apsauga ir elektronini� ry�i�, kuriems naudojami asmens duomenys, reguliavimu, �skaitant (bet kurioje i� anks�iau pamin�t� �ali�) visus �statym� nustatytus pakeitimus arba modifikacijas.
+
+(e) IBM grup� - �International Business Machines Corporation�, esanti JAV, Niujorko valstijos mieste Armonke, jos filialai ir atitinkami verslo partneriai bei subrangovai.
+
+(2) Licenciatas suteikia IBM teis�:
+
+(a) apdoroti ir naudoti verslo kontaktin� informacij� IBM grup�je teikiant Licenciatui palaikymo paslaugas ir siekiant toliau palaikyti verslo ry�ius tarp Licenciato ir IBM grup�s, �skaitant, be apribojim�, kreipim�si � verslo kontaktin� asmen� (el. pa�tu ar kitu b�du) ir IBM grup�s produkt� ir paslaug� pardavim� (�Nurodytas tikslas�), ir
+
+(b) atskleisti verslo kontaktinio asmens informacij� kitiems IBM grup�s nariams tik siekiant Nurodyto tikslo.
+
+(3) IBM sutinka, kad visa verslo kontaktin� informacija bus apdorojama laikantis duomen� apsaugos ir elektronini� ry�i� teis�s akt� ir naudojama tik Nurodytu tikslu.
+
+(4) Iki duomen� apsaugos ir elektronini� ry�i� teis�s akt� nustatytos ribos Licenciatas patvirtina, kad (a) gavo (arba gaus) visus sutikimus i� verslo kontaktini� asmen� ir jiems pateik� (arba pateiks) visus prane�imus, b�tinus norint leisti IBM grupei apdoroti ir naudoti verslo kontaktin� informacij� Nurodytu tikslu.
+
+(5) Licenciatas suteikia IBM teis� perduoti verslo kontaktin� informacij� u� Europos ekonomin�s zonos rib�, jei toks perdavimas vykdomas pagal sutarties s�lygas, kurias patvirtino duomen� apsaugos institucija, arba jei tok� perdavim� leid�ia duomen� apsaugos ir elektronini� ry�i� teis�s aktai.
+
+Z125-3301-13 (05/2009)
+
+
+LICENCIJOS INFORMACIJA
+
+Toliau nurodytos Programos licencijuojamos pagal �ias ir Tarptautin� programos licencin� sutartis s�lygas.
+
+Programos pavadinimas: IBM Prerequisite Scanner R1.1
+Programos numeris: 5725-C13
+
+�altinio komponentai
+
+� Program� gali b�ti �traukti keli komponentai �altinio kodo forma (��altinio komponentai�). Licenciatas gali kopijuoti ir modifikuoti �altinio komponentus tik naudoti viduje, jei toks naudojimas nepa�eid�ia �ios Sutarties licencijos teisi� ir jei Licenciatas nekei�ia ar nenaikina jokios �altinio komponentuose esan�ios autoriaus teisi� informacijos ar prane�im�. IBM pateikia �altinio komponentus be palaikymo �sipareigojimo ir TOKIUS, KOKIE YRA, NESUTEIKDAMA JOKIOS APIBR��TOS AR NUMANOMOS GARANTIJOS, �SKAITANT PAVADINIMO, NEPA�EID�IAMUMO AR NE�SIKI�IMO GARANTIJAS IR NUMANOMAS TINKAMUMO PREKYBAI IR TAM TIKRAM TIKSLUI GARANTIJAS IR S�LYGAS.
+
+D/N:  L-JRCI-89W3MD
+P/N:  L-JRCI-89W3MD 

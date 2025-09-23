@@ -1,0 +1,122 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: A avut loc o excepţie la încărcarea documentului {1}, folosind directorul DTD {0}
+WVER0101E.explanation=Excepţia notată a dus la eşuarea încărcării documentului specificat.
+WVER0101E.useraction=Acţiune utilizator particulară depinde de excepţia care a avut loc.  În particular, asiguraţi-vă că fişierul specificat este disponibil are formatul corespunzător. Contactaţi suportul pentru informaţii suplimentare.
+
+# 
+WVER0102E=WVER0102E: A avut loc o excepţie la încărcarea documentului {1}, folosind directorul DTD {0}. A fost setat un ID sistem {2} şi un ID public {3}.  Eroarea a apărut la linia cu numărul{4} şi pe coloana {5}
+WVER0102E.explanation=Excepţia notată a dus la eşuarea încărcării documentului specificat.
+WVER0102E.useraction=Acţiune utilizator particulară depinde de excepţia care a avut loc.  În particular, asiguraţi-vă că fişierul specificat este disponibil are formatul corespunzător. Contactaţi suportul pentru informaţii suplimentare.
+
+# 
+WVER0104E=WVER0104E: A avut loc o excepţie la crearea unui element document root de tipul {0}
+WVER0104E.explanation=Excepţia notată a apărut la crearea unui element document root.
+WVER0104E.useraction=Acţiune utilizator particulară depinde de excepţia care a avut loc.  În majoritatea cazurilor, configuraţia parserului XML este nevalidă.  Asiguraţi-vă că proprietăţile sistem java nu crează o configuraţie parser nevalidă.  Contactaţi suportul pentru informaţii suplimentare.
+
+# 
+WVER0105E=WVER0105E: A avut loc o excepţie la crearea unui obiect model XML (de tipul {0})
+WVER0105E.explanation=Excepţia notată a avut loc la încercarea de creare a unui obiect model XML.
+WVER0105E.useraction=Acţiune utilizator particulară depinde de excepţia care a avut loc.  În majoritatea cazurilor, tipul notat nu este disponibil de-a lungul căii de clase.  Contactaţi suportul pentru informaţii suplimentare. 
+# 
+WVER0106E=WVER0106E: A fost făcută o încercare de a plasa un element într-un obiect având tipul simplu {0}
+WVER0106E.explanation=Aceasta este o eroare internă.
+WVER0106E.useraction=Contactaţi suportul pentru informaţii suplimentare.
+
+# 
+WVER0107E=WVER0107E: A avut loc o excepţie la încercarea de a scrie informaţii de versiune în fişierul {0}
+WVER0107E.explanation=Excepţia notată a avut loc la încercarea de a scrie fişierul specificat.
+WVER0107E.useraction=Acţiune utilizator particulară depinde de excepţia care a avut loc.  În particular, asiguraţi-vă că în fişierul specificat se poate scrie şi că există spaţiu suficient pentru fişierul notat.
+
+# 
+WVER0108E=WVER0108E: A avut loc o excepţie la realizarea unei rezoluţii de entitate, cu ID-ul public {0}, ID-ul sistem {1} şi numele de fişier mapat {2}
+WVER0108E.explanation=Excepţia notată în timpul rezolvării informaţiilor DTD la parsarea informaţiilor produs.  DTD-ul notat nu a putut fi rezolvat.
+WVER0108E.useraction=Acţiune utilizator particulară depinde de excepţia care a avut loc.  
+# 
+WVER0201E=WVER0201E: Atribut lipsă ''{0}'' în elementul de tip ''{1}''
+WVER0201E.explanation=Atributul numit nu este un atribut valid de tipul specificat de element.
+WVER0201E.useraction=Actualizaţi fişierul XML la informaţii corecte de atribut.
+
+#
+WVER0202E=WVER0202E: Structură de elemente inegală: Prea multe închideri de elemente.
+WVER0202E.explanation=Un fişier XML care conţine informaţii produs are o structură de elemente greşită.
+WVER0202E.useraction=Actualizaţi fişierul XML la structura corectă de elemente.
+
+#
+WVER0203E=WVER0203E: Structură de elemente inegală: Prea puţine închideri de elemente.
+WVER0203E.explanation=Un fişier XML care conţine informaţii produs are o structură de elemente greşită.
+WVER0203E.useraction=Actualizaţi fişierul XML la structura corectă de elemente.
+
+#
+WVER0204E=WVER0204E: Elementul ''{0}'' nu este valid ca element root
+WVER0204E.explanation=Un fişier XML care conţine informaţii produs are o structură de elemente greşită.
+WVER0204E.useraction=Actualizaţi fişierul XML la structura corectă de elemente.
+
+#
+WVER0205E=WVER0205E: Elementul ''{0}'' nu este valid în elementul ''{1}''
+WVER0205E.explanation=Un fişier XML care conţine informaţii produs are o structură de elemente greşită.
+WVER0205E.useraction=Actualizaţi fişierul XML la structura corectă de elemente.
+
+#
+WVER0206E=WVER0206E: Încercare de închidere element ''{0}'' în elementul ''{1}''
+WVER0206E.explanation=Un fişier XML care conţine informaţii produs are o structură de elemente greşită.
+WVER0206E.useraction=Actualizaţi fişierul XML la structura corectă de elemente.

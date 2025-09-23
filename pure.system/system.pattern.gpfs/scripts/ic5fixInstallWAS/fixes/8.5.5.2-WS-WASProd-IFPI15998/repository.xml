@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?repositoryDigest version='0.0.1'?>
+<repositoryDigest>
+  <repository>
+    <property name='LayoutPolicy' value='P1'/>
+    <property name='LayoutPolicyVersion' value='0.0.0.1'/>
+    <fix id='8.5.0.2-WS-WASProd-IFPI15998' version='8.5.2.20140618_1604' offeringId='EnhancedFix' offeringVersion='0.0.0.EnhancedFix'>
+      <information name='8.5.0.2-WS-WASProd-IFPI15998' version='8.5.2.20140618_1604'>
+        EJBDEPLOY JDT HANGING
+      </information>
+      <property name='applicable.offerings' value='com.ibm.websphere.BASE.v85 [8.5.2,8.5.5003);com.ibm.websphere.EXPRESS.v85 [8.5.2,8.5.5003);com.ibm.websphere.ND.v85 [8.5.2,8.5.5003);com.ibm.websphere.zOS.v85 [8.5.2,8.5.5003);com.ibm.websphere.BASETRIAL.v85 [8.5.2,8.5.5003);com.ibm.websphere.EXPRESSTRIAL.v85 [8.5.2,8.5.5003);com.ibm.websphere.NDTRIAL.v85 [8.5.2,8.5.5003);com.ibm.websphere.WEBENAB.v85 [8.5.2,8.5.5003);com.ibm.websphere.DEVELOPERS.v85 [8.5.2,8.5.5003);com.ibm.websphere.DEVELOPERSILAN.v85 [8.5.2,8.5.5003)'/>
+      <property name='beta.compatible' value='true'/>
+      <property name='offering.type' value=''/>
+      <property name='default.profile' value=''/>
+      <property name='default.user.profile' value=''/>
+      <property name='vendor.name' value=''/>
+      <property name='offering.service.repositories' value=''/>
+      <file name='Fixes/8.5.0.2-WS-WASProd-IFPI15998_8.5.2.20140618_1604.fix'/>
+    </fix>
+  </repository>
+</repositoryDigest>

@@ -1,0 +1,75 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM                                                               -->
+<!--                                                                   -->
+<!-- Licensed Material                                                 -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2007, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="FileNet.update" default="development" >
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+    <import file="${env.WPLC_IMPORT}/std_dirs.xml"/> 
+    <import file="${env.WPLC_IMPORT}/copyright.xml"/>
+    <import file="${env.WPLC_IMPORT}/clean.xml"/>
+    <import file="${env.WPLC_IMPORT}/check.xml"/>
+    <import file="${env.WPLC_IMPORT}/nojavadoc.xml" />
+	<property environment="env" />
+	<property name="precompile.override" value="all"/>
+	<property name="FileNet.update.tools" value="${env.LWP_HOME}/setup/HCL_Connections_Install/tools/FileNet.update"/>
+	<locateComponent component="FileNet.update" property="FileNet.update" locatebuilddir="true" />
+	<target name="development" depends="copy">  	   
+	</target>
+  
+	<target name="production" depends="copy">  	 
+	</target>
+	
+	<target name="copy">
+		<delete dir="${dir.build}/setup" />
+		<mkdir dir="${dir.build}/setup" />
+		
+		<path id="project.classpath"></path>
+		
+		<delete dir="${dir.src}/build/classes" />
+		<mkdir dir="${dir.src}/build/classes" />
+		
+		<javac srcdir="${dir.src}/src" 
+			destdir="${dir.src}/build/classes"
+			includes="com/ibm/connections/install/*.java"
+			fork="yes" verbose="no" 
+			executable="${env.JAVA_HOME}/bin/javac">
+			<classpath refid="project.classpath"/>  
+	    </javac>
+		
+		<mkdir dir="${dir.build}/setup/output"/>
+		<copy todir="${dir.build}/setup/output" >
+			<fileset dir="${dir.src}" >
+				<include name="scripts/*"/>
+			</fileset>
+		</copy>
+		
+		<mkdir dir="${dir.build}/setup/output/lib"/>
+		<jar destfile="${dir.build}/setup/output/lib/lc.FileNet.update.util.jar" basedir="${dir.src}/build/classes">
+		    <manifest>
+				<attribute name="Main-Class" value="com/ibm/connections/install/FilenetUpdateUtil"/>
+				<attribute name="Class-Path" value=""/>			
+		    </manifest>
+		</jar>	
+		<antcall target="format_sh_files"/>
+		<mkdir dir="${FileNet.update.tools}" />
+		<copy todir="${FileNet.update.tools}" >
+			<fileset dir="${dir.build}/setup/output" >
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	</target>
+		<target name="format_sh_files">
+		<fixcrlf srcdir="${dir.build}/setup/output/scripts" eol="lf" includes="**/*.sh" />
+		<chmod dir="${dir.build}/setup/output/scripts" includes="**/*.sh" perm="a+x" />
+	</target>
+</project>

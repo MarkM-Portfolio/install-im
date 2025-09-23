@@ -1,0 +1,8 @@
+<!DOCTYPE product SYSTEM "product.dtd">
+<product name="IBM WebSphere Personalization">
+  <id>PZN</id>
+  <version>5.1.0.0</version>
+  <build-info
+    date="11/18/2004"
+    level="20041118_0224"/>
+</product>

@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Eşuare instalare corecţie: A avut loc o excepţie la actualizarea istoricului de evenimente stocat în {0}
+WUPD0200E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze. 
+WUPD0200E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0201E=WUPD0201E: Eşuare instalare corecţie: A avut loc o excepţie la deschiderea fişierului  istoric {0}
+WUPD0201E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze. 
+WUPD0201E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0211E=WUPD0211E: Eşuare instalare corecţie: A avut loc o excepţie la extragerea informaţiilor despre componentele incluse în actualizarea curentă.
+WUPD0211E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze. 
+WUPD0211E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0212E=WUPD0212E: Eşuare instalare corecţie: Componenta {0} este listată ca parte a acestei actualizări, dar nu este disponibilă nici o imagine actualizare componentă.
+WUPD0212E.explanation=Porţiunea corecţiei care este folosită pentru a actualiza componenta numită nu este disponibilă.
+WUPD0212E.useraction=Această problemă indică o eroare internă.  Contactaţi IBM Support pentru informaţii suplimentare.
+
+WUPD0214E=WUPD0214E: Eşuare instalare corecţie: A avut loc o excepţie la înregistrarea aplicaţiei de corecţie {0} din fişierul JAR corecţie {1}
+WUPD0214E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze. 
+WUPD0214E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0215E=WUPD0215E: Eşuare instalare corecţie: Instalarea componentei {0} a eşuat.
+WUPD0215E.explanation=Consultaţi istoricul de instalare şi fişierul istoric evenimente pentru detalii suplimentare.
+WUPD0215E.useraction=Consultaţi istoricul de instalare şi fişierul istoric evenimente pentru detalii suplimentare.
+
+WUPD0216E=WUPD0216E: Eşuare instalare corecţie: A avut loc o excepţie la marcarea aplicaţiei de corecţie {0} pe componenta {1}
+WUPD0216E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze. 
+WUPD0216E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+
+WUPD0220E=WUPD0220E: Eşuare dezinstalare corecţie: Fişierul pentru corecţia {0} nu este prezent.
+WUPD0220E.explanation=A fost făcută o încercare de a înlătura o corecţie care nu este marcată ca instalată.
+WUPD0220E.useraction=Această problemă indică o eroare internă.  Nu ar trebui făcută nici o încercare de a înlătura o corecţie care nu este instalată.
+
+WUPD0221E=WUPD0221E: Eşuare dezinstalare corecţie: Fişierul pentru corecţia {0} nu a putut fi citit.
+WUPD0221E.explanation=Fişierul pentru corecţia numită nu a putut fi citit.  Operaţia de dezinstalare a fost oprită.
+WUPD0221E.useraction=Verificaţi că fişierul care conţine corecţia numită este valid.
+
+WUPD0222E=WUPD0222E: Eşuare instalare corecţie: A avut loc o excepţie la curăţarea aplicaţiei de corecţie {0}
+WUPD0222E.explanation=A avut loc o excepţie în timpul dezinstalării corecţiei, care a făcut ca dezinstalarea să eşueze. 
+WUPD0222E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0223E=WUPD0223E: Eşuare dezinstalare corecţie: Actualizarea pentru componenta {1} pentru corecţia {0} nu a putut fi dezinstalat.
+WUPD0223E.explanation=A fost făcută o actualizare asupra componentei numite ca parte a corecţiei numite.  Această actualizare componentă nu a putut fi înlăturată.
+WUPD0223E.useraction=Această problemă indică o eroare internă.  Contactaţi IBM Support pentru informaţii suplimentare.
+
+WUPD0224E=WUPD0224E: Eşuare instalare corecţie: A avut loc o excepţie la curăţarea aplicaţiei corecţiei {0} din componenta {1}
+WUPD0224E.explanation=A avut loc o excepţie în timpul dezinstalării corecţiei, care a făcut ca dezinstalarea să eşueze. 
+WUPD0224E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0232E=WUPD0232E: Eşuare actualizare corecţie: A avut loc o excepţie la extragerea conţinutului corecţiei {0}, componenta {1}, fişierul corecţie JAR {2}, intrarea {3}
+WUPD0232E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze. 
+WUPD0232E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0233E=WUPD0233E: Eşuare actualizare corecţie: A avut loc o excepţie la preprocesarea conţinutului corecţiei {0}, componenta {1}
+WUPD0233E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze.
+WUPD0233E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0234E=WUPD0234E: Eşuare actualizare corecţie: A avut loc o excepţie la procesarea conţinutului corecţiei {0}, componenta {1}
+WUPD0234E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze.
+WUPD0234E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0235E=WUPD0235E: Eşuare actualizare corecţie: Procesarea corecţiei {0}, componenta {1} a eşuat.  Consultaţi fişierul istoric {2} pentru detalii de procesare.
+WUPD0235E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze.
+WUPD0235E.useraction=Revedeţi informaţiile de procesare din fişierul istoric listat.
+
+WUPD0236E=WUPD0236E: Eşuare actualizare corecţie: Excepţie la pregătirea directoarelor istoric şi de rezervă
+WUPD0236E.explanation=A avut loc o excepţie în timpul instalării corecţiei, care a făcut ca instalarea să eşueze.
+WUPD0236E.useraction=Consultaţi excepţia listată pentru detalii suplimentare.
+
+WUPD0237E=WUPD0237E: Eşuare înlăturare corecţie: A avut loc o excepţie la preprocesarea conţinutului corecţiei {0}, componenta {1}
+WUPD0237E.explanation=A avut loc o excepţie în timpul dezinstalării corecţiei, care a făcut ca dezinstalarea să eşueze.
+WUPD0237E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0238E=WUPD0238E: Eşuare înlăturare corecţie: A avut loc o excepţie la procesarea conţinutului corecţiei {0}, componenta {1}
+WUPD0238E.explanation=A avut loc o excepţie în timpul dezinstalării corecţiei, care a făcut ca dezinstalarea să eşueze.
+WUPD0238E.useraction=Consultaţi excepţia pentru detalii suplimentare.
+
+WUPD0239E=WUPD0239E: Eşuare înlăturare corecţie: Procesarea corecţiei {0}, componenta {1} a eşuat.  Consultaţi fişierul istoric {2} pentru detalii de procesare.
+WUPD0239E.explanation=A avut loc o excepţie în timpul dezinstalării corecţiei, care a făcut ca dezinstalarea să eşueze.
+WUPD0239E.useraction=Consultaţi fişierul istoric pentru detalii suplimentare.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} din {1}) Instalare corecţie {2}.
+prefix.efix.revert   =({0} din {1}) Revenirea din instalarea corecţiei {2}.
+prefix.efix.uninstall=({0} din {1}) Dezinstalare corecţie {2}.
+
+#NOTAMSG
+prepare.update.install  =pregătire pentru instalare
+prepare.update.uninstall=pregătire pentru dezinstalare
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =instalarea componentei {0} din {1}
+component.update.uninstall=dezinstalarea componentei {0} din {1}
+
+#NOTAMSG
+complete.update.install  =finalizare instalare
+complete.update.uninstall=finalizare dezinstalare
+
+#NOTAMSG
+result.cancelled.install=Anulare instalare
+result.succeeded.install=Instalare reuşită
+result.failed.install=Eşuare instalare
+
+result.cancelled.uninstall=Dezinstalare anulată
+result.succeeded.uninstall=Dezinstalare reuşită
+result.failed.uninstall=Dezinstalare eşuată

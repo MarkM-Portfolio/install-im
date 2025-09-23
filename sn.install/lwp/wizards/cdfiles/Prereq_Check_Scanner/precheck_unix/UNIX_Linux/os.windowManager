@@ -1,0 +1,29 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+flag=0
+flag1=0
+res=`which gnome-about 2>/dev/null`
+if [ $res ]; then
+   flag=1
+else
+   flag=-1
+fi
+
+res=`which startkde 2>/dev/null`
+if [ $res ]; then
+   flag1=1
+else
+   flag1=-1
+fi
+
+if [ $flag -eq 1 -o $flag1 -eq 1 ]; then
+  echo "$Msg_AVAILABLE"
+else
+  echo "$Msg_UNAVAILABLE"
+fi

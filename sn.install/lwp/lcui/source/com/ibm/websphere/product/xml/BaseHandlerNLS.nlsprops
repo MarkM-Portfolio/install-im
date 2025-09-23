@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: An exception occurred while loading document {1}, using DTD directory {0}
+WVER0101E.explanation=The noted exception caused the load of the specified document to fail.
+WVER0101E.useraction=Particular user action depends on the exception which occurred.  In particular, make sure that the specified file is available and has proper format.  Contact support for additional information.
+
+# 
+WVER0102E=WVER0102E: An exception occurred while loading document {1}, using DTD directory {0}.  A system ID of {2} and a public ID of {3} was set.  The error occurred at line number {4} and column number {5}
+WVER0102E.explanation=The noted exception caused the load of the specified document to fail.
+WVER0102E.useraction=Particular user action depends on the exception which occurred.  In particular, make sure that the specified file is available and has proper format.  Contact support for additional information.
+
+# 
+WVER0104E=WVER0104E: An exception occurred while creating a root document element of type {0}
+WVER0104E.explanation=The noted exception occurred creating a root document element.
+WVER0104E.useraction=Particular user action depends on the exception which occurred.  Most often, the configuration of the XML parser is invalid.  Make sure that the java system properties do not create an invalid parser configuration.  Contact support for additional information.
+
+# 
+WVER0105E=WVER0105E: An exception occurred while creating an XML model object (of type {0})
+WVER0105E.explanation=The noted exception occurred while attempting to create an XML model object.
+WVER0105E.useraction=Particular user action depends on the exception which occurred.  Most often, the noted type is not available along the set class path.  Contact support for additional information.
+
+# 
+WVER0106E=WVER0106E: An attempt was made to place an element into an object having simple type {0}
+WVER0106E.explanation=This is an internal error.
+WVER0106E.useraction=Constact support for additional information.
+
+# 
+WVER0107E=WVER0107E: An exception occurred while attempting to write version information to file {0}
+WVER0107E.explanation=The noted exception occurred while attempting to write the specified file.
+WVER0107E.useraction=Particular user action depends on the exception which occurred.  In particular, make sure that the noted file is writable and that sufficient space is available for the noted file.
+
+# 
+WVER0108E=WVER0108E: An exception occurred while performing entity resolution, with public ID {0}, system ID {1}, and mapped file name {2}
+WVER0108E.explanation=The noted exception while resolving DTD information while parsing product information.  The noted DTD could not be resolved.
+WVER0108E.useraction=Particular user action depends on the exception which occurred.
+
+# 
+WVER0201E=WVER0201E: Missing Attribute ''{0}'' within element of type ''{1}''
+WVER0201E.explanation=The named attribute is not a valid attribute of the specified type of element.
+WVER0201E.useraction=Update the XML file to correct the attribute information.
+
+#
+WVER0202E=WVER0202E: Unbalanced element structure: Extra element closures.
+WVER0202E.explanation=An XML file containing product information has faulty element structure.
+WVER0202E.useraction=Update the XML file to correct the element structure.
+
+#
+WVER0203E=WVER0203E: Unbalanced element structure: Missing element closures.
+WVER0203E.explanation=An XML file containing product information has faulty element structure.
+WVER0203E.useraction=Update the XML file to correct the element structure.
+
+#
+WVER0204E=WVER0204E: Element ''{0}'' is not valid as a root element
+WVER0204E.explanation=An XML file containing product information has faulty element structure.
+WVER0204E.useraction=Update the XML file to correct the element structure.
+
+#
+WVER0205E=WVER0205E: Element ''{0}'' is not valid within element ''{1}''
+WVER0205E.explanation=An XML file containing product information has faulty element structure.
+WVER0205E.useraction=Update the XML file to correct the element structure.
+
+#
+WVER0206E=WVER0206E: Attempt to close element ''{0}'' while within element ''{1}''
+WVER0206E.explanation=An XML file containing product information has faulty element structure.
+WVER0206E.useraction=Update the XML file to correct the element structure.

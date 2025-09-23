@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: Geçmiş dizini saptanamıyor; ürün dizini saptanamadı
+WVER0201E.explanation=Geçmiş dizini ürün dizininin bir altdizinidir.  Ek bilgi için, ürün dizini saptanırken oluşan hataya ilişkin açıklamaya bakın.
+WVER0201E.useraction=Sürüm hatasıyla gösterilen yönergeleri izleyin.
+
+# 
+WVER0202E=WVER0202E: Geçmiş bilgileri yüklenemiyor
+WVER0202E.explanation=Geçmiş bilgileri {0} geçmiş dosyasından yüklenemedi.  Ayrıntılar, oluşan hataya göre değişir.
+WVER0202E.useraction=Geçmiş dosyasının doğru biçimli ve okunabilir bir dosya olduğunu doğrulayın.
+
+# 
+WVER0203E=WVER0203E: {0} okunurken kural dışı durum oluştu
+WVER0203E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0203E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0204E=WVER0204E: {0} geçmiş dizini yaratılırken kural dışı durum oluştu
+WVER0204E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0204E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0205E=WVER0205E: {1} içinde {0} geçmiş dosyasının yedeği yaratılırken kural dışı durum oluştu
+WVER0205E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0205E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0206E=WVER0206E: {0} olay geçmişi yazılırken kural dışı durum oluştu
+WVER0206E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0206E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006. Her hakkı saklıdır.
+WVER0210I.explanation=Bu ileti, standart bir yayın hakkı bildirimidir.
+WVER0210I.useraction=Herhangi bir işlem yapılması gerekmez.  Bu bir bilgi iletisidir.
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=Bu ileti, standart bir ürün tanımı bildirimidir.
+WVER0211I.useraction=Herhangi bir işlem yapılması gerekmez.  Bu bir bilgi iletisidir.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter Sürüm {0}, Tarihi {1}
+WVER0212I.explanation=Bu ileti, standart bir birim tanımı bildirimidir.
+WVER0212I.useraction=Herhangi bir işlem yapılması gerekmez.  Bu bir bilgi iletisidir.
+
+# 
+WVER0225E=WVER0225E: ''{0}'' bağımsız değişkeni için değer belirtilmedi.
+WVER0225E.explanation=Bu bağımsız değişken için değer belirtilmesi gereklidir.  (Kullanım bilgilerini görüntülemek için '-help' ya da '-usage' seçeneğini kullanın.)
+WVER0225E.useraction=Bu bağımsız değişken için bir değer belirtin.
+
+# 
+WVER0226E=WVER0226E: ''{0}'' değeri geçerli bir biçim değeri değil.
+WVER0226E.explanation=Geçerli biçim değerleri şunlardır: 'text' ve 'html'.  Belirtilen değer bu değerlerden biri değil.  (Kullanım bilgilerini görüntülemek için '-help' ya da '-usage' seçeneğini kullanın.)
+WVER0226E.useraction=Biçim değerini geçerli değerlerden birine ('text' ya da 'html') çevirin.
+
+# 
+WVER0228E=WVER0228E: ''{0}'' bağımsız değişkeni geçerli bir bağımsız değişken değil.
+WVER0228E.explanation=Belirtilen bağımsız değişken geçersiz.  (Kullanım bilgilerini görüntülemek için '-help' ya da '-usage' seçeneğini kullanın.)
+WVER0228E.useraction=Bağımsız değişkeni geçerli bir bağımsız değişkene çevirin.
+
+# 
+WVER0230I=WVER0230I: Kullanım: historyInfo ( [ -format <text | html> ] [ -file <çıkış dosyası> ] [ -updateId <güncellemeTnt> ] [ -component <bileşenAdı> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Bu bilgi iletisi, historyInfo yardımcı programına ilişkin bağımsız değişkenleri açıklar.  historyInfo yardımcı programı, çıkış biçimini, çıkış dosyasını, belirli bir düzeltmeyle ilişkili olayların görüntülenmesini, belirli bir bileşenle ilişkili olayların görüntülenmesini ve kullanım bilgilerinin görüntülenmesini belirten isteğe bağlı beş anahtar sözcük bağımsız değişkenini kabul eder.  (Ek bilgi görüntülemek için '-usage' ya da '-help' seçeneğini kullanın.)
+WVER0230I.useraction=Herhangi bir işlem yapılması gerekmez.  Kullanım bilgileri iletisi istek üzerine görüntülenir.
+
+# 
+WVER0231I=WVER0231I: '-format' bağımsız değişkeni, 'text' ya da 'html' olması gereken çıkış biçimi belirtmek için kullanılır.  '-file' bağımsız değişkeni bir çıkış dosyasını belirtir.  Bir dosya adı belirtilmelidir.  '-updateId' bağımsız değişkeni bir güncellemenin tanıtıcısını belirtir; görüntülenecek olayları bu güncellemeyle sınırlanır.  '-component' bağımsız değişkeni bir bileşenin tanıtıcısını belirtir; görüntülenecek olayları bu bileşenle sınırlanır.  '-help' bağımsız değişkeni sürüm bilgilerini görüntülemek için kullanılır.  '-usage' bağımsız değişkeni bu kullanım bilgilerini görüntülemek için kullanılır.
+WVER0231I.explanation=Bu ileti, versionInfo yardımcı programına ilişkin geçerli bağımsız değişkenleri açıklar.
+WVER0231I.useraction=Herhangi bir işlem yapılması gerekmez.  Kullanım bilgileri iletisi istek üzerine görüntülenir.
+
+# 
+WVER0240E=WVER0240E: Sürüm raporu {0} dosyasına yazılırken hata: {1}
+WVER0240E.explanation=Belirtilen dosyaya bir geçmiş raporu yazılırken bu hata oluştu.
+WVER0240E.useraction=Yapılması gerekenler, oluşan hatanın ayrıntılarına bağlıdır.  Genellikle, belirtilen dosyanın yazılabilir olduğunu ve rapor için yeterli yer bulunduğunu doğrulamanız gerekir.
+
+# 
+WVER0241E=WVER0241E: Geçmiş raporu {0} dosyasına yazılırken hata oluştu.  Hatanın metni görüntülenemiyor, ancak tipi {1}.  Hata metni alınırken, {2} tipinde ikinci bir hata oluştu.
+WVER0241E.explanation=Belirtilen dosyaya bir geçmiş raporu yazılırken bir hata oluştu.  Hatanın metni alınırken ikinci bir hata oluştu.
+WVER0241E.useraction=Kullanıcının yapabileceği herhangi bir işlem yoktur.  İstenen işlemi yeniden deneyin ya da yardım almak için destek görevlilerine başvurun.
+
+# 
+WVER0242E=WVER0242E: Geçmiş bilgileri işlenirken kural dışı durum oluştu
+WVER0242E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0242E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0243E=WVER0243E: Geçmiş bilgileri işlenirken kural dışı durumlar oluştu
+WVER0243E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0243E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0261E=WVER0261E: {1} bileşenine ilişkin {0} tanıtıcılı düzeltmenin uygulanması {2} dosyasına kaydedilemiyor.  Belirtilen dosya saklanamadı.
+WVER0261E.explanation=Belirtilen dosya saklanamadı.
+WVER0261E.useraction=Hedef dosyanın yazılabilir olduğunu ve yeni bir dosya için yeterli yer bulunduğunu doğrulayın.
+
+# 
+WVER0262E=WVER0262E: {1} bileşenine ilişkin {0} tanıtıcılı düzeltmenin kaldırılması {2} dosyasına kaydedilemiyor.  Belirtilen dosya saklanamadı.
+WVER0262E.explanation=Belirtilen dosya saklanamadı.
+WVER0262E.useraction=Hedef dosyanın yazılabilir olduğunu ve yeni bir dosya için yeterli yer bulunduğunu doğrulayın.
+
+# 
+WVER0263E=WVER0263E: {2} dosyasında saklanan {1} bileşenine ilişkin {0} tanıtıcılı düzeltmenin kaldırılması kaydedilemiyor.  Belirtilen dosya kaldırılamadı.
+WVER0263E.explanation=Belirtilen dosya kaldırılamadı.
+WVER0263E.useraction=Hedef dosyanın kaldırılabilir olduğunu doğrulayın.
+
+# 
+WVER0264E=WVER0264E: {1} bileşenine ilişkin {0} tanıtıcılı düzeltmenin kaldırılması kaydedilemiyor -- kaydedilmiş bir uygulama yok.
+WVER0264E.explanation=Bileşene belirtilen düzeltmenin uygulandığına ilişkin bir kayıt yok.  Ürün bilgileri bozuk ya da bir iç hata oluşmuş olabilir.
+WVER0264E.useraction=Ek bilgi için destek görevlilerine başvurun.
+
+# 
+WVER0265E=WVER0265E: {2} dosyasında saklanan {0} düzeltme sürücüsü kaldırılamadı.
+WVER0265E.explanation=Belirtilen dosya kaldırılamadı.
+WVER0265E.useraction=Hedef dosyanın kaldırılabilir olduğunu doğrulayın.
+
+# 
+WVER0266E=WVER0266E: PTF sürücüsü bilgileri ayrıştırılırken kurtarılabilir hatalar oluştu.
+WVER0266E.explanation=PTF bilgileri ayrıştırılırken, aşağıda listelenen hatalar oluştu.  Ek bilgi için, listelenen hatalar bakın.
+WVER0266E.useraction=Önerilen kullanıcı işlemleri için listelenen hatalara bakın.
+
+# 
+WVER0267E=WVER0267E: {1} bileşenine ilişkin {0} tanıtıcılı PTF''''in kaldırılması {2} dosyasına kaydedilemiyor.  Belirtilen dosya saklanamadı.
+WVER0267E.explanation=Belirtilen dosya saklanamadı.
+WVER0267E.useraction=Hedef dosyanın yazılabilir olduğunu ve yeni bir dosya için yeterli yer bulunduğunu doğrulayın.
+
+# 
+WVER0268E=WVER0268E: {2} dosyasında saklanan {1} bileşenine ilişkin {0} tanıtıcılı PTF''''in kaldırılması kaydedilemiyor.  Belirtilen dosya kaldırılamadı.
+WVER0268E.explanation=Belirtilen dosya kaldırılamadı.
+WVER0268E.useraction=Hedef dosyanın kaldırılabilir olduğunu doğrulayın.
+
+# 
+WVER0269E=WVER0269E: {1} bileşenine ilişkin {0} tanıtıcılı PTF''''in kaldırılması kaydedilemiyor -- kaydedilmiş bir uygulama yok.
+WVER0269E.explanation=Bileşene belirtilen PTF'in uygulandığına ilişkin bir kayıt yok.  Ürün bilgileri bozuk ya da bir iç hata oluşmuş olabilir.
+WVER0269E.useraction=Ek bilgi için destek görevlilerine başvurun.
+
+# 
+WVER0270E=WVER0270E: {2} dosyasında saklanan {0} tanıtıcılı PTF sürücüsü kaldırılamadı.
+WVER0270E.explanation=Belirtilen dosya kaldırılamadı.
+WVER0270E.useraction=Hedef dosyanın kaldırılabilir olduğunu doğrulayın.
+
+# 
+WVER0271E=WVER0271E: Ürün geçmişi dosyası uzantısı ''{0}'' tanınmıyor.
+WVER0271E.explanation=Ürün geçmişi bilgileri yüklenirken, bu bilgiler özel uzantıları olan dosyalarda saklanır.  Bu uzantılar, her bir dosyadaki bilgilerin tipini belirler.  Geçerli uzantılar şunlardır: '.fixDriver', '.fixApplied', '.efixDriver', '.efixApplied', '.ptfDriver', '.ptfApplied'.  Sürüm bilgisi içeren, ancak uzantısı geçerli uzantılardan biri olmayan bir dosyayı yükleme girişimde buluuldu.
+WVER0271E.useraction=Bu bir iç hatayı gösterir.
+
+# 
+WVER0272E=WVER0272E: {0} okunurken kural dışı durum oluştu
+WVER0272E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0272E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+label.standard.out=Standart Çıkış
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Portal Geçmiş Raporu
+report.header.update={0} Güncellemesi İçin IBM WebSphere Portal Geçmiş Raporu
+report.header.component={0} Bileşeni İçin IBM WebSphere Portal Geçmiş Raporu
+report.header.update.component={0} Güncellemesi ve {1} Bileşeni İçin IBM WebSphere Portal Geçmiş Raporu
+
+warning.no.events=Uyarı: Hiçbir olay yok.
+warning.no.events.for.component=Uyarı: {0} bileşeni için hiçbir olay yok.
+warning.no.events.for.update=Uyarı: {0} güncellemesi için hiçbir olay yok.
+warning.no.events.for.update.component=Uyarı: {0} güncellemesi ve {1} bileşeni için hiçbir olay yok.
+
+info.report.on=Raporlama tarihi ve saati: {0}
+
+report.footer=Geçmiş Raporu Sonu
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Kuruluş
+label.product.dir=Ürün Dizini
+label.version.dir=Sürüm Dizini
+label.version.dtd.dir=DTD Dizini
+label.version.log.dir=Günlük Dizini
+label.version.backup.dir=Yedekleme Dizini
+label.version.tmp.dir=Geçici Dizin
+label.version.history.dir=Geçmiş Dizini
+label.version.history.file=Geçmiş Dizini
+
+info.event=Kuruluş Olayı
+info.component.event=Bileşen Kuruluşu Olayı
+
+label.efix.id=Düzeltme Tanıtıcısı
+label.ptf.id=PTF Tanıtıcısı
+label.unknown.id=Bilinmeyen Tanıtıcı
+
+label.action=İşlem
+
+label.start.time.stamp=Başlama Zamanı
+label.end.time.stamp=Bitiş Zamanı
+
+label.log.file.name=Günlük Dosyası Adı
+
+
+label.component.name=Bileşen Adı
+
+label.is.custom=Özel
+label.primary.content=Birincil İçerik
+
+label.update.type=Güncelleme İşlemi
+
+label.is.external=Dış
+label.root.property.file=Kök Özellik Dosyası
+label.root.property.name=Kök Özellik Adı
+label.root.property.value=Kök Özellik Değeri
+
+label.backup.file.name=Yedekleme Dosyası Adı
+label.result=Sonuç
+label.result.message=Sonuç İletisi
+
+label.initial.version=İlk Sürüm
+label.initial.spec.version=İlk Belirtim
+label.initial.build.date=İlk Oluşturma Tarihi
+
+label.final.version=Son Sürüm
+label.final.spec.version=Son Sürüm Belirtimi
+label.final.build.date=Son Oluşturma Tarihi
+
+
+label.install.action=kur
+label.uninstall.action=kaldır
+label.selective.install.action=seçmeli kuruluş
+label.selective.uninstall.action=seçmeli kaldırma
+label.unknown.action=*** BİLİNMEYEN OLAY İŞLEMİ ***
+
+label.update.add.tag=ekle
+label.update.replace.tag=yerinekoy
+label.update.remove.tag=kaldır
+label.update.patch.tag=yama
+label.update.composite.tag=bileşik
+label.update.unknown.tag=*** BİLİNMEYEN GÜNCELLEME TİPİ ***
+
+label.result.succeeded.tag=başarılı
+label.result.failed.tag=başarısız
+label.result.cancelled.tag=iptal
+label.result.unknown.tag=*** BİLİNMEYEN OLAY SONUCU ***
+
+label.true=doğru
+label.false=yanlış

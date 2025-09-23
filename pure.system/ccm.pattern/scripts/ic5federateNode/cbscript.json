@@ -1,0 +1,40 @@
+[
+   {
+      "command": "\/tmp\/ic5federateNode\/ic5federateNode.sh",
+      "commandargs": "auto",
+      "description": "This is a script for federating CCM Node into an existing WAS DMGR",
+      "execmode": 3,
+      "filename": "ic5federateNode.zip",
+	  "keys": [
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "DmgrHostName",
+            "scriptvalue": ""
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "8879",
+            "scriptkey": "DmgrPort",
+            "scriptvalue": "8879"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "WAS_Password",
+            "scriptvalue": "",
+			"type": "password"
+         }
+	  ],
+      "location": "\/tmp\/ic5federateNode",
+      "log": "\/tmp\/ic5federateNode\/logs",
+      "name": "ic5federateNode",
+      "ostype": "linux\/unix",
+      "timeout": 60000000,
+      "type": "APPLICATION",
+	  "version": "5.0-CR1"
+   }
+]

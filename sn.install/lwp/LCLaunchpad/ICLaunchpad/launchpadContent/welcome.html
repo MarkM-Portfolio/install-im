@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML LANG="en">
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited 2016, 2022                     -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+
+<!-- REMEMBER TO REMOVE THIS LINE BELOW  -->
+
+
+</head>
+
+<script src="../jscp.js" language="javascript">
+
+<%@ include file="global.head" %>
+
+<% loadCSSfiles(DEFAULTCSS, "content.css"); %>
+
+<body>
+
+<h1><%= property('welcome') %></h1>
+<p>
+	<%= property('lotus_connections_info') %>
+	<br/><br/>
+	<font color="red"><%= property('preinstall_info') %></font>
+</p>
+<p>
+	<%= property('documentation_info') %>
+	<br/><br/>
+	<img src="./images/extwebsite_16.gif" alt="<%= property('altImageText') %>">&nbsp;<A href="javascript:void 0" onclick="viewPage(NO_DISKID, 'https://help.hcltechsw.com/connections/v8/admin/welcome/welcome_admin.html')"><%=property('documentation_text')%></A>
+</p>
+<p>
+	<%= property('install_info') %>
+</p>
+<p>
+	<%= property('docs_viewer_info') %>
+	<br/><br/>
+	<img src="./images/extwebsite_16.gif" alt="<%= property('altImageText') %>">&nbsp;<A href="javascript:void 0" onclick="viewPage(NO_DISKID, 'https://help.hcltechsw.com/docs/v2.0.1/onprem/install_guide/guide/text/prerequisites_to_deploying.html')"><%=property('docs_documentation_text')%></A>
+</p>
+	<hr>
+<p class="copyright">
+	<%=property('copyright') %>
+	<br/><br/>
+	<%=property('oracle') %>
+</p>
+
+<div id="java"></div>
+
+</body>
+</script>
+</html>

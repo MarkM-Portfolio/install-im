@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: 버전 디렉토리를 판별할 수 없습니다.
+WVER0001E.explanation=Java 시스템 등록 정보 'was.version.dir'에 따라 버전 디렉토리 위치가 지정되거나 '<root>\\properties\\version'으로 위치가 지정됩니다. 여기서 <root>는 Java 시스템 등록 정보 'was.install.root' 또는 'server.root' 중 하나에서 가져온 디렉토리입니다. 이 등록 정보를 순서대로 검사하여 사용 가능한 첫 번째 등록 정보 값을 가져옵니다. 오류는 나열된 Java 시스템 등록 정보가 설정되지 않았으며 따라서 버전 디렉토리를 판별할 수 없음을 나타냅니다.
+WVER0001E.useraction=나열된 Java 시스템 등록 정보 중 하나가 설정되어 있는지 확인하십시오. Java 시스템 등록 정보는 프로세스 구성을 통하거나 명령행에서 실행된 프로세스에 대한 옵션으로 설정되어야 합니다.
+
+# 
+WVER0002E=WVER0002E: 인식되지 않은 제품 버전 파일 확장자 ''{0}''입니다.
+WVER0002E.explanation=제품 버전 정보를 로드할 경우 특정 확장자를 가진 파일에 이 정보가 저장됩니다. 확장자는 각 파일에 저장된 정보 유형을 판별합니다. 올바른 확장자는 '.websphere', '.component', '.product', '.fix', '.efix' 및 '.extension'입니다. 파일 확장자가 올바른 확장자 중 하나가 아닌 버전 정보를 포함하는 파일을 로드하려고 했습니다.
+WVER0002E.useraction=이는 내부 오류를 나타냅니다.
+
+# 
+WVER0003I=WVER0003I: 사용법: versionInfo ( [ -format <text | html> ] [ -file <output file> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=이 정보 메시지는 versionInfo 유틸리티 프로그램에 대한 옵션을 설명합니다. VersionInfo 유틸리티 프로그램은 선택적 키워드 옵션을 승인합니다. 각 옵션은 출력 형식을 지정하고, 출력 파일을 지정하고, 수정사항을 표시하고, 수정사항 세부사항을 표시하고, 구성요소를 표시하며, 사용법 정보를 표시하는 데 사용됩니다.
+WVER0003I.useraction=사용자 조치가 필요하지 않습니다. 요청 시 사용법 정보 메시지가 표시됩니다.
+
+# 
+WVER0004E=WVER0004E: 버전 보고서를 {0}에 쓰는 중 오류 발생: {1}
+WVER0004E.explanation=버전 보고서를 지정된 파일에 쓰는 중에 지정한 오류가 발생했습니다.
+WVER0004E.useraction=수정 조치는 발생한 오류 특성에 따라 다릅니다. 특히 지정된 파일에 쓸 수 있는지 그리고 보고서에 사용할 수 있는 충분한 공간이 있는지 확인하십시오.
+
+# 
+WVER0005E=WVER0005E: ''{0}'' 옵션에 지정된 값이 없습니다.
+WVER0005E.explanation=나열된 옵션에 값이 필요합니다. (사용법 정보를 표시하려면 '-help' 또는 '-usage'를 사용하십시오.)
+WVER0005E.useraction=나열된 옵션의 값을 지정하십시오.
+
+# 
+WVER0006E=WVER0006E: ''{0}'' 값이 올바른 형식 값이 아닙니다.
+WVER0006E.explanation=올바른 형식 값은 'text' 및 'html'입니다. 지정한 값이 이 값 중 하나가 아닙니다. (사용법 정보를 표시하려면 '-help' 또는 '-usage'를 사용하십시오.)
+WVER0006E.useraction=형식 값을 올바른 값인 'text' 또는 'html' 중 하나로 변경하십시오.
+
+# 
+WVER0007E=WVER0007E: ''{0}'' 옵션이 올바르지 않습니다.
+WVER0007E.explanation=지정된 옵션이 올바르지 않습니다. (사용법 정보를 표시하려면 '-help' 또는 '-usage'를 사용하십시오.)
+WVER0007E.useraction=올바른 옵션으로 변경하여 사용하십시오.
+
+# 
+WVER0008I=WVER0008I: '-format' 옵션은 출력 형식('text' 또는 'html')을 지정합니다. '-file' 옵션은 출력 파일을 지정합니다. '-file' 옵션과 함께 파일 이름을 제공해야 합니다. '-long' 옵션은 모든 수정사항, ptf 및 구성요소 정보를 표시합니다. '-fixes' 옵션은 수정사항을 표시합니다. '-fixDetail' 옵션은 수정사항 세부사항을 표시합니다. '-ptfs' 옵션은 PTF를 표시합니다. '-ptfDetail' 옵션은 PTF 세부사항을 표시합니다. '-components' 옵션은 구성요소를 표시합니다. '-componentDetail' 옵션은 구성요소 세부사항을 표시합니다. '-help' 옵션은 도움말 텍스트를 표시합니다. '-usage' 옵션은 이 사용법 텍스트를 표시합니다.
+WVER0008I.explanation=메시지는 versionInfo 유틸리티 프로그램에 대한 올바른 옵션을 설명합니다.
+WVER0008I.useraction=사용자 조치가 필요하지 않습니다. 요청 시 사용법 정보 메시지가 표시됩니다.
+
+# 
+WVER0009E=WVER0009E: 버전 보고서를 {0}에 쓰는 중에 오류가 발생했습니다. 오류 텍스트를 표시할 수 없지만 {1} 유형입니다. 오류 텍스트를 검색하는 중에 {2} 유형의 두 번째 오류가 발생했습니다.
+WVER0009E.explanation=버전 보고서를 지정된 파일에 쓰는 중에 오류가 발생했습니다. 오류 텍스트를 검색하는 중에 두 번째 오류가 발생했습니다.
+WVER0009E.useraction=사용 가능한 사용자 조치가 없습니다. 요청한 조작을 다시 시도하거나 추가 지원에 대해서는 지원 부서에 문의하십시오.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0010I.explanation=이것은 표준 저작권 문장입니다.
+WVER0010I.useraction=사용자 조치가 필요하지 않습니다. 이것은 정보 메시지입니다.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=이것은 표준 제품 설명문입니다.
+WVER0011I.useraction=사용자 조치가 필요하지 않습니다. 이것은 정보 메시지입니다.
+
+# 
+WVER0012I=WVER0012I: VersionInfo 보고자 버전 {0}, 날짜 {1}
+WVER0012I.explanation=이것은 표준 모듈 설명문입니다.
+WVER0012I.useraction=사용자 조치가 필요하지 않습니다. 이것은 정보 메시지입니다.
+
+# 
+WVER0013E=WVER0013E: {0}을(를) 읽는 중에 예외가 발생했습니다.
+WVER0013E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0013E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0014E=WVER0014E: {0}을(를) 읽는 중에 예외가 발생했습니다.
+WVER0014E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0014E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0015E=WVER0015E: 버전 정보 처리 중에 예외가 발생했습니다.
+WVER0015E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0015E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0016E=WVER0016E: 버전 정보를 처리하는 중 예외가 발생했습니다.
+WVER0016E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0016E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0017E=WVER0017E: 갱신 로그 디렉토리를 판별할 수 없습니다.
+WVER0017E.explanation=로그 디렉토리는 Java 시스템 등록 정보 'was.version.log.dir'에 따라 위치가 지정되거나 버전 디렉토리의 'log' 디렉토리로 위치가 지정됩니다. 'was.version.log.dir' 등록 정보 또는 버전 디렉토리가 설정되지 않았습니다.
+WVER0017E.useraction=버전 디렉토리가 설정되어 있는지 확인하거나 Java 시스템 등록 정보 'was.version.log.dir'을 설정하십시오.
+
+# 
+WVER0018E=WVER0018E: 갱신 백업 디렉토리를 판별할 수 없습니다.
+WVER0018E.explanation=백업 디렉토리는 Java 시스템 등록 정보 'was.version.backup.dir'에 따라 위치가 지정되거나 버전 디렉토리의 'log' 디렉토리로 위치가 지정됩니다. 'was.version.backup.dir' 등록 정보 또는 버전 디렉토리가 설정되지 않았습니다.
+WVER0018E.useraction=버전 디렉토리가 설정되어 있는지 확인하거나 Java 시스템 등록 정보 'was.version.backup.dir'을 설정하십시오.
+
+# 
+WVER0019E=WVER0019E: 제품 버전 정보의 DTD 디렉토리를 판별할 수 없습니다.
+WVER0019E.explanation=DTD 디렉토리는 Java 시스템 등록 정보 'was.version.dtd.dir'에 따라 위치가 지정되거나 버전 디렉토리의 'dtd' 디렉토리로 위치가 지정됩니다. 'was.version.dtd.dir' 등록 정보 또는 버전 디렉토리가 설정되지 않았습니다.
+WVER0019E.useraction=버전 디렉토리가 설정되어 있는지 확인하거나 Java 시스템 등록 정보 'was.version.dtd.dir'을 설정하십시오.
+
+# 
+WVER0021E=WVER0021E: 수정사항 정보를 구문 분석하는 중에 복구 가능한 오류가 발생했습니다.
+WVER0021E.explanation=수정사항 정보를 구문 분석하는 중에 오류 목록이 발생했습니다. 추가 정보는 나열된 오류를 참조하십시오.
+WVER0021E.useraction=제안된 사용자 조치는 오류 목록을 참조하십시오.
+
+# 
+WVER0022E=WVER0022E: 제품 정보를 읽는 중에 오류가 발생했습니다. 오류는 복구 가능하고 구문 분석은 계속됩니다. 행 번호 {2} 및 열 번호 {3}에서 시스템 ID {0} 및 공용 ID {1}을(를) 가진 엔티티에 오류가 발생함: {4}
+WVER0022E.explanation=지정된 엔티티에 지정된 오류로 설명된 올바르지 않은 구조가 있습니다. 그러나 치명적인 오류는 아니고 구문 분석은 계속됩니다.
+WVER0022E.useraction=지정된 파일을 검토하고 가능하면 수정해야 합니다.
+
+# 
+WVER0023E=WVER0023E: 제품 정보를 구문 분석하는 중에 경고가 발생했습니다.
+WVER0023E.explanation=제품 정보를 구문 분석하는 중에 경고 목록이 발생했습니다. 추가 정보는 나열된 경고를 참조하십시오.
+WVER0023E.useraction=제안된 사용자 조치는 경고 목록을 참조하십시오.
+
+# 
+WVER0024E=WVER0024E: 제품 정보를 읽는 중에 경고가 발생했습니다. 행 번호 {2} 및 열 번호 {3}에서 시스템 ID {0} 및 공용 ID {1}을(를) 가진 엔티티에 경고가 발생함: {4}
+WVER0024E.explanation=지정된 엔티티에 지정된 경고로 설명된 올바르지 않은 구조가 있습니다. 그러나 치명적인 경고는 아니고 구문 분석은 계속됩니다.
+WVER0024E.useraction=지정된 파일을 검토하고 가능하면 수정해야 합니다.
+
+# 
+WVER0029E=WVER0029E: {2} 파일에 저장된 수정사항 {0}을(를) 제거할 수 없습니다.
+WVER0029E.explanation=이름 지정된 파일을 제거할 수 없습니다.
+WVER0029E.useraction=대상 파일을 제거할 수 있는지 확인하십시오.
+
+# 
+WVER0030E=WVER0030E: PTF 정보를 구문 분석하는 중에 복구 가능한 오류가 발생했습니다.
+WVER0030E.explanation=PTF 정보를 구문 분석하는 중에 오류 목록이 발생했습니다. 추가 정보는 나열된 오류를 참조하십시오.
+WVER0030E.useraction=제안된 사용자 조치는 오류 목록을 참조하십시오.
+
+# 
+WVER0031E=WVER0031E: {2} 파일의 {1} 구성요소에서 PTF {0}의 응용프로그램을 기록할 수 없습니다. 이름 지정된 파일을 저장할 수 없습니다.
+WVER0031E.explanation=이름 지정된 파일을 저장할 수 없습니다.
+WVER0031E.useraction=대상 파일에 쓸 수 있는지 그리고 새 파일에 사용할 수 있는 공간이 있는지 확인하십시오.
+
+# 
+WVER0035E=WVER0035E: {2} 파일에 저장된 PTF {0}을(를) 제거할 수 없습니다.
+WVER0035E.explanation=이름 지정된 파일을 제거할 수 없습니다.
+WVER0035E.useraction=대상 파일을 제거할 수 있는지 확인하십시오.
+
+# 
+WVER0040E=WVER0040E: 지정된 버전 디렉토리 ''{0}''이(가) 없습니다.
+WVER0040E.explanation=버전 디렉토리가 존재하지 않습니다.
+WVER0040E.useraction=지정된 디렉토리가 올바른 제품 버전 디렉토리인지 확인하십시오.
+
+# 
+WVER0041E=WVER0041E: 지정된 버전 디렉토리 ''{0}''은(는) 디렉토리가 아닙니다.
+WVER0041E.explanation=버전 디렉토리는 디렉토리가 아닙니다.
+WVER0041E.useraction=지정된 디렉토리가 올바른 제품 버전 디렉토리인지 확인하십시오.
+
+# 
+WVER0042E=WVER0042E: 지정된 DTD 디렉토리 ''{0}''이(가) 없습니다.
+WVER0042E.explanation=DTD 디렉토리가 존재하지 않습니다.
+WVER0042E.useraction=지정된 디렉토리가 올바른 제품 DTD 디렉토리인지 확인하십시오.
+
+# 
+WVER0043E=WVER0043E: 지정된 DTD 디렉토리 ''{0}''은(는) 디렉토리가 아닙니다.
+WVER0043E.explanation=DTD 디렉토리는 디렉토리가 아닙니다.
+WVER0043E.useraction=지정된 디렉토리가 올바른 제품 DTD 디렉토리인지 확인하십시오.
+
+# 
+WVER0044E=WVER0044E: 지정된 로그 디렉토리 ''{0}''이(가) 없습니다.
+WVER0044E.explanation=DTD 디렉토리는 디렉토리가 아닙니다.
+WVER0044E.useraction=지정된 디렉토리가 올바른 제품 DTD 디렉토리인지 확인하십시오.
+
+# 
+WVER0045E=WVER0045E: 지정된 로그 디렉토리 ''{0}''은(는) 디렉토리가 아닙니다.
+WVER0045E.explanation=DTD 디렉토리는 디렉토리가 아닙니다.
+WVER0045E.useraction=지정된 디렉토리가 올바른 제품 DTD 디렉토리인지 확인하십시오.
+
+# 
+WVER0046E=WVER0046E: 지정된 백업 디렉토리 ''{0}''을(를) 작성할 수 없습니다.
+WVER0046E.explanation=DTD 디렉토리는 디렉토리가 아닙니다.
+WVER0046E.useraction=지정된 디렉토리가 올바른 제품 DTD 디렉토리인지 확인하십시오.
+
+# 
+WVER0047E=WVER0047E: 지정된 백업 디렉토리 ''{0}''은(는) 디렉토리가 아닙니다.
+WVER0047E.explanation=DTD 디렉토리는 디렉토리가 아닙니다.
+WVER0047E.useraction=지정된 디렉토리가 올바른 제품 DTD 디렉토리인지 확인하십시오.
+
+# 
+WVER0048E=WVER0048E: 지정된 제품 디렉토리 ''{0}''이(가) 없습니다.
+WVER0048E.explanation=제품 디렉토리가 존재하지 않습니다.
+WVER0048E.useraction=제품 디렉토리가 올바른 제품 디렉토리인지 확인하십시오.
+
+# 
+WVER0049E=WVER0049E: 지정된 제품 디렉토리 ''{0}''은(는) 디렉토리가 아닙니다.
+WVER0049E.explanation=제품 디렉토리는 디렉토리가 아닙니다.
+WVER0049E.useraction=지정된 디렉토리가 올바른 제품 디렉토리인지 확인하십시오.
+
+
+
+
+label.standard.out=표준 출력
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Portal 제품 설치 상태 보고서
+report.footer=설치 상태 보고서 끝
+
+info.report.on={0} 날짜 및 시간의 보고서
+
+info.source=설치
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=제품 디렉토리
+label.version.dir=버전 디렉토리
+label.version.dtd.dir=DTD 디렉토리
+label.version.log.dir=로그 디렉토리
+label.version.backup.dir=백업 디렉토리
+label.version.tmp.dir=TMP 디렉토리
+
+info.platform=설치 플랫폼
+label.name=이름
+label.version=버전
+
+info.technology=기술 목록
+label.installed=설치됨
+
+info.product=설치된 제품
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=빌드 레벨
+label.build.date=빌드 날짜
+
+info.component=설치된 구성요소
+label.component.name=구성요소 이름
+label.configtasks=구성 타스크
+label.spec.version=스펙 버전
+label.build.version=빌드 버전
+# label.build.date=Build Date
+
+info.update.on.component=설치된 구성요소 갱신
+#label.component.name=Component Name
+label.update.type=갱신 유형
+label.update.type.efix=수정사항
+label.update.type.ptf=PTF
+
+label.efix.id=수정사항 ID
+label.ptf.id=PTF ID
+
+label.update.effect=갱신 효과
+
+label.is.required=필수
+label.is.optional=선택적
+
+label.is.external=외부
+label.root.property.file=루트 등록 정보 파일
+label.root.property.name=루트 등록 정보 이름
+label.root.property.value=루트 등록 정보 값
+
+label.is.custom=사용자 정의
+
+label.log.file.name=로그 파일 이름
+label.backup.file.name=백업 파일 이름
+label.install.date=설치 날짜
+
+label.initial.spec.version=초기 스펙 버전
+label.initial.build.date=초기 빌드 날짜
+label.initial.build.version=초기 빌드 버전
+
+label.final.spec.version=최종 스펙 버전
+label.final.build.date=최종 빌드 날짜
+label.final.build.version=최종 빌드 버전
+
+info.extension=설치된 확장자
+# label.name=Name
+# label.id=ID
+
+info.efix=설치된 수정사항
+# label.id=ID
+label.short.description=설명
+label.is.trial=시험판
+label.expiration.date=만기 날짜
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=설명
+
+label.apar=APAR
+label.apar.number=번호
+label.apar.date=날짜
+label.apar.short.description=설명
+label.apar.long.description=설명
+
+label.supported.platforms=지원되는 플랫폼
+label.supported.products=지원되는 플랫폼
+
+label.efix.efix.prereqs=전제조건 수정사항
+
+label.component.updates=구성요소 갱신
+label.component.requires={0} v {1} 필요
+
+label.becomes={2}의 스펙 {0}, 빌드 {1}
+
+label.custom.properties=사용자 정의 등록 정보
+
+info.ptf=설치된 PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=수정사항 포함
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=참
+label.false=거짓
+
+label.is.absent=없음
+label.is.installed={0}에 설치됨
+
+label.update.effect.add=추가
+label.update.effect.replace=바꾸기
+label.update.effect.remove=제거
+label.update.effect.patch=패치
+label.update.effect.unknown=알 수 없음
+
+label.is.negative=음수
+label.is.positive=양수
+
+label.is.required.tag=필수
+label.if.possible.tag=가능한 경우
+label.is.optional.tag=선택적
+label.is.recommended.tag=권장됨
+
+label.is.custom.tag=사용자 정의 갱신
+label.is.standard.tag=표준 갱신

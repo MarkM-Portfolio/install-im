@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * IBM Licensed Material
+ * 
+ * Copyright IBM Corp. 2006, 2016                                    
+ * 
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has been
+ * deposited with the U.S. Copyright Office.
+ * 
+-->
+<component name="im.installer/im.panels/com.ibm.connections.panelUtil/lib" description="Jars needed by panel util" spec-version="${app.comp.version}" type="binary" >
+	<output-group name="default">
+		<output type="jar" visibility="public" platform="all" location="com.ibm.cic.agent.core_1.7.2.v20131022_0430.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="com.ibm.cic.agent.ui_1.4.16.v20131028_1825.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="com.ibm.cic.common.core_1.12.13.v20131022_0430.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="com.ibm.cic.common.ui_1.1.22.v20130730_1754.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="org.eclipse.equinox.common_3.6.100.v20120522-1841.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="org.eclipse.jface_3.8.101.v20120817-083647.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="org.eclipse.osgi_3.8.1.v20120830-144521.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="org.eclipse.swt.win32.win32.x86_3.100.1.v4234e.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="org.eclipse.ui.forms_3.5.200.v20120705-114351.jar" preferredInstallLocation="lib"/>
+
+		<!-- OS400_Enablement -->
+		<output type="jar" visibility="public" platform="all" location="db2jcc4.jar" preferredInstallLocation="lib"/>
+		<output type="jar" visibility="public" platform="all" location="db2jcc_license_cu.jar" preferredInstallLocation="lib"/>
+		<!-- OS400_Enablement END -->
+	</output-group>
+</component>

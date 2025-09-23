@@ -1,0 +1,15 @@
+[
+   {
+      "command": "\/tmp\/ic5postInstallIC5\/ic5postInstallIC5.sh",
+      "commandargs": "${PROFILE_TYPE}",
+      "description": "This script extracts a certificate from an LDAP server and writes it to the truststore of a was",
+      "execmode": 3,
+      "filename": "ic5postInstallIC5.zip",
+      "location": "\/tmp\/ic5postInstallIC5",
+      "log": "\/tmp\/ic5postInstallIC5\/logs",
+      "name": "ic5postInstallIC5",
+      "ostype": "linux\/unix",
+      "timeout": 2000000,
+      "type": "APPLICATION"
+   }
+]

@@ -1,0 +1,77 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (WAS Update Installation)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/ioservices.IOServicesNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0100 to 0199.
+
+WUPD0100E=WUPD0100E: 存在しないディレクトリー ''{0}'' から読み取ろうとしました。
+WUPD0100E.explanation=これは内部エラーです。
+WUPD0100E.useraction=詳しくは IBM サポートにお問い合せ下さい。
+
+WUPD0101E=WUPD0101E: ディレクトリー ''{0}'' から読み取ろうとしましたが、これはディレクトリーではありません。
+WUPD0101E.explanation=これは内部エラーです。
+WUPD0101E.useraction=詳しくは IBM サポートにお問い合せ下さい。
+
+WUPD0102E=WUPD0102E: JAR ファイル ''{1}'' に JAR 項目 ''{0}'' が見つかりません。
+WUPD0102E=指定した項目は指定した JAR ファイル内に予想されていました。  これは内部エラーです。
+WUPD0102E=詳しくは IBM サポートにお問い合せ下さい。
+
+WUPD0103E=WUPD0103E: 出力ディレクトリー ''{0}'' を作成できませんでした。
+WUPD0103E=指定されたディレクトリーを作成できませんでした。
+WUPD0103E=指定されたディレクトリーが作成可能であるかどうかを検査してください。
+
+WUPD0104E=WUPD0104E: 出力ディレクトリー ''{0}'' はファイルとして存在します。
+WUPD0104E=指定されたエンティティーをディレクトリーとして使用しようとしましたが、同じ名前のファイルがすでに存在します。
+WUPD0104E=別の出力ディレクトリーを選択するか、指定されたファイルを除去してください。

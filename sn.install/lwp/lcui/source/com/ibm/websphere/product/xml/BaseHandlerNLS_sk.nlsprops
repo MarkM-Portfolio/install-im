@@ -1,0 +1,123 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Nastala výnimka počas zavádzania dokumentu {1}, použitím adresára DTD {0}
+WVER0101E.explanation=Táto výnimka zapríčinila zlyhanie zavedenia špecifikovaného dokumentu.
+WVER0101E.useraction=Konkrétna akcia užívateľa závisí od výnimky, ktorá nastala.  Hlavne skontrolujte, či je špecifikovaný súbor k dispozícii a má správny formát.  O ďalšie informácie požiadajte podporu.
+
+# 
+WVER0102E=WVER0102E: Nastala výnimka počas zavádzania dokumentu {1}, použitím adresára DTD {0}. Bolo nastavené ID systému {2} a verejné ID {3}.  Chyba nastala na riadku číslo {4} a stĺpci číslo {5}
+WVER0102E.explanation=Táto výnimka zapríčinila zlyhanie zavedenia špecifikovaného dokumentu.
+WVER0102E.useraction=Konkrétna akcia užívateľa závisí od výnimky, ktorá nastala.  Hlavne skontrolujte, či je špecifikovaný súbor k dispozícii a má správny formát.  O ďalšie informácie požiadajte podporu.
+
+# 
+WVER0104E=WVER0104E: Počas vytvárania elementu koreňového dokumentu typu {0} došlo k výnimke
+WVER0104E.explanation=K uvedenej výnimke došlo pri vytváraní elementu koreňového dokumentu.
+WVER0104E.useraction=Konkrétna akcia užívateľa závisí od výnimky, ktorá nastala.  Najčastejšie býva neplatná konfigurácia syntaktického analyzátora XML.  Skontrolujte, či systémové vlastnosti nevytvárajú neplatnú konfiguráciu syntaktického analyzátora.  O ďalšie informácie požiadajte podporu.
+
+# 
+WVER0105E=WVER0105E: Počas vytvárania objektu modelu XML (typu {0}) došlo k výnimke
+WVER0105E.explanation=K uvedenej výnimke došlo pri pokuse o vytvorenie objektu modelu XML.
+WVER0105E.useraction=Konkrétna akcia užívateľa závisí od výnimky, ktorá nastala.  Najčastejšie nie je uvedený typ k dispozícii pre cestu triedy sady.  O ďalšie informácie požiadajte podporu.
+
+# 
+WVER0106E=WVER0106E: Bol vykonaný pokus o umiestnenie elementu do objektu s jednoduchým typom {0}
+WVER0106E.explanation=Ide o internú chybu.
+WVER0106E.useraction=O ďalšie informácie požiadajte podporu.
+
+# 
+WVER0107E=WVER0107E: Počas pokusu o zápis informácií o verzii do súboru {0} došlo k výnimke
+WVER0107E.explanation=K uvedenej výnimke došlo pri pokuse o zápis zadaného súboru.
+WVER0107E.useraction=Konkrétna akcia užívateľa závisí od výnimky, ktorá nastala.  Predovšetkým skontrolujte, či je uvedený súbor zapisovateľný, a či je preň k dispozícii dostatok priestoru.
+
+# 
+WVER0108E=WVER0108E: Počas rozlišovania entity s verejným ID {0}, systémovým ID {1} a názvom namapovaného súboru {2} došlo k výnimke
+WVER0108E.explanation=K uvedenej výnimke došlo pri rozlišovaní informácií DTD počas analýzy informácií o produkte.  Uvedené DTD nebolo možné rozlíšiť.
+WVER0108E.useraction=Konkrétna akcia užívateľa závisí od výnimky, ktorá nastala.  
+# 
+WVER0201E=WVER0201E: Chýbajúci atribút ''{0}'' v elemente typu ''{1}''
+WVER0201E.explanation=Pomenovaný atribút nie je platný atribút zadaného typu elementu.
+WVER0201E.useraction=Vykonajte aktualizáciu súboru XML na opravu informácií o atribútoch.
+
+#
+WVER0202E=WVER0202E: Nevyvážená štruktúra elementu: Nadbytočné uzatvorenia elementu.
+WVER0202E.explanation=Súbor XML obsahujúci informácie o produkte má neplatnú elementovú štruktúru.
+WVER0202E.useraction=Vykonajte aktualizáciu súboru XML na opravu elementovej štruktúry.
+
+#
+WVER0203E=WVER0203E: Nevyvážená štruktúra elementu: Chýbajúce uzatvorenia elementu.
+WVER0203E.explanation=Súbor XML obsahujúci informácie o produkte má neplatnú elementovú štruktúru.
+WVER0203E.useraction=Vykonajte aktualizáciu súboru XML na opravu elementovej štruktúry.
+
+#
+WVER0204E=WVER0204E: Element ''{0}'' nie je platný ako koreňový element
+WVER0204E.explanation=Súbor XML obsahujúci informácie o produkte má neplatnú elementovú štruktúru.
+WVER0204E.useraction=Vykonajte aktualizáciu súboru XML na opravu elementovej štruktúry.
+
+#
+WVER0205E=WVER0205E: Element ''{0}'' nie je platný v rámci elementu ''{1}''
+WVER0205E.explanation=Súbor XML obsahujúci informácie o produkte má neplatnú elementovú štruktúru.
+WVER0205E.useraction=Vykonajte aktualizáciu súboru XML na opravu elementovej štruktúry.
+
+#
+WVER0206E=WVER0206E: Pokus o zatvorenie elementu ''{0}'', kým ste v elemente ''{1}''
+WVER0206E.explanation=Súbor XML obsahujúci informácie o produkte má neplatnú elementovú štruktúru.
+WVER0206E.useraction=Vykonajte aktualizáciu súboru XML na opravu elementovej štruktúry.

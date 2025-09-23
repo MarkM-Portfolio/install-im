@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- Licensed Materials - Property of IBM                              -->
+<!--                                                                   -->
+<!-- 5724-S68                                                          -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2007, 2016  All Rights Reserved.              -->
+<!--                                                                   -->
+<!-- US Government Users Restricted Rights - Use, duplication or       -->
+<!-- disclosure restricted by GSA ADP Schedule Contract with           -->
+<!-- IBM Corp.                                                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!ELEMENT efix-driver (apar-info*, product-prereq+, product-coreq*, platform-prereq*, efix-prereq*, config-task*, custom-property*, component-update+)>
+
+<!ATTLIST efix-driver
+    id CDATA #REQUIRED
+    short-description CDATA #REQUIRED
+    long-description CDATA #REQUIRED
+    is-trial ( false | true | 0 | 1 ) "false"
+    expiration-date CDATA ""
+    build-version CDATA #REQUIRED
+    build-date CDATA #REQUIRED>
+
+<!ELEMENT apar-info (custom-property*)>
+<!ATTLIST apar-info
+    number CDATA #REQUIRED
+    date CDATA #REQUIRED
+    short-description CDATA #REQUIRED
+    long-description CDATA "">
+
+<!ELEMENT config-task EMPTY>
+<!ATTLIST config-task
+    config-required ( false | true | 0 | 1 ) "false"
+    config-name CDATA #REQUIRED
+    unconfig-required ( false | true | 0 | 1 ) "false"
+    unconfig-name CDATA ""
+    >
+
+<!ELEMENT ptf-driver (product-prereq+,product-coreq*,product-update+,platform-prereq*,included-efix*,config-task*,custom-property*,component-update+)>
+<!ATTLIST ptf-driver
+    id CDATA #REQUIRED
+    short-description CDATA #REQUIRED
+    long-description CDATA #REQUIRED
+    build-version CDATA #REQUIRED
+    build-date CDATA #REQUIRED>
+
+<!ELEMENT component-update (component-prereq*,final-version?,custom-property*)>
+<!ATTLIST component-update
+    component-name CDATA #REQUIRED
+    update-type ( add | replace | remove | patch ) #REQUIRED
+    is-required ( false | true | 0 | 1 ) "true"
+    is-recommended ( false | true | 0 | 1 ) "true"
+    is-optional ( false | true | 0 | 1 ) "true"
+    is-external ( false | true | 0 | 1 ) "false"
+    root-property-file CDATA ""
+    root-property-name CDATA ""
+    root-property-value CDATA ""
+    is-custom ( false | true | 0 | 1 ) "false"
+    primary-content CDATA "">
+
+<!ELEMENT efix-prereq EMPTY>
+<!ATTLIST efix-prereq
+    efix-id CDATA #REQUIRED
+    is-negative ( false | true | 0 | 1 ) "false"
+    install-index CDATA "">
+
+<!ELEMENT product-update EMPTY>
+<!ATTLIST product-update
+    product-id CDATA #REQUIRED
+    product-name CDATA ""
+    build-version CDATA ""
+    build-date CDATA ""
+    build-level CDATA "">
+
+<!ELEMENT platform-prereq EMPTY>
+<!ATTLIST platform-prereq
+    architecture CDATA #REQUIRED
+    os-platform CDATA ""
+    os-version CDATA "">
+
+<!ELEMENT product-prereq EMPTY>
+<!ATTLIST product-prereq
+    product-id CDATA #REQUIRED
+    build-version CDATA #REQUIRED
+    build-date CDATA ""
+    build-level CDATA #REQUIRED>
+
+<!ELEMENT product-coreq EMPTY>
+<!ATTLIST product-coreq
+    product-id CDATA #REQUIRED
+    build-version CDATA #REQUIRED
+    build-date CDATA ""
+    build-level CDATA #REQUIRED>
+
+<!ELEMENT component-prereq EMPTY>
+<!ATTLIST component-prereq
+    component-name CDATA #REQUIRED
+    spec-version CDATA ""
+    build-version CDATA ""
+    build-date CDATA "">
+
+<!ELEMENT included-efix EMPTY>
+<!ATTLIST included-efix
+    efix-id CDATA #REQUIRED>
+
+<!ELEMENT custom-property EMPTY>
+<!ATTLIST custom-property
+    property-name CDATA #REQUIRED
+    property-type CDATA ""
+    property-value CDATA "">
+
+<!ELEMENT efix-applied (component-applied+,config-applied*)>
+<!ATTLIST efix-applied
+    efix-id CDATA #REQUIRED>
+
+<!ELEMENT ptf-applied (component-applied+,config-applied*)>
+<!ATTLIST ptf-applied
+    ptf-id CDATA #REQUIRED>
+
+<!ELEMENT component-applied (initial-version?,final-version?)>
+<!ATTLIST component-applied
+    component-name CDATA #REQUIRED
+    update-type ( add | replace | remove | patch ) #REQUIRED
+    is-required ( false | true | 0 | 1 ) "true"
+    is-optional ( false | true | 0 | 1 ) "false"
+    is-external ( false | true | 0 | 1 ) "false"
+    root-property-file CDATA ""
+    root-property-name CDATA ""
+    root-property-value CDATA ""
+    is-custom ( false | true | 0 | 1 ) "false"
+    log-name CDATA #REQUIRED
+    backup-name CDATA #REQUIRED
+    time-stamp CDATA #REQUIRED>
+
+<!ELEMENT config-applied EMPTY>
+<!ATTLIST config-applied
+    config-name CDATA #REQUIRED
+    configured ( false | true | 0 | 1 ) "false"
+    configuration-active ( false | true | 0 | 1 ) "false"
+    >
+
+<!ELEMENT initial-version EMPTY>
+<!ATTLIST initial-version
+    component-name CDATA #REQUIRED
+    spec-version CDATA #REQUIRED
+    build-version CDATA #REQUIRED
+    build-date CDATA #REQUIRED>
+
+<!ELEMENT final-version EMPTY>
+<!ATTLIST final-version
+    component-name CDATA #REQUIRED
+    spec-version CDATA #REQUIRED
+    build-version CDATA #REQUIRED
+    build-date CDATA #REQUIRED>

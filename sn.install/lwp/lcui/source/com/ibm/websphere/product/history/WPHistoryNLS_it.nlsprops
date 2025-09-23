@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: Impossibile determinare la directory della cronologia; impossibile determinare la directory del prodotto
+WVER0201E.explanation=La directory della cronologia è una directory secondaria della directory del prodotto.  Per ulteriori informazioni, fare riferimento alla spiegazione per l'errore che si è verificato durante il tentativo di individuazione della directory del prodotto.
+WVER0201E.useraction=Seguire le istruzioni visualizzate con l'errore di versione.
+
+# 
+WVER0202E=WVER0202E: Impossibile caricare le informazioni sulla cronologia
+WVER0202E.explanation=Impossibile caricare le informazioni sulla cronologia dal file relativo {0}.  I dettagli specifici sono relativi all''errore che si è verificato.
+WVER0202E.useraction=Accertarsi che il file della cronologia sia leggibile e in un formato corretto.
+
+# 
+WVER0203E=WVER0203E: Si è verificata una eccezione durante la lettura di {0}
+WVER0203E.explanation=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+WVER0203E.useraction=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+
+# 
+WVER0204E=WVER0204E: Si è verificata una eccezione durante la creazione della directory della cronologia {0}
+WVER0204E.explanation=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+WVER0204E.useraction=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+
+# 
+WVER0205E=WVER0205E: Si è verificata una eccezione durante la creazione di un backup per il file della cronologia {0} su {1}
+WVER0205E.explanation=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+WVER0205E.useraction=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+
+# 
+WVER0206E=WVER0206E: Si è verificata una eccezione durante la scrittura della cronologia degli eventi {0}
+WVER0206E.explanation=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+WVER0206E.useraction=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Tutti i diritti riservati.
+WVER0210I.explanation=Questa è una dichiarazione standard di copyright.
+WVER0210I.useraction=Non è richiesta alcuna azione da parte dell'utente.  Questo è un messaggio informativo.
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=Questa è una descrizione standard del prodotto.
+WVER0211I.useraction=Non è richiesta alcuna azione da parte dell'utente.  Questo è un messaggio informativo.
+
+# 
+WVER0212I=WVER0212I: Programma di creazione prospetti HistoryInfo versione {0}, in data {1}
+WVER0212I.explanation=Questa è una descrizione standard del modulo.
+WVER0212I.useraction=Non è richiesta alcuna azione da parte dell'utente.  Questo è un messaggio informativo.
+
+# 
+WVER0225E=WVER0225E: Nessun valore specificato per l''argomento ''{0}''
+WVER0225E.explanation=L'argomento elencato richiede un valore.  Utilizzare '-help' o '-usage' per visualizzare le informazioni sulla sintassi.
+WVER0225E.useraction=Specificare un valore per l'argomento elencato.
+
+# 
+WVER0226E=WVER0226E: Il valore ''{0}'' non è un valore di formato valido.
+WVER0226E.explanation=I valori dei formati validi sono 'text' e'html'.  Il valore specificato non fa parte di tali valori.  Utilizzare '-help' o '-usage' per visualizzare le informazioni sulla sintassi.
+WVER0226E.useraction=Modificare il valore del formato in uno dei valori validi, ovvero 'text' o 'html'.
+
+# 
+WVER0228E=WVER0228E: L''argomento ''{0}'' non è un argomento valido.
+WVER0228E.explanation=L'argomento specificato non è valido.  Utilizzare '-help' o '-usage' per visualizzare le informazioni sulla sintassi.
+WVER0228E.useraction=Modificare l'argomento in un argomento valido.
+
+# 
+WVER0230I=WVER0230I: Uso: historyInfo ( [ -format <text | html> ] [ -file <file di output> ] [ -updateId <ID aggiornamento> ] [ -component <nome componente> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Questo messaggio informativo descrive gli argomenti per il programma di utilità historyInfo.  Il programma di utilità historyInfo supporta cinque argomenti facoltativi di parole chiave, uno che specifica il formato di output, uno che specifica un file di output, uno che visualizza solo gli eventi associati ad una correzione specificata, uno che visualizza solo gli eventi associati ad un componente specificato ed uno che visualizza le informazioni sull'utilizzo.  Utilizzare '-usage' o '-help' per visualizzare ulteriori informazioni sulla sintassi.
+WVER0230I.useraction=Non è richiesta alcuna azione da parte dell'utente.  Le informazioni sull'utilizzo verranno visualizzate su richiesta.
+
+# 
+WVER0231I=WVER0231I: L'argomento '-format' viene utilizzato per specificare il formato di output, che deve essere specificato come 'text' o 'html'.  L'argomento '-file' è utilizzato per specificare un file di output.  È necessario fornire un nome file.  L'argomento '-updateId' è utilizzato per specificare l'ID di un aggiornamento, che limiterà gli eventi visualizzati.  L'argomento '-component' viene utilizzato per specificare il nome di un componente, che limiterà gli eventi visualizzati.  L'argomento '-help' è utilizzato per visualizzare le informazioni sulla versione.  L'argomento '-usage' è utilizzato per visualizzare questo messaggio informativo.
+WVER0231I.explanation=Il messaggio descrive gli argomenti validi per il programma di utilità versionInfo.
+WVER0231I.useraction=Non è richiesta alcuna azione da parte dell'utente.  Le informazioni sull'utilizzo verranno visualizzate su richiesta.
+
+# 
+WVER0240E=WVER0240E: Errore durante la scrittura del prospetto della versione su {0}: {1}
+WVER0240E.explanation=L'errore specificato si è verificato durante la scrittura del prospetto della cronologia nel file specificato.
+WVER0240E.useraction=La correzione da apportare dipende dalle specifiche dell'errore che si è verificato.  In particolare, accertarsi che sia possibile scrivere sul file specificato e che il prospetto disponga di spazio sufficiente.
+
+# 
+WVER0241E=WVER0241E: Errore durante la scrittura del prospetto della cronologia su {0}.  Non è possibile visualizzare il testo dell''errore, ma esso è di tipo {1}.  Un secondo errore, di tipo {2}, si è verificato quando è stato richiamato il testo dell''errore.
+WVER0241E.explanation=Un errore si è verificato durante la scrittura del prospetto della cronologia nel file specificato.  Si è verificato un secondo errore durante il richiamo del testo dell'errore.
+WVER0241E.useraction=Non è disponibile nessuna azione da parte dell'utente.  Eseguire nuovamente l'operazione richiesta o rivolgersi al supporto per ricevere assistenza.
+
+# 
+WVER0242E=WVER0242E: Si è verificata un eccezione durante l'elaborazione delle informazioni sulla cronologia
+WVER0242E.explanation=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+WVER0242E.useraction=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+
+# 
+WVER0243E=WVER0243E: Si sono verificate delle eccezioni durante l'elaborazione delle informazioni sulla cronologia
+WVER0243E.explanation=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+WVER0243E.useraction=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+
+# 
+WVER0261E=WVER0261E: Impossibile registrare l''applicazione della correzione {0} sul componente {1} nel file {2}.  Impossibile salvare il file denominato.
+WVER0261E.explanation=Impossibile salvare il file denominato.
+WVER0261E.useraction=Accertarsi che sia possibile scrivere sul file di destinazione e che si disponga di spazio disponibile per un nuovo file.
+
+# 
+WVER0262E=WVER0262E: Impossibile registrare la rimozione dell''applicazione della correzione {0} sul componente {1} nel file {2}.  Impossibile salvare il file denominato.
+WVER0262E.explanation=Impossibile salvare il file denominato.
+WVER0262E.useraction=Accertarsi che sia possibile scrivere sul file di destinazione e che si disponga di spazio disponibile per un nuovo file.
+
+# 
+WVER0263E=WVER0263E: Impossibile registrare la rimozione dell''applicazione della correzione {0} sul componente {1} memorizzato nel file {2}.  Impossibile eliminare il file denominato.
+WVER0263E.explanation=Impossibile eliminare il file denominato.
+WVER0263E.useraction=Accertarsi che il file di destinazione possa essere eliminato.
+
+# 
+WVER0264E=WVER0264E: Impossibile registrare la rimozione dell''applicazione della correzione {0} nel componente {1} -- nessuna applicazione presente nel record.
+WVER0264E.explanation=Il componente non dispone di una applicazione della correzione specificata.  Le informazioni sul prodotto potrebbero essere danneggiate o potrebbe essersi verificato un errore interno.
+WVER0264E.useraction=Per ulteriori informazioni, rivolgersi al servizio di assistenza.
+
+# 
+WVER0265E=WVER0265E: Impossibile rimuovere il driver della correzione {0} memorizzata nel file {2}.
+WVER0265E.explanation=Impossibile eliminare il file denominato.
+WVER0265E.useraction=Accertarsi che il file di destinazione possa essere eliminato.
+
+# 
+WVER0266E=WVER0266E: Si sono verificati degli errori reversibili durante l'analisi delle informazioni sul driver PTF.
+WVER0266E.explanation=Gli errori, riportati nell'elenco di seguito, si sono verificati durante l'analisi di informazioni sui PTF.  Per ulteriori informazioni, fare riferimento agli errori elencati.
+WVER0266E.useraction=Fare riferimento agli errori elencati per le azioni dell'utente consigliate.
+
+# 
+WVER0267E=WVER0267E: Impossibile registrare la rimozione dell''applicazione del PTF {0} sul componente {1} nel file {2}.  Impossibile salvare il file denominato.
+WVER0267E.explanation=Impossibile salvare il file denominato.
+WVER0267E.useraction=Accertarsi che sia possibile scrivere sul file di destinazione e che si disponga di spazio disponibile per un nuovo file.
+
+# 
+WVER0268E=WVER0268E: Impossibile registrare la rimozione dell''applicazione del PTF {0} sul componente {1} memorizzato nel file {2}.  Impossibile eliminare il file denominato.
+WVER0268E.explanation=Impossibile eliminare il file denominato.
+WVER0268E.useraction=Accertarsi che il file di destinazione possa essere eliminato.
+
+# 
+WVER0269E=WVER0269E: Impossibile registrare la rimozione dell''applicazione del PTF {0} nel componente {1} -- nessuna applicazione presente nel record.
+WVER0269E.explanation=Il componente non dispone di una applicazione del PTF specificato.  Le informazioni sul prodotto potrebbero essere danneggiate o potrebbe essersi verificato un errore interno.
+WVER0269E.useraction=Per ulteriori informazioni, rivolgersi al servizio di assistenza.
+
+# 
+WVER0270E=WVER0270E: Impossibile rimuovere il driver PTF {0} memorizzato nel file {2}.
+WVER0270E.explanation=Impossibile eliminare il file denominato.
+WVER0270E.useraction=Accertarsi che il file di destinazione possa essere eliminato.
+
+# 
+WVER0271E=WVER0271E: Estensione file della cronologia del prodotto non riconosciuta ''{0}''.
+WVER0271E.explanation=Quando vengono caricate le informazioni sulla cronologia, tali informazioni sono memorizzate in file con estensioni specifiche.  Le estensioni determinano il tipo di informazioni memorizzate in ogni file.  Le estensioni valide sono '.fixDriver', '.fixApplied', '.efixDriver', '.efixApplied', '.ptfDriver' e '.ptfApplied'.  È stato effettuato un tentativo di caricamento di un file contenente le informazioni sulla versione in cui l'estensione del file non è compresa tra le estensioni valide.
+WVER0271E.useraction=Questo indica un errore interno.
+
+# 
+WVER0272E=WVER0272E: Si è verificata una eccezione durante la lettura di {0}
+WVER0272E.explanation=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+WVER0272E.useraction=Fare riferimento ai dettagli relativi all'eccezione nidificata per ulteriori informazioni.
+
+label.standard.out=Output standard
+
+listing.nested.error={0}: {1}
+
+report.header=Prospetto sulla cronologia di IBM WebSphere portal
+report.header.update=Prospetto sulla cronologia di IBM WebSphere Portal per l''aggiornamento {0}
+report.header.component=Prospetto sulla cronologia di IBM WebSphere Portal per il componente {0}
+report.header.update.component=Prospetto sulla cronologia di IBM WebSphere Portal per l''aggiornamento {0} e per il componente {1}
+
+warning.no.events=Avvertenza: nessun evento disponibile.
+warning.no.events.for.component=Avvertenza: nessun evento disponibile per il componente {0}.
+warning.no.events.for.update=Avvertenza: nessun evento disponibile per l''aggiornamento {0}.
+warning.no.events.for.update.component=Avvertenza: nessun evento disponibile per l''aggiornamento {0} e per il componente  {1}.
+
+info.report.on=Prospetto in data e ora {0}
+
+report.footer=Fine del prospetto della cronologia
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Installazione
+label.product.dir=Directory del prodotto
+label.version.dir=Directory della versione
+label.version.dtd.dir=Directory DTD
+label.version.log.dir=Directory di log
+label.version.backup.dir=Directory di backup
+label.version.tmp.dir=Directory TMP
+label.version.history.dir=Directory della cronologia
+label.version.history.file=File della cronologia
+
+info.event=Evento di installazione
+info.component.event=Evento di installazione del componente
+
+label.efix.id=ID della correzione
+label.ptf.id=ID del PTF
+label.unknown.id=ID sconosciuto
+
+label.action=Azione
+
+label.start.time.stamp=Ora di inizio
+label.end.time.stamp=Ora di fine
+
+label.log.file.name=Nome del file di log
+
+
+label.component.name=Nome del componente
+
+label.is.custom=Personalizzato
+label.primary.content=Contenuto principale
+
+label.update.type=Azione di aggiornamento
+
+label.is.external=Esterno
+label.root.property.file=File della proprietà root
+label.root.property.name=Nome della proprietà root
+label.root.property.value=Valore della proprietà root
+
+label.backup.file.name=Nome del file di backup
+label.result=Risultato
+label.result.message=Messaggio del risultato
+
+label.initial.version=Versione iniziale
+label.initial.spec.version=Specifica iniziale
+label.initial.build.date=Data build iniziale
+
+label.final.version=Versione finale
+label.final.spec.version=Specifica della versione finale
+label.final.build.date=Data build finale
+
+
+label.install.action=installazione
+label.uninstall.action=disinstallazione
+label.selective.install.action=installazione selettiva
+label.selective.uninstall.action=disinstallazione selettiva
+label.unknown.action=*** AZIONE EVENTO SCONOSCIUTA ***
+
+label.update.add.tag=aggiungi
+label.update.replace.tag=sostituisci
+label.update.remove.tag=rimuovi
+label.update.patch.tag=patch
+label.update.composite.tag=composito
+label.update.unknown.tag=*** TIPO DI AGGIORNAMENTO SCONOSCIUTO ***
+
+label.result.succeeded.tag=riuscito
+label.result.failed.tag=non riuscito
+label.result.cancelled.tag=annullato
+label.result.unknown.tag=*** RISULTATI EVENTO SCONOSCIUTI ***
+
+label.true=true
+label.false=false

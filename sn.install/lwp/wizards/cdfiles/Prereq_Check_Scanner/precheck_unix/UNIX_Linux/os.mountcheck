@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+#####Checking for Whether /home File system is mounted or not####a
+Value=`echo $1 | cut -d "]" -f1 | cut -d "[" -f2`
+DirtoCheck=`echo $Value | cut -d "," -f1 | cut -d ":" -f2`
+IdtoCheck=`echo $Value | cut -d "," -f2 | cut -d ":" -f1` 
+#IsHomeMountedCheck=`mount | grep "^DirtoCheck$" | awk '{print $1}'`
+#IsHomeMounted=`mount | grep "^DirtoCheck$"`
+mount > /$TMP_DIR/prs.mountOP
+while read line
+do
+	if [ "`uname`" = "AIX" ]; then
+		IsDirMountedCheck=`echo "$line" | awk '{print $2}' | grep "^$DirtoCheck$"`
+	else
+		IsDirMountedCheck=`echo "$line" | cut -d " " -f3 | grep "^$DirtoCheck$"`
+	fi
+	if [ $IsDirMountedCheck ]; then
+		####Checking for "IdtoCheck"####
+		Found=`echo "$line" | grep "$IdtoCheck" | awk '{print $2}'`
+		if [ $Found ]; then
+			echo "$Msg_UNAVAILABLE"
+			exit
+		else
+			echo "$Msg_AVAILABLE"
+			exit
+		fi
+	fi
+done < /$TMP_DIR/prs.mountOP
+if [ -z $IsDirMountedCheck ]; then
+	echo "$Msg_AVAILABLE"
+fi

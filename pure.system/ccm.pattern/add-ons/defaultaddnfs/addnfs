@@ -1,0 +1,171 @@
+#!/bin/sh
+
+# Default add-on script to configure an NFS mount point.  This script must be run as root!
+
+# Network Attache Storage NFS add-on scripts are responsible for configuring the mount point.
+#
+# Add-on scripts are invoked one time when the virtual machine is initialized,
+# before any script packages are run.  Note that add-on scripts are NOT
+# invoked each time the virtual machine boots.  If initialization logic needs
+# to run each time the virtual machine is booted, the add-on script is
+# responsible for placing the necessary hooks in the operating system startup
+# logic.  Any such hooks must NOT rely on the presence of this script or any
+# additional files or directories from the add-on, as those files will be
+# deleted from the virtual machine after this script exits.
+#
+# The default NFS add-on script allows the user to enter the following
+# parameters.  User-defined add-on scripts may define additional parameters,
+# but must minimally specify HOST_NAME, REMOTE_EXPORT, MOUNT.  All parameters are passed to
+# scripts as environment variables.
+#
+# HOST_NAME - Host name of the NFS server.
+#
+# REMOTE_EXPORT - Remote mount point that will be mounted on the local Virtual Machine
+#
+# MOUNT - Mount point for the NFS file system.  The mount point directory is
+#   created if it does not already exist.  An entry specifying the device and
+#   the mount point is added to /etc/fstab and the NFS filesystem is mounted.  If not
+#   supplied, the disk is not mounted.
+#
+# NFS_TYPE - NFS type of the target server, can be nfs for NFSv2 and NFSv3 file 
+#            server and nfs4 for NFSv4 server.
+#
+# OPTIONS - comma separate list of options used in the NFS command
+#
+#  LOCKD_TCPPORT=32803
+#  LOCKD_UDPPORT=32769
+#  MOUNTD_PORT=892
+#  RQUOTAD_PORT=875
+#  PORTMAPPER=111
+#  STATD_PORT=662
+#  NFS_PORT=2049
+#
+
+echo "***"
+
+# find if the address is v4 or v6
+echo $IPADDR | grep ":" 2>&1 >>/dev/null
+if [ $? -eq 0 ]; then
+    addrtype="6"
+else
+    addrtype="4"
+fi
+echo "*** provided address $IPADDR is of type IPv$addrtype"
+
+os=`uname`
+if [ "${os}" == "Linux" ]; then
+    if [ "$addrtype" == "4" ]; then
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${PORTMAPPER} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${PORTMAPPER} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${NFS_PORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${NFS_PORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${LOCKD_TCPPORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${LOCKD_UDPPORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${MOUNTD_PORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${MOUNTD_PORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${RQUOTAD_PORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${RQUOTAD_PORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${STATD_PORT} -j ACCEPT
+        iptables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${STATD_PORT} -j ACCEPT
+        service iptables save
+    else # ipv6
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${PORTMAPPER} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${PORTMAPPER} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${NFS_PORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${NFS_PORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${LOCKD_TCPPORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${LOCKD_UDPPORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${MOUNTD_PORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${MOUNTD_PORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${RQUOTAD_PORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${RQUOTAD_PORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport ${STATD_PORT} -j ACCEPT
+        ip6tables -I OUTPUT   -m state --state NEW,ESTABLISHED,RELATED -p udp --dport ${STATD_PORT} -j ACCEPT
+        service ip6tables save
+    fi
+elif [ "${os}" == "AIX" ]; then
+    if [ "$addrtype" == "4" ]; then
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c udp -o eq -p ${PORTMAPPER} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c tcp -o eq -p ${PORTMAPPER} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c udp -o eq -p ${NFS_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c tcp -o eq -p ${NFS_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c udp -o eq -p ${LOCKD_UDPPORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c tcp -o eq -p ${LOCKD_TCPPORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c udp -o eq -p ${MOUNTD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c tcp -o eq -p ${MOUNTD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c udp -o eq -p ${RQUOTAD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c tcp -o eq -p ${RQUOTAD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c udp -o eq -p ${STATD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d 0.0.0.0 -M 0.0.0.0 -g Y -c tcp -o eq -p ${STATD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+
+        # Some NFS ports can be dynamic unless pinned by NFS server, so we open all outbound ports to the NFS server
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d ${HOST_NAME} -M 0.0.0.0 -g Y -c udp -o any -p 0 -O any -P 0 -r B -w O -l N -f Y -i all
+        genfilt -v 4 -n 3 -a P -s 0.0.0.0 -m 0.0.0.0 -d ${HOST_NAME} -M 0.0.0.0 -g Y -c tcp -o any -p 0 -O any -P 0 -r B -w O -l N -f Y -i all
+        
+    else
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c udp -o eq -p ${PORTMAPPER} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c tcp -o eq -p ${PORTMAPPER} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c udp -o eq -p ${NFS_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c tcp -o eq -p ${NFS_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c udp -o eq -p ${LOCKD_UDPPORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c tcp -o eq -p ${LOCKD_TCPPORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c udp -o eq -p ${MOUNTD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c tcp -o eq -p ${MOUNTD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all  
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c udp -o eq -p ${RQUOTAD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c tcp -o eq -p ${RQUOTAD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c udp -o eq -p ${STATD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d :: -M 0 -g Y -c tcp -o eq -p ${STATD_PORT} -O any -P 0 -r B -w I -l N -f Y -i all
+
+        # Some NFS server ports can be dynamic unless pinned by NFS server, so we open all outbound ports to the NFS server
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d ${HOST_NAME} -M 0 -g Y -c udp -o any -p 0 -O any -P 0 -r B -w O -l N -f Y -i all
+        genfilt -v 6 -n 3 -a P -s :: -m 0 -d ${HOST_NAME} -M 0 -g Y -c tcp -o any -p 0 -O any -P 0 -r B -w O -l N -f Y -i all
+    fi
+
+    # Last, activate the new AIX filter rules
+    mkfilt -u
+    
+else
+    echo "Unsupported OS:  ${os}"
+    exit 1
+fi
+
+if [ -n "$MOUNT_POINT" ]
+then
+    mkdir -p "$MOUNT_POINT"
+    
+    # update /etc/fstab on linux, OR /etc/filesystems on AIX
+    if [ "${os}" == "Linux" ]; then
+        echo "${HOST_NAME}:${REMOTE_EXPORT}	${MOUNT_POINT}	${NFS_TYPE} ${OPTIONS}	0 0" >>/etc/fstab
+    elif [ "${os}" == "AIX" ]; then
+        # NOTE: the lines in /etc/filesystems that follow the mount point must be indented (tabbed)
+        echo "" >>/etc/filesystems
+        echo "${MOUNT_POINT}:" >>/etc/filesystems
+        echo "	dev		= ${REMOTE_EXPORT}"  >>/etc/filesystems
+        echo "	mount		= true" >>/etc/filesystems
+        echo "	vfs		= nfs" >>/etc/filesystems
+        echo "	nodename	= ${HOST_NAME}" >>/etc/filesystems
+        
+        # AIX only attempts nfs4 if explicitly set in the options flags, so we
+        # need to translate NFS_TYPE to OPTIONS, if nfs4 is desired.
+        if [[ -n "$NFS_TYPE" && "${NFS_TYPE}" == "nfs4" ]]
+        then
+            if [ -n "$OPTIONS" ]
+            then
+                OPTIONS="${OPTIONS},vers=4"
+            else
+                OPTIONS="vers=4"
+            fi
+        fi
+        
+        if [ -n "$OPTIONS" ]
+        then
+            # NOTE: the lines in /etc/filesystems that follow the mount point must be indented (tabbed)
+            echo "	options	= ${OPTIONS}" >>/etc/filesystems
+        fi        
+    fi
+
+    echo "*** mounting ${HOST_NAME}:${REMOTE_EXPORT} at ${MOUNT_POINT} type ${NFS_TYPE} with ${OPTIONS}"
+    mount "$MOUNT_POINT"
+fi
+
+exit $?

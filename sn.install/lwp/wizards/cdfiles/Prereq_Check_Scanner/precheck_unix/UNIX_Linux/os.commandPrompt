@@ -1,0 +1,58 @@
+#!/bin/bash -i
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+# Check the command prompt to verify if it meets TPM requirements
+# TPM requirement is that it must end in one of the following characters: #, $, >
+# However it's possible that it can end in one of the above characters and also 
+# contain other special characters following the #, $ or >.
+# The following are valid command prompts that should meet TPM requirements:
+#    \[\]\u@\h:\w # \[\]
+#    \e[0;31m[\u:\w]\$ \e[m
+# The following are more common Linux and Unix command prompts:
+#    \s-\v\$
+#    [\u@\h \W]\$
+#    \[\]\h:\w # \[\]
+#    \u@\h:\w>
+
+# Initialize the result value to be echoed back
+result="$Msg_UNAVAILABLE"
+ 
+# check the command prompt for ending chars meeting the TPM requirements
+flag1=`echo $PS1 | grep '.*[#$>]$'`
+if [ "$flag1" != "" ]; then
+   result="$Msg_AVAILABLE"
+else
+   # It's still possible that it meets TPM requirements because it can contain
+   # special characters at the end.  In this case check for an occurrence of the
+   # required characters for TPM 
+   flag2=`echo $PS1 | grep '.*[#$>]'`
+   if [ "$flag2" != "" ]; then
+      # Perform an extra check for the case where backslash escaped special characters exist after #,$ or >
+      flag3=`echo $PS1 | grep '.*[#$>][\\d\\D\\h\\H\\j\\l\\s\\t\\T\\@\\A\\u\\v\\V\\w\\W\\!\\#]'`
+      if [ "$flag3" != "" ]; then
+         # One more check for valid characters that could exist after the escaped special characters
+         flag4=`echo $PS1 | grep '.*[#$>][\\d\\D\\h\\H\\j\\l\\s\\t\\T\\@\\A\\u\\v\\V\\w\\W\\!\\#].*[#$>]'`
+         if [ "$flag4" != "" ]; then
+            result="$Msg_AVAILABLE"
+         else
+            result="$Msg_UNAVAILABLE"
+         fi
+      else
+         result="$Msg_AVAILABLE"
+      fi
+   else
+      result="$Msg_UNAVAILABLE"
+   fi
+fi
+
+# Available: The command prompt meets TPM requirements
+# Unavailable: The command prompt DOES NOT meet TPM requirements
+echo $result 

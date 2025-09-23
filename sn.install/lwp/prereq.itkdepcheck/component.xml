@@ -1,0 +1,12 @@
+<component name="prereq.itkdepcheck"
+           type="binary"
+           description="Dependency Checker (com.ibm.commerce)"
+           spec-version="1.0"
+           build-version="1.0"
+           owner="Adam Reeves"
+           owner-email="areeves@us.ibm.com">
+   <output-group name="foundation">
+      <output type="jar" visibility="public" platform="all" location="lib/itkdepcheck.jar" preferredInstallLocation="wps/bin"/>
+   </output-group>
+</component>
+

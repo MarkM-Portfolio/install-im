@@ -1,0 +1,392 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WASProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0001E=WVER0001E: バージョン・ディレクトリーを判別することができません。
+WVER0001E.explanation=バージョン・ディレクトリーは Java システム・プロパティー 'was.version.dir' に従って、または '<root>\\properties\\version' として存在します。ここで、<root> は Java システム・プロパティー 'was.install.root' または 'server.root' のいずれかから取得したディレクトリーです。 これらのプロパティーは順番に検査され、最初に使用可能なプロパティー値が取られます。  エラーは、バージョン・ディレクトリーを判別できなかったため、リストされた Java システム・プロパティーが設定されていないことを示します。
+WVER0001E.useraction=リストされた Java システム・プロパティーの 1 つが設定されていることを確認します。  Java システム・プロパティーは、プロセス構成から設定されるか、コマンド行から起動されるプロセスに対するオプションとして設定される必要があります。
+
+# 
+WVER0002E=WVER0002E: 製品バージョン・ファイル拡張子 ''{0}'' が認識されません。
+WVER0002E.explanation=製品バージョン情報をロードすると、この情報は特定の拡張子を持つファイルに保管されます。  この拡張子は、各ファイルに保管される情報のタイプを判別するものです。有効な拡張子は '.websphere'、'.component'、'.product'、'.efix'、および '.extension' です。バージョン情報を含んでいる、有効な拡張子を持たないファイルのロードを試みました。
+WVER0002E.useraction=これは内部エラーです。
+
+# 
+WVER0003I=WVER0003I: 使用法: versionInfo ( [ -format <text | html> ] [ -file <output file> ] [ -long ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=この通知メッセージは、versionInfo ユーティリティー・プログラムに対するオプションについて説明します。  versionInfo ユーティリティー・プログラムはオプションのキーワード・オプション (出力形式を指定するオプション、出力ファイルを指定するオプション、緊急フィックスを表示するオプション、緊急フィックスの詳細を表示するオプション、コンポーネントを表示するオプション、使用情報を表示するために使用するオプション) を受け入れます。
+WVER0003I.useraction=ユーザー・アクションは不要です。  使用情報メッセージは要求に応じて表示されます。
+
+# 
+WVER0004E=WVER0004E: バージョン・レポートを {0} に書き込み中にエラーが発生しました: {1}
+WVER0004E.explanation=バージョン・レポートを指定されたファイルに書き込み中に、指定されたエラーが発生しました。
+WVER0004E.useraction=修正アクションは発生したエラーの特性に応じて異なります。  特に、指定されたファイルが書き込み可能であり、レポート用として使用可能なスペースが十分にあることを確認してください。
+
+# 
+WVER0005E=WVER0005E: ''{0}'' オプションに値が指定されていませんでした
+WVER0005E.explanation=リストされたオプションには値が必要です。  ('-help' または '-usage' を使用して、使用情報を表示してください。)
+WVER0005E.useraction=リストされたオプションに値を指定してください。
+
+# 
+WVER0006E=WVER0006E: 値 ''{0}'' は無効なフォーマット値です。
+WVER0006E.explanation=有効なフォーマット値は、'text' および 'html' です。 指定された値は、以下に示す値のいずれにも該当しません。  ('-help' または '-usage' を使用して、使用情報を表示してください。)
+WVER0006E.useraction=フォーマット値を有効な値である 'text' または 'html' のいずれかに変更してください。
+
+# 
+WVER0007E=WVER0007E: オプション ''{0}'' が無効です。
+WVER0007E.explanation=指定されたオプションは無効です。 ('-help' または '-usage' を使用して、使用情報を表示してください。)
+WVER0007E.useraction=有効なオプションを使用するように変更してください。
+
+# 
+WVER0008I=WVER0008I: '-format' オプションは出力形式を 'text' または 'html' のいずれかに指定します。 '-file' オプションは出力ファイルを指定します。 ファイル名は '-file' オプションで提供される必要があります。 '-long' オプションによって、すべての緊急フィックス、PTF、およびコンポーネント情報が表示されます。 '-efixes' オプションによって、緊急フィックスが表示されます。 '-efixDetail' オプションによって、緊急フィックスの詳細が表示されます。 '-ptfs' オプションによって、PTF が表示されます。 '-ptfDetail' オプションによって、PTF 詳細が表示されます。 '-components' オプションによって、コンポーネントが表示されます。 '-componentDetail' オプションによって、コンポーネントの詳細が表示されます。 '-help' オプションによって、ヘルプ・テキストが表示されます。 '-usage' オプションによって、この使用テキストが表示されます。
+WVER0008I.explanation=メッセージは、versionInfo ユーティリティー・プログラムに対する有効なオプションについて説明します。
+WVER0008I.useraction=ユーザー・アクションは不要です。  使用情報メッセージは要求に応じて表示されます。
+
+# 
+WVER0009E=WVER0009E: バージョン・レポートを {0} に書き込み中にエラーが発生しました。 エラーのテキストは表示できませんが、タイプ {1} のエラーです。  タイプ {2} の 2 番目のエラーが、エラー・テキストの検索中に発生しました。
+WVER0009E.explanation=バージョン・レポートを指定されたファイルに書き込み中に、エラーが発生しました。  エラーのテキストを表示中に 2 番目のエラーが発生しました。
+WVER0009E.useraction=ユーザー・アクションは使用不可です。  要求された操作を再試行するか、詳細をサポートにお問い合わせください。
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0010I.explanation=これは標準の著作権文です。
+WVER0010I.useraction=ユーザー・アクションは不要です。  これは通知メッセージです。
+
+# 
+WVER0011I=WVER0011I: WebSphere Application Server リリース 5.0
+WVER0011I.explanation=これは標準の製品説明文です。
+WVER0011I.useraction=ユーザー・アクションは不要です。  これは通知メッセージです。
+
+# 
+WVER0012I=WVER0012I: VersionInfo Reporter バージョン {0}、日付 {1}
+WVER0012I.explanation=これは標準のモジュール説明文です。
+WVER0012I.useraction=ユーザー・アクションは不要です。  これは通知メッセージです。
+
+# 
+WVER0013E=WVER0013E: {0} を読み取り中に例外が発生しました
+WVER0013E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0013E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0014E=WVER0014E: {0} を読み取り中に例外が発生しました
+WVER0014E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0014E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0015E=WVER0015E: バージョン情報を処理中に例外が発生しました。
+WVER0015E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0015E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0016E=WVER0016E: バージョン情報を処理中に例外が発生しました。
+WVER0016E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0016E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0017E=WVER0017E: 更新ログ・ディレクトリーを判別することができません。
+WVER0017E.explanation=ログ・ディレクトリーは Java システム・プロパティー 'was.version.log.dir' に従って存在するか、バージョン・ディレクトリーの 'log' ディレクトリーとして存在します。 'was.version.log.dir' プロパティーも、バージョン・ディレクトリーも設定されていません。
+WVER0017E.useraction=バージョン・ディレクトリーが設定されていることを確認するか、Java システム・プロパティー 'was.version.log.dir' を設定してください。
+
+# 
+WVER0018E=WVER0018E: 更新バックアップ・ディレクトリーを判別することができません。
+WVER0018E.explanation=バックアップ・ディレクトリーは Java システム・プロパティー 'was.version.backup.dir' に従って存在するか、バージョン・ディレクトリーの 'log' ディレクトリーとして存在します。 'was.version.backup.dir' プロパティーも、バージョン・ディレクトリーも設定されていません。
+WVER0018E.useraction=バージョン・ディレクトリーが設定されていることを確認するか、Java システム・プロパティー 'was.version.backup.dir' を設定してください。
+
+# 
+WVER0019E=WVER0019E: 製品バージョン情報の DTD ディレクトリーを判別することができません。
+WVER0019E.explanation=DTD ディレクトリーは Java システム・プロパティー 'was.version.dtd.dir' に従って存在するか、バージョン・ディレクトリーの 'dtd' ディレクトリーとして存在します。 'was.version.dtd.dir' プロパティーも、バージョン・ディレクトリーも設定されていません。
+WVER0019E.useraction=バージョン・ディレクトリーが設定されていることを確認するか、Java システム・プロパティー 'was.version.dtd.dir' を設定してください。
+
+# 
+WVER0021E=WVER0021E: 緊急フィックスの構文解析中にリカバリー可能エラーが発生しました。
+WVER0021E.explanation=緊急フィックス情報の構文解析中に、以下にリストするエラーが発生しました。  追加情報については、リストされたエラーを参照してください。
+WVER0021E.useraction=推奨されるユーザー・アクションについては、リストされたエラーを参照してください。
+
+# 
+WVER0022E=WVER0022E: 製品情報を読み取り中にエラーが発生しました。エラーはリカバリー可能で、構文解析は続行されました。  行番号 {2} および列番号 {3} のシステム ID {0} および公開 ID {1} のエンティティーでエラーが発生しました: {4}
+WVER0022E.explanation=指定されたエンティティーは、指定されたエラーで説明されているように、構造が無効です。  ただし、そのエラーは重大ではなく、構文解析は続行されました。
+WVER0022E.useraction=指定されたファイルを検討し、可能であれば訂正してください。
+
+# 
+WVER0023E=WVER0023E: 製品情報の構文解析中に警告が発生しました。
+WVER0023E.explanation=製品情報の構文解析中に、以下にリストする警告が発生しました。  追加情報については、リストされた警告を参照してください。
+WVER0023E.useraction=推奨されるユーザー・アクションについては、リストされた警告を参照してください。
+
+# 
+WVER0024E=WVER0024E: 製品情報を読み取り中に警告が発生しました。行番号 {2} および列番号 {3} のシステム ID {0} および公開 ID {1} のエンティティーで警告が発生しました: {4}
+WVER0024E.explanation=指定されたエンティティーは、指定された警告で説明されているように、構造が無効です。  ただし、その警告は重大ではなく、構文解析は続行されました。
+WVER0024E.useraction=指定されたファイルを検討し、可能であれば訂正してください。
+
+# 
+WVER0029E=WVER0029E: ファイル {2} に保管された緊急フィックス {0} を除去できません。
+WVER0029E.explanation=指定されたファイルを除去できませんでした。
+WVER0029E.useraction=ターゲット・ファイルが除去可能であることを確認してください。
+
+# 
+WVER0030E=WVER0030E: PTF 情報の構文解析中にリカバリー可能エラーが発生しました。
+WVER0030E.explanation=PTF 情報の構文解析中に、以下にリストするエラーが発生しました。  追加情報については、リストされたエラーを参照してください。
+WVER0030E.useraction=推奨されるユーザー・アクションについては、リストされたエラーを参照してください。
+
+# 
+WVER0031E=WVER0031E: ファイル {2} 内のコンポーネント {1} で PTF {0} のアプリケーションを記録することができません。指定されたファイルを保管できませんでした。
+WVER0031E.explanation=指定されたファイルを保管できませんでした。
+WVER0031E.useraction=ターゲット・ファイルが書き込み可能であり、新規ファイル用として使用可能なスペースがあることを確認してください。
+
+# 
+WVER0035E=WVER0035E: ファイル {2} に保管された PTF {0} を除去できません。
+WVER0035E.explanation=指定されたファイルを除去できませんでした。
+WVER0035E.useraction=ターゲット・ファイルが除去可能であることを確認してください。
+
+# 
+WVER0040E=WVER0040E: 指定されたバージョン・ディレクトリー ''{0}'' は存在しません。
+WVER0040E.explanation=このバージョン・ディレクトリーは存在しません。
+WVER0040E.useraction=指定されたディレクトリーが有効な製品バージョン・ディレクトリーであることを確認してください。
+
+# 
+WVER0041E=WVER0041E: 指定されたバージョン・ディレクトリー ''{0}'' はディレクトリーではありません。
+WVER0041E.explanation=このバージョン・ディレクトリーはディレクトリーではありません。
+WVER0041E.useraction=指定されたディレクトリーが有効な製品バージョン・ディレクトリーであることを確認してください。
+
+# 
+WVER0042E=WVER0042E: 指定された DTD ディレクトリー ''{0}'' は存在しません。
+WVER0042E.explanation=この DTD ディレクトリーは存在しません。
+WVER0042E.useraction=指定されたディレクトリーが有効な製品 DTD ディレクトリーであることを確認してください。
+
+# 
+WVER0043E=WVER0043E: 指定された DTD ディレクトリー ''{0}'' はディレクトリーではありません。
+WVER0043E.explanation=この DTD ディレクトリーはディレクトリーではありません。
+WVER0043E.useraction=指定されたディレクトリーが有効な製品 DTD ディレクトリーであることを確認してください。
+
+# 
+WVER0044E=WVER0044E: 指定されたログ・ディレクトリー ''{0}'' を作成できませんでした
+WVER0044E.explanation=この DTD ディレクトリーはディレクトリーではありません。
+WVER0044E.useraction=指定されたディレクトリーが有効な製品 DTD ディレクトリーであることを確認してください。
+
+# 
+WVER0045E=WVER0045E: 指定されたログ・ディレクトリー ''{0}'' はディレクトリーではありません。
+WVER0045E.explanation=この DTD ディレクトリーはディレクトリーではありません。
+WVER0045E.useraction=指定されたディレクトリーが有効な製品 DTD ディレクトリーであることを確認してください。
+
+# 
+WVER0046E=WVER0046E: 指定されたバックアップ・ディレクトリー ''{0}'' を作成できませんでした
+WVER0046E.explanation=この DTD ディレクトリーはディレクトリーではありません。
+WVER0046E.useraction=指定されたディレクトリーが有効な製品 DTD ディレクトリーであることを確認してください。
+
+# 
+WVER0047E=WVER0047E: 指定されたバックアップ・ディレクトリー ''{0}'' はディレクトリーではありません。
+WVER0047E.explanation=この DTD ディレクトリーはディレクトリーではありません。
+WVER0047E.useraction=指定されたディレクトリーが有効な製品 DTD ディレクトリーであることを確認してください。
+
+# 
+WVER0048E=WVER0048E: 指定されたプロダクト・ディレクトリー ''{0}'' は存在しません。
+WVER0048E.explanation=このプロダクト・ディレクトリーは存在しません。
+WVER0048E.useraction=プロダクト・ディレクトリーが有効なプロダクト・ディレクトリーであることを確認してください。
+
+# 
+WVER0049E=WVER0049E: 指定されたプロダクト・ディレクトリー ''{0}'' はディレクトリーではありません。
+WVER0049E.explanation=このプロダクト・ディレクトリーはディレクトリーではありません。
+WVER0049E.useraction=指定されたディレクトリーが有効な製品プロダクト・ディレクトリーであることを確認してください。
+
+
+
+
+label.standard.out=標準出力
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Application Server 製品のインストール状況報告
+report.footer=インストール状況報告の終了
+
+info.report.on=次の日時のレポート {0}
+
+info.source=インストール
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=プロダクト・ディレクトリー
+label.version.dir=バージョン・ディレクトリー
+label.version.dtd.dir=DTD ディレクトリー
+label.version.log.dir=ログ・ディレクトリー
+label.version.backup.dir=バックアップ・ディレクトリー
+label.version.tmp.dir=TMP ディレクトリー
+
+info.platform=インストール・プラットフォーム
+label.name=名前
+label.version=バージョン
+
+info.technology=テクノロジー・リスト
+label.installed=インストール済み
+
+info.product=インストール済み製品
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=ビルド・レベル
+label.build.date=ビルド日付
+
+info.component=インストール済みコンポーネント
+label.component.name=コンポーネント名
+label.spec.version=仕様書バージョン
+label.build.version=ビルド・バージョン
+# label.build.date=Build Date
+
+info.update.on.component=インストール済みコンポーネントの更新
+#label.component.name=Component Name
+label.update.type=更新タイプ
+label.update.type.efix=緊急フィックス
+label.update.type.ptf=PTF
+
+label.efix.id=緊急フィックス ID
+label.ptf.id=PTF ID
+
+label.update.effect=更新効果
+
+label.is.required=必須です
+label.is.optional=オプションです
+
+label.is.external=外部です
+label.root.property.file=ルート・プロパティー・ファイル
+label.root.property.name=ルート・プロパティー名
+label.root.property.value=ルート・プロパティー値
+
+label.is.custom=カスタムです
+
+label.log.file.name=ログ・ファイル名
+label.backup.file.name=バックアップ・ファイル名
+label.install.date=インストール日
+
+label.initial.spec.version=最初の仕様バージョン
+label.initial.build.date=最初のビルド日
+label.initial.build.version=最初のビルド・バージョン
+
+label.final.spec.version=最終の仕様バージョン
+label.final.build.date=最終のビルド日
+label.final.build.version=最終のビルド・バージョン
+
+info.extension=インストール済み拡張子
+# label.name=Name
+# label.id=ID
+
+info.efix=インストール済み緊急フィックス
+# label.id=ID
+label.short.description=説明
+label.is.trial=試行です
+label.expiration.date=有効期限
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=説明
+
+label.apar=APAR
+label.apar.number=数値
+label.apar.date=日付
+label.apar.short.description=説明
+label.apar.long.description=説明
+
+label.supported.platforms=サポートされているプラットフォーム
+label.supported.products=サポートされているプラットフォーム
+
+label.efix.efix.prereqs=前提条件の緊急フィックス
+
+label.component.updates=コンポーネント更新
+label.component.requires={0} v {1} を必要
+
+label.becomes=仕様 {0} になり、{2} に {1} をビルドします
+
+label.custom.properties=カスタム・プロパティー
+
+info.ptf=インストール済み PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=組み込み緊急フィックス
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=true
+label.false=false
+
+label.is.absent=不在
+label.is.installed={0} にインストール済み
+
+label.update.effect.add=追加
+label.update.effect.replace=置換
+label.update.effect.remove=除去
+label.update.effect.patch=パッチ
+label.update.effect.unknown=不明
+
+label.is.negative=負
+label.is.positive=正
+
+label.is.required.tag=必須
+label.if.possible.tag=可能な場合
+label.is.optional.tag=オプション
+label.is.recommended.tag=推奨
+
+label.is.custom.tag=カスタム更新
+label.is.standard.tag=標準更新

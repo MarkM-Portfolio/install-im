@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- Program Version 1.2
+     Update Date 9/13/02 -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:annotation>
+        <xsd:documentation>
+        Copyright IBM Corp, 2002.  This is the DTD For the WebSphere V5.0
+        product version data files that contain product installation information.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="efix">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="component-name" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="id" type ="xsd:string" use="required"/>
+            <xsd:attribute name="short-description" type="xsd:string" use="required"/>
+            <xsd:attribute name="build-version" type ="xsd:string" use="required"/>
+            <xsd:attribute name="build-date" type ="xsd:date" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ptf">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="component-name" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="id" type ="xsd:string" use="required"/>
+            <xsd:attribute name="short-description" type="xsd:string" use="required"/>
+            <xsd:attribute name="build-version" type ="xsd:string" use="required"/>
+            <xsd:attribute name="build-date" type ="xsd:date" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="component-name" type="xsd:string" use="required"/>
+
+</xsd:schema>

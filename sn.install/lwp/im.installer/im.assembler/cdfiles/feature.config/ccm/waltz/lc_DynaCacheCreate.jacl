@@ -1,0 +1,145 @@
+# ***************************************************************** 
+#                                                                   
+# IBM Licensed Material                                              
+#                                                                   
+# Copyright IBM Corp. 2007, 2016                                    
+#                                                                   
+# The source code for this program is not published or otherwise    
+# divested of its trade secrets, irrespective of what has been      
+# deposited with the U.S. Copyright Office.                         
+#                                                                   
+# ***************************************************************** 
+
+# 5724-S68                                                          
+# 5724-L21                                                          
+set FileName "lc_DynaCacheCreate.jacl"
+
+set FlagDebug "True"
+
+#----------------------------------------------------------------------
+# Procedure getScope
+#----------------------------------------------------------------------
+proc getScope {CellName NodeName ClusterName ServerName} {
+    global AdminConfig
+    
+    set Scope ""
+    set TmpScope "/"
+    if {$CellName != ""} {
+   		append TmpScope "Cell:$CellName/"
+  	}
+    if {$NodeName != ""} {
+   		append TmpScope "Node:$NodeName/"
+  	}
+    if {$ServerName != ""} {
+		append TmpScope "Server:$ServerName/"
+  	}
+    if {$ClusterName != ""} {
+		set TmpScope "/ServerCluster:$ClusterName/"
+  	}
+  	
+   	if {$TmpScope != "/"} {
+ 		set Scope $TmpScope
+  	} 
+    puts stdout "scope $Scope"
+    return $Scope
+}
+
+#----------------------------------------------------------------------
+# Main
+#----------------------------------------------------------------------
+if {$FlagDebug == "True"} {
+    puts stdout " "
+    puts stdout "--------------------------------"
+    puts stdout "---- Start $FileName"
+    puts stdout "--------------------------------"
+}
+
+set CellName [$AdminControl getCell]
+set NodeName ""
+set ServerName ""
+set ClusterName ""
+set CacheProviderName "@CacheProviderName@"
+set CacheName "@CacheName@" 
+set JNDIName "@JNDIName@"
+set DataReplicationDomainName "@DataReplicationDomainName@"
+
+
+if {$FlagDebug == "True"} {
+    puts stdout " "
+    puts stdout "--------------------------------"
+    puts stdout "---- Input args:"
+    puts stdout "---- CellName = $CellName"
+    puts stdout "---- NodeName = $NodeName"
+    puts stdout "---- ServerName = $ServerName"
+    puts stdout "---- ClusterName = $ClusterName"
+    puts stdout "---- CacheProviderName = $CacheProviderName"   
+    puts stdout "---- CacheName = $CacheName" 
+    puts stdout "---- JNDIName = $JNDIName" 
+    puts stdout "---- DataReplicationDomainName = $DataReplicationDomainName"
+    puts stdout "--------------------------------"
+}
+
+set Scope [getScope $CellName $NodeName $ClusterName $ServerName]
+set ScopeId [$AdminConfig getid $Scope]
+
+set CacheProviderPath [append Scope "CacheProvider:" $CacheProviderName]
+
+set CacheProviderID [$AdminConfig getid $CacheProviderPath]
+
+
+if {$CacheProviderID == ""} {
+    	set CacheProviderAttrs01 [subst {{name $CacheProviderName} {description "Provider for all LotusConnections Caches"}}]
+    	set CacheProviderID [$AdminConfig create CacheProvider $ScopeId $CacheProviderAttrs01]
+}
+
+set CachePath [append CacheProviderPath "/ObjectCacheInstance:" $CacheName]
+
+set CacheID [$AdminConfig getid $CachePath]
+
+if {$CacheID == ""} {
+        
+        puts stdout "Creating dynamic cache: $CacheName..."
+
+	set attrs [subst {{name "$CacheName"} {jndiName "$JNDIName"} {description "JNDI resource for $CacheName cache"}}]
+        $AdminConfig create ObjectCacheInstance $CacheProviderID $attrs
+        
+	set attrs {}
+	lappend attrs [subst {cacheSize @cacheSize@}]
+	lappend attrs [subst {defaultPriority @defaultPriority@}]
+
+	lappend attrs [subst {enableDiskOffload @enableDiskOffload@}]
+	lappend attrs [subst {diskCacheSizeInGB @diskCacheSizeInGB@}]
+	lappend attrs [subst {diskCacheSizeInEntries @diskCacheSizeInEntries@}]
+	lappend attrs [subst {diskCacheEntrySizeInMB @diskCacheEntrySizeInMB@}]
+	lappend attrs [subst {diskCacheCleanupFrequency @diskCacheCleanupFrequency@}]
+
+	lappend attrs [subst {disableDependencyId @disableDependencyId@}]
+
+	lappend attrs [subst {useListenerContext @useListenerContext@}]
+
+	lappend attrs [subst {enableCacheReplication @enableCacheReplication@}]
+	lappend attrs [subst {replicationType @replicationType@}]
+	lappend attrs [subst {pushFrequency @pushFrequency@}]
+        
+        set CacheID [$AdminConfig getid $CachePath]
+	$AdminConfig modify $CacheID $attrs
+
+	$AdminConfig create DRSSettings $CacheID {{messageBrokerDomainName @DataReplicationDomainName@}}
+        
+        puts stdout "Dynamic cache: $CacheName created successfully!"
+        
+     	$AdminConfig save
+	
+	
+    
+} else {
+     puts ""
+     puts stdout "Dynamic cache: $CacheName already exists."
+}
+     
+if {$FlagDebug == "True"} {
+    puts stdout " "
+    puts stdout "--------------------------------"
+    puts stdout "---- End $FileName"
+    puts stdout "--------------------------------"
+}

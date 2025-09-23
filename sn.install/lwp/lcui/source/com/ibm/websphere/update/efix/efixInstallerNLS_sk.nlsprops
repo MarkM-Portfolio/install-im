@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Zlyhanie inštalácie opravy: Došlo k výnimke počas aktualizácie histórie udalostí uloženej v {0}
+WUPD0200E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie. 
+WUPD0200E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0201E=WUPD0201E: Zlyhanie inštalácie opravy: Došlo k výnimke počas otvárania protokolového súboru {0}
+WUPD0201E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie. 
+WUPD0201E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0211E=WUPD0211E: Zlyhanie inštalácie opravy: Došlo k výnimke počas získavania informácií o komponentoch, ktoré sú súčasťou aktuálnej aktualizácie
+WUPD0211E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie. 
+WUPD0211E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0212E=WUPD0212E: Zlyhanie inštalácie opravy: Komponent {0} je uvedený ako súčasť tejto aktualizácie, ale k dispozícii nie je žiadny obraz aktualizácie komponentu.
+WUPD0212E.explanation=Časť tejto opravy, ktorá je použitá na aktualizáciu pomenovaného komponentu nie je k dispozícii.
+WUPD0212E.useraction=Tento problém indikuje internú chybu.  O ďalšie informácie požiadajte podporu IBM.
+
+WUPD0214E=WUPD0214E: Zlyhanie inštalácie opravy: Došlo k výnimke počas záznamu aplikácie alebo opravy {0} z JAR súboru opravy {1}
+WUPD0214E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie. 
+WUPD0214E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0215E=WUPD0215E: Zlyhanie inštalácie opravy: Zlyhala inštalácia komponentu {0}.
+WUPD0215E.explanation=Dodatočné podrobnosti nájdete v protokole inštalácie a súbore histórie udalostí.
+WUPD0215E.useraction=Dodatočné podrobnosti nájdete v protokole inštalácie a súbore histórie udalostí.
+
+WUPD0216E=WUPD0216E: Zlyhanie inštalácie opravy: Došlo k výnimke počas označovania aplikácie opravy {0} na komponente {1}
+WUPD0216E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie. 
+WUPD0216E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+
+WUPD0220E=WUPD0220E: Zlyhanie odinštalovania opravy: Súbor pre opravu {0} nie je prítomný.
+WUPD0220E.explanation=Prebieha pokus o odstránenie opravy, ktorá nie je označená ako nainštalovaná.
+WUPD0220E.useraction=Tento problém indikuje internú chybu.  Nemal by byť urobený žiadny pokus o odstránenie opravy, ktorá nie je označená ako nainštalovaná.
+
+WUPD0221E=WUPD0221E: Zlyhanie odinštalovania opravy: Súbor pre opravu {0} nebolo možné čítať.
+WUPD0221E.explanation=Súbor pre pomenovanú opravu nebolo možné čítať.  Operácia odinštalovania bola zastavená.
+WUPD0221E.useraction=Skontrolujte, či súbor obsahujúci pomenovanú opravu je platný.
+
+WUPD0222E=WUPD0222E: Zlyhanie odinštalovania opravy: Došlo k výnimke počas čistenia aplikácie opravy {0}
+WUPD0222E.explanation=Počas odinštalovania opravy došlo k výnimke, ktorá spôsobila zlyhanie odinštalovania. 
+WUPD0222E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0223E=WUPD0223E: Zlyhanie odinštalovania opravy: Aktualizáciu komponentu {1} pre opravu {0} nebolo možné odinštalovať.
+WUPD0223E.explanation=Bola vykonaná aktualizácia pomenovaného komponentu, ako súčasť pomenovanej opravy.  Aktualizáciu toho komponentu nebolo možné odstrániť.
+WUPD0223E.useraction=Tento problém indikuje internú chybu.  O ďalšie informácie požiadajte podporu IBM.
+
+WUPD0224E=WUPD0224E: Zlyhanie inštalácie opravy: Došlo k výnimke počas čistenia aplikácie opravy {0} z komponentu {1}
+WUPD0224E.explanation=Počas odinštalovania opravy došlo k výnimke, ktorá spôsobila zlyhanie odinštalovania. 
+WUPD0224E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0232E=WUPD0232E: Zlyhanie aktualizácie opravy: Došlo k výnimke počas získavania obsahu opravy {0}, komponent {1}, JAR súbor opravy {2}, položka {3}
+WUPD0232E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie. 
+WUPD0232E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0233E=WUPD0233E: Zlyhanie aktualizácie opravy: Došlo k výnimke počas predspracovania obsahu opravy {0}, komponent {1}
+WUPD0233E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie.
+WUPD0233E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0234E=WUPD0234E: Zlyhanie aktualizácie opravy: Došlo k výnimke počas spracovania obsahu opravy {0}, komponent {1}
+WUPD0234E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie.
+WUPD0234E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0235E=WUPD0235E: Zlyhanie aktualizácie opravy: Zlyhalo spracovanie opravy {0}, komponent {1}.  Podrobnosti o spracovaní nájdete v protokolovom súbore {2}.
+WUPD0235E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie.
+WUPD0235E.useraction=Pozrite si informácie o spracovaní v uvedenom protokolovom súbore.
+
+WUPD0236E=WUPD0236E: Zlyhanie aktualizácie opravy: Výnimka počas prípravy adresárov zálohy a protokolu
+WUPD0236E.explanation=Počas inštalácie opravy došlo k výnimke, ktorá spôsobila zlyhanie inštalácie.
+WUPD0236E.useraction=Dodatočné informácie nájdete v zobrazenej výnimke.
+
+WUPD0237E=WUPD0237E: Zlyhanie odstránenia opravy: Došlo k výnimke počas predspracovania obsahu opravy {0}, komponent {1}
+WUPD0237E.explanation=Počas odinštalovania opravy došlo k výnimke, ktorá spôsobila zlyhanie odinštalovania.
+WUPD0237E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0238E=WUPD0238E: Zlyhanie odstránenia opravy: Došlo k výnimke počas spracovania obsahu opravy {0}, komponent {1}
+WUPD0238E.explanation=Počas odinštalovania opravy došlo k výnimke, ktorá spôsobila zlyhanie odinštalovania.
+WUPD0238E.useraction=Dodatočné informácie nájdete vo výnimke.
+
+WUPD0239E=WUPD0239E: Zlyhanie odstránenia opravy: Zlyhalo spracovanie opravy {0}, komponent {1}.  Podrobnosti o spracovaní nájdete v protokolovom súbore {2}.
+WUPD0239E.explanation=Počas odinštalovania opravy došlo k výnimke, ktorá spôsobila zlyhanie odinštalovania.
+WUPD0239E.useraction=Dodatočné informácie nájdete v protokolovom súbore.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} z {1}) Inštalácia opravy {2}.
+prefix.efix.revert   =({0} z {1}) Vracia sa inštalácia opravy {2}.
+prefix.efix.uninstall=({0} z {1}) Odinštalovanie opravy {2}.
+
+#NOTAMSG
+prepare.update.install  =príprava na inštaláciu
+prepare.update.uninstall=príprava na odinštalovanie
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =inštalácia komponentu {0} z {1}
+component.update.uninstall=odinštalovanie komponentu {0} z {1}
+
+#NOTAMSG
+complete.update.install  =dokončenie inštalácie
+complete.update.uninstall=dokončenie odinštalovania
+
+#NOTAMSG
+result.cancelled.install=Zrušená inštalácia
+result.succeeded.install=Úspešná inštalácia
+result.failed.install=Zlyhaná inštalácia
+
+result.cancelled.uninstall=Zrušené odinštalovanie
+result.succeeded.uninstall=Úspešné odinštalovanie
+result.failed.uninstall=Zlyhané odinštalovanie

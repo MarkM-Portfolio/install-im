@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * HCL Confidential
+ *
+ * OCO Source Materials
+ *
+ * Copyright HCL Technologies Limited 2006, 2020
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has been
+ * deposited with the U.S. Copyright Office.
+ *
+-->
+
+<project name="im-install-config">
+	<property name="token.file" value="${java.io.tmpdir}/token-fragment.txt" />
+	<property name="token.cluster" value="${java.io.tmpdir}/token-cluster-fragment.txt" />
+	<target name="createTokenFragmentFile">
+		<echo message="Creating token file: ${token.file}" />
+		<echo file="${token.file}" force="true">##feature-config##</echo>
+	</target>
+	
+	<target name="createTokenFragmentCluster">
+		<echo message="Creating (cluster) token file: ${token.cluster}" />
+		<echo file="${token.cluster}" force="true">##cluster-config##</echo>
+	</target>
+	
+	<!-- Assumes cfgPyFile and fragPyFile are passed in as params -->
+	<target name="addFeature" depends="createTokenFragmentFile">
+		<echo message="Loading fragment: ${fragPyFile}" />
+		<loadfile srcFile="${fragPyFile}" property="feature.configuration">
+			<filterchain>
+				<concatfilter append="${token.file}" />
+			</filterchain>
+		</loadfile>
+		<echo message="Fragment content:" />
+		<echo message="${feature.configuration}" />
+		<echo message="" />
+		<echo message="Updating configuration file: ${cfgPyFile}" />
+		<replace file="${cfgPyFile}" token="##feature-config##" value="${feature.configuration}"/>
+	</target>
+	
+	<!-- Assumes cfgPyFile and fragPyFile are passed in as params -->
+	<target name="addFeatureClusterInfo" depends="createTokenFragmentCluster">
+		<echo message="Loading fragment: ${fragPyFile}" />
+		<loadfile srcFile="${fragPyFile}" property="feature.configuration">
+			<filterchain>
+				<concatfilter append="${token.cluster}" />
+			</filterchain>
+		</loadfile>
+		<echo message="Fragment content:" />
+		<echo message="${feature.configuration}" />
+		<echo message="" />
+		<echo message="Updating configuration file: ${cfgPyFile}" />
+		<replace file="${cfgPyFile}" token="##cluster-config##" value="${feature.configuration}"/>
+	</target>
+	
+	<target name="remove_news">
+		<replace file='${cfgPyFile}' token="#remove#news" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_search">
+		<replace file='${cfgPyFile}' token="#remove#search" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_profiles">
+		<replace file='${cfgPyFile}' token="#remove#profiles" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_activities">
+		<replace file='${cfgPyFile}' token="#remove#activities" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_blogs">
+		<replace file='${cfgPyFile}' token="#remove#blogs" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_rte">
+		<replace file='${cfgPyFile}' token="#remove#rte" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_ccm">
+		<replace file='${cfgPyFile}' token="#remove#ccm" value="'replace':'remove',"/>
+		<replace file='${cfgPyFile}' token="#remove#extensions" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_dogear">
+		<replace file='${cfgPyFile}' token="#remove#dogear" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_files">
+		<replace file='${cfgPyFile}' token="#remove#files" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_pushNotification">
+		<replace file='${cfgPyFile}' token="#remove#pushNotification" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_forums">
+		<replace file='${cfgPyFile}' token="#remove#forums" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_homepage">
+		<replace file='${cfgPyFile}' token="#remove#homepage" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_metrics">
+		<replace file='${cfgPyFile}' token="#remove#metrics" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_wikis">
+		<replace file='${cfgPyFile}' token="#remove#wikis" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_mobile">
+		<replace file='${cfgPyFile}' token="#remove#mobile" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_widgetContainer">
+		<replace file='${cfgPyFile}' token="#remove#widgetContainer" value="'replace':'remove',"/>
+	</target>	
+	
+	<target name="remove_moderation">
+		<replace file='${cfgPyFile}' token="#remove#moderation" value="'replace':'remove',"/>
+	</target>
+	
+	<target name="remove_communities">
+		<replace file='${cfgPyFile}' token="#remove#communities" value="'replace':'remove',"/>
+	</target>
+
+	<target name="remove_ic360">
+		<replace file='${cfgPyFile}' token="#remove#ic360" value="'replace':'remove',"/>
+	</target>
+	
+<!--
+
+	<target name="update_news">
+		<replace file='${cfgPyFile}' token="#update#news" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_search">
+		<replace file='${cfgPyFile}' token="#update#search" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_profiles">
+		<replace file='${cfgPyFile}' token="#update#profiles" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_activities">
+		<replace file='${cfgPyFile}' token="#update#activities" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_blogs">
+		<replace file='${cfgPyFile}' token="#update#blogs" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_rte">
+		<replace file='${cfgPyFile}' token="#update#rte" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_ccm">
+		<replace file='${cfgPyFile}' token="#update#ccm" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_dogear">
+		<replace file='${cfgPyFile}' token="#update#dogear" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_files">
+		<replace file='${cfgPyFile}' token="#update#files" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_pushNotification">
+		<replace file='${cfgPyFile}' token="#update#pushNotification" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_forums">
+		<replace file='${cfgPyFile}' token="#update#forums" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_homepage">
+		<replace file='${cfgPyFile}' token="#update#homepage" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_metrics">
+		<replace file='${cfgPyFile}' token="#update#metrics" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_wikis">
+		<replace file='${cfgPyFile}' token="#update#wikis" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_mobile">
+		<replace file='${cfgPyFile}' token="#update#mobile" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_widgetContainer">
+		<replace file='${cfgPyFile}' token="#update#widgetContainer" value="'replace':'reinstall',"/>
+	</target>	
+	
+	<target name="update_moderation">
+		<replace file='${cfgPyFile}' token="#update#moderation" value="'replace':'reinstall',"/>
+	</target>
+	
+	<target name="update_communities">
+		<replace file='${cfgPyFile}' token="#update#communities" value="'replace':'reinstall',"/>
+	</target>
+	
+-->
+</project>

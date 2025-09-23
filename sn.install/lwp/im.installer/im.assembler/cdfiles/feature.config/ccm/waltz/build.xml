@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2014, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="Waltz Configuration" default="waltz-config">
+	<property file="build.properties"/>
+	
+	<target name="waltz-config">
+		<copy todir="${was_user_home}/bin" file="waltzConfig.py" overwrite="true">
+			<filterset>
+				<filter token="CEAppName" value="${CE_application_name}"/>
+				<filter token="tempFile" value="${was_user_home}/temp.txt"/>
+				<filter token="ServerName" value="${server_name}"/>
+				<filter token="ClusterName" value="${cluster_name}"/>
+			</filterset>
+		</copy>
+		<copy todir="${was_user_home}/bin" file="build.properties" overwrite="true"/>
+		
+		<antcall target="run-wsadmin-jython"/>
+		
+		<delete file="lc_DynaCacheCreate.run" failonerror="false" />
+		<antcall target="create-dynacache-WaltzUnknownCache" />
+		<antcall target="create-dynacache-WaltzExactDNMatchCache" />
+		<antcall target="create-dynacache-WaltzExactURLMatchCache" />
+		<antcall target="create-dynacache-WaltzExactIDMatchCache" />
+		<antcall target="create-dynacache-WaltzExactLoginUserIDMatchCache" />
+		<antcall target="create-dynacache-WaltzNestedGroupMembershipCache" />
+		<antcall target="create-dynacache-WaltzDirectMemberExpansionCache" />
+		<antcall target="create-dynacache-WaltzDirectGroupMembershipCache" />
+		<antcall target="create-dynacache-WaltzNestedMemberExpansionCache" />
+		
+		<antcall target="run-wsadmin-jacl"/>
+		
+		<available file="${was_user_home}/temp.txt" property="result.present"/>
+		<delete file="${was_user_home}/temp.txt" />
+		
+		<condition property="set.cell.name">
+			<equals arg1="${cell_name}" arg2="" trim="true"/>
+		</condition>
+		<fail message="cell_name must be set" if="set.cell.name"/>
+		<antcall target="copy-config-files"/>
+		
+		<condition property="remove.password">
+			<istrue value="${removePassword}"/>
+		</condition>
+		<antcall target="remove-password"/>
+	</target>
+	
+	<target name="run-wsadmin-jython">
+		<condition property="os_extension" value="bat">
+			<os family="windows" />
+		</condition>
+		<condition property="os_extension" value="sh">
+			<os family="unix" />
+		</condition>
+		<exec dir="${was_user_home}/bin" executable="${was_user_home}/bin/wsadmin.${os_extension}">
+			<arg line="-lang jython -username ${was_admin_user} -password ${was_admin_password} -f waltzConfig.py" />
+		</exec>
+	</target>
+
+	<target name="run-wsadmin-jacl">
+		<condition property="os_extension" value="bat">
+			<os family="windows" />
+		</condition>
+		<condition property="os_extension" value="sh">
+			<os family="unix" />
+		</condition>
+		<exec dir="." executable="${was_user_home}/bin/wsadmin.${os_extension}">
+			<arg line="-lang jacl -username ${was_admin_user} -password ${was_admin_password} -f lc_DynaCacheCreate.run" />
+		</exec>
+	</target>
+	
+	<target name="copy-config-files" unless="result.present">
+		<copy todir="${was_user_home}/config/cells/${cell_name}" file="directory.services.xml" overwrite="true">
+		</copy>
+		<replaceregexp file="${was_user_home}/config/cells/${cell_name}/directory.services.xml" flags="m"
+					   match='name="com.ibm.connections.directory.services.waltz.communities.integration.service.url"(\u003E).*(\u003C)/property'
+					   replace='name="com.ibm.connections.directory.services.waltz.communities.integration.service.url"\1\https://${connections_hostname_port}/communities/\2/property'
+					   encoding='UTF-8'
+		/>
+		
+		<copy todir="${was_user_home}/config/cells/${cell_name}" file="directory.services.xsd" overwrite="true"/>
+		<copy todir="${was_user_home}/config/cells/${cell_name}" file="sonata.services.xml" overwrite="true"/>
+		<copy todir="${was_user_home}/config/cells/${cell_name}" file="sonata.services.xsd" overwrite="true"/>
+		<delete file="${was_user_home}/temp.txt" />
+	</target>
+	
+	<target name="remove-password" if="remove.password">
+		<replace file="${was_user_home}/bin/build.properties" summary="true">
+        	<replacefilter token='was_admin_password=${was_admin_password}' value='was_admin_password=PASSWORD_REMOVED'/>
+			<replacefilter token='password=${password}' value='password=PASSWORD_REMOVED'/>
+		</replace>
+		
+		<replace file="build.properties" summary="true">
+        	<replacefilter token='was_admin_password=${was_admin_password}' value='was_admin_password=PASSWORD_REMOVED'/>
+			<replacefilter token='password=${password}' value='password=PASSWORD_REMOVED'/>
+		</replace>
+	</target>
+	
+	<target name="create-dynacache-WaltzUnknownCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzUnknownCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzUnknownCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzExactDNMatchCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzExactDNMatchCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzExactDNMatchCache" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzExactURLMatchCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzExactURLMatchCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzExactURLMatchCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzExactIDMatchCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzExactIDMatchCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzExactIDMatchCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzExactLoginUserIDMatchCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzExactLoginUserIDMatchCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzExactLoginUserIDMatchCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzNestedGroupMembershipCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzNestedGroupMembershipCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzNestedGroupMembershipCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzDirectMemberExpansionCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzDirectMemberExpansionCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzDirectMemberExpansionCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzDirectGroupMembershipCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzDirectGroupMembershipCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzDirectGroupMembershipCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+
+	<target name="create-dynacache-WaltzNestedMemberExpansionCache">
+		<filter token="CacheProviderName" value="CacheProvider" />
+		<filter token="CacheName" value="WaltzNestedMemberExpansionCache" />
+		<filter token="JNDIName" value="com/ibm/connections/directory/services/cache/WaltzNestedMemberExpansionCache" />
+		<filter token="enableCacheReplication" value="true" />
+		<filter token="replicationType" value="NONE" />
+		<filter token="DataReplicationDomainName" value="ConnectionsReplicationDomain" />
+		<filter token="cacheSize" value="2000" />
+		<filter token="defaultPriority" value="1" />
+		<filter token="diskCacheSizeInGB" value="0" />
+		<filter token="diskCacheSizeInEntries" value="0" />
+		<filter token="diskCacheEntrySizeInMB" value="0" />
+		<filter token="diskCacheCleanupFrequency" value="0" />
+		<filter token="disableDependencyId" value="true" />
+		<filter token="pushFrequency" value="1" />
+
+		<copy file="lc_DynaCacheCreate.jacl"
+			tofile="lc_DynaCacheCreate.tmp"
+			filtering="yes" overwrite="yes" />
+		<concat destfile="lc_DynaCacheCreate.run" append="true">
+			<filelist dir="." files="lc_DynaCacheCreate.tmp" />
+		</concat>
+	</target>
+</project>

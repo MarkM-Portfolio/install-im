@@ -1,0 +1,22 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2010
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+
+
+# SERVER's format like [{IP.PIPE|IP.SPIPE}://][HOSTNAME][:PORT]
+SERVER=localhost
+# Now just support IP.PIPE and IP.SPIPE
+PROTOCOL=IP.PIPE
+PORT=
+# if you want to specify BACKUP server, you should change BACKUP to YES
+BACKUP=NO
+BSERVER=
+BPROTOCOL=
+BPORT=

@@ -1,0 +1,30 @@
+#!/bin/bash
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+if [ -e /etc/ssh/sshd_config ] ; then 
+
+	res=`grep -w PermitRootLogin /etc/ssh/sshd_config | cut -d " " -f2`
+	#echo $res
+ 
+		if [ "$res" == "yes" ] ; then 
+			echo "$Msg_AVAILABLE" 
+		else
+			echo "$Msg_UNAVAILABLE"
+		fi
+else 
+
+	res=`grep -w PermitRootLogin /usr/local/etc/sshd_config | cut -d " " -f2`
+	#echo $res
+		if [ "$res" == "yes" ] ; then
+			echo "$Msg_AVAILABLE"
+		else
+			echo "$Msg_UNAVAILABLE"
+		fi
+fi

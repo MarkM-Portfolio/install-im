@@ -1,0 +1,15 @@
+[
+   {
+      "command": "\/tmp\/ic5prepareDB2hadr\/ic5prepareDB2hadr.sh",
+      "commandargs": "addSecondaryNode",
+      "description": "This script package installs the specified application",
+      "execmode": 3,
+      "filename": "ic5prepareDB2hadr.zip",
+      "location": "\/tmp\/ic5prepareDB2hadr",
+      "log": "\/tmp\/ic5prepareDB2hadr\/logs",
+      "name": "ic5prepareDB2hadr",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION"
+   }
+]

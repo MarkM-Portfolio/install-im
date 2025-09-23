@@ -1,0 +1,2097 @@
+[
+   {
+      "description": "IC5 High Availability System with GPFS on RACK B with BWI customizations",
+      "name": "GIS_IC-5-AddNode_Pattern_GPFS_27082014",
+      "parts": [
+         {
+            "add_ons": [
+               {
+                  "add_on_ref": 0,
+                  "parameters": [
+                     {
+                        "key": "DISK_SIZE_GB",
+                        "value": "50"
+                     },
+                     {
+                        "key": "FILESYSTEM_TYPE",
+                        "value": "ext3"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "value": "\/ibm"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 1,
+                  "parameters": [
+                     {
+                        "key": "MOUNTD_PORT",
+                        "locked": true,
+                        "value": "892"
+                     },
+                     {
+                        "key": "RQUOTAD_PORT",
+                        "locked": true,
+                        "value": "875"
+                     },
+                     {
+                        "key": "STATD_PORT",
+                        "locked": true,
+                        "value": "662"
+                     },
+                     {
+                        "key": "HOST_NAME",
+                        "value": "172.17.63.149"
+                     },
+                     {
+                        "key": "REMOTE_EXPORT",
+                        "locked": true,
+                        "value": "\/ibm\/nfsshare"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "locked": true,
+                        "value": "\/nfsshare"
+                     },
+                     {
+                        "key": "NFS_TYPE",
+                        "locked": true,
+                        "value": "nfs"
+                     },
+                     {
+                        "key": "OPTIONS",
+                        "locked": true,
+                        "value": "rsize=8192,wsize=8192,timeo=14,intr"
+                     },
+                     {
+                        "key": "PORTMAPPER",
+                        "locked": true,
+                        "value": "111"
+                     },
+                     {
+                        "key": "NFS_PORT",
+                        "locked": true,
+                        "value": "2049"
+                     },
+                     {
+                        "key": "LOCKD_TCPPORT",
+                        "locked": true,
+                        "value": "32803"
+                     },
+                     {
+                        "key": "LOCKD_UDPPORT",
+                        "locked": true,
+                        "value": "32769"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 2,
+                  "parameters": [
+                  ]
+               },
+               {
+                  "add_on_ref": 3,
+                  "parameters": [
+                     {
+                        "key": "USERNAME",
+                        "value": "intranetbw"
+                     },
+                     {
+                        "key": "PASSWORD",
+                        "value": ""
+                     }
+                  ]
+               }
+            ],
+            "conceptualKey": "DB2_ESE_Primary_C",
+            "concreteKey": "DB2_ESE_Primary",
+            "configurations": [
+            ],
+            "name": "DB2 Enterprise HADR Primary",
+            "properties": [
+               {
+                  "key": "numvcpus",
+                  "pclass": "HWAttributes",
+                  "value": "2"
+               },
+               {
+                  "key": "memsize",
+                  "pclass": "HWAttributes",
+                  "value": "8192"
+               },
+               {
+                  "key": "db2inst1_group",
+                  "pclass": "ConfigDB2",
+                  "value": "db2iadm1"
+               },
+               {
+                  "key": "db2inst1_username",
+                  "pclass": "ConfigDB2",
+                  "value": "db2inst1"
+               },
+               {
+                  "key": "db2inst1_password",
+                  "pclass": "ConfigDB2",
+                  "value": ""
+               },
+               {
+                  "key": "db2fenc1_group",
+                  "pclass": "ConfigDB2",
+                  "value": "db2fadm1"
+               },
+               {
+                  "key": "db2fenc1_username",
+                  "pclass": "ConfigDB2",
+                  "value": "db2fenc1"
+               },
+               {
+                  "key": "db2fenc1_password",
+                  "pclass": "ConfigDB2",
+                  "value": ""
+               },
+               {
+                  "key": "dasusr1_group",
+                  "pclass": "ConfigDB2",
+                  "value": "dasadm1"
+               },
+               {
+                  "key": "dasusr1_username",
+                  "pclass": "ConfigDB2",
+                  "value": "dasusr1"
+               },
+               {
+                  "key": "dasusr1_password",
+                  "pclass": "ConfigDB2",
+                  "value": ""
+               },
+               {
+                  "key": "service_port",
+                  "pclass": "ConfigDB2",
+                  "value": "50000"
+               },
+               {
+                  "key": "db_action",
+                  "pclass": "ConfigDB2",
+                  "value": "Create-sample-database"
+               },
+               {
+                  "key": "db_name_new",
+                  "pclass": "ConfigDB2",
+                  "value": "SAMPLE"
+               },
+               {
+                  "key": "database_codeset",
+                  "pclass": "ConfigDB2",
+                  "value": "UTF-8"
+               },
+               {
+                  "key": "database_territory",
+                  "pclass": "ConfigDB2",
+                  "value": "US"
+               },
+               {
+                  "key": "database_collate",
+                  "pclass": "ConfigDB2",
+                  "value": "SYSTEM"
+               },
+               {
+                  "key": "database_collate_other",
+                  "pclass": "ConfigDB2",
+                  "value": ""
+               },
+               {
+                  "key": "database_pagesize",
+                  "pclass": "ConfigDB2",
+                  "value": "4096"
+               },
+               {
+                  "key": "db2_compatibility",
+                  "pclass": "ConfigDB2",
+                  "value": "Default"
+               },
+               {
+                  "key": "config_raw_disks",
+                  "pclass": "ConfigDB2",
+                  "value": "NO"
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_ROOT",
+                  "value": ""
+               },
+               {
+                  "key": "username",
+                  "pclass": "ConfigPWD_USER",
+                  "value": "wasadmin"
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_USER",
+                  "value": ""
+               },
+               {
+                  "key": "enabled",
+                  "locked": true,
+                  "pclass": "ConfigVNC",
+                  "value": "true"
+               },
+               {
+                  "key": "standby_db2_host",
+                  "pclass": "db2StandbyServiceConsumer",
+                  "value": ""
+               },
+               {
+                  "key": "standby_root_password",
+                  "pclass": "db2StandbyServiceConsumer",
+                  "value": ""
+               },
+               {
+                  "key": "standby_db2_service_port",
+                  "pclass": "db2StandbyServiceConsumer",
+                  "value": ""
+               },
+               {
+                  "key": "standby_ipaddr",
+                  "locked": true,
+                  "pclass": "db2StandbyServiceConsumer",
+                  "value": ""
+               }
+            ],
+            "script_packages": [
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 0
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 1
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 2,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 0
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "Remote_GPFS_Server_IP",
+                        "value": "172.17.63.164"
+                     }
+                  ],
+                  "script_package_ref": 3,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 2
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "MIN_Quota_Size",
+                        "value": "2048M"
+                     },
+                     {
+                        "key": "MAX_Quota_Size",
+                        "value": "4096M"
+                     }
+                  ],
+                  "script_package_ref": 4,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 3
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "Link_Directory",
+                        "value": "\/gpfsshare"
+                     }
+                  ],
+                  "script_package_ref": 5,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 4
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "DBSYSHST",
+                        "locked": true,
+                        "value": "${DB2_ESE_Primary.hostname}"
+                     },
+                     {
+                        "key": " PROJECTNAME ",
+                        "value": "bwi1"
+                     },
+                     {
+                        "key": "ROOT_PASSWORD",
+                        "value": ""
+                     }
+                  ],
+                  "script_package_ref": 6,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 5
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 7,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 6
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 8,
+                  "starts_after": [
+                     {
+                        "part_ref": 2,
+                        "script_ref": 2
+                     }
+                  ]
+               }
+            ],
+            "type": "DB2_ESE_Primary",
+            "virtual_image_ref": 0
+         },
+         {
+            "add_ons": [
+               {
+                  "add_on_ref": 0,
+                  "parameters": [
+                     {
+                        "key": "DISK_SIZE_GB",
+                        "value": "20"
+                     },
+                     {
+                        "key": "FILESYSTEM_TYPE",
+                        "value": "ext3"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "value": "\/ibm"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 1,
+                  "parameters": [
+                     {
+                        "key": "MOUNTD_PORT",
+                        "locked": true,
+                        "value": "892"
+                     },
+                     {
+                        "key": "RQUOTAD_PORT",
+                        "locked": true,
+                        "value": "875"
+                     },
+                     {
+                        "key": "STATD_PORT",
+                        "locked": true,
+                        "value": "662"
+                     },
+                     {
+                        "key": "HOST_NAME",
+                        "value": "172.17.63.149"
+                     },
+                     {
+                        "key": "REMOTE_EXPORT",
+                        "locked": true,
+                        "value": "\/ibm\/nfsshare"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "locked": true,
+                        "value": "\/nfsshare"
+                     },
+                     {
+                        "key": "NFS_TYPE",
+                        "locked": true,
+                        "value": "nfs"
+                     },
+                     {
+                        "key": "OPTIONS",
+                        "locked": true,
+                        "value": "rsize=8192,wsize=8192,timeo=14,intr"
+                     },
+                     {
+                        "key": "PORTMAPPER",
+                        "locked": true,
+                        "value": "111"
+                     },
+                     {
+                        "key": "NFS_PORT",
+                        "locked": true,
+                        "value": "2049"
+                     },
+                     {
+                        "key": "LOCKD_TCPPORT",
+                        "locked": true,
+                        "value": "32803"
+                     },
+                     {
+                        "key": "LOCKD_UDPPORT",
+                        "locked": true,
+                        "value": "32769"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 2,
+                  "parameters": [
+                  ]
+               },
+               {
+                  "add_on_ref": 3,
+                  "parameters": [
+                     {
+                        "key": "USERNAME",
+                        "value": "intranetbw"
+                     },
+                     {
+                        "key": "PASSWORD",
+                        "value": ""
+                     }
+                  ]
+               }
+            ],
+            "conceptualKey": "CustomNodeGroupPart",
+            "concreteKey": "CustomNodePart",
+            "configurations": [
+            ],
+            "count": 1,
+            "name": "Angepasste Knoten",
+            "properties": [
+               {
+                  "key": "numvcpus",
+                  "pclass": "HWAttributes",
+                  "value": "2"
+               },
+               {
+                  "key": "memsize",
+                  "pclass": "HWAttributes",
+                  "value": "10240"
+               },
+               {
+                  "key": "cell_name",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": "CloudBurstCell"
+               },
+               {
+                  "key": "node_name",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": "${CustomNodePart.hostname}"
+               },
+               {
+                  "key": "was_im_repo_location",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "was_im_repo_user",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "was_im_repo_pass",
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_ROOT",
+                  "value": ""
+               },
+               {
+                  "key": "username",
+                  "pclass": "ConfigPWD_USER",
+                  "value": "wasadmin"
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_USER",
+                  "value": ""
+               },
+               {
+                  "key": "enabled",
+                  "locked": true,
+                  "pclass": "ConfigVNC",
+                  "value": "false"
+               },
+               {
+                  "key": "dmgr_federate",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "true"
+               },
+               {
+                  "key": "cell_name",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "CloudBurstCell"
+               },
+               {
+                  "key": "dmgr_host",
+                  "pclass": "canBeFederated",
+                  "value": "ipas3-cg3-vm132.stgt.spc.ihost.com"
+               },
+               {
+                  "key": "dmgr_conntype",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "SOAP"
+               },
+               {
+                  "key": "dmgr_jmxport",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "8879"
+               },
+               {
+                  "key": "dmgr_user",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "wasadmin"
+               },
+               {
+                  "key": "dmgr_pass",
+                  "pclass": "canBeFederated",
+                  "value": ""
+               },
+               {
+                  "key": "augment_list",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": [
+                     "none"
+                  ]
+               },
+               {
+                  "key": "odr_present",
+                  "locked": true,
+                  "pclass": "odrInPort",
+                  "value": "false"
+               }
+            ],
+            "script_packages": [
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 1
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 0,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 5
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 2,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 1
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "Remote_GPFS_Server_IP",
+                        "value": "172.17.63.164"
+                     }
+                  ],
+                  "script_package_ref": 3,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 2
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "MIN_Quota_Size",
+                        "value": "2048M"
+                     },
+                     {
+                        "key": "MAX_Quota_Size",
+                        "value": "4096M"
+                     }
+                  ],
+                  "script_package_ref": 4,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 3
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "Link_Directory",
+                        "value": "\/gpfsshare"
+                     }
+                  ],
+                  "script_package_ref": 5,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 4
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "DBSYSHST",
+                        "locked": true,
+                        "value": "${DB2_ESE_Primary.hostname}"
+                     },
+                     {
+                        "key": " PROJECTNAME ",
+                        "value": "bwi1"
+                     },
+                     {
+                        "key": "ROOT_PASSWORD",
+                        "value": ""
+                     }
+                  ],
+                  "script_package_ref": 6,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 7
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 9,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 6
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 10,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 7
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 11,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 8
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 12,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 9
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 13,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 10
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 14,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 11
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 8,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 8
+                     }
+                  ]
+               }
+            ],
+            "starts_after": [
+               3
+            ],
+            "type": "Custom Node",
+            "virtual_image_ref": 1
+         },
+         {
+            "add_ons": [
+               {
+                  "add_on_ref": 0,
+                  "parameters": [
+                     {
+                        "key": "DISK_SIZE_GB",
+                        "value": "50"
+                     },
+                     {
+                        "key": "FILESYSTEM_TYPE",
+                        "value": "ext3"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "value": "\/opt\/IBM\/TDI"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 1,
+                  "parameters": [
+                     {
+                        "key": "MOUNTD_PORT",
+                        "locked": true,
+                        "value": "892"
+                     },
+                     {
+                        "key": "RQUOTAD_PORT",
+                        "locked": true,
+                        "value": "875"
+                     },
+                     {
+                        "key": "STATD_PORT",
+                        "locked": true,
+                        "value": "662"
+                     },
+                     {
+                        "key": "HOST_NAME",
+                        "value": "172.17.63.149"
+                     },
+                     {
+                        "key": "REMOTE_EXPORT",
+                        "locked": true,
+                        "value": "\/ibm\/nfsshare"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "locked": true,
+                        "value": "\/nfsshare"
+                     },
+                     {
+                        "key": "NFS_TYPE",
+                        "locked": true,
+                        "value": "nfs"
+                     },
+                     {
+                        "key": "OPTIONS",
+                        "locked": true,
+                        "value": "rsize=8192,wsize=8192,timeo=14,intr"
+                     },
+                     {
+                        "key": "PORTMAPPER",
+                        "locked": true,
+                        "value": "111"
+                     },
+                     {
+                        "key": "NFS_PORT",
+                        "locked": true,
+                        "value": "2049"
+                     },
+                     {
+                        "key": "LOCKD_TCPPORT",
+                        "locked": true,
+                        "value": "32803"
+                     },
+                     {
+                        "key": "LOCKD_UDPPORT",
+                        "locked": true,
+                        "value": "32769"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 2,
+                  "parameters": [
+                  ]
+               },
+               {
+                  "add_on_ref": 3,
+                  "parameters": [
+                     {
+                        "key": "USERNAME",
+                        "value": "intranetbw"
+                     },
+                     {
+                        "key": "PASSWORD",
+                        "value": ""
+                     }
+                  ]
+               }
+            ],
+            "conceptualKey": "Core_OS2",
+            "concreteKey": "Core_OS",
+            "configurations": [
+            ],
+            "count": 1,
+            "name": "Core OS",
+            "properties": [
+               {
+                  "key": "numvcpus",
+                  "pclass": "HWAttributes",
+                  "value": "1"
+               },
+               {
+                  "key": "memsize",
+                  "pclass": "HWAttributes",
+                  "value": "2048"
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_ROOT",
+                  "value": ""
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_USER",
+                  "value": ""
+               },
+               {
+                  "key": "BOOTSTRAP_URL",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "AGENT_TOKEN",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "PUBLIC_KEY",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "DEPLOYMENT_URL",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "LAUNCHED_BY",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "SERVER_NAME",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "KERNELSERVICE_URL",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "SIGNER_PRIVATE_KEY",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "SSVC_TOKEN",
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               },
+               {
+                  "key": "PURESCALE_APPLIANCE_IPS",
+                  "locked": true,
+                  "pclass": "ConfigMaestro",
+                  "value": ""
+               }
+            ],
+            "script_packages": [
+               {
+                  "parameters": [
+                     {
+                        "key": "DBSYSHST",
+                        "locked": true,
+                        "value": "${DB2_ESE_Primary.hostname}"
+                     },
+                     {
+                        "key": " PROJECTNAME ",
+                        "value": "bwi1"
+                     },
+                     {
+                        "key": "ROOT_PASSWORD",
+                        "value": ""
+                     }
+                  ],
+                  "script_package_ref": 6,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 10
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 15,
+                  "starts_after": [
+                     {
+                        "part_ref": 2,
+                        "script_ref": 0
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 16,
+                  "starts_after": [
+                     {
+                        "part_ref": 2,
+                        "script_ref": 1
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 8,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 11
+                     }
+                  ]
+               }
+            ],
+            "starts_after": [
+               4
+            ],
+            "type": "OS Node",
+            "virtual_image_ref": 2
+         },
+         {
+            "add_ons": [
+               {
+                  "add_on_ref": 1,
+                  "parameters": [
+                     {
+                        "key": "MOUNTD_PORT",
+                        "locked": true,
+                        "value": "892"
+                     },
+                     {
+                        "key": "RQUOTAD_PORT",
+                        "locked": true,
+                        "value": "875"
+                     },
+                     {
+                        "key": "STATD_PORT",
+                        "locked": true,
+                        "value": "662"
+                     },
+                     {
+                        "key": "HOST_NAME",
+                        "value": "172.17.63.149"
+                     },
+                     {
+                        "key": "REMOTE_EXPORT",
+                        "locked": true,
+                        "value": "\/ibm\/nfsshare"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "locked": true,
+                        "value": "\/nfsshare"
+                     },
+                     {
+                        "key": "NFS_TYPE",
+                        "locked": true,
+                        "value": "nfs"
+                     },
+                     {
+                        "key": "OPTIONS",
+                        "locked": true,
+                        "value": "rsize=8192,wsize=8192,timeo=14,intr"
+                     },
+                     {
+                        "key": "PORTMAPPER",
+                        "locked": true,
+                        "value": "111"
+                     },
+                     {
+                        "key": "NFS_PORT",
+                        "locked": true,
+                        "value": "2049"
+                     },
+                     {
+                        "key": "LOCKD_TCPPORT",
+                        "value": "32803"
+                     },
+                     {
+                        "key": "LOCKD_UDPPORT",
+                        "value": "32769"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 2,
+                  "parameters": [
+                  ]
+               },
+               {
+                  "add_on_ref": 3,
+                  "parameters": [
+                     {
+                        "key": "USERNAME",
+                        "value": "intranetbw"
+                     },
+                     {
+                        "key": "PASSWORD",
+                        "value": ""
+                     }
+                  ]
+               }
+            ],
+            "conceptualKey": "IHSGroupPart",
+            "concreteKey": "IHSPart",
+            "configurations": [
+            ],
+            "count": 1,
+            "name": "IBM HTTP Server",
+            "properties": [
+               {
+                  "key": "numvcpus",
+                  "pclass": "HWAttributes",
+                  "value": "2"
+               },
+               {
+                  "key": "memsize",
+                  "pclass": "HWAttributes",
+                  "value": "4096"
+               },
+               {
+                  "key": "cell_name",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": "CloudBurstCell"
+               },
+               {
+                  "key": "node_name",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": "${IHSPart.hostname}"
+               },
+               {
+                  "key": "was_im_repo_location",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "was_im_repo_user",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "was_im_repo_pass",
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_ROOT",
+                  "value": ""
+               },
+               {
+                  "key": "username",
+                  "pclass": "ConfigPWD_USER",
+                  "value": "wasadmin"
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_USER",
+                  "value": ""
+               },
+               {
+                  "key": "enabled",
+                  "locked": true,
+                  "pclass": "ConfigVNC",
+                  "value": "false"
+               },
+               {
+                  "key": "dmgr_federate",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "true"
+               },
+               {
+                  "key": "cell_name",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "CloudBurstCell"
+               },
+               {
+                  "key": "dmgr_host",
+                  "pclass": "canBeFederated",
+                  "value": "ipas3-cg3-vm132.stgt.spc.ihost.com"
+               },
+               {
+                  "key": "dmgr_conntype",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "SOAP"
+               },
+               {
+                  "key": "dmgr_jmxport",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "8879"
+               },
+               {
+                  "key": "dmgr_user",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "wasadmin"
+               },
+               {
+                  "key": "dmgr_pass",
+                  "pclass": "canBeFederated",
+                  "value": ""
+               }
+            ],
+            "script_packages": [
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 1
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 0,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 5
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 2,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 1
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "Remote_GPFS_Server_IP",
+                        "value": "172.17.63.164"
+                     }
+                  ],
+                  "script_package_ref": 3,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 2
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "MIN_Quota_Size",
+                        "value": "2048M"
+                     },
+                     {
+                        "key": "MAX_Quota_Size",
+                        "value": "4096M"
+                     }
+                  ],
+                  "script_package_ref": 4,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 3
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "Link_Directory",
+                        "value": "\/gpfsshare"
+                     }
+                  ],
+                  "script_package_ref": 5,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 4
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "DBSYSHST",
+                        "locked": true,
+                        "value": "${DB2_ESE_Primary.hostname}"
+                     },
+                     {
+                        "key": " PROJECTNAME ",
+                        "value": "bwi1"
+                     },
+                     {
+                        "key": "ROOT_PASSWORD",
+                        "value": ""
+                     }
+                  ],
+                  "script_package_ref": 6,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 7
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 17,
+                  "starts_after": [
+                     {
+                        "part_ref": 3,
+                        "script_ref": 6
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 8,
+                  "starts_after": [
+                     {
+                        "part_ref": 0,
+                        "script_ref": 8
+                     }
+                  ]
+               }
+            ],
+            "type": "IHS Only Node",
+            "virtual_image_ref": 1
+         },
+         {
+            "add_ons": [
+               {
+                  "add_on_ref": 0,
+                  "parameters": [
+                     {
+                        "key": "DISK_SIZE_GB",
+                        "value": "10"
+                     },
+                     {
+                        "key": "FILESYSTEM_TYPE",
+                        "locked": true,
+                        "value": "ext3"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "locked": true,
+                        "value": "\/ibm"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 1,
+                  "parameters": [
+                     {
+                        "key": "MOUNTD_PORT",
+                        "locked": true,
+                        "value": "892"
+                     },
+                     {
+                        "key": "RQUOTAD_PORT",
+                        "locked": true,
+                        "value": "875"
+                     },
+                     {
+                        "key": "STATD_PORT",
+                        "locked": true,
+                        "value": "662"
+                     },
+                     {
+                        "key": "HOST_NAME",
+                        "value": "172.17.63.149"
+                     },
+                     {
+                        "key": "REMOTE_EXPORT",
+                        "locked": true,
+                        "value": "\/ibm\/nfsshare"
+                     },
+                     {
+                        "key": "MOUNT_POINT",
+                        "locked": true,
+                        "value": "\/nfsshare"
+                     },
+                     {
+                        "key": "NFS_TYPE",
+                        "locked": true,
+                        "value": "nfs"
+                     },
+                     {
+                        "key": "OPTIONS",
+                        "locked": true,
+                        "value": "rsize=8192,wsize=8192,timeo=14,intr"
+                     },
+                     {
+                        "key": "PORTMAPPER",
+                        "locked": true,
+                        "value": "111"
+                     },
+                     {
+                        "key": "NFS_PORT",
+                        "locked": true,
+                        "value": "2049"
+                     },
+                     {
+                        "key": "LOCKD_TCPPORT",
+                        "locked": true,
+                        "value": "32803"
+                     },
+                     {
+                        "key": "LOCKD_UDPPORT",
+                        "locked": true,
+                        "value": "32769"
+                     }
+                  ]
+               },
+               {
+                  "add_on_ref": 2,
+                  "parameters": [
+                  ]
+               },
+               {
+                  "add_on_ref": 3,
+                  "parameters": [
+                     {
+                        "key": "USERNAME",
+                        "value": "intranetbw"
+                     },
+                     {
+                        "key": "PASSWORD",
+                        "value": ""
+                     }
+                  ]
+               }
+            ],
+            "conceptualKey": "CustomNodeGroupPart2",
+            "concreteKey": "CustomNodePart2",
+            "configurations": [
+            ],
+            "count": 1,
+            "name": "Angepasste Knoten",
+            "properties": [
+               {
+                  "key": "numvcpus",
+                  "pclass": "HWAttributes",
+                  "value": "2"
+               },
+               {
+                  "key": "memsize",
+                  "pclass": "HWAttributes",
+                  "value": "10240"
+               },
+               {
+                  "key": "cell_name",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": "CloudBurstCell"
+               },
+               {
+                  "key": "node_name",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": "${CustomNodePart2.hostname}"
+               },
+               {
+                  "key": "was_im_repo_location",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "was_im_repo_user",
+                  "locked": true,
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "was_im_repo_pass",
+                  "pclass": "ConfigWAS",
+                  "value": ""
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_ROOT",
+                  "value": ""
+               },
+               {
+                  "key": "username",
+                  "pclass": "ConfigPWD_USER",
+                  "value": "wasadmin"
+               },
+               {
+                  "key": "password",
+                  "pclass": "ConfigPWD_USER",
+                  "value": ""
+               },
+               {
+                  "key": "enabled",
+                  "locked": true,
+                  "pclass": "ConfigVNC",
+                  "value": "false"
+               },
+               {
+                  "key": "dmgr_federate",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "true"
+               },
+               {
+                  "key": "cell_name",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "CloudBurstCell"
+               },
+               {
+                  "key": "dmgr_host",
+                  "pclass": "canBeFederated",
+                  "value": "ipas3-cg3-vm132.stgt.spc.ihost.com"
+               },
+               {
+                  "key": "dmgr_conntype",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "SOAP"
+               },
+               {
+                  "key": "dmgr_jmxport",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "8879"
+               },
+               {
+                  "key": "dmgr_user",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": "wasadmin"
+               },
+               {
+                  "key": "dmgr_pass",
+                  "pclass": "canBeFederated",
+                  "value": ""
+               },
+               {
+                  "key": "augment_list",
+                  "locked": true,
+                  "pclass": "canBeFederated",
+                  "value": [
+                     "none"
+                  ]
+               },
+               {
+                  "key": "odr_present",
+                  "locked": true,
+                  "pclass": "odrInPort",
+                  "value": "false"
+               }
+            ],
+            "script_packages": [
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 1
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 0,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 5
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 2,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 1
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "Remote_GPFS_Server_IP",
+                        "value": "172.17.63.164"
+                     }
+                  ],
+                  "script_package_ref": 3,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 2
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "MIN_Quota_Size",
+                        "value": "2048M"
+                     },
+                     {
+                        "key": "MAX_Quota_Size",
+                        "value": "4096M"
+                     }
+                  ],
+                  "script_package_ref": 4,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 3
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "FileSet_Name",
+                        "value": "gis_ic5_share"
+                     },
+                     {
+                        "key": "Link_Directory",
+                        "value": "\/gpfsshare"
+                     }
+                  ],
+                  "script_package_ref": 5,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 4
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                     {
+                        "key": "DBSYSHST",
+                        "locked": true,
+                        "value": "${DB2_ESE_Primary.hostname}"
+                     },
+                     {
+                        "key": " PROJECTNAME ",
+                        "value": "bwi1"
+                     },
+                     {
+                        "key": "ROOT_PASSWORD",
+                        "value": ""
+                     }
+                  ],
+                  "script_package_ref": 6,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 12
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 9,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 6
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 10,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 7
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 18,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 8
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 13,
+                  "starts_after": [
+                     {
+                        "part_ref": 4,
+                        "script_ref": 9
+                     }
+                  ]
+               },
+               {
+                  "parameters": [
+                  ],
+                  "script_package_ref": 8,
+                  "starts_after": [
+                     {
+                        "part_ref": 1,
+                        "script_ref": 13
+                     }
+                  ]
+               }
+            ],
+            "starts_after": [
+               1
+            ],
+            "type": "Custom Node",
+            "virtual_image_ref": 1
+         }
+      ],
+      "references": {
+         "add_ons": [
+            {
+               "command": "sh \/tmp\/defaultadddisk\/adddisk",
+               "commandargs": "",
+               "environment": {
+                  "DISK_SIZE_GB": "10",
+                  "FILESYSTEM_TYPE": "ext3",
+                  "MOUNT_POINT": ""
+               },
+               "file": "add_ons\/defaultadddisk.zip",
+               "location": "\/tmp\/defaultadddisk",
+               "log": "\/tmp\/defaultadddisk",
+               "name": "Default add disk",
+               "read_only": true,
+               "timeout": 1800000,
+               "type": "ADDON_DISK"
+            },
+            {
+               "command": "\/tmp\/ic5addNFSaddOn\/addnfs.sh",
+               "commandargs": "",
+               "environment": {
+                  "HOST_NAME": "",
+                  "LOCKD_TCPPORT": "32803",
+                  "LOCKD_UDPPORT": "32769",
+                  "MOUNTD_PORT": "892",
+                  "MOUNT_POINT": "",
+                  "NFS_PORT": "2049",
+                  "NFS_TYPE": "nfs",
+                  "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+                  "PORTMAPPER": "111",
+                  "REMOTE_EXPORT": "",
+                  "RQUOTAD_PORT": "875",
+                  "STATD_PORT": "662"
+               },
+               "file": "add_ons\/ic5addNFSaddOn.zip",
+               "location": "\/tmp\/ic5addNFSaddOn",
+               "log": "\/tmp\/ic5addNFSaddOn\/logs",
+               "name": "Default add NFS without FW",
+               "read_only": false,
+               "timeout": 300000,
+               "type": "ADDON_NETWORK_ATTACHED_STORAGE"
+            },
+            {
+               "command": "sh \/tmp\/defaultaddnic\/addnic",
+               "commandargs": "",
+               "file": "add_ons\/defaultaddnic.zip",
+               "location": "\/tmp\/defaultaddnic",
+               "log": "\/tmp\/defaultaddnic",
+               "name": "Default add NIC",
+               "read_only": true,
+               "timeout": 120000,
+               "type": "ADDON_NIC"
+            },
+            {
+               "command": "sh \/tmp\/defaultadduser\/adduser",
+               "commandargs": "",
+               "environment": {
+                  "PASSWORD": "",
+                  "USERNAME": ""
+               },
+               "file": "add_ons\/defaultadduser.zip",
+               "location": "\/tmp\/defaultadduser",
+               "log": "\/tmp\/defaultadduser",
+               "name": "Default add user",
+               "read_only": true,
+               "timeout": 120000,
+               "type": "ADDON_USER"
+            }
+         ],
+         "script_packages": [
+            {
+               "command": "python \/tmp\/gpfs\/gpfsSharedSSHCert\/gpfsSharedSSHCert.py",
+               "commandargs": "",
+               "execmode": 3,
+               "file": "script_packages\/gpfsSharedSSHCert_1.0.0.3.tgz",
+               "location": "\/tmp\/gpfs\/gpfsSharedSSHCert\/",
+               "log": "\/tmp\/gpfs\/gpfsSharedSSHCert\/logs",
+               "name": "GIS_GPFS_SSH_Certificate_1",
+               "read_only": false,
+               "timeout": 1800000
+            },
+            {
+               "command": "python \/tmp\/gpfs\/gpfsInstall\/gpfs.py",
+               "commandargs": "-operationName deleteClientNodeRemote",
+               "execmode": 1,
+               "file": "script_packages\/gpfsRemoveClientNode_1.0.0.3.tgz",
+               "location": "\/tmp\/gpfs\/gpfsRemoveClientNode\/",
+               "log": "\/tmp\/gpfs\/gpfsRemoveClientNode\/logs",
+               "name": "GIS_GPFS_RemoveClientNode_4",
+               "read_only": false,
+               "timeout": 1800000
+            },
+            {
+               "command": "python \/tmp\/gpfs\/gpfsInstall\/gpfsInstall.py",
+               "commandargs": "",
+               "execmode": 3,
+               "file": "script_packages\/gpfsInstall_1.0.0.3.tgz",
+               "location": "\/tmp\/gpfs\/gpfsInstall\/",
+               "log": "\/tmp\/gpfs\/gpfsInstall\/logs",
+               "name": "GIS_GPFS_Install_2",
+               "read_only": false,
+               "timeout": 1800000
+            },
+            {
+               "command": "python \/tmp\/gpfs\/gpfsInstall\/gpfs.py",
+               "commandargs": "-operationName addClientNodeRemote -remoteServerHost ${Remote_GPFS_Server_IP}",
+               "environment": {
+                  "Remote_GPFS_Server_IP": ""
+               },
+               "execmode": 3,
+               "file": "script_packages\/gpfsAddClientNode_1.0.0.3.tgz",
+               "location": "\/tmp\/gpfs\/gpfsAddClientNode\/",
+               "log": "\/tmp\/gpfs\/gpfsAddClientNode\/logs",
+               "name": "GIS_GPFS_AddClientNode_3",
+               "read_only": false,
+               "timeout": 1800000
+            },
+            {
+               "command": "python \/tmp\/gpfs\/gpfsInstall\/gpfs.py",
+               "commandargs": "-operationName createFileSetRemote -fileSetName ${FileSet_Name} -minQuotaSize ${MIN_Quota_Size} -maxQuotaSize ${MAX_Quota_Size}",
+               "environment": {
+                  "FileSet_Name": "",
+                  "MAX_Quota_Size": "",
+                  "MIN_Quota_Size": ""
+               },
+               "execmode": 3,
+               "file": "script_packages\/gpfsCreateFileSet_1.0.0.3.tgz",
+               "location": "\/tmp\/gpfs\/gpfsCreateFileSet\/",
+               "log": "\/tmp\/gpfs\/gpfsCreateFileSet\/logs",
+               "name": "GIS_GPFS_CreateFileSet_5",
+               "read_only": false,
+               "timeout": 1800000
+            },
+            {
+               "command": "python \/tmp\/gpfs\/gpfsInstall\/gpfs.py",
+               "commandargs": "-operationName linkFileSet -fileSetName ${FileSet_Name} -linkDir ${Link_Directory}",
+               "environment": {
+                  "FileSet_Name": "",
+                  "Link_Directory": ""
+               },
+               "execmode": 3,
+               "file": "script_packages\/gpfsLinkFileSet_1.0.0.3.tgz",
+               "location": "\/tmp\/gpfs\/gpfsLinkFileSet\/",
+               "log": "\/tmp\/gpfs\/gpfsLinkFileSet\/logs",
+               "name": "GIS_GPFS_LinkFileSet_6",
+               "read_only": false,
+               "timeout": 1800000
+            },
+            {
+               "command": "\/tmp\/ic5setEnvPropertiesAddNode\/ic5setEnvPropertiesAddNode.sh",
+               "commandargs": "",
+               "environment": {
+                  " PROJECTNAME ": "ehningen",
+                  "DBSYSHST": "${DB2_ESE_Primary.hostname}",
+                  "ROOT_PASSWORD": ""
+               },
+               "execmode": 3,
+               "file": "script_packages\/ic5setEnvPropertiesAddNode.zip",
+               "location": "\/tmp\/ic5setEnvPropertiesAddNode",
+               "log": "\/tmp\/ic5setEnvPropertiesAddNode\/logs",
+               "name": "ic5setEnvPropertiesAddNode",
+               "read_only": false,
+               "timeout": 300000
+            },
+            {
+               "command": "\/tmp\/ic5prepareDB2hadr\/ic5prepareDB2hadr.sh",
+               "commandargs": "addSecondaryNode",
+               "execmode": 3,
+               "file": "script_packages\/ic5prepareDB2hadr.zip",
+               "location": "\/tmp\/ic5prepareDB2hadr",
+               "log": "\/tmp\/ic5prepareDB2hadr\/logs",
+               "name": "ic5prepareDB2hadr",
+               "read_only": false,
+               "timeout": 0
+            },
+            {
+               "command": "\/tmp\/OSHardeningBWI\/install.sh",
+               "commandargs": "",
+               "execmode": 0,
+               "location": "\/tmp\/OSHardeningBWI",
+               "log": "\/tmp\/OSHardeningBWI\/logs",
+               "name": "BWI OS Hardening",
+               "read_only": false,
+               "timeout": 60000000
+            },
+            {
+               "command": "\/tmp\/ic5copyDB2driver\/ic5copyDB2driver.sh",
+               "commandargs": "",
+               "execmode": 3,
+               "file": "script_packages\/ic5copyDB2driver.zip",
+               "location": "\/tmp\/ic5copyDB2driver",
+               "log": "\/tmp\/ic5copyDB2driver\/logs",
+               "name": "ic5copyDB2driver",
+               "read_only": false,
+               "timeout": 0
+            },
+            {
+               "command": "\/tmp\/ic5fixInstallWAS\/ic5fixInstallWAS.sh",
+               "commandargs": "initialExecute",
+               "execmode": 3,
+               "file": "script_packages\/ic5fixInstallWAS.zip",
+               "location": "\/tmp\/ic5fixInstallWAS",
+               "log": "\/tmp\/ic5fixInstallWAS\/logs",
+               "name": "ic5fixInstallWAS",
+               "read_only": false,
+               "timeout": 60000000
+            },
+            {
+               "command": "\/tmp\/ic5addWASNode\/ic5addWASNode.sh",
+               "commandargs": "auto",
+               "execmode": 3,
+               "file": "script_packages\/ic5addWASNode.zip",
+               "location": "\/tmp\/ic5addWASNode",
+               "log": "\/tmp\/ic5addWASNode\/logs",
+               "name": "ic5addWASNode",
+               "read_only": false,
+               "timeout": 0
+            },
+            {
+               "command": "\/tmp\/ic5postInstallIC5\/ic5postInstallIC5.sh",
+               "commandargs": "${PROFILE_TYPE}",
+               "execmode": 3,
+               "file": "script_packages\/ic5postInstallIC5.zip",
+               "location": "\/tmp\/ic5postInstallIC5",
+               "log": "\/tmp\/ic5postInstallIC5\/logs",
+               "name": "ic5postInstallIC5",
+               "read_only": false,
+               "timeout": 2000000
+            },
+            {
+               "command": "\/tmp\/ic5JvmAdjust\/ic5jvmAdjust.sh",
+               "commandargs": "",
+               "execmode": 3,
+               "file": "script_packages\/ic5JvmAdjust.zip",
+               "location": "\/tmp\/ic5JvmAdjust",
+               "log": "\/tmp\/ic5JvmAdjust\/logs",
+               "name": "ic5JvmAdjust",
+               "read_only": false,
+               "timeout": 9000000
+            },
+            {
+               "command": "\/tmp\/ic5searchConTool\/ic5searchConTool.sh",
+               "commandargs": "",
+               "execmode": 3,
+               "file": "script_packages\/ic5searchConTool.zip",
+               "location": "\/tmp\/ic5searchConTool",
+               "log": "\/tmp\/ic5searchConTool\/logs",
+               "name": "ic5searchConTool",
+               "read_only": false,
+               "timeout": 0
+            },
+            {
+               "command": "\/tmp\/ic5installTDI\/ic5installTDI.sh",
+               "commandargs": "auto",
+               "execmode": 3,
+               "file": "script_packages\/ic5installTDI.zip",
+               "location": "\/tmp\/ic5installTDI",
+               "log": "\/tmp\/ic5installTDI\/logs",
+               "name": "ic5installTDI",
+               "read_only": false,
+               "timeout": 0
+            },
+            {
+               "command": "\/tmp\/ic5customizeTDI\/ic5customizeTDI.sh",
+               "commandargs": "",
+               "execmode": 3,
+               "file": "script_packages\/ic5customizeTDI.zip",
+               "location": "\/tmp\/ic5customizeTDI",
+               "log": "\/tmp\/ic5customizeTDI\/logs",
+               "name": "ic5customizeTDI",
+               "read_only": false,
+               "timeout": 0
+            },
+            {
+               "command": "\/tmp\/ic5prepareHTTP\/ic5prepareHTTP.sh",
+               "commandargs": "",
+               "execmode": 3,
+               "file": "script_packages\/ic5prepareHTTP.zip",
+               "location": "\/tmp\/ic5prepareHTTP",
+               "log": "\/tmp\/ic5prepareHTTP\/logs",
+               "name": "ic5prepareHTTP",
+               "read_only": false,
+               "timeout": 0
+            },
+            {
+               "command": "\/tmp\/ic5installCCM\/ic5installCCM.sh",
+               "commandargs": "initialExecute",
+               "execmode": 3,
+               "file": "script_packages\/ic5installCCM.zip",
+               "location": "\/tmp\/ic5installCCM",
+               "log": "\/tmp\/ic5installCCM\/logs",
+               "name": "ic5installCCM",
+               "read_only": false,
+               "timeout": 60000000
+            }
+         ],
+         "virtual_images": [
+            {
+               "advancedoptionsaccepted": "F",
+               "build": "106",
+               "name": "DB2 Enterprise 10.1.0.4",
+               "version": "10.1.0.4"
+            },
+            {
+               "advancedoptionsaccepted": "F",
+               "build": "R3_o8551_1341.07",
+               "name": "WebSphere Application Server 8.5.5.1 64-bit RHEL 6 x86-64 (VMWare)",
+               "version": "8.5.5.1"
+            },
+            {
+               "advancedoptionsaccepted": "F",
+               "build": "136",
+               "name": "IBM OS Image for Red Hat Linux Systems",
+               "version": "2.0.0.3"
+            }
+         ]
+      }
+   }
+]

@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Nie je možné určiť adresár verzie.
+WVER0001E.explanation=Adresár verzie je umiestnený podľa systémovej vlastnosti java 'was.version.dir' alebo ako '<root>\\properties\\version', kde <root> je adresár prevzatý zo systémovej vlastnosti 'was.install.root' alebo 'server.root'.  Tieto vlastnosti sú postupne prezerané a vyberie sa prvá dostupná hodnota.  Chyba informuje o tom, že žiadna z vypísaných systémových vlastností java nie je nastavená, a teda nebolo možné určiť adresár verzie.
+WVER0001E.useraction=Uistite sa, že je nastavená jedna z vypísaných systémových vlastností java.  Systémová vlastnosť java musí byť nastavená buď cez konfiguráciu procesu alebo ako voľba na proces spustený z príkazového riadka.
+
+# 
+WVER0002E=WVER0002E: Nerozpoznaná prípona súboru verzie produktu ''{0}''.
+WVER0002E.explanation=Informácie o verzii sa po ich zavedení uložia do súborov so špecifickými príponami. Tieto prípony určujú typ informácií, uložených v jednotlivých súboroch. Platné prípony sú '.websphere', '.component', '.product', '.fix', '.efix' a '.extension'.  Došlo k pokusu o zavedenie súboru, obsahujúceho informácie o verzii, pričom prípona tohto súboru nie je niektorou z platných prípon.
+WVER0002E.useraction=Toto indikuje internú chybu.
+
+# 
+WVER0003I=WVER0003I: Použitie: versionInfo ( [ -format <text | html> ] [ -file <output file> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Táto informačná správa opisuje voľby pre pomocný program versionInfo. Pomocný program versionInfo akceptuje voľby kľúčových slov, z ktorých jedna určuje výstupný formát, jedna výstupný súbor, jedna zobrazuje opravy, jedna zobrazuje podrobnosti opráv, jedna zobrazuje komponenty a jedna sa používa na zobrazenie informácií o použití.
+WVER0003I.useraction=Nevyžaduje sa zásah užívateľa. Informačná správa o používaní sa zobrazuje na požiadanie.
+
+# 
+WVER0004E=WVER0004E: Chyba pri zápise správy o verzii do {0}: {1}
+WVER0004E.explanation=K špecifikovanej chybe došlo počas zápisu správy o verzii do určeného súboru.
+WVER0004E.useraction=Opravná akcia závisí od špecifík chyby, ku ktorej došlo. Predovšetkým skontrolujte, či je špecifikovaný súbor zapisovateľný a či je pre správu k dispozícii dostatok priestoru.
+
+# 
+WVER0005E=WVER0005E: Pre voľbu ''{0}'' nebola zadaná žiadna hodnota
+WVER0005E.explanation=Vypísaná voľba vyžaduje hodnotu.  (Ak chcete zobraziť informácie o používaní, použite '-help' alebo '-usage').
+WVER0005E.useraction=Zadajte hodnotu vypísanej voľby.
+
+# 
+WVER0006E=WVER0006E: Hodnota ''{0}'' nie je platná hodnota formátu.
+WVER0006E.explanation=Platné hodnoty formátu sú 'text' a 'html'.  Zadaná hodnota nie je ani jednou z týchto hodnôt.  (Ak chcete zobraziť informácie o používaní, použite '-help' alebo '-usage').
+WVER0006E.useraction=Hodnotu formátu zmeňte na niektorú z platných hodnôt, buď na 'text' alebo na 'html'.
+
+# 
+WVER0007E=WVER0007E: Voľba ''{0}'' nie je platná.
+WVER0007E.explanation=Zadaná voľba je neplatná.  (Ak chcete zobraziť informácie o používaní, použite '-help' alebo '-usage').
+WVER0007E.useraction=Zmeňte ju na platnú voľbu.
+
+# 
+WVER0008I=WVER0008I: Voľba '-format' špecifikuje výstupný formát, buď 'text' alebo 'html'.  Voľba '-file' špecifikuje výstupný súbor.  Názov súboru musí byť zadaný spolu s voľbou '-file'.  Voľba '-long' spôsobí zobrazenie informácií o komponentoch, oprave a ptf.  Voľba '-fixes' spôsobí zobrazenie opráv.  Voľba '-fixDetail' spôsobí zobrazenie podrobností opravy.  Voľba '-ptfs' spôsobí zobrazenie PTF.  Voľba '-ptfDetail' spôsobí zobrazenie podrobností PTF.  Voľba '-components' spôsobí zobrazenie komponentov.  Voľba '-componentDetail' spôsobí zobrazenie podrobností o komponente.  Voľba '-help' spôsobí zobrazenie textu pomoci.  Voľba '-usage' spôsobí zobrazenie tohto textu o použití.
+WVER0008I.explanation=Táto správa popisuje platné voľby pre pomocný program versionInfo.
+WVER0008I.useraction=Nevyžaduje sa zásah užívateľa. Informačná správa o používaní sa zobrazuje na požiadanie.
+
+# 
+WVER0009E=WVER0009E: Chyba pri zápise správy o verzii do {0}.  Text chyby sa nedá zobraziť. Typ chyby je {1}.  Počas získavania textu chyby došlo k druhej chybe, ktorá je typu {2}.
+WVER0009E.explanation=Počas zápisu správy o verzii do určeného súboru došlo k chybe. Počas získavania textu chyby došlo k druhej chybe.
+WVER0009E.useraction=Nie je k dispozícii žiadny zásah užívateľa. Znova sa pokúste vykonať požadovanú operáciu, alebo požiadajte podporu o ďalšiu pomoc.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; Všetky práva vyhradené.
+WVER0010I.explanation=Toto je štandardné vyhlásenie o autorských právach.
+WVER0010I.useraction=Nevyžaduje sa zásah užívateľa. Toto je informačná správa
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=Toto je štandardné vyhlásenie o popise produktu.
+WVER0011I.useraction=Nevyžaduje sa zásah užívateľa. Toto je informačná správa
+
+# 
+WVER0012I=WVER0012I: VersionInfo reporter, verzia {0}, dátum {1}
+WVER0012I.explanation=Toto je štandardné vyhlásenie o popise modulu.
+WVER0012I.useraction=Nevyžaduje sa zásah užívateľa. Toto je informačná správa
+
+# 
+WVER0013E=WVER0013E: Počas čítania {0} došlo k výnimke
+WVER0013E.explanation=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+WVER0013E.useraction=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+
+# 
+WVER0014E=WVER0014E: Počas čítania {0} došlo k výnimke
+WVER0014E.explanation=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+WVER0014E.useraction=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+
+# 
+WVER0015E=WVER0015E: Nastala výnimka počas spracovania informácií o verzii
+WVER0015E.explanation=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+WVER0015E.useraction=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+
+# 
+WVER0016E=WVER0016E: Nastali výnimky počas spracovania informácií o verzii
+WVER0016E.explanation=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+WVER0016E.useraction=Bližšie informácie nájdete v podrobnostiach o vnorenej výnimke.
+
+# 
+WVER0017E=WVER0017E: Nie je možné určiť adresár aktualizácie protokolov.
+WVER0017E.explanation=Adresár protokolov je umiestnený podľa systémovej vlastnosti java 'was.version.log.dir' alebo ako adresár 'log' adresára verzie.  Nie je nastavená vlastnosť 'was.version.log.dir' ani adresár verzie.
+WVER0017E.useraction=Uistite sa, že je nastavený adresár verzie alebo systémová vlastnosť java 'was.version.log.dir'.
+
+# 
+WVER0018E=WVER0018E: Nie je možné určiť adresár záloh protokolov.
+WVER0018E.explanation=Adresár záloh je umiestnený podľa systémovej vlastnosti java 'was.version.backup.dir' alebo ako adresár 'log' adresára verzie.  Nie je nastavená vlastnosť 'was.version.backup.dir' ani adresár verzie.
+WVER0018E.useraction=Uistite sa, že je nastavený adresár verzie alebo systémová vlastnosť java 'was.version.backup.dir'.
+
+# 
+WVER0019E=WVER0019E: Nie je možné určiť adresár DTD pre informácie o verzii produktu.
+WVER0019E.explanation=Adresár DTD je umiestnený podľa systémovej vlastnosti java 'was.version.dtd.dir' alebo ako adresár 'dtd' adresára verzie.  Nie je nastavená vlastnosť 'was.version.dtd.dir' ani adresár verzie.
+WVER0019E.useraction=Uistite sa, že je nastavený adresár verzie alebo systémová vlastnosť java 'was.version.dtd.dir'.
+
+# 
+WVER0021E=WVER0021E: Počas analýzy informácií o oprave došlo k odstrániteľným chybám.
+WVER0021E.explanation=Počas analýzy informácií o oprave došlo k chybám, ktorých zoznam nasleduje. Ďalšie informácie nájdete vo vypísaných chybách.
+WVER0021E.useraction=Vo vypísaných chybách nájdete odporúčané užívateľské akcie.
+
+# 
+WVER0022E=WVER0022E: Nastala chyba počas čítania informácií o produkte.  Táto chyba je opraviteľná; analýza pokračovala.  Nastala chyba v entite so systémovým ID {0} a verejným ID {1}, na riadku číslo {2} a stĺpci číslo {3}: {4}
+WVER0022E.explanation=Zadaná entita má neplatnú štruktúru, ako je uvedené v špecifikovanej chybe.  Táto chyba ale nebola kritická a analýza pokračovala.
+WVER0022E.useraction=Zadaný súbor by mal byť skontrolovaný, a ak je to možné, opravený.
+
+# 
+WVER0023E=WVER0023E: Počas analýzy informácií o produkte sa vyskytli varovania.
+WVER0023E.explanation=Počas analýzy informácií o produkte došlo k varovaniam, ktorých zoznam nasleduje. Ďalšie informácie nájdete vo vypísaných varovaniach.
+WVER0023E.useraction=Vo vypísaných varovaniach nájdete odporúčané užívateľské akcie.
+
+# 
+WVER0024E=WVER0024E: Nastalo varovanie počas čítania informácií o produkte.  Nastalo varovanie v entite so systémovým ID {0} a verejným ID {1}, na riadku číslo {2} a stĺpci číslo {3}: {4}
+WVER0024E.explanation=Zadaná entita má neplatnú štruktúru, ako je uvedené v špecifikovanom varovaní.  Toto varovanie ale nebolo kritické a analýza pokračovala.
+WVER0024E.useraction=Zadaný súbor by mal byť skontrolovaný, a ak je to možné, opravený.
+
+# 
+WVER0029E=WVER0029E: Nie je možné odstrániť opravu {0}, uloženú v súbore {2}.
+WVER0029E.explanation=Pomenovaný súbor nebolo možné odstrániť.
+WVER0029E.useraction=Skontrolujte, či je možné odstrániť cieľový súbor.
+
+# 
+WVER0030E=WVER0030E: Počas analýzy informácií o PTF došlo k odstrániteľným chybám.
+WVER0030E.explanation=Počas analýzy informácií o PTF došlo k chybám, ktorých zoznam nasleduje. Ďalšie informácie nájdete vo vypísaných chybách.
+WVER0030E.useraction=Vo vypísaných chybách nájdete odporúčané užívateľské akcie.
+
+# 
+WVER0031E=WVER0031E: Nie je možné zaznamenať použitie PTF {0} na komponente {1} v súbore {2}. Pomenovaný súbor nebolo možné uložiť.
+WVER0031E.explanation=Pomenovaný súbor nebolo možné uložiť.
+WVER0031E.useraction=Skontrolujte, či je cieľový súbor zapisovateľný	a či je pre nový súbor k dispozícii priestor.
+
+# 
+WVER0035E=WVER0035E: Nie je možné odstrániť PTF {0}, uloženú v súbore {2}.
+WVER0035E.explanation=Pomenovaný súbor nebolo možné odstrániť.
+WVER0035E.useraction=Skontrolujte, či je možné odstrániť cieľový súbor.
+
+# 
+WVER0040E=WVER0040E: Zadaný adresár verzie ''{0}'' neexistuje.
+WVER0040E.explanation=Adresár verzie neexistuje.
+WVER0040E.useraction=Skontrolujte, či je zadaný adresár platný adresár verzie produktu.
+
+# 
+WVER0041E=WVER0041E: Zadaný adresár verzie ''{0}'' nie je adresár.
+WVER0041E.explanation=Adresár verzie nie je adresár.
+WVER0041E.useraction=Skontrolujte, či je zadaný adresár platný adresár verzie produktu.
+
+# 
+WVER0042E=WVER0042E: Zadaný adresár DTD ''{0}'' neexistuje.
+WVER0042E.explanation=Adresár DTD neexistuje.
+WVER0042E.useraction=Skontrolujte, či je zadaný adresár platný adresár DTD produktu.
+
+# 
+WVER0043E=WVER0043E: Zadaný adresár DTD ''{0}'' nie je adresár.
+WVER0043E.explanation=Adresár DTD nie je adresár.
+WVER0043E.useraction=Skontrolujte, či je zadaný adresár platný adresár DTD produktu.
+
+# 
+WVER0044E=WVER0044E: Zadaný adresár protokolu ''{0}'' nebolo možné vytvoriť.
+WVER0044E.explanation=Adresár DTD nie je adresár.
+WVER0044E.useraction=Skontrolujte, či je zadaný adresár platný adresár DTD produktu.
+
+# 
+WVER0045E=WVER0045E: Zadaný adresár protokolu ''{0}'' nie je adresár.
+WVER0045E.explanation=Adresár DTD nie je adresár.
+WVER0045E.useraction=Skontrolujte, či je zadaný adresár platný adresár DTD produktu.
+
+# 
+WVER0046E=WVER0046E: Zadaný adresár zálohy ''{0}'' nebolo možné vytvoriť.
+WVER0046E.explanation=Adresár DTD nie je adresár.
+WVER0046E.useraction=Skontrolujte, či je zadaný adresár platný adresár DTD produktu.
+
+# 
+WVER0047E=WVER0047E: Zadaný adresár zálohy ''{0}'' nie je adresár.
+WVER0047E.explanation=Adresár DTD nie je adresár.
+WVER0047E.useraction=Skontrolujte, či je zadaný adresár platný adresár DTD produktu.
+
+# 
+WVER0048E=WVER0048E: Zadaný adresár produktu ''{0}'' neexistuje.
+WVER0048E.explanation=Adresár produktu neexistuje.
+WVER0048E.useraction=Skontrolujte, či je tento adresár platný adresár produktu.
+
+# 
+WVER0049E=WVER0049E: Zadaný adresár produktu ''{0}'' nie je adresár.
+WVER0049E.explanation=Adresár produktu nie je adresár.
+WVER0049E.useraction=Skontrolujte, či je zadaný adresár platný adresár produktu.
+
+
+
+
+label.standard.out=Štandardný výstup
+
+listing.nested.error={0}: {1}
+
+report.header=Správa o stave inštalácie produktu IBM WebSphere Portal
+report.footer=Koniec správy o stave inštalácie
+
+info.report.on=Dátum a čas správy {0}
+
+info.source=Inštalácia
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Adresár produktu
+label.version.dir=Adresár verzie
+label.version.dtd.dir=Adresár DTD
+label.version.log.dir=Adresár protokolu
+label.version.backup.dir=Adresár zálohy
+label.version.tmp.dir=Adresár TMP
+
+info.platform=Platforma inštalácie
+label.name=Názov
+label.version=Verzia
+
+info.technology=Technologický zoznam
+label.installed=nainštalovaný
+
+info.product=Nainštalovaný produkt
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=Úroveň buildu
+label.build.date=Dátum buildu
+
+info.component=Nainštalovaný komponent
+label.component.name=Názov komponentu
+label.configtasks=Konfiguračné úlohy
+label.spec.version=Verzia špecifikácie
+label.build.version=Verzia buildu
+# label.build.date=Build Date
+
+info.update.on.component=Aktualizácia nainštalovaného komponentu
+#label.component.name=Component Name
+label.update.type=Typ aktualizácie
+label.update.type.efix=oprava
+label.update.type.ptf=PTF
+
+label.efix.id=ID opravy
+label.ptf.id=ID PTF
+
+label.update.effect=Efekt aktualizácie
+
+label.is.required=Vyžadovaná
+label.is.optional=Voliteľná
+
+label.is.external=Externý
+label.root.property.file=Súbor koreňovej vlastnosti
+label.root.property.name=Názov koreňovej vlastnosti
+label.root.property.value=Hodnota koreňovej vlastnosti
+
+label.is.custom=Voliteľný
+
+label.log.file.name=Názov protokolového súboru
+label.backup.file.name=Názov súboru zálohy
+label.install.date=Dátum inštalácie
+
+label.initial.spec.version=Verzia úvodnej špecifikácie
+label.initial.build.date=Dátum úvodného buildu
+label.initial.build.version=Verzia úvodného buildu
+
+label.final.spec.version=Verzia konečnej špecifikácie
+label.final.build.date=Dátum konečného buildu
+label.final.build.version=Verzia konečného buildu
+
+info.extension=Nainštalované rozšírenie
+# label.name=Name
+# label.id=ID
+
+info.efix=Nainštalovaná oprava
+# label.id=ID
+label.short.description=Opis
+label.is.trial=Skúšobná verzia
+label.expiration.date=Dátum ukončenia platnosti
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Interpretácia
+
+label.apar=APAR
+label.apar.number=Počet
+label.apar.date=Dátum
+label.apar.short.description=Opis
+label.apar.long.description=Interpretácia
+
+label.supported.platforms=Podporované platformy
+label.supported.products=Podporované platformy
+
+label.efix.efix.prereqs=Vyžadované opravy
+
+label.component.updates=Aktualizácie komponentov
+label.component.requires=Vyžaduje sa {0} v {1}
+
+label.becomes=stane sa špecifikáciou {0}, build {1} na {2}
+
+label.custom.properties=Voliteľné vlastnosti
+
+info.ptf=Nainštalovaná PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Zahrnuté opravy
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=true
+label.false=false
+
+label.is.absent=chýba
+label.is.installed=nainštalovaný na {0}
+
+label.update.effect.add=pridať
+label.update.effect.replace=nahradiť
+label.update.effect.remove=odstrániť
+label.update.effect.patch=oprava
+label.update.effect.unknown=neznámy
+
+label.is.negative=záporné
+label.is.positive=kladné
+
+label.is.required.tag=vyžadovaný
+label.if.possible.tag=ak je možné
+label.is.optional.tag=voliteľný
+label.is.recommended.tag=odporúčaný
+
+label.is.custom.tag=voliteľná aktualizácia
+label.is.standard.tag=štandardná aktualizácia

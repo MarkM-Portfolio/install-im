@@ -1,0 +1,544 @@
+<!-- 
+ * IBM Licensed Material
+ * 
+ * Copyright IBM Corp. 2005, 2016                                    
+ * 
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has been
+ * deposited with the U.S. Copyright Office.
+ * 
+-->
+<!--
+*	Description:
+*		ANT script to create WPLC images.
+*
+*	Change History:
+*		05/09/2006: Created IAH.
+*       08/21/2006: Updated AMM.
+-->
+
+
+<project name="bldImages" default="img-all" basedir=".">
+
+	<description> ANT script for auto .iso and e-file images build.</description>
+
+	<!-- set global properties -->
+	<property environment="env"/>
+	<!-- <property file="bldImages.properties"/> -->
+
+	<property name="Proj" value="WDT"/>
+
+	<!-- set local properties. Also, see img.init target. -->
+
+
+	<target name="img-all" depends="img-init,img-envCheck,img-get,img-build,img-post,img-clean-temp" description="Builds all default .iso and e-file targets.">
+		<echo message="Build Message: '${ant.project.name}.xml' build completed."/>
+	</target>
+	<target name="img-iso" depends="img-only-iso,img-all" description="Creates only Images/iso files."/>
+	<target name="img-cd" depends="img-only-cd,img-all" description="Creates only Images/cd files."/>
+	<target name="img-eval" depends="img-only-eval,img-all" description="Creates only Images/eval files."/>
+	<target name="img-download" depends="img-only-download,img-all" description="Creates only Images/download files."/>
+	<target name="img-dvd" depends="img-only-dvd,img-all" description="Creates only Images/dvd files."/>
+
+	<target name="img-name" depends="img-bld-sublist,img-all" description="Creates a sublist of images based on 'env.sublist'."/>
+
+
+<!-- =========================================================================== -->
+<!-- Target to display this script usage. -->
+	<target name="img-Usage" description="Displays usage for 'bldImages.xml' script.">
+		<echo message="Description:"/>
+		<echo message="   ${Proj} .iso and e-file images build script."/>
+		<echo message=""/>
+		<echo message="Usage:"/>
+		<echo message="   ....\lwp04.tools\lwp\boot"/>
+		<echo message="   bld -f ${ant.project.name}.xml {optional target}"/>
+		<echo message=""/>
+		<echo message="Examples:"/>
+		<echo message=" 1. bld -f ${ant.project.name}.xml"/>
+		<echo message=" 2. bld -f ${ant.project.name}.xml img-get"/>
+		<echo message=" 3. bld -f ${ant.project.name}.xml -projecthelp"/>
+		<echo message=" 4. bld -f ${ant.project.name}.xml img-cd"/>
+		<echo message=" 5. bld -f ${ant.project.name}.xml img-nane -D&quot;env.sublist=C90YCML,WSE2.6Eval_DVD&quot;"/>
+		<echo message=" 6. bld -f ${ant.project.name}.xml img-nane -D&quot;env.sublist=C90YCML,WSE2.6Eval_DVD&quot; -D&quot;env.Skip-img-get=true&quot;"/>
+		<echo message=""/>
+	</target>
+
+
+<!-- =========================================================================== -->
+<!-- Initilaze all variables used in this script.
+*	1. calculate and initialize build variables.
+*	2. check to make sure that all variable are defined then display the major variables.
+-->
+	<target name="img-init">
+		<condition property="isWindows" value="true">
+			<os family="windows"/>
+		</condition>
+		<condition property="BldOS.win" value="Windows | Windows 2000 | Windows XP | Windows 2003">
+			<isset property="isWindows"/>
+		</condition>
+		<condition property="BldOS.unix" value="Linux | AIX | SunOS">
+			<not><isset property="isWindows"/></not>
+		</condition>
+
+		<taskdef name="if" classname="net.sf.antcontrib.logic.IfTask"/>
+
+	<!-- Build variables. -->
+		<!--property name="img.work.dir" value="${dir.build}"/-->
+		<property name="img.work.dir" value="${env.LWP_HOME}/Temp"/>
+		<property name="img.tmp.dir" value="${img.work.dir}/tmp"/>
+		<property name="img.log.dir" value="${img.work.dir}/logs"/>
+		<property name="img.log" value="${img.log.dir}/Summary.log"/>
+		<property name="img.ProdBin.dir" value="${img.work.dir}/ProdBin"/>
+        <condition property="img.Images.dir" value="${img.root.dir}">
+            <not><equals arg1="${img.root.dir}" arg2=""/></not>
+		</condition>
+        <condition property="img.Images.dir" value="${img.root.dir}/Images">
+            <equals arg1="${img.root.dir}" arg2=""/>
+		</condition>
+
+		<mkdir dir="${img.work.dir}"/>
+    	<mkdir dir="${img.log.dir}"/>
+		<mkdir dir="${img.tmp.dir}"/>
+	</target>
+
+	<target name="img-envCheck" depends="img-init" description="Checks/Validates/Display main build variables.">
+		<tstamp prefix="img.envCheck"/>
+		<echo file="${img.log}" append="true" message="${line.separator}=== Starting '${ant.file}' script at ${img.envCheck.DSTAMP}:${img.envCheck.TSTAMP}.${line.separator}"/>
+
+		<if><not><available file="${KITPROPERTYFILE}" type="file"/></not><then>
+			<fail message="Build Error: file '${KITPROPERTYFILE}' is missing : make sure that this file existing in current working folder."/>
+		</then></if>
+
+		<if><not><isset property="env.LWP_TOOLS"/></not><then>
+			<fail message="Build Error: 'LWP_TOOLS' is not set : make sure that you run 'lwp04.tools/lwp/boot' command."/>
+		</then></if>
+
+		<!--
+		<if><not><isset property="env.WinZip"/></not><then>
+			<fail message="Build Error: 'WinZip' is not set : make sure 'WinZip Self-Extractor' program is installed and 'WinZip' environment variable is defined correctly."/>
+		</then></if>
+		-->
+		<if><not><isset property="env.7Zip"/></not><then>
+			<fail message="Build Error: '7Zip' is not set : make sure '7-Zip' program is installed and '7Zip' environment variable is defined correctly."/>
+		</then></if>
+
+		<tstamp prefix="img.envCheck"/>
+		<echo file="${img.log}" append="true" message="in 'img.envCheck' task at ${img.envCheck.DSTAMP}:${img.envCheck.TSTAMP}.${line.separator}"/>
+
+		<record name="${img.log}" action="start" append="true" emacsmode="true"/>
+		<echo message="${Proj} auto .iso and e-file images build script main environment variables are as following:"/>
+		<if><isset property="env.imgPause"/><then>
+			<echo message="   imgPause=${env.imgPause}"/>
+		</then><else>
+			<echo message="   imgPause="/>
+		</else></if>
+		<echo message="   LWP_TOOLS=${env.LWP_TOOLS}"/>
+        <echo message="   ALT_TOOLS=${env.ALT_TOOLS}"/>
+		<echo message="   WinZip=${env.WinZip}"/>
+		<echo message="   7Zip=${env.7Zip}"/>
+		<echo message="   MKISOFS=${mkisofs}"/>
+		<record name="${img.log}" action="stop" emacsmode="true"/>
+		<antcall target="img-pause"><param name="img.pauseStr" value="After: Checks/validates main build variables. Also, displays value of main variables."/></antcall>
+	</target>
+
+	<target name="clean" depends="img-clean"/>
+	<target name="img-clean" depends="img-init,img-clean-get,img-clean-build" description="Removes output folders and files that are created.">
+		<delete dir="${img.work.dir}"/>
+	</target>
+	<target name="img-clean-get" depends="img-init" description="Removes only downloaded archives and binaries.">
+		<delete dir="${img.ProdBin.dir}"/>
+	</target>
+	<target name="img-clean-build" depends="img-init" description="Removes only built image files.">
+		<delete dir="${img.Images.dir}"/>
+	</target>
+
+
+<!-- =========================================================================== -->
+<!-- Download binaries.
+-->
+	<target name="img-get" depends="img-init" unless="env.Skip-img-get" description="Gets archives and binaries from builds server.">
+		<tstamp prefix="img-get"/>
+		<echo file="${img.log}" append="true" message="Running 'img-get' task at ${img-get.DSTAMP}:${img-get.TSTAMP}.${line.separator}"/>
+
+		<antcall target="img-pause"><param name="img.pauseStr" value="Before: Downloading binaries ..."/></antcall>
+		<echo message="Build Message: Downloading binaries ..."/>
+
+		<!-- Calculate project current build number and save it for future use. -->
+		<condition property="img.file.ProjRel_bld" value="${getBinarySrv}/${ProjRel}/${ProjRel_bld}">
+			<available file="${getBinarySrv}/${ProjRel}/${ProjRel_bld}" type="file"/>
+		</condition>
+		<echo file="${img.tmp.dir}/projbldnum.properties" message="proj_bldnum="/>
+		<concat destfile="${img.tmp.dir}/projbldnum.properties" append="true">
+			<fileset file="${img.file.ProjRel_bld}"/>
+		</concat>
+		<property file="${img.tmp.dir}/projbldnum.properties"/>
+		<condition property="img.ProjRel.bldnum" value="${proj_bldnum}">
+			<not><equals arg1="${proj_bldnum}" arg2=""/></not>
+		</condition>
+		<property name="img.ProjRel.bldnum" value="${ProjRel_bld}"/>
+		<property name="img.ProjRel.path" value="${getBinarySrv}/${ProjRel}"/>
+		<property name="img.ProjRel.bldnum.path" value="${img.ProjRel.path}/${img.ProjRel.bldnum}"/>
+
+		<record name="${img.log.dir}/${ProjRel}.info" action="start" append="false" emacsmode="true"/>
+		<echo message="${ProjRel} Info:${line.separator}"/>
+		<echo message="   getBinarySrv=${getBinarySrv}${line.separator}"/>
+		<echo message="   postImageSrv=${postImageSrv}${line.separator}"/>
+		<echo message="   img.ProjRel.bldnum=${img.ProjRel.bldnum}${line.separator}"/>
+		<echo message="   img.ProjRel.bldnum.path=${img.ProjRel.bldnum.path}${line.separator}"/>
+		<record name="${img.log.dir}/${ProjRel}.info" action="stop" emacsmode="true"/>
+
+		<forlist list="${all_get}" target="img-getABuild" param="getElement"/>
+
+		<!-- Make sure that .sh files are in UNIX format before they are included in the archives. -->
+		<fixcrlf srcdir="${img.ProdBin.dir}" includes="**/*.sh" eol="lf" eof="remove"/>
+		<!--rename it-->
+		<!--move todir="${img.ProdBin.dir}/HCLConnections_Pilot_Install" failonerror="false">
+			<fileset dir="${img.ProdBin.dir}/LCPI_Win"/>
+		</move-->
+	</target>
+
+	<!-- Calculate binaries get info based on properties defined in bldImages.properties. -->
+	<target name="img-getInfo">
+		<propertycopy name="img.get.dir" from="${getElement}_dir"/>
+		<propertycopy name="img.get.bld" from="${getElement}_bld"/>
+		<propertycopy name="img.get.files" from="${getElement}_files"/>
+		<propertycopy name="img.get.todir" from="${getElement}_todir"/>
+
+
+		<condition property="img.file.bldnum" value="${img.ProjRel.bldnum.path}/setup/${img.get.bld}">
+			<available file="${img.ProjRel.bldnum.path}/setup/${img.get.bld}" type="file"/>
+		</condition>
+		<condition property="img.file.bldnum" value="${img.get.dir}/${img.get.bld}">
+			<available file="${img.get.dir}/${img.get.bld}" type="file"/>
+		</condition>
+<!--		<condition property="img.file.bldnum" value="${img.get.dir}">
+            <equals arg1="${img.get.bld}" arg2=""/>
+		</condition>
+-->
+
+		<echo file="${img.tmp.dir}/getCurBldNum.properties" message="getCurBldNum="/>
+		<concat destfile="${img.tmp.dir}/getCurBldNum.properties" append="true">
+			<fileset file="${img.file.bldnum}"/>
+		</concat>
+		<property file="${img.tmp.dir}/getCurBldNum.properties"/>
+		<condition property="img.get.bldnum" value="${getCurBldNum}">
+			<not><equals arg1="${getCurBldNum}" arg2=""/></not>
+		</condition>
+		<property name="img.get.bldnum" value="${img.get.bld}"/>
+
+		<record name="${img.log.dir}/get.${getElement}.info" action="start" append="false" emacsmode="true"/>
+		<echo message="${getElement} get Info:${line.separator}"/>
+		<echo message="   ${getElement}_dir=${img.get.dir}${line.separator}"/>
+		<echo message="   ${getElement}_bldnum=${img.get.bldnum}${line.separator}"/>
+		<echo message="   ${getElement}_files=${img.get.files}${line.separator}"/>
+		<echo message="   ${getElement}_topath=${img.ProdBin.dir}${line.separator}"/>
+		<echo message="   ${getElement}_todir=${img.get.todir}${line.separator}"/>
+		<record name="${img.log.dir}/get.${getElement}.info" action="stop" emacsmode="true"/>
+	</target>
+
+	<target name="img-getABuild" depends="img-getInfo">
+		<forlist list="${img.get.files}" target="img-getABuildElement" param="img.ABuildElement"/>
+	</target>
+
+	<target name="img-getABuildElement">
+		<dirname property="img.from.path" file="${img.get.dir}/${img.get.bldnum}/${img.ABuildElement}"/>
+		<basename property="img.from.files" file="${img.get.dir}/${img.get.bldnum}/${img.ABuildElement}"/>
+		<property name="img.to.path" value="${img.ProdBin.dir}/${img.get.todir}"/>
+		<copy todir="${img.to.path}" preservelastmodified="true" verbose="${verbose}">
+			<fileset dir="${img.from.path}" includes="${img.from.files}"/>
+		</copy>
+	</target>
+
+
+<!-- =========================================================================== -->
+<!-- Build images.
+-->
+	<target name="img-build" depends="img-init" description="Builds all types of images.">
+		<tstamp prefix="img-build"/>
+		<echo file="${img.log}" append="true" message="Running 'img-build' task at ${img-build.DSTAMP}:${img-build.TSTAMP}.${line.separator}"/>
+
+		<antcall target="img-pause"><param name="img.pauseStr" value="Before: Building Images ..."/></antcall>
+		<echo message="Build Message: Building Images ..."/>
+
+		<delete><fileset dir="${img.tmp.dir}" includes="*.ReadMe.txt"/></delete>
+		<echo file="${img.tmp.dir}/exe.ReadMe.txt" message="EXEs${line.separator}"/>
+		<echo file="${img.tmp.dir}/iso.ReadMe.txt" message="ISOs${line.separator}"/>
+		<echo file="${img.tmp.dir}/pdf.ReadMe.txt" message="PDFs${line.separator}"/>
+		<echo file="${img.tmp.dir}/tar.ReadMe.txt" message="TARs${line.separator}"/>
+
+		<forlist list="${all_images}" target="img-createAImage" param="imgid"/>
+
+		<echo file="${img.tmp.dir}/exe.ReadMe.txt" append="true" message="${line.separator}"/>
+		<echo file="${img.tmp.dir}/iso.ReadMe.txt" append="true" message="${line.separator}"/>
+		<echo file="${img.tmp.dir}/pdf.ReadMe.txt" append="true" message="${line.separator}"/>
+		<echo file="${img.tmp.dir}/tar.ReadMe.txt" append="true" message="${line.separator}"/>
+
+		<delete file="${img.Images.dir}/ReadMe.txt"/>
+		<tstamp><format property="img.Creation.Date" pattern="dd MMMM yyyy" locale="en"/></tstamp>
+		<echo file="${img.Images.dir}/ReadMe.txt" message="${img.Creation.Date}: Summary list of part numbers and descriptions${line.separator}${line.separator}"/>
+		<concat destfile="${img.Images.dir}/ReadMe.txt" append="true">
+			<fileset dir="${img.tmp.dir}" includes="*.ReadMe.txt"/>
+		</concat>
+	</target>
+
+	<target name="img-buildInfo">
+		<propertycopy name="img.imgid" from="${imgid}_id"/>
+		<propertycopy name="img.imgid.description" from="${imgid}_description"/>
+		<propertycopy name="img.imgid.description2" from="${imgid}_description2"/>
+		<propertycopy name="img.imgid.volume" from="${imgid}_volume"/>
+		<propertycopy name="img.imgid.outfile" from="${imgid}_outfile"/>
+		<propertycopy name="img.imgid.outdir" from="${imgid}_outdir"/>
+        <propertycopy name="img.imgid.type" from="${imgid}_type"/>
+		<propertycopy name="img.imgid.insubdir" from="${imgid}_insubdir"/>
+		<propertycopy name="img.imgid.includes" from="${imgid}_includes"/>
+		<path id="img_outfname">
+			<pathelement location="${img.imgid.outfile}"/>
+		</path>
+		<pathconvert dirsep="\" property="img.imgid.outfname" refid="img_outfname">
+			<mapper type="regexp" from="^(.*)\\(.*)\.(.*)$$" to="\2"/>
+		</pathconvert>
+		<pathconvert dirsep="\" property="img.imgid.outfext" refid="img_outfname">
+			<mapper type="regexp" from="^(.*)\.(.*)$$" to="\2"/>
+		</pathconvert>
+	</target>
+
+	<target name="img-createAImage" depends="img-buildInfo">
+		<condition property="img.cur.Skip" value="true">
+			<and>
+				<isset property="img.only.type"/>
+				<not><equals arg1="${img.imgid.type}" arg2="${img.only.type}"/></not>
+			</and>
+		</condition>
+		<condition property="img.cur.Skip" value="true">
+			<and>
+				<isset property="img.bld.sublist"/>
+				<not><contains string="${img.bld.sublist}" substring="${img.imgid.outfname}" casesensitive="false"/></not>
+			</and>
+		</condition>
+		<if><not><istrue value="${img.cur.Skip}"/></not><then>
+			<condition property="img.from.dir" value="${img.ProdBin.dir}/${img.imgid.insubdir}">
+				<not><equals arg1="${img.imgid.insubdir}" arg2=""/></not>
+			</condition>
+			<property name="img.from.dir" value="${img.ProdBin.dir}"/>
+			<property name="img.to.dir" value="${img.Images.dir}/${img.imgid.outdir}"/>
+			<property name="img.outfile" value="${img.to.dir}/${img.imgid.outfile}"/>
+			<property name="img.volume" value="${img.imgid.volume}"/>
+			<property name="img.includes" value="${img.imgid.includes}"/>
+
+			<record name="${img.log.dir}/create.${img.imgid.outfile}.info" action="start" append="false" emacsmode="true"/>
+			<echo message="${imgid} create Info:${line.separator}"/>
+			<echo message="   img.id=${img.imgid}${line.separator}"/>
+			<echo message="   img.description=${img.imgid.description}${img.imgid.description2}${line.separator}"/>
+			<echo message="   img.from.dir=${img.from.dir}${line.separator}"/>
+			<echo message="   img.to.dir=${img.to.dir}${line.separator}"/>
+			<echo message="   img.outfile=${img.outfile}${line.separator}"/>
+			<echo message="   img.volume=${img.volume}${line.separator}"/>
+			<echo message="   img.includes=${img.includes}${line.separator}"/>
+			<record name="${img.log.dir}/create.${img.imgid.outfile}.info" action="stop" emacsmode="true"/>
+
+			<antcall target="img-create-${img.imgid.outfext}Image"/>
+		</then></if>
+	</target>
+
+	<target name="img-create-pdfImage" depends="img-Areadme" unless="Skip.pdf">
+		<mkdir dir="${img.to.dir}"/>
+		<delete file="${img.outfile}"/>
+		<copy file="${img.from.dir}/${img.includes}" tofile="${img.outfile}" preservelastmodified="true" verbose="${verbose}"/>
+	</target>
+
+	<target name="img-create-exeImage" depends="img-Areadme" unless="Skip.exe">
+		<path id="img_outzip">
+			<pathelement location="${img.outfile}"/>
+		</path>
+		<!--
+		<pathconvert dirsep="\" property="img.outfile.zip" refid="img_outzip">
+			<mapper type="regexp" from="^(.*)\.(.*)$$" to="\1.zip"/>
+		</pathconvert>
+		<basename property="img.boutfile.zip" file="${img.outfile.zip}"/>
+		<mkdir dir="${img.to.dir}"/>
+		<delete file="${img.outfile.zip}"/>
+		<zip destfile="${img.outfile.zip}" basedir="${img.from.dir}" includes="${img.includes}" compress="false"/>
+		<echo file="${img.tmp.dir}/WinZipSE.rsp" message="-le -overwrite -y -d ."/>
+		<delete file="${img.outfile}"/>
+		<exec dir="${img.to.dir}" executable="${env.WinZip}/WZIPSE32.EXE" resultproperty="img.selfextract.error">
+			<arg line="${img.boutfile.zip} @${img.tmp.dir}/WinZipSE.rsp"/>
+		</exec>
+		-->
+		<pathconvert dirsep="\" property="img.outfile.exe" refid="img_outzip">
+			<mapper type="regexp" from="^(.*)\.(.*)$$" to="\1.exe"/>
+		</pathconvert>
+		<delete file="${img.outfile.exe}"/>
+		<exec dir="${img.from.dir}" executable="${env.7Zip}\7z.exe" resultproperty="img.selfextract.error" resolveexecutable="true">
+			<arg line='a -sfx7z.sfx "${img.outfile.exe}" -r ${img.includes}' />
+		</exec>
+		<echo message="7zip return code: ${img.selfextract.error}" />
+		<checksum algorithm="SHA-256" fileext=".sha256" file="${img.outfile.exe}"/>
+		<!--
+		<delete file="${img.outfile.zip}"/>
+		-->
+	</target>
+	
+	<target name="img-create-zipImage" depends="img-Areadme" unless="Skip.exe">
+		<path id="img_outzip">
+			<pathelement location="${img.outfile}"/>
+		</path>
+		<pathconvert dirsep="\" property="img.outfile.zip" refid="img_outzip">
+			<mapper type="regexp" from="^(.*)\.(.*)$$" to="\1.zip"/>
+		</pathconvert>
+		<basename property="img.boutfile.zip" file="${img.outfile.zip}"/>
+		<mkdir dir="${img.to.dir}"/>
+		<delete file="${img.outfile.zip}"/>
+		<zip destfile="${img.outfile.zip}" basedir="${img.from.dir}" includes="${img.includes}" compress="false"/>
+		<checksum algorithm="SHA-256" fileext=".sha256" file="${img.outfile.zip}"/>
+	</target>
+
+	<target name="img-create-isoImage" depends="img-Areadme" unless="Skip.iso">
+		<property name="img.iso.from.dir" value="${img.tmp.dir}/isotmp"/>
+		<echo message="Build Message: Copying .iso include files to '${img.iso.from.dir}' folder ..."/>
+
+		<delete dir="${img.iso.from.dir}"/>
+            <mkdir dir="${img.iso.from.dir}"/>
+		<copy todir="${img.iso.from.dir}">
+			<fileset dir="${img.from.dir}" includes="${img.includes}"/>
+		</copy>
+		<mkdir dir="${img.to.dir}"/>
+		<delete file="${img.outfile}"/>
+		<if><equals arg1="${imgid}" arg2="img31d"/>
+			<then>
+				<fixcrlf srcdir="${img.iso.from.dir}/Wizards/connections.sql" includes="**/*.sql" eol="lf" eof="remove"/>
+			</then>
+		</if>
+		<if><equals arg1="${imgid}" arg2="img32d"/>
+			<then>
+				<fixcrlf srcdir="${img.iso.from.dir}/Wizards/connections.sql" includes="**/*.sql" eol="lf" eof="remove"/>
+				<fixcrlf srcdir="${img.iso.from.dir}/Wizards/connections.s390.sql" includes="**/*.sql" eol="lf" eof="remove"/>
+			</then>
+		</if>
+		<if><equals arg1="${imgid}" arg2="img33d"/>
+			<then>
+				<fixcrlf srcdir="${img.iso.from.dir}/Wizards/connections.OS400.sql" includes="**/*.sql" eol="lf" eof="remove"/>
+			</then>
+		</if>
+		<!--
+		<if><equals arg1="${imgid}" arg2="img32d"/>
+			<then>
+				<replace dir="${img.iso.from.dir}/HCL_Connections_Install_s390/launchpad/content/en" summary="true" token='IM\\linux\\install' value='IM\\zlinux\\install'>
+					<include name="install.properties"/>
+				</replace> 
+			</then>
+		</if>
+		-->
+		<property name="img.mkisofs.prog" value="${mkisofs}"/>
+		<property name="img.mkisofs.cmd" value="-o ${img.outfile} -iso-level 4 -r -R -joliet-long -J -d -l -p IBM -publisher IBM -sysid Multi-platform -V ${img.volume} ${img.iso.from.dir}"/>
+		<echo message="Build Message: Running '${img.mkisofs.prog} ${img.mkisofs.cmd}' ..."/>
+		<exec dir="${basedir}" executable="${img.mkisofs.prog}" failonerror="true" resultproperty="img.iso.error" output="${img.log.dir}/${img.imgid.outfile}.log">
+			<arg line="${img.mkisofs.cmd}"/>
+		</exec>
+		<delete dir="${img.iso.from.dir}"/>
+		<checksum algorithm="SHA-256" fileext=".sha256" file="${img.outfile}"/>
+	</target>
+
+	<target name="img-create-tarImage" depends="img-Areadme" unless="Skip.tar">
+		<property name="img.tar.from.dir" value="${img.tmp.dir}/tartmp"/>
+		<echo message="Build Message: Copying .tar include files to '${img.tar.from.dir}' folder ..."/>
+		<delete dir="${img.tar.from.dir}"/>
+            <mkdir dir="${img.tar.from.dir}"/>
+		<copy todir="${img.tar.from.dir}">
+			<fileset dir="${img.from.dir}" includes="${img.includes}"/>
+		</copy>
+
+		<mkdir dir="${img.to.dir}"/>
+		<delete file="${img.outfile}"/>
+		<if><equals arg1="${imgid}" arg2="img8d"/>
+			<then>
+				<fixcrlf srcdir="${img.tar.from.dir}/Wizards/connections.sql" includes="**/*.sql" eol="lf" eof="remove"/>
+				<fixcrlf srcdir="${img.tar.from.dir}/Wizards/connections.s390.sql" includes="**/*.sql" eol="lf" eof="remove"/>
+			</then>
+		</if>
+		<!--
+		<if><equals arg1="${imgid}" arg2="img24d"/>
+			<then>
+				<replace dir="${img.tar.from.dir}/HCL_Connections_Install_s390/launchpad/content/en" summary="true" token='IM\\linux\\install' value='IM\\zlinux\\install'>
+					<include name="install.properties"/>
+				</replace>
+			</then>
+		</if>
+		-->
+		<tar longfile="gnu" destfile="${img.outfile}" compression="none">
+			<tarfileset dir="${img.tar.from.dir}" dirmode="755" mode="744" group="cclwp" username="lwpbuild" includes="**/*.sh,**/*.bin"/>
+			<tarfileset dir="${img.tar.from.dir}" dirmode="755" mode="744" group="cclwp" username="lwpbuild" includes="**" excludes="**/*.sh,**/*.bin"/>
+		</tar>
+		<delete dir="${img.tar.from.dir}"/>
+		<checksum algorithm="SHA-256" fileext=".sha256" file="${img.outfile}"/>
+	</target>
+
+	<target name="img-Areadme" depends="img-buildInfo">
+		<echo file="${img.tmp.dir}/${img.imgid.outfext}.ReadMe.txt" append="true" message="${img.imgid.outfname} - ${img.imgid.description}${img.imgid.description2}${line.separator}"/>
+	</target>
+
+
+<!-- =========================================================================== -->
+<!-- Post images.
+*
+-->
+	<target name="img-post" depends="img-init" unless="env.Skip-img-post" description="Posts/copies images to posting server.">
+		<tstamp prefix="img-post"/>
+		<echo file="${img.log}" append="true" message="Running 'img-post' task at ${img-post.DSTAMP}:${img-post.TSTAMP}.${line.separator}"/>
+
+		<property file="${img.tmp.dir}/projbldnum.properties"/>
+		<condition property="img.ProjRel.bldnum" value="${proj_bldnum}">
+			<not><equals arg1="${proj_bldnum}" arg2=""/></not>
+		</condition>
+		<property name="img.ProjRel.bldnum" value="${ProjRel_bld}"/>
+
+		<antcall target="img-pause"><param name="img.pauseStr" value="Before: Posting Images ..."/></antcall>
+		<echo message="Build Message: Posting Images from '${img.Images.dir}' ..."/>
+
+		<delete dir="${postImageSrv}/${ProjRel}/${img.ProjRel.bldnum}/Images"/>
+		<copy todir="${postImageSrv}/${ProjRel}/${img.ProjRel.bldnum}/Images">
+			<fileset dir="${img.Images.dir}" includes="**"/>
+		</copy>
+	</target>
+
+
+<!-- =========================================================================== -->
+<!-- Remove temp files
+*
+-->
+	<target name="img-clean-temp" depends="img-init" unless="env.Skip-img-clean-temp" description="Clean the temp files">
+		<delete dir="${img.work.dir}" failonerror="false"/>
+	</target>
+
+
+<!-- =========================================================================== -->
+<!-- sub-targets.
+*
+-->
+	<target name="img-pause" if="env.imgPause">
+		<echo message=""/>
+		<echo message=""/>
+		<input message="${img.pauseStr} Press 'Enter' key to continue..."/>
+		<echo message=""/>
+	</target>
+
+	<target name="img-only-cd">
+		<property name="img.only.type" value="cd"/>
+	</target>
+	<target name="img-only-eval">
+		<property name="img.only.type" value="eval"/>
+	</target>
+	<target name="img-only-download">
+		<property name="img.only.type" value="download"/>
+	</target>
+	<target name="img-only-dvd">
+		<property name="img.only.type" value="dvd"/>
+	</target>
+  	<target name="img-only-iso">
+		<property name="img.only.type" value="iso"/>
+	</target>
+
+	<target name="img-bld-sublist">
+		<property name="img.bld.sublist" value="${env.sublist}"/>
+	</target>
+
+</project>

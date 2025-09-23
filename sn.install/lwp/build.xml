@@ -1,0 +1,336 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited. 2004, 2022                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="sn.install" default="development" basedir=".">
+	<property file="${env.WPLC_HOME}/prereq_fes/sn.infra/lwp/build/globalization.test/pseudo/pseudo.properties" />
+	<property file="${env.WPLC_HOME}/socnet.03/sn.infra/lwp/build/globalization.test/pseudo/pseudo.properties" />
+
+	<import file="${env.WPLC_IMPORT}/std_props.xml" />
+	<import file="${env.WPLC_IMPORT}/root_build.xml" />
+	<import file="${env.WPLC_IMPORT}/translations.xml" />
+
+	<target name="publish">
+		<property name="BUILD_DATE" value="${env.BUILDLEVEL}" />
+		<!-- Build date -->
+		<property name="BUILD_VERSION" value="${env.CMVC_RELEASE}_${env.BUILDLEVEL}" />
+		<!-- Build version -->
+		<echo message="Hello world: build_date - ${BUILD_DATE} build-version - ${BUILD_VERSION}" />
+		<antcall target="root_build.publish" />
+
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_Windows" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_Linux" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_AIX" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_s390" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/HCL_Connections_Install_Windows" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/HCL_Connections_Install_Linux" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/HCL_Connections_Install_AIX" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/HCL_Connections_Install_s390" failonerror="false" />
+		<delete dir="${env.LWP_HOME}/setup/HCL_Connections_Install_OS400" failonerror="false" />  	<!-- OS400_Enablement --> 
+		<delete dir="${env.LWP_HOME}/setup/prereqs_w32" />
+		<delete dir="${env.LWP_HOME}/setup/prereqs_linux" />
+
+		<antcall target="publish_wizards" />
+		
+		<!--<antcall target="publish_cognos_wizards" />-->
+		<antcall target="publish_CR" />
+	</target>
+	
+	<target name="publish_cognos_wizards">
+		<antcall target="createCognosPackageWindows">
+			<param name="thePlatform" value="Windows"/>
+		</antcall>
+		<antcall target="createCognosPackageLinux">
+			<param name="thePlatform" value="Linux"/>
+		</antcall>
+		<antcall target="createCognosPackageAIX">
+			<param name="thePlatform" value="AIX"/>
+		</antcall>
+		<antcall target="createCognosPackages390">
+			<param name="thePlatform" value="s390"/>
+		</antcall>
+	</target>
+	
+	<target name="createCognosPackageWindows">
+		<copy todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${basedir}/build/cognos.wizard/cognos.launch/setup/disk">
+				<include name="IM/windows/**" />
+				<include name="${thePlatform}/CognosWizard/**" />
+			</fileset>
+		</copy>
+		
+		<move todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}">
+				<include name="CognosWizard/**" />
+			</fileset>
+		</move>
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}"/>
+	</target>
+	
+	<target name="createCognosPackageAIX">
+		<copy todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${basedir}/build/cognos.wizard/cognos.launch/setup/disk">
+				<include name="IM/aix/**" />
+				<include name="${thePlatform}/CognosWizard/**" />
+			</fileset>
+		</copy>
+		
+		<move todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}">
+				<include name="CognosWizard/**" />
+			</fileset>
+		</move>
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}"/>
+	</target>
+	
+	<target name="createCognosPackages390">
+		<copy todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${basedir}/build/cognos.wizard/cognos.launch/setup/disk">
+				<include name="IM/zlinux/**" />
+				<include name="${thePlatform}/CognosWizard/**" />
+			</fileset>
+		</copy>
+		
+		<move todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}">
+				<include name="CognosWizard/**" />
+			</fileset>
+		</move>
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}"/>
+	</target>
+	
+	<target name="createCognosPackageLinux">
+		<copy todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${basedir}/build/cognos.wizard/cognos.launch/setup/disk">
+				<include name="IM/linux/**" />
+				<include name="${thePlatform}/CognosWizard/**" />
+			</fileset>
+		</copy>
+		
+		<move todir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}">
+			<fileset dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}">
+				<include name="CognosWizard/**" />
+			</fileset>
+		</move>
+		<delete dir="${env.LWP_HOME}/setup/IBM_Cognos_Install_${thePlatform}/${thePlatform}"/>
+	</target>
+
+	<property name="jre80" value="${pilot.components.server}/jre80" />
+	<property name="jre80.linux" value="${jre80}/ibm-java-jre-8.0-3.0-linux-x86_64.tgz" />
+	<property name="jre80.win" value="${jre80}/ibm-java-jre-80-win-x86_64.zip" />
+	<property name="jre80.aix" value="${jre80}/pap6480sr3-20160428_01-jre.jar" />
+	<property name="jre80.s390" value="${jre80}/ibm-java-jre-8.0-3.0-linux-s390x.tgz" />
+
+	<target name="bundle_jvm">
+		<property name="wizard_root" value="${env.LWP_HOME}/setup/Wizards" />
+		<property name="wizard_temp" value="${wizard_root}/temp" />
+
+		<!-- unzip jvm -->
+		<unzip src="${jre80.win}" dest="${wizard_temp}/jvm/win">
+			<patternset>
+				<exclude name="ibm_sdk80/docs/**/license_*.*" />
+				<exclude name="ibm_sdk80/license_en.txt" />
+				<exclude name="ibm_sdk80/docs/launchpad/content/**/license.*" />
+			</patternset>
+		</unzip>
+		<unjar src="${jre80.aix}" dest="${wizard_temp}/jvm/aix">
+			<patternset>
+				<exclude name="docs/**/license_*.*" />
+				<exclude name="license_*" />
+				<exclude name="docs/launchpad/content/**/license.*" />
+			</patternset>
+		</unjar>
+		<untar src="${jre80.linux}" dest="${wizard_temp}/jvm/linux" compression="gzip">
+			<patternset>
+				<exclude name="ibm-java-x86_64-80/docs/**/license_*.*" />
+				<exclude name="ibm-java-x86_64-80/jre/javaws/javaws" />
+				<exclude name="ibm-java-x86_64-80/docs/launchpad/content/**/license.*" />
+				<exclude name="ibm-java-x86_64-80/license_en.txt" />
+			</patternset>
+		</untar>
+		<copy file="${wizard_temp}/jvm/linux/ibm-java-x86_64-80/jre/bin/javaws" todir="${wizard_temp}/jvm/linux/ibm-java-x86_64-80/jre/javaws" />
+
+		<untar src="${jre80.s390}" dest="${wizard_temp}/jvm/s390" compression="gzip">
+			<patternset>
+				<exclude name="ibm-java-s390x-80/docs/**/license_*.*" />
+				<exclude name="ibm-java-s390x-80/docs/launchpad/content/**/license.*" />
+				<exclude name="ibm-java-s390x-80/license_en.txt" />
+			</patternset>
+		</untar>
+		<!-- copy jvm files -->
+		<mkdir dir="${wizard_root}/jvm/win" />
+		<copy todir="${wizard_root}/jvm/win" includeEmptyDirs="false">
+			<fileset dir="${wizard_temp}/jvm/win" />
+		</copy>
+		<mkdir dir="${wizard_root}/jvm/aix" />
+		<copy todir="${wizard_root}/jvm/aix" includeEmptyDirs="false">
+			<fileset dir="${wizard_temp}/jvm/aix" />
+		</copy>
+		<mkdir dir="${wizard_root}/jvm/linux" />
+		<copy todir="${wizard_root}/jvm/linux" includeEmptyDirs="false">
+			<fileset dir="${wizard_temp}/jvm/linux/ibm-java-x86_64-80" />
+		</copy>
+		<mkdir dir="${wizard_root}/jvm/s390" />
+		<copy todir="${wizard_root}/jvm/s390" includeEmptyDirs="false">
+			<fileset dir="${wizard_temp}/jvm/s390/ibm-java-s390x-80" />
+		</copy>
+	</target>
+
+	<target name="bundle_jvm_fake">
+		<property name="wizard_root_fake" value="${env.LWP_HOME}/setup/Wizards_fake" />
+		<property name="wizard_temp_fake" value="${wizard_root_fake}/temp" />
+
+		<!-- unzip jvm -->
+		<unzip src="${jre50.win}" dest="${wizard_temp_fake}/jvm/win">
+			<patternset>
+				<exclude name="docs/**/license_*" />
+			</patternset>
+		</unzip>
+		<unjar src="${jre50.aix}" dest="${wizard_temp_fake}/jvm/aix">
+			<patternset>
+				<exclude name="docs/**/license_*.*" />
+			</patternset>
+		</unjar>
+		<gunzip src="${jre50.linux}" dest="${wizard_temp_fake}/ibm-java2-jre-5.0-6.0-linux-i386.tar" />
+		<untar src="${wizard_temp_fake}/ibm-java2-jre-5.0-6.0-linux-i386.tar" dest="${wizard_temp_fake}/jvm/linux">
+			<patternset>
+				<exclude name="ibm-java2-i386-50/docs/**/license_*.*" />
+				<exclude name="ibm-java2-i386-50/jre/javaws/javaws" />
+			</patternset>
+		</untar>
+		<copy file="${wizard_temp_fake}/jvm/linux/ibm-java2-i386-50/jre/bin/javaws" todir="${wizard_temp_fake}/jvm/linux/ibm-java2-i386-50/jre/javaws" />
+
+		<!-- copy jvm files -->
+		<mkdir dir="${wizard_root_fake}/jvm/win" />
+		<copy todir="${wizard_root_fake}/jvm/win" includeEmptyDirs="false">
+			<fileset dir="${wizard_temp_fake}/jvm/win" />
+		</copy>
+		<mkdir dir="${wizard_root_fake}/jvm/aix" />
+		<copy todir="${wizard_root_fake}/jvm/aix" includeEmptyDirs="false">
+			<fileset dir="${wizard_temp_fake}/jvm/aix" />
+		</copy>
+		<mkdir dir="${wizard_root_fake}/jvm/linux" />
+		<copy todir="${wizard_root_fake}/jvm/linux" includeEmptyDirs="false">
+			<fileset dir="${wizard_temp_fake}/jvm/linux/ibm-java2-i386-50" />
+		</copy>
+	</target>
+	
+	<target name="publish_fixpack">
+		<property name="fixpack_source" value="${basedir}/build/im.installer/im.update/fixpack_output" />
+		<property name="fixpack_root" value="${env.LWP_HOME}/WebKits/HCL_Connections_Fixpack" />
+		
+		<delete dir="${fixpack_root}" />
+		<mkdir dir="${fixpack_root}" />
+		
+		<zip destfile="${fixpack_root}/LC3010_Fixpack.zip" update="true">
+			 <fileset dir="${fixpack_source}"/>
+		</zip>
+	</target>
+	
+	<target name="publish_CR">
+		<property name="fixpack_source" value="${basedir}/build/im.update/fixpack_output" />
+		<property name="fixpack_root" value="${env.LWP_HOME}/WebKits/HCL_Connections_CR" />
+		
+		<delete dir="${fixpack_root}" />
+		<mkdir dir="${fixpack_root}" />
+		
+		<zip destfile="${fixpack_root}/HC8.0_CR1.zip" update="true">
+			 <fileset dir="${fixpack_source}"/>
+		</zip>
+	</target>
+
+	<target name="publish_wizards">
+		<property name="wizard_source" value="${basedir}/build/wizards/cdfiles" />
+		<property name="wizard_root" value="${env.LWP_HOME}/setup/Wizards" />
+		<property name="wizard_tdi_root" value="${wizard_root}/TDIPopulation" />
+		<property name="wizard_temp" value="${wizard_root}/temp" />
+		
+		<delete dir="${wizard_root}" />
+
+		<copy todir="${wizard_root}">
+			<fileset dir="${wizard_source}" />
+		</copy>
+		
+		<copy todir="${wizard_temp}/connections.s390.sql">
+			<fileset dir="${wizard_root}/connections.sql" excludes="*/sqlserver/**"/>
+		</copy>
+		<!-- replace NO FILE SYSTEM CACHING with FILE SYSTEM CACHING for zLinux -->
+		<replaceregexp match="NO\s+FILE\s+SYSTEM\s+CACHING" replace="FILE SYSTEM CACHING" flags="i" byline="true">
+			<fileset dir="${wizard_temp}/connections.s390.sql" includes="*/db2/createDb*.sql"/>
+		</replaceregexp>
+		<copy todir="${wizard_root}/connections.s390.sql">
+			<fileset dir="${wizard_temp}/connections.s390.sql"/>
+		</copy>
+
+		<locateComponent component="lc.live.installer" property="lc.live.installer" locatebuilddir="true" />
+		<untar src="${lc.live.installer}/xkit/tdisol.tar" dest="${wizard_temp}/win" />
+		<untar src="${lc.live.installer}/xkit/tdisol.tar" dest="${wizard_temp}/linux" />
+
+		<copy todir="${wizard_tdi_root}/win/TDI" overwrite="true" includeEmptyDirs="true">
+			<fileset dir="${env.LWP_HOME}/setup/Wizards/temp/win/TDI" />
+		</copy>
+
+		<copy todir="${wizard_tdi_root}/linux/TDI" overwrite="true" includeEmptyDirs="true">
+			<fileset dir="${env.LWP_HOME}/setup/Wizards/temp/linux/TDI" />
+		</copy>
+
+		<!--OS400_Enablement   OS400 will use the same TDI population solution as  Linux&AIX
+        <copy todir="${wizard_tdi_root}/OS400/TDI" overwrite="true" includeEmptyDirs="true">
+			<fileset dir="${env.LWP_HOME}/setup/Wizards/temp/linux/TDI" />
+		</copy>
+		-->
+		
+		<mkdir dir="${wizard_tdi_root}/win/TDI/logs" />
+		<mkdir dir="${wizard_tdi_root}/linux/TDI/logs" />
+		<!--OS400_Enablement
+        <mkdir dir="${wizard_tdi_root}/OS400/TDI/logs" />
+		-->
+		
+		<antcall target="bundle_jvm" />
+
+		<touch file="${wizard_tdi_root}/win/TDI/logs/keep_log" />
+		<touch file="${wizard_tdi_root}/win/TDI/logs/keep_log" />
+
+		<delete dir="${wizard_temp}" />
+	</target>
+
+	<target name="publish_wizards_fake">
+		<property name="wizard_source_fake" value="${basedir}/build/wizards/fake/cdfiles" />
+		<property name="wizard_root_fake" value="${env.LWP_HOME}/setup/Wizards_fake" />
+		<property name="wizard_tdi_root_fake" value="${wizard_root_fake}/TDIPopulation" />
+		<property name="wizard_temp_fake" value="${wizard_root_fake}/temp" />
+
+		<delete dir="${wizard_root_fake}" />
+
+		<copy todir="${wizard_root_fake}">
+			<fileset dir="${wizard_source_fake}" />
+		</copy>
+
+		<untar src="${lc.live.installer}/xkit/tdisol.tar" dest="${wizard_temp_fake}/win" />
+		<untar src="${lc.live.installer}/xkit/tdisol.tar" dest="${wizard_temp_fake}/linux" />
+
+		<copy todir="${wizard_tdi_root_fake}/TDISOL" overwrite="true" includeEmptyDirs="true">
+			<fileset dir="${wizard_temp_fake}/win/TDI" />
+		</copy>
+
+		<copy todir="${wizard_tdi_root_fake}/TDISOL" overwrite="true" includeEmptyDirs="true">
+			<fileset dir="${wizard_temp_fake}/linux/TDI" />
+		</copy>
+
+		<mkdir dir="${wizard_tdi_root_fake}/TDISOL/logs" />
+
+		<antcall target="bundle_jvm_fake" />
+
+		<touch file="${wizard_tdi_root_fake}/TDISOL/logs/keep_log" />
+
+		<delete dir="${wizard_temp_fake}" />
+	</target>
+</project>

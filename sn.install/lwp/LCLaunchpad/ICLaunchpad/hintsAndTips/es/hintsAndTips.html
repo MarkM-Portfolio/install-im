@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es-es" xml:lang="es-es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2006" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="Sugerencias y consejos para la plantilla Launchpad de Classic Express" />
+<meta name="abstract" content="La plantilla Launchpad de Classic Express ofrece un punto de partida para crear un launchpad de configuración que puede utilizarse con los productos de la marca Express." />
+<meta name="description" content="La plantilla Launchpad de Classic Express ofrece un punto de partida para crear un launchpad de configuración que puede utilizarse con los productos de la marca Express." />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="es-es" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>Sugerencias y consejos para la plantilla Launchpad de Express</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">Sugerencias y consejos para la plantilla Launchpad de Classic
+Express</h1>
+<div><p>La plantilla Launchpad de Classic Express ofrece un punto de partida para crear
+un launchpad de configuración que puede utilizarse con los productos de la marca Express.</p>
+<p> Esta plantilla contiene código que puede utilizarse para iniciar el programa de
+instalación de un producto, visualizar documentación y suministrar contenido traducido.</p>
+<p>Elementos a tener en cuenta acerca de la plantilla Launchpad de Classic Express:</p>
+<ul><li>Todos los mandatos y programas utilizados se definen en
+launchpadContent/global.properties.</li>
+<li>Las aplicaciones de ejemplo se incluyen en DISK1 de la página Diseño de disco.
+Para añadir programas de instalación o aplicaciones personalizadas, defina la aplicación
+en launchpadContent\global.properties (siguiendo los ejemplos de las aplicaciones de
+ejemplo). Importe las aplicaciones en el disco adecuado del proyecto utilizando los
+controles de la pestaña Diseño de disco.</li>
+<li>Todos los archivos HTML utilizan la misma hoja de estilo (content.css) que
+reside en el directorio launchpadContent.</li>
+</ul>
+<p>La plantilla Launchpad de Classic Express contiene las siguientes
+páginas:</p>
+<ul><li><strong>Bienvenida</strong> - La página de bienvenida ofrece generalmente una
+visión general del producto y una descripción de las características del launchpad. La
+página de bienvenida debe ser concisa, pero debe ofrecer al usuario opciones para buscar
+más información acerca del producto mediante un enlace al sitio Web del mismo, que se
+visualizará en una nueva ventana del navegador. La página de bienvenida contiene código
+para abrir un sitio Web externo en un navegador. Utilice la función
+<samp class="codeph">viewPage()</samp> para visualizar ventanas nuevas en lugar de la
+función <samp class="codeph">window.open()</samp> de JavaScript, ya que
+<samp class="codeph">window.open() </samp> tiene más posibilidades de quedar bloqueada
+por un bloqueador emergente.</li>
+<li><strong>Información de release</strong> - La página de información de release
+proporciona generalmente información específica de un determinado release de un producto. Por
+ejemplo, instrucciones de instalación, cambios en los requisitos previos,
+principales características o arreglos aplicados en este release y contenido similar son
+informaciones adecuadas para una página de información de release. La página de
+información de release ofrece código que permite ver un PDF y ejecutar
+una
+aplicación.</li>
+<li><strong>Información de requisitos previos</strong> - La página de requisitos previos
+proporciona generalmente un control para la ejecución de un programa de verificación de
+requisitos previos que determina si los requisitos previos existen en el sistema y
+devuelve una lista de los requisitos previos que no ha detectado. La página de
+información de requisitos previos ofrece código que permite ver un PDF y
+ejecutar una
+aplicación.</li>
+<li><strong>Escenario de instalación</strong> - El contenido de escenarios de
+instalación proporciona generalmente los diversos procedimientos de instalación de un
+producto.
+Los usuarios pueden elegir un escenario de instalación específico en función de cómo
+tengan previsto utilizar el producto. Este contenido describe las diferencias entre los
+diversos escenarios de instalación que el usuario puede elegir y suministra información
+acerca de la razón por la que el usuario elegirá un escenario de instalación en lugar
+de otro. No todos los productos presentan escenarios de instalación. Si personaliza la
+plantilla Launchpad de Classic Express para un producto de este tipo, puede eliminar esta
+sección de la navegación. La página de escenarios de instalación ofrece código que
+permite ejecutar un programa personalizado con un argumento. </li>
+<li><strong>Información de migración</strong> - El contenido de migración describe
+generalmente un recorrido de migración que el usuario debe seguir para realizar la
+actualización desde una versión anterior de un producto a una más reciente. Si la
+información de migración no es relevante para un producto determinado, este contenido
+debe eliminarse de la navegación. La página de información de migración ofrece
+código que
+permite ver un PDF y ejecutar una aplicación.</li>
+<li><strong>Instalar</strong> - La página de instalación del producto ofrece
+generalmente un control para iniciar la instalación de un producto. Puede añadir varias
+páginas de instalación de producto a un launchpad de configuración para dar soporte a
+instalaciones de varios productos.
+La página de instalación ofrece código para iniciar la instalación de un producto.</li>
+<li><strong>Salir</strong> - El enlace de salida del menú de navegación permite salir del
+Launchpad. </li>
+</ul>
+</div>
+</body>
+</html>

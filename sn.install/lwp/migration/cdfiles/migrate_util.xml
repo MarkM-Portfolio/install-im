@@ -1,0 +1,1463 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited. 2009, 2022                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- 5724-S68                                                          -->
+<project name="migration_util" basedir=".">
+    <!-- Determine the operating system in order to apply the correct shell script extension -->
+    <target name="determine.shell.ext" >
+        <condition property="shell.extension" value="bat">
+            <os family="windows"/>
+        </condition>
+        <condition property="shell.extension" value="sh">
+            <os family="unix"/>
+        </condition>
+		<condition property="isIseries" value="true">
+            <os family="os/400"/>
+        </condition>	
+    </target>
+
+	<target name="test" depends="testInit,migration-before-steps-1">
+		<LoadVersion prefix="" versionfolder="${lchome}/../LC201/version2" productset="" />
+	</target>
+	
+	<target name="testInit">
+		<property name="EngineInstallLocation" value="d:/IBM/WebSphere/LC25/ConfigEngine" />
+		<property name="EngineInstallLocation_FullPath" value="${EngineInstallLocation}" />
+	</target>
+	
+	<target name="print" depends="migration-before-steps-1">
+		<echo message="user.home = ${user.home}" />
+		<echo message="WasAppHome = ${WasAppHome}" />
+		<echo message="nd.DMgrHostName = ${nd.DMgrHostName}" />
+		<echo message="nd.DMgrSoapPort = ${nd.DMgrSoapPort}" />
+		<echo message="nd.DMgrCellName = ${nd.DMgrCellName}" />
+		<echo message="DMUserid = ${DMUserid}" />
+		<echo message="DMPassword = ${DMPassword}" />
+		<echo message="migration.work = ${migration.work}" />
+		<echo message="shell.extension = ${shell.extension}" />
+		<echo message="Add_TransferConfigFile.tmpJacl = ${Add_TransferConfigFile.tmpJacl}" />
+		<echo message="EngineInstallLocation = ${EngineInstallLocation}" />
+		<echo message="work.dir = ${work.dir}" />
+	</target>
+	
+	<target name="lc-do-backup" depends="">
+		<delete dir="${lc-do-backup.target}" />
+		<antcall target="lc-export-properties">
+			<param name="lc-export-properties.target" value="${lc-do-backup.target}/LC_HOME" />
+		</antcall>
+		<!--
+		<antcall target="lc-export-data">
+			<param name="lc-export-data.target" value="${lc-do-backup.target}/data" />
+		</antcall>
+		-->
+		<antcall target="lc-export-config">
+			<param name="lc-export-config.target" value="${lc-do-backup.target}/config" />
+		</antcall>
+		<!--
+		<antcall target="lc-export-jdbc-drivers">
+			<param name="lc-export-jdbc-drivers.target" value="${lc-do-backup.target}/jdbcdriver" />
+		</antcall>
+		-->
+	</target>
+<!--	
+	<target name="lc-do-backup-import">
+		<delete dir="${lc-do-backup.target}" />
+		<antcall target="lc-export-properties">
+			<param name="lc-export-properties.target" value="${lc-do-backup.target}/LC_HOME" />
+		</antcall>
+		<antcall target="lc-export-data">
+			<param name="lc-export-data.target" value="${lc-do-backup.target}/data" />
+		</antcall>
+		<antcall target="lc-export-config-import">
+			<param name="lc-export-config.target" value="${lc-do-backup.target}/config" />
+		</antcall>
+	</target>
+	
+	<target name="lc-export-config-import">
+		<delete dir="{lc-export-config.target}" failonerror="false" />
+		
+		<copy todir="${lc-export-config.target}" overwrite="true" failonerror="false">
+			<fileset dir="${activities.USER_INSTALL_ROOT}/config/cells/${activities.CellName.migration}/IBM-Connections" />
+			<fileset dir="${blogs.USER_INSTALL_ROOT}/config/cells/${blogs.CellName.migration}/IBM-Connections" />
+			<fileset dir="${communities.USER_INSTALL_ROOT}/config/cells/${communities.CellName.migration}/IBM-Connections" />
+			<fileset dir="${dogear.USER_INSTALL_ROOT}/config/cells/${dogear.CellName.migration}/IBM-Connections" />
+            <fileset dir="${profiles.USER_INSTALL_ROOT}/config/cells/${profiles.CellName.migration}/IBM-Connections" />
+			<fileset dir="${homepage.USER_INSTALL_ROOT}/config/cells/${homepage.CellName.migration}/IBM-Connections" />
+	        <fileset dir="${search.USER_INSTALL_ROOT}/config/cells/${search.CellName.migration}/IBM-Connections" />
+			<fileset dir="${wikis.USER_INSTALL_ROOT}/config/cells/${wikis.CellName.migration}/IBM-Connections" />
+			<fileset dir="${files.USER_INSTALL_ROOT}/config/cells/${files.CellName.migration}/IBM-Connections" />
+			<fileset dir="${news.USER_INSTALL_ROOT}/config/cells/${news.CellName.migration}/IBM-Connections" />
+			<fileset dir="${forums.USER_INSTALL_ROOT}/config/cells/${forums.CellName.migration}/IBM-Connections" />
+		</copy>       
+	</target>
+-->
+	<target name="lc-init-data-directories" depends="" unless="tag.migration.data.handle.skip">
+		<echo message="Loading data directories on level: ${vLevel}" />
+
+		<LoadLCWasVariableDM wasHome="${was.home}" feature="activities,blogs,communities,dogear,profiles,homepage,search,mobile,wikis,files,news,search,forum" level="${vLevel}"/>
+		<ResolveLCVariablesDM>
+			<element feature="activities" variable="ACTIVITIES_CONTENT_DIR,ACTIVITIES_STATS_DIR" />
+			<element feature="blogs" variable="BLOGS_LOCAL_INDEX_DIR,BLOGS_INDEX_DIR,BLOGS_CONTENT_DIR" />
+			<element feature="communities" variable="COMMUNITIES_STATS_DIR,COMMUNITIES_INDEX_DIR" />
+			<element feature="dogear" variable="DOGEAR_FAVICON_DIR,DOGEAR_INDEX_DIR" />
+			<element feature="profiles" variable="PROFILES_STATS_DIR,PROFILES_INDEX_DIR" />
+			<element feature="homepage" variable="HOMEPAGE_INDEX_DIR" />
+			<element feature="wikis" variable="wikis_storage_root_directory,WIKIS_CONTENT_DIR"/>
+			<element feature="files" variable="files_storage_root_directory,FILES_CONTENT_DIR"/>
+			<element feature="search" variable="SEARCH_INDEX_DIR,SEARCH_INDEX_BACKUP_DIR"/>
+			<element feature="forum" variable="FORUM_CONTENT_DIR"/>
+			<element feature="ALL" variable="USER_INSTALL_ROOT,CONNECTIONS_CUSTOMIZATION_PATH" />
+		</ResolveLCVariablesDM>
+		
+		<!-- Fix beta1 naming issue -->
+		<property name="WIKIS_CONTENT_DIR" value="${wikis_storage_root_directory}"/>
+		<property name="FILES_CONTENT_DIR" value="${files_storage_root_directory}"/>
+	</target>
+	
+	<target name="lc-export" depends="migration-before-steps-1, migration-before-steps-2">
+		<if firstValue="${IsManagedNode}" operator="==" secondValue="true">
+			<then>
+				<antcall target="lc-export-nd" />
+			</then>
+			<else>
+				<antcall target="lc-export-standalone" />
+			</else>
+		</if>        
+        <antcall target="migration-post-steps" />
+	</target>
+	
+	<target name="lc-export-nd">
+        <antcall target="lc-export-standalone"></antcall>
+	</target>
+	
+	<target name="lc-export-standalone">
+		<antcall target="lc-do-backup">
+			<param name="lc-do-backup.target" value="${migration.work}/export" />
+		</antcall>
+	</target>
+	
+	<target name="lc-export-data" depends="lc-init-data-directories" unless="tag.migration.data.export.skip">
+		<delete dir="${lc-export-data.target}" failonerror="false" />
+		<copy todir="${lc-export-data.target}/ACTIVITIES_CONTENT_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${ACTIVITIES_CONTENT_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/ACTIVITIES_STATS_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${ACTIVITIES_STATS_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/BLOGS_CONTENT_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${BLOGS_CONTENT_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/COMMUNITIES_STATS_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${COMMUNITIES_STATS_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/DOGEAR_FAVICON_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${DOGEAR_FAVICON_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/PROFILES_STATS_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${PROFILES_STATS_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/FILES_CONTENT_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${FILES_CONTENT_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/WIKIS_CONTENT_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${WIKIS_CONTENT_DIR}" />
+		</copy>
+		<!--copy todir="${lc-export-data.target}/SEARCH_INDEX_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${SEARCH_INDEX_DIR}" />
+		</copy-->
+		<copy todir="${lc-export-data.target}/FORUM_CONTENT_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${FORUM_CONTENT_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/SEARCH_INDEX_BACKUP_DIR" failonerror="false" preservelastmodified="true">
+			<fileset dir="${SEARCH_INDEX_BACKUP_DIR}" />
+		</copy>
+		<copy todir="${lc-export-data.target}/CONNECTIONS_CUSTOMIZATION_PATH" failonerror="false" preservelastmodified="true">
+			<fileset dir="${CONNECTIONS_CUSTOMIZATION_PATH}" />
+		</copy>
+	</target>
+
+	<target name="lc-export-properties" unless="tag.migration.properties.skip">
+		<delete dir="{lc-export-properties.target}" failonerror="false" />
+		<copy todir="${lc-export-properties.target}">
+			<fileset dir="${lchome}" includes="version/*.*,version/history/**,version/log/**,version/dtd/**" />
+		</copy>
+	</target>
+
+	<target name="lc-export-config" unless="tag.migration.config.skip">
+		<delete dir="{lc-export-config.target}" failonerror="false" />
+		
+		<copy todir="${lc-export-config.target}" overwrite="true" failonerror="false">
+			<fileset dir="${activities.USER_INSTALL_ROOT}/config/cells/${activities.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${blogs.USER_INSTALL_ROOT}/config/cells/${blogs.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${communities.USER_INSTALL_ROOT}/config/cells/${communities.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${dogear.USER_INSTALL_ROOT}/config/cells/${dogear.CellName.migration}/LotusConnections-config" />
+            <fileset dir="${profiles.USER_INSTALL_ROOT}/config/cells/${profiles.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${homepage.USER_INSTALL_ROOT}/config/cells/${homepage.CellName.migration}/LotusConnections-config" />
+	        <fileset dir="${search.USER_INSTALL_ROOT}/config/cells/${search.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${wikis.USER_INSTALL_ROOT}/config/cells/${wikis.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${files.USER_INSTALL_ROOT}/config/cells/${files.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${news.USER_INSTALL_ROOT}/config/cells/${news.CellName.migration}/LotusConnections-config" />
+			<fileset dir="${forums.USER_INSTALL_ROOT}/config/cells/${forums.CellName.migration}/LotusConnections-config" />
+		</copy>        
+	</target>
+
+	<target name="lc-export-jdbc-drivers" unless="tag.migration.jdbcdriver.skip">
+		<property name="jdbc.jar.files" value="db2jcc4.jar,db2jcc_license_cu.jar,ojdbc14.jar,sqljdbc.jar" />
+		<!--<property name="jdbc.jar.files" value="db2jcc.jar,db2jcc_license_cu.jar,ojdbc14.jar,sqljdbc.jar" /> -->
+		<copy todir="${lc-export-jdbc-drivers.target}" failonerror="false">
+			<fileset dir="${activities.JdbcLibraryPath}" includes="${jdbc.jar.files}" />
+			<fileset dir="${blogs.JdbcLibraryPath}" includes="${jdbc.jar.files}" />
+			<fileset dir="${communities.JdbcLibraryPath}" includes="${jdbc.jar.files}" />
+			<fileset dir="${dogear.JdbcLibraryPath}" includes="${jdbc.jar.files}" />
+			<fileset dir="${profiles.JdbcLibraryPath}" includes="${jdbc.jar.files}" />
+			<fileset dir="${homepage.JdbcLibraryPath}" includes="${jdbc.jar.files}" />
+		</copy>
+	</target>
+
+
+
+	<target name="migration-before-steps-1" depends="determine.shell.ext" unless="tag.migration-before-steps.inited">
+		<property name="tag.migration-before-steps.inited" value="true" />
+
+		<echo message="Initializing IBM Connections migration tool ..." />
+		<property name="was.home" value="${WasAppHome}" />
+		<tstamp>
+			<format pattern="yyyyMMdd_HHmm_ss" property="migration.start.time" />
+		</tstamp>
+		<property name="migration.log" value="${user.home}/lc-migration-${migration.start.time}.log" />
+		<echo message="Starting log in ${migration.log}" />
+		<record name="${migration.log}" action="start" />
+		<echo message="Starting log in ${migration.log}" />
+        <property name="migration.home" value="${lchome}/migration"/>
+		<property name="migration.work" value="${migration.home}/work" />
+        <property name="version.home" value="${lchome}/version"/>
+		<mkdir dir="${migration.work}" />
+		<property name="lib.dir" value="${lchome}/lib" />
+		<copy file="${migration.home}/lib/lc_migration.jar" todir="${lib.dir}" overwrite="true" failonerror="true" />
+		<property name="migration.jar" value="${lib.dir}/lc_migration.jar" />
+		<taskdef resource="anttaskdef.properties">
+			<classpath>
+				<pathelement location="${migration.jar}" />
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+				</fileset>
+                <fileset file="${migration.jar}"/>
+			</classpath>
+		</taskdef>
+
+		<if>
+			<condition>
+				<equals arg1="${handleData}" arg2="false" />
+			</condition>
+			<then>
+				<property name="tag.migration.data.export.skip" value="true" />
+				<property name="tag.migration.data.import.skip" value="true" />
+				<property name="tag.migration.data.handle.skip" value="true" />
+			</then>
+		</if>
+
+		<!-- XXX
+		<LoadProperties>
+			<fileset dir="${lchome}" includes="ConfigEngine/profiles/*/wkplc_comp.properties" />
+		</LoadProperties>
+		XXX -->
+
+		<echo message="Initializing IBM Connections migration tool ... Done. " />
+		<LoadVersion prefix="" versionfolder="${version.home}" productset="" />
+
+		<property name="migration.work" value="${migration.jar.working}/backup" />
+		<property name="migration.work.import" value="${migration.work}/import" />
+		<property name="util.xslt" value="${migration.work.import}/util/xslt" />
+		<property name="util.list" value="${migration.work.import}/util/list" />
+		<property name="migration.work.import.work" value="${migration.work.import}/level2" />
+
+		<if firstValue="${version}" operator="==" secondValue="25">
+			<then>
+				<property name="is25" value="true" />
+                <property name="vLevel" value="server"/>
+        
+			</then>
+			<else>
+				<property name="is25" value="false" />
+                <property name="vLevel" value="cell"/>
+			</else>
+		</if>
+		
+	</target>
+	
+	<target name="migration-before-steps-2">
+		<if firstValue="${is25}" secondValue="true" operator="==">
+            <then>
+				<property name="activities.USER_INSTALL_ROOT" value="${activities.ProfilePath}" />
+				<property name="blogs.USER_INSTALL_ROOT" value="${blogs.ProfilePath}" />
+				<property name="communities.USER_INSTALL_ROOT" value="${communities.ProfilePath}" />
+				<property name="dogear.USER_INSTALL_ROOT" value="${dogear.ProfilePath}" />
+				<property name="profiles.USER_INSTALL_ROOT" value="${profiles.ProfilePath}" />
+				<property name="homepage.USER_INSTALL_ROOT" value="${homepage.ProfilePath}" />
+				<property name="search.USER_INSTALL_ROOT" value="${search.ProfilePath}" />
+				<property name="wikis.USER_INSTALL_ROOT" value="${wikis.ProfilePath}" />
+				<property name="files.USER_INSTALL_ROOT" value="${files.ProfilePath}" />
+				<property name="news.USER_INSTALL_ROOT" value="${news.ProfilePath}" />
+				<property name="mobile.USER_INSTALL_ROOT" value="${mobile.ProfilePath}" />
+				
+				<if firstValue="${IsManagedNode}" operator="==" secondValue="true">
+					<then>
+						<if firstValue="${is25}" secondValue="true" operator="==">
+							<then>
+							<!--FOR 201-->
+							<!--
+								<property name="activities.CellName.migration" value="${activities.DMgrCellName}" />
+								<property name="blogs.CellName.migration" value="${blogs.DMgrCellName}" />
+								<property name="communities.CellName.migration" value="${communities.DMgrCellName}" />
+								<property name="dogear.CellName.migration" value="${dogear.DMgrCellName}" />
+								<property name="profiles.CellName.migration" value="${profiles.DMgrCellName}" />
+								<property name="homepage.CellName.migration" value="${homepage.DMgrCellName}" />
+							-->
+								<property name="activities.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="blogs.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="communities.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="dogear.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="profiles.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="homepage.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="wikis.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="files.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="search.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="news.CellName.migration" value="${nd.DMgrCellName}" />
+								<property name="mobile.CellName.migration" value="${nd.DMgrCellName}" />
+							</then>
+							<else>
+								
+							</else>
+						</if>
+					</then>
+					<else>
+						<property name="activities.CellName.migration" value="${activities.CellName}" />
+						<property name="blogs.CellName.migration" value="${blogs.CellName}" />
+						<property name="communities.CellName.migration" value="${communities.CellName}" />
+						<property name="dogear.CellName.migration" value="${dogear.CellName}" />
+						<property name="profiles.CellName.migration" value="${profiles.CellName}" />
+						<property name="homepage.CellName.migration" value="${homepage.CellName}" />
+						<property name="wikis.CellName.migration" value="${wikis.CellName}" />
+						<property name="files.CellName.migration" value="${files.CellName}" />
+						<property name="search.CellName.migration" value="${search.CellName}" />
+						<property name="news.CellName.migration" value="${news.CellName}" />
+						<property name="mobile.CellName.migration" value="${mobile.CellName}" />
+					</else>
+				</if>
+            </then>
+            <else>
+				<property name="activities.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="blogs.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="communities.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="dogear.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="profiles.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="homepage.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="search.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="wikis.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="files.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="news.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="mobile.USER_INSTALL_ROOT" value="${washome}" />
+				<property name="forums.USER_INSTALL_ROOT" value="${washome}" />
+				
+				<property name="activities.CellName.migration" value="${cellname}" />
+				<property name="blogs.CellName.migration" value="${cellname}" />
+				<property name="communities.CellName.migration" value="${cellname}" />
+				<property name="dogear.CellName.migration" value="${cellname}" />
+				<property name="profiles.CellName.migration" value="${cellname}" />
+				<property name="homepage.CellName.migration" value="${cellname}" />
+				<property name="wikis.CellName.migration" value="${cellname}" />
+				<property name="files.CellName.migration" value="${cellname}" />
+				<property name="search.CellName.migration" value="${cellname}" />
+				<property name="news.CellName.migration" value="${cellname}" />
+				<property name="forums.CellName.migration" value="${cellname}" />
+				<property name="mobile.CellName.migration" value="${cellname}" />
+            </else>
+        </if>
+	</target>
+
+	<target name="migration-post-steps">
+		<echo message="Migration finished. See in ${migration.log} for more detail. " />
+		<record name="${migration.log}" action="stop" />
+        <copy file="${migration.log}" tofile="${migration.work}/migration.latest.log"/>
+		<echo message="Migration finished. See in ${migration.log} for more detail. " />
+	</target>
+
+
+	<target name="migration-import-before-steps" unless="tag.migration-import-before-steps.inited">
+		<property name="tag.migration-import-before-steps.inited" value="true" />
+		<!--property name="tag.migration.jdbcdriver.skip" value="true" /-->
+		<!--property name="tag.migration.data.export.skip" value="true" /-->
+		<!--property name="tag.migration.properties.skip" value="true" /-->
+
+		<echo message="Backing up the current configurations and data into ${migration.work.import.work}. " />
+		<antcall target="lc-do-backup">
+			<param name="lc-do-backup.target" value="${migration.work}/backup" />
+		</antcall>
+		
+		<antcall target="lc-export-config">
+			<param name="lc-export-config.target" value="${migration.work.import.work}" />
+		</antcall>
+		
+		<echo message="Preparing the replace element and attribute list... " />
+		<copy todir="${util.list}" overwrite="true">
+			<fileset dir="${lchome}" includes="**/*-*.txt" />
+		</copy>
+		<echo message="Preparing the XSLT transformation files ... " />
+		<LoadVersion prefix="" versionfolder="${version.home}" productset="" />
+		<LoadVersion prefix="source." versionfolder="${migration.work}/export/LC_HOME/version" productset="" />
+		<copy todir="${util.xslt}" overwrite="true">
+			<fileset dir="${lchome}" includes="**/*-update-*.xsl" />
+		</copy>
+		
+        <if firstValue="${source.version}" operator="==" secondValue="25">
+            <then>
+                <property name="from25" value="true" />
+            </then>
+            <else>
+                <property name="from25" value="false" />
+            </else>
+        </if>
+	</target>
+	
+	<target name="lc-import" depends="migration-before-steps-1,migration-before-steps-2,migration-import-before-steps">
+		<antcall target="lc-import-nd" />
+        <antcall target="migration-post-steps" />
+	</target>
+	
+	<target name="migration-import-post-steps">
+		<echo message="Applying changes to deployment envrionment..." />
+	<!--
+		<property name="activities.USER_INSTALL_ROOT" value="${was.home}/profiles/${activities.ProfileName}" />
+		<property name="blogs.USER_INSTALL_ROOT" value="${was.home}/profiles/${blogs.ProfileName}" />
+		<property name="communities.USER_INSTALL_ROOT" value="${was.home}/profiles/${communities.ProfileName}" />
+		<property name="dogear.USER_INSTALL_ROOT" value="${was.home}/profiles/${dogear.ProfileName}" />
+		<property name="profiles.USER_INSTALL_ROOT" value="${was.home}/profiles/${profiles.ProfileName}" />
+		<property name="homepage.USER_INSTALL_ROOT" value="${was.home}/profiles/${homepage.ProfileName}" />
+        <property name="search.USER_INSTALL_ROOT" value="${was.home}/profiles/${search.ProfileName}"/>
+	-->	
+		<property name="activities.USER_INSTALL_ROOT" value="${activities.ProfilePath}" />
+        <property name="blogs.USER_INSTALL_ROOT" value="${blogs.ProfilePath}" />
+        <property name="communities.USER_INSTALL_ROOT" value="${communities.ProfilePath}" />
+        <property name="dogear.USER_INSTALL_ROOT" value="${dogear.ProfilePath}" />
+        <property name="profiles.USER_INSTALL_ROOT" value="${profiles.ProfilePath}" />
+        <property name="homepage.USER_INSTALL_ROOT" value="${homepage.ProfilePath}" />
+        <property name="search.USER_INSTALL_ROOT" value="${search.ProfilePath}" />
+	<!--
+        <property name="wikis.USER_INSTALL_ROOT" value="${wikis.ProfilePath}" />
+        <property name="files.USER_INSTALL_ROOT" value="${files.ProfilePath}" />
+        <property name="news.USER_INSTALL_ROOT" value="${news.ProfilePath}" />
+        <property name="mobile.USER_INSTALL_ROOT" value="${mobile.ProfilePath}" />
+	-->	
+
+		<property name="common.includes" value="**/notification-config.xml,**/LotusConnections-config.xml,**/directory.services.xml,**/events-config.xml,**/uiextensions-config.xml" />
+		
+		<if firstValue="${activities.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="activities.includes" value="${common.includes},**/oa-config.xml, **/oa-jobs.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${blogs.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="blogs.includes" value="${common.includes},**/contentreview-config.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${communities.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="communities.includes" value="${common.includes},**/widgets-config.xml,**/communities-config.xml,**/communities-policy.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${forums.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="communities.includes" value="${common.includes},**/widgets-config.xml,**/forum-config.xml,**/forum-jobs.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${dogear.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="dogear.includes" value="${common.includes},**/dogear-config-cell.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${profiles.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="profiles.includes" value="${common.includes},**/widgets-config.xml,**/profiles-config.xml,**/profiles-thebuzz-config.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${profiles.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="profiles.includes" value="${common.includes},**/widgets-config.xml,**/profiles-config.xml,**/profiles-thebuzz-config.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${homepage.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="homepage.includes" value="${common.includes}" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${search.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="search.includes" value="${common.includes},**/search-config.xml" />
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${wikis.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="wikis.includes" value="${common.includes},**/wikis/email/commentAddMail.xml,**/wikis/email/mediaEditMail.xml,**/wikis/email/shareMail.xml,**/wikis/email/wikiCommentAddMail.xml,**/wikis/email/wikiMediaEditMail.xml,**/wikis/type-mappings.xml,**/wikis-config.xml"/>
+			</then>				
+			<else></else>
+		</if>
+		<if firstValue="${files.version}" operator="==" secondValue="${version}">
+			<then>
+				<property name="files.includes" value="${common.includes},**/files/email/commentAddMail.xml,**/files/email/mediaEditMail.xml,**/files/email/shareMail.xml,**/files/type-mappings.xml,**/files-config.xml"/>
+			</then>				
+			<else></else>
+		</if>
+		
+        
+        
+
+		<copy todir="${activities.USER_INSTALL_ROOT}/config/cells/${activities.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+			<fileset dir="${migration.work.import.work}" includes="${activities.includes}" />
+		</copy>
+		<copy todir="${blogs.USER_INSTALL_ROOT}/config/cells/${blogs.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+			<fileset dir="${migration.work.import.work}" includes="${blogs.includes}" />
+		</copy>
+		<copy todir="${communities.USER_INSTALL_ROOT}/config/cells/${communities.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+			<fileset dir="${migration.work.import.work}" includes="${communities.includes}" />
+		</copy>
+		<copy todir="${dogear.USER_INSTALL_ROOT}/config/cells/${dogear.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+			<fileset dir="${migration.work.import.work}" includes="${dogear.includes}" />
+		</copy>
+        <copy todir="${dogear.USER_INSTALL_ROOT}/config/cells/${dogear.CellName.migration}/nodes/${dogear.NodeName}/LotusConnections-config" overwrite="true" failonerror="false">
+            <fileset dir="${migration.work.import.work}" includes="dogear-config-node.xml" />
+        </copy>
+		<copy todir="${profiles.USER_INSTALL_ROOT}/config/cells/${profiles.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+			<fileset dir="${migration.work.import.work}" includes="${profiles.includes}" />
+		</copy>
+		<copy todir="${homepage.USER_INSTALL_ROOT}/config/cells/${homepage.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+			<fileset dir="${migration.work.import.work}" includes="${homepage.includes}" />
+		</copy>
+        <copy todir="${search.USER_INSTALL_ROOT}/config/cells/${search.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+            <fileset dir="${migration.work.import.work}" includes="${search.includes}" />
+        </copy>
+        
+        <copy todir="${wikis.USER_INSTALL_ROOT}/config/cells/${wikis.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+            <fileset dir="${migration.work.import.work}" includes="${wikis.includes}" />
+        </copy>
+        <copy todir="${files.USER_INSTALL_ROOT}/config/cells/${files.CellName.migration}/LotusConnections-config" overwrite="true" failonerror="false">
+            <fileset dir="${migration.work.import.work}" includes="${files.includes}" />
+        </copy>
+	</target>
+    
+	<target name="lc-import-nd">
+		<antcall target="lc-import-standalone"/>
+		<antcall target="UpdateDMConfig">
+			<param name="Add_Config.basedir" value="${migration.work.import.work}" />
+		</antcall>
+	</target>
+
+	<target name="lc-import-standalone" depends="">
+	<!--
+		<antcall target="lc-import-data" />
+	-->
+		<!-- Remove the notification-config.xml in beta1 Wikis/Files -->
+		<mkdir dir="${migration.work.import}/level0"/>
+		<!--
+		<delete>
+        	<fileset dir="${migration.work.import}/level0" includes="*/**/notification-config.xml,*/**/notification-config.xsd"/>
+        	<fileset dir="${migration.work.import.work}" includes="*/**/notification-config.xml,*/**/notification-config.xsd"/>
+        </delete>
+        -->
+        <!-- Prepare the dirs for MultiSourceHandler -->
+		<CopyToDir todir="${migration.work.import}/level0">
+			<fileset dir="${migration.work}/export/config">
+				<include name="**/*.xml"/>
+				<include name="**/*.tpl"/>
+				<include name="profiles/templates/*.ftl"/>
+				<include name="extern/proxy-ecm-config.tpl"/>
+				<exclude name="files/**"/>
+				<exclude name="wikis/**"/>
+				<exclude name="profiles-extensions/**"/>
+			</fileset>
+		</CopyToDir>
+		<copy file="${migration.work.import}/level0/proxy-ecm-config.tpl" tofile="${migration.work.import}/level0/proxy-ecm-config.xml" failonerror="false" />
+		<copy file="${migration.work.import}/level0/proxy-config.tpl" tofile="${migration.work.import}/level0/proxy-config.xml" failonerror="false" />
+		
+		<CopyToDir todir="${migration.work.import}/level1">
+			<fileset dir="${migration.work.import.work}">
+				<include name="**/*.xml"/>
+				<include name="**/*.tpl"/>
+        		<include name="extern/proxy-ecm-config.tpl"/>
+				<exclude name="profiles-extensions/**"/>
+			</fileset>
+			<fileset dir="${util.list}" includes="**/*-${version}.txt" />
+			<fileset dir="${util.xslt}" includes="**/*-update-*.xsl"/>
+		</CopyToDir>
+		<copy file="${migration.work.import}/level1/proxy-ecm-config.tpl" tofile="${migration.work.import}/level1/proxy-ecm-config.xml" failonerror="false" />
+		<copy file="${migration.work.import}/level1/proxy-config.tpl" tofile="${migration.work.import}/level1/proxy-config.xml" failonerror="false" />
+				
+		<delete dir="${migration.work.import.work}" />
+		<mkdir dir="${migration.work.import.work}" />
+		<mkdir dir="${migration.work.import}/level0"/>
+		
+		<MultiSourceHandler 
+			startVersion="${source.version}" 
+			toVersion="${version}"
+			sourceFolder="${migration.work.import}/level0" 
+			buildFolder="${migration.work.import}/level1" 
+			todir="${migration.work.import.work}"
+			versionPath="25,30,301,40,40cr4,45,45cr4,50,50cr1,50cr2,50cr3,55,55cr1,55cr2,60" />
+<!--		
+		<move todir="${migration.work.import}/level_trace">
+            <fileset dir="${migration.work.import.work}">
+		        <include name="**/*-transformed.xml"/>
+				<include name="**/*-replaced.xml"/>
+		    </fileset>
+        </move>
+-->				
+<!--
+		<if>
+			<condition>
+				<or>
+					<equals arg1="${files.DbType}" arg2="db2" />
+					<equals arg1="${files.DbType}" arg2="DB2_I" />
+				</or>
+			</condition>
+			<then>
+				<property name="files.DbType.UpperCase" value="DB2"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<equals arg1="${files.DbType}" arg2="oracle" />
+			</condition>
+			<then>
+				<property name="files.DbType.UpperCase" value="Oracle"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<equals arg1="${files.DbType}" arg2="sqlserver" />
+			</condition>
+			<then>
+				<property name="files.DbType.UpperCase" value="SQL Server"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<or>
+					<equals arg1="${wikis.DbType}" arg2="db2" />
+					<equals arg1="${wikis.DbType}" arg2="DB2_I" />
+				</or>
+			</condition>
+			<then>
+				<property name="wikis.DbType.UpperCase" value="DB2"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<equals arg1="${wikis.DbType}" arg2="oracle" />
+			</condition>
+			<then>
+				<property name="wikis.DbType.UpperCase" value="Oracle"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<equals arg1="${wikis.DbType}" arg2="sqlserver" />
+			</condition>
+			<then>
+				<property name="wikis.DbType.UpperCase" value="SQL Server"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<or>
+					<equals arg1="${metrics.DbType}" arg2="db2" />
+					<equals arg1="${metrics.DbType}" arg2="DB2_I" />
+				</or>
+			</condition>
+			<then>
+				<property name="metrics.DbType.UpperCase" value="DB2"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<equals arg1="${metrics.DbType}" arg2="oracle" />
+			</condition>
+			<then>
+				<property name="metrics.DbType.UpperCase" value="Oracle"/>
+			</then>
+		</if>
+		<if>
+			<condition>
+				<equals arg1="${metrics.DbType}" arg2="sqlserver" />
+			</condition>
+			<then>
+				<property name="metrics.DbType.UpperCase" value="SQL Server"/>
+			</then>
+		</if>
+
+		<if>
+			<condition>
+				<available file="${migration.work.import.work}/files-config.xml"/>
+			</condition>
+			<then>
+				<replaceregexp file="${migration.work.import.work}/files-config.xml" match='db dialect=\"\w*\"' replace='db dialect="${files.DbType.UpperCase}"' byline="true" />
+			</then>
+		</if>
+		<if>
+			<condition>
+				<available file="${migration.work.import.work}/wikis-config.xml"/>
+			</condition>
+			<then>
+				<replaceregexp file="${migration.work.import.work}/wikis-config.xml" match='db dialect=\"\w*\"' replace='db dialect="${wikis.DbType.UpperCase}"' byline="true" />
+			</then>
+		</if>
+		<if>
+			<condition>
+				<available file="${migration.work.import.work}/metrics-config.xml"/>
+			</condition>
+			<then>
+				<replaceregexp file="${migration.work.import.work}/metrics-config.xml" match='db dialect=\"\w*\"' replace='db dialect="${metrics.DbType.UpperCase}"' byline="true" />
+			</then>
+		</if>
+  -->
+				<if firstValue="{wikis.version}" secondValue="{version}" operator="==">
+				<then>
+				<replace file="${migration.work.import.work}/wikis-config.xml" token="wikis_storage_root_directory" value="WIKIS_CONTENT_DIR"/>
+				</then>
+				<else></else>
+				</if> 
+				<if firstValue="{wikis.version}" secondValue="{version}" operator="==">
+				<then>
+				<replace file="${migration.work.import.work}/files-config.xml" token="files_storage_root_directory" value="FILES_CONTENT_DIR"/>
+				</then>
+				<else></else>
+				</if>
+		<move todir="${migration.work.import.work}/extern" overwrite="true">
+			<fileset dir="${migration.work.import.work}" includes="oa-jobs.xml"/>
+		</move> 
+		<copy file="${migration.work.import.work}/proxy-ecm-config.xml" tofile="${migration.work.import.work}/proxy-ecm-config.tpl" failonerror="false" />
+		<copy file="${migration.work.import.work}/proxy-config.xml" tofile="${migration.work.import.work}/proxy-config.tpl" failonerror="false" />
+	</target>
+
+	<target name = "migrate-value-to-files-config">
+		<mkdir dir="${migration.work.import}/level00"/>
+		<mkdir dir="${migration.work.import}/level11"/>
+		
+		<copy toDir= "${migration.work.import}/level00" >
+			<fileset dir="${migration.work.import.work}" >
+				<include name="files-config.xml"/>
+				<include name="news-config.xml"/>
+			</fileset>
+		</copy>
+		<move file="${migration.work.import}/level00/files-config.xml" tofile="${migration.work.import}/level00/files-config-update.xml" failonerror="false" />
+		<move file="${migration.work.import}/level00/news-config.xml" tofile="${migration.work.import}/level00/news-config-update.xml" failonerror="false" />
+		<copy toDir="${migration.work.import}/level11" >
+			<fileset dir="${migration.work.import.work}" >
+				<include name="events-config-files.xml"/>
+				<include name="profiles-config-news.xml"/>
+			</fileset>
+		</copy>
+<move file="${migration.work.import}/level11/events-config-files.xml" tofile="${migration.work.import}/level11/files-config-update.xml" failonerror="false" />
+<move file="${migration.work.import}/level11/profiles-config-news.xml" tofile="${migration.work.import}/level11/news-config-update.xml" failonerror="false" />
+		<copy file="${lchome}/files/files/files/files.config/files-config-update-40.txt" toDir="${migration.work.import}/level11" failonerror="false"/>
+		<copy file="${lchome}/news/news/news/news.config/news-config-update-40.txt" toDir="${migration.work.import}/level11" failonerror="false"/>
+		
+		<MultiSourceHandler 
+			startVersion="${source.version}" 
+			toVersion="${version}"
+			sourceFolder="${migration.work.import}/level00" 
+			buildFolder="${migration.work.import}/level11" 
+			todir="${migration.work.import.work}"
+			versionPath="25,30,301,40,40cr4,45,45cr4,50,50cr1,50cr2,50cr3,55,55cr1,55cr2,60" />
+		<move file="${migration.work.import.work}/files-config-update.xml" tofile="${migration.work.import.work}/files-config.xml" failonerror="false" />
+		<move file="${migration.work.import.work}/news-config-update.xml" tofile="${migration.work.import.work}/news-config.xml" failonerror="false" />
+	</target>
+
+
+
+	<target name="lc-import-data" depends="lc-init-data-directories" unless="tag.migration.data.import.skip">
+		<copy todir="${ACTIVITIES_CONTENT_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/ACTIVITIES_CONTENT_DIR" />
+		</copy>
+		<copy todir="${ACTIVITIES_STATS_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/ACTIVITIES_STATS_DIR" />
+		</copy>
+		<copy todir="${BLOGS_CONTENT_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/BLOGS_CONTENT_DIR" />
+		</copy>
+		<copy todir="${COMMUNITIES_STATS_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/COMMUNITIES_STATS_DIR" />
+		</copy>
+		<copy todir="${FORUM_CONTENT_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/FORUM_CONTENT_DIR" />
+		</copy>
+		<copy todir="${DOGEAR_FAVICON_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/DOGEAR_FAVICON_DIR" />
+		</copy>
+		<copy todir="${PROFILES_STATS_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/PROFILES_STATS_DIR" />
+		</copy>
+		<copy todir="${FILES_CONTENT_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/FILES_CONTENT_DIR" />
+		</copy>
+		<copy todir="${WIKIS_CONTENT_DIR}" failonerror="false" preservelastmodified="true">
+			<fileset dir="${migration.work}/export/data/WIKIS_CONTENT_DIR" />
+		</copy>
+	</target>
+
+	<target name="UpdateDMConfig">
+		<property name="shell.extension" value="sh" />
+		<property name="EngineInstallLocation" value="d:/IBM/WebSphere/LC25/ConfigEngine" />
+		<taskdef name="if" classname="com.ibm.wps.config.If" classpath="${lchome}/lib/wkplc.misc.jar" />
+		
+		<property name="TargetJacl" value="${migration.work}/jaclRunForLCConfig.jacl" />
+		<delete file="${TargetJacl}" />
+		<antcall target="Add_TransferConfigFile_ForLC_OneFolder" />
+		<antcall target="ExecuteJacl" />
+	</target>
+
+	<target name="ExecuteJacl">
+		<if>
+		    <!-- OS400_Enablement -->
+			<condition>
+				<equals arg1="${isIseries}" arg2="true"></equals>
+			</condition>
+			<then>			
+                <exec executable="${washome}/bin/wsadmin" failonerror="yes" dir="${washome}/bin" >
+				    <arg line="-conntype SOAP -username ${DMUserid} -password ${DMPassword} -f" />
+				    <arg value="${TargetJacl}" />
+		        </exec>
+			</then>
+		    <else>
+			    <exec dir="${washome}/bin" executable="${washome}/bin/wsadmin.${shell.extension}" failonerror="yes">
+			        <arg line="-conntype SOAP -username ${DMUserid} -password ${DMPassword} -f" />
+			        <arg value="${TargetJacl}" />
+		        </exec>
+			</else>
+		</if>
+	</target>
+	<!--
+	<target name="Add_TransferConfigFile_ForLC_OneFolder3">
+		<property name="Add_Config.basedir" value="C:/temp/LotusConnections-config" />
+		<antcall target="Add_TransferConfigFile_ForLC">
+			<param name="Add_Config.file" value="directory.services.xml" />
+		</antcall>
+	</target>
+	-->
+
+	<target name="Add_TransferConfigFile_ForLC_OneFolder">		
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="calendar-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<!--param name="Add_Config.basedir" value="${migration.work.import}/level0" /-->
+				<param name="Add_Config.file" value="contentreview-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="directory.services.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<!--param name="Add_Config.basedir" value="${migration.work.import}/level0" /-->
+				<param name="Add_Config.file" value="metrics-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC_metrics">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="reports-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="LotusConnections-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="notification-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC_extern">
+				<param name="Add_Config.file" value="proxy-ecm-config.tpl" />
+			</antcall>	
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="proxy-config.tpl" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<!--param name="Add_Config.basedir" value="${migration.work.import}/level0" /-->
+				<param name="Add_Config.file" value="communities-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="communities-policy.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="news-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="wikis-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="files-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="search-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="oa-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="library-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<!--param name="Add_Config.basedir" value="${migration.work.import}/level0" /-->
+				<param name="Add_Config.file" value="opensocial-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<!--param name="Add_Config.basedir" value="${migration.work.import}/level0" /-->
+				<param name="Add_Config.file" value="forum-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<!--param name="Add_Config.basedir" value="${migration.work.import}/level0" /-->
+				<param name="Add_Config.file" value="forum-policy.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="gettingstarted-config.xml" />
+			</antcall>
+				
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="mobile-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="dogear-config-cell.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="uiextensions-config.xml" />
+			</antcall>
+
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="widgets-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.file" value="profiles-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="profiles-policy.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="profiles-types.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC_profiles">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="businessCardInfo.ftl" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC_profiles">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="commonUtil.ftl" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC_profiles">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="profileDetails.ftl" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC_profiles">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="profileEdit.ftl" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC_profiles">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="searchResults.ftl" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="mime-files-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="mime-wikis-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="events-config.xml" />
+			</antcall>
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="media-gallery-config.xml" />
+			</antcall>
+			
+			<antcall target="Add_TransferConfigFile_ForLC">
+				<param name="Add_Config.basedir" value="${migration.work.import}/level0" />
+				<param name="Add_Config.file" value="XRDS.xml" />
+			</antcall>
+	</target>
+
+	<target name="Add_TransferConfigFile_ForLC">
+		<antcall target="Add_TransferConfigFile_since2.5">
+			<param name="TransferType" value="REPLACE" />
+			<param name="PathBeginFromConfig" value="false" />
+			<param name="SourceFilePath" value="${Add_Config.basedir}/${Add_Config.file}" />
+			<param name="TargetFilePath" value="LotusConnections-config/${Add_Config.file}" />
+		</antcall>
+	</target>
+	
+	<target name="Add_TransferConfigFile_ForLC_metrics">
+		<antcall target="Add_TransferConfigFile_since2.5">
+			<param name="TransferType" value="REPLACE" />
+			<param name="PathBeginFromConfig" value="false" />
+			<param name="SourceFilePath" value="${Add_Config.basedir}/${Add_Config.file}" />
+			<param name="TargetFilePath" value="LotusConnections-config/metrics/${Add_Config.file}" />
+		</antcall>
+	</target>
+	
+	<target name="Add_TransferConfigFile_ForLC_extern">
+		<antcall target="Add_TransferConfigFile_since2.5">
+			<param name="TransferType" value="REPLACE" />
+			<param name="PathBeginFromConfig" value="false" />
+			<param name="SourceFilePath" value="${Add_Config.basedir}/${Add_Config.file}" />
+			<param name="TargetFilePath" value="LotusConnections-config/extern/${Add_Config.file}" />
+		</antcall>
+	</target>
+	
+	<target name="Add_TransferConfigFile_ForLC_profiles">
+		<antcall target="Add_TransferConfigFile_since2.5">
+			<param name="TransferType" value="REPLACE" />
+			<param name="PathBeginFromConfig" value="false" />
+			<param name="SourceFilePath" value="${Add_Config.basedir}/${Add_Config.file}" />
+			<param name="TargetFilePath" value="LotusConnections-config/profiles/templates/${Add_Config.file}" />
+		</antcall>
+	</target>
+
+	<!-- 
+        Target: Add_TransferConfigFile
+        Parameters: 
+        <param name="TargetJacl" value="${xx.dm.update.file.jacl}" />
+        <param name="TransferType" value="REPLACE" />
+        <param name="PathBeginFromConfig" value="false"/>
+        <param name="SourceFilePath" value="${common-config.target}/LotusConnections-config.xml" />
+        <param name="TargetFilePath" value="LotusConnections-config/LotusConnections-config.xml" />
+    -->
+	<target name="Add_TransferConfigFile_since2.5">
+		<echo message="Adding file..." />
+		<echo message="Source: ${SourceFilePath}" />
+		<echo message="Target: ${TargetFilePath}" />
+		<echo message="TransferType: ${TransferType}" />
+
+		<available file="${SourceFilePath}" type="file" property="Add_TransferConfigFile.source.exist" />
+		<if>
+			<condition>
+				<equals arg1="${Add_TransferConfigFile.source.exist}" arg2="true">
+				</equals>
+			</condition>
+			<then>
+				<filter token="isPrimaryNode" value="true" />
+				<filter token="DMgrCellName" value="${nd.DMgrCellName}" />
+				<filter token="NodeName" value="NONEED" />
+				<filter token="TransferType" value="${TransferType}" />
+				<filter token="SourceFilePath" value="${SourceFilePath}" />
+				<filter token="TargetFilePath" value="${TargetFilePath}" />
+
+				<filter token="PathBeginFromConfig" value="${PathBeginFromConfig}" />
+
+				<property name="Add_TransferConfigFile.tmpJacl" value="${migration.work}/scripts/jacl/wkplc_TransferConfigFiles.run" />
+				<property name="Add_TransferConfigFile.actionJacl" value="scripts/jacl/wkplc_TransferConfigFiles.jacl" />
+				<copy file="${Add_TransferConfigFile.actionJacl}" tofile="${Add_TransferConfigFile.tmpJacl}" filtering="yes" overwrite="yes" />
+
+				<!-- Concatenate a series of JACL files into a single JACL file-->
+				<concat destfile="${TargetJacl}" append="true">
+					<fileset file="${Add_TransferConfigFile.tmpJacl}" />
+				</concat>
+			</then>
+			<else>
+				<echo message="Source: ${SourceFilePath} does not exist, skipped">
+				</echo>
+			</else>
+		</if>
+	</target>
+
+	<target name="init_fixpack_transfer">
+		<property name="lib.dir" value="${lchome}/lib" />
+		<property name="migration.jar" value="${lib.dir}/lc_migration.jar" />
+		<taskdef resource="anttaskdef.properties">
+			<classpath>
+				<pathelement location="${migration.jar}" />
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+				</fileset>
+                <fileset file="${migration.jar}"/>
+			</classpath>
+		</taskdef>
+	</target>
+
+	<target name="fixpack301_rollback">
+		<property name="fixpack.source" value="${lchome}/fixpack.30.301/backup" />
+		
+		<copy todir="${washome}/config/cells/${cellname}/LotusConnections-config" failonerror="false" overwrite="true">
+	  	<fileset dir="${fixpack.source}" includes="**/*"/>
+		</copy>
+		
+		<delete file="${washome}/config/cells/${cellname}/LotusConnections-config/extern/proxy-ecm-config.tpl" />
+	</target>
+	
+	<target name="fixpack3011_updated_configuration_transfer" depends="init_fixpack_transfer" >
+		<property name="fixpack.source" value="${lchome}/fixpack.301.3011/backup" />
+		<property name="fixpack.build" value="${lchome}/fixpack.301.3011/build" />
+		<property name="fixpack.output" value="${lchome}/fixpack.301.3011/output" />
+		<property name="fixpack.work" value="${lchome}/fixpack.301.3011/work" />
+			
+	  <mkdir dir="${fixpack.work}" />
+	  <mkdir dir="${fixpack.source}" />
+	  <mkdir dir="${fixpack.build}" />
+	  <mkdir dir="${fixpack.output}" />
+	  
+	  <echo message="Prepare fixpack transfer data" />
+	  <unjar src="${lchome}/product/forum/forum/forum-install.jar" dest="${fixpack.work}/forum" />
+	  <unjar src="${lchome}/product/communities/communities/communities-install.jar" dest="${fixpack.work}/communities" />
+	  <unjar src="${lchome}/product/news/news/news.jar" dest="${fixpack.work}/news" />
+	  
+	<copy todir="${fixpack.source}/forum/" overwrite="true" failonerror="false">
+		<fileset dir="${washome}/config/cells/${cellname}/LotusConnections-config/"
+			includes="forum-config.xml,forum-config.xsd">
+		</fileset>
+	</copy>
+	<copy todir="${fixpack.source}/communities/" overwrite="true" failonerror="false">
+		<fileset dir="${washome}/config/cells/${cellname}/LotusConnections-config/"
+			includes="widgets-config.xsd">
+		</fileset>
+	</copy>
+	<copy todir="${fixpack.source}/news/" overwrite="true" failonerror="false">
+		<fileset dir="${washome}/config/cells/${cellname}/LotusConnections-config/news/email/aggregated/"
+			includes="util.ftl">
+		</fileset>
+	</copy>
+	<!-- update  LCC -->
+	<copy todir="${washome}/config/cells/${cellname}/LotusConnections-config/" overwrite="true" failonerror="false">
+		<fileset dir="${fixpack.work}/forum/properties"
+			includes="forum-config.xsd">
+		</fileset>
+	</copy>
+	<copy todir="${washome}/config/cells/${cellname}/LotusConnections-config/" overwrite="true" failonerror="false">
+		<fileset dir="${fixpack.work}/communities/properties"
+			includes="widgets-config.xsd">
+		</fileset>
+	</copy>	
+	<copy todir="${washome}/config/cells/${cellname}/LotusConnections-config/news/email/aggregated/" overwrite="true" failonerror="false">
+		<fileset dir="${fixpack.work}/news/news.config/news/email/aggregated"
+			includes="util.ftl">
+		</fileset>
+	</copy>
+
+	
+ 	<available file="${washome}/config/cells/${cellname}/LotusConnections-config/forum-config.xml" type="file" property="forum-present"/>		
+    <if>
+        <condition>
+            <equals arg1="${forum-present}" arg2="true"/>
+        </condition>
+    <then>
+	<echo message="forum-config.xml does exist, replace it" />
+	<replace
+		file="${washome}/config/cells/${cellname}/LotusConnections-config/forum-config.xml" >
+			<replacefilter token="enableNonMemberContributor=&quot;false&quot;" value="" />
+	</replace>
+ 	<replace
+		file="${washome}/config/cells/${cellname}/LotusConnections-config/forum-config.xml">
+			<replacefilter token="enableNonMemberContributor=&quot;true&quot;" value="" />
+	</replace>
+	<replace
+		file="${washome}/config/cells/${cellname}/LotusConnections-config/forum-config.xml">
+			<replacefilter token="deployment" value="deployment enableNonMemberContributor=&quot;false&quot;" />
+	</replace>
+    </then>
+    </if>
+ 	    	        		
+	<echo message="Done update LotusConnections-config"/>	 
+    
+	<echo message="Backup version data" />
+	<copy todir="${fixpack.source}/version/backup" overwrite="true" failonerror="false">
+		<fileset dir="${lchome}/version/backup"> </fileset>
+	</copy>
+	<delete failonerror="false">
+			<fileset dir="${lchome}/version/backup">
+					<include name="*.*"/>
+			</fileset>
+	</delete>
+	<copy todir="${fixpack.source}/version/history" overwrite="true" failonerror="false">
+		<fileset dir="${lchome}/version/history"> </fileset>
+	</copy>
+	<delete failonerror="false">
+			<fileset dir="${lchome}/version/history">
+					<include name="*.*"/>
+			</fileset>
+	</delete>
+	<copy todir="${fixpack.source}/version/" overwrite="true" failonerror="false">
+		<fileset dir="${lchome}/version/"
+		  includes="*.efix">
+		</fileset>
+	</copy>
+	<delete failonerror="false">
+			<fileset dir="${lchome}/version">
+					<include name="*.efix"/>
+			</fileset>
+	</delete>
+	
+	<antcall target="fixpack3011-action-copy-stellent" />	
+	
+	<echo message="Done backup version data" />
+	
+	</target>
+	<target name="fixpack3011-action-copy-stellent">
+	<taskdef name="ostypegetter" classname="com.ibm.lconn.ant.task.OSTypeGetter" classpath="${EngineInstallLocation_FullPath}/lib/lc_migration.jar}" />
+	<ostypegetter nameProperty="ostype"/>
+	<echo message="OS.Type: ${ostype}"/>
+     <ostypegetter bitProperty="osbit"/>
+	 <echo message="OS.Bit: ${osbit}"/>
+
+	<echo message="Update Stellent"/>	
+	<if>
+		<condition><equals arg1="${ostype}" arg2="windows"/></condition>
+		<then>
+		    <echo message="Copy on Windows"/>
+			<antcall target="fixpack3011-action-copy-CopyOnWindows" />
+		</then>
+		<else>
+		   <echo message="Copy on Unxi}"/> 
+			<antcall target="fixpack3011-action-copy-CopyOnUnix" />
+		</else>			
+     </if>		
+	
+	</target>
+<target name="fixpack3011-action-copy-CopyOnUnix">
+	<if>
+		<condition><equals arg1="${ostype}" arg2="Linux"/></condition>
+		<then>
+		    <echo message="Copy on Linux"/>
+			<antcall target="fixpack3011-action-copy-CopyOnLinux" />
+		</then>
+		<else>
+		   <echo message="Copy on AIX"/> 
+			<antcall target="fixpack3011-action-copy-CopyOnAIX" />
+		</else>			
+     </if>
+	   		    	
+</target>
+<target name="fixpack3011-action-copy-CopyOnWindows">
+	<if>
+		<condition><equals arg1="${osbit}" arg2="32"/></condition>
+			<then>
+				 <copy todir="${search.StellentDirectory}/dcs" overwrite="true" failonerror="false">
+				  <fileset dir="${SearchHome}/../../../product/search/dcs/stellent/Windows_32" includes="**"/>
+				 </copy>
+			</then>
+			<else>
+				 <copy todir="${search.StellentDirectory}/dcs" overwrite="true" failonerror="false">
+				  <fileset dir="${SearchHome}/../../../product/search/dcs/stellent/Windows_64" includes="**"/>
+				 </copy>
+			</else>
+	</if>
+	<echo message="Done update."/>	    		    	
+</target>
+<target name="fixpack3011-action-copy-CopyOnLinux">
+	<if>
+		<condition><equals arg1="${osbit}" arg2="32"/></condition>
+			<then>
+				 <copy todir="${search.StellentDirectory}/dcs" overwrite="true" failonerror="false">
+				  <fileset dir="${SearchHome}/../../../product/search/dcs/stellent/Linux_32" includes="**"/>
+				 </copy>
+			</then>
+			<else>
+				 <copy todir="${search.StellentDirectory}/dcs" overwrite="true" failonerror="false">
+				  <fileset dir="${SearchHome}/../../../product/search/dcs/stellent/Linux_64" includes="**"/>
+				 </copy>
+			</else>
+	</if>
+	<chmod dir="${search.StellentDirectory}/dcs/oiexport" perm="a+x" includes="exporter"/>
+	<echo message="Done update."/>	 		    	
+</target>
+<target name="fixpack3011-action-copy-CopyOnAIX">
+	<if>
+		<condition><equals arg1="${osbit}" arg2="32"/></condition>
+			<then>
+				 <copy todir="${search.StellentDirectory}/dcs" overwrite="true" failonerror="false">
+				  <fileset dir="${SearchHome}/../../../product/search/dcs/stellent/AIX_32" includes="**"/>
+				 </copy>
+			</then>
+			<else>
+				 <copy todir="${search.StellentDirectory}/dcs" overwrite="true" failonerror="false">
+				  <fileset dir="${SearchHome}/../../../product/search/dcs/stellent/AIX_64" includes="**"/>
+				 </copy>
+			</else>
+	</if>
+	<chmod dir="${search.StellentDirectory}/dcs/oiexport" perm="a+x" includes="exporter"/>
+	<echo message="Done update."/>	   		    	
+</target>	
+	<target name="fixpack3011_rollback_configuration_transfer" depends="init_fixpack_transfer" >
+		<property name="fixpack.source" value="${lchome}/fixpack.301.3011/backup" />
+		<property name="fixpack.build" value="${lchome}/fixpack.301.3011/build" />
+		<property name="fixpack.output" value="${lchome}/fixpack.301.3011/output" />
+		<property name="fixpack.work" value="${lchome}/fixpack.301.3011/work" />
+		
+		<echo message="Prepare rollback fixpack transfer data" />
+	 	<!-- update  LCC -->
+		
+	<copy todir="${washome}/config/cells/${cellname}/LotusConnections-config/" overwrite="true" failonerror="false">
+		<fileset dir="${fixpack.source}/forum/"
+			includes="forum-config.xml,forum-config.xsd">
+		</fileset>
+	</copy>
+		
+    <copy todir="${washome}/config/cells/${cellname}/LotusConnections-config/" overwrite="true" failonerror="false">
+		<fileset dir="${fixpack.source}/communities/"
+			includes="widgets-config.xsd">
+		</fileset>
+	</copy>
+	
+    <copy todir="${washome}/config/cells/${cellname}/LotusConnections-config/news/email/aggregated/" overwrite="true" failonerror="false">
+		<fileset dir="${fixpack.source}/news/"
+			includes="util.ftl">
+		</fileset>
+	</copy>
+
+	</target>
+    <target name="fixpack301_updated_configuration_transfer" depends="init_fixpack_transfer" >
+		<property name="fixpack.source" value="${lchome}/fixpack.30.301/backup" />
+		<property name="fixpack.build" value="${lchome}/fixpack.30.301/build" />
+		<property name="fixpack.output" value="${lchome}/fixpack.30.301/output" />
+		<property name="fixpack.work" value="${lchome}/fixpack.30.301/work" />
+		
+		<echo message="Prepare fixpack transfer data" />
+		<mkdir dir="${fixpack.work}" />
+	  <mkdir dir="${fixpack.source}" />
+	  <mkdir dir="${fixpack.build}" />
+	  <mkdir dir="${fixpack.output}" />
+	  
+	  <!-- update config files -->
+	 
+	  <unjar src="${lchome}/product/activities/activities/activities-install.jar" dest="${fixpack.work}/activities" />
+	  <unjar src="${lchome}/product/activities/activities/activities.jar" dest="${fixpack.work}/activities" />
+	  <unjar src="${lchome}/product/blogs/blogs/blogs-install.jar" dest="${fixpack.work}/blogs" />
+	  <unjar src="${lchome}/product/communities/communities/communities-install.jar" dest="${fixpack.work}/communities" />
+	  <unjar src="${lchome}/product/dogear/dogear/dogear_install.jar" dest="${fixpack.work}/dogear" />
+	  <unjar src="${lchome}/product/files/files/files-install.jar" dest="${fixpack.work}/files" />
+	  <unjar src="${lchome}/product/forum/forum/forum-install.jar" dest="${fixpack.work}/forum" />
+	  <unjar src="${lchome}/product/homepage/homepage/homepage.jar" dest="${fixpack.work}/homepage" />
+	  <unjar src="${lchome}/product/mobile/mobile/mobile.jar" dest="${fixpack.work}/mobile" />
+	  <unjar src="${lchome}/product/profiles/profiles/profiles.jar" dest="${fixpack.work}/profiles" />
+	  <unjar src="${lchome}/product/search/search/search.jar" dest="${fixpack.work}/search" />
+	  <unjar src="${lchome}/product/wikis/wikis/wikis-install.jar" dest="${fixpack.work}/wikis" />
+	  <unjar src="${lchome}/product/news/news/news.jar" dest="${fixpack.work}/news" />
+	  <unjar src="${lchome}/product/moderation/moderation/moderation-install.jar" dest="${fixpack.work}/moderation" />
+
+	  <!-- source files -->
+	  <copy todir="${fixpack.source}" failonerror="false">
+	  	<fileset dir="${washome}/config/cells/${cellname}/LotusConnections-config" includes="service-location.xsd,widgets-config.*,dogear-config-cell.*,events-config.*,notification-config.*,contentreview-config.*,LotusConnections-config.*,proxy-config.tpl" />
+		</copy>
+	  
+	  <copy file="${fixpack.source}/proxy-config.tpl" tofile="${fixpack.source}/proxy-config.xml"/>
+	  
+	  <!-- build files -->
+	  <copy todir="${fixpack.build}" failonerror="false">
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="events-config-update-30-301.xsl" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="events-config.xml" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="notification-config-update-30-301.xsl" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="notification-config.xml" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="contentreview-config-update-30-301.xsl" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="contentreview-config.xml" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="LotusConnections-config-update-30-301.xsl" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="LotusConnections-config.xml" />
+	  		<fileset dir="${fixpack.work}/dogear" includes="dogear-config-cell-update-30-301.xsl" />
+	  		<fileset dir="${fixpack.work}/dogear" includes="dogear-config-cell.xml" />
+	  		<fileset dir="${fixpack.work}/blogs/properties" includes="widgets-config-update-30-301.xsl" />
+	  		<fileset dir="${fixpack.work}/blogs/properties" includes="widgets-config.xml" />
+			<fileset dir="${fixpack.work}/news/news.config" includes="proxy-config.tpl" />
+			<fileset dir="${fixpack.work}/news/news.config" includes="proxy-config-update-30-301.xsl" />
+	  </copy>
+
+		<copy file="${fixpack.work}/activities/properties/LotusConnections-config-30-update.txt"
+				tofile="${fixpack.build}/LotusConnections-config-30.txt"
+				failonerror="false" />
+	  
+	  <copy file="${fixpack.build}/proxy-config.tpl" tofile="${fixpack.build}/proxy-config.xml" />
+	  
+	  <echo message="start transfer" />
+		<MultiSourceHandler 
+			startVersion="30" 
+			toVersion="301"
+			sourceFolder="${fixpack.source}" 
+			buildFolder="${fixpack.build}" 
+			todir="${fixpack.output}"
+			versionPath="30,301" />
+		
+		<!-- copy output -->
+	  <copy todir="${fixpack.output}" failonerror="false">
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="events-config.xsd" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="notification-config.xsd" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="contentreview-config.xsd" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="LotusConnections-config.xsd" />
+	  		<fileset dir="${fixpack.work}/dogear" includes="dogear-config-cell.xsd" />
+	  		<fileset dir="${fixpack.work}/blogs/properties" includes="widgets-config.xsd" />
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="proxy-ecm-config.tpl"/>
+	  		<fileset dir="${fixpack.work}/news/news.config" includes="service-location.xsd"/>
+			<fileset dir="${fixpack.work}/activities/properties" includes="uiextensions-config.xml"/>
+			<fileset dir="${fixpack.work}/activities/properties" includes="oa-config.xsd"/>
+	  </copy>
+	  
+	  <move file="${fixpack.output}/proxy-config.xml" tofile="${fixpack.output}/proxy-config.tpl"/>
+	  
+	  <delete file="${fixpack.source}/proxy-config.xml" failonerror="false"/>
+	  <delete file="${fixpack.build}/proxy-config.xml" failonerror="false"/>
+	  
+		<!-- output files -->
+	  <copy todir="${washome}/config/cells/${cellname}/LotusConnections-config" failonerror="false" overwrite="true">
+	  	<fileset dir="${fixpack.output}" includes="**/*" excludes="*transformed.xml" />
+		</copy>
+		
+	  <mkdir dir="extern"/>
+	  <move file="${washome}/config/cells/${cellname}/LotusConnections-config/proxy-ecm-config.tpl" tofile="${washome}/config/cells/${cellname}/LotusConnections-config/extern/proxy-ecm-config.tpl" />
+		
+        <copy todir="${washome}/config/bin_lc_admin" filtering="true" overwrite="true"> 
+            <fileset dir="${fixpack.work}/files/properties">
+            	<include name="MediaPhoto.xml" />
+            	<include name="MediaVideo.xml" />
+            </fileset>
+        </copy>
+		
+		<antcall target="replace_search_config_xml"/>
+	</target>
+	
+	<target name="replace_search_config_xml">
+	    <echo message="${washome}/config/cells/${cellname}/LotusConnections-config" />
+		<replace dir="${washome}/config/cells/${cellname}/LotusConnections-config" summary="true" token='config id=&quot;searchConfig&quot; version=&quot;3.0' value='config id=&quot;searchConfig&quot; version=&quot;10'>
+        	<include name="search-config.xml"/>
+   	    </replace> 
+	</target>
+</project>

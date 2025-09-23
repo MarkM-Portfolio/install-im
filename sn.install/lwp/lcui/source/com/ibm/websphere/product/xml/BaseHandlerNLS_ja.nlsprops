@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: DTD ディレクトリー {0} を使用して文書 {1} をロード中に例外が発生しました
+WVER0101E.explanation=表示された例外により、指定した文書のロードに失敗しました。
+WVER0101E.useraction=特定のユーザー・アクションは、発生した例外に依存しています。  特に、指定したファイルが使用可能であり、適切なフォーマットであることを確認してください。 追加情報については、サポートにお問い合わせください。
+
+# 
+WVER0102E=WVER0102E: DTD ディレクトリー {0} を使用して文書 {1} をロード中に例外が発生しました。 {2} のシステム ID と {3} の公開 ID が設定されました。  行番号 {4} および列番号 {5} でエラーが発生しました
+WVER0102E.explanation=表示された例外により、指定した文書のロードに失敗しました。
+WVER0102E.useraction=特定のユーザー・アクションは、発生した例外に依存しています。  特に、指定したファイルが使用可能であり、適切なフォーマットであることを確認してください。 追加情報については、サポートにお問い合わせください。
+
+# 
+WVER0104E=WVER0104E: タイプ {0} のルート文書エレメントを作成中に例外が発生しました
+WVER0104E.explanation=ルート文書エレメントの作成中に、表示された例外が発生しました。
+WVER0104E.useraction=特定のユーザー・アクションは、発生した例外に依存しています。  ほとんどの場合、XML パーサーの構成は無効です。  Java システム・プロパティーが無効のパーサー構成を作成しないことを確認してください。  追加情報については、サポートにお問い合わせください。
+
+# 
+WVER0105E=WVER0105E: XML モデル・オブジェクト (タイプ {0}) を作成中に例外が発生しました
+WVER0105E.explanation=XML モデル・オブジェクトを作成しようとして、表示された例外が発生しました。
+WVER0105E.useraction=特定のユーザー・アクションは、発生した例外に依存しています。  ほとんどの場合、表示されたタイプは、セット・クラス・パスに従って使用可能ではありません。  追加情報については、サポートにお問い合わせください。
+
+# 
+WVER0106E=WVER0106E: シンプル・タイプ {0} を持つオブジェクトに、エレメントを配置しようとしました
+WVER0106E.explanation=これは内部エラーです。
+WVER0106E.useraction=追加情報については、サポートにお問い合せください。
+
+# 
+WVER0107E=WVER0107E: ファイル {0} にバージョン情報を書き込もうとして例外が発生しました
+WVER0107E.explanation=指定されたファイルに書き込もうとして、表示された例外が発生しました。
+WVER0107E.useraction=特定のユーザー・アクションは、発生した例外に依存しています。  特に、表示されたファイルが書き込み可能であること、表示されたファイル用に十分なスペースが使用可能であることを確認してください。
+
+# 
+WVER0108E=WVER0108E: 公開 ID {0}、システム ID {1}、およびマップ・ファイル名 {2} でエンティティー解決を実行中に例外が発生しました
+WVER0108E.explanation=製品情報を構文解析する際の、DTD 情報の解決中に、表示された例外が発生しました。  表示された DTD は解決できませんでした。
+WVER0108E.useraction=特定のユーザー・アクションは、発生した例外に依存しています。
+
+# 
+WVER0201E=WVER0201E: タイプ ''{1}'' のエレメント内で属性 ''{0}'' が欠落しています
+WVER0201E.explanation=示された属性は、指定されたエレメントのタイプの有効な属性ではありません。
+WVER0201E.useraction=XML ファイルを正しい属性情報に更新します。
+
+#
+WVER0202E=WVER0202E: エレメント構造が不平衡です: 追加のエレメント格納装置。
+WVER0202E.explanation=製品情報が含まれる XML ファイルのエレメント構造に欠陥があります。
+WVER0202E.useraction=XML ファイルを正しいエレメント構造に更新します。
+
+#
+WVER0203E=WVER0203E: エレメント構造が不平衡です: エレメント格納装置の欠落。
+WVER0203E.explanation=製品情報が含まれる XML ファイルのエレメント構造に欠陥があります。
+WVER0203E.useraction=XML ファイルを正しいエレメント構造に更新します。
+
+#
+WVER0204E=WVER0204E: エレメント ''{0}'' はルート・エレメントとして有効ではありません。
+WVER0204E.explanation=製品情報が含まれる XML ファイルのエレメント構造に欠陥があります。
+WVER0204E.useraction=XML ファイルを正しいエレメント構造に更新します。
+
+#
+WVER0205E=WVER0205E: エレメント ''{0}'' がエレメント ''{1}'' 内で有効ではありません
+WVER0205E.explanation=製品情報が含まれる XML ファイルのエレメント構造に欠陥があります。
+WVER0205E.useraction=XML ファイルを正しいエレメント構造に更新します。
+
+#
+WVER0206E=WVER0206E: エレメント ''{1}'' 内でエレメント ''{0}'' をクローズしようとしています
+WVER0206E.explanation=製品情報が含まれる XML ファイルのエレメント構造に欠陥があります。
+WVER0206E.useraction=XML ファイルを正しいエレメント構造に更新します。

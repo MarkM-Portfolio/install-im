@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-tw" xml:lang="zh-tw">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="&copy; Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="&copy; Copyright IBM Corporation 2006" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="標準 Express 啟動程式範本的提示和要訣" />
+<meta name="abstract" content="「標準 Express 啟動程式範本」提供您建立設定啟動程式的起點，讓您可以搭配 Express 品牌產品一起使用。" />
+<meta name="description" content="「標準 Express 啟動程式範本」提供您建立設定啟動程式的起點，讓您可以搭配 Express 品牌產品一起使用。" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="zh-tw" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>Express 啟動程式範本的提示和要訣</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">標準 Express 啟動程式範本的提示和要訣</h1>
+<div><p>「標準 Express 啟動程式範本」提供您建立設定啟動程式的起點，讓您可以搭配 Express 品牌產品一起使用。</p>
+<p> 這個範本中的程式碼，可讓您用來啟動產品的安裝程式、顯示說明文件以及提供本地化的內容。</p>
+<p>「標準 Express 啟動程式範本」的注意事項：</p>
+<ul><li>launchpadContent/global.properties 中定義所有使用的指令和程式。</li>
+<li>「磁碟佈置」頁面的 DISK1 包含範例應用程式。若要新增自訂安裝程式或應用程式，請在 launchpadContent\global.properties 中定義應用程式（請遵循範例應用程式的範例）。請使用在磁碟佈置標籤中找到的控制項，
+將應用程式匯入到專案中的適當磁碟。</li>
+<li>所有 HTML 檔都使用 launchpadContent 目錄中的同一個樣式表 (content.css)。</li>
+</ul>
+<p>「標準 Express 啟動程式範本」包含下列頁面：</p>
+<ul><li><strong>歡迎使用</strong> - 歡迎使用頁面通常會提供產品概觀以及啟動程式的功能說明。歡迎使用頁面應該要簡單扼要，但要讓使用者可以選擇尋找產品的相關資訊（透過提供在新瀏覽器視窗中顯示的產品網站鏈結）。歡迎使用頁面包含可在瀏覽器中開啟外部網站的程式碼。請使用 <samp class="codeph">viewPage()</samp> 函數來顯示新視窗，
+而不要使用 JavaScript 的 <samp class="codeph">window.open()</samp>，因為 <samp class="codeph">window.open() </samp>
+很可能會被蹦現阻斷程式所阻斷。</li>
+<li><strong>版本資訊</strong> - 版本資訊頁面通常會提供產品某一特定版本的專屬資訊。例如，安裝注意事項、必備項目的變更、版本提供的主要功能或修正程式，以及類似的內容，都很適合放在版本資訊頁面中。版本資訊頁面包含用來檢視 PDF 及執行應用程式的程式碼。</li>
+<li><strong>必備項目資訊</strong> - 必備項目頁面通常會提供一個控制項，可用來執行必備項目驗證程式，以判斷系統必備項目是否存在電腦上，並傳回未偵測到的任何必備項目的清單。必備項目資訊頁面包含用來檢視 PDF 及執行應用程式的程式碼。</li>
+<li><strong>安裝實務</strong> - 安裝實務內容通常會提供各種產品安裝方法，以供使用者選擇。使用者可以根據想要使用產品的方式來選擇特定的安裝實務。此內容會說明使用者可選擇的各種安裝實務之間的差異，並提供相關資訊來說明使用者為何要選擇某一種安裝實務，而不選擇其他任何安裝實務。並非每一項產品都會提供安裝實務。如果您正為這類產品自訂「標準 Express 啟動程式範本」，則可以從導覽中移除此區段。安裝實務頁面包含可搭配引數來執行自訂程式的程式碼。</li>
+<li><strong>移轉資訊</strong> - 移轉內容通常會說明使用者必須採取的移轉路徑，以將舊版產品升級為較新版本。如果移轉資訊與特定產品不相關，則應該從導覽中移除此內容。移轉資訊頁面包含用來檢視 PDF 及執行應用程式的程式碼。</li>
+<li><strong>安裝</strong> - 產品安裝頁面通常會提供一個控制項來起始產品安裝。您可以將多個產品安裝頁面新增至設定啟動程式，以支援多個產品的安裝。安裝頁面的特性包含有用來啟動產品安裝的程式碼。</li>
+<li><strong>結束</strong> - 導覽功能表上的結束鏈結可結束啟動程式。</li>
+</ul>
+</div>
+</body>
+</html>

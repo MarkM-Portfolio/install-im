@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="com.ibm.cic.agent.ui.commonCustomPanels">
+      <commonPanel
+            textClass="com.ibm.connections.install.ConsoleWasPanel"
+            class="com.ibm.connections.install.WasPanel"
+            id="com.ibm.connections.install.WasPanel">
+         <wizardType
+               type="INSTALL">
+         </wizardType>
+         <wizardType
+               type="MODIFY">
+         </wizardType>
+         <wizardType
+               type="UPDATE">
+         </wizardType>
+         <wizardType
+               type="UNINSTALL">
+         </wizardType>
+         <wizardType
+               type="ROLLBACK">
+         </wizardType>
+      </commonPanel>
+      <commonPanel
+            class="com.ibm.connections.install.findIMJob"
+            id="com.ibm.connections.install.commonPanel1"
+            textClass="com.ibm.connections.install.findIMJobConsole">
+         <wizardType
+               type="INSTALL">
+         </wizardType>
+         <wizardType
+               type="MODIFY">
+         </wizardType>
+         <wizardType
+               type="UPDATE">
+         </wizardType>
+         <wizardType
+               type="UNINSTALL">
+         </wizardType>
+         <wizardType
+               type="ROLLBACK">
+         </wizardType>
+      </commonPanel>
+   </extension>
+
+</plugin>

@@ -1,0 +1,182 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Falha na instalação da correção: Ocorreu uma exceção ao atualizar o histórico de evento armazenado em {0}
+WUPD0200E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação. 
+WUPD0200E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0201E=WUPD0201E: Falha na instalação da correção: Ocorreu uma exceção ao abrir o arquivo de registro {0}
+WUPD0201E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação. 
+WUPD0201E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0211E=WUPD0211E: Falha na instalação da correção: Ocorreu uma exceção ao recuperar informações sobre componentes incluídos na última atualização
+WUPD0211E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação. 
+WUPD0211E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0212E=WUPD0212E: Falha na instalação da correção: O componente {0} está listado como parte desta atualização, mas nenhuma imagem de atualização de componente está disponível.
+WUPD0212E.explanation=A parte da correção que é utilizada para atualizar o componente denominado não está disponível.
+WUPD0212E.useraction=Este problema indica um erro interno. Entre em contato com o IBM Support para obter informações adicionais.
+
+WUPD0214E=WUPD0214E: Falha na instalação da correção: Ocorreu uma exceção ao gravar o aplicativo da correção {0} a partir do arquivo JAR de correção {1}
+WUPD0214E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação. 
+WUPD0214E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0215E=WUPD0215E: Falha na instalação da correção: Falha na instalação do componente {0}.
+WUPD0215E.explanation=Consulte o log de instalação e o arquivo de histórico de evento para obter detalhes adicionais.
+WUPD0215E.useraction=Consulte o log de instalação e o arquivo de histórico de evento para obter detalhes adicionais.
+
+WUPD0216E=WUPD0216E: Falha na instalação da correção: Ocorreu uma exceção ao marcar o aplicativo da correção {0} no componente {1}
+WUPD0216E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação. 
+WUPD0216E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+
+WUPD0220E=WUPD0220E: Falha na desinstalação da correção: O arquivo da correção {0} não está presente.
+WUPD0220E.explanation=Está se tentando remover uma correção que não está marcada como instalada.
+WUPD0220E.useraction=Este problema indica um erro interno. Não se deve fazer nenhuma tentativa para remover uma correção que não esteja instalada.
+
+WUPD0221E=WUPD0221E: Falha na desinstalação da correção: Não foi possível ler o arquivo da correção {0}.
+WUPD0221E.explanation=Não foi possível ler o arquivo da correção denominada. A operação de desinstalação foi interrompida.
+WUPD0221E.useraction=Verifique se o arquivo que contém a correção denominada é válido.
+
+WUPD0222E=WUPD0222E: Falha na desinstalação da correção: Ocorreu uma exceção ao eliminar o aplicativo da correção {0}
+WUPD0222E.explanation=Ocorreu uma exceção durante a desinstalação, provocando a falha na desinstalação. 
+WUPD0222E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0223E=WUPD0223E: Falha na desinstalação da correção: Não foi possível desinstalar a atualização do componente {1} para a correção {0}.
+WUPD0223E.explanation=Foi feita uma atualização no componente denominado como uma parte da correção denominada. Não foi possível remover a atualização do componente.
+WUPD0223E.useraction=Este problema indica um erro interno. Entre em contato com o IBM Support para obter informações adicionais.
+
+WUPD0224E=WUPD0224E: Falha na desinstalação da correção: Ocorreu uma exceção ao eliminar o aplicativo da correção {0} do componente {1}
+WUPD0224E.explanation=Ocorreu uma exceção durante a desinstalação da correção, provocando a falha na desinstalação. 
+WUPD0224E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0232E=WUPD0232E: Falha na atualização da correção: Ocorreu uma exceção ao recuperar o conteúdo da correção {0}, componente {1}, arquivo JAR de correção {2}, entrada {3}
+WUPD0232E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação. 
+WUPD0232E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0233E=WUPD0233E: Falha na atualização da correção: Ocorreu uma exceção ao pré-processar o conteúdo da correção {0}, componente {1}
+WUPD0233E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação.
+WUPD0233E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0234E=WUPD0234E: Falha na atualização da correção: Ocorreu uma exceção ao processar o conteúdo da correção {0}, componente {1}
+WUPD0234E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação.
+WUPD0234E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0235E=WUPD0235E: Falha na atualização da correção: O processamento da correção {0}, componente {1}, falhou.  Consulte o arquivo de registro {2} para obter detalhes do processamento.
+WUPD0235E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação.
+WUPD0235E.useraction=Revise as informações de processamento no arquivo de registro listado.
+
+WUPD0236E=WUPD0236E: Falha na atualização da correção: Exceção ao preparar diretórios de backup e de registro
+WUPD0236E.explanation=Ocorreu uma exceção durante a instalação da correção, provocando a falha na instalação.
+WUPD0236E.useraction=Consulte a exceção listada para obter detalhes adicionais.
+
+WUPD0237E=WUPD0237E: Falha na remoção da correção: Ocorreu uma exceção ao pré-processar o conteúdo da correção {0}, componente {1}
+WUPD0237E.explanation=Ocorreu uma exceção durante a desinstalação da correção, provocando a falha na desinstalação.
+WUPD0237E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0238E=WUPD0238E: Falha na remoção da correção: Ocorreu uma exceção ao processar o conteúdo da correção {0}, componente {1}
+WUPD0238E.explanation=Ocorreu uma exceção durante a desinstalação da correção, provocando a falha na desinstalação.
+WUPD0238E.useraction=Consulte a exceção para obter detalhes adicionais.
+
+WUPD0239E=WUPD0239E: Falha na remoção da correção: O processamento da correção {0}, componente {1}, falhou.  Consulte o arquivo de registro {2} para obter detalhes do processamento.
+WUPD0239E.explanation=Ocorreu uma exceção durante a desinstalação da correção, provocando a falha na desinstalação.
+WUPD0239E.useraction=Consulte o arquivo de registro para obter detalhes adicionais. 
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} de {1}) Instalando a correção {2}.
+prefix.efix.revert   =({0} de {1}) Revertendo a instalação da correção {2}.
+prefix.efix.uninstall=({0} de {1}) Desinstalando a correção {2}.
+
+#NOTAMSG
+prepare.update.install  =preparando para a instalação
+prepare.update.uninstall=preparando para a desinstalação
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =instalando o componente {0} de {1}
+component.update.uninstall=desinstalando o componente {0} de {1}
+
+#NOTAMSG
+complete.update.install  =concluindo a instalação
+complete.update.uninstall=concluindo a desinstalação
+
+#NOTAMSG
+result.cancelled.install=Instalação cancelada
+result.succeeded.install=Instalação com êxito
+result.failed.install=Falha na instalação
+
+result.cancelled.uninstall=Desinstalação cancelada
+result.succeeded.uninstall=Desinstalação com êxito
+result.failed.uninstall=Falha na desinstalação

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+mv /home/oracle/.*_history /$TMP_DIR
+res0=`echo $ORACLE_BASE`
+res1=`echo $ORACLE_HOME`
+res2=`echo $res1 | grep db_1 | cut -d ':' -f1`
+res3=`echo $res0 | cut -d ':' -f1`
+if [ $res2 ]; then
+        if [ $res3 ]; then
+
+                var=`echo $res0 | cut -d ':' -f2`
+                var3=`echo $var | cut -d ' ' -f1`
+                if [ "$var3" = "export" ]; then
+                        echo $var > ora.sh
+                        `$var`
+                fi
+
+                var1=`echo $res1 | cut -d ':' -f2`
+                var4=`echo $var1 | cut -d ' ' -f1`
+
+                if [ "$var4" = "export" ]; then
+                        echo $var1 >> ora.sh
+                        `$var1`
+                fi
+                chmod +x ora.sh
+#               echo "Dir" `pwd`
+                . ./ora.sh
+                ver2=`$ORACLE_HOME/OPatch/opatch lsinventory | grep "Invoking" | awk '{print $3}' 2>/dev/null`
+                echo $ver2
+
+        fi
+else
+
+   echo "Unavailable"
+fi
+rm -f ora.sh
+#echo "11.1.0"
+mv /$TMP_DIR/.*_history /home/oracle/

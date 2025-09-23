@@ -1,0 +1,98 @@
+# ***************************************************************** 
+#                                                                   
+# IBM Licensed Material                                              
+#                                                                   
+# Copyright IBM Corp. 2007, 2016                                    
+#                                                                   
+# The source code for this program is not published or otherwise    
+# divested of its trade secrets, irrespective of what has been      
+# deposited with the U.S. Copyright Office.                         
+#                                                                   
+# ***************************************************************** 
+
+# 5724-S68                                                          
+set FileName "TransferLotusConfigFiles.jacl"
+set FlagDebug "True"
+
+set isPrimaryNode "@isPrimaryNode@"
+if {"true" != $isPrimaryNode} {set isPrimaryNode "false"}
+
+set CellName "@DMgrCellName@"
+set CellName [$AdminControl getCell]
+set NodeName "@NodeName@"
+set TransferType "@TransferType@"
+
+set sourceFilePath "@SourceFilePath@"
+set targetFilePath "@TargetFilePath@"
+set pathBeginFromConfig "@PathBeginFromConfig@"
+
+puts stdout " "
+puts stdout "isPrimaryNode          $isPrimaryNode"
+puts stdout "CellName               $CellName"
+puts stdout "NodeName               $NodeName"
+puts stdout " "
+
+puts stdout "sourceFilePath=${sourceFilePath}" 
+puts stdout "targetFilePath=${targetFilePath}"
+
+    if { $pathBeginFromConfig == "true" } {
+         set targetPath "$targetFilePath"
+    } else {
+         set targetPath "cells/$CellName/$targetFilePath"
+    }
+    
+    switch -exact -- $TransferType {
+	CREATE {
+           if {[$AdminConfig existsDocument $targetPath]} {
+               puts stdout "Config.object $targetPath already exists, no action taken"
+           } else {
+               if {[catch {set resultId [$AdminConfig createDocument $targetPath $sourceFilePath]} ReturnCode]} {  
+                   puts stdout "Config.object $targetPath could not be transfered: $ReturnCode"
+               }
+               puts stdout "resultId=${resultId}"
+               puts stdout "ReturnCode=${ReturnCode}"
+               $AdminConfig save
+               puts stdout "Config.object $targetPath create.success"
+           }
+	}
+	REPLACE {
+           set FileSpecSource $sourceFilePath
+           if {[$AdminConfig existsDocument $targetPath]} {
+               if {[catch {$AdminConfig deleteDocument $targetPath} ReturnCode]} {
+                   puts stdout "Replace URI $targetPath could not be deleted."
+               } else {
+                   puts stdout "Replace URI $targetPath deleted."
+               }
+           }
+           if {[file exists $FileSpecSource]} {
+                if {[$AdminConfig existsDocument $targetPath] == 0} {
+                    puts stdout "Create URI $targetPath"
+                    $AdminConfig createDocument $targetPath $FileSpecSource
+                }
+           } else {
+                puts stdout "Source file $FileSpecSource does not exist."
+           }
+        }
+	DELETE {
+           if {[$AdminConfig existsDocument $targetPath]} {
+               if {[catch {$AdminConfig deleteDocument $targetPath} ReturnCode]} {
+                   puts stdout "URI $targetPath could not be deleted."
+               } else {
+                   puts stdout "URI $targetPath deleted."
+               }
+           } else {
+                   puts stdout "Target file $targetPath does not exist."
+           }
+        }
+	default {
+	 #exit 1
+	}
+    }
+
+    if {$FlagDebug == "True"} {
+    	puts stdout " "
+        puts stdout "--------------------------------"
+    	puts stdout "---- End $FileName"
+    	puts stdout "--------------------------------"
+    }
+

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: 1.5.0 (IBM Corporation)
+Main-Class: com.ibm.connections.install.WasDetectAction
+Class-Path: .\lib\able.jar .\lib\ablerules.jar .\lib\antlr.jar .\lib\itkdepcheck.jar .\lib\jlog-2.2.1.jar .\lib\ras.jar .\lib\wp.config.jar .\lib\wp.depcheck.jar

@@ -1,0 +1,268 @@
+Uluslararas� Program Lisans S�zle�mesi
+
+B�l�m 1 - Genel Ko�ullar
+
+L�SANS ALAN TARAF, BU PROGRAMI Y�KLEYEREK, KURARAK, KOPYALAYARAK, "KABUL ED�YORUM" D��MES�N� TIKLATARAK YA DA BU PROGRAMI HERHANG� B�R BA�KA �EK�LDE KULLANARAK VEYA BU PROGRAMA ER��EREK, BU S�ZLE�MEN�N KO�ULLARINI KABUL ETM�� SAYILIR. BU KO�ULLARI, L�SANS ALAN TARAF ADINA KABUL ED�YORSANIZ, L�SANS ALAN TARAFIN S�Z KONUSU KO�ULLARA UYACA�INI TAAHH�T EDECEK TAM YETK�YE SAH�P OLDU�UNUZU BEYAN VE GARANT� EDERS�N�Z.BU KO�ULLARI KABUL ETM�YORSANIZ;
+
+- BU PROGRAMI Y�KLEMEY�N�Z, KURMAYINIZ, KOPYALAMAYINIZ, "KABUL ED�YORUM" D��MES�N� TIKLATMAYINIZ, KULLANMAYINIZ YA DA BU PROGRAMA ER��MEY�N�Z; VE
+
+- �DED���N�Z TUTARIN GER� �DENMES� ���N KULLANILMAMI� ORTAMI, BELGELER� VE YETK� BELGES�N� PROGRAMI ALDI�INIZ TARAFA DERHAL �ADE ED�N�Z. PROGRAMI Y�KLEYEREK ED�ND�YSEN�Z, PROGRAMIN T�M KOPYALARINI �MHA ED�N�Z.
+
+1. Tan�mlar
+
+"Yetkili Kullan�m" - Lisans Alan Taraf�n, Program� y�r�tmeye veya �al��t�rmaya yetkili oldu�u belirtilen seviye. Bu seviye, kullan�c� say�s�, milyon cinsinden hizmet birimi ("MSU"), ��lemci De�er Birimi ("PVU") veya IBM taraf�ndan belirlenen herhangi bir di�er kullan�m seviyesi esas al�narak �l��lebilir.
+
+"IBM" - International Business Machines Corporation veya ba�l� kurulu�lar�ndan biri.
+
+"Lisans Bilgileri" ("LI") - belirli bir Programa �zg� bilgileri ve ek ko�ullar� i�eren belge. Programlara ili�kin Lisans Bilgileri belgelerine �u Web adresinden ula��labilir: www.ibm.com/software/sla. Lisans Bilgileri (LI) belgesi ayn� zamanda, bir sistem komutu kullan�larak eri�ilen Program dizininde bulunabilir ya da Programla birlikte bir kitap��k bi�iminde g�nderilebilir.
+
+"Program" - orijinalleri ve onun t�m k�smi veya tam kopyalar� da dahil olmak �zere, a�a��dakiler anlam�ndad�r: 1) makine taraf�ndan okunabilir komutlar ve veriler, 2) bile�enler, dosyalar ve mod�ller, 3) i�itsel-g�rsel i�erik (�rne�in, g�r�nt�ler, metinler, kay�tlar ya da resimler) ve 4) ili�kili lisansl� malzemeler (�rne�in, anahtarlar ve belgeler).
+
+"Yetki Belgesi" ("PoE") - Lisans Alan Taraf�n Kullan�m Yetkisine sahip oldu�una ili�kin kan�t. Yetki Belgesi (PoE) ayn� zamanda, Lisans Alan Taraf�n, garantiden, varsa, gelecekteki g�ncelleme �cretlerinden ve olas� �zel olanaklar ya da promosyon olanaklar�ndan yararlanmaya hak kazand���n� da g�sterir. IBM, Lisans Alan Tarafa bir Yetki Belgesi (PoE) sa�lamazsa, �zerinde Program�n ad�n�n ve Yetkili Kullan�m d�zeyinin belirtilmesi ko�uluyla, Program�n al�nd��� taraf�n verdi�i (IBM ya da yetkili sat�c�s�) orijinal sat�� makbuzu ya da di�er sat�� kay�tlar� IBM taraf�ndan Yetki Belgesi olarak kabul edilebilir.
+
+"Garanti S�resi" - orijinal Lisans Alan Tarafa lisans�n verildi�i tarihten itibaren ge�erli olmak �zere bir (1) y�l.
+
+2. S�zle�menin Yap�s�
+
+Bu S�zle�me, B�l�m 1 - Genel Ko�ullar, B�l�m 2 - �lkeye �zg� Ko�ullar (e�er varsa) adl� b�l�mleri, Lisans Bilgileri belgesini ve Yetki Belgesini i�erir ve bu Program�n kullan�m�na ili�kin Lisans Alan Tarafla IBM aras�ndaki s�zle�menin tamam�n� olu�turur. Bu S�zle�me, Lisans Alan Taraf�n Program� kullanmas�yla ilgili olarak IBM ile aras�nda daha �nce ger�ekle�tirilen her t�rl� s�zl� ve yaz�l� ileti�imin yerine ge�er. B�l�m 2'de yer alan ko�ullar, B�l�m 1'de yer alan ko�ullar�n yerine ge�ebilir veya onlar� de�i�tirebilir. �ki B�l�m�n ko�ullar� aras�nda herhangi bir �eli�ki olmas� durumunda, Lisans Bilgileri belgesi her iki B�l�m�n ko�ullar�ndan daha �ncelikli olarak uygulan�r.
+
+3. Lisans Verilmesi
+
+Bu Program�n sahibi IBM ya da bir IBM sa�lay�c�s�d�r. Bu Program telif hakk�na tabidir ve lisanslan�r, sat�lmaz.
+
+IBM, Lisans Alan Tarafa, a�a��da belirtilen ko�ullarla 1) Program� Yetki Belgesinde belirtilen d�zeye kadar Yetkili olarak Kullanmas�, 2) bu t�r bir Yetkili Kullan�m� desteklemek i�in Program kopyalar�n� ��karmas� ve kurmas�, ve 3) bir yedekleme kopyas� ��karmas� i�in m�nhas�r olmayan bir lisans verir:
+
+a. Lisans Alan Taraf�n Program� yasalara uygun olarak edinmi� olmas� ve bu S�zle�mesinin ko�ullar�na uygun davranmas� gerekir;
+
+b. yedekleme kopyas�n�, yaln�zca yedeklenen Program �al��t�r�lamaz oldu�unda �al��t�rmas� gerekir;
+
+c. Lisans Alan Taraf�n t�m telif hakk� bildirimlerini ve m�lkiyete ili�kin di�er t�m a��klamalar� Program�n her kopyas�na veya k�smi kopyas�na kopyalayarak eklemesi gerekir;
+
+d. Lisans Alan Taraf, bu Program� kullanan herkesin (yerel olarak veya uzaktan eri�im ile), 1) bu Program� yaln�zca Lisans Alan Taraf ad�na kullanaca��n� ve 2) bu S�zle�menin ko�ullar�na uymas�n� sa�layaca��n� kabul etmi� say�l�r;
+
+e. Lisans Alan Taraf, 1) Program� bu S�zle�mede a��k�a izin verilenden ba�ka bir bi�imde kullanamaz, kopyalayamaz, de�i�tiremez ya da da��tamaz; 2) ge�erli yasalar�n s�zle�me ile de�i�tirilmesine olanak tan�mayarak a��k�a izin verdi�i durumlar d���nda, Program� ters d�zenleyemez, ters derleyemez veya ba�ka y�ntemlerle �evirisini yapamaz; 3) Program�n hi�bir bile�enini, dosyas�n�, mod�l�n�, sesli ve g�r�nt�l� i�eri�ini veya ili�kili lisansl� malzemeleri programdan ayr� olarak kullanamaz; veya 4) Program� alt lisanslayamaz, kiralayamaz ya da Program i�in finansal kiralama yapamaz; ve
+
+f. Lisans Alan Taraf, Program� Destekleyici Program (Supporting Program) olarak edinirse, bu Program� yaln�zca As�l Program� (Principal Program) desteklemek �zere ve As�l Program�n lisans�nda yer alan t�m s�n�rlamalara tabi olarak kullan�r. Lisans Alan Taraf, bu Program� As�l Program olarak edinirse, t�m Destekleyici Programlar� yaln�zca bu Program� desteklemek �zere ve bu S�zle�mede yer alan t�m s�n�rlamalara tabi olarak kullan�r. Bu "f" maddenin ama�lar� a��s�ndan, "Destekleyici Program", ba�ka bir IBM Program�n�n ("As�l Program") bir b�l�m�d�r ve As�l Program�n Lisans Bilgileri (LI) belgesinde Destekleyici Program olarak belirtilir. (Bir Destekleyici Program� herhangi bir s�n�rlamaya tabi olmadan kullanmak �zere destekleyici Program i�in ayr� bir Lisans almak i�in Lisans Alan Taraf�n, Destekleyici Program� edindi�i tarafa ba�vurmas� gerekir.)
+
+Bu lisans, Lisans Alan Taraf�n ��kard��� t�m Program kopyalar� i�in ge�erlidir.
+
+3.1 Ge�i� Ama�l� B�y�tmeler, G�ncellemeler, D�zeltmeler ve Yamalar
+
+3.1.1 Ge�i� Ama�l� B�y�tmeler
+
+Bu Program, bir Ge�i� Ama�l� B�y�tme Program�yla de�i�tirilirse, de�i�tirilen Program�n lisans� derhal sona erer.
+
+3.1.2 G�ncellemeler, D�zeltmeler ve Yamalar
+
+Programla ilgili olarak bir g�ncelleme, d�zeltme veya yama alan Lisans Alan Taraf, bu t�r g�ncelleme, d�zeltme veya yamalar�n Lisans Bilgileri belgelerinde belirtilen ve bu g�ncelleme, d�zeltme veya yamalar i�in ge�erli olan t�m ek veya farkl� ko�ullar� kabul eder. Herhangi bir ek veya farkl� ko�ul sa�lanmad�ysa, ilgili g�ncelleme, d�zeltme veya yama i�in yaln�zca bu S�zle�menin ko�ullar� ge�erli olur. Lisans Alan Taraf�n, elindeki Program Program�n herhangi bir g�ncellemesi ile de�i�tirildiyse, de�i�tirilen Program� kullanmaya derhal son verecektir.
+
+3.2 Sabit S�re Lisanslar�
+
+IBM, Program� sabit bir s�re i�in lisanslad�ysa, Lisans Alan Taraf ve IBM s�zkonusu sabit s�reyi yenilemeye karar vermedikleri s�rece, Lisans Alan Taraf�n lisans� bu sabit s�renin sonunda sona erer.
+
+3.3 S�re ve Sona Erdirme
+
+Bu S�zle�me sona erdirilinceye kadar ge�erlidir.
+
+IBM, Lisans Alan Taraf�n lisans�n� sona erdirebilir.
+
+Lisans, taraflardan herhangi biri taraf�ndan herhangi bir nedenle sona erdirildiyse, Lisans Alan Taraf derhal program� kullanmaya son verir ve Program�n kendisinde bulunan t�m kopyalar�n� imha eder. Nitelikleri gere�i S�zle�menin sona erdirilmesi ile sona ermeyen S�zle�me h�k�mleri yerine getirilinceye kadar y�r�rl�kte kal�r ve taraflar�n haleflerini ve devralanlar�n� ba�lar.
+
+4. �cretler
+
+�cretler, Yetki Belgesinde belirtilen, edinilen Yetkili Kullan�m d�zeyine ba�l�d�r. IBM, bu S�zle�menin ba�ka bir yerinde belirtilenler d���nda, muaccel olmu� ya da �denmi� �cretler i�in Lisans Alan Tarafa bir kredi vermez ya da geri �deme yapmaz.
+
+Yetkili Kullan�m d�zeyini art�rmak isteyen Lisans Alan Taraf, bu durumu �nceden IBM'e veya bir IBM yetkili sat�c�s�na bildirmeli ve ge�erli t�m �cretleri �demelidir.
+
+5. Vergiler
+
+Herhangi bir yetkili makam, Programla ilgili olarak, IBM'in net gelirine dayananlar hari� olmak �zere bir vergi, resim, har� veya ba�kaca mali y�k�n �denmesini zorunlu k�larsa, Lisans Alan Taraf, bu tutar� bir faturada belirtildi�i �ekilde �demeyi veya bunlardan muafsa, muaf oldu�una ili�kin belgeyi IBM'e sa�lamay� kabul eder. Lisans Alan Taraf, Programla ilgili olarak, Program� edindi�i tarihten sonraki t�m ki�isel m�lkiyet vergilerinden kendisi sorumlu olur. Orijinal Lisans Alan Taraf�n lisans ald��� �lkeye yap�lan ithalat nedeniyle veya orijinal Lisans Alan Taraf�n lisans ald��� �lkeden yap�lan ihracat veya devir ya da Program�n orijinal Lisans Alan Taraf�n lisans ald��� �lke d���nda kullan�m� veya Programa orijinal Lisans Alan Taraf�n lisans ald��� �lke d���ndan eri�ilmesi nedeniyle herhangi bir yetkili makam, bir �zel vergi, resim, har� veya ba�kaca mali y�k�n �denmesini zorunlu k�larsa, Lisans Alan Taraf s�zkonusu �zel vergi, resim, har� veya ba�kaca mali y�kleri �demekten sorumlu oldu�unu ve bunlar� �deyece�ini kabul eder.
+
+6. Para �adesi Garantisi
+
+Lisans Alan Taraf, herhangi bir nedenle Programdan memnun kalmazsa ve orijinal Lisans Alan Tarafsa, Program� ve Yetki Belgesini, Yetki Belgesinin kendisine g�nderildi�i tarihten itibaren otuz (30) g�n i�inde Program� edindi�i tarafa iade etmesi ko�uluyla, lisans� sona erdirebilir ve Program i�in �dedi�i �creti geri alabilir. Lisans, yenilemeye tabi olan bir sabit s�reli lisans ise, Lisans Alan Taraf, ancak ilk sabit s�renin ba�lamas�ndan sonraki otuz (30) g�n i�inde Program� ve Yetki Belgesini (PoE) iade ederse, Program i�in �dedi�i �creti geri alabilir. Lisans Alan Taraf, Program� bir yerden y�klediyse, paras�n�n iade edilmesine ili�kin y�nergeler i�in Program� edindi�i tarafla ba�lant� kurmal�d�r.
+
+7. Program�n Devri
+
+Lisans Alan Taraf, Program� ve t�m lisans haklar� ve y�k�ml�l�klerini, yaln�zca devralan taraf�n bu S�zle�menin ko�ullar�n� kabul etmesi ko�uluyla ba�ka bir tarafa devredebilir. Lisans, taraflardan herhangi biri taraf�ndan herhangi bir nedenle sona erdirildiyse, Lisans Alan Taraf�n Program� ���nc� bir tarafa devretmesi yasakt�r. Lisans Alan Taraf, 1) Program�n veya 2) Programa ili�kin Yetkili Kullan�m�n�n bir k�sm�n� devredemez. Lisans Alan Taraf Program� devrederse, Lisans Bilgileri belgesi ve Yetki Belgesi de dahil olmak �zere, bu S�zle�menin bas�l� bir kopyas�n� da devretmelidir. Devir i�lemi tamamland�ktan hemen sonra, Lisans Alan Taraf�n lisans� sona erer.
+
+8. Garanti ve Hari� Tutmalar
+
+8.1 S�n�rl� Garanti
+
+IBM, tan�mlanm�� i�letim ortam�nda kullan�ld���nda, Program�n belirtimlerine uygun �ekilde �al��aca��n� garanti eder. Program�n belirtimleri ve tan�mlanm�� i�letim ortam� bilgileri Programla birlikte g�nderilen (READ-ME dosyas� gibi) belgelerde veya IBM taraf�ndan yay�nlanan (duyuru mektubu gibi) di�er bilgilerde bulunabilir. Yerel yasalar�n, s�zle�me ile de�i�tirilmesine veya s�n�rland�r�lmas�na olanak tan�mayarak aksini belirtti�i durumlar d���nda, Lisans Alan Taraf, bu t�r belgelerin ve di�er Programa ili�kin i�eri�in yaln�zca �ngilizce olarak sa�lanabilece�ini kabul eder.
+
+Garanti, Program�n yaln�zca de�i�tirilmemi� k�s�mlar� i�in ge�erlidir. IBM Program�n kesintisiz ya da hatas�z �al��aca��n� ya da IBM'in Programda olusan t�m hatalar� d�zeltece�ini garanti etmez. Bu Program�n kullan�m� sonucunda elde edilen sonu�lardan Lisans Alan Taraf sorumlu olur.
+
+Garanti S�resi Boyunca IBM, Lisans Alan Taraf�n, bilinen Program hatalar�, hata d�zeltmeleri, s�n�rlamalar ve sorun atlatma gibi konularda bilgiler i�eren IBM veritabanlar�na ek �cret �demeden eri�mesini sa�lar. Daha fazla bilgi edinmek i�in a�a��da adresi verilen IBM Software Support Handbook (IBM Yaz�l�m Deste�i Elkitab�) adl� belgeye bak�n�z: www.ibm.com/software/support.
+
+E�er Program, Garanti S�resi i�inde garanti edildi�i gibi �al��mazsa ve sorun IBM'in veritaban�nda bulunan bilgilerle ��z�lemezse, Lisans Alan Taraf Program� ve Yetki Belgesini, Program� edindi�iniz tarafa (IBM ya da yetkili sat�c�s�na) iade edebilir ve program i�in �demi� oldu�u �creti geri alabilir. Program� iade ettikten sonra, Lisans Alan Taraf�n lisans� sona erer. Lisans Alan Taraf, Program� bir yerden y�klediyse, paras�n�n iade edilmesine ili�kin y�nergeler i�in Program� edindi�i tarafla ba�lant� kurmal�d�r.
+
+8.2 Hari� Tutma
+
+BU GARANT�LER L�SANS ALAN TARAFA M�NHASIR GARANT�LER OLUP T�CAR�L��E, YETERL� KAL�TEYE VE BEL�RL� B�R AMACA UYGUNLU�A VE M�LK�YETE DA�R ZIMN� GARANT� VEYA KO�ULLAR �LE HAK �HLAL� YAPILMAYACA�INA DA�R GARANT� VEYA KO�ULLAR DA DAH�L OLMAK, ANCAK T�M� BUNLARLA SINIRLI OLMAMAK �ZERE, A�IK VEYA ZIMN�, D��ER T�M GARANT� VEYA KO�ULLARIN YER�NE GE�ER. BAZI �LKELER YA DA HUKUK D�ZENLER�, A�IK YA DA ZIMN� GARANT�LER�N HAR�� TUTULMASINA �Z�N VERMEZ, BU DURUMDA YUKARIDA HAR�� TUTULAN GARANT�LER L�SANS ALAN TARAF ���N GE�ERL� OLMAYAB�L�R. B�YLE B�R DURUMDA, BU T�R GARANT�LER GARANT� S�RES�YLE SINIRLIDIR. BU S�RE DOLDUKTAN SONRA H��B�R GARANT� GE�ERL� DE��LD�R. BAZI �LKELER YA DA HUKUK D�ZENLER�, ZIMN� B�R GARANT�N�N NE KADAR S�RECE��NE �L��K�N SINIRLAMALARA �Z�N VERMEZ, BU DURUMDA YUKARIDAK� SINIRLAMALAR L�SANS ALAN TARAF ���N GE�ERL� OLMAYAB�L�R.
+
+BU GARANT�LER, L�SANS ALAN TARAFA BEL�RL� YASAL HAKLAR KAZANDIRIR. L�SANS ALAN TARAF, AYNI ZAMANDA �LKELERE YA DA HUKUK D�ZENLER�NE G�RE DE���EN BA�KA HAKLARA DA SAH�P OLAB�L�R.
+
+(GARANT�LER VE HAR�� TUTMA) BA�LIKLI BU 8. B�L�MDE YER ALAN GARANT�LER, YALNIZCA IBM TARAFINDAN SA�LANIR. ANCAK 8.2 NUMARALI (HAR�� TUTMA) BA�LIKLI BU ALTB�L�MDE YER ALAN SORUMLULU�UN REDD� �LE �LG�L� H�K�MLER, IBM'�N ���NC� K��� KODU SA�LAYICILARI ���N DE GE�ERL�D�R. BU SA�LAYICILAR, BU T�R B�R KODU H��B�R GARANT� VERMEKS�Z�N VEYA KO�UL �NE S�RMEKS�Z�N SA�LARLAR. BU PARAGRAF, IBM'�N ��BU S�ZLE�ME KAPSAMINDAK� GARANT� Y�K�ML�L�KLER�N� GE�ERS�Z KILMAZ.
+
+9. Lisans Alan Taraf�n Verileri ve Veritabanlar�
+
+IBM, Lisans Alan tarafa, bu Programla ilgili olarak ortaya ��kan bir sorunun nedenini belirlemesinde yard�mc� olmak i�in Lisans Alan Taraftan, 1) Lisans Alan Taraf�n sistemine uzaktan eri�mesi amac�yla IBM'e izin vermesini ya da 2) Lisans Alan Taraf�n bilgilerini veya sistem verilerini IBM'e g�ndermesini talep edebilir. Ancak, IBM'in i�bu S�zle�meyle �stlendi�i garanti y�k�ml�l�klerinin kapsam� d���nda kalan bir teknik deste�i Lisans Alan Tarafa sa�lamas� i�in IBM ile Lisans Alan Taraf aras�nda ayr� bir yaz�l� s�zle�menin imzalanmas� ve bu s�zle�meyle IBM'in Lisans Alan Tarafa bu t�r bir teknik deste�i vermeyi kabul etmi� olmas� gerekir. Aksi durumda, IBM Lisans Alan Tarafa bu t�r bir deste�i sa�lamakla y�k�ml� olmaz. Her durumda, IBM, �r�n ve hizmetlerini geli�tirmek amac�yla hata ve sorunlara ili�kin bilgileri kullan�r ve ilgili destek olanaklar�n�n sa�lanmas�na yard�mc� olur. IBM bu ama�la, (Lisans Alan Taraf�n yerle�ik oldu�u �lke d���ndaki bir veya birden �ok �lkede faaliyet g�sterenler de dahil olmak �zere) IBM t�zel ki�iliklerini ve alty�klenicilerini kullanabilir ve Lisans Alan taraf da bu �ekilde davranmas� i�in IBM'e yetki verir.
+
+Lisans Alan Taraf, 1) IBM'e sa�lad��� t�m verilerden ve t�m veritaban� i�eriklerinden, 2) (ki�isel olarak tan�mlanabilen veriler de dahil olmak �zere) verilere eri�ilmesi, verilerin g�venli�i, �ifrelenmesi, kullan�m� ve aktar�m�yla ilgili yordamlar�n ve denetimlerin se�imi ve uygulanmas�ndan ve 3) t�m veritabanlar�n�n ve depolanm�� olan t�m verilerin yedeklenmesinden ve kurtar�lmas�ndan sorumludur. Lisans Alan Taraf, hi�bir veriyi veya herhangi bir di�er bi�imdeki ki�isel olarak tan�mlanabilen hi�bir bilgiyi IBM'e g�ndermeyecek veya sa�lamayacakt�r ve IBM'e yanl��l�kla sa�lanan bu t�r t�m bilgilerle ya da ���nc� ki�i iddialar�ndan kaynaklananlar da dahil olmak �zere, bu t�rl� bilgilerin IBM taraf�ndan kaybedilmesiyle veya a��klanmas�yla ili�kili olarak IBM'in �demek zorunda kalabilece�i t�m makul masraflardan ve di�er tutarlardan Lisans Alan Taraf sorumlu olacakt�r.
+
+10. Sorumluluklar�n S�n�r�
+
+10 numaral� (Sorumluluklar�n S�n�r�) bu b�l�mde yer alan t�m s�n�rlamalar ve hari� tutmalar, ge�erli yasalar taraf�ndan s�zle�meyle de�i�tirilmesine olanak tan�nmayarak yasaklanmad��� s�rece, t�m�yle ge�erlidir.
+
+10.1 IBM'in Sorumlu Olabilece�i Maddeler
+
+IBM'in bir kusurundan veya sorumluluklar�n� yerine getirmemesinden kaynaklanan ve Lisans Alan Taraf�n zararlar�n� IBM'den talep etmeye hak kazand��� durumlar olabilir. Lisans Alan taraf�n, zarar�n� IBM'den talep etmesine olanak sa�layan yasal dayanak (S�zle�menin esasa ili�kin ihlali, ihmal, yanl�� beyan, di�er ahdi iddialar veya haks�z fiil iddialar� dahil olmak �zere) her ne olursa olsun, IBM'in her bir Programdan kaynaklanan veya her bir Programla ili�kili veya ba�ka bir �ekilde bu S�zle�meden kaynaklanan t�m iddialar kar��s�ndaki b�t�n sorumlulu�u a�a��da belirtilenlerin tutar�n� a�mayacakt�r: 1) �l�m dahil cismani zarar ile ta��nmaz ve ta��nabilir ki�isel mallara verilen zararlar; ve 2) Lisans Alan Taraf�n iddiaya konu olan Programa ili�kin �dedi�i �creti a�mamak ko�uluyla (e�er, Program sabit s�reli lisans �cretine tabiyse, en �ok on iki (12) ayl�k �crete kadar olmak ko�uluyla) herhangi di�er ger�ek do�rudan zararlar.
+
+Bu s�n�rlama, ayr�ca IBM'in Program geli�tiricileri ve sa�lay�c�lar� i�in de ge�erlidir. Bu tutar, IBM ve Programgeli�tiricilerinin ve sa�lay�c�lar�n�n toplu olarak sorumlu olduklar� azami tutard�r.
+
+10.2 IBM'in Sorumlu Olmad��� Maddeler
+
+OLASILIKLARI �NCEDEN B�LD�R�LM�� OLSA B�LE, IBM, IBM'�N PROGRAM GEL��T�R�C�LER� VEYA SA�LAYICILARI A�A�IDAK�LER�N H��B�R�NDEN H��B�R KO�UL ALTINDA SORUMLU OLMAZLAR:
+
+a. VER�LERDEK� KAYIP VEYA HASARDAN;
+
+b. �ZEL, ARIZ�, CEZA� VEYA DOLAYLI ZARARLARDAN VEYA SONU�TA ORTAYA �IKAN EKONOM�K ZARARLARDAN; VEYA
+
+c. KAR KAYBI, �� KAYBI, GEL�R KAYBI, �T�BAR KAYBI VEYA BEKLENEN TASARRUFUN KAYBINDAN.
+
+11. Uygunluk Do�rulamas�
+
+11 numaral� (Uygunluk Do�rulamas�) bu b�l�m�n ama�lar� a��s�ndan, "UPLS Program Ko�ullar�", 1) bu S�zle�me ve IBM taraf�ndan sa�lanan ge�erli de�i�iklik ve i�lem belgeleri, ve 2) yedekleme, alt kapasite fiyatland�rmas� ve ge�i� ile ilgili ilkeler de dahil olmak, ancak t�m� bunlarla s�n�rl� olmamak �zere, IBM Software Policy (IBM Yaz�l�m �lkesi) Web sitesinde bulunabilecek (www.ibm.com/softwarepolicies) IBM yaz�l�m ilkeleri anlam�na gelir.
+
+11 numaral� i�bu b�l�mde belirtilen haklar ve y�k�ml�l�kler, Program�n Lisans Alan Tarafa lisansland��� d�nem boyunca ve bu s�reyi takip eden iki (2) y�l boyunca, ge�erlili�ini s�rd�rmeye devam eder.
+
+11.1 Do�rulama S�reci
+
+Lisans Alan Taraf, t�m Programlar� kullan�m�n�n IBM'in hak kazanmaya ili�kin ge�erli t�m lisans ve fiyatland�rma ko�ullar� da dahil olmak, ancak t�m� bunlarla s�n�rl� olmamak kayd�yla, UPLS Program Ko�ullar�na uygun olup olmad���n�n belirlenmesi amac�yla IBM ve denet�ileri i�in, do�ru tutulmu� yaz�l� kay�tlar�, sistem ara�lar� ��kt�lar�n� ve di�er sistem bilgilerini yaratmay�, bunlar� saklamay� ve sa�lamay� kabul eder. 1) Yetkili Kullan�m�na ili�kin s�n�rlar� a�mad���n� ve 2) UPLS Program Ko�ullar�na uygun oldu�unu kan�tlamak Lisans Alan Taraf�n sorumlulu�udur.
+
+Makul bir s�re �nceden bildirerek, IBM, Lisans Alan Taraf�n Programlar� (herhangi bir ama�la) kulland��� t�m yerlerde ve t�m ortamlarda UPLS Program Ko�ullar�na uygun davran�p davranmad���n� do�rulayabilir. Bu t�r bir do�rulama i�lemi, Lisans Alan Taraf�n i�ine en az engel olacak �ekilde ve normal i� saatleri i�inde Lisans Alan Taraf�n tesislerinde yap�lacakt�r. IBM'in, bu t�r bir denet�iyle yaz�l� bir gizlilik s�zle�mesi yapm�� olmas� ko�uluyla, IBM bu t�r bir do�rulama i�leminde yard�mc� olacak ba��ms�z bir denet�i kullanabilir.
+
+11.2 Karar
+
+Bu t�r bir do�rulaman�n sonunda, Lisans Alan Taraf�n herhangi bir Program� Yetkili Kullan�m�n� a�acak �ekilde kulland���n�n ya da UPLS Program Ko�ullar�na uygun davranmad���n�n belirlenmesi durumunda, IBM, Lisans Alan Tarafa bu durumu yaz�l� olarak bildirecektir. Lisans Alan Taraf, do�rudan IBM'e IBM'in bir faturada belirtti�i 1) bu t�r yetkiyi a�an t�m kullan�mlara, 2) hangisi daha k�saysa, bu t�r yetkiyi a�an kullan�m s�resi veya iki y�l i�in verilen deste�e, ve 3) bu t�r bir do�rulaman�n sonucunda belirlenen t�m ek �cretlere ve di�er y�k�ml�l�klere ili�kin �cretleri derhal �demeyi kabul eder.
+
+12. ���nc� Ki�i Bildirimleri
+
+Bu Program, Lisans Alan Tarafa bu S�zle�me kapsam�nda ���nc� ki�i taraf�ndan de�il IBM taraf�ndan lisanslanan ���nc� ki�i kodunu i�erebilir. E�er varsa, ���nc� ki�i koduna ili�kin Bildirimler ("���nc� Ki�i Bildirimleri"), Programa yaln�zca Lisans Alan Tarafa bilgi vermek �zere eklenmi�tir. Bu bildirimler, Program�n NOTICES dosyas�nda/dosyalar�nda bulunabilir. Baz� ���nc� ki�i kodlar�na ili�kin kaynak kodunun nas�l edinilebilece�ine ili�kin bilgi, ���nc� Ki�i Bildirimlerinde bulunabilir. IBM, ���nc� Ki�i Bildirimlerinde ���nc� ki�i kodunu "De�i�tirilebilir ���nc� Ki�i Kodu" olarak tan�mlarsa, Lisans Alan Tarafa 1) De�i�tirilebilir ���nc� Ki�i Kodunu de�i�tirme ve 2) yaln�zca, Lisans Alan Taraf�n bu t�r bir ���nc� ki�i kodunda yapt��� de�i�ikliklerde hata ay�klama amac�yla olmak ko�uluyla, De�i�tirilebilir ���nc� Ki�i Koduyla do�rudan arabirim olu�turan Program mod�llerini ters d�zenleme yetkisini verir. IBM'in hizmet ve destek y�k�ml�l�kleri, e�er varsa, yaln�zca de�i�tirilmemi� Program i�in ge�erlidir.
+
+13. Genel Ko�ullar
+
+a. Bu S�zle�menin hi�bir ko�ulu, t�keticilerin s�zle�me yoluyla vazge�ilemeyen veya s�n�rland�r�lamayan yasal haklar�n� etkilemez.
+
+b. IBM'in Lisans Alan Tarafa somut bir �r�n olarak sa�lad��� Programlar i�in, Lisans Alan Taraf ile IBM aras�nda yaz�l� olarak aksi kararla�t�r�lmad�k�a, IBM, bu Programlar� kendisi taraf�ndan belirlenen ta��y�c�ya teslim edildikten sonra ortaya ��kan teslimata ve sevkiyata ili�kin y�k�ml�l�klerini yerine getirir.
+
+c. Bu S�zle�menin herhangi bir h�km� ge�ersiz ya da uygulanamaz oldu�unda, S�zle�menin geri kalan h�k�mleri tam olarak y�r�rl�kte kalmaya ve ge�erli olmaya devam eder.
+
+d. Lisans Alan Taraf, belirli son kullan�m t�rleri ve belirli kullan�c�lara y�nelik ABD ambargosu ve yapt�r�mlar� da dahil olmak �zere, t�m ge�erli ihracat ve ithalat yasa ve d�zenlemelerine uygun davranmay� kabul eder.
+
+e. Lisans Alan Taraf, International Business Machines Corporation ve ba�l� kurulu�lar�na (ve bunlar�n haleflerine ve devralanlar�na, y�klenicilerine ve IBM ��z�m Ortaklar�na) Lisans Alan Taraf�n IBM �r�n ve hizmetleriyle ilgili veya IBM ile i� ili�kisini geli�tirmek amac�yla ileti�im bilgilerini i� yapt�klar� herhangi bir yerde depolama ve kullanma izni verir.
+
+f. Taraflardan her biri, di�er taraf�n bu S�zle�meyle ilgili y�k�ml�l�klerini yerine getirmedi�i iddias�nda bulunmadan �nce, di�er tarafa ilgili y�k�ml�l��� yerine getirmesi i�in gereken makul f�rsat� tan�may� kabul eder. Taraflar, bu S�zle�meyle ilgili olarak ortaya ��kabilecek t�m ihtilaflar�, anla�mazl�klar� veya iddialar� iyi niyetle ��zmeye �al��acaklard�r.
+
+g. Ge�erli yasalar�n s�zle�meyle de�i�tirilmesine veya s�n�rland�r�lmas�na olanak tan�mayarak aksini belirtti�i durumlar d���nda: 1) taraflardan hi�biri, bu S�zle�meden kaynaklanan veya bu S�zle�meyle ilgili olarak yasal i�lem gerektiren bir durumun �zerinden iki y�ldan fazla bir s�re ge�tikten sonra hangi bi�imde olursa olsun, yasal bir i�lemde bulunamaz; ve 2) bu s�renin sona ermesiyle birlikte, bu t�r t�m iddialar ve bu iddialarla ilgili t�m haklar zamana��m�na u�rar.
+
+h. Taraflardan hi�biri, elinde olmayan nedenlerden �t�r� y�k�ml�l�klerini yerine getirememekten sorumlu tutulamaz.
+
+i. Bu S�zle�me herhangi bir ���nc� ki�i i�in bir dava hakk� ya da bir dava nedeni yaratmaz ve ayr�ca IBM, yukar�da yer alan 10.1 numaral� (IBM'in Sorumlu Olabilece�i Maddeler) ba�l�kl� b�l�mde izin verilenler d���nda, IBM'in ilgili ���nc� ki�iye kar�� yasal olarak sorumlu oldu�u (�l�m dahil) cismani zarar veya ta��nmaz ve ta��nabilir ki�isel mallara verilen zarar d���nda, ���nc� bir ki�i taraf�ndan Lisans Alan tarafa y�neltilen herhangi bir iddiaya kar�� sorumluluk �stlenmez.
+
+j. Bu S�zle�meyi imzalayarak, taraflardan hi�biri: 1) bu Programa ili�kin yukar�daki 8 numaral� (Garantiler ve Hari� Tutma) ba�l�kl� b�l�m�nde a��k�a garanti edilenler d���ndaki performans veya i�levler; 2) di�er taraflar�n deneyimleri veya �nerileri; veya 3) Lisans Alan Taraf�n elde edebilece�i t�m sonu�lar veya tasarruflar da dahil olmak, ancak t�m� bunlarla s�n�rl� olmamak �zere bu S�zle�mede belirtilmemi� olan hi�bir beyana itibar etmeyecektir.
+
+k. IBM, belirli kurulu�larla ("IBM ��z�m Ortaklar�" olarak adland�r�l�r) belirli Programlar� tan�tmak, pazarlamak ve desteklemek �zere s�zle�meler imzalam��t�r. IBM ��z�m Ortaklar�, IBM'den ayr� ve ba��ms�z kurulu�lard�r. IBM, IBM ��z�m Ortaklar�n�n eylemlerinden veya bildirimlerinden ya da Lisans Alan Tarafa kar�� y�k�ml�l�klerinden sorumlu de�ildir.
+
+l. Lisans Alan Taraf�n IBM ile yapt��� di�er s�zle�melere (�rne�in, IBM M��teri S�zle�mesi) ili�kin lisans ve fikri m�lkiyete ili�kin tazminat ko�ullar� bu S�zle�me kapsam�nda sa�lanan Program lisanslar� i�in ge�erli olmaz.
+
+14. Co�rafi Kapsam ve Ge�erli Yasa
+
+14.1 Ge�erli Yasa
+
+Taraflar, kanunlar�n ihtilaf� prensibine bak�lmaks�z�n, bu S�zle�menin konusundan do�an veya bir bi�imde bu S�zle�menin konusu ile ilgili olan haklar, g�revler ve y�k�ml�l�klerin, Lisans Alan Taraf�n lisans� edindi�i �lkenin yasalar�na tabi olup, yine bunlar�n yorumlanmas� ve uygulanmas�nda bu yasalar�n ge�erli oldu�unu kabul ederler.
+
+Birle�mi� Milletler'in Uluslararas� Mal Sat��lar�na ili�kin S�zle�me Bildirgesi ge�erli de�ildir.
+
+14.2 Yetkili Mahkeme
+
+Taraflar�n t�m hak, g�rev ve y�k�ml�l�kleri, Lisans Alan taraf�n Program lisans�n� edindi�i �lkenin mahkemelerine tabidir.
+
+B�l�m 2 - �lkeye �zg� Ko�ullar
+
+A�a��da belirtilen �lkelerde verilen lisanslara ili�kin olarak a�a��da belirtilen ko�ullar B�l�m 1'de at�fta bulunulan ko�ullar�n yerine ge�er veya onlar� de�i�tirir. B�l�m 1'de yer alan ve bu de�i�iklik eki taraf�ndan de�i�tirilmeyen t�m ko�ullar de�i�meksizin y�r�rl�kte kalmaya devam eder. B�l�m 2 a�a��da belirtilen �ekilde d�zenlenmi�tir:
+
+- B�l�m 1, Madde 14 (Ge�erli Yasa ve Yetkili Mahkeme) i�in �lkeye �zg� de�i�iklikler; ve
+
+- Di�er S�zle�me h�k�mlerine ili�kin Avrupa, Orta Do�u ve Afrika �lkelerine �zg� de�i�iklikler.
+
+B�l�m 1, Madde 14 (Ge�erli Yasa ve Yetkili Mahkeme) i�in �lkeye �zg� de�i�iklikler;
+
+14.2 Yetkili Mahkeme
+
+A�a��daki paragraf yetkili mahkeme ile ilgilidir ve a�a��da kal�n harflerle belirtilen �lkeler i�in ge�erli oldu�undan bu �lkelerle ilgili Altb�l�m 14.2 (Yetkili Mahkeme) i�inde yer alan ko�ullar� de�i�tirir:
+
+Taraflar�n t�m hak, g�rev ve y�k�ml�l�kleri, Lisans Alan taraf�n Program lisans�n� edindi�i �lkenin mahkemelerine tabidir. Ancak, a�a��da belirtilen �lkeler i�in, seri yarg�lama usul� de dahil olmak �zere, bu S�zle�meden do�an veya bu S�zle�menin y�r�t�lmesiyle ilgili t�m anla�mazl�klar, a�a��da belirtilen ve yetkili mahkeme olan mahkemelere tabi olacak ve bu mahkemelerde ��z�mlenecektir:
+
+AVRUPA, ORTA DO�U VE AFR�KA
+
+T�rkiye'de: T�rkiye Cumhuriyeti'nin �stanbul Merkez Mahkemelerinde ya da �cra Dairelerinde ��z�mlenecektir.
+
+AVRUPA, ORTA DO�U, AFR�KA (EMEA) �LKELER�NE �L��K�N DE����KL�KLER
+
+AVRUPA B�RL��� (AB) �LKELER�
+
+8. Garanti ve Hari� Tutmalar
+
+A�a��daki paragraf, 8 (Garanti ve Hari� Tutmalar) numaral� b�l�me eklenmi�tir:
+
+Avrupa Birli�i'nde ("AB") t�keticilerin, t�ketim mallar�n�n sat���na ili�kin ge�erli ulusal mevzuat kapsam�nda yasal haklar� bulunmaktad�r. Bu haklar, 8 numaral� b�l�mde (Garanti ve Hari� Tutmalar) yer alan h�k�mlerden etkilenmez. S�n�rl� Garantiye ili�kin madde, co�rafi olarak b�t�n d�nyay� kapsar.
+
+AB �YES� �LKELER VE T�RK�YE
+
+13. Genel Ko�ullar
+
+A�a��daki paragraf Madde 13.e'nin yerine ge�er:
+
+(1) Tan�mlar - Madde 13.e'nin amac� a��s�ndan a�a��daki ek tan�mlar ge�erli olur:
+
+(a) �� �leti�im Bilgileri - Lisans Alan Taraf�n �al��anlar�na ve y�klenicilerine ili�kin adlar, g�revler, i� adresleri, telefon numaralar� ve e-posta adresleri de dahil olmak �zere Lisans Alan Taraf taraf�ndan IBM'e a��klanan i�le ilgili ileti�im bilgileri. Avusturya, �talya ve �svi�re i�in �� �leti�im Bilgileri, t�zel ki�ilikler olan M��teri ve M��terinin y�klenicilerine ili�kin bilgileri (�rne�in, M��terinin gelir verileri ve di�er i�lem bilgileri) de i�erir.
+
+(b) �leti�im Sorumlular� - �� �leti�im Bilgileriyle ilgili olan Lisans Alan Taraf �al��anlar� ve y�kleniciler
+
+(c) Veri Koruma Yetkilisi - �lgili �lkede ge�erli Veri Koruma ve Elektronik �leti�im Mevzuat� taraf�ndan belirlenen yetkili veya AB �lkeleri d���ndaki �lkeler i�in, ilgili �lkedeki ki�isel verilerin korunmas� i�in dan��manl�ktan sorumlu yetkili veya (yukar�da belirtilenlerin herhangi biri i�in) usul�ne uygun olarak bu t�r yetkililerin halefi olarak atanan yetkili.
+
+(d) Veri Koruma & Elektronik �leti�im Mevzuat� - (i) 95/46/EC kodlu AB Y�nergesinin (ki�isel verilerin i�lenmesiyle ve bu t�r verilerin serbest dola��m�yla ilgili olarak ki�ilerin korunmas�n� ama�lar) ve 2002/58/EC kodlu AB Y�nergesinin (elektronik ileti�im sekt�r�nde ki�isel verilerin i�lenmesiyle ve korunmas�yla ilgilidir) ko�ullar�n� uygulamak �zere y�r�rl�kte olan yasal mevzuat ve d�zenlemeler; ya da (ii) AB �lkeleri d���ndaki �lkeler i�in, (yukar�da belirtilenlerden herhangi biri i�in) yasal mevzuat ve/veya d�zenlemelerde yap�lan herhangi bir yasal de�i�iklik de dahil olmak �zere, ilgili �lkede, ki�isel verilerin korunmas�yla ve ki�isel verilerle ilgili elektronik ileti�imin d�zenlenmesiyle ilgili y�r�rl�kte olan yasal mevzuat ve/veya d�zenlemeler.
+
+(e) IBM Grubu - International Business Machines Corporation, Armonk, New York, ABD, ba�l� �irketleri ve bunlar�n ilgili ��z�m Ortaklar� ve alty�klenicileri.
+
+(2) Lisans Alan Taraf, IBM'e a�a��da belirtilenlere ili�kin yetki verir:
+
+(a) Destek hizmetlerinin sa�lanmas� da dahil olmak �zere, Lisans Alan Taraf� desteklemek amac�yla �leti�im Sorumlular�yla ba�lant� kurulmas� (e-posta veya ba�ka yollarla) ve IBM Grubu �r�nleri ve hizmetlerinin pazarlanmas� amac� da dahil olmak, ancak t�m� bunlarla s�n�rl� olmamak �zere, Lisans Alan Tarafla IBM Grubu aras�ndaki i� ili�kisinin geli�tirilmesini sa�lanmas� amac�yla ("Belirlenen Ama�") IBM Grubu i�inde ��le �lgili �leti�im Bilgilerinin i�lenmesi ve kullan�lmas�; ve
+
+(b) �� �leti�im Bilgilerinin, yaln�zca Belirlenen Ama�la ilgili olarak IBM Grubunun di�er �yelerine a��klanmas�.
+
+(3) IBM, ��le �lgili �leti�im Bilgilerinin, Veri Koruma & Elektronik �leti�im Mevzuat�na uygun olarak i�lenece�ini ve yaln�zca Belirlenen ama� i�in kullan�laca��n� kabul eder.
+
+(4) Veri Koruma & Elektronik �leti�im Mevzuat�n�n gerektirdi�i �l��de Lisans Alan Taraf, IBM Grubuna ��le �lgili �leti�im Bilgilerinin Belirlenen Ama� i�in i�lenmesini ve kullan�lmas�n� sa�lamak amac�yla �leti�im Sorumlular�ndan gereken t�m izinleri ald���n� (ve alaca��n�) ve t�m bildirimleri �leti�im Sorumlular�na g�nderdi�ini (veya g�nderece�ini) beyan eder.
+
+(5) Lisans Alan Taraf, IBM'e ��le �lgili �leti�im Bilgilerini, aktar�m i�leminin Veri Koruma Yetkilisi taraf�ndan onaylanan s�zle�me ko�ullar�na uygun olarak ger�ekle�tirilmesi veya aktar�m i�lemine Veri Koruma & Elektronik �leti�im Mevzuat� kapsam�nda izin verilmesi ko�uluyla Avrupa Ekonomik Alan� d���na aktarma yetkisini verir.
+
+Z125-3301-13 (12/2009)
+
+
+L�SANS B�LG�LER�
+
+A�a��da listelenen programlar, Uluslararas� Program Lisans S�zle�mesi ko�ullar�na ek olarak a�a��daki ko�ullar kapsam�nda lisanslan�r.
+
+Program Ad�: IBM Prerequisite Scanner R1.1
+Program Numaras�: 5725-C13
+
+Kaynak Bile�enler
+
+Bu Program, baz� bile�enleri kaynak kodu bi�iminde i�erebilir ("Kaynak Bile�enler"). Lisans Alan Taraf, Kaynak Bile�enleri, ancak Kaynak Bile�enleri kullan�m�n�n bu S�zle�me kapsam�ndaki lisans haklar� taraf�ndan �izilen s�n�rlar i�inde kalmas� ve ancak Kaynak Bile�enlerde i�erilen hi�bir telif hakk� bilgisini veya bildirimini de�i�tirmemek veya silmemek ko�uluyla dahili olarak kullanmak amac�yla kopyalayabilir ve kullanabilir. IBM, Kaynak Bile�enleri, destek y�k�ml�l��� olmaks�z�n ve M�LK�YETE, HAK �HLAL� YAPILMAYACA�INA VEYA M�DAHALE ED�LMEYECE��NE DA�R GARANT�LER �LE T�CAR�L��E VE BEL�RL� B�R AMACA UYGUNLU�A DA�R ZIMN� GARANT�LER VE KO�ULLAR DA DAH�L OLMAK, ANCAK T�M� BUNLARLA SINIRLI OLMAMAK �ZERE, A�IK VEYA ZIMN� H��B�R GARANT� VERMEKS�Z�N "OLDU�U G�B�" ESASIYLA SA�LAR.
+
+D/N:  L-JRCI-89W3MD
+P/N:  L-JRCI-89W3MD 

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML LANG="en">
+
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited. 2014, 2022                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+
+<!-- REMEMBER TO REMOVE THIS LINE BELOW  -->
+
+
+</head>
+
+<script src="../jscp.js" language="javascript">
+
+<%@ include file="global.head" %>
+
+<% loadCSSfiles(DEFAULTCSS, "content.css"); %>
+
+<body>
+
+<h1><%= property('title') %></h1>
+
+<p>
+	<%= property('documentation_info') %>
+</p>
+
+<img src="./images/extwebsite_16.gif" alt="<%= property('altImageText') %>">&nbsp;<A href="javascript:void 0"
+	onclick="viewPage(NO_DISKID, 'https://help.hcltechsw.com/connections/v8/admin/welcome/welcome_admin.html')">
+	<%=property('documentation_text')%>
+	</A>
+<br/>																				                                                                          	
+<p>
+	<%= property('addtional_info') %>
+	<br/><br/>
+	<img src="./images/extwebsite_16.gif" alt="<%= property('altImageText') %>">&nbsp;<A href="javascript:void 0"
+	onclick="viewPage(NO_DISKID, 'https://help.hcltechsw.com/connections/v8/admin/welcome/welcome_admin.html')">
+	<%=property('installation_checklist_text')%></A>
+	<br/><br/>
+	<img src="./images/extwebsite_16.gif" alt="<%= property('altImageText') %>">&nbsp;<A href="javascript:void 0" onclick="viewPage(NO_DISKID, 'https://help.hcltechsw.com/connections/v8/admin/welcome/welcome_admin.html')"><%=property('troubleshooting_checklist_text')%></A>
+</p>
+
+
+
+</body>
+</script>
+
+
+</html>

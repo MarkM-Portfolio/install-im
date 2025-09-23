@@ -1,0 +1,2007 @@
+{
+   "references": [
+   ],
+   "model": {
+      "attribute_metadata": [
+         {
+            "id": "mountPoint",
+            "description": "",
+            "name": "Mount Point",
+            "sampleValue": "",
+            "label": "Mount Point",
+            "type": "string",
+            "required": true
+         },
+         {
+            "id": "projectName",
+            "description": "",
+            "name": "Project Name",
+            "sampleValue": "",
+            "label": "Project Name",
+            "type": "string",
+            "required": true
+         },
+         {
+            "id": "rtuserPwd",
+            "description": "",
+            "displayType": "password",
+            "name": "Root Password",
+            "sampleValue": "",
+            "label": "Root Password",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "virtuserPwd",
+            "description": "",
+            "displayType": "password",
+            "name": "Virtuser Password",
+            "sampleValue": "",
+            "label": "Virtuser Password",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "wasAdminUserName",
+            "description": "",
+            "name": "WebSphere Administrative User Name",
+            "sampleValue": "",
+            "label": "WebSphere Administrative User Name",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "gpfsInformation",
+            "description": "",
+            "name": "GPFS File System Name",
+            "sampleValue": "",
+            "label": "GPFS File System Name",
+            "type": "string",
+            "required": true
+         },
+         {
+            "id": "sharedContentStore",
+            "description": "",
+            "name": "Shared Content Store",
+            "sampleValue": "",
+            "label": "Shared Content Store",
+            "type": "string",
+            "required": true
+         },
+         {
+            "id": "contentStoreLink",
+            "description": "",
+            "name": "Content Store Link",
+            "sampleValue": "",
+            "label": "Content Store Link",
+            "type": "string",
+            "required": true
+         },
+         {
+            "id": "db2FencedUsrPW",
+            "description": "",
+            "displayType": "password",
+            "name": "DB2 Fenced User Password",
+            "sampleValue": "",
+            "label": "DB2 Fenced User Password",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "db2instancePW",
+            "displayType": "password",
+            "description": "",
+            "name": "DB2 Instance Password",
+            "sampleValue": "",
+            "label": "DB2 Instance Password",
+            "type": "string",
+            "required": true
+         },
+         {
+            "id": "hadrDBName",
+            "description": "",
+            "name": "DB2 HADR Database Name (Important: DB Name cannot exceed 8 characters!)",
+            "sampleValue": "",
+            "label": "DB2 HADR Database Name (Important: DB Name cannot exceed 8 characters!)",
+            "type": "string",
+            "required": true
+         },
+         {
+            "id": "hadrDBUsr",
+            "description": "",
+            "name": "DB2 HADR Database User",
+            "sampleValue": "",
+            "label": "DB2 HADR Database User",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "hadrDBUsrPW",
+            "description": "",
+            "displayType": "password",
+            "name": "DB2 HADR Database User Password",
+            "sampleValue": "",
+            "label": "DB2 HADR Database User Password",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "domainName",
+            "description": "",
+            "name": "Domain Name",
+            "sampleValue": "",
+            "label": "Domain Name",
+            "required": true,
+            "type": "string"
+         }
+      ],
+      "nodes": [
+         {
+            "id": "DM Node",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 16384,
+               "HWAttributes.numvcpus": 4,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "Deployment manager",
+            "startsAfter": [
+               "DM Node"
+            ],
+            "locked": [
+               "was_admin",
+               "wasAdminUserName",
+               "was_admin_password"
+            ],
+            "attributes": {
+               "install_directory": "/opt/IBM/WebSphere/AppServer",
+               "was_bitness": "64",
+               "profile_home": "/opt/IBM/WebSphere/Profiles",
+               "was_admin_password": "${pattern.virtuserPwd}",
+               "dmgr_cell_name": "DMCell",
+               "dmgr_profile_name": "DefaultDmgr01",
+               "dmgr_node_name": "DMNode",
+               "was_admin": "${pattern.wasAdminUserName}",
+               "soap_port": 8879
+            },
+            "type": "dmgr8552_8552_IM",
+            "groups": {
+               "installFeatures": false,
+               "register_dmgr_with_jobmgr": false
+            }
+         },
+         {
+            "id": "IHS Node",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 4096,
+               "HWAttributes.numvcpus": 1,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "IBM HTTP servers",
+            "startsAfter": [
+               "Deployment manager",
+               "DM Node",
+               "Custom nodes_2",
+               "IHS Node"
+            ],
+            "locked": [
+               "dmgr_host",
+               "dmgr_user",
+               "was_admin",
+               "wasAdminUserName",
+               "was_admin_password",
+               "dmgr_password",
+               "dmgr_connport"
+            ],
+            "attributes": {
+               "dmgr_connport": "${Deployment manager.soap_port}",
+               "ihs_cell_name": "IHSCell1",
+               "ihs_node_name": "IHSNode1",
+               "was_bitness": "64",
+               "install_directory_ihs": "/opt/IBM/WebSphere/HTTPServer",
+               "profile_home": "/opt/IBM/WebSphere/Profiles",
+               "was_admin_password": "${pattern.virtuserPwd}",
+               "ihs_profile_name": "DefaultIHS01",
+               "dmgr_password": "${pattern.virtuserPwd}",
+               "dmgr_host": "${DM Node.hostname}",
+               "was_admin": "${pattern.wasAdminUserName}",
+               "dmgr_user": "${pattern.wasAdminUserName}"
+            },
+            "type": "HTTPServer_8552_IM",
+            "groups": {
+               "federate_ihs_with_dmgr": true
+            }
+         },
+         {
+            "id": "Cust Node1",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 24576,
+               "HWAttributes.numvcpus": 4,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "Custom nodes",
+            "startsAfter": [
+               "Deployment manager",
+               "DM Node",
+               "Cust Node1"
+            ],
+            "locked": [
+               "dmgr_host",
+               "was_admin",
+               "dmgr_user",
+               "wasAdminUserName",
+               "was_admin_password",
+               "dmgr_password",
+               "dmgr_connport"
+            ],
+            "attributes": {
+               "dmgr_connport": "${Deployment manager.soap_port}",
+               "install_directory": "/opt/IBM/WebSphere/AppServer",
+               "was_bitness": "64",
+               "cn_profile_name": "DefaultCustom01",
+               "profile_home": "/opt/IBM/WebSphere/Profiles",
+               "was_admin_password": "${pattern.virtuserPwd}",
+               "dmgr_password": "${pattern.virtuserPwd}",
+               "dmgr_host": "${DM Node.hostname}",
+               "was_admin": "${pattern.wasAdminUserName}",
+               "cn_node_name": "CustNode",
+               "cn_cell_name": "CustCell",
+               "dmgr_user": "${pattern.wasAdminUserName}"
+            },
+            "type": "custom_node8552_8552_IM",
+            "groups": {
+               "federate_cn_with_dmgr": true,
+               "installFeatures": false
+            }
+         },
+         {
+            "id": "Default add disk",
+            "attributes": {
+               "VOLUME_GROUP": "",
+               "DISK_SIZE_GB": 60,
+               "FILESYSTEM_TYPE": "ext3",
+               "OWNER": "root",
+               "MOUNT_POINT": "/"
+            },
+            "type": "add-on:Default add disk:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add disk_1",
+            "attributes": {
+               "VOLUME_GROUP": "",
+               "DISK_SIZE_GB": 60,
+               "FILESYSTEM_TYPE": "ext3",
+               "OWNER": "",
+               "MOUNT_POINT": "/"
+            },
+            "type": "add-on:Default add disk:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5copyDB2driver",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "Custom nodes"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5copyDB2driver:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5setEnvProperties",
+            "startsAfter": [
+               "DB Primary Node",
+               "Database Server_2",
+               "Default add NFS_7",
+               "Default add NFS",
+               "Cust Node2",
+               "DB Standby Node",
+               "Default add NFS_5",
+               "Custom nodes",
+               "IHS Node",
+               "Cust Node1",
+               "IBM HTTP servers_1",
+               "Default add NFS_3",
+               "Custom nodes_2",
+               "Default add NFS_4",
+               "Deployment manager",
+               "Default add NFS_6",
+               "Default add NFS_1",
+               "DM Node",
+               "IBM HTTP servers",
+               "IHS Node2",
+               "Default add NFS_2"
+            ],
+            "locked": [
+               "IHSNODE_BASE",
+               "HTTPHOST",
+               "DMSYSHST",
+               "INSTNODE1_BASE",
+               "NDSYSHST",
+               "DBSYSHST",
+               "ND2SYSHST",
+               "INSTNODE2_BASE",
+               "HTTPHOST2",
+               "IHSNODE2_BASE",
+               "PROJECTNAME",
+               "MOUNT_POINT",
+               "VIRTUSERPW",
+               "STANDBYDBSYSHST",
+               "contentStoreLink",
+               "DB2Port",
+               "DM_Connector_Port",
+               "DB2PW",
+               "LCUSER_PW",
+               "ICINST1_PW",
+               "fileSystemName",
+               "PROJDOMAIN",
+               "HADR_DBName",
+               "HADR_DBUser",
+               "contentStoreFolder",
+               "CustNode1_NFS_Host",
+               "CustNode1_NFS_Export",
+               "CustNode2_NFS_Host",
+               "CustNode2_NFS_Export",
+               "IHSNode1_NFS_Host",
+               "IHSNode1_NFS_Export",
+               "IHSNode2_NFS_Host",
+               "IHSNode2_NFS_Export",
+               "TDINODE_NFS_Host",
+               "TDINODE_NFS_Export",
+               "PrimaryDB_NFS_Host",
+               "PrimaryDB_NFS_Export",
+               "StandbyDB_NFS_Host",
+               "StandbyDB_NFS_Export",
+               "DMNODE_NFS_Host",
+               "DMNODE_NFS_Export"
+            ],
+            "attributes": {
+               "DBSYSHST": "${DB Primary Node.hostname}",
+               "DB2Port": "${Database Server_2.instancePort}",
+               "Mail_User": "",
+               "StandbyDB_NFS_Export": "${Default add NFS_7.REMOTE_EXPORT}",
+               "DMNODE_NFS_Host": "${Default add NFS.HOST_NAME}",
+               "BIND_USER": "",
+               "ENABLE_SSL_MAIL": false,
+               "ND2SYSHST": "${Cust Node2.hostname}",
+               "STANDBYDBSYSHST": "${DB Standby Node.hostname}",
+               "TDINODE_NFS_Export": "${Default add NFS_5.REMOTE_EXPORT}",
+               "INSTNODE1_BASE": "${Custom nodes.cn_node_name}",
+               "HTTPHOST": "${IHS Node.hostname}",
+               "DMNODE_NFS_Export": "${Default add NFS.REMOTE_EXPORT}",
+               "StandbyDB_NFS_Host": "${Default add NFS_7.HOST_NAME}",
+               "PROJDOMAIN": "${pattern.domainName}",
+               "LDAP_Search_Base": "",
+               "NDSYSHST": "${Cust Node1.hostname}",
+               "HADR_DBName": "${pattern.hadrDBName}",
+               "contentStoreFolder": "${pattern.sharedContentStore}",
+               "PROJECTNAME": "${pattern.projectName}",
+               "IHSNODE2_BASE": "${IBM HTTP servers_1.ihs_node_name}",
+               "IHSNode1_NFS_Export": "${Default add NFS_3.REMOTE_EXPORT}",
+               "INSTNODE2_BASE": "${Custom nodes_2.cn_node_name}",
+               "MOUNT_POINT": "${pattern.mountPoint}",
+               "ENABLE_SSL_LDAP": false,
+               "IHSNode2_NFS_Host": "${Default add NFS_4.HOST_NAME}",
+               "IHSNode2_NFS_Export": "${Default add NFS_4.REMOTE_EXPORT}",
+               "contentStoreLink": "${pattern.contentStoreLink}",
+               "Mail_Password": "",
+               "DM_Connector_Port": "${Deployment manager.soap_port}",
+               "PrimaryDB_NFS_Host": "${Default add NFS_6.HOST_NAME}",
+               "CustNode1_NFS_Export": "${Default add NFS_1.REMOTE_EXPORT}",
+               "LDAP_PORT": "389",
+               "DMSYSHST": "${DM Node.hostname}",
+               "MAIL_SRV": "",
+               "VIRTUSERPW": "${pattern.virtuserPwd}",
+               "IHSNODE_BASE": "${IBM HTTP servers.ihs_node_name}",
+               "LDAP_SRV": "",
+               "PrimaryDB_NFS_Export": "${Default add NFS_6.REMOTE_EXPORT}",
+               "HTTPHOST2": "${IHS Node2.hostname}",
+               "LDAP_TYPE": "IDS",
+               "BIND_USER_PW": "",
+               "HADR_DBUser": "${pattern.hadrDBUsr}",
+               "fileSystemName": "${pattern.gpfsInformation}",
+               "LCUSER_PW": "${pattern.db2instancePW}",
+               "MAIL_PORT": "25",
+               "TDINODE_NFS_Host": "${Default add NFS_5.HOST_NAME}",
+               "CustNode2_NFS_Export": "${Default add NFS_2.REMOTE_EXPORT}",
+               "CustNode2_NFS_Host": "${Default add NFS_2.HOST_NAME}",
+               "CustNode1_NFS_Host": "${Default add NFS_1.HOST_NAME}",
+               "IHSNode1_NFS_Host": "${Default add NFS_3.HOST_NAME}"
+            },
+            "type": "script:ic5setEnvProperties:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5fixInstallWAS",
+            "startsAfter": [
+               "ic5setEnvProperties"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5fixInstallWAS:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5installIC5",
+            "startsAfter": [
+               "ic5copyDB2driver",
+               "ic5prepareHTTP",
+               "ic5prepareHTTP_1",
+               "ic5prepareDB2_2",
+               "ic5fixInstallWAS"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "MOUNT_POINT"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5installIC5:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5installIC5CR1",
+            "startsAfter": [
+               "ic5prepareDB2CR1",
+               "ic5installIC5"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5installIC5CR1:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5prepareHTTP",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "IBM HTTP servers"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5prepareHTTP:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5postInstallIC5",
+            "startsAfter": [
+               "ic5installIC5CR1"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5postInstallIC5:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5optionalTasksIC5",
+            "startsAfter": [
+               "ic5postInstallIC5"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5optionalTasksIC5:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "Cust Node2",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 24576,
+               "HWAttributes.numvcpus": 4,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "Custom nodes_2",
+            "startsAfter": [
+               "Deployment manager",
+               "DM Node",
+               "Custom nodes",
+               "Cust Node2"
+            ],
+            "locked": [
+               "dmgr_host",
+               "cn_cell_name",
+               "cn_node_name",
+               "cn_profile_name",
+               "was_admin",
+               "dmgr_user",
+               "wasAdminUserName",
+               "was_admin_password",
+               "dmgr_password",
+               "dmgr_connport"
+            ],
+            "attributes": {
+               "dmgr_connport": "${Deployment manager.soap_port}",
+               "install_directory": "/opt/IBM/WebSphere/AppServer",
+               "was_bitness": "64",
+               "cn_profile_name": "DefaultCustom02",
+               "profile_home": "/opt/IBM/WebSphere/Profiles",
+               "was_admin_password": "${pattern.virtuserPwd}",
+               "dmgr_password": "${pattern.virtuserPwd}",
+               "dmgr_host": "${DM Node.hostname}",
+               "was_admin": "${pattern.wasAdminUserName}",
+               "cn_node_name": "CustNode2",
+               "cn_cell_name": "CustCell2",
+               "dmgr_user": "${pattern.wasAdminUserName}"
+            },
+            "type": "custom_node8552_8552_IM",
+            "groups": {
+               "federate_cn_with_dmgr": true,
+               "installFeatures": false
+            }
+         },
+         {
+            "id": "ic5copyDB2driver_1",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "Custom nodes_2"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5copyDB2driver:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add disk_3",
+            "attributes": {
+               "VOLUME_GROUP": "",
+               "DISK_SIZE_GB": 60,
+               "FILESYSTEM_TYPE": "ext3",
+               "OWNER": "",
+               "MOUNT_POINT": "/"
+            },
+            "type": "add-on:Default add disk:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "TDI Node",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 4096,
+               "HWAttributes.numvcpus": 1,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5installTDI",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "TDI Node"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5installTDI:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "IHS Node2",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 4096,
+               "HWAttributes.numvcpus": 1,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "IBM HTTP servers_1",
+            "startsAfter": [
+               "Deployment manager",
+               "DM Node",
+               "IBM HTTP servers",
+               "IHS Node2"
+            ],
+            "locked": [
+               "dmgr_host",
+               "dmgr_user",
+               "was_admin",
+               "wasAdminUserName",
+               "was_admin_password",
+               "dmgr_password",
+               "dmgr_connport"
+            ],
+            "attributes": {
+               "dmgr_connport": "${Deployment manager.soap_port}",
+               "ihs_cell_name": "IHSCell2",
+               "ihs_node_name": "IHSNode2",
+               "was_bitness": "64",
+               "install_directory_ihs": "/opt/IBM/WebSphere/HTTPServer",
+               "profile_home": "/opt/IBM/WebSphere/Profiles",
+               "was_admin_password": "${pattern.virtuserPwd}",
+               "ihs_profile_name": "DefaultIHS02",
+               "dmgr_password": "${pattern.virtuserPwd}",
+               "dmgr_host": "${DM Node.hostname}",
+               "was_admin": "${pattern.wasAdminUserName}",
+               "dmgr_user": "${pattern.wasAdminUserName}"
+            },
+            "type": "HTTPServer_8552_IM",
+            "groups": {
+               "federate_ihs_with_dmgr": true
+            }
+         },
+         {
+            "id": "ic5prepareHTTP_1",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "IBM HTTP servers_1"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5prepareHTTP:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "DB Primary Node",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 16384,
+               "HWAttributes.numvcpus": 2,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "Database Server_2",
+            "startsAfter": [
+               "Default add disk_5",
+               "DB Primary Node"
+            ],
+            "locked": [
+               "instanceMountPoint",
+               "instanceOwnerGroup",
+               "fencedUserPassword",
+               "instanceOwnerPassword"
+            ],
+            "attributes": {
+               "instanceMountPoint": "${Default add disk_5.MOUNT_POINT}",
+               "instanceOwnerPassword": "${pattern.db2instancePW}",
+               "sqlType": "DB2",
+               "fencedUser": "db2fenc1",
+               "instanceOwner": "icinst1",
+               "fencedUserGroup": "db2fadm1",
+               "databaseFixpack": "10.5.0.4",
+               "databaseVersion": "10.5",
+               "instancePort": 50001,
+               "fencedUserPassword": "${pattern.db2FencedUsrPW}",
+               "instanceOwnerGroup": "db2iadm1"
+            },
+            "type": "DB2LUW",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add disk_5",
+            "attributes": {
+               "VOLUME_GROUP": "",
+               "DISK_SIZE_GB": 50,
+               "FILESYSTEM_TYPE": "ext3",
+               "OWNER": "",
+               "MOUNT_POINT": "/ibm"
+            },
+            "type": "add-on:Default add disk:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "CreateDB_HADRPrimary_1",
+            "startsAfter": [
+               "Database Server_3",
+               "DB Standby Node",
+               "Database Server_2",
+               "Default add disk_5",
+               "CreateDB_HADRStandby_1"
+            ],
+            "locked": [
+               "instanceOwnerGroup",
+               "standbyHostName",
+               "standbyIP",
+               "standbyInstanceOwnerGroup",
+               "dataMountPoint",
+               "instanceName",
+               "instancePort",
+               "standbyInstancePort",
+               "standbyInstanceName",
+               "databaseName",
+               "databaseUser",
+               "databaseUserPassword"
+            ],
+            "attributes": {
+               "standbyInstancePort": "${Database Server_3.instancePort}",
+               "databasePageSize": "4",
+               "databaseUserPassword": "${pattern.hadrDBUsrPW}",
+               "standbyIP": "${DB Standby Node.ipaddr}",
+               "databaseUser": "${pattern.hadrDBUsr}",
+               "instancePort": "${Database Server_2.instancePort}",
+               "databaseCollate": "SYSTEM",
+               "dataMountPoint": "${Default add disk_5.MOUNT_POINT}",
+               "databaseTerritory": "US",
+               "databaseImage": "",
+               "standbyInstanceName": "${Database Server_3.instanceName}",
+               "databaseName": "${pattern.hadrDBName}",
+               "localHADRSevPort": "55555",
+               "standbyHostName": "${DB Standby Node.hostname}",
+               "databaseCodeset": "UTF-8",
+               "instanceName": "${Database Server_2.instanceName}",
+               "description": "",
+               "hadrSyncMode": "NEARSYNC",
+               "standbyInstanceOwnerGroup": "${Database Server_3.instanceOwnerGroup}",
+               "instanceOwnerGroup": "${Database Server_2.instanceOwnerGroup}",
+               "remoteHADRSevPort": "55555"
+            },
+            "type": "script:CreateDB_HADRPrimary:1.2.0.1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5prepareDB2_2",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "CreateDB_HADRPrimary_1"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "MOUNT_POINT"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5prepareDB2:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "DB Standby Node",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.virtuserPwd}",
+               "HWAttributes.memsize": 16384,
+               "HWAttributes.numvcpus": 2,
+               "ConfigPWD_ROOT.password": "${pattern.rtuserPwd}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45",
+            "groups": {
+            }
+         },
+         {
+            "id": "Database Server_3",
+            "startsAfter": [
+               "Default add disk_6",
+               "DB Standby Node"
+            ],
+            "locked": [
+               "instanceMountPoint",
+               "fencedUserPassword",
+               "instanceOwner",
+               "instanceOwnerPassword",
+               "instancePort"
+            ],
+            "attributes": {
+               "instanceMountPoint": "${Default add disk_6.MOUNT_POINT}",
+               "instanceOwnerPassword": "${pattern.db2instancePW}",
+               "sqlType": "DB2",
+               "fencedUser": "db2fenc1",
+               "fencedUserGroup": "db2fadm1",
+               "instanceOwner": "icinst1",
+               "databaseFixpack": "10.5.0.4",
+               "databaseVersion": "10.5",
+               "instancePort": 50001,
+               "fencedUserPassword": "${pattern.db2FencedUsrPW}",
+               "instanceOwnerGroup": "db2iadm1"
+            },
+            "type": "DB2LUW",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add disk_6",
+            "attributes": {
+               "VOLUME_GROUP": "",
+               "DISK_SIZE_GB": 50,
+               "FILESYSTEM_TYPE": "ext3",
+               "OWNER": "",
+               "MOUNT_POINT": "/ibm"
+            },
+            "type": "add-on:Default add disk:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "CreateDB_HADRStandby_1",
+            "startsAfter": [
+               "Database Server_3",
+               "Default add disk_6"
+            ],
+            "locked": [
+               "instanceOwnerGroup",
+               "dataMountPoint",
+               "instanceName",
+               "instancePort",
+               "databaseName",
+               "databaseUser",
+               "databaseUserPassword"
+            ],
+            "attributes": {
+               "databasePageSize": "4",
+               "databaseUserPassword": "${pattern.hadrDBUsrPW}",
+               "instancePort": "${Database Server_3.instancePort}",
+               "databaseUser": "${pattern.hadrDBUsr}",
+               "databaseCollate": "SYSTEM",
+               "dataMountPoint": "${Default add disk_6.MOUNT_POINT}",
+               "databaseTerritory": "US",
+               "databaseImage": "",
+               "localHADRSevPort": "55555",
+               "databaseName": "${pattern.hadrDBName}",
+               "instanceName": "${Database Server_3.instanceName}",
+               "databaseCodeset": "UTF-8",
+               "description": "",
+               "instanceOwnerGroup": "${Database Server_3.instanceOwnerGroup}",
+               "remoteHADRSevPort": "55555"
+            },
+            "type": "script:CreateDB_HADRStandby:1.2.0.1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5prepareDB2_3",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "CreateDB_HADRStandby_1"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "MOUNT_POINT"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5prepareDB2:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5prepareDB2CR1",
+            "startsAfter": [
+               "ic5installIC5",
+               "ic5prepareDB2_2"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "MOUNT_POINT"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5prepareDB2CR1:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5prepareDB2CR1_1",
+            "startsAfter": [
+               "ic5prepareDB2_3"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "MOUNT_POINT"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5prepareDB2CR1:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5customizeTDI",
+            "startsAfter": [
+               "ic5setEnvProperties",
+               "ic5prepareDB2CR1",
+               "ic5installTDI"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME",
+               "LC_USER_PW"
+            ],
+            "attributes": {
+               "LDAP_PORT": "389",
+               "LDAP_Search_Base": "",
+               "BIND_USER_PW": "",
+               "BIND_USER": "",
+               "PROJECTNAME": "${pattern.projectName}",
+               "LDAP_SRV": "",
+               "LC_USER_PW": "${pattern.db2instancePW}",
+               "LDAP_Search_Filter": "",
+               "MOUNT_POINT": "${pattern.mountPoint}",
+               "ENABLE_SSL_LDAP": false
+            },
+            "type": "script:ic5customizeTDI:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "GPFS Client Policy",
+            "locked": [
+               "FILE_SET_LINK_1_NAME",
+               "FILE_SYSTEM_1_NAME",
+               "FILE_SET_1_NAME"
+            ],
+            "attributes": {
+               "FILE_SET_LINK_1_NAME": "${pattern.contentStoreLink}",
+               "FILE_SYSTEM_1_NAME": "${pattern.gpfsInformation}",
+               "FILE_SIZE_1_NAME": "50G",
+               "FILE_SET_1_NAME": "${pattern.sharedContentStore}"
+            },
+            "type": "gpfsPolicy",
+            "groups": {
+               "FS3": false,
+               "FS4": false,
+               "FS1": true,
+               "GPFS_Client_Install_And_Config": true,
+               "FS2": false,
+               "FS5": false,
+               "GPFS_Client_Install_Only": false
+            }
+         },
+         {
+            "id": "GPFS Client Policy_1",
+            "locked": [
+               "FILE_SET_LINK_1_NAME",
+               "FILE_SYSTEM_1_NAME",
+               "FILE_SET_1_NAME"
+            ],
+            "attributes": {
+               "FILE_SET_LINK_1_NAME": "${pattern.contentStoreLink}",
+               "FILE_SYSTEM_1_NAME": "${pattern.gpfsInformation}",
+               "FILE_SIZE_1_NAME": "50G",
+               "FILE_SET_1_NAME": "${pattern.sharedContentStore}"
+            },
+            "type": "gpfsPolicy",
+            "groups": {
+               "FS3": false,
+               "FS4": false,
+               "FS1": true,
+               "GPFS_Client_Install_And_Config": true,
+               "FS2": false,
+               "FS5": false,
+               "GPFS_Client_Install_Only": false
+            }
+         },
+         {
+            "id": "GPFS Client Policy_2",
+            "locked": [
+               "FILE_SET_LINK_1_NAME",
+               "FILE_SYSTEM_1_NAME",
+               "FILE_SET_1_NAME"
+            ],
+            "attributes": {
+               "FILE_SET_LINK_1_NAME": "${pattern.contentStoreLink}",
+               "FILE_SYSTEM_1_NAME": "${pattern.gpfsInformation}",
+               "FILE_SIZE_1_NAME": "50G",
+               "FILE_SET_1_NAME": "${pattern.sharedContentStore}"
+            },
+            "type": "gpfsPolicy",
+            "groups": {
+               "FS3": false,
+               "FS4": false,
+               "FS1": true,
+               "GPFS_Client_Install_And_Config": true,
+               "FS2": false,
+               "FS5": false,
+               "GPFS_Client_Install_Only": false
+            }
+         },
+         {
+            "id": "GPFS Client Policy_3",
+            "locked": [
+               "FILE_SET_LINK_1_NAME",
+               "FILE_SYSTEM_1_NAME",
+               "FILE_SET_1_NAME"
+            ],
+            "attributes": {
+               "FILE_SET_LINK_1_NAME": "${pattern.contentStoreLink}",
+               "FILE_SYSTEM_1_NAME": "${pattern.gpfsInformation}",
+               "FILE_SIZE_1_NAME": "50G",
+               "FILE_SET_1_NAME": "${pattern.sharedContentStore}"
+            },
+            "type": "gpfsPolicy",
+            "groups": {
+               "FS3": false,
+               "FS4": false,
+               "FS1": true,
+               "GPFS_Client_Install_And_Config": true,
+               "FS2": false,
+               "FS5": false,
+               "GPFS_Client_Install_Only": false
+            }
+         },
+         {
+            "id": "GPFS Client Policy_4",
+            "locked": [
+               "FILE_SET_LINK_1_NAME",
+               "FILE_SYSTEM_1_NAME",
+               "FILE_SET_1_NAME"
+            ],
+            "attributes": {
+               "FILE_SET_LINK_1_NAME": "${pattern.contentStoreLink}",
+               "FILE_SYSTEM_1_NAME": "${pattern.gpfsInformation}",
+               "FILE_SIZE_1_NAME": "50G",
+               "FILE_SET_1_NAME": "${pattern.sharedContentStore}"
+            },
+            "type": "gpfsPolicy",
+            "groups": {
+               "FS3": false,
+               "FS4": false,
+               "FS1": true,
+               "GPFS_Client_Install_And_Config": true,
+               "FS2": false,
+               "FS5": false,
+               "GPFS_Client_Install_Only": false
+            }
+         },
+         {
+            "id": "ic5searchConTool_1",
+            "startsAfter": [
+               "ic5optionalTasksIC5",
+               "ic5copyDB2driver"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5searchConTool:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5searchConTool_2",
+            "startsAfter": [
+               "ic5jvmAdjust",
+               "ic5copyDB2driver_1"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5searchConTool:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5jvmAdjustDM",
+            "startsAfter": [
+               "ic5customizeTDI",
+               "ic5jvmAdjustNode2",
+               "ic5optionalTasksIC5"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5jvmAdjustDM:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5jvmAdjust",
+            "startsAfter": [
+               "ic5searchConTool_1"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME",
+               "HOST_NAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5jvmAdjust:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5jvmAdjustNode2",
+            "startsAfter": [
+               "ic5searchConTool_2"
+            ],
+            "locked": [
+               "MOUNT_POINT",
+               "PROJECTNAME"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.projectName}",
+               "MOUNT_POINT": "${pattern.mountPoint}"
+            },
+            "type": "script:ic5jvmAdjustNode2:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "HOST_NAME": "",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "PORTMAPPER": "111",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS_1",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "HOST_NAME": "",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "PORTMAPPER": "111",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS_2",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "HOST_NAME": "",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "PORTMAPPER": "111",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS_3",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "HOST_NAME": "",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "PORTMAPPER": "111",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS_4",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "HOST_NAME": "",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "PORTMAPPER": "111",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS_6",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "PORTMAPPER": "111",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "HOST_NAME": "",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS_7",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "PORTMAPPER": "111",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "HOST_NAME": "",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS_5",
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "PORTMAPPER": "111",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "HOST_NAME": "",
+               "MOUNT_POINT": "/nfsshare",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0",
+            "groups": {
+            }
+         }
+      ],
+      "description": "",
+      "name": "Connections-5.0CR1",
+      "app_type": "application",
+      "patterntype": "vsys",
+      "links": [
+         {
+            "id": "HostedOnLink_1",
+            "source": "Deployment manager",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_2",
+            "source": "IBM HTTP servers",
+            "target": "IHS Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_3",
+            "source": "Custom nodes",
+            "target": "Cust Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_4",
+            "source": "Default add disk",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_5",
+            "source": "Default add disk_1",
+            "target": "Cust Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_6",
+            "source": "ic5copyDB2driver",
+            "target": "Cust Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_7",
+            "source": "ic5setEnvProperties",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_8",
+            "source": "ic5fixInstallWAS",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_9",
+            "source": "ic5installIC5",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_10",
+            "source": "ic5installIC5CR1",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_11",
+            "source": "ic5prepareHTTP",
+            "target": "IHS Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_12",
+            "source": "ic5postInstallIC5",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_13",
+            "source": "ic5optionalTasksIC5",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_14",
+            "source": "Custom nodes_2",
+            "target": "Cust Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_15",
+            "source": "ic5copyDB2driver_1",
+            "target": "Cust Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_16",
+            "source": "Default add disk_3",
+            "target": "Cust Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_17",
+            "source": "ic5installTDI",
+            "target": "TDI Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_18",
+            "source": "IBM HTTP servers_1",
+            "target": "IHS Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_19",
+            "source": "ic5prepareHTTP_1",
+            "target": "IHS Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_20",
+            "source": "Database Server_2",
+            "target": "DB Primary Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_21",
+            "source": "Default add disk_5",
+            "target": "DB Primary Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_22",
+            "source": "CreateDB_HADRPrimary_1",
+            "target": "DB Primary Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_23",
+            "source": "ic5prepareDB2_2",
+            "target": "DB Primary Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_24",
+            "source": "Database Server_3",
+            "target": "DB Standby Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_25",
+            "source": "Default add disk_6",
+            "target": "DB Standby Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_26",
+            "source": "CreateDB_HADRStandby_1",
+            "target": "DB Standby Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_27",
+            "source": "ic5prepareDB2_3",
+            "target": "DB Standby Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_28",
+            "source": "ic5prepareDB2CR1",
+            "target": "DB Primary Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_29",
+            "source": "ic5prepareDB2CR1_1",
+            "target": "DB Standby Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_30",
+            "source": "ic5customizeTDI",
+            "target": "TDI Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "policy.gpfsPolicy_1",
+            "source": "GPFS Client Policy",
+            "target": "Cust Node1",
+            "attributes": {
+            },
+            "type": "policy.gpfsPolicy",
+            "groups": {
+            }
+         },
+         {
+            "id": "policy.gpfsPolicy_2",
+            "source": "GPFS Client Policy_1",
+            "target": "Cust Node2",
+            "attributes": {
+            },
+            "type": "policy.gpfsPolicy",
+            "groups": {
+            }
+         },
+         {
+            "id": "policy.gpfsPolicy_3",
+            "source": "GPFS Client Policy_2",
+            "target": "IHS Node",
+            "attributes": {
+            },
+            "type": "policy.gpfsPolicy",
+            "groups": {
+            }
+         },
+         {
+            "id": "policy.gpfsPolicy_4",
+            "source": "GPFS Client Policy_3",
+            "target": "IHS Node2",
+            "attributes": {
+            },
+            "type": "policy.gpfsPolicy",
+            "groups": {
+            }
+         },
+         {
+            "id": "policy.gpfsPolicy_5",
+            "source": "GPFS Client Policy_4",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "policy.gpfsPolicy",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_31",
+            "source": "ic5searchConTool_1",
+            "target": "Cust Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_32",
+            "source": "ic5searchConTool_2",
+            "target": "Cust Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_33",
+            "source": "ic5jvmAdjustDM",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_34",
+            "source": "ic5jvmAdjust",
+            "target": "Cust Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_35",
+            "source": "ic5jvmAdjustNode2",
+            "target": "Cust Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_36",
+            "source": "Default add NFS",
+            "target": "DM Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_37",
+            "source": "Default add NFS_1",
+            "target": "Cust Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_38",
+            "source": "Default add NFS_2",
+            "target": "Cust Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_39",
+            "source": "Default add NFS_3",
+            "target": "IHS Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_40",
+            "source": "Default add NFS_4",
+            "target": "IHS Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_41",
+            "source": "Default add NFS_6",
+            "target": "DB Primary Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_42",
+            "source": "Default add NFS_7",
+            "target": "DB Standby Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_43",
+            "source": "Default add NFS_5",
+            "target": "TDI Node",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         }
+      ],
+      "locked": false,
+      "attributes": {
+         "contentStoreLink": "/ConnectionsContentStoreLink",
+         "hadrDBUsrPW": "",
+         "db2instancePW": "",
+         "gpfsInformation": "fileSystemName",
+         "wasAdminUserName": "virtuser",
+         "hadrDBUsr": "hadruser",
+         "domainName": "",
+         "mountPoint": "/nfsshare",
+         "sharedContentStore": "ConnectionsShared_Connections5",
+         "hadrDBName": "hadrdb",
+         "projectName": "Connections5CR1",
+         "db2FencedUsrPW": ""
+      },
+      "readonly": false,
+      "version": "1.0",
+      "lockedAttributes": [
+         "wasAdminUserName"
+      ],
+      "patternversion": "5.0-CR1"
+   },
+   "layers": [
+      {
+         "id": "layer",
+         "nodes": [
+            "DM Node",
+            "Deployment manager",
+            "IHS Node",
+            "IBM HTTP servers",
+            "Cust Node1",
+            "Custom nodes",
+            "Default add disk",
+            "Default add disk_1",
+            "ic5copyDB2driver",
+            "ic5installIC5",
+            "ic5installIC5CR1",
+            "ic5postInstallIC5",
+            "ic5setEnvProperties",
+            "ic5prepareHTTP",
+            "ic5optionalTasksIC5",
+            "Cust Node2",
+            "Custom nodes_2",
+            "ic5copyDB2driver_1",
+            "Default add disk_3",
+            "TDI Node",
+            "ic5installTDI",
+            "IHS Node2",
+            "IBM HTTP servers_1",
+            "ic5prepareHTTP_1",
+            "DB Primary Node",
+            "Database Server_2",
+            "Default add disk_5",
+            "ic5prepareDB2_2",
+            "CreateDB_HADRPrimary_1",
+            "DB Standby Node",
+            "Database Server_3",
+            "Default add disk_6",
+            "ic5prepareDB2_3",
+            "CreateDB_HADRStandby_1",
+            "ic5prepareDB2CR1",
+            "ic5prepareDB2CR1_1",
+            "ic5fixInstallWAS",
+            "ic5customizeTDI",
+            "GPFS Client Policy",
+            "GPFS Client Policy_1",
+            "GPFS Client Policy_2",
+            "GPFS Client Policy_3",
+            "GPFS Client Policy_4",
+            "ic5searchConTool_1",
+            "ic5searchConTool_2",
+            "ic5jvmAdjustDM",
+            "ic5jvmAdjust",
+            "ic5jvmAdjustNode2",
+            "Default add NFS",
+            "Default add NFS_1",
+            "Default add NFS_2",
+            "Default add NFS_3",
+            "Default add NFS_4",
+            "Default add NFS_6",
+            "Default add NFS_7",
+            "Default add NFS_5"
+         ]
+      }
+   ],
+   "export_id": "a-07065071-9067-4a53-851a-b37d393acab8"
+}

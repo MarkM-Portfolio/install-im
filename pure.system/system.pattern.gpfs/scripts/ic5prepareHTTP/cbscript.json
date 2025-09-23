@@ -1,0 +1,31 @@
+[
+   {
+      "command": "\/tmp\/ic5prepareHTTP\/ic5prepareHTTP.sh",
+      "description": "This script initially configure the HTTP Server",
+      "execmode": 3,
+      "filename": "ic5prepareHTTP.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         }
+      ],
+      "location": "\/tmp\/ic5prepareHTTP",
+      "log": "\/tmp\/ic5prepareHTTP\/logs",
+      "name": "ic5prepareHTTP",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

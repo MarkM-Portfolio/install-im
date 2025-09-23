@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Napaka pri nameščanju popravka: izjemno stanje med posodabljanjem zgodovine dogodka, shranjenega v {0}
+WUPD0200E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela. 
+WUPD0200E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0201E=WUPD0201E: Napaka pri nameščanju popravka: izjemno stanje med odpiranjem datoteke dnevnika {0}
+WUPD0201E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela. 
+WUPD0201E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0211E=WUPD0211E: Napaka pri nameščanju popravka: izjemno stanje med branjem informacij o komponentah, vključenih v trenutno posodobitev
+WUPD0211E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela. 
+WUPD0211E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0212E=WUPD0212E: Napaka pri nameščanju popravka: komponenta {0} je navedena kot del te posodobitve, vendar ni na voljo nobene slike za posodobitev komponente.
+WUPD0212E.explanation=Del popravka, namenjen posodobitvi navedene komponente, ni na voljo.
+WUPD0212E.useraction=Ta težava kaže na notranjo napako.  Za dodatne informacije se obrnite na IBM-ovo podporo.
+
+WUPD0214E=WUPD0214E: Napaka pri nameščanju popravka: izjemno stanje med beleženjem aplikacije popravka {0} iz datoteke JAR popravka {1}
+WUPD0214E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela. 
+WUPD0214E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0215E=WUPD0215E: Napaka pri nameščanju popravka: namestitev komponente {0} ni uspela.
+WUPD0215E.explanation=Za dodatne podrobnosti preglejte dnevnik nameščanja in datoteko zgodovine dogodkov.
+WUPD0215E.useraction=Za dodatne podrobnosti preglejte dnevnik nameščanja in datoteko zgodovine dogodkov.
+
+WUPD0216E=WUPD0216E: Napaka pri nameščanju popravka: izjemno stanje med označevanjem aplikacije popravka {0} v komponenti {1}
+WUPD0216E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela. 
+WUPD0216E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+
+WUPD0220E=WUPD0220E: Napaka pri odstranjevanju namestitve popravka: datoteka popravka {0} ni prisotna.
+WUPD0220E.explanation=Izvedli ste poskus odstranitve namestitve popravka, ki ni označen kot nameščen.
+WUPD0220E.useraction=Ta težava kaže na notranjo napako.  Popravka, ki ni nameščen, ne poskušajte odstranjevati.
+
+WUPD0221E=WUPD0221E: Napaka pri odstranjevanju namestitve popravka: datoteke popravka {0} ni mogoče prebrati.
+WUPD0221E.explanation=Datoteke za navedeni popravek ni mogoče prebrati.  Operacija odstranjevanja namestitve je bila zadržana.
+WUPD0221E.useraction=Preverite, ali je datoteka, ki vsebuje navedeni popravek, veljavna.
+
+WUPD0222E=WUPD0222E: Napaka pri odstranjevanju namestitve popravka: izjemno stanje med čiščenjem aplikacije popravka {0}
+WUPD0222E.explanation=Med odstranjevanjem namestitve popravka je prišlo do izjemnega stanja, zato odstranitev namestitve ne bo uspela. 
+WUPD0222E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0223E=WUPD0223E: Napaka pri odstranjevanju namestitve popravka: posodobitve komponente {1} za popravek {0} ni mogoče odstraniti.
+WUPD0223E.explanation=Navedeno komponento ste posodobili kot del navedenega popravka.  Te posodobitve komponente ni mogoče odstraniti.
+WUPD0223E.useraction=Ta težava kaže na notranjo napako.  Za dodatne informacije se obrnite na IBM-ovo podporo.
+
+WUPD0224E=WUPD0224E: Napaka pri odstranjevanju namestitve popravka: izjemno stanje med čiščenjem aplikacije popravka {0} iz komponente {1}
+WUPD0224E.explanation=Med odstranjevanjem namestitve popravka je prišlo do izjemnega stanja, zato odstranitev namestitve ne bo uspela. 
+WUPD0224E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0232E=WUPD0232E: Napaka pri posodabljanju popravka: izjemno stanje med branjem vsebine popravka {0}, komponenta {1}, datoteka JAR popravka {2}, vnos {3}
+WUPD0232E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela. 
+WUPD0232E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0233E=WUPD0233E: Napaka pri posodabljanju popravka: izjemno stanje med vnaprejšnjo obdelavo vsebine popravka {0}, komponenta {1}
+WUPD0233E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela.
+WUPD0233E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0234E=WUPD0234E: Napaka pri posodabljanju popravka: izjemno stanje med obdelavo vsebine popravka {0}, komponenta {1}
+WUPD0234E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela.
+WUPD0234E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0235E=WUPD0235E: Napaka pri posodabljanju popravka: obdelava popravka {0}, komponenta {1} ni uspela.  Za podrobnosti o obdelavi preglejte datoteko dnevnika {2}.
+WUPD0235E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela.
+WUPD0235E.useraction=V navedeni datoteki dnevnika preglejte informacije o obdelavi.
+
+WUPD0236E=WUPD0236E: Napaka pri posodabljanju popravka: izjemno stanje med pripravo imenikov dnevnikov in varnostnih kopij
+WUPD0236E.explanation=Med nameščanjem popravka je prišlo do izjemnega stanja, zato namestitev ne bo uspela.
+WUPD0236E.useraction=Za dodatne podrobnosti preglejte navedeno izjemno stanje.
+
+WUPD0237E=WUPD0237E: Napaka pri odstranjevanju popravka: izjemno stanje med vnaprejšnjo obdelavo vsebine popravka {0}, komponenta {1}
+WUPD0237E.explanation=Med odstranjevanjem namestitve popravka je prišlo do izjemnega stanja, zato odstranitev namestitve ne bo uspela.
+WUPD0237E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0238E=WUPD0238E: Napaka pri odstranjevanju popravka: izjemno stanje med obdelavo vsebine popravka {0}, komponenta {1}
+WUPD0238E.explanation=Med odstranjevanjem namestitve popravka je prišlo do izjemnega stanja, zato odstranitev namestitve ne bo uspela.
+WUPD0238E.useraction=Za dodatne podrobnosti preglejte izjemno stanje.
+
+WUPD0239E=WUPD0239E: Napaka pri odstranjevanju popravka: obdelava popravka {0}, komponenta {1} ni uspela.  Za podrobnosti o obdelavi preglejte datoteko dnevnika {2}.
+WUPD0239E.explanation=Med odstranjevanjem namestitve popravka je prišlo do izjemnega stanja, zato odstranitev namestitve ne bo uspela.
+WUPD0239E.useraction=Za dodatne podrobnosti preglejte datoteko dnevnika.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} od {1}) Nameščanje popravka {2}.
+prefix.efix.revert   =({0} od {1}) Povrnitev namestitve popravka {2}.
+prefix.efix.uninstall=({0} od {1}) Odstranjevanje namestitve popravka {2}.
+
+#NOTAMSG
+prepare.update.install  =priprava na namestitev
+prepare.update.uninstall=priprava na odstranitev namestitve
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =nameščanje komponente {0} od {1}
+component.update.uninstall=odstranjevanje namestitve komponente {0} od {1}
+
+#NOTAMSG
+complete.update.install  =zaključevanje nameščanja
+complete.update.uninstall=zaključevanje odstranjevanja namestitve
+
+#NOTAMSG
+result.cancelled.install=Preklicana namestitev
+result.succeeded.install=Uspešna namestitev
+result.failed.install=Neuspela namestitev
+
+result.cancelled.uninstall=Preklicana odstranitev namestitve
+result.succeeded.uninstall=Uspešna odstranitev namestitve
+result.failed.uninstall=Neuspela odstranitev namestitve

@@ -1,0 +1,65 @@
+!  Property File for Creating the Delta.Jar 1.1  03/03/26
+
+MakeJar     = true
+mfMainClass = Delta
+
+input       = class/Delta.class,                              \
+              class/AddApacheEapiSupport.class,               \
+			  class/UnixFile.class,               			  \
+			  class/WindowsFile.class,               		  \
+			  class/iSystemFile.class,		               	  \
+			  class/LocalSystem.class,                        \
+              class/CallablePTFClass.class,                   \
+              class/ChangeItem.class,                         \
+              class/DeleteTranLog.class,                      \
+              class/Delta$1.class,                            \
+              class/Delta$FileDesc.class,                     \
+              class/Delta$FileEntry.class,                    \
+              class/DeltaByteGenerator$ScanState.class,       \
+              class/DeltaByteGenerator.class,                 \
+              class/DeltaByteReconstructor.class,             \
+              class/DomL2Spt$errHandler.class,                \
+              class/DomL2Spt.class,                           \
+              class/DisplayComponent$CompInfo.class,          \
+              class/DisplayComponent.class,                   \
+              class/EditSetupCmdLine.class,                   \
+              class/EditSasServerProps.class,                 \
+              class/ExecCmd.class,                            \
+              class/Extractor$BKJattribs.class,               \
+              class/Extractor$ChildJarEntry.class,            \
+              class/Extractor$FRList.class,                   \
+              class/Extractor$FUEntry.class,                  \
+              class/Extractor$IncompleteJarEntryValues.class, \
+              class/Extractor$PFUpdates.class,                \
+              class/Extractor$PUEvent.class,                  \
+			  class/Extractor$ScanData.class, 				  \
+              class/Extractor$UnusedJarEntryValues.class ,    \
+              class/Extractor.class,                          \
+              class/FileSystemSpace.class,                    \
+              class/FilterFile$FileUpdateInfo.class,          \
+              class/FilterFile$HTEntry.class,                 \
+              class/FilterFile$PropUpdateInfo.class,          \
+              class/FilterFile$scriptClass.class,             \
+              class/FilterFile$zipEntryUpdateInfo.class,      \
+              class/FilterFile.class,                         \
+              class/findClassInPath.class,                    \
+              class/Helper1.class,                            \
+              class/HelperList$XMLHistoryEventInfo.class ,    \
+              class/HelperList.class,                         \
+              class/IPlanet6Support.class,                    \
+              class/JavaPolicyMerge.class,                    \
+              class/Logger.class,                             \
+              class/PODef.class,                              \
+              class/POProcessor.class,                        \
+              class/RemoveApacheEapiSupport.class,            \
+              class/ReSequenceJar.class,                      \
+              class/ShowProgress.class,                       \
+              class/XML_Handler.class,                        \
+              Delta.Doc,                                      \
+              org,                                            \
+              javax
+
+JarOutName  = delta.jar
+
+
+

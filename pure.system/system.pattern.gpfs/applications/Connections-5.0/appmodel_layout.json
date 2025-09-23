@@ -1,0 +1,72 @@
+{
+   "tooling": {
+      "nodes": [
+         {
+            "id": "DM Node",
+            "location": {
+               "y": "150px",
+               "x": "48px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "IHS Node",
+            "location": {
+               "y": "666px",
+               "x": "512px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "Cust Node1",
+            "location": {
+               "y": "29px",
+               "x": "514px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "Cust Node2",
+            "location": {
+               "y": "28px",
+               "x": "741px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "TDI Node",
+            "location": {
+               "y": "1186px",
+               "x": "636px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "IHS Node2",
+            "location": {
+               "y": "698px",
+               "x": "744px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "DB Primary Node",
+            "location": {
+               "y": "1126px",
+               "x": "45px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "DB Standby Node",
+            "location": {
+               "y": "1127px",
+               "x": "340px"
+            },
+            "ismini": false
+         }
+      ],
+      "links": [
+      ]
+   }
+}

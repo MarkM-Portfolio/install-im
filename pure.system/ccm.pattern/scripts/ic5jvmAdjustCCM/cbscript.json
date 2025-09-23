@@ -1,0 +1,46 @@
+[
+   {
+      "command": "\/tmp\/ic5jvmAdjustCCM\/ic5jvmAdjustCCM.sh",
+      "description": "adjusts JVM settings for available CCM server on current node",
+      "execmode": 3,
+      "filename": "ic5jvmAdjustCCM.zip",
+	  "keys": [
+				 {
+					"locked": false,
+					"required": true,
+					"scriptdefaultvalue": "\/nfsshare",
+					"scriptkey": "MOUNT_POINT",
+					"scriptvalue": "\/nfsshare"
+				 },
+				 {
+					"locked": false,
+					"required": true,
+					"scriptdefaultvalue": "CCM_HOST_NAME",
+					"scriptkey": "HOST_NAME",
+					"scriptvalue": "CCM_HOST_NAME"
+				 },
+				 {
+					"locked": false,
+					"required": true,
+					"scriptdefaultvalue": "8879",
+					"scriptkey": "DmgrPort",
+					"scriptvalue": "8879"
+				 },
+				 {
+					"locked": false,
+					"required": true,
+					"scriptdefaultvalue": "",
+					"scriptkey": "WAS_Password",
+					"scriptvalue": "",
+					"type": "password"
+				 }
+			  ],
+      "location": "\/tmp\/ic5jvmAdjustCCM",
+      "log": "\/tmp\/ic5jvmAdjustCCM\/logs",
+      "name": "ic5jvmAdjustCCM",
+      "ostype": "linux\/unix",
+      "timeout": 9000000,
+      "type": "APPLICATION",
+	  "version": "5.0-CR1"
+   }
+]

@@ -1,0 +1,15 @@
+[
+   {
+      "command": "\/tmp\/ic5addWASNode\/ic5addWASNode.sh",
+      "commandargs": "auto",
+      "description": "Script package manages WAS node and adds it to an existing ic5 cluster",
+      "execmode": 3,
+      "filename": "ic5addWASNode.zip",
+      "location": "\/tmp\/ic5addWASNode",
+      "log": "\/tmp\/ic5addWASNode\/logs",
+      "name": "ic5addWASNode",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION"
+   }
+]

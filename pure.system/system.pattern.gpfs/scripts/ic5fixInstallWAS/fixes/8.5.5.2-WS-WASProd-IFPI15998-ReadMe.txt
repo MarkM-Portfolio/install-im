@@ -1,0 +1,92 @@
+Fix (APAR):  PI15998
+
+Status:  Fix
+
+Release:  8.5.5.2
+
+Operating System:  Linux
+
+Supersedes Fixes:  NONE
+
+CMVC Defect:  xxxxxx
+
+Byte size of APAR:  4596065
+
+Date: 2014-10-17
+
+Abstract:  EJBDeploy hanging in JDT
+
+Description/symptom of problem:  
+PI15998 resolves the following problem:
+
+ERROR DESCRIPTION:                                              
+EJBDeploy may hang due JDT problem                              
+
+LOCAL FIX:                                                      
+None                                                            
+
+PROBLEM SUMMARY
+
+USERS AFFECTED:
+ All users of EJBDeploy inside IBM
+WebSphere Application Server V8.5
+
+PROBLEM DESCRIPTION:
+Hanging in the EJB deploy process due
+to
+a dead lock in JDT.
+
+RECOMMENDATION:
+None
+
+An intermitent hang occurs in the EJB deploy proces when
+running the EJBDeploy command in WebSphere Application Server
+V8.5.5.1. The problem is due to a deadlock in the eclipse
+code generator component.
+
+PROBLEM CONCLUSION:                                             
+It was determined that the deadlock happened in the eclipse     
+generator component. The problem was identified and the         
+corresponding .jar file was re-built and added to EJBDeploy.    
+                                                                
+The fix for this APAR is currently targeted for inclusion in    
+fix pack 8.5.5.3. Please refer to the Recommended Updates       
+page for delivery information:                                  
+http://www.ibm.com/support/docview.wss?rs=180&uid=swg27004980   
+
+
+Directions to apply fix:  
+Fix applies to Editions:
+Release 8.0
+X Application Server (Express or BASE)
+X Network Deployment (ND)
+__ Edge Components
+__ Developer
+
+Install Fix to all WebSphere installations unless special instructions are included below.
+
+Special Instructions: None
+
+NOTE:
+The user must:
+* Logged in with the same authority level when unpacking a fix, fix pack or refresh pack.
+* Be at V1.4.3 or newer of the Installation Manager. Certain iFixes may require a newer version of the Installation Manager and the Installation Manager will inform you during the installation process if a newer version is required.
+
+The IBM Information Center can provide details, if needed, on the use of the Installation Manager to apply the iFixes.
+http://publib.boulder.ibm.com/infocenter/install/v1r4/index.jsp.  Shutdown WebSphere Application Server before applying the iFixes.  Restart WebSphere Application Server after applying the iFixes.
+
+Directions to remove fix:  
+
+The IBM Information Center can provide details, if needed, on the use of the Installation Manager to remove the iFixes.
+http://publib.boulder.ibm.com/infocenter/install/v1r4/index.jsp.  Shutdown WebSphere Application Server before removing the iFixes.  Restart WebSphere Application Server after removing the iFixes.
+
+Directions to re-apply fix:  
+1) Shutdown WebSphere Application Server.
+
+2) Follow the Fix instructions to apply the fix.
+
+3) Restart WebSphere Application Server.
+
+
+
+Additional Information:  

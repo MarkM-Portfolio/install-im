@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN" xml:lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="&copy; Copyright IBM Corporation 2006, 2007" />
+<meta name="DC.rights.owner" content="&copy; Copyright IBM Corporation 2006, 2007" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="典型易捷启动板模板的提示与技巧" />
+<meta name="abstract" content="典型易捷启动板模板为您提供了一个起点，帮助创建可用于易捷品牌产品的安装启动板。" />
+<meta name="description" content="典型易捷启动板模板为您提供了一个起点，帮助创建可用于易捷品牌产品的安装启动板。" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="zh-CN" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>易捷启动板模板的提示与技巧</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">典型易捷启动板模板的提示与技巧</h1>
+<div><p>典型易捷启动板模板为您提供了一个起点，帮助创建可用于易捷品牌产品的安装启动板。</p>
+<p> 该模板中包含可用于启动产品的安装程序、显示文档和提供本地化内容的代码。</p>
+<p>有关典型易捷启动板模板的注意事项：</p>
+<ul><li>所使用的全部命令和程序都在 launchpadContent/global.properties 中定义。</li>
+<li>样本应用程序包含在 DISK1 的“光盘布局”页面中。
+要添加定制的安装程序或应用程序，请在 launchpadContent\global.properties 中定义应用程序（按照样本应用程序中的示例进行操作）。
+通过使用光盘布局选项卡上的控件，将应用程序导入到项目中相应的光盘上。</li>
+<li>所有 HTML 文件都使用相同的样式表（content.css），该样式表位于 launchpadContent 目录中。</li>
+</ul>
+<p>“典型易捷启动板模板”包含下列页面：
+</p>
+<ul><li><strong>欢迎</strong> －“欢迎”页面通常提供产品的概述和启动板各功能的说明。“欢迎”页面应该简单明了，但仍应提供一些选项以便用户可以查找有关产品的更多信息，方法是提供产品 Web 站点的链接，以在新的浏览器窗口中显示这些站点。“欢迎”页面包含用于在浏览器中显示外部 Web 站点的代码。“欢迎”页面使用 <samp class="codeph">viewPage()</samp> 函数来显示新窗口，
+而不是使用 JavaScript <samp class="codeph">window.open()</samp>，
+因为 <samp class="codeph">window.open()</samp> 很有可能被弹出窗口阻止程序所阻止。</li>
+<li><strong>发行信息</strong> －“发行信息”页面通常提供特定于产品某个发行版的信息。
+例如，安装注意事项、先决条件的更改、已经在该发行版中提供的主要功能部件或修订，
+以及类似的内容都适用于“发行信息”页面。“发行信息”页面包含用于查看 PDF 和运行应用程序的代码。
+</li>
+<li><strong>先决条件信息</strong> －“先决条件”页面通常提供运行先决条件验证程序的控件，
+用于确定计算机是否满足系统先决条件，并返回它未检测到的任何先决条件的列表。“先决条件信息”页面包含用于查看 PDF 和运行应用程序的代码。
+</li>
+<li><strong>安装方案</strong> － 安装方案内容通常提供用户安装产品时可采用的各种方法。
+用户可以根据自己打算使用产品的方法来选择特定的安装方案。
+这些内容说明了用户可以选择的各种安装方案之间的差异，并提供了有关用户为何选择某种安装方案（而非其他方案）的信息。
+并非每个产品都包含安装方案。如果您正在为这类产品定制典型易捷启动板模板，那么可以从导航中除去这一部分。“安装方案”页面包含使用参数运行定制程序的代码。
+</li>
+<li><strong>迁移信息</strong> － 迁移内容通常说明用户从产品的较早版本升级到较新版本所需采用的迁移路径。
+如果迁移信息与特定产品不相关，那么应该从导航中除去该内容。“迁移信息”页面包含用于查看 PDF 和运行应用程序的代码。
+</li>
+<li><strong>安装</strong> －“产品安装”页面通常提供用于启动产品安装的控件。
+可以向安装启动板添加多个产品安装页面，以支持多个产品的安装。
+安装页面包含用于启动产品安装的代码。</li>
+<li><strong>退出</strong> － 导航菜单上的“退出”链接用于退出启动板。</li>
+</ul>
+</div>
+</body>
+</html>

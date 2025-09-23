@@ -1,0 +1,17 @@
+<component name="prereqs.install/product.dummy"
+           description="dummy product for building the installer"
+           spec-version="1.0"
+           build-version=""
+           owner="Barry Pellas"
+           owner-email="bpellas@us.ibm.com">
+
+    <output-group name="dist">
+        <output type="dir"
+            visibility="public"
+            platform="all"
+            location="cdfiles"
+            preferredInstallLocation="."/>
+    </output-group>
+
+</component>
+

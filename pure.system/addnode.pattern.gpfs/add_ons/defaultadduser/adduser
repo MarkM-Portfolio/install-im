@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# Default add-on script to create a user.  This script must be run as root!
+
+# User add-on scripts are responsible for creating a user definition on
+# the virtual machine.
+#
+# Add-on scripts are invoked one time when the virtual machine is initialized,
+# before any script packages are run.  Note that add-on scripts are NOT
+# invoked each time the virtual machine boots.  If initialization logic needs
+# to run each time the virtual machine is booted, the add-on script is
+# responsible for placing the necessary hooks in the operating system startup
+# logic.  Any such hooks must NOT rely on the presence of this script or any
+# additional files or directories from the add-on, as those files will be
+# deleted from the virtual machine after this script exits.
+#
+# User add-on scripts may define parameters for any required information.
+# Parameter values are apsswed as environment variables when the script
+# is run.  This default user add-on script accepts the following parameters:
+#
+# USERNAME - User name of the user to be added.
+#
+# PASSWORD - Password to be set for the new user.  If not supplied, no
+#   password is set for the user.
+
+echo "*** creating user ${USERNAME}"
+
+useradd -m ${USERNAME}
+
+if [ -n "$PASSWORD" ]
+then
+    echo "*** setting password for user ${USERNAME}"
+    case $(uname) in
+        AIX)
+            echo "${USERNAME}:${PASSWORD}" | /usr/bin/chpasswd -c
+            ;;
+        *)
+            echo ${PASSWORD} | /usr/bin/passwd --stdin ${USERNAME}
+            ;;
+    esac
+fi
+
+echo "*** user ${USERNAME} created"

@@ -1,0 +1,384 @@
+[
+   {
+      "command": "\/tmp\/ic5setEnvProperties\/ic5setEnvProperties.sh",
+      "description": "This is the sample description of the script",
+      "execmode": 3,
+      "filename": "ic5setEnvProperties.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "DMGRPartHostname",
+            "scriptkey": "DMSYSHST",
+            "scriptvalue": "DMGRPartHostname"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "VIRTUSERPW",
+            "scriptvalue": "",
+            "type": "password"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "CustomNodePartNodename",
+            "scriptkey": "INSTNODE1_BASE",
+            "scriptvalue": "CustomNodePartNodename"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "CustomNodePart2Nodename",
+            "scriptkey": "INSTNODE2_BASE",
+            "scriptvalue": "CustomNodePart2Nodename"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "IHSNodename",
+            "scriptkey": "IHSNODE_BASE",
+            "scriptvalue": "IHSNodename"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "IHSNode2name",
+            "scriptkey": "IHSNODE2_BASE",
+            "scriptvalue": "IHSNode2name"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "CustomNodePartHostname",
+            "scriptkey": "NDSYSHST",
+            "scriptvalue": "CustomNodePartHostname"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "CustomNodePart2Hostname",
+            "scriptkey": "ND2SYSHST",
+            "scriptvalue": "CustomNodePart2Hostname"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "purescale.raleigh.ibm.com",
+            "scriptkey": "PROJDOMAIN",
+            "scriptvalue": "purescale.raleigh.ibm.com"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "IHSPartHostname",
+            "scriptkey": "HTTPHOST",
+            "scriptvalue": "IHSPartHostname"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "IHSPart2Hostname",
+            "scriptkey": "HTTPHOST2",
+            "scriptvalue": "IHSPart2Hostname"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "DB2Hostname",
+            "scriptkey": "DBSYSHST",
+            "scriptvalue": "DB2Hostname"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "StandbyDB2Hostname",
+            "scriptkey": "STANDBYDBSYSHST",
+            "scriptvalue": "StandbyDB2Hostname"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "LCUSER_PW",
+            "scriptvalue": "",
+			"type": "password"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "DB2Port",
+            "scriptvalue": ""
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "HADR_DBName",
+            "scriptvalue": ""
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "HADR_DBUser",
+            "scriptvalue": ""
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "DM_Connector_Port",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "LDAP_SRV",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "BIND_USER",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "BIND_USER_PW",
+            "scriptvalue": "",
+            "type": "password"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "IDS",
+            "scriptkey": "LDAP_TYPE",
+            "scriptvalue": "IDS",
+            "type": "string",
+            "validvalues": [
+               "IDS"
+            ]
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "false",
+            "scriptkey": "ENABLE_SSL_LDAP",
+            "scriptvalue": "false",
+            "type": "boolean"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "389",
+            "scriptkey": "LDAP_PORT",
+            "scriptvalue": "389"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "LDAP_Search_Base",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "MAIL_SRV",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "false",
+            "scriptkey": "ENABLE_SSL_MAIL",
+            "scriptvalue": "false",
+            "type": "boolean"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "25",
+            "scriptkey": "MAIL_PORT",
+            "scriptvalue": "25"
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "Mail_User",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "Mail_Password",
+            "scriptvalue": "",
+			"type": "password"
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "CustNode1_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "CustNode1_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "CustNode2_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "CustNode2_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "IHSNode1_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "IHSNode1_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "IHSNode2_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "IHSNode2_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "PrimaryDB_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "PrimaryDB_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "StandbyDB_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "StandbyDB_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "TDINODE_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "TDINODE_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "DMNODE_NFS_Host",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "DMNODE_NFS_Export",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "fileSystemName",
+            "scriptkey": "fileSystemName",
+            "scriptvalue": "fileSystemName"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/ConnectionsContentStore",
+            "scriptkey": "contentStoreFolder",
+            "scriptvalue": "\/ConnectionsContentStore"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/ConnectionsContentStoreLink",
+            "scriptkey": "contentStoreLink",
+            "scriptvalue": "\/ConnectionsContentStoreLink"
+         }
+      ],
+      "location": "\/tmp\/ic5setEnvProperties",
+      "log": "\/tmp\/ic5setEnvProperties\/logs",
+      "name": "ic5setEnvProperties",
+      "ostype": "linux\/unix",
+      "timeout": 300000,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

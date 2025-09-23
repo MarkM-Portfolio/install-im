@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Echec de l''installation du correctif : Une exception s''est produite lors de la mise à jour de l''historique des événements stocké dans {0}
+WUPD0200E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec. 
+WUPD0200E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0201E=WUPD0201E: Echec de l''installation du correctif : Une exception s''est produite lors de l''ouverture du fichier journal {0}
+WUPD0201E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec. 
+WUPD0201E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0211E=WUPD0211E: Echec de l'installation du correctif : Une exception s'est produite lors de la récupération d'informations sur les composants de la mise à jour en cours
+WUPD0211E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec. 
+WUPD0211E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0212E=WUPD0212E: Echec de l''installation du correctif : Le composant {0} figure dans la mise à jour, mais aucune image de mise à jour correspondante n''est disponible.
+WUPD0212E.explanation=La portion du correctif utilisée pour mettre à jour le composant indiqué n'est pas disponible.
+WUPD0212E.useraction=Cet incident est dû à une erreur interne.  Pour plus d'informations, consultez le service de support IBM.
+
+WUPD0214E=WUPD0214E: Echec de l''installation du correctif : Une exception s''est produite lors de l''enregistrement de l''application du correctif {0} à partir du fichier JAR {1}
+WUPD0214E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec. 
+WUPD0214E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0215E=WUPD0215E: Echec de l''installation du correctif : L''installation du composant {0} a échoué.
+WUPD0215E.explanation=Pour plus d'informations, consultez le journal d'installation et le fichier d'historique des événements.
+WUPD0215E.useraction=Pour plus d'informations, consultez le journal d'installation et le fichier d'historique des événements.
+
+WUPD0216E=WUPD0216E: Echec de l''installation du correctif : Une exception s''est produite lors du marquage de l''application du correctif {0} sur le composant {1}
+WUPD0216E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec. 
+WUPD0216E.useraction=Pour plus d'informations, consultez l'exception.
+
+
+WUPD0220E=WUPD0220E: Echec de la désinstallation du correctif : Le fichier du correctif {0} est absent.
+WUPD0220E.explanation=Un correctif non marqué comme installé fait l'objet d'une tentative de suppression.
+WUPD0220E.useraction=Cet incident est dû à une erreur interne.  Aucune tentative de suppression de correctif non installé ne devrait avoir lieu.
+
+WUPD0221E=WUPD0221E: Echec de la désinstallation du correctif : Le fichier du correctif {0}  n''a pas pu être lu.
+WUPD0221E.explanation=Le fichier du correctif indiqué n'a pas pu être lu.  L'opération de désinstallation a été suspendue.
+WUPD0221E.useraction=Vérifiez que le fichier contenant le correctif indiqué est valide.
+
+WUPD0222E=WUPD0222E: Echec de la désinstallation du correctif : Une exception s''est produite lors de l''effacement de l''application du correctif {0}
+WUPD0222E.explanation=Une exception s'est produite lors de la désinstallation du correctif et a entraîné son échec. 
+WUPD0222E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0223E=WUPD0223E: Echec de la désinstallation du correctif : La mise à jour du composant {1} du correctif {0} n''a pas pu être désinstallée.
+WUPD0223E.explanation=Une mise à jour a été effectuée sur le composant indiqué dans le cadre du correctif mentionné.  Cette mise à jour n'a pas pu être supprimée.
+WUPD0223E.useraction=Cet incident est dû à une erreur interne.  Pour plus d'informations, consultez le service de support IBM.
+
+WUPD0224E=WUPD0224E: Echec de la désinstallation du correctif : Une exception s''est produite lors de l''effacement de l''application du correctif {0} sur le composant {1}
+WUPD0224E.explanation=Une exception s'est produite lors de la désinstallation du correctif et a entraîné son échec. 
+WUPD0224E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0232E=WUPD0232E: Echec de la mise à jour du correctif : Une exception s''est produite lors de la récupération du contenu du correctif {0}, composant {1}, fichier JAR {2}, entrée {3}
+WUPD0232E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec. 
+WUPD0232E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0233E=WUPD0233E: Echec de la mise à jour du correctif : Une exception s''est produite lors du pré-traitement du contenu du correctif {0}, composant {1}
+WUPD0233E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec.
+WUPD0233E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0234E=WUPD0234E: Echec de la mise à jour du correctif : Une exception s''est produite lors du traitement du contenu du correctif {0}, composant {1}
+WUPD0234E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec.
+WUPD0234E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0235E=WUPD0235E: Echec de la mise à jour du correctif : Le traitement du correctif {0}, composant {1} a échoué. Pour plus d''informations, consultez le fichier journal {2}.
+WUPD0235E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec.
+WUPD0235E.useraction=Consultez les informations de traitement dans le fichier journal indiqué.
+
+WUPD0236E=WUPD0236E: Echec de la mise à jour du correctif : Exception lors de la préparation des répertoires de journaux et de sauvegarde
+WUPD0236E.explanation=Une exception s'est produite lors de l'installation du correctif et a entraîné son échec.
+WUPD0236E.useraction=Pour plus d'informations, consultez le fichier journal.
+
+WUPD0237E=WUPD0237E: Echec de la suppression du correctif : Une exception s''est produite lors du pré-traitement du contenu du correctif {0}, composant {1}
+WUPD0237E.explanation=Une exception s'est produite lors de la désinstallation du correctif et a entraîné son échec.
+WUPD0237E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0238E=WUPD0238E: Echec de la suppression du correctif : Une exception s''est produite lors du traitement du contenu du correctif {0}, composant {1}
+WUPD0238E.explanation=Une exception s'est produite lors de la désinstallation du correctif et a entraîné son échec.
+WUPD0238E.useraction=Pour plus d'informations, consultez l'exception.
+
+WUPD0239E=WUPD0239E: Echec de la suppression du correctif : Le traitement du correctif {0}, composant {1} a échoué.  Pour plus d''informations, consultez le fichier journal {2}.
+WUPD0239E.explanation=Une exception s'est produite lors de la désinstallation du correctif et a entraîné son échec.
+WUPD0239E.useraction=Pour plus d'informations, consultez le fichier journal.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} sur {1}) Installation du correctif {2}.
+prefix.efix.revert   =({0} sur {1}) Rétablissement de l''installation du correctif {2}.
+prefix.efix.uninstall=({0} sur {1}) Désinstallation du correctif {2}.
+
+#NOTAMSG
+prepare.update.install  =préparation de l'installation
+prepare.update.uninstall=préparation de la désinstallation
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =installation du composant {0} sur {1}
+component.update.uninstall=désinstallation du composant {0} sur {1}
+
+#NOTAMSG
+complete.update.install  =finalisation de l'installation
+complete.update.uninstall=finalisation de la désinstallation
+
+#NOTAMSG
+result.cancelled.install=Installation annulée
+result.succeeded.install=Installation réussie
+result.failed.install=Echec de l'installation
+
+result.cancelled.uninstall=Désinstallation annulée
+result.succeeded.uninstall=Désinstallation réussie
+result.failed.uninstall=Echec de la désinstallation

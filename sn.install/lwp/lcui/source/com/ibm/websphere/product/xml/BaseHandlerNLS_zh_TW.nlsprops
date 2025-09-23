@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: 利用 DTD 目錄 {0} 載入 {1} 文件時，發生異常狀況
+WVER0101E.explanation=出現的異常造成指定的文件載入失敗。
+WVER0101E.useraction=特定使用者動作會隨著發生的異常狀況而不同。特別是，請確定指定的檔案是可用且格式適當的。如需其他資訊，請聯絡支援中心。
+
+# 
+WVER0102E=WVER0102E: 利用 DTD 目錄 {0} 載入 {1} 文件時，發生異常狀況。已設定一個 {2} 的系統 ID 及一個 {3} 的公用 ID。在第 {4} 行及第 {5} 直欄發生錯誤
+WVER0102E.explanation=出現的異常造成指定的文件載入失敗。
+WVER0102E.useraction=特定使用者動作會隨著發生的異常狀況而不同。特別是，請確定指定的檔案是可用且格式適當的。如需其他資訊，請聯絡支援中心。
+
+# 
+WVER0104E=WVER0104E: 在建立 {0} 類型的根文件元素時，發生異常狀況
+WVER0104E.explanation=建立根目錄文件元素時，發生需注意的異常。
+WVER0104E.useraction=特定使用者動作會隨著發生的異常狀況而不同。最常是 XML 剖析器的配置無效。請確定 Java 系統內容沒有建立一個無效的剖析器配置。如需其他資訊，請聯絡支援中心。
+
+# 
+WVER0105E=WVER0105E: 在建立 XML 模型物件（{0} 類型）時，發生異常狀況
+WVER0105E.explanation=試圖建立 XML 模型物件時，發生需注意的異常。
+WVER0105E.useraction=特定使用者動作會隨著發生的異常狀況而不同。通常在設定類別路徑上，無法取得指定類型。如需其他資訊，請聯絡支援中心。
+
+# 
+WVER0106E=WVER0106E: 試圖將元素放在簡式類型 {0} 的物件中
+WVER0106E.explanation=這是一個內部錯誤。
+WVER0106E.useraction=如需其他資訊，請聯絡支援中心。
+
+# 
+WVER0107E=WVER0107E: 試圖將版本資訊寫入 {0} 檔時，發生異常狀況
+WVER0107E.explanation=試圖寫入指定的檔案時，發生需注意的異常。
+WVER0107E.useraction=特定使用者動作會隨著發生的異常狀況而不同。特別是，請確定指定的檔案是可寫入的，並有足夠的空間供其使用。
+
+# 
+WVER0108E=WVER0108E: 執行實體解析時，發生異常狀況，公用 ID {0}、系統 ID {1}、對映檔名稱 {2}
+WVER0108E.explanation=剖析產品資訊以解析 DTD 資訊時出現需注意異常。無法解析指定的 DTD。
+WVER0108E.useraction=特定使用者動作會隨著發生的異常狀況而不同。
+
+# 
+WVER0201E=WVER0201E: 在 ''{1}'' 類型的元素內，遺漏 ''{0}'' 屬性
+WVER0201E.explanation=具名的屬性不是元素指定類型的有效屬性。
+WVER0201E.useraction=更新 XML 檔案來更正屬性資訊。
+
+#
+WVER0202E=WVER0202E: 元素結構不平衡：元素額外終止。
+WVER0202E.explanation=包含產品資訊的 XML 檔案有錯誤的元素結構。
+WVER0202E.useraction=更新 XML 檔案以更正元素結構。
+
+#
+WVER0203E=WVER0203E: 元素結構不平衡：遺漏元素終止。
+WVER0203E.explanation=包含產品資訊的 XML 檔案有錯誤的元素結構。
+WVER0203E.useraction=更新 XML 檔案以更正元素結構。
+
+#
+WVER0204E=WVER0204E: ''{0}'' 元素不是有效的根元素
+WVER0204E.explanation=包含產品資訊的 XML 檔案有錯誤的元素結構。
+WVER0204E.useraction=更新 XML 檔案以更正元素結構。
+
+#
+WVER0205E=WVER0205E: ''{0}'' 元素在 ''{1}'' 元素內無效
+WVER0205E.explanation=包含產品資訊的 XML 檔案有錯誤的元素結構。
+WVER0205E.useraction=更新 XML 檔案以更正元素結構。
+
+#
+WVER0206E=WVER0206E: 試圖在 ''{1}'' 元素內關閉 ''{0}'' 元素。
+WVER0206E.explanation=包含產品資訊的 XML 檔案有錯誤的元素結構。
+WVER0206E.useraction=更新 XML 檔案以更正元素結構。

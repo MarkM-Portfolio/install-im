@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<!-- OS400_Enablement, OS400 specific change -->
+<component name="im.installer/im.utils/im.os400SetUmask" description="Set umask" spec-version="${app.comp.version}" disabled="false">
+	<output-group name="dist">
+		<output type="jar" visibility="public" platform="all" location="${env.LWP_COMP_BUILD}/lib/os400SetUmask.jar"/>
+	</output-group>
+
+	<dependency name="im.installer/im.panels/com.ibm.connections.panelUtil/lib" type="jar" version="${app.comp.version}" />
+</component>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="fr-fr" xml:lang="fr-fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2006" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="Astuces et conseils pour le modèle Classic Express Launchpad" />
+<meta name="abstract" content="Le modèle Classic Express Launchpad constitue un point de départ pour la création d'un tableau de bord d'installation que vous pouvez utiliser avec les produits de marque Express." />
+<meta name="description" content="Le modèle Classic Express Launchpad constitue un point de départ pour la création d'un tableau de bord d'installation que vous pouvez utiliser avec les produits de marque Express." />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="fr-fr" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>Astuces et conseils pour le modèle Express Launchpad</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">Astuces et conseils pour le modèle Classic Express Launchpad</h1>
+<div><p>Le modèle Classic Express Launchpad constitue un point de départ pour la création d'un
+tableau de bord d'installation que vous pouvez utiliser avec les produits de marque
+Express.</p>
+<p> Ce modèle contient un code que vous pouvez utiliser pour lancer le programme
+d'installation d'un produit, afficher une documentation et fournir un contenu localisé.</p>
+<p>Remarques à propos du modèle Classic Express Launchpad :</p>
+<ul><li>Tous les programmes et commandes utilisés sont définis dans le fichier launchpadContent/global.properties.</li>
+<li>Les exemples d'application sont inclus sur le DISQUE1 de la page de disposition du disque.
+Pour ajouter des applications ou des programmes d'installation personnalisés, définissez
+l'application dans launchpadContent\global.properties (en suivant les exemples des
+exemples d'application). Importez les applications sur le disque approprié dans le projet
+à l'aide des commandes de l'onglet de disposition du disque. </li>
+<li>Tous les fichiers HTML utilisent la même feuille de style (content.css), qui se
+trouve dans le répertoire launchpadContent.</li>
+</ul>
+<p>Le modèle Classic Express Launchpad contient les pages suivantes :</p>
+<ul><li><strong>Bienvenue</strong> - La page de bienvenue offre généralement une
+présentation du produit et une explication des fonctions du tableau de bord.  Elle doit
+être concise, mais proposer cependant à l'utilisateur des options permettant de rechercher
+des informations supplémentaires sur le produit en offrant un lien vers le site Web du
+produit qui est affiché dans une nouvelle fenêtre de navigateur. La page de bienvenue
+comprend un code permettant d'afficher un site Web externe dans un navigateur.  Utilisez
+la fonction <samp class="codeph">viewPage()</samp> pour afficher les nouvelles
+fenêtres au lieu de la fonction JavaScript <samp class="codeph">window.open()</samp> car
+cette dernière peut être bloquée par une fonction de blocage des fenêtres en incrustation.</li>
+<li><strong>Release Information (Informations sur la version)</strong> - La page
+d'informations sur la version fournit généralement des informations spécifiques à une
+version d'un produit.  Par exemple, les
+difficultés liées à l'installation, les changements de prérequis, les principales
+fonctions ou les correctifs résolus dans la version et tout autre contenu similaire
+peuvent apparaître dans une page d'informations sur la version.  La page d'informations
+sur la version contient un code permettant d'afficher un PDF et d'exécuter une application.</li>
+<li><strong>Prerequisite Information (Informations sur les prérequis)</strong> - La page
+des prérequis fournit généralement une commande permettant d'exécuter un programme de
+vérification des prérequis qui détermine si les prérequis du système se trouvent bien sur
+l'ordinateur et renvoie une liste de ceux qu'il n'a pas détectés.  La page d'informations sur les
+prérequis contient un code permettant d'afficher un PDF et d'exécuter une application.</li>
+<li><strong>Installation Scenario (Scénario d'installation)</strong> - Le contenu des
+scénarios d'installation fournit généralement les diverses approches proposées à un
+utilisateur pour l'installation d'un produit.
+Les utilisateurs peuvent choisir un scénario d'installation spécifique en fonction de la
+manière dont ils souhaitent utiliser le produit.  Ce contenu explique les différences
+entre les divers scénarios d'installation que peut choisir un utilisateur et fournit
+des informations sur l'intérêt pour l'utilisateur de chacun de ces scénarios
+d'installation.  Les produits ne proposent pas tous des scénarios d'installation.  Si vous
+personnalisez le modèle Classic Express Launchpad pour un tel produit, vous pouvez
+supprimer cette section de la navigation. La page des scénarios d'installation contient
+un code permettant d'exécuter un programme personnalisé avec un argument.</li>
+<li><strong>Migration Information (Informations sur la migration)</strong> - La page du
+contenu de la migration explique généralement le chemin de migration qu'un utilisateur
+doit suivre pour migrer d'une version antérieure d'un produit vers une version plus
+récente. Si les
+informations de migration ne s'appliquent pas à un produit particulier, ce contenu doit
+être supprimé de la navigation. La page d'informations sur la migration contient un code
+permettant d'afficher un PDF et d'exécuter une application.</li>
+<li><strong>Install (Installation)</strong> - La page d'installation du produit fournit
+généralement une commande permettant de lancer l'installation du produit. Vous pouvez ajouter
+plusieurs pages d'installation de produit à un tableau de bord d'installation pour
+prendre en charge les installations de plusieurs produits.
+La page d'installation contient un code permettant de lancer l'installation du produit.</li>
+<li><strong>Quitter</strong> - Le lien Quitter du menu de navigation permet de sortir du
+tableau de bord.</li>
+</ul>
+</div>
+</body>
+</html>

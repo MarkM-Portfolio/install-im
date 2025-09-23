@@ -1,0 +1,250 @@
+Mezin�rodn� licen�n� smlouva pro programy
+
+��st 1 - Obecn� ustanoven�
+
+STA�EN�M, INSTALAC�, ZKOP�ROV�N�M, P��STUPEM K PROGRAMU NEBO KLEPNUT�M NA TLA��TKO "SOUHLAS�M" NEBO JIN�M POU�IT�M PROGRAMU VYJAD�UJETE SV�J SOUHLAS S TOUTO SMLOUVOU. JESTLI�E AKCEPTUJETE TYTO PODM�NKY JM�NEM DR�ITELE LICENCE, PAK T�MTO PROHLA�UJETE A ZARU�UJETE, �E JSTE ZMOCN�NI DR�ITELE LICENCE T�MITO PODM�NKAMI V�ZAT. JESTLI�E S T�MITO PODM�NKAMI NESOUHLAS�TE:
+
+- NESTAHUJTE, NEINSTALUJTE, NEKOP�RUJTE, NEPOU��VEJTE PROGRAM, ANI K N�MU NEP�ISTUPUJTE NEBO NEPOU��VEJTE TLA��TKO "SOUHLAS�M; A
+
+- BEZODKLADN� VRA�TE NEPOU�IT� NOSI�E, DOKUMENTACI A DOKUMENT O OPR�VN�N� SUBJEKTU, OD KTER�HO JSTE JE Z�SKALI, A BUDE V�M VR�CENA ��STKA, KTEROU JSTE ZA N� ZAPLATILI. V P��PAD�, �E DO�LO KE STA�EN� PROGRAMU, VE�KER� KOPIE PROGRAMU ZNI�TE.
+
+1. Definice
+
+"Opr�vn�n� u��v�n�" - stanoven� �rove� opr�vn�n� Dr�itele licence spou�t�t Program. Tuto �rove� lze posoudit na z�klad� po�tu u�ivatel�, mili�n� servisn�ch jednotek ("jednotky MSU"), jednotek Processor Value Units ("jednotky PVU") nebo na z�klad� jin� �rovn� u��v�n�, kterou IBM stanov�.
+
+"IBM" - International Business Machines Corporation nebo n�kter� z jej�ch dce�inn�ch spole�nost�.
+
+"Licen�n� informace" ("LI") - dokument uv�d�j�c� informace a ve�ker� dodate�n� podm�nky specifick� pro Program. Licen�n� informace k Programu jsou k dispozici na adrese www.ibm.com/software/sla. Licen�n� informace lze rovn� nal�zt v adres��i s Programem - prost�ednictv�m syst�mov�ho p��kazu - nebo ve form� p��ru�ky, kterou obdr��te s Programem.
+
+"Program" - n�e uveden� komponenty, v�etn� origin�lu a v�ech �pln�ch nebo d�l��ch kopi�: 1) strojov� �iteln� instrukce a data, 2) komponenty, soubory a moduly, 3) audiovizu�ln� obsah (jako jsou obrazy, text, nahr�vky nebo obr�zky), a 4) souvisej�c� licencovan� materi�ly (jako jsou kl��e a dokumentace).
+
+"Dokument o opr�vn�n�" ("Proof of Entitlement neboli PoE") - d�kaz o opr�vn�n�m u��v�n� Programu Dr�itelem licence. Dokument o opr�vn�n� je rovn� d�kazem o n�roku Dr�itele licence na z�ruku, na ceny za budouc� p�echody na vy��� verzi (vyskytnou-li se n�jak�) a pro p��padn� zvl�tn� nebo propaga�n� p��le�itosti. Neposkytne-li IBM Dr�iteli licence dokument o opr�vn�n� (Proof of Entitlement), pak IBM m�e akceptovat p�vodn� stvrzenku o n�kupu nebo jin� doklad o n�kupu od subjektu (bu� IBM nebo jej� prodejce), od kter�ho Dr�itel licence obdr�el Program, za p�edpokladu, �e tento doklad uv�d� n�zev Programu a zakoupenou �rove� Opr�vn�n�ho u��v�n�.
+
+"Z�ru�n� lh�ta" - jeden rok ode dne ud�len� licence p�vodn�mu Dr�iteli licence.
+
+2. Struktura smlouvy
+
+Tato Smlouva je tvo�ena ��st� 1 - Obecn� ustanoven�, ��st� 2 - Specifick� ustanoven� pro jednotliv� zem� (jsou-li n�jak�), Licen�n�mi informacemi a dokumentem o opr�vn�n� (Proof of Entitlement) a tvo�� �plnou smlouvu mezi Dr�itelem licence a IBM ohledn� u��v�n� Programu. Nahrazuje ve�ker� p�edchoz� �stn� nebo p�semn� ujedn�n� mezi Dr�itelem licence a IBM ohledn� jeho u��v�n� Programu. Podm�nky ��sti 2 mohou nahrazovat nebo upravovat podm�nky ��sti 1. V p��pad� rozporu podm�nek maj� podm�nky dokumentu Licen�n� informace p�ed podm�nkami obou ��st� p�ednost.
+
+3. Ud�len� licence
+
+Program je vlastnictv�m IBM nebo dodavatele IBM, je chr�n�n autorsk�mi pr�vy a je k n�mu poskytov�no pr�vo u��v�n�, nen� prod�v�n.
+
+IBM ud�luje Dr�iteli licence nev�hradn� licenci na 1) u��v�n� Programu a� do �rovn� Opr�vn�n�ho u��v�n� uveden� v dokumentu o opr�vn�n� (Proof of Entitlement), 2) vytvo�en� a instalaci kopi� na podporu takov�ho Opr�vn�n�ho u��v�n�, a 3) vytvo�en� z�lo�n� kopie, to v�e za p�edpokladu, �e:
+
+a. Dr�itel licence z�skal Program z�konn�m zp�sobem a dodr�uje podm�nky t�to Smlouvy;
+
+b. z�lo�n� kopie nen� spou�t�na, leda�e nelze spustit z�lohovan� Program;
+
+c. Dr�itel licence uv�d� v�echna upozorn�n� o autorsk�ch pr�vech a dal�� v�hrady vlastnick�ch pr�v na ka�d� kopii nebo d�l�� kopii Programu;
+
+d. Dr�itel licence zajist�, aby ka�d� osoba (s lok�ln�m nebo vzd�len�m p��stupem)pou��vaj�c� Program 1) tak �inila pouze jm�nem Dr�itele licence, a 2) tak �inila v souladu s podm�nkami t�to Smlouvy;
+
+e. Dr�itel licence nesm� 1) pou��vat, kop�rovat, upravovat nebo distribuovat Program jinak, ne� je v�slovn� dovoleno touto Smlouvou; 2) zp�tn� sestavovat, zp�tn� kompilovat �i jakkoliv p�ekl�dat Program, nen�-li to v�slovn� dovoleno z�konem bez mo�nosti toto povolen� smluvn� vylou�it; 3) u��vat kter�koli komponenty, soubory, moduly, audiovizu�ln� obsah nebo souvisej�c� licen�n� materi�ly nez�visle na Programu; nebo 4) Program sublicencovat, pronaj�mat �i poskytovat formou leasingu; a
+
+f. jestli�e Dr�itel licence z�sk� tento Program jako Podp�rn� program, bude jej pou��vat pouze na podporu Z�kladn�ho programu a v souladu s ve�ker�mi omezen�mi uveden�mi v licenci na Z�kladn� program, nebo - jestli�e Dr�itel licence z�sk� tento program jako Z�kladn� program - bude pou��vat v�echny Podp�rn� programy pouze na podporu tohoto Programu a v souladu s ve�ker�mi omezen�mi stanoven�mi v t�to Smlouv�. Pro ��ely tohoto bodu "f," znamen� "Podp�rn� program" program, kter� je sou��st� jin�ho programu IBM ("Z�kladn� program") a je v Licen�n�ch informac�ch k Z�kladn�mu programu jako Podp�rn� program uveden. (Chce-li Dr�itel licence z�skat samostatnou licenci na neomezen� u��v�n� Podp�rn�ho programu, mus� se obr�tit na subjekt, od n�ho� Podp�rn� program zakoupil.)
+
+Tato licence se vztahuje na ka�dou kopii Programu, kterou Dr�itel licence vytvo��.
+
+3.1 P�echody typu Trade-up, aktualizace a opravy
+
+3.1.1 P�echody typu Trade-up
+
+V p��pad� nahrazen� Programu programem typu Trade-up je licence nahrazen�ho Programu okam�it� ukon�ena.
+
+3.1.2 Aktualizace a opravy
+
+Pokud Dr�itel licence obdr�� aktualizaci nebo opravu k Programu, akceptuje ve�ker� dodate�n� nebo odli�n� podm�nky, kter� jsou uvedeny v Licen�n�ch informac�ch pro tuto aktualizaci nebo opravu. Nejsou-li k aktualizaci �i oprav� dodate�n� nebo odli�n� podm�nky p�ipojeny, pak se takov� aktualizace �i oprava ��d� v�lu�n� podm�nkami t�to Smlouvy. Dr�itel licence se zavazuje, �e v p��pad� nahrazen� Programu aktualizac� p�estane p�vodn� Program okam�it� pou��vat.
+
+3.2 Licence na dobu ur�itou
+
+Poskytuje-li IBM Program s licenc� na dobu ur�itou, pak licen�n� opr�vn�n� Dr�itele licence kon�� uplynut�m takov� doby ur�it�, leda�e se Dr�itel licence a IBM dohodli na prodlou�en� licence.
+
+3.3 Trv�n� a ukon�en� Smlouvy
+
+Tato Smlouva je ��inn� a� do jej�ho ukon�en�.
+
+IBM je opr�vn�na ukon�it licenci Dr�itele licence, jestli�e tento nedodr�uje podm�nky t�to Smlouvy.
+
+Bez ohledu na d�vod ukon�en� licence kteroukoli smluvn� stranou je Dr�itel licence povinen Program okam�it� p�estat pou��vat a zni�it ve�ker� jeho kopie, kter� m� ve sv�m dr�en�. Podm�nky t�to Smlouvy, je� svou povahou p�esahuj� dobu jej� platnosti, z�st�vaj� pln� v platnosti a jsou ��inn� a� do okam�iku jejich spln�n� a plat� i pro p��padn� pr�vn� n�stupce a postupn�ky smluvn�ch stran.
+
+4. Poplatky
+
+Poplatky jsou zalo�eny na z�skan� �rovni Opr�vn�n�ho u��v�n�, kter� je uvedena v dokumentu o opr�vn�n� (Proof of Entitlement). Nestanov�-li tato Smlouva jinak, IBM nevrac� ani jinak nerefunduje ji� splatn� nebo zaplacen� poplatky.
+
+P�eje-li si Dr�itel licence �rove� Opr�vn�n�ho u��v�n� zv�it, je povinen o t�to skute�nosti p�edem informovat IBM nebo opr�vn�n�ho prodejce IBM a uhradit ve�ker� p��slu�n� poplatky.
+
+5. Dan�
+
+Bude-li na Program n�kter�m ��adem uvaleno clo, da� �i poplatek, vyjma t�ch, kter� jsou zalo�eny na �ist�m p��jmu IBM, pak se Dr�itel licence zavazuje tuto ��stku uhradit ve v�i uveden� na faktu�e, pokud nep�edlo�� potvrzen� prokazuj�c� jeho osvobozen� od takov� povinnosti. Od data obdr�en� Programu je Dr�itel licence odpov�dn� za �hradu ve�ker�ch p��padn�ch majetkov�ch dan�. Jestli�e n�kter� ��ad uval� clo, da� �i poplatek na dovoz, v�voz, p�enos, p��stup nebo u��v�n� Programu mimo zemi, v n� byla p�vodn�mu Dr�iteli licence ud�lena licence, pak je Dr�itel licence povinen uhradit jakoukoli takto stanovenou ��stku.
+
+6. Z�ruka vr�cen� pen�z
+
+Nen�-li Dr�itel licence z n�jak�ho d�vodu spokojen s Programem a je p�vodn�m Dr�itelem (nabyvatelem) licence, je opr�vn�n licenci ukon�it a m�e mu b�t ��stka, kterou za Program zaplatil, vr�cena, av�ak za p�edpokladu, �e Program a dokument o opr�vn�n� (Proof of Entitlement) subjektu, od kter�ho je z�skal, vr�t� do 30 dn� od data vystaven� dokumentu o opr�vn�n� (Proof of Entitlement) pro Dr�itele licence. Jedn�-li se o licenci na dobu ur�itou, kterou lze prodlou�it, m� Dr�itel licence pr�vo na refundaci pouze v p��pad�, �e Program a p��slu�n� dokument o opr�vn�n� (Proof of Entitlement) vr�t� b�hem prvn�ch 30 dn� p�vodn�ho obdob�. Pokud Dr�itel licence Program st�hnul, m�l by po��dat subjekt, od kter�ho jej z�skal, o pokyny, jak dos�hnout vr�cen� pen�z.
+
+7. P�enos programu
+
+Dr�itel licence je opr�vn�n p�ev�st Program a ve�ker� licen�n� pr�va a povinnosti Dr�itele licence na jinou smluvn� stranu za p�edpokladu, �e tato strana akceptuje podm�nky t�to Smlouvy. V p��pad� ukon�en� licence kteroukoli smluvn� stranou bez ohledu na d�vod, nesm� Dr�itel licence Program na jinou smluvn� stranu p�ev�st. Dr�itel licence nen� opr�vn�n p�ev�d�t ��st 1) Programu; nebo 2) Opr�vn�n�ho u��v�n� programu. S p�evodem Programu mus� Dr�itel licence p�edat rovn� ti�t�nou verzi t�to Smlouvy, v�etn� Licen�n�ch informac� a dokumentu o opr�vn�n� (Proof of Entitlement). Licen�n� opr�vn�n� Dr�itele licence okam�it� po p�evodu kon��.
+
+8. Z�ruka a vylou�en� z�ruky
+
+8.1 Omezen� z�ruka
+
+IBM zaru�uje, �e Program, pro kter� je poskytov�na z�ruka, je-li pou��v�n v ur�en�m opera�n�m prost�ed�, bude odpov�dat p��slu�n�m Specifikac�m. Specifikace k Programu a informace o ur�en�m opera�n�m prost�ed� jsou k dispozici v dokumentaci p�ipojen� k Programu (jako je nap��klad soubor Readme) nebo ve form� dal��ch informac� zve�ejn�n�ch spole�nost� IBM (jako je nap��klad oznamovac� let�k). Dr�itel licence bere na v�dom�, �e tato dokumentace a dal�� informace t�kaj�c� se programu mohou b�t dod�ny pouze v anglick�m jazyce, nen�-li to v�slovn� stanoveno p��slu�n�mi pr�vn�mi p�edpisy bez mo�nosti vzd�n� se nebo omezen� pr�va smluvn�.
+
+Z�ruka se vztahuje pouze na nezm�n�nou ��st Programu. IBM nezaru�uje nep�eru�en� �i bezchybn� provoz Programu, ani nezaru�uje, �e oprav� ve�ker� chyby Programu. Za v�sledky u��v�n� Programu nese odpov�dnost Dr�itel licence.
+
+B�hem z�ru�n� doby poskytne IBM Dr�iteli licence bezplatn� p��stup k datab�z�m IBM obsahuj�c�m informace o zn�m�ch chyb�ch Programu, o oprav�ch chyb, omezen�ch a zp�sobech, jak chyby p�ekonat. Dal�� informace najdete v p��ru�ce IBM Software Support Handbook na adrese www.ibm.com/software/support.
+
+Nevykazuje-li Program b�hem Z�ru�n� lh�ty zaru�enou funk�nost a probl�m nelze vy�e�it prost�ednictv�m informac� uveden�ch v datab�z�ch IBM, sm� Dr�itel licence vr�tit Program a dokument o opr�vn�n� (Proof of Entitlement) subjektu (IBM nebo jej� prodejce), od kter�ho Program z�skal, a bude mu vr�cena ��stka, kterou zaplatil. Po vr�cen� Programu licen�n� opr�vn�n� Dr�itele licence kon��. Pokud Dr�itel licence Program st�hnul, m�l by po��dat subjekt, od kter�ho jej obdr�el, o pokyny, jak dos�hnout vr�cen� pen�z.
+
+8.2 Vylou�en� z�ruky
+
+TYTO Z�RUKY P�EDSTAVUJ� V�LU�N� Z�RUKY, KTER� IBM DR�ITELI LICENCE POSKYTUJE, A NAHRAZUJ� VE�KER� P�EDCHOZ� V�SLOVN� �I IMPLICITN� Z�RUKY �I PODM�NKY, V�ETN�, NIKOLI V�HRADN�, IMPLICITN�CH Z�RUK �I PODM�NEK PRODEJNOSTI, USPOKOJIV� KVALITY, VHODNOSTI PRO UR�IT� ��EL, PR�VN�HO N�ROKU A JAK�KOLI Z�RUKY �I PODM�NKY NEPORU�EN� PR�V T�ET�CH STRAN. N�KTER� ST�TY NEBO JURISDIKCE NEP�IPOU�T�J� VYLOU�EN� V�SLOVN�CH NEBO IMPLICITN�CH Z�RUK, A PROTO SE NA V�S V݊E UVEDEN� V�JIMKY A OMEZEN� NEMUS� VZTAHOVAT. V TAKOV�M P��PAD� JE PLATNOST Z�RUKY �ASOV� OMEZENA POUZE NA UVEDENOU Z�RU�N� DOBU. PO UKON�EN� T�TO DOBY IBM NEPOSKYTUJE ��DN� DAL�� Z�RUKY. N�KTER� ST�TY NEBO JURISDIKCE NEP�IPOU�T�J� OMEZEN� DOBY TRV�N� IMPLICITN� Z�RUKY, A PROTO SE V݊E UVEDEN� OMEZEN� NA DR�ITELE LICENCE NEMUS� VZTAHOVAT.
+
+TYTO Z�RUKY POSKYTUJ� DR�ITELI LICENCE SPECIFICK� Z�KONN� PR�VA. DR�ITEL LICENCE MَE M�T JE�T� DAL�� PR�VA, KTER� SE LI�� ST�T OD ST�TU NEBO JURISDIKCE OD JURISDIKCE.
+
+Z�RUKY UVEDEN� V TOMTO ODD�LU 8 (Z�RUKA A VYLOU�EN� Z�RUKY) POSKYTUJE V�HRADN� IBM. VYLOU�EN� Z�RUKY UVEDEN� V TOMTO BODU 8.2 (VYLOU�EN� Z�RUKY) SE VZTAHUJE ROVN̎ NA DODAVATELE IBM, KTE�� POSKYTUJ� K�D T�ET�CH STRAN. TAKOV� DODAVATEL� POSKYTUJ� TAKOV� K�D BEZ Z�RUK �I PODM�NEK JAK�HOKOLI DRUHU. TENTO ODSTAVEC NERU�� Z�RU�N� POVINNOSTI IBM VYPL�VAJ�C� Z T�TO SMLOUVY.
+
+9. Data a datab�ze Dr�itele licence
+
+IBM m�e s c�lem pomoci Dr�iteli licence s ur�en�m probl�mu s Programem po�adovat, aby Dr�itel licence 1) umo�nil IBM vzd�len� p��stup k syst�mu Dr�itele licence, nebo 2) aby zaslal IBM p��slu�n� �daje nebo syst�mov� data. IBM nen� povinna takovou asistenci poskytnout, pokud IBM a Dr�itel licence neuzav�eli samostatnou p�semnou smlouvu, kterou by se IBM zavazovala poskytovat Dr�iteli licence tento typ technick� podpory, kter� p�esahuje z�ru�n� povinnosti IBM vypl�vaj�c� z t�to Smlouvy. IBM v�dy pou��v� informace o chyb�ch a probl�mech ke zdokonalov�n� sv�ch produkt� a slu�eb a poskytuje z�kazn�k�m asistenci prost�ednictv�m souvisej�c�ch nab�dek podpory. K tomuto ��elu m�e IBM vyu��t slu�eb jin�ch subjekt� a sv�ch subdodavatel� (p�i�em� tito mohou b�t i z jin�ch zem�, ne� ta, v n� m� s�dlo Dr�itel licence) a Dr�itel licence IBM k takov�mu zp�sobu poskytov�n� slu�eb zmoc�uje.
+
+Dr�itel licence z�st�v� odpov�dn� za 1) ve�ker� data a obsah jak�koli datab�ze, kterou pro IBM zp��stupn�, 2) v�b�r a implementaci postup� a kontrol t�kaj�c�ch se p��stupu, zabezpe�en�, �ifrov�n�, u��v�n� a p�enosu dat (v�etn� ve�ker�ch osobn�ch �daj�), a 3) z�lohov�n� a obnovu jak�koli datab�ze a ve�ker�ch ulo�en�ch dat. Dr�itel licence nesm� odeslat IBM ��dn� osobn� �daje nebo poskytnout IBM p��stup k ��dn�m osobn�m �daj�m, a� u� ve form� dat nebo v n�jak� jin� form�, a nese odpov�dnost za ve�ker� p�im��en� n�klady nebo jin� v�daje, kter� mohou IBM vzniknout v souvislosti s neopr�vn�n�m poskytnut�m takov�ch informac� IBM nebo v souvislosti se ztr�tou �i zp��stupn�n�m informac� ze strany IBM, v�etn� t�ch zalo�en�ch na n�roc�ch t�et�ch stran.
+
+10. Omezen� odpov�dnosti
+
+Omezen� odpov�dnosti a vylou�en� z�ruky v tomto odd�le 10 (Omezen� odpov�dnosti) se aplikuje v pln�m rozsahu, pokud nen� zak�z�no ze z�kona, bez mo�nosti smluvn�ho z�eknut� se.
+
+10.1 Za co IBM odpov�d�
+
+Mohou nastat okolnosti, kdy z d�vodu nepln�n� z�vazk� na stran� IBM nebo jin�ho poru�en� povinnosti vznikne Dr�iteli licence n�rok na n�hradu �kody ze strany IBM. Bez ohledu na to, na jak�m z�klad� bude Dr�itel licence opr�vn�n po�adovat n�hradu �kody od IBM (v�etn� podstatn�ho poru�en�, nedbalosti, uveden� v omyl nebo jin�ho poru�en� z�vazkov�ho �i mimoz�vazkov�ho vztahu), bude IBM odpov�dat pouze za �kodu j� zp�sobenou v r�mci t�to Smlouvy ve vztahu ke ka�d�mu Programu nebo ve spojen� s n�m, a tato �koda v souhrnu nep�ev�� ��stku za jak�koli 1) �kody na zdrav� (v�etn� usmrcen�) a �kody na nemovit�m a movit�m majetku, a 2) p��mou skute�nou �kodu a� do v�e ceny, kterou Dr�itel licence zaplatil za Program, kter� je p�edm�tem n�roku (pokud je Program licencov�n na dobu ur�itou, pak do v�e dvan�cti m�s��n�ch plateb).
+
+Toto omezen� se vztahuje rovn� i na v�echny v�voj��e a dodavatele Program� IBM. Jedn� se o maximum, za kter� budou IBM, jej� subdodavatel� a v�voj��i Program� kolektivn� odpov�dni.
+
+10.2 Za co IBM neodpov�d�
+
+VYJMA P��PAD�, KDY JE TO V�SLOVN� PO�ADOV�NO PR�VN�MI P�EDPISY BEZ MO�NOSTI VZD�N� SE PR�VA SMLUVN�, NEBUDOU IBM, JEJ� SUBDODAVATEL� ANI V�VOJ��I PROGRAM� ZA ��DN�CH OKOLNOST� ODPOV�DNI ZA N�SLEDUJ�C�, A TO ANI V P��PAD�, �E BY IBM BYLA NA TAKOVOU MO�NOST UPOZORN�NA
+
+a. ZA ZTR�TU DAT NEBO �KODU NA DATECH;
+
+b. ZA ZVL��TN�, NAHODIL� NEBO NEP��M� �KODY �I ZA N�SLEDN� HOSPOD��SK� �KODY; NEBO
+
+c. ZA U�L� ZISK, ZTR�TU OBCHODN�CH P��LE�ITOST�, U�L� P��JMY, �JMU ZP�SOBENOU PO�KOZEN�M DOBR�HO JM�NA NEBO ZA NEDOSA�EN� P�EDPOKL�DAN� �SPORY.
+
+11. Kontrola dodr�ov�n� podm�nek
+
+Pro ��ely tohoto odd�lu 11 (Kontrola dodr�ov�n� podm�nek), znamenaj� "Podm�nky IPLA" 1) tuto Smlouvu a p��slu�n� dodatky a transak�n� dokumenty poskytnut� IBM, a 2) softwarov� strategie IBM, kter� jsou k dispozici na webov�ch str�nk�ch IBM Software Policy (www.ibm.com/softwarepolicies) v�etn�, nikoli v�hradn� strategi� t�kaj�c�ch se z�lohov�n�, cen pro ne�pln� server a migrace.
+
+Pr�va a povinnosti uveden� d�le v tomto odd�lu 11 z�st�vaj� v platnosti po dobu trv�n� licence a dva roky pot�.
+
+11.1 Proces kontroly dodr�ov�n� podm�nek
+
+Dr�itel licence se zavazuje po��dit, uschov�vat a poskytnout IBM a jej�m auditor�m p�esn� p�semn� z�znamy, v�stupy syst�mov�ch n�stroj� a dal�� syst�mov� informace, kter� budou dostate�n� umo��ovat ov��en�, zda u��v�n� v�ech Program� Dr�itelem licence je v souladu s podm�nkami smlouvy IPLA v�etn�, nikoli v�hradn�, v�ech souvisej�c�ch podm�nek IBM, kter� se t�kaj� licencov�n� a cen. Dr�itel licence je odpov�dn� za to, �e 1) zajist�, �e nebude p�ekro�ena jeho �rove� Opr�vn�n�ho u��v�n�, a 2) bude jednat v souladu s podm�nkami smlouvy IPLA.
+
+IBM je na z�klad� ozn�men� zaslan�ho v p�im��en� dlouh� lh�t� p�edem opr�vn�na ov��it si, zda Dr�itel licence dodr�uje podm�nky smlouvy IPLA na v�ech pracovi�t�ch a pro v�echna prost�ed�, v nich� pou��v� Programy (k jak�mukoli ��elu) v souladu s podm�nkami smlouvy IPLA. Takov� ov��en� m�e b�t prov�d�no v prostor�ch Dr�itele licence b�hem ��dn� pracovn� doby zp�sobem, kter� by v minim�ln� mo�n� m��e naru�oval pr�b�h obchodn�ch �innost� Dr�itele licence. IBM je opr�vn�na vyu��t k takov� kontrole slu�eb nez�visl�ho auditora, a to za p�edpokladu, �e IBM s t�mto auditorem uzav�e p�semnou smlouvu o ochran� d�v�rn�ch informac�.
+
+11.2 Rozhodnut�
+
+IBM bude Dr�itele p�semn� informovat, jestli�e bude v r�mci kontroly dodr�ov�n� podm�nek zji�t�no, �e Dr�itel licence u��v� Program v rozsahu p�esahuj�c�m �rove� jeho Opr�vn�n�ho u��v�n� nebo jinak nedodr�uje podm�nky smlouvy IPLA. Dr�itel licence se zavazuje, �e neprodlen� uhrad� p��mo IBM poplatky, kter� IBM uvede na faktu�e za 1) jak�koli takov� nadm�rn� u��v�n�, 2) poskytov�n� podpory k tomuto nadm�rn�mu u��v�n� za dobu trv�n� tohoto nadm�rn�ho u��v�n�, nebo dv� ro�n� platby (podle toho, kter� obdob� je krat��), a 3) dal�� poplatky a povinnosti, kter� budou vypl�vat z v�sledk� takov� kontroly.
+
+12. Pozn�mky t�et�ch stran
+
+Program m�e zahrnovat k�d t�et�ch stran, ke kter�mu Dr�iteli licence poskytuje licenci na z�klad� t�to Smlouvy IBM, nikoli t�et� strana. Jsou-li uvedeny jak�koli pozn�mky vztahuj�c� se ke k�du t�et�ch stran ("Pozn�mky t�et�ch stran"), jsou uvedeny pouze pro informaci Dr�itele licence. Tyto pozn�mky mohou b�t uvedeny v souboru(ech) NOTICES k Programu. Informace o zp�sobu z�sk�n� zdrojov�ho k�du pro ur�it� k�d t�et�ch stran najdete v Pozn�mk�ch t�et�ch stran. Jestli�e IBM v Pozn�mk�ch t�et�ch stran ozna�� k�d t�et�ch stran za "K�d t�et�ch stran s mo�nost� modifikace", pak IBM ud�luje Dr�iteli licence opr�vn�n� 1) takov� k�d modifikovat a 2) zp�tn� kompilovat Programov� moduly, kter� maj� p��m� rozhran� ke K�du t�et�ch stran s mo�nost� modifikace, za p�edpokladu, �e tyto �innosti budou slou�it v�hradn� k lad�n� modifikac� prov�d�n�ch Dr�itelem licence u takov�ho K�du t�et�ch stran. Poskytuje-li IBM servis a podporu, pak se takov� z�vazek vztahuje pouze na nemodifikovan� Program.
+
+13. V�eobecn� ustanoven�
+
+a. Touto Smlouvou nejsou dot�ena z�konn� pr�va spot�ebitel�, jich� se nen� mo�no smluvn� z��ci nebo je� nemohou b�t smluvn� omezena.
+
+b. Nen�-li mezi Dr�itelem licence a IBM p�semn� dohodnuto jinak, spln� IBM u Program�, kter� dod�v� Dr�iteli licence v hmotn� podob�, sv�j z�vazek odeslat a dodat p�edm�tn� Programy jejich p�ed�n�m p�epravci ur�en�mu IBM.
+
+c. V p��pad�, �e by n�kter� ustanoven� t�to Smlouvy bylo pova�ov�no za neplatn� nebo nevymahateln�, z�stanou zb�vaj�c� ustanoven� t�to Smlouvy v pln� platnosti a ��innosti.
+
+d. Ka�d� ze smluvn�ch stran bude postupovat v souladu s p��slu�n�mi v�vozn�mi a dovozn�mi pr�vn�mi p�edpisy, v�etn� pr�vn�ch p�edpis� Spojen�ch st�t� americk�ch, kter� zakazuj� �i omezuj� v�voz pro ��ely ur�it�ho pou�it� �i pro ur�it� koncov� u�ivatele. Dr�itel licence se zavazuje, �e bude postupovat v souladu s p��slu�n�mi v�vozn�mi a dovozn�mi pr�vn�mi p�edpisy, v�etn� pr�vn�ch p�edpis� Spojen�ch st�t� americk�ch, kter� zakazuj� �i omezuj� v�voz pro ��ely ur�it�ho pou�it� �i pro ur�it� koncov� u�ivatele.
+
+e. Dr�itel licence souhlas� s t�m, �e umo�n� spole�nosti International Business Machines Corporation a jej�m dce�inn�m spole�nostem (v�etn� jejich pr�vn�ch n�stupc�, postupn�k�, subdodavatel� a obchodn�ch partner�) ukl�dat a u��vat jeho kontaktn� informace v�ude, kde tito uskute��uj� sv� obchodn� aktivity souvisej�c� s produkty a slu�bami IBM, nebo v r�mci podpory obchodn�ho vztahu mezi IBM a dr�itelem Licence.
+
+f. Ka�d� ze smluvn�ch stran poskytne druh� stran� p�im��en� mo�nost n�pravy p�edt�m, ne� v��i druh� stran� vznese n�roky souvisej�c� s nepln�n�m jej�ch povinnost� z t�to Smlouvy. Smluvn� strany se pokus� v dobr� v�li vy�e�it jak�koli spory, neshody �i n�roky vztahuj�c� se k t�to Smlouv�.
+
+g. Nestanov�-li p��slu�n� pr�vn� p�edpisy jinak, bez mo�nosti toto smluvn� vylou�it nebo omezit, plat�, �e: 1) smluvn� strany uplatn� pr�vn� �i jin� �kony souvisej�c� s poru�en�m Smlouvy nejpozd�ji do dvou let ode dne, kdy mohl b�t �kon uplatn�n poprv�; a 2) ve�ker� takov� n�roky a p��slu�n� pr�va vypl�vaj�c� z takov�ho poru�en� se uplynut�m t�to doby pova�uj� za proml�en�.
+
+h. ��dn� ze smluvn�ch stran nenese odpov�dnost za nespln�n� jak�chkoli z�vazk�, pokud k takov�mu nepln�n� do�lo z d�vod� vznikl�ch nez�visle na jej� v�li.
+
+i. Tato Smlouva neud�luje ��dn� pr�va ani nezakl�d� ��dn� n�roky pro t�et� strany apro ��dnou t�et� stranu ��dn� pr�vo nebo d�vod k �alob� a IBM nenese odpov�dnost za p��padn� n�roky t�et�ch stran vznesen� v��i Dr�iteli licence, vyjma p��pad� uveden�ch v odstavci Chyba! Nenalezen zdroj odkaz�. (Za co IBM odpov�d�) v�e, t�kaj�c�ch se �kody na zdrav� (v�etn� usmrcen�) a �kody na nemovit�m nebo movit�m majetku, za kter� je IBM v��i pr�vn� odpov�dn� t�et� stran�.
+
+j. Smluvn� strany se dohodly, �e se po uzav�en� toto Smlouvy nebudou op�rat o ��dn� prohl�en�, kter� nen� uvedeno v t�to Smlouv� v�etn� jak�hokoli prohl�en�, kter� se t�k�: 1) v�konu �i fungov�n� Programu jinak, ne� je v�slovn� zaru�eno v odd�lu 8 (Z�ruka a vylou�en� z�ruky) v�e; 2) zku�enost� nebo doporu�en� jin�ch stran; nebo 3) jak�chkoli v�sledk� �i �spor, kter�ch m�e Dr�itel licence dos�hnout.
+
+k. IBM uzav�ela smlouvy s ur�it�mi organizacemi (d�le jen"Obchodn� partne�i IBM") za ��elem nab�zen�, zprost�edkov�n� prodeje a podpory vybran�ch Program�. Obchodn� partne�i IBM z�st�vaj� organizacemi nez�visl�mi na IBM. IBM nenese odpov�dnost za jedn�n� nebo prohl�en� Obchodn�ch partner� IBM, ani za jejich z�vazky v��i Dr�iteli licence.
+
+l. Licen�n� podm�nky a podm�nky t�kaj�c� se n�hrady �kody ve vztahu k ochran� pr�v du�evn�ho vlastnictv�, kter� jsou uvedeny v jin�ch smlouv�ch, je� Dr�itel licence uzav�el s IBM (jako je nap��klad smlouva IBM Customer Agreement), se nevztahuj� na licence na Program ud�len� na z�klad� t�to Smlouvy.
+
+14. Geografick� rozsah a rozhodn� pr�vo
+
+14.1 Rozhodn� pr�vo
+
+Smluvn� strany souhlas� s pou�it�m pr�va zem�, v n� Dr�itel licence zakoupil licenci na Program, podle kter�ho se budou ��dit, vykl�dat a uplat�ovat ve�ker� pr�va, povinnosti a z�vazky Dr�itele licence a IBM z t�to Smlouvy �i vztahuj�c� se k jej�mu p�edm�tu, a to bez ohledu na rozpor pr�vn�ch z�sad.
+
+�mluva OSN o smlouv�ch o mezin�rodn� koupi zbo�� se neaplikuje.
+
+14.2 Jurisdikce
+
+V�echna pr�va, povinnosti a z�vazky budou podl�hat rozhodnut�m p��slu�n�ch soud� zem�, v n� Dr�itel licence obdr�el licenci na Program.
+
+��st 2 - Podm�nky specifick� pro zemi
+
+Pro licence ud�len� v �esk� republice plat�, �e n�e uveden� podm�nky nahrazuj� nebo m�n� podm�nky uveden� v ��sti 1. Ve�ker� podm�nky uveden� v ��sti 1, kter� nejsou t�mto dodatkem dot�eny, z�st�vaj� v pln� platnosti v p�vodn�m zn�n�. 
+
+DODATKY PRO ZEM� EVROPY, ST�EDN�HO V�CHODU A AFRIKY (EMEA)
+
+�LENSK� ST�TY EVROPSK� UNIE
+
+8. Z�ruka a vylou�en� z�ruky
+
+N�e uveden� text se p�id�v� k odd�lu 8 (Z�ruka a vylou�en� z�ruky):
+
+Spot�ebitel� z Evropsk� unie ("EU") maj� z�konn� pr�va vypl�vaj�c� z n�rodn� legislativy upravuj�c� prodej spot�ebitelsk�ho zbo��. Takov� pr�va nejsou dot�ena ustanoven�mi uveden�mi v tomto odd�lu 8 Z�ruka a Vylou�en� z�ruky. �zemn� rozsah Omezen� z�ruky je celosv�tov�.
+
+13. V�eobecn� ustanoven�
+
+N�e uveden� text nahrazuje bod 13.e:
+
+(1) Definice - Pro ��ely tohoto bodu 13.e se aplikuj� n�sleduj�c� dodate�n� definice:
+
+(a) Informace o obchodn�ch kontaktech - kontaktn� informace vztahuj�c� se k obchodn�m vztah�m, kter� Dr�itel licence sd�l� IBM, v�etn� jmen, funkc�, obchodn�ch adres, telefonn�ch ��sel, e-mailov�ch adres zam�stnanc� a dodavatel� Dr�itele licence. Pro Rakousko, It�lii a �v�carsko zahrnuj� Obchodn� kontaktn� informace rovn� �daje o Z�kazn�kovi a jeho dodavatel�ch jako pr�vn�ch subjektech (nap��klad �daje o p��jmech Z�kazn�ka a dal�� transak�n� informace).
+
+(b) Obchodn� kontakty - zam�stnanci a dodavatel� Dr�itele licence, jich� se t�kaj� Informace o obchodn�ch kontaktech.
+
+(c) ��ad na ochranu osobn�ch �daj� - ��ad z��zen� dle z�kona o ochran� osobn�ch �daj� a z�kona o elektronick�ch komunikac�ch p��slu�n� zem� nebo, u zem�, je� nejsou �leny EU, ��ad odpov�dn� za kontrolu ochrany osobn�ch �daj� v t�to zemi, nebo (pro kteroukoli z v�e uveden�ch mo�nost�) ��dn� jmenovan� pr�vn� n�stupce takov�ho ��adu.
+
+(d) Pr�vn� p�edpisy na ochranu osobn�ch �daj� a o elektronick�ch komunikac�ch - (i) p��slu�n� m�stn� pr�vn� p�edpisy a na��zen� v platn�m zn�n�, kter� implementuj� po�adavky Sm�rnice Evropsk�ho parlamentu a Rady 95/46/ES (o ochran� fyzick�ch osob v souvislosti se zpracov�n�m osobn�ch �daj� a o voln�m pohybu t�chto �daj�) a Sm�rnice Evropsk�ho parlamentu a Rady 2002/58/ES (o zpracov�n� osobn�ch �daj� a ochran� soukrom� v odv�tv� elektronick�ch komunikac�); nebo (ii) u zem�, je� nejsou �leny EU, pr�vn� p�edpisy a/nebo na��zen� schv�len� v p��slu�n� zemi a t�kaj�c� se ochrany osobn�ch �daj� a regulace elektronick�ch komunikac�, v�etn� (pro kteroukoli z v�e uveden�ch mo�nost�) jak�koli jejich z�konn� n�hrady nebo zm�ny.
+
+(e) Skupina IBM - spole�nost International Business Machines Corporation, Armonk, New York, USA, jej� dce�inn� spole�nosti a jejich p��slu�n� Obchodn� partne�i a subdodavatel�.
+
+(2) Dr�itel licence oprav�uje IBM:
+
+(a) ke zpracov�n� a pou��v�n� Informac� o obchodn�ch kontaktech v r�mci Skupiny IBM pro ��ely poskytov�n� podpory Dr�iteli licence, v�etn� poskytov�n� slu�eb, a pro ��ely podporov�n� obchodn�ch vztah� mezi Dr�itelem licence a Skupinou IBM v�etn�, nikoli v�hradn�, kontaktov�n� Obchodn�ch kontakt� (e-mailem nebo jinak) a marketingu produkt� a slu�eb Skupiny IBM ("Uveden� ��el"); a
+
+(b) k zp��stupn�n� Informac� o obchodn�ch kontaktech v r�mci Skupiny IBM pouze v souvislosti s Uveden�m ��elem.
+
+(3) IBM se zavazuje zpracov�vat Informace o obchodn�ch kontaktech v souladu s platn�mi pr�vn�mi p�edpisy na ochranu osobn�ch �daj� a o elektronick�ch komunikac�ch a u��vat pouze pro Uveden� ��el.
+
+(4) Dr�itel licence prohla�uje, �e z�skal (nebo z�sk�), a to v rozsahu, v jak�m to po�aduj� pr�vn� p�edpisy na ochranu osobn�ch �daj� a o elektronick�ch komunikac�ch, p��slu�n� souhlasy od Obchodn�ch kontakt�, kter� pat�i�n� o t�to skute�nosti informoval (nebo informuje), aby bylo Skupin� IBM umo�n�no zpracov�vat a u��vat Informace o obchodn�ch kontaktech za ��elem komunikace s t�mito kontakty, v�etn� komunikace emailem, a to v souladu s Uveden�m ��elem.
+
+(5) Dr�itel licence souhlas� s t�m, �e IBM m�e p�en�et Informace o obchodn�ch kontaktech mimo oblast Evropsk�ho hospod��sk�ho prostoru za p�edpokladu, �e takov� p�enos bude prob�hat na z�klad� smluvn�ch podm�nek schv�len�ch ��adem na ochranu osobn�ch �daj� zaji��uj�c�ch odpov�daj�c� ochranu pr�v a svobod osob, kter�ch se tyto �daje t�kaj�, nebo �e takov� p�enos bude jinak povolen pr�vn�mi p�edpisy na ochranu osobn�ch �daj� a o elektronick�ch komunikac�ch.
+
+Z125-3301-13 (05/2009)
+
+
+LICEN�N� INFORMACE
+
+N�e uveden� Programy jsou licencov�ny na z�klad� uveden�ch podm�nek, kter� plat� nav�c k podm�nk�m Mezin�rodn� licen�n� smlouva pro programy.
+
+N�zev Programu: IBM Prerequisite Scanner R1.1
+��slo Programu: 5725-C13
+
+Komponenty ve zdrojov�m k�du
+
+Program m�e zahrnovat ur�it� komponenty ve form� zdrojov�ho k�du ("Komponenty ve zdrojov�m k�du"). Dr�itel licence sm� kop�rovat a m�nit Komponenty ve zdrojov�m k�du pouze pro intern� ��ely a pouze pod podm�nkou, �e toto u��v�n� bude v souladu s licen�n�mi opr�vn�n�mi stanoven�mi touto Smlouvou. Dr�itel licence v�ak nesm� m�nit ani odstra�ovat ��dn� informace nebo v�hrady t�kaj�c� se autorsk�ch pr�v obsa�en� v Komponent�ch ve zdrojov�m k�du. IBM poskytuje tyto Komponenty ve zdrojov�m k�du bez z�vazku podpory a "JAK JSOU", BEZ Z�RUKY JAK�HOKOLIV DRUHU, VYJ�D�EN� V�SLOVN� �I VYPL�VAJ�C� Z OKOLNOST�, V�ETN� Z�RUKY VLASTNICK�HO N�ROKU, NEPORU�EN� PR�V T�ET�CH STRAN A Z�RUK A PODM�NEK PRODEJNOSTI A VHODNOSTI PRO DAN� ��EL.
+
+D/N:  L-JRCI-89W3MD
+P/N:  L-JRCI-89W3MD 

@@ -1,0 +1,123 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Возникла исключительная ситуация при загрузке документа  {1} из каталога DTD {0}
+WVER0101E.explanation=Исключительная ситуация привела к сбою загрузки выбранного документа.
+WVER0101E.useraction=Действия пользователя определяются типом возникшей исключительной ситуации. При обработке ситуации необходимо убедиться в том, что файл доступен и имеет нужный формат. Для получения дополнительной информации обратитесь в службу поддержки.
+
+# 
+WVER0102E=WVER0102E: Возникла исключительная ситуация при загрузке документа {1} из каталога DTD {0}. Были заданы ИД системы {2} и общий ИД {3}. Ошибка возникла при обработке строки {4} и столбца {5}.
+WVER0102E.explanation=Исключительная ситуация привела к сбою загрузки выбранного документа.
+WVER0102E.useraction=Действия пользователя определяются типом возникшей исключительной ситуации. При обработке ситуации необходимо убедиться в том, что файл доступен и имеет нужный формат. Для получения дополнительной информации обратитесь в службу поддержки.
+
+# 
+WVER0104E=WVER0104E: Исключительная ситуация при создании элемента корневого документа типа {0}
+WVER0104E.explanation=Данная исключительная ситуация возникла при создании элемента корневого документа.
+WVER0104E.useraction=Действия пользователя определяются типом возникшей исключительной ситуации. Как правило, эта ситуация вызвана неправильной конфигурацией анализатора XML. Убедитесь, что системные свойства Java соответствуют правильной конфигурации анализатора. Для получения дополнительной информации обратитесь в службу поддержки.
+
+# 
+WVER0105E=WVER0105E: Возникла исключительная ситуация при создании объекта модели XML (тип {0})
+WVER0105E.explanation=Исключительная ситуация возникла при создании модельного объекта XML.
+WVER0105E.useraction=Действия пользователя определяются типом возникшей исключительной ситуации. Как правило, она вызвана тем, что выбранный тип недоступен в задаваемых переменной classpath каталогах. Для получения дополнительной информации обратитесь в службу поддержки.
+
+# 
+WVER0106E=WVER0106E: Невозможно добавить элемент в простой объект {0}
+WVER0106E.explanation=Внутренняя ошибка.
+WVER0106E.useraction=Для получения дополнительной информации обратитесь в службу поддержки.
+
+# 
+WVER0107E=WVER0107E: Возникла исключительная ситуация при записи информации о версии в файл {0}
+WVER0107E.explanation=Данная исключительная ситуация возникла при записи данных в указанный файл.
+WVER0107E.useraction=Действия пользователя определяются типом возникшей исключительной ситуации. Убедитесь, что данный файл доступен для записи, а дисковый накопитель содержит достаточно свободного пространства для записи данных.
+
+# 
+WVER0108E=WVER0108E: Возникла исключительная ситуация при обработке объекта; общий ИД: {0}, системный ИД: {1}, преобразованное имя файла: {2}
+WVER0108E.explanation=Исключительная ситуация возникла при преобразовании данных DTD во время анализа сведений о продукте. Указанный DTD преобразовать не удалось.
+WVER0108E.useraction=Действия пользователя определяются типом возникшей исключительной ситуации. 
+# 
+WVER0201E=WVER0201E: Отсутствует атрибут ''{0}'' в элементе типа ''{1}''
+WVER0201E.explanation=Атрибут с таким именем не является допустимым для выбранного типа элемента.
+WVER0201E.useraction=Обновите файл XML, исправив сведения об атрибуте.
+
+#
+WVER0202E=WVER0202E: Несбалансированная структура элементов: Дополнительные закрывающие элементы.
+WVER0202E.explanation=Файл XML с информацией о продукте имеет неправильную структуру элементов.
+WVER0202E.useraction=Исправьте структуру элементов, обновив файл XML.
+
+#
+WVER0203E=WVER0203E: Несбалансированная структура элементов: Недостаточно закрывающих элементов.
+WVER0203E.explanation=Файл XML с информацией о продукте имеет неправильную структуру элементов.
+WVER0203E.useraction=Исправьте структуру элементов, обновив файл XML.
+
+#
+WVER0204E=WVER0204E: Элемент ''{0}'' недопустим в качестве корневого элемента.
+WVER0204E.explanation=Файл XML с информацией о продукте имеет неправильную структуру элементов.
+WVER0204E.useraction=Исправьте структуру элементов, обновив файл XML.
+
+#
+WVER0205E=WVER0205E: Элемент ''{0}'' недопустим в элементе ''{1}''.
+WVER0205E.explanation=Файл XML с информацией о продукте имеет неправильную структуру элементов.
+WVER0205E.useraction=Исправьте структуру элементов, обновив файл XML.
+
+#
+WVER0206E=WVER0206E: Элемент ''{0}'' нельзя закрыть из элемента ''{1}''
+WVER0206E.explanation=Файл XML с информацией о продукте имеет неправильную структуру элементов.
+WVER0206E.useraction=Исправьте структуру элементов, обновив файл XML.

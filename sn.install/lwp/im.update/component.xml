@@ -1,0 +1,19 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM                                                  			   -->
+<!--                                                                   -->
+<!-- Licensed Material                                                 -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2006, 2017                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="im.update"  default="development" basedir=".">   
+		<dependency name="im.installer/im.project" type="jar" version="1.0" />
+</component>
+
+

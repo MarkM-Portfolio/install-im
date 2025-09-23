@@ -1,0 +1,23 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- (C) Copyright IBM Corp. 2004                                      -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component disabled="true" name="prereqs.install/portal.tools" description="Portal ANT Tasks" spec-version="1.0">
+
+	<output-group name="dist">
+		<output type="jar" visibility="external" platform="all" location="tools.jar"/>
+		<output key="registryTools" type="directory" visibility="public" platform="all" location="registryTools"/>
+		<output type="file" visibility="public" platform="all" location="wp.localize.jar" key="localizeJar"/>
+	</output-group>
+</component>
+

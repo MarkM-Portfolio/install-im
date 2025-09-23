@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="LCLaunchpad" description="Common Launchpad" spec-version="3.0" disabled="false">
+	<output-group name="dist">
+		<output type="dir" visibility="public" platform="all" location="${env.LWP_HOME}/setup/HCL_Connections_Install" preferredInstallLocation="HCL_Connections_Install" />
+	</output-group>
+	
+	<dependency name="im.installer/im.launch" type="dir" />
+</component>

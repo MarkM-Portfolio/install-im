@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--The "acceptLicense" attribute has been deprecated. Use "-acceptLicense" command line option to accept license agreements.-->
+<agent-input acceptLicense='true'>
+<server>
+<!-- Location of the Installation Manager repository.config -->
+<repository location='/Connections/HCL_Connections_Install/IM/os400'/>
+<!-- Location of the HCL Connections repository.config-->
+<repository location='/Connections/HCL_Connections_Install/HCLConnections'/>
+</server>
+
+<!-- Specify the directory in which to install IBM Installation Manager. The cic.selector.nl key specifies supported language.-->
+<profile id='IBM Installation Manager' installLocation='/QIBM/ProdData/InstallationManager/eclipse' kind='self'>
+<data key='eclipseLocation' value='/QIBM/ProdData/InstallationManager/eclipse'/>
+<data key='user.import.profile' value='false'/>
+<data key='cic.selector.os' value='os400'/>
+<data key='cic.selector.ws' value='motif'/>
+<data key='cic.selector.arch' value='ppc64'/>
+<data key='cic.selector.nl' value='de,ru,ko,el,lt,en,it,pt_BR,fr,hu,es,zh,cs,ar,zh_TW,zh_HK,ja,sl,pl,da,tr'/>
+</profile>
+
+<!-- Specify name and version data for IBM Installation Manager and HCL Connections, and specify which applications to install. -->
+<!-- For Modify operatoins(adding or removing HCL Connections applications), set the value to "true". For Install, uninstall, update and rollback operations, set the value to "false". The default value is "false". -->
+<install modify='false'>
+<offering id='com.ibm.cic.agent' version='1.8.3000.20150606_0047' profile='IBM Installation Manager' features='agent_core,agent_jre' installFixes='none'/>
+<offering profile='HCL Connections' id='com.ibm.connections' version='8.0.0.@QUALIFIER@' features='main,common,files,homepage,news,pushNotification,search,rte,widgetContainer,activities,blogs,dogear,communities,forums,metrics,mobile,moderation,profiles,wikis,icec,ic360'/>
+</install>
+
+<!-- Specify environment and administrative user parameters for HCL Connections installation. -->
+<profile id='HCL Connections' installLocation='/QIBM/ProdData/HCL/Connections'>
+<data key='eclipseLocation' value='/QIBM/ProdData/HCL/Connections'/>
+<data key='user.connections.install.location' value='/QIBM/ProdData/HCL/Connections'/>
+<data key='user.import.profile' value='false'/>
+<data key='cic.selector.os' value='os400'/>
+<data key='cic.selector.ws' value='motif'/>
+<data key='cic.selector.arch' value='ppc64'/>
+
+<!-- Set the value for the current operation. The default value is "INSTALL" -->
+<data key='user.job' value='INSTALL'/>
+<!-- Specify the WebSphere Application Server home directory -->
+<data key='user.was.install.location' value='/QIBM/ProdData/Websphere/AppServer/V85/ND'/>
+<data key='user.was.install.location.configproperties' value='/QIBM/ProdData/Websphere/AppServer/V85/ND'/>
+<!-- Specify the Deployment Manager home directory-->
+<data key='user.was.userhome' value='/QIBM/UserData/Websphere/AppServer/V85/ND/profiles/dmgr'/>
+<data key='user.was.userhome.original' value='/QIBM/UserData/webSphere/AppServer/V85/ND/profiles/dmgr'/>
+<data key='user.was.userhome.configproperties' value='/QIBM/UserData/webSphere/AppServer/V85/ND/profiles/dmgr'/>
+<!-- Specify the Deployment Manager name -->
+<data key='user.was.profileName' value='dmgr'/>
+<!-- Specify the Deployment Manager cell name -->
+<data key='user.was.dmCellName' value='DmgrCellName'/>
+<!-- Specify the Deployment Manager SOAP port -->
+<data key='user.was.wasSoapPort' value='8879'/>
+<!-- Specify the Deployment Manager host name -->
+<data key='user.was.dmHostname' value='was.domain.com'/>
+<data key='user.was.domainName' value='.domain.com'/>
+
+<!--If you have created a HTTP server (create a HTTP WAS profile, a HTTP server and bound them together, add it to the Connections' cell etc) correctly-->
+<!--You can specify the web server name and node name, so the installer will map the applications to the HTTP server automatically-->
+<!--You can log on the admin console of the dmgr, navigate to Servers->web servers to get the name of the web server and the node -->
+<!--If you have not got your HTTP server ready to use, please remove the below two lines and save the response file-->
+<data key='user.web.server.name' value='IHS_IC55'/>
+<data key='user.web.server.node' value='IHS_IC55_NODE'/>
+
+<!-- Specify the Deployment Manager administrator ID.  There is one entry for each HCL Connections application -->
+<data key='user.was.adminuser.id' value='wasadmin'/>
+<data key='user.activities.adminuser.id' value='wasadmin'/>
+<data key='user.blogs.adminuser.id' value='wasadmin'/>
+<data key='user.communities.adminuser.id' value='wasadmin'/>
+<data key='user.dogear.adminuser.id' value='wasadmin'/>
+<data key='user.profiles.adminuser.id' value='wasadmin'/>
+<data key='user.wikis.adminuser.id' value='wasadmin'/>
+<data key='user.files.adminuser.id' value='wasadmin'/>
+<data key='user.forums.adminuser.id' value='wasadmin'/>
+<data key='user.news.adminuser.id' value='wasadmin'/>
+<data key='user.search.adminuser.id' value='wasadmin'/>
+<data key='user.homepage.adminuser.id' value='wasadmin'/>
+<data key='user.mobile.adminuser.id' value='wasadmin'/>
+<data key='user.moderation.adminuser.id' value='wasadmin'/>
+<data key='user.metrics.adminuser.id' value='wasadmin'/>
+<data key='user.rte.adminuser.id' value='wasadmin'/>
+<data key='user.common.adminuser.id' value='wasadmin'/>
+<data key='user.widgetContainer.adminuser.id' value='wasadmin'/>
+<data key='user.pushNotification.adminuser.id' value='wasadmin'/>
+<data key='user.ic360.adminuser.id' value='wasadmin'/>
+
+<!-- Passwords should be encrpted. To learn how to create encrypted versions of passwords, go to the "Creating encrypted passwords for a response file" topic in the HCL Connections documentation wiki at http://www.ibm.com/support/knowledgecenter/SSYGQH_5.5.0/com.ibm.connections.doc_5/welcome.html -->
+<data key='user.was.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.news.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.activities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.blogs.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.communities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.dogear.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.profiles.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.wikis.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.files.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.forums.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.mobile.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.search.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.homepage.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.moderation.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.metrics.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.rte.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.common.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.widgetContainer.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.pushNotification.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.ic360.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+
+<!-- Specify cluster parameters for each application. For example, shown below are the News cluster parameters -->
+<!-- small:All applications are installed in one cluster; medium:The applications are installed in several clusters; large:Each application is installed in its own cluster -->
+<data key='user.deployment.type' value='large'/>
+
+<!-- Specify whether to use an existing cluster -->
+<data key='user.news.clusterExist' value='false'/>
+<data key='user.search.clusterExist' value='false'/>
+<data key='user.homepage.clusterExist' value='false'/>
+<data key='user.activities.clusterExist' value='false'/>
+<data key='user.blogs.clusterExist' value='false'/>
+<data key='user.communities.clusterExist' value='false'/>
+<data key='user.dogear.clusterExist' value='false'/>
+<data key='user.profiles.clusterExist' value='false'/>
+<data key='user.wikis.clusterExist' value='false'/>
+<data key='user.files.clusterExist' value='false'/>
+<data key='user.forums.clusterExist' value='false'/>
+<data key='user.mobile.clusterExist' value='false'/>
+<data key='user.moderation.clusterExist' value='false'/>
+<data key='user.metrics.clusterExist' value='false'/>
+<data key='user.rte.clusterExist' value='false'/>
+<data key='user.common.clusterExist' value='false'/>
+<data key='user.widgetContainer.clusterExist' value='false'/>
+<data key='user.pushNotification.clusterExist' value='false'/>
+<data key='user.ic360.clusterExist' value='false'/>
+
+<!-- Cluster name -->
+<data key='user.news.clusterName' value='NewsCluster'/>
+<data key='user.search.clusterName' value='SearchCluster'/>
+<data key='user.homepage.clusterName' value='HomepageCluster'/>
+<data key='user.activities.clusterName' value='ActivitiesCluster'/>
+<data key='user.blogs.clusterName' value='BlogsCluster'/>
+<data key='user.communities.clusterName' value='CommunitiesCluster'/>
+<data key='user.dogear.clusterName' value='DogearCluster'/>
+<data key='user.profiles.clusterName' value='ProfilesCluster'/>
+<data key='user.wikis.clusterName' value='WikisCluster'/>
+<data key='user.files.clusterName' value='FilesCluster'/>
+<data key='user.forums.clusterName' value='ForumCluster'/>
+<data key='user.mobile.clusterName' value='MobileCluster'/>
+<data key='user.moderation.clusterName' value='ModerationCluster'/>
+<data key='user.metrics.clusterName' value='MetricsCluster'/>
+<data key='user.rte.clusterName' value='RTECluster'/>
+<data key='user.common.clusterName' value='CommonCluster'/>
+<data key='user.widgetContainer.clusterName' value='WidgetContainerCluster'/>
+<data key='user.pushNotification.clusterName' value='PushNotificationCluster'/>
+<data key='user.ic360.clusterName' value='IC360Cluster'/>
+
+<!-- Specify the name of the first federated node(alphabetical order) to deploy the application on. -->
+<data key='user.news.firstNodeName' value='node1'/>
+<data key='user.search.firstNodeName' value='node1'/>
+<data key='user.homepage.firstNodeName' value='node1'/>
+<data key='user.activities.firstNodeName' value='node1'/>
+<data key='user.blogs.firstNodeName' value='node1'/>
+<data key='user.communities.firstNodeName' value='node1'/>
+<data key='user.dogear.firstNodeName' value='node1'/>
+<data key='user.profiles.firstNodeName' value='node1'/>
+<data key='user.wikis.firstNodeName' value='node1'/>
+<data key='user.files.firstNodeName' value='node1'/>
+<data key='user.forums.firstNodeName' value='node1'/>
+<data key='user.mobile.firstNodeName' value='node1'/>
+<data key='user.moderation.firstNodeName' value='node1'/>
+<data key='user.metrics.firstNodeName' value='node1'/>
+<data key='user.rte.firstNodeName' value='node1'/>
+<data key='user.common.firstNodeName' value='node1'/>
+<data key='user.widgetContainer.firstNodeName' value='node1'/>
+<data key='user.pushNotification.firstNodeName' value='node1'/>
+<data key='user.ic360.firstNodeName' value='node1'/>
+
+<!-- Specify the names of nodes other than the first federated node to deploy the application on. For example: node2,node3. If you use only one node, leave this value blank. -->
+<data key='user.news.secondaryNodesNames' value='node2,node3'/>
+<data key='user.search.secondaryNodesNames' value='node2,node3'/>
+<data key='user.homepage.secondaryNodesNames' value='node2,node3'/>
+<data key='user.activities.secondaryNodesNames' value='node2,node3'/>
+<data key='user.blogs.secondaryNodesNames' value='node2,node3'/>
+<data key='user.communities.secondaryNodesNames' value='node2,node3'/>
+<data key='user.dogear.secondaryNodesNames' value='node2,node3'/>
+<data key='user.profiles.secondaryNodesNames' value='node2,node3'/>
+<data key='user.wikis.secondaryNodesNames' value='node2,node3'/>
+<data key='user.files.secondaryNodesNames' value='node2,node3'/>
+<data key='user.forums.secondaryNodesNames' value='node2,node3'/>
+<data key='user.mobile.secondaryNodesNames' value='node2,node3'/>
+<data key='user.moderation.secondaryNodesNames' value='node2,node3'/>
+<data key='user.metrics.secondaryNodesNames' value='node2,node3'/>
+<data key='user.rte.secondaryNodesNames' value='node2,node3'/>
+<data key='user.common.secondaryNodesNames' value='node2,node3'/>
+<data key='user.widgetContainer.secondaryNodesNames' value='node2,node3'/>
+<data key='user.pushNotification.secondaryNodesNames' value='node2,node3'/>
+<data key='user.ic360.secondaryNodesNames' value='node2,node3'/>
+
+<!-- Specify the node and server parameters for each application. -->
+<!-- The format is {applicationName}.{nodeName}.Servername=server name. If you use multiple nodes for an application, use the semicolon character(";") to separate them. For example, news.node1.ServerName=server1;news.node2.ServerName=server2;  -->
+<data key='user.news.serverInfo' value='news.node1.ServerName=NewsCluster_server1;news.node2.ServerName=NewsCluster_server2;news.node3.ServerName=NewsCluster_server3;'/>
+<data key='user.search.serverInfo' value='search.node1.ServerName=SearchCluster_server1;search.node2.ServerName=SearchCluster_server2;search.node3.ServerName=SearchCluster_server3;'/>
+<data key='user.homepage.serverInfo' value='homepage.node1.ServerName=HomepageCluster_server1;homepage.node2.ServerName=HomepageCluster_server2;homepage.node3.ServerName=HomepageCluster_server3;'/>
+<data key='user.activities.serverInfo' value='activities.node1.ServerName=ActivitiesCluster_server1;activities.node2.ServerName=ActivitiesCluster_server2;activities.node3.ServerName=ActivitiesCluster_server3;'/>
+<data key='user.blogs.serverInfo' value='blogs.node1.ServerName=BlogsCluster_server1;blogs.node2.ServerName=BlogsCluster_server2;blogs.node3.ServerName=BlogsCluster_server3;'/>
+<data key='user.communities.serverInfo' value='communities.node1.ServerName=CommunitiesCluster_server1;communities.node2.ServerName=CommunitiesCluster_server2;communities.node3.ServerName=CommunitiesCluster_server3;'/>
+<data key='user.dogear.serverInfo' value='dogear.node1.ServerName=DogearCluster_server1;dogear.node2.ServerName=DogearCluster_server2;dogear.node3.ServerName=DogearCluster_server3;'/>
+<data key='user.profiles.serverInfo' value='profiles.node1.ServerName=ProfilesCluster_server1;profiles.node2.ServerName=ProfilesCluster_server2;profiles.node3.ServerName=ProfilesCluster_server3;'/>
+<data key='user.wikis.serverInfo' value='wikis.node1.ServerName=WikisCluster_server1;wikis.node2.ServerName=WikisCluster_server2;wikis.node3.ServerName=WikisCluster_server3;'/>
+<data key='user.files.serverInfo' value='files.node1.ServerName=FilesCluster_server1;files.node2.ServerName=FilesCluster_server2;files.node3.ServerName=FilesCluster_server3;'/>
+<data key='user.forums.serverInfo' value='forums.node1.ServerName=ForumCluster_server1;forums.node2.ServerName=ForumCluster_server2;forums.node3.ServerName=ForumCluster_server3;'/>
+<data key='user.mobile.serverInfo' value='mobile.node1.ServerName=MobileCluster_server1;mobile.node2.ServerName=MobileCluster_server2;mobile.node3.ServerName=MobileCluster_server3;'/>
+<data key='user.moderation.serverInfo' value='moderation.node1.ServerName=ModerationCluster_server1;moderation.node2.ServerName=ModerationCluster_server2;moderation.node3.ServerName=ModerationCluster_server3;'/>
+<data key='user.metrics.serverInfo' value='metrics.node1.ServerName=MetricsCluster_server1;metrics.node2.ServerName=MetricsCluster_server2;metrics.node3.ServerName=MetricsCluster_server3;'/>
+<data key='user.rte.serverInfo' value='rte.node1.ServerName=RTECluster_server1;rte.node2.ServerName=RTECluster_server2;rte.node3.ServerName=RTECluster_server3;'/>
+<data key='user.common.serverInfo' value='common.node1.ServerName=CommonCluster_server1;common.node2.ServerName=CommonCluster_server2;common.node3.ServerName=CommonCluster_server3;'/>
+<data key='user.widgetContainer.serverInfo' value='widgetContainer.node1.ServerName=WidgetContainerCluster_server1;widgetContainer.node2.ServerName=WidgetContainerCluster_server2;widgetContainer.node3.ServerName=WidgetContainerCluster_server3;'/>
+<data key='user.pushNotification.serverInfo' value='pushNotification.node1.ServerName=PushNotificationCluster_server1;pushNotification.node2.ServerName=PushNotificationCluster_server2;pushNotification.node3.ServerName=PushNotificationCluster_server3;'/>
+<data key='user.ic360.serverInfo' value='ic360.node1.ServerName=IC360Cluster_server1;ic360.node2.ServerName=IC360Cluster_server2;ic360.node3.ServerName=IC360Cluster_server3;'/>
+
+<data key='user.activities.clusterInfo' value='[{"node": "node1", "name": "ActivitiesCluster_server1"},{"node": "node2", "name": "ActivitiesCluster_server2"},{"node": "node3", "name": "ActivitiesCluster_server3"},]'/>
+<data key='user.blogs.clusterInfo' value='[{"node": "node1", "name": "BlogsCluster_server1"},{"node": "node2", "name": "BlogsCluster_server2"},{"node": "node3", "name": "BlogsCluster_server3"},]'/>
+<data key='user.dogear.clusterInfo' value='[{"node": "node1", "name": "DogearCluster_server1"},{"node": "node2", "name": "DogearCluster_server2"},{"node": "node3", "name": "DogearCluster_server3"},]'/>
+<data key='user.communities.clusterInfo' value='[{"node": "node1", "name": "CommunitiesCluster_server1"},{"node": "node2", "name": "CommunitiesCluster_server2"},{"node": "node3", "name": "CommunitiesCluster_server3"},]'/>
+<data key='user.files.clusterInfo' value='[{"node": "node1", "name": "FilesCluster_server1"},{"node": "node2", "name": "FilesCluster_server2"},{"node": "node3", "name": "FilesCluster_server3"},]'/>
+<data key='user.forums.clusterInfo' value='[{"node": "node1", "name": "ForumCluster_server1"},{"node": "node2", "name": "ForumCluster_server2"},{"node": "node3", "name": "ForumCluster_server3"},]'/>
+<data key='user.homepage.clusterInfo' value='[{"node": "node1", "name": "HomepageCluster_server1"},{"node": "node2", "name": "HomepageCluster_server2"},{"node": "node3", "name": "HomepageCluster_server3"},]'/>
+<data key='user.metrics.clusterInfo' value='[{"node": "node1", "name": "MetricsCluster_server1"},{"node": "node2", "name": "MetricsCluster_server2"},{"node": "node3", "name": "MetricsCluster_server3"},]'/>
+<data key='user.mobile.clusterInfo' value='[{"node": "node1", "name": "MobileCluster_server1"},{"node": "node2", "name": "MobileCluster_server2"},{"node": "node3", "name": "MobileCluster_server3"},]'/>
+<data key='user.moderation.clusterInfo' value='[{"node": "node1", "name": "ModerationCluster_server1"},{"node": "node2", "name": "ModerationCluster_server2"},{"node": "node3", "name": "ModerationCluster_server3"},]'/>
+<data key='user.news.clusterInfo' value='[{"node": "node1", "name": "NewsCluster_server1"},{"node": "node2", "name": "NewsCluster_server2"},{"node": "node3", "name": "NewsCluster_server3"},]'/>
+<data key='user.profiles.clusterInfo' value='[{"node": "node1", "name": "ProfilesCluster_server1"},{"node": "node2", "name": "ProfilesCluster_server2"},{"node": "node3", "name": "ProfilesCluster_server3"},]'/>
+<data key='user.search.clusterInfo' value='[{"node": "node1", "name": "SearchCluster_server1"},{"node": "node2", "name": "SearchCluster_server2"},{"node": "node3", "name": "SearchCluster_server3"},]'/>
+<data key='user.wikis.clusterInfo' value='[{"node": "node1", "name": "WikisCluster_server1"},{"node": "node2", "name": "WikisCluster_server2"},{"node": "node3", "name": "WikisCluster_server3"},]'/>
+<data key='user.rte.clusterInfo' value='[{"node": "node1", "name": "RTECluster_server1"},{"node": "node2", "name": "RTECluster_server2"},{"node": "node3", "name": "RTECluster_server3"},]'/>
+<data key='user.common.clusterInfo' value='[{"node": "node1", "name": "CommonCluster_server1"},{"node": "node2", "name": "CommonCluster_server2"},{"node": "node3", "name": "CommonCluster_server3"},]'/>
+<data key='user.widgetContainer.clusterInfo' value='[{"node": "node1", "name": "WidgetContainerCluster_server1"},{"node": "node2", "name": "WidgetContainerCluster_server2"},{"node": "node3", "name": "WidgetContainerCluster_server3"},]'/>
+<data key='user.pushNotification.clusterInfo' value='[{"node": "node1", "name": "PushNotificationCluster_server1"},{"node": "node2", "name": "PushNotificationCluster_server2"},{"node": "node3", "name": "PushNotificationCluster_server3"},]'/>
+<data key='user.ic360.clusterInfo' value='[{"node": "node1", "name": "IC360Cluster_server1"},{"node": "node2", "name": "IC360Cluster_server2"},{"node": "node3", "name": "IC360Cluster_server3"},]'/>
+
+
+<!-- Specifies the database parameters for each application. -->
+<!-- The settings for the different database types are:                         -->
+<!-- DB2 on LUW:                          -->
+<!-- dbType:DB2;   -->
+<!-- DB2 on IBM i:                        -->
+<!-- dbType:DB2_I; -->
+
+<data key='user.database.type' value='DB2_I'/>
+<!-- Specify the database parameters, including database connection properties, for each application. For example, shown below are the Activities database parameters. -->
+
+<!--For DB2 on IBM i, if IASP is used, dbName must be the name of the IASP-->
+<data key='user.activities.dbHostName' value='database.hostname.com'/>
+<data key='user.activities.dbPort' value='50000'/>
+<data key='user.activities.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.activities.dbName' value='OPNACT'/>
+<data key='user.activities.dbUser' value='LCUSER'/>
+<data key='user.activities.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.activities.dbType' value='DB2_I'/>
+
+<data key='user.blogs.dbHostName' value='database.hostname.com'/>
+<data key='user.blogs.dbPort' value='50000'/>
+<data key='user.blogs.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.blogs.dbName' value='BLOGS'/>
+<data key='user.blogs.dbUser' value='LCUSER'/>
+<data key='user.blogs.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.blogs.dbType' value='DB2_I'/>
+
+<data key='user.communities.dbHostName' value='database.hostname.com'/>
+<data key='user.communities.dbPort' value='50000'/>
+<data key='user.communities.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.communities.dbName' value='SNCOMM'/>
+<data key='user.communities.dbUser' value='LCUSER'/>
+<data key='user.communities.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.communities.dbType' value='DB2_I'/>
+
+<data key='user.dogear.dbHostName' value='database.hostname.com'/>
+<data key='user.dogear.dbPort' value='50000'/>
+<data key='user.dogear.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.dogear.dbName' value='DOGEAR'/>
+<data key='user.dogear.dbUser' value='LCUSER'/>
+<data key='user.dogear.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.dogear.dbType' value='DB2_I'/>
+
+<data key='user.profiles.dbHostName' value='database.hostname.com'/>
+<data key='user.profiles.dbPort' value='50000'/>
+<data key='user.profiles.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.profiles.dbName' value='PEOPLEDB'/>
+<data key='user.profiles.dbUser' value='LCUSER'/>
+<data key='user.profiles.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.profiles.dbType' value='DB2_I'/>
+
+<data key='user.wikis.dbHostName' value='database.hostname.com'/>
+<data key='user.wikis.dbPort' value='50000'/>
+<data key='user.wikis.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.wikis.dbName' value='WIKIS'/>
+<data key='user.wikis.dbUser' value='LCUSER'/>
+<data key='user.wikis.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.wikis.dbType' value='DB2_I'/>
+
+<data key='user.files.dbHostName' value='database.hostname.com'/>
+<data key='user.files.dbPort' value='50000'/>
+<data key='user.files.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.files.dbName' value='FILES'/>
+<data key='user.files.dbUser' value='LCUSER'/>
+<data key='user.files.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.files.dbType' value='DB2_I'/>
+
+<data key='user.forums.dbHostName' value='database.hostname.com'/>
+<data key='user.forums.dbPort' value='50000'/>
+<data key='user.forums.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.forums.dbName' value='FORUM'/>
+<data key='user.forums.dbUser' value='LCUSER'/>
+<data key='user.forums.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.forums.dbType' value='DB2_I'/>
+
+<data key='user.news.dbHostName' value='database.hostname.com'/>
+<data key='user.news.dbPort' value='50000'/>
+<data key='user.news.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.news.dbName' value='HOMEPAGE'/>
+<data key='user.news.dbUser' value='LCUSER'/>
+<data key='user.news.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.news.dbType' value='DB2_I'/>
+
+<data key='user.search.dbHostName' value='database.hostname.com'/>
+<data key='user.search.dbPort' value='50000'/>
+<data key='user.search.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.search.dbName' value='HOMEPAGE'/>
+<data key='user.search.dbUser' value='LCUSER'/>
+<data key='user.search.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.search.dbType' value='DB2_I'/>
+
+<data key='user.homepage.dbHostName' value='database.hostname.com'/>
+<data key='user.homepage.dbPort' value='50000'/>
+<data key='user.homepage.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.homepage.dbName' value='HOMEPAGE'/>
+<data key='user.homepage.dbUser' value='LCUSER'/>
+<data key='user.homepage.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.homepage.dbType' value='DB2_I'/>
+
+<data key='user.mobile.dbHostName' value='database.hostname.com'/>
+<data key='user.mobile.dbPort' value='50000'/>
+<data key='user.mobile.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.mobile.dbName' value='MOBILE'/>
+<data key='user.mobile.dbUser' value='LCUSER'/>
+<data key='user.mobile.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.mobile.dbType' value='DB2_I'/>
+
+<!-- Metrics on IBM i need to use the DB2 on AIX, and there is an AIX JDBC driver provided by WAS. -->
+<data key='user.metrics.dbHostName' value='Metricsdatabase.hostname.com'/>
+<data key='user.metrics.dbPort' value='50000'/>
+<data key='user.metrics.jdbcLibraryPath' value='/QIBM/ProdData/DB2LUW/JdbcDriver'/>
+<data key='user.metrics.dbName' value='Metrics'/>
+<data key='user.metrics.dbUser' value='LCUSER'/>
+<data key='user.metrics.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.metrics.dbType' value='DB2'/>
+
+
+<data key='user.pushNotification.dbHostName' value='database.hostname.com'/>
+<data key='user.pushNotification.dbPort' value='50000'/>
+<data key='user.pushNotification.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.pushNotification.dbName' value='PNS'/>
+<data key='user.pushNotification.dbUser' value='LCUSER'/>
+<data key='user.pushNotification.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.pushNotification.dbType' value='DB2_I'/>
+
+<data key='user.icec.dbHostName' value='database.hostname.com'/>
+<data key='user.icec.dbPort' value='50000'/>
+<data key='user.icec.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.icec.dbName' value='XCC'/>
+<data key='user.icec.dbUser' value='LCUSER'/>
+<data key='user.icec.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.icec.dbType' value='DB2_I'/>
+
+<data key='user.ic360.dbHostName' value='database.hostname.com'/>
+<data key='user.ic360.dbPort' value='50000'/>
+<data key='user.ic360.jdbcLibraryPath' value='/QIBM/ProdData/HTTP/Public/jt400/lib'/>
+<data key='user.ic360.dbName' value='ESSAPPS'/>
+<data key='user.ic360.dbUser' value='LCUSER'/>
+<data key='user.ic360.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.ic360.dbType' value='DB2_I'/>
+
+<!-- Specify the paths to the local and shared content stores. -->
+<!-- Local content store data path -->
+<data key='user.contentStore.local.path' value='/QIBM/UserData/HCL/Connections/data/local'/>
+<!-- Shared content store data path -->
+<data key='user.contentStore.shared.path' value='/QIBM/UserData/HCL/Connections/data/shared'/>
+<data key='user.contentStore.shared.path.configproperties' value='/QIBM/UserData/HCL/Connections/data/shared'/>
+<data key='user.messageStore.shared.path' value='/QIBM/UserData/HCL/Connections/data/shared'/>
+
+<!-- Specify whether to enable mail notification and which mail server solution to use. JavaMail is selected by default. -->
+<data key='user.notification.enabled' value='true'/>
+<!-- Specify JavaMail parameters. -->
+<data key='user.notification.useJavaMailProvider' value='true'/>
+<!-- Simple Mail Transfer Protocol (SMTP) hostname -->
+<data key='user.notification.host' value='smtp.hostname.com'/>
+<!-- Simple Mail Transfer Protocol (SMTP) port -->
+<data key='user.notification.port' value='25'/>
+<!-- Simple Mail Transfer Protocol (SMTP) user -->
+<data key='user.notification.user' value='SMTP_User'/>
+<!-- Simple Mail Transfer Protocol (SMTP) password -->
+<data key='user.notification.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<!-- Enable SSL. -->
+<data key='user.notification.ssl.enabled' value='false'/>
+
+<!-- Specify DNS MX Records parameters. -->
+<!-- Domain Name System (DNS) hostname -->
+<data key='user.notification.dnshost' value=''/>
+<!-- Domain Name System (DNS) port -->
+<data key='user.notification.dnsport' value=''/>
+<!-- Domain Name System (DNS) domain -->
+<data key='user.notification.domain' value=''/>
+
+<!-- Enable ReplyTo email. -->
+<data key='user.notification.replyto.enabled' value='true'/>
+<!-- Specify the ReplyTo domain name.  -->
+<data key='user.notification.replyto.domain' value='replyto.domain.com'/>
+<!-- Use a "prefix" or "suffix" with the system-generated unique ID; Specify "none" if you do not want to use a prefix or suffix. The default value is "prefix" -->
+<data key='user.notification.replyto.localPart.type' value='prefix'/>
+<!-- Example: prefix_<user_ID>@replyto.example.com or <user_ID>_suffix@replyto.example.com; Leave it to empty if you input "none" in the previouse input  -->
+<data key='user.notification.replyto.localPart' value='prefix_'/>
+<!-- Specify the mail file that receives all ReplyTo emails. -->
+<data key='user.notification.replyto.mailFile.hostName' value='mailfile.server.com'/>
+<data key='user.notification.replyto.mailFile.userID' value='mailfile_server_user_ID'/>
+<data key='user.notification.replyto.mailFile.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+
+<!--Specify the LDAP user names to map to the administrative user role, if more than one user names needed, separate them by |, like AdminUserName1|AdminUserName2 -->
+<data key='user.user.mapping.administrative.users' value='AdminUserName'/>
+
+<!--Specify the LDAP user names to map to the global-moderator role, if more than one user names needed, separate them by |, like AdminUserName1|AdminUserName2 -->
+<data key='user.user.mapping.global.moderater.users' value='AdminUserName'/>
+
+<data key='cic.selector.nl' value='en'/>
+</profile>
+<!-- The value of eclipseCache needs to be set to the path of the Shared Resources Directory used by the Installation Manager -->
+<!-- The exact path of this Shared Resources Directory is specified by the customer at the first time when a package is installed by the Installation Manager -->
+<!-- In the below line, "/QIBM/UserData/InstallationManager/IMShared" is used as the path of the Shared Resources Directory of the Installation Manager  -->
+<!-- On the customer system, the path of the Shared Resources Directory of the Installation Manager may be different from the below sample value-->
+<preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='/QIBM/UserData/InstallationManager/IMShared'/>
+<preference name='com.ibm.cic.common.core.preferences.connectTimeout' value='30'/>
+<preference name='com.ibm.cic.common.core.preferences.readTimeout' value='45'/>
+<preference name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount' value='0'/>
+<preference name='offering.service.repositories.areUsed' value='true'/>
+<preference name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode' value='false'/>
+<preference name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication' value='false'/>
+<preference name='http.ntlm.auth.kind' value='NTLM'/>
+<preference name='http.ntlm.auth.enableIntegrated.win32' value='true'/>
+<preference name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts' value='true'/>
+<preference name='com.ibm.cic.common.core.preferences.keepFetchedFiles' value='false'/>
+<preference name='PassportAdvantageIsEnabled' value='false'/>
+<preference name='com.ibm.cic.common.core.preferences.searchForUpdates' value='false'/>
+<preference name='com.ibm.cic.agent.ui.displayInternalVersion' value='false'/>
+</agent-input>

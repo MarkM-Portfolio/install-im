@@ -1,0 +1,303 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: Określenie katalogu historii nie powiodło się. Nie można określić katalogu produktu.
+WVER0201E.explanation=Katalog historii jest podkatalogiem katalogu produktu. Więcej informacji można znaleźć w komunikacie o błędzie dotyczącym problemu podczas określania katalogu produktu.
+WVER0201E.useraction=Wykonaj instrukcje wyświetlane razem z komunikatem o błędzie wersji.
+
+# 
+WVER0202E=WVER0202E: Nie można załadować informacji o historii.
+WVER0202E.explanation=Nie można załadować informacji o historii z pliku historii {0}. Informacje szczegółowe zależą od rodzaju błędu.
+WVER0202E.useraction=Sprawdź, czy katalog historii jest dostępny do odczytu i czy jego format jest poprawny.
+
+# 
+WVER0203E=WVER0203E: Wystąpił wyjątek podczas odczytywania obiektu {0}.
+WVER0203E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0203E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0204E=WVER0204E: Wystąpił wyjątek podczas tworzenia katalogu historii {0}.
+WVER0204E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0204E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0205E=WVER0205E: Wystąpił wyjątek podczas tworzenia kopii zapasowej pliku historii {0} w pliku {1}.
+WVER0205E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0205E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0206E=WVER0206E: Wystąpił wyjątek podczas zapisywania historii zdarzenia {0}.
+WVER0206E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0206E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Wszelkie prawa zastrzeżone.
+WVER0210I.explanation=Są to standardowe informacje o prawach autorskich.
+WVER0210I.useraction=Od użytkownika nie jest wymagana żadna akcja. To jest komunikat informacyjny.
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=To jest standardowy opis produktu.
+WVER0211I.useraction=Od użytkownika nie jest wymagana żadna akcja. To jest komunikat informacyjny.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter wersja {0}, data: {1}
+WVER0212I.explanation=To jest standardowy opis modułu.
+WVER0212I.useraction=Od użytkownika nie jest wymagana żadna akcja. To jest komunikat informacyjny.
+
+# 
+WVER0225E=WVER0225E: Nie określono wartości dla argumentu {0}.
+WVER0225E.explanation=Wymieniony argument wymaga podania wartości. (Można użyć argumentu -help lub -usage, aby wyświetlić informacje o składni).
+WVER0225E.useraction=Określ wartość dla wymienionego argumentu.
+
+# 
+WVER0226E=WVER0226E: Wartość {0} nie jest poprawną wartością formatu.
+WVER0226E.explanation=Poprawne wartości formatu to text i html. Podana wartość nie jest jedną z tych wartości. (Można użyć argumentu -help lub -usage, aby wyświetlić informacje o składni).
+WVER0226E.useraction=Podaj poprawną wartość formatu: text lub html.
+
+# 
+WVER0228E=WVER0228E: Argument {0} jest niepoprawny.
+WVER0228E.explanation=Określony argument jest niepoprawny. (Można użyć argumentu -help lub -usage, aby wyświetlić informacje o składni).
+WVER0228E.useraction=Podaj poprawny argument.
+
+# 
+WVER0230I=WVER0230I: Składnia: historyInfo ( [ -format <text | html> ] [ -file <plik_wyjściowy> ] [ -updateId <identyfikator_aktualizacji> ] [ -component <nazwa_komponentu> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Ten komunikat informacyjny opisuje argumenty programu narzędziowego historyInfo. Uruchamiając program narzędziowy historyInfo, można określić pięć opcjonalnych argumentów. Argumenty te umożliwiają określenie formatu danych wyjściowych, określenie nazwy pliku wyjściowego, wyświetlenie tylko zdarzeń powiązanych z określoną poprawką, wyświetlenie tylko zdarzeń powiązanych z określonym komponentem oraz wyświetlenie informacji o składni programu. (Można użyć argumentu -usage lub -help, aby wyświetlić dodatkowe informacje).
+WVER0230I.useraction=Od użytkownika nie jest wymagana żadna akcja. Komunikat zawierający informacje o składni jest wyświetlany na żądanie użytkownika.
+
+# 
+WVER0231I=WVER0231I: Argument -format umożliwia określenie formatu wyjściowego. Dostępne są dwie wartości formatu: text i html. Argument -file umożliwia określenie nazwy pliku wyjściowego. Należy podać nazwę pliku. Argument -updateId umożliwia określenie identyfikatora aktualizacji służącego do ograniczania listy wyświetlanych zdarzeń.  Argument -component umożliwia określenie nazwy komponentu ograniczającej listę wyświetlanych zdarzeń.  Argument -help umożliwia wyświetlenie informacji o wersji. Argument -usage umożliwia wyświetlenie tego komunikatu informacyjnego.
+WVER0231I.explanation=Ten komunikat zawiera opis poprawnych argumentów programu narzędziowego versionInfo.
+WVER0231I.useraction=Od użytkownika nie jest wymagana żadna akcja. Komunikat zawierający informacje o składni jest wyświetlany na żądanie użytkownika.
+
+# 
+WVER0240E=WVER0240E: Błąd podczas zapisywania raportu wersji w pliku {0}: {1}
+WVER0240E.explanation=Błąd wystąpił podczas zapisywania raportu historii w określonym pliku.
+WVER0240E.useraction=Akcja, jaką należy podjąć w celu usunięcia przyczyny błędu, zależy od rodzaju błędu, który wystąpił. W szczególności sprawdź, czy określony plik jest dostępny do zapisu oraz czy ilość wolnego miejsca jest wystarczająca do zapisania raportu.
+
+# 
+WVER0241E=WVER0241E: Błąd podczas zapisywania raportu historii w pliku {0}. Nie można wyświetlić tekstu komunikatu o błędzie. Typ błędu: {1}.  Podczas pobierania tekstu komunikatu o błędzie wystąpił kolejny błąd typu {2}.
+WVER0241E.explanation=Wystąpił błąd podczas zapisywania raportu historii w określonym pliku. Podczas pobierania tekstu komunikatu o błędzie wystąpił kolejny błąd.
+WVER0241E.useraction=Nie są dostępne informacje o wymaganej akcji. Spróbuj ponownie wykonać operację lub skontaktuj się z działem wsparcia technicznego w celu uzyskania pomocy.
+
+# 
+WVER0242E=WVER0242E: Wystąpił wyjątek podczas przetwarzania informacji historycznych.
+WVER0242E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0242E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0243E=WVER0243E: Wystąpiły wyjątki podczas przetwarzania informacji historycznych.
+WVER0243E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0243E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+# 
+WVER0261E=WVER0261E: Nie można zarejestrować zastosowania poprawki {0} do komponentu {1} w pliku {2}. Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0261E.explanation=Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0261E.useraction=Sprawdź, czy plik docelowy jest dostępny do zapisu oraz czy ilość wolnego miejsca jest wystarczająca do zapisania nowego pliku.
+
+# 
+WVER0262E=WVER0262E: Nie można zarejestrować usunięcia poprawki {0} zastosowanej do komponentu {1} w pliku {2}. Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0262E.explanation=Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0262E.useraction=Sprawdź, czy plik docelowy jest dostępny do zapisu oraz czy ilość wolnego miejsca jest wystarczająca do zapisania nowego pliku.
+
+# 
+WVER0263E=WVER0263E: Nie można zarejestrować usunięcia poprawki {0} zastosowanej do komponentu {1}, przechowywanej w pliku {2}. Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0263E.explanation=Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0263E.useraction=Sprawdź, czy usunięcie pliku docelowego jest dozwolone.
+
+# 
+WVER0264E=WVER0264E: Nie można zarejestrować usunięcia poprawki {0} zastosowanej do komponentu {1} - nie zarejestrowano zastosowania poprawki.
+WVER0264E.explanation=Nie zarejestrowano zastosowania określonej poprawki do tego komponentu. Informacje o produkcie mogą być uszkodzone albo wystąpił błąd wewnętrzny.
+WVER0264E.useraction=Aby uzyskać dodatkowe informacje, skontaktuj się z działem wsparcia technicznego.
+
+# 
+WVER0265E=WVER0265E: Nie można usunąć sterownika poprawki {0} przechowywanego w pliku {2}.
+WVER0265E.explanation=Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0265E.useraction=Sprawdź, czy usunięcie pliku docelowego jest dozwolone.
+
+# 
+WVER0266E=WVER0266E: Wystąpiły błędy naprawialne podczas analizowania informacji o sterowniku poprawki PTF.
+WVER0266E.explanation=Poniżej została wyświetlona lista błędów, które wystąpiły podczas analizowania informacji o poprawce PTF. Dodatkowe informacje znajdują się w wyświetlonych komunikatach o błędach.
+WVER0266E.useraction=Informacje o sugerowanych działaniach znajdują się w wyświetlonych komunikatach o błędach.
+
+# 
+WVER0267E=WVER0267E: Nie można zarejestrować usunięcia poprawki PTF {0} zastosowanej do komponentu {1} w pliku {2}. Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0267E.explanation=Zapisanie pliku o określonej nazwie nie powiodło się.
+WVER0267E.useraction=Sprawdź, czy plik docelowy jest dostępny do zapisu oraz czy ilość wolnego miejsca jest wystarczająca do zapisania nowego pliku.
+
+# 
+WVER0268E=WVER0268E: Nie można zarejestrować usunięcia poprawki PTF {0} zastosowanej do komponentu {1}, przechowywanego w pliku {2}. Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0268E.explanation=Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0268E.useraction=Sprawdź, czy usunięcie pliku docelowego jest dozwolone.
+
+# 
+WVER0269E=WVER0269E: Nie można zarejestrować usunięcia poprawki PTF {0} zastosowanej do komponentu {1} - nie zarejestrowano zastosowania poprawki.
+WVER0269E.explanation=Nie zarejestrowano zastosowania określonej poprawki PTF do tego komponentu. Informacje o produkcie mogą być uszkodzone albo wystąpił błąd wewnętrzny.
+WVER0269E.useraction=Aby uzyskać dodatkowe informacje, skontaktuj się z działem wsparcia technicznego.
+
+# 
+WVER0270E=WVER0270E: Nie można usunąć sterownika poprawki PTF {0}, przechowywanego w pliku {2}.
+WVER0270E.explanation=Usunięcie pliku o określonej nazwie nie powiodło się.
+WVER0270E.useraction=Sprawdź, czy usunięcie pliku docelowego jest dozwolone.
+
+# 
+WVER0271E=WVER0271E: Nieznane rozszerzenie nazwy pliku historii produktu {0}.
+WVER0271E.explanation=Ładowane informacje o historii są przechowywane w plikach o określonych rozszerzeniach nazw. Rozszerzenia te określają typ informacji przechowywanych w poszczególnych plikach. Poprawne rozszerzenia są następujące: .fixDriver, .fixApplied, .efixDriver, .efixApplied, .ptfDriver oraz .ptfApplied. Usiłowano załadować plik zawierający informacje o wersji, ale rozszerzenie nazwy pliku jest niepoprawne.
+WVER0271E.useraction=Ten komunikat świadczy o wystąpieniu błędu wewnętrznego.
+
+# 
+WVER0272E=WVER0272E: Wystąpił wyjątek podczas odczytywania obiektu {0}.
+WVER0272E.explanation=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+WVER0272E.useraction=Dodatkowe informacje można znaleźć w komunikatach o wyjątkach zagnieżdżonych.
+
+label.standard.out=Wyjście standardowe
+
+listing.nested.error={0}: {1}
+
+report.header=Raport historii produktu IBM WebSphere Portal
+report.header.update=Raport historii produktu IBM WebSphere Portal Server dla aktualizacji {0}
+report.header.component=Raport historii produktu IBM WebSphere Portal dla komponentu {0}
+report.header.update.component=Raport historii produktu IBM WebSphere Portal dla aktualizacji {0} i komponentu {1}
+
+warning.no.events=Ostrzeżenie: Żadne zdarzenia nie są dostępne.
+warning.no.events.for.component=Ostrzeżenie: Żadne zdarzenia nie są dostępne dla komponentu {0}.
+warning.no.events.for.update=Ostrzeżenie: Żadne zdarzenia nie są dostępne dla aktualizacji {0}.
+warning.no.events.for.update.component=Ostrzeżenie: Żadne zdarzenia nie są dostępne dla aktualizacji {0} i komponentu {1}.
+
+info.report.on=Data i godzina raportu: {0}
+
+report.footer=Koniec raportu historii
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Instalacja
+label.product.dir=Katalog produktu
+label.version.dir=Katalog wersji
+label.version.dtd.dir=Katalog DTD
+label.version.log.dir=Katalog dzienników
+label.version.backup.dir=Katalog kopii zapasowych
+label.version.tmp.dir=Katalog tymczasowy
+label.version.history.dir=Katalog historii
+label.version.history.file=Plik historii
+
+info.event=Zdarzenie instalacji
+info.component.event=Zdarzenie instalacji komponentu
+
+label.efix.id=Identyfikator poprawki
+label.ptf.id=Identyfikator poprawki PTF
+label.unknown.id=Nieznany identyfikator
+
+label.action=Akcja
+label.start.time.stamp=Godzina rozpoczęcia
+label.end.time.stamp=Godzina zakończenia
+
+label.log.file.name=Nazwa pliku dziennika
+
+
+label.component.name=Nazwa komponentu
+
+label.is.custom=Niestandardowa
+label.primary.content=Treść podstawowa
+
+label.update.type=Akcja aktualizowania
+
+label.is.external=Zewnętrzna
+label.root.property.file=Plik właściwości głównej
+label.root.property.name=Nazwa właściwości głównej
+label.root.property.value=Wartość właściwości głównej
+
+label.backup.file.name=Nazwa pliku kopii zapasowej
+label.result=Wynik
+label.result.message=Komunikat o wyniku
+
+label.initial.version=Wersja początkowa
+label.initial.spec.version=Specyfikacja początkowa
+label.initial.build.date=Data kompilacji początkowej
+
+label.final.version=Wersja końcowa
+label.final.spec.version=Specyfikacja wersji końcowej
+label.final.build.date=Data kompilacji końcowej
+
+
+label.install.action=instalacja
+label.uninstall.action=deinstalacja
+label.selective.install.action=instalacja wybiórcza
+label.selective.uninstall.action=deinstalacja wybiórcza
+label.unknown.action=*** NIEZNANA AKCJA ZDARZENIA ***
+
+label.update.add.tag=dodaj
+label.update.replace.tag=zastąp
+label.update.remove.tag=usuń
+label.update.patch.tag=poprawka
+label.update.composite.tag=złożona
+label.update.unknown.tag=*** NIEZNANY TYP AKTUALIZACJI ***
+
+label.result.succeeded.tag=proces wykonano pomyślnie
+label.result.failed.tag=proces nie powiódł się
+label.result.cancelled.tag=proces został anulowany
+label.result.unknown.tag=*** NIEZNANY WYNIK ZDARZENIA ***
+
+label.true=prawda
+label.false=fałsz

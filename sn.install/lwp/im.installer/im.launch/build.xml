@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * IBM Licensed Material
+ * 
+ * Copyright IBM Corp. 2006, 2016                                    
+ * 
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has been
+ * deposited with the U.S. Copyright Office.
+ * 
+-->
+<project name="im.installer/im.launch" default="development" basedir="."> 
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+
+	<import file="${env.WPLC_IMPORT}/check.xml"/>
+	<import file="${env.WPLC_IMPORT}/compile.xml"/>
+	<import file="${env.WPLC_IMPORT}/rmic.xml"/>
+	<import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+	<import file="${env.WPLC_IMPORT}/javadoc.xml"/>
+	<import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+	<import file="${env.WPLC_IMPORT}/clean.xml"/>
+	<import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+	<import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+	<import file="${env.WPLC_IMPORT}/performance.xml"/>  
+
+	<property environment="env" />
+	
+	<target name="development" depends="extractIM,addIMLaunch,addSamples"/>
+	<target name="production" depends="extractIM,addIMLaunch,addSamples"/>
+	
+	<target name="extractIM">
+		<unzip src="${im.tools.dir}/${im.tools.win}" dest="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/windows" overwrite="false" />
+		<mkdir dir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/windows/skip" />
+		<unzip src="${im.tools.dir}/${im.tools.linux}" dest="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/linux" overwrite="false" />
+		<mkdir dir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/linux/skip" />
+		<!-- Not building this as not sure is needed - And want to find any other dependencies
+		<unzip src="${im.tools.dir}/${im.tools.aix}" dest="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/aix" overwrite="false" />
+		<mkdir dir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/aix/skip" />
+		<unzip src="${im.tools.dir}/${im.tools.zlinux}" dest="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/zlinux" overwrite="false" />
+		<mkdir dir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/zlinux/skip" />
+		-->
+		<!-- OS400_Enablement -->
+		<!-- Not building this as not sure is needed - And want to find any other dependencies
+		<unzip src="${im.tools.dir}/${im.tools.os400}" dest="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/os400" overwrite="false" />
+		<mkdir dir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/os400/skip" />
+		-->
+	</target>
+	
+	<target name="addIMLaunch">
+		<!--
+		https://swgjazz.ibm.com:8001/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/168301
+		post-install.xml must be copied into the IM package itself because the paths are relative to it
+		-->
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/aix" file="post-install.xml" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/linux" file="post-install.xml" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/windows" file="post-install.xml" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/zlinux" file="post-install.xml" />
+		<!-- OS400_Enablement -->
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/os400" file="post-install.xml" />
+		
+		
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="lc_install.ini" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="install.bat" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="install.sh" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="install.console.bat" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="install.console.sh" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="install.silent.bat" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="install.silent.sh" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="LC.rsp" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="LC_os400.rsp" />
+		
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="LC_modify_add_linux.rsp" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="LC_modify_remove_linux.rsp" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="LC_rollback_linux.rsp" />
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM" file="LC_uninstall_linux.rsp" />
+		
+		<loadfile property="theQualifier" srcFile="${dir.build}/../im.project/version_qualifier.txt"/>
+
+		<replace file="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/LC.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/LC_modify_add_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/LC_modify_remove_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/LC_rollback_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/LC_uninstall_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/LC_os400.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		
+		
+        <!--
+		<copy todir="${dir.build}/setup/disk/HCLConnections" file="LC.rsp" />
+		<copy todir="${dir.build}/setup/disk/HCLConnections" file="LC_modify_add_linux.rsp" />
+		<copy todir="${dir.build}/setup/disk/HCLConnections" file="LC_modify_remove_linux.rsp" />
+		<copy todir="${dir.build}/setup/disk/HCLConnections" file="LC_rollback_linux.rsp" />
+		<copy todir="${dir.build}/setup/disk/HCLConnections" file="LC_uninstall_linux.rsp" /> -->
+	
+		
+		<!--<loadfile property="theQualifier" srcFile="${dir.build}/../im.projects/version_qualifier.txt"/>-->
+		<!--
+		<replace file="${dir.build}/setup/disk/HCLConnections/LC.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${dir.build}/setup/disk/HCLConnections/LC_modify_add_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${dir.build}/setup/disk/HCLConnections/LC_modify_remove_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${dir.build}/setup/disk/HCLConnections/LC_rollback_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${dir.build}/setup/disk/HCLConnections/LC_uninstall_linux.rsp" token="@QUALIFIER@" value="${theQualifier}" />-->
+
+	</target>
+	
+	<target name="addSamples">
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/IM/samples">
+			<fileset dir="samples" />
+		</copy>
+	</target>
+</project>

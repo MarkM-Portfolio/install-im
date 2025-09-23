@@ -1,0 +1,32 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<target name="action-migration-disable-tai-activities">
+    <!-- Run wsadmin with the single createJaasAuthData.jacl script -->
+    <property name="deployFmkJaclProps" value="${EngineInstallLocation}/config/work/was/jacl.properties" />                
+
+    <!-- filtering the tokens -->
+    <filter filtersfile="${ActivitiesHome}/activities.properties"/>
+    <filter token="TAICLASSNAME" value="com.ibm.openactivities.security.tai.ActivitiesTAI"/>
+    <wsadmin wasHome="${WasUserHome_FullPath}"
+             profileName="${activities.ProfileName}"
+             properties="${deployFmkJaclProps}" 
+             lang="jacl"
+             profile="${EngineInstallLocation_FullPath}/config/was/wkplc_SNPostConfigProcs.jacl"
+             script="${remove.activities.tai.jacl}" 
+             conntype="NONE"
+ 	     user="${WasUserid}"
+ 	     password="${WasPassword}">
+    </wsadmin>
+    <antcall target="action-uninstall-postconfig-remove-tai-jars-activities"/>
+    <!-- Concatenate a series of JACL files into a single JACL file-->
+</target>

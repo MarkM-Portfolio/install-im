@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<assembly id='8.5.0.2-WS-WASProd-IFPI15998a' version='8.5.2.20140618_1604' seCount='4'>
+  <selector id='fragment.core'/>
+  <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2' version='8.5.2.20140618_1604'/>
+  <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-4s-8.5.5002' version='8.5.5002.20140618_1604'/>
+  <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-2s-8.5.5000' version='8.5.5000.20140618_1604'/>
+  <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-3s-8.5.5001' version='8.5.5001.20140618_1604'/>
+</assembly>

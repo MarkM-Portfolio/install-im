@@ -1,0 +1,305 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: 履歴ディレクトリーを判別できません。プロダクト・ディレクトリーを判別できませんでした
+WVER0201E.explanation=履歴ディレクトリーはプロダクト・ディレクトリーのサブディレクトリーです。 詳しくは、プロダクト・ディレクトリー判別の際に発生したエラーの説明を参照してください。
+WVER0201E.useraction=バージョン・エラーとともに表示される説明に従ってください。
+
+# 
+WVER0202E=WVER0202E: 履歴情報をロードできません
+WVER0202E.explanation=履歴情報をヒストリー・ファイル {0} からロードできませんでした。 発生したエラーに応じて特定の詳細があります。
+WVER0202E.useraction=ヒストリー・ファイルが読み取り可能であり、正しいフォーマットであることを確認してください。
+
+# 
+WVER0203E=WVER0203E: {0} を読み取り中に例外が発生しました
+WVER0203E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0203E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0204E=WVER0204E: 履歴ディレクトリー {0} を作成中に例外が発生しました
+WVER0204E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0204E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0205E=WVER0205E: ヒストリー・ファイル {0} のバックアップを {1} に作成中に例外が発生しました
+WVER0205E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0205E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0206E=WVER0206E: イベント・ヒストリー {0} を書き込み中に例外が発生しました
+WVER0206E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0206E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0210I.explanation=これは標準の著作権文です。
+WVER0210I.useraction=ユーザー・アクションは不要です。  これは通知メッセージです。
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=これは標準の製品説明文です。
+WVER0211I.useraction=ユーザー・アクションは不要です。  これは通知メッセージです。
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter バージョン {0}、日付 {1}
+WVER0212I.explanation=これは標準のモジュール説明文です。
+WVER0212I.useraction=ユーザー・アクションは不要です。  これは通知メッセージです。
+
+# 
+WVER0225E=WVER0225E: ''{0}'' 引数に値が指定されていませんでした
+WVER0225E.explanation=リストされた引き数には値が必要です。  ('-help' または '-usage' を使用して、使用情報を表示してください。)
+WVER0225E.useraction=リストされた引き数に値を指定してください。
+
+# 
+WVER0226E=WVER0226E: 値 ''{0}'' は無効なフォーマット値です。
+WVER0226E.explanation=有効なフォーマット値は、'text' および 'html' です。 指定された値は、以下に示す値のいずれにも該当しません。  ('-help' または '-usage' を使用して、使用情報を表示してください。)
+WVER0226E.useraction=フォーマット値を有効な値である 'text' または 'html' のいずれかに変更してください。
+
+# 
+WVER0228E=WVER0228E: 引数 ''{0}'' は無効な引数です。
+WVER0228E.explanation=指定された引き数は無効です。  ('-help' または '-usage' を使用して、使用情報を表示してください。)
+WVER0228E.useraction=引き数を有効な引き数に変更してください。
+
+# 
+WVER0230I=WVER0230I: 使用法: historyInfo ( [ -format <text | html> ] [ -file <出力ファイル> ] [ -updateId <更新 ID> ] [ -component <コンポーネント名> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=この通知メッセージは、historyInfo ユーティリティー・プログラムに対する引き数について説明します。  historyInfo ユーティリティー・プログラムはオプションのキーワード引き数 (出力形式を指定する引き数、出力ファイルを指定するもの、指定されたフィックスと関連するイベントのみを表示する引き数、指定されたコンポーネントに関連するイベントのみを表示する引き数、使用情報を表示するために使用する引き数) を受け入れます。  ('-usage' または '-help' を使用して、追加情報を表示してください。)
+WVER0230I.useraction=ユーザー・アクションは不要です。  使用情報メッセージは要求に応じて表示されます。
+
+# 
+WVER0231I=WVER0231I: '-format' 引数を使用して、出力形式を指定します。出力形式は、'text' または 'html' のいずれかで指定する必要があります。 '-file' 引数を使用して、出力ファイルを指定します。 ファイル名を提供する必要があります。  '-updateId' 引数を使用して、更新の ID を指定し、表示されるイベントを制限します。 '-component' 引数を使用して、コンポーネント名を指定し、表示されるイベントを制限します。 '-help' 引数を使用して、バージョン情報を表示します。 '-usage' 引数を使用して、この情報メッセージを表示します。
+WVER0231I.explanation=メッセージは、versionInfo ユーティリティー・プログラムに対する有効な引き数について説明します。
+WVER0231I.useraction=ユーザー・アクションは不要です。  使用情報メッセージは要求に応じて表示されます。
+
+# 
+WVER0240E=WVER0240E: バージョン・レポートを {0} に書き込み中にエラーが発生しました: {1}
+WVER0240E.explanation=履歴レポートを指定されたファイルに書き込み中に、指定されたエラーが発生しました。
+WVER0240E.useraction=修正アクションは発生したエラーの特性に応じて異なります。  特に、指定されたファイルが書き込み可能であり、レポート用として使用可能なスペースが十分にあることを確認してください。
+
+# 
+WVER0241E=WVER0241E: 履歴レポートを {0} に書き込み中にエラーが発生しました。 エラーのテキストは表示できませんが、タイプ {1} のエラーです。  タイプ {2} の 2 番目のエラーが、エラー・テキストの検索中に発生しました。
+WVER0241E.explanation=特定のファイルに履歴レポートを書き出し中にエラーが発生しました。  エラーのテキストを表示中に 2 番目のエラーが発生しました。
+WVER0241E.useraction=ユーザー・アクションは使用不可です。  要求された操作を再試行するか、詳細をサポートにお問い合わせください。
+
+# 
+WVER0242E=WVER0242E: 履歴情報を処理中に例外が発生しました。
+WVER0242E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0242E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0243E=WVER0243E: 履歴情報を処理中に例外が発生しました。
+WVER0243E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0243E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+# 
+WVER0261E=WVER0261E: ファイル {2} 内のコンポーネント {1} でフィックス {0} のアプリケーションを記録することができません。指定されたファイルを保管できませんでした。
+WVER0261E.explanation=指定されたファイルを保管できませんでした。
+WVER0261E.useraction=ターゲット・ファイルが書き込み可能であり、新規ファイル用として使用可能なスペースがあることを確認してください。
+
+# 
+WVER0262E=WVER0262E: ファイル {2} 内のコンポーネント {1} でフィックス {0} のアプリケーションの除去を記録できません。指定されたファイルを保管できませんでした。
+WVER0262E.explanation=指定されたファイルを保管できませんでした。
+WVER0262E.useraction=ターゲット・ファイルが書き込み可能であり、新規ファイル用として使用可能なスペースがあることを確認してください。
+
+# 
+WVER0263E=WVER0263E: ファイル {2} 内に保管されたコンポーネント {1} でフィックス {0} のアプリケーションの除去を記録することができません。指定されたファイルを除去できませんでした。
+WVER0263E.explanation=指定されたファイルを除去できませんでした。
+WVER0263E.useraction=ターゲット・ファイルが除去可能であることを確認してください。
+
+# 
+WVER0264E=WVER0264E: コンポーネント {1} でフィックス {0} のアプリケーションの除去を記録できません -- アプリケーションは記録されていません。
+WVER0264E.explanation=コンポーネントに、指定されたフィックスのアプリケーションは記録されていません。  製品情報が壊れているか、内部エラーが発生している可能性があります
+WVER0264E.useraction=追加情報については、サポートにお問い合わせください。
+
+# 
+WVER0265E=WVER0265E: ファイル {2} に保管されたフィックス・ドライバー {0} が除去できません。
+WVER0265E.explanation=指定されたファイルを除去できませんでした。
+WVER0265E.useraction=ターゲット・ファイルが除去可能であることを確認してください。
+
+# 
+WVER0266E=WVER0266E: PTF ドライバー情報の構文解析中にリカバリー可能エラーが発生しました。
+WVER0266E.explanation=PTF 情報の構文解析中に、以下にリストするエラーが発生しました。  追加情報については、リストされたエラーを参照してください。
+WVER0266E.useraction=推奨されるユーザー・アクションについては、リストされたエラーを参照してください。
+
+# 
+WVER0267E=WVER0267E: ファイル {2} 内のコンポーネント {1} で PTF {0} のアプリケーションの除去を記録できません。指定されたファイルを保管できませんでした。
+WVER0267E.explanation=指定されたファイルを保管できませんでした。
+WVER0267E.useraction=ターゲット・ファイルが書き込み可能であり、新規ファイル用として使用可能なスペースがあることを確認してください。
+
+# 
+WVER0268E=WVER0268E: ファイル {2} 内に保管されたコンポーネント {1} で PTF {0} のアプリケーションの除去を記録することができません。指定されたファイルを除去できませんでした。
+WVER0268E.explanation=指定されたファイルを除去できませんでした。
+WVER0268E.useraction=ターゲット・ファイルが除去可能であることを確認してください。
+
+# 
+WVER0269E=WVER0269E: コンポーネント {1} で PTF {0} のアプリケーションの除去を記録できません -- アプリケーションは記録されていません。
+WVER0269E.explanation=コンポーネントに、指定された PTF のアプリケーションは記録されていません。  製品情報が壊れているか、内部エラーが発生している可能性があります
+WVER0269E.useraction=追加情報については、サポートにお問い合わせください。
+
+# 
+WVER0270E=WVER0270E: ファイル {2} に保管された PTF ドライバー {0} を除去できません。
+WVER0270E.explanation=指定されたファイルを除去できませんでした。
+WVER0270E.useraction=ターゲット・ファイルが除去可能であることを確認してください。
+
+# 
+WVER0271E=WVER0271E: 製品ヒストリー・ファイル拡張子 ''{0}'' が認識されません。
+WVER0271E.explanation=ロードした履歴情報は、特定の拡張子を持つファイルに保管されます。  この拡張子は、各ファイルに保管される情報のタイプを判別するものです。 有効な拡張子は '.fixDriver'、'.fixApplied'、'.efixDriver'、'.efixApplied'、'.ptfDriver'、および '.ptfApplied' です。\
+バージョン情報を含んでいる、有効な拡張子を持たないファイルのロードを試みました。
+WVER0271E.useraction=これは内部エラーです。
+
+# 
+WVER0272E=WVER0272E: {0} を読み取り中に例外が発生しました
+WVER0272E.explanation=詳しくは、ネストされた例外の詳細を参照してください。
+WVER0272E.useraction=詳しくは、ネストされた例外の詳細を参照してください。
+
+label.standard.out=標準出力
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere portal 履歴レポート
+report.header.update=更新 {0} 用 IBM WebSphere Portal Server 履歴レポート
+report.header.component=コンポーネント {0} 用 IBM WebSphere Portal 履歴レポート
+report.header.update.component=更新 {0} およびコンポーネント {1} 用 IBM WebSphere Portal 履歴レポート
+
+warning.no.events=警告: 使用可能なイベントはありません。
+warning.no.events.for.component=警告: コンポーネント {0} に使用可能なイベントはありません。
+warning.no.events.for.update=警告: 更新 {0} に使用可能なイベントはありません。
+warning.no.events.for.update.component=警告: 更新 {0} およびコンポーネント {1} に使用可能なイベントはありません。
+
+info.report.on=次の日時のレポート {0}
+
+report.footer=履歴レポートの終了
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=インストール
+label.product.dir=プロダクト・ディレクトリー
+label.version.dir=バージョン・ディレクトリー
+label.version.dtd.dir=DTD ディレクトリー
+label.version.log.dir=ログ・ディレクトリー
+label.version.backup.dir=バックアップ・ディレクトリー
+label.version.tmp.dir=TMP ディレクトリー
+label.version.history.dir=履歴ディレクトリー
+label.version.history.file=ヒストリー・ファイル
+
+info.event=インストール・イベント
+info.component.event=コンポーネント・インストール・イベント
+
+label.efix.id=フィックス ID
+label.ptf.id=PTF ID
+label.unknown.id=不明 ID
+
+label.action=アクション
+
+label.start.time.stamp=開始時刻
+label.end.time.stamp=終了時刻
+
+label.log.file.name=ログ・ファイル名
+
+
+label.component.name=コンポーネント名
+
+label.is.custom=カスタムです
+label.primary.content=基本コンテンツ
+
+label.update.type=アクションの更新
+
+label.is.external=外部です
+label.root.property.file=ルート・プロパティー・ファイル
+label.root.property.name=ルート・プロパティー名
+label.root.property.value=ルート・プロパティー値
+
+label.backup.file.name=バックアップ・ファイル名
+label.result=結果
+label.result.message=結果メッセージ
+
+label.initial.version=最初のバージョン
+label.initial.spec.version=最初の仕様
+label.initial.build.date=最初のビルド日
+
+label.final.version=最終のバージョン
+label.final.spec.version=最終のバージョン仕様
+label.final.build.date=最終のビルド日
+
+
+label.install.action=インストール
+label.uninstall.action=アンインストール
+label.selective.install.action=選択インストール
+label.selective.uninstall.action=選択アンインストール
+label.unknown.action=*** 不明なイベント・アクション ***
+
+label.update.add.tag=追加
+label.update.replace.tag=置換
+label.update.remove.tag=除去
+label.update.patch.tag=パッチ
+label.update.composite.tag=複合
+label.update.unknown.tag=*** 不明な更新タイプ ***
+
+label.result.succeeded.tag=成功
+label.result.failed.tag=失敗
+label.result.cancelled.tag=キャンセル
+label.result.unknown.tag=*** 不明なイベント結果 ***
+
+label.true=true
+label.false=false

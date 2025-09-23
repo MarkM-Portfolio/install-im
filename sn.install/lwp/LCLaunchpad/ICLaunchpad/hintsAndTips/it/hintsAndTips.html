@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="it-it">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2006" />
+<meta name="security" content="pubblico" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="Consigli e suggerimenti per Classic Express Launchpad Template" />
+<meta name="abstract" content="Classic Express Launchpad Template fornisce un punto di avvio per creare un launchpad di installazione che è possibile utilizzare con prodotti Express." />
+<meta name="description" content="Classic Express Launchpad Template fornisce un punto di avvio per creare un launchpad di installazione che è possibile utilizzare con prodotti Express." />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="en-us" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>Consigli e suggerimenti per Express Launchpad Template</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">Consigli e suggerimenti per Classic Express Launchpad Template</h1>
+<div><p>Classic Express Launchpad Template fornisce un punto di avvio per creare un launchpad di installazione che è possibile utilizzare con prodotti Express.</p>
+<p> Questo modello contiene codice che è possibile utilizzare per avviare un programma di installazione del prodotto, visualizzare una documentazione
+e fornire il contenuto individuato.</p>
+<p>Informazioni da conoscere su Classic Express Launchpad Template:</p>
+<ul><li>Tutti i comandi e i programmi utilizzati sono definiti in launchpadContent/global.properties.</li>
+<li>Le applicazioni di esempio sono incluse in DISK1 nella pagina Layout dischi.
+Per aggiungere le applicazioni o i programmi di installazione personalizzati, definire l'applicazione nel file
+launchpadContent\global.properties (seguendo gli esempi per le applicazioni di esempio). Importare le applicazioni sul disco appropriato del progetto utilizzando
+i controlli rilevati nella scheda Layout dischi.</li>
+<li>Tutti i file HTML utilizzano lo stesso foglio di stile (content.css), che risiede nella directory
+launchpadContent.</li>
+</ul>
+<p>Classic Express Launchpad Template contiene le seguenti pagine:</p>
+<ul><li><strong>Benvenuti</strong> - Di solito, la pagina Benvenuti fornisce una panoramica del prodotto ed una descrizione
+delle funzioni del launchpad.  La pagina di benvenuto deve essere sintetica ed offrire le opzioni dell'utente per reperire ulteriori informazioni sul
+prodotto offrendo un collegamento al sito Web del prodotto visualizzato in una nuova finestra del browser. La pagina di benvenuto è caratterizzata dal codice per visualizzare un sito
+Web esterno in un browser.  Utilizzare la funzione <samp class="codeph">viewPage()</samp> per visualizzare
+le nuove finestre invece di <samp class="codeph">window.open()</samp> di JavaScript poiché <samp class="codeph">window.open()</samp> appare bloccato dal blocco popup.</li>
+<li><strong>Informazioni sulla release</strong> - La pagina delle informazioni sulla release in genere fornisce informazioni specifiche per una releaseesclusiva di un prodotto.  Ad esempio, problematiche di installazione, modifiche dei prerequisiti, funzioni principali o correzioni trattate nella release e altri contenuti di questo tipo rappresentano argomenti appropriati per una pagina di informazioni sulla release.  La pagina delle informazioni sulla releaseè caratterizzata
+dal codice per visualizzare un file PDF ed eseguire un'applicazione.</li>
+<li><strong>Informazioni sui prerequisiti</strong> - Questa pagina in genere fornisce un controllo per l'esecuzione di un programma di verifica dei prerequisiti che determina se nel computer sono presenti prerequisiti di sistema e restituisce un elenco dei prerequisiti non rilevati.  La pagina di informazioni sui prerequisiti è caratterizzata dal codice
+per visualizzare un file PDF ed eseguire un'applicazione.</li>
+<li><strong>Scenario di installazione</strong> - Il contenuto degli scenari di installazione in genere fornisce i diversi approcci per l'installazione di un prodotto che possono essere adottati da un utente.
+Gli utenti possono scegliere uno specifico scenario di installazione a seconda dell'utilizzo previsto del prodotto.  Questo contenuto spiega le differenze dei diversi scenari di installazione che possono essere scelti da un utente e fornisce informazioni sui motivi della scelta di uno scenario rispeto a un altro.  Non tutti i prodotti presentano scenari di installazione.  Se si personalizza
+Classic Express Launchpad Template per un prodotto di questo tipo, è possibile rimuovere questa sezione dalla navigazione. La pagina degli scenari di installazione contiene codice per eseguire una programma personalizzato con un argomento.</li>
+<li><strong>Informazioni sulla migrazione</strong> - Il contenuto della migrazione in genere illustra un percorso di migrazione che deve essere utilizzato dall'utente per eseguire l'aggiornamento da una versione precedente del prodotto a una più recente. Se le informazioni sulla migrazione non sono relative a un prodotto specifico, questo contenuto deve essere rimosso dalla navigazione. La pagina delle informazioni di migrazione è caratterizzata
+dal codice per visualizzare un file PDF ed eseguire un'applicazione.</li>
+<li><strong>Installa</strong> - La pagina di installazione del prodotto fornisce un controllo per avviare l'installazione del prodotto. È possibile aggiungere più pagine di installazione del prodotto a un launchpad di installazione per il supporto di installazioni di più prodotti.
+La pagina di installazione è caratterizzata dal codice per avviare un'installazione del prodotto.</li>
+<li><strong>Esci</strong> - Il collegamento di chiusura nel menu di navigazione chiude il launchpad.</li>
+</ul>
+</div>
+</body>
+</html>

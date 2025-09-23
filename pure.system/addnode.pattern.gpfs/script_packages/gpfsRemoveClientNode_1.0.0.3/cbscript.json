@@ -1,0 +1,16 @@
+[
+  {
+      "name": "GPFS Remove Client Node - 1.0.0.3",
+      "version": "1.0.0.3",
+      "description": "This script package removes a client node from the GPFS cluster.",
+      "command": "python /tmp/gpfs/gpfsInstall/gpfs.py",
+      "log": "/tmp/gpfs/gpfsRemoveClientNode/logs",
+      "location": "/tmp/gpfs/gpfsRemoveClientNode/",
+      "timeout": "1800000",
+      "execmode": 1,
+      "commandargs": "-operationName deleteClientNodeRemote",
+      "keys":
+      [
+      ]
+  }
+]

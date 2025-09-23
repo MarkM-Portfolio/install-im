@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: Imenika zgodovine ni bilo mogoče določiti; imenika izdelka ni bilo mogoče določiti
+WVER0201E.explanation=Imenik zgodovine je podimenik imenika izdelka.  Za dodatne informacije preglejte pojasnilo napake, do katere je prišlo med določanjem imenika izdelka.
+WVER0201E.useraction=Sledite navodilom, ki so prikazana v napaki različice.
+
+# 
+WVER0202E=WVER0202E: Informacij zgodovine ni bilo mogoče naložiti
+WVER0202E.explanation=Iz datoteke zgodovine {0} ni bilo mogoče naložiti informacij zgodovine.  Nadaljnje podrobnosti se nanašajo na napako, do katere je prišlo.
+WVER0202E.useraction=Prepričajte se, da je datoteko zgodovine možno prebrati in je v pravilnem formatu.
+
+# 
+WVER0203E=WVER0203E: Med branjem {0} je prišlo do izjemnega stanja
+WVER0203E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0203E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0204E=WVER0204E: Med izdelavo imenika zgodovine {0} je prišlo do izjemnega stanja
+WVER0204E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0204E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0205E=WVER0205E: Med izdelavo varnostne kopije datoteke zgodovine {0} v {1} je prišlo do izjemnega stanja
+WVER0205E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0205E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0206E=WVER0206E: Med zapisovanjem zgodovine dogodka {0} je prišlo do izjemnega stanja
+WVER0206E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0206E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Vse pravice pridržane.
+WVER0210I.explanation=To je standardna izjava o avtorskih pravicah.
+WVER0210I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  To je informativno sporočilo.
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=To je standardna izjava o opisu izdelka.
+WVER0211I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  To je informativno sporočilo.
+
+# 
+WVER0212I=WVER0212I: Poročevalec HistoryInfo različice {0}, datum izdaje {1}
+WVER0212I.explanation=To je standardna izjava o opisu modula.
+WVER0212I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  To je informativno sporočilo.
+
+# 
+WVER0225E=WVER0225E: Za argument ''{0}'' niste podali vrednosti
+WVER0225E.explanation=Navedeni argument zahteva vrednost.  (Informacije o uporabi prikažete z '-help' ali '-usage').
+WVER0225E.useraction=Za navedeni argument podajte vrednost.
+
+# 
+WVER0226E=WVER0226E: Vrednost ''{0}'' ni veljavna vrednost formata.
+WVER0226E.explanation=Veljavni vrednosti formata sta 'text' in 'html'.  Podana vrednost ni ena izmed teh vrednosti.  (Informacije o uporabi prikažete z '-help' ali '-usage').
+WVER0226E.useraction=Vrednost formata spremenite v eno od veljavnih vrednosti, 'text' ali 'html'.
+
+# 
+WVER0228E=WVER0228E: Argument ''{0}'' ni veljavni argument.
+WVER0228E.explanation=Podani argument ni veljaven.  (Informacije o uporabi prikažete z '-help' ali '-usage').
+WVER0228E.useraction=Argument spremenite tako, da bo veljaven.
+
+# 
+WVER0230I=WVER0230I: Uporaba: historyInfo ( [ -format <text | html> ] [ -file <izhodna datoteka> ] [ -updateId <updateId> ] [ -component <componentName> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=To informativno sporočilo opisuje argumente za pomožni program historyInfo.  Pomožni program historyInfo sprejme pet neobveznih argumentov s ključnimi besedami, pri čemer eden podaja izhodni format, drugi podaja izhodno datoteko, tretji prikaže samo tiste dogodke, ki so povezani s podanim popravkom, četrti prikaže samo tiste dogodke, ki so povezani s podano komponento, peti pa je namenjen prikazu informacij o uporabi.  (Informacije o uporabi prikažete z '-usage' ali '-help'.)
+WVER0230I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  Sporočilo z informacijami o uporabi se prikaže na zahtevo.
+
+# 
+WVER0231I=WVER0231I: Argument '-format' določa izhodni format, ki ga morate podati kot 'text' ali 'html'.  Argument '-file' določa izhodno datoteko.  Podati morate ime datoteke.  Argument '-updateId' podaja ID spremembe, s katero omejite dogodke, ki jih želite prikazati.  Argument '-component' določa ime komponente, s katerim omejite dogodke, ki jih želite prikazati.  Argument '-help' je namenjen prikazu informacij o različici.  Argument '-usage' je namenjen prikazu tega informativnega sporočila.
+WVER0231I.explanation=Sporočilo opisuje veljavne argumente za pomožni program versionInfo.
+WVER0231I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  Sporočilo z informacijami o uporabi se prikaže na zahtevo.
+
+# 
+WVER0240E=WVER0240E: Napaka pri zapisovanju poročila o različici v {0}: {1}
+WVER0240E.explanation=Do podane napake je prišlo med zapisovanjem poročila zgodovine v podano datoteko.
+WVER0240E.useraction=Ukrep je odvisen od značilnosti prikazane napake.  Pri tem zagotovite, da podana datoteka omogoča zapisovanje in da je za poročilo na voljo dovolj prostora.
+
+# 
+WVER0241E=WVER0241E: Napaka pri pisanju poročila zgodovine v {0}.  Besedila napake sicer ni možno prikazati, je pa tipa {1}.  Med branjem besedila napake je prišlo do druge napake tipa {2}.
+WVER0241E.explanation=Do napake je prišlo med pisanjem poročila zgodovine v podano datoteko.  Do druge napake je prišlo med branjem besedila napake.
+WVER0241E.useraction=Ukrep uporabnika ni na voljo.  Ponovite zahtevano operacijo ali pa se za dodatno pomoč obrnite na podporo.
+
+# 
+WVER0242E=WVER0242E: Med obdelavo informacij zgodovine je prišlo do izjemnega stanja.
+WVER0242E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0242E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0243E=WVER0243E: Med obdelavo informacij zgodovine je prišlo do izjemnih stanj
+WVER0243E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0243E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0261E=WVER0261E: Ni bilo mogoče zabeležiti aplikacije popravka {0} v komponenti {1} datoteke {2}.  Navedene datoteke ni mogoče shraniti.
+WVER0261E.explanation=Navedene datoteke ni mogoče shraniti.
+WVER0261E.useraction=Prepričajte se, da ciljna datoteka omogoča zapisovanje in da je za novo datoteko na voljo dovolj prostora.
+
+# 
+WVER0262E=WVER0262E: Ni bilo mogoče zabeležiti odstranitve aplikacije popravka {0} v komponenti {1} datoteke {2}.  Navedene datoteke ni mogoče shraniti.
+WVER0262E.explanation=Navedene datoteke ni mogoče shraniti.
+WVER0262E.useraction=Prepričajte se, da ciljna datoteka omogoča zapisovanje in da je za novo datoteko na voljo dovolj prostora.
+
+# 
+WVER0263E=WVER0263E: Ni bilo mogoče zabeležiti odstranitve aplikacije popravka {0} v komponenti {1}, shranjeni v datoteki {2}.  Navedene datoteke ni mogoče odstraniti.
+WVER0263E.explanation=Navedene datoteke ni mogoče odstraniti.
+WVER0263E.useraction=Prepričajte se, da je ciljno datoteko mogoče odstraniti.
+
+# 
+WVER0264E=WVER0264E: Ni bilo mogoče zabeležiti odstranitve aplikacije popravka {0} v komponenti {1} -- v zapisu ni nobene aplikacije.
+WVER0264E.explanation=Komponenta nima nobenega zapisa aplikacije podanega popravka.  Informacije o izdelku so morda neveljavne ali pa je prišlo do notranje napake
+WVER0264E.useraction=Za dodatne informacije se obrnite na podporo.
+
+# 
+WVER0265E=WVER0265E: Ni bilo mogoče odstraniti gonilnika popravka {0}, shranjenega v datoteki {2}.
+WVER0265E.explanation=Navedene datoteke ni mogoče odstraniti.
+WVER0265E.useraction=Prepričajte se, da je ciljno datoteko mogoče odstraniti.
+
+# 
+WVER0266E=WVER0266E: Med razčlenjevanjem informacij o gonilniku PTF je prišlo do obnovljivih napak.
+WVER0266E.explanation=Do napak, katerih seznam sledi, je prišlo med razčlenjevanjem informacij PTF-ja.  Za dodatne informacije preglejte navedene napake.
+WVER0266E.useraction=Predlagane ukrepe uporabnikov poiščite v navedenih napakah.
+
+# 
+WVER0267E=WVER0267E: Ni bilo mogoče zabeležiti odstranitve aplikacije PTF-ja {0} v komponenti {1} datoteke {2}.  Navedene datoteke ni mogoče shraniti.
+WVER0267E.explanation=Navedene datoteke ni mogoče shraniti.
+WVER0267E.useraction=Prepričajte se, da ciljna datoteka omogoča zapisovanje in da je za novo datoteko na voljo dovolj prostora.
+
+# 
+WVER0268E=WVER0268E: Ni bilo mogoče zabeležiti odstranitve aplikacije PTF-ja {0} v komponenti {1}, shranjeni v datoteki {2}.  Navedene datoteke ni mogoče odstraniti.
+WVER0268E.explanation=Navedene datoteke ni mogoče odstraniti.
+WVER0268E.useraction=Prepričajte se, da je ciljno datoteko mogoče odstraniti.
+
+# 
+WVER0269E=WVER0269E: Ni bilo mogoče zabeležiti odstranitve aplikacije PTF-ja {0} v komponenti {1} -- v zapisu ni nobene aplikacije.
+WVER0269E.explanation=Komponenta nima nobenega zapisa aplikacije podanega PTF-ja.  Informacije o izdelku so morda neveljavne ali pa je prišlo do notranje napake
+WVER0269E.useraction=Za dodatne informacije se obrnite na podporo.
+
+# 
+WVER0270E=WVER0270E: Ni bilo mogoče odstraniti gonilnika PTF-ja {0}, shranjenega v datoteki {2}.
+WVER0270E.explanation=Navedene datoteke ni mogoče odstraniti.
+WVER0270E.useraction=Prepričajte se, da je ciljno datoteko mogoče odstraniti.
+
+# 
+WVER0271E=WVER0271E: Neznana pripona datoteke zgodovine izdelka ''{0}''.
+WVER0271E.explanation=Pri nalaganju informacij zgodovine se te informacije shranijo v datoteke, ki imajo specifične pripone.  Te določajo tip informacij, shranjenih v posamezni datoteki.  Veljavne pripone so '.fixDriver', '.fixApplied', '.efixDriver', '.efixApplied', '.ptfDriver' in '.ptfApplied'.  Poskusili ste naložiti datoteko z informacijami o različici, pri čemer pa pripona ni ena izmed veljavnih pripon.
+WVER0271E.useraction=To kaže na notranjo napako.
+
+# 
+WVER0272E=WVER0272E: Med branjem {0} je prišlo do izjemnega stanja
+WVER0272E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0272E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+label.standard.out=Standardni izpis
+
+listing.nested.error={0}: {1}
+
+report.header=Poročilo o zgodovini IBM WebSphere Portal
+report.header.update=Poročilo o zgodovini IBM WebSphere Portal Server za popravek {0}
+report.header.component=Poročilo o zgodovini IBM WebSphere Portal za komponento {0}
+report.header.update.component=Poročilo o zgodovini IBM WebSphere Portal za popravek {0} in komponento {1}
+
+warning.no.events=Opozorilo: na voljo ni nobenega dogodka.
+warning.no.events.for.component=Opozorilo: za komponento {0} ni na voljo nobenega dogodka.
+warning.no.events.for.update=Opozorilo: za popravek {0} ni na voljo nobenega dogodka.
+warning.no.events.for.update.component=Opozorilo: za popravek {0} in komponento {1} ni na voljo nobenega dogodka.
+
+info.report.on=Poročilo na datum in čas {0}
+
+report.footer=Konec poročila o zgodovini
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Namestitev
+label.product.dir=Imenik izdelka
+label.version.dir=Imenik različice
+label.version.dtd.dir=Imenik DTD
+label.version.log.dir=Imenik dnevnika
+label.version.backup.dir=Imenik varnostne kopije
+label.version.tmp.dir=Imenik TMP
+label.version.history.dir=Imenik zgodovine
+label.version.history.file=Datoteka zgodovine
+
+info.event=Dogodek namestitve
+info.component.event=Dogodek namestitve komponente
+
+label.efix.id=ID popravka
+label.ptf.id=ID PTF-ja
+label.unknown.id=Neznani ID
+
+label.action=Dejanje
+
+label.start.time.stamp=Čas začetka
+label.end.time.stamp=Končni čas
+
+label.log.file.name=Ime datoteke dnevnika
+
+
+label.component.name=Ime komponente
+
+label.is.custom=Je po meri
+label.primary.content=Primarna vsebina
+
+label.update.type=Dejanje posodabljanja
+
+label.is.external=Je zunanji
+label.root.property.file=Datoteka korenskih lastnosti
+label.root.property.name=Ime korenske lastnosti
+label.root.property.value=Vrednost korenske lastnosti
+
+label.backup.file.name=Ime varnostne kopije datoteke
+label.result=Rezultat
+label.result.message=Sporočilo rezultata
+
+label.initial.version=Začetna različica
+label.initial.spec.version=Začetna specifikacija
+label.initial.build.date=Datum začetne gradnje
+
+label.final.version=Končna različica
+label.final.spec.version=Specifikacija končne različice
+label.final.build.date=Datum končne različice
+
+
+label.install.action=namestitev
+label.uninstall.action=odstranitev namestitve
+label.selective.install.action=izbirna namestitev
+label.selective.uninstall.action=izbirna odstranitev namestitve
+label.unknown.action=*** NEZNANO DEJANJE DOGODKA ***
+
+label.update.add.tag=dodaj
+label.update.replace.tag=zamenjaj
+label.update.remove.tag=odstrani
+label.update.patch.tag=popravi
+label.update.composite.tag=sestavljen
+label.update.unknown.tag=*** NEZNANI TIP POPRAVKA ***
+
+label.result.succeeded.tag=uspel
+label.result.failed.tag=neuspel
+label.result.cancelled.tag=preklican
+label.result.unknown.tag=*** NEZNANI REZULTAT DOGODKA ***
+
+label.true=true
+label.false=false

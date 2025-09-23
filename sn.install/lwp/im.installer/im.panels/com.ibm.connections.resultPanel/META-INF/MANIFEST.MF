@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Install
+Bundle-SymbolicName: com.ibm.connections.resultpanel
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: IBM
+Require-Bundle: org.eclipse.core.runtime,
+ com.ibm.cic.common.core,
+ com.ibm.cic.agent.core
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

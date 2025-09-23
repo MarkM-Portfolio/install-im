@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Ni mogoče določiti imenika različice.
+WVER0001E.explanation=Mesto imenika različice je odvisno od sistemske lastnosti java 'was.version.dir' ali pa je '<root>\\properties\\version', pri čemer je <root> imenik, povzet po eni od sistemskih lastnosti java, 'was.install.root' ali 'server.root'.  Sistem te lastnosti preveri eno za drugo in nato povzame prvo razpoložljivo vrednost lastnosti.  Napaka označuje, da niste nastavili nobene od navedenih sistemskih lastnosti java, zato sistem ne more ugotoviti imenika različice.
+WVER0001E.useraction=Prepričajte se, da je ena od navedenih sistemskih lastnosti java nastavljena.  Sistemsko lastnost java morate nastaviti v konfiguraciji procesov ali kot možnost procesa, ki ga poženete iz ukazne vrstice.
+
+# 
+WVER0002E=WVER0002E: Neznana pripona datoteke z različico izdelka ''{0}''.
+WVER0002E.explanation=Pri nalaganju informacij o različici izdelka se le-te shranijo v datoteke, ki imajo specifične pripone.  Te določajo tip informacij, shranjenih v posamezni datoteki.  Veljavne pripone so '.websphere', '.component', '.product', '.fix', '.efix' in '.extension'.  Poskusili ste naložiti datoteko z informacijami o različici, pri čemer pa pripona ni ena izmed veljavnih pripon.
+WVER0002E.useraction=To kaže na notranjo napako.
+
+# 
+WVER0003I=WVER0003I: Uporaba: versionInfo ( [ -format <text | html> ] [ -file <izhodna datoteka> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Informativno sporočilo opisuje možnosti za program versionInfo.  Pomožni program versionInfo sprejme neobvezne možnosti s ključnimi besedami, pri katerem prva podaja izhodni format, druga podaja izhodno datoteko, tretja prikaz popravkov, četrta prikaz podrobnosti o popravku, peta prikaz komponent in šesta prikaz informacij o uporabi.
+WVER0003I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  Sporočilo z informacijami o uporabi se prikaže na zahtevo.
+
+# 
+WVER0004E=WVER0004E: Napaka pri zapisovanju poročila o različici v {0}: {1}
+WVER0004E.explanation=Do podane napake je prišlo med zapisovanjem poročila o različici v podano datoteko.
+WVER0004E.useraction=Ukrep je odvisen od značilnosti prikazane napake.  Pri tem zagotovite, da podana datoteka omogoča zapisovanje in da je za poročilo na voljo dovolj prostora.
+
+# 
+WVER0005E=WVER0005E: Za možnost ''{0}'' niste podali vrednosti
+WVER0005E.explanation=Navedena možnost zahteva vrednost.  (Informacije o uporabi prikažete z '-help' ali '-usage').
+WVER0005E.useraction=Podajte vrednost za navedeno možnost.
+
+# 
+WVER0006E=WVER0006E: Vrednost ''{0}'' ni veljavna vrednost formata.
+WVER0006E.explanation=Veljavni vrednosti formata sta 'text' in 'html'.  Podana vrednost ni ena izmed teh vrednosti.  (Informacije o uporabi prikažete z '-help' ali '-usage').
+WVER0006E.useraction=Vrednost formata spremenite v eno od veljavnih vrednosti, 'text' ali 'html'.
+
+# 
+WVER0007E=WVER0007E: Možnost ''{0}'' ni veljavna.
+WVER0007E.explanation=Podana možnost ni veljavna.  (Informacije o uporabi prikažete z '-help' ali '-usage').
+WVER0007E.useraction=Uporabite veljavno možnost.
+
+# 
+WVER0008I=WVER0008I: Možnost '-format' podaja izhodni format, ki je lahko 'text' ali 'html'.  Možnost '-file' podaja izhodno datoteko.  Za možnost '-file' morate podati ime datoteke.  Možnost '-long' omogoča prikaz vseh informacij o popravkih, ptf-jih in komponentah.  Možnost '-fixes' omogoča prikaz popravkov.  Možnost '-fixDetail' omogoča prikaz podrobnosti o popravku.  Možnost '-ptfs' omogoča prikaz PTF-jev.  Možnost '-ptfDetail' omogoča prikaz podrobnosti o PTF-ju.  Možnost '-components' omogoča prikaz komponent.  Možnost '-componentDetail' omogoča prikaz podrobnosti o komponenti.  Možnost '-help' omogoča prikaz besedila pomoči.  Možnost '-usage' omogoča prikaz tega besedila o uporabi.
+WVER0008I.explanation=Sporočilo opisuje veljavne možnosti za pomožni program versionInfo.
+WVER0008I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  Sporočilo z informacijami o uporabi se prikaže na zahtevo.
+
+# 
+WVER0009E=WVER0009E: Napaka pri pisanju poročila o različici v {0}.  Besedila napake sicer ni možno prikazati, je pa tipa {1}.  Med branjem besedila napake je prišlo do druge napake tipa {2}.
+WVER0009E.explanation=Do napake je prišlo med pisanjem poročila o različici v podano datoteko.  Do druge napake je prišlo med branjem besedila napake.
+WVER0009E.useraction=Ukrep uporabnika ni na voljo.  Ponovite zahtevano operacijo ali pa se za dodatno pomoč obrnite na podporo.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; Vse pravice pridržane.
+WVER0010I.explanation=To je standardna izjava o avtorskih pravicah.
+WVER0010I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  To je informativno sporočilo.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=To je standardna izjava o opisu izdelka.
+WVER0011I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  To je informativno sporočilo.
+
+# 
+WVER0012I=WVER0012I: Različica poročevalca VersionInfo {0}, datum izdaje {1}
+WVER0012I.explanation=To je standardna izjava o opisu modula.
+WVER0012I.useraction=Uporabniku ni potrebno izvesti nobenega dejanja.  To je informativno sporočilo.
+
+# 
+WVER0013E=WVER0013E: Med branjem {0} je prišlo do izjemnega stanja
+WVER0013E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0013E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0014E=WVER0014E: Med branjem {0} je prišlo do izjemnega stanja
+WVER0014E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0014E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0015E=WVER0015E: Med obdelavo informacij o različici je prišlo do izjemnega stanja.
+WVER0015E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0015E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0016E=WVER0016E: Med obdelavo informacij o različici je prišlo do izjemnih stanj.
+WVER0016E.explanation=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+WVER0016E.useraction=Za nadaljnje informacije preglejte podrobnosti ugnezdenega izjemnega stanja.
+
+# 
+WVER0017E=WVER0017E: Ni mogoče določiti imenika dnevnikov posodobitev.
+WVER0017E.explanation=Mesto imenika dnevnikov je odvisno od sistemske lastnosti java 'was.version.log.dir' ali pa je imenik 'log' v imeniku različice.  Nastavili niste ne lastnosti 'was.version.log.dir', niti imenika različice.
+WVER0017E.useraction=Prepričajte se, da je imenik različice nastavljen, ali pa nastavite sistemsko lastnost java 'was.version.log.dir'.
+
+# 
+WVER0018E=WVER0018E: Ni mogoče določiti imenika varnostnih kopij posodobitev.
+WVER0018E.explanation=Mesto imenika varnostnih kopij je odvisno od sistemske lastnosti java 'was.version.backup.dir' ali pa je imenik 'log' v imeniku različice.  Nastavili niste ne lastnosti 'was.version.backup.dir', niti imenika različice.
+WVER0018E.useraction=Prepričajte se, da je imenik različice nastavljen, ali pa nastavite sistemsko lastnost java 'was.version.backup.dir'.
+
+# 
+WVER0019E=WVER0019E: Ni mogoče določiti imenika DTD za informacije o različici izdelka.
+WVER0019E.explanation=Mesto imenika DTD je odvisno od sistemske lastnosti java 'was.version.dtd.dir' ali pa je imenik 'dtd' v imeniku različice.  Nastavili niste ne lastnosti 'was.version.dtd.dir', niti imenika različice.
+WVER0019E.useraction=Prepričajte se, da je imenik različice nastavljen, ali pa nastavite sistemsko lastnost java 'was.version.dtd.dir'.
+
+# 
+WVER0021E=WVER0021E: Med razčlenjevanjem informacij o gonilniku popravka je prišlo do obnovljivih napak.
+WVER0021E.explanation=Do napak, katerih seznam sledi, je prišlo med razčlenjevanjem informacij o popravku.  Za dodatne informacije preglejte navedene napake.
+WVER0021E.useraction=Predlagane ukrepe uporabnikov poiščite v navedenih napakah.
+
+# 
+WVER0022E=WVER0022E: Med branjem informacij o izdelku je prišlo do napake.  Napako je mogoče odpraviti; razčlenjevanje se bo nadaljevalo.  Do napake je prišlo v entiteti s sistemskim ID-jem {0} in javnim ID-jem {1}, v številki vrstice {2} in številki stolpca {3}: {4}
+WVER0022E.explanation=Podana entiteta ima strukturo, ki ni veljavna, kar opisuje podana napaka.  Vendar pa napaka ni usodna in se je razčlenjevanje nadaljevalo.
+WVER0022E.useraction=Podano datoteko preglejte in jo po potrebi popravite.
+
+# 
+WVER0023E=WVER0023E: Opozorila med razčlenjevanjem informacij o izdelku.
+WVER0023E.explanation=Med razčlenjevanjem informacij o izdelku, je sistem prikazal opozorila, katerih seznam sledi.  Za dodatne informacije preglejte navedena opozorila.
+WVER0023E.useraction=Predlagane ukrepe uporabnikov poiščite v navedenih opozorilih.
+
+# 
+WVER0024E=WVER0024E: Med branjem informacij o izdelku je prišlo do opozorila.  Do opozorila je prišlo v entiteti s sistemskim ID-jem {0} in javnim ID-jem {1}, v številki vrstice {2} in številki stolpca {3}: {4}
+WVER0024E.explanation=Podana entiteta ima strukturo, ki ni veljavna, kar opisuje podano opozorilo.  Vendar pa opozorilo ni usodno in se je razčlenjevanje nadaljevalo.
+WVER0024E.useraction=Podano datoteko preglejte in jo po potrebi popravite.
+
+# 
+WVER0029E=WVER0029E: Ni mogoče odstraniti popravka {0}, shranjenega v datoteki {2}.
+WVER0029E.explanation=Navedene datoteke ni mogoče odstraniti.
+WVER0029E.useraction=Prepričajte se, da je ciljno datoteko mogoče odstraniti.
+
+# 
+WVER0030E=WVER0030E: Med razčlenjevanjem informacij o PTF-ju je prišlo do obnovljivih napak.
+WVER0030E.explanation=Do napak, katerih seznam sledi, je prišlo med razčlenjevanjem informacij PTF-ja.  Za dodatne informacije preglejte navedene napake.
+WVER0030E.useraction=Predlagane ukrepe uporabnikov poiščite v navedenih napakah.
+
+# 
+WVER0031E=WVER0031E: Ni bilo mogoče zabeležiti aplikacije PTF-ja {0} v komponenti {1} datoteke {2}.  Navedene datoteke ni mogoče shraniti.
+WVER0031E.explanation=Navedene datoteke ni mogoče shraniti.
+WVER0031E.useraction=Prepričajte se, da ciljna datoteka omogoča zapisovanje in da je za novo datoteko na voljo dovolj prostora.
+
+# 
+WVER0035E=WVER0035E: Ni mogoče odstraniti PTF-ja {0}, shranjenega v datoteki {2}.
+WVER0035E.explanation=Navedene datoteke ni mogoče odstraniti.
+WVER0035E.useraction=Prepričajte se, da je ciljno datoteko mogoče odstraniti.
+
+# 
+WVER0040E=WVER0040E: Podani imenik različice ''{0}'' ne obstaja.
+WVER0040E.explanation=Imenik različice ne obstaja.
+WVER0040E.useraction=Prepričajte se, da je podani imenik veljavni imenik različice izdelka.
+
+# 
+WVER0041E=WVER0041E: Podani imenik različice ''{0}'' ni imenik.
+WVER0041E.explanation=Imenik različice ni imenik.
+WVER0041E.useraction=Prepričajte se, da je podani imenik veljavni imenik različice izdelka.
+
+# 
+WVER0042E=WVER0042E: Podani imenik DTD ''{0}'' ne obstaja.
+WVER0042E.explanation=Imenik DTD ne obstaja.
+WVER0042E.useraction=Prepričajte se, da je podani imenik veljavni imenik DTD izdelka.
+
+# 
+WVER0043E=WVER0043E: Podani imenik DTD ''{0}'' ni imenik.
+WVER0043E.explanation=Imenik DTD ni imenik.
+WVER0043E.useraction=Prepričajte se, da je podani imenik veljavni imenik DTD izdelka.
+
+# 
+WVER0044E=WVER0044E: Podanega imenika dnevnikov ''{0}'' ni mogoče izdelati
+WVER0044E.explanation=Imenik DTD ni imenik.
+WVER0044E.useraction=Prepričajte se, da je podani imenik veljavni imenik DTD izdelka.
+
+# 
+WVER0045E=WVER0045E: Podani imenik dnevnikov ''{0}'' ni imenik.
+WVER0045E.explanation=Imenik DTD ni imenik.
+WVER0045E.useraction=Prepričajte se, da je podani imenik veljavni imenik DTD izdelka.
+
+# 
+WVER0046E=WVER0046E: Podanega imenika varnostnih kopij ''{0}'' ni mogoče izdelati
+WVER0046E.explanation=Imenik DTD ni imenik.
+WVER0046E.useraction=Prepričajte se, da je podani imenik veljavni imenik DTD izdelka.
+
+# 
+WVER0047E=WVER0047E: Podani imenik varnostnih kopij ''{0}'' ni imenik.
+WVER0047E.explanation=Imenik DTD ni imenik.
+WVER0047E.useraction=Prepričajte se, da je podani imenik veljavni imenik DTD izdelka.
+
+# 
+WVER0048E=WVER0048E: Podani imenik izdelka ''{0}'' ne obstaja.
+WVER0048E.explanation=Imenik izdelka ne obstaja.
+WVER0048E.useraction=Prepričajte se, da je imenik izdelka veljavni imenik izdelka.
+
+# 
+WVER0049E=WVER0049E: Podani imenik izdelka ''{0}'' ni imenik.
+WVER0049E.explanation=Imenik izdelka ni imenik.
+WVER0049E.useraction=Prepričajte se, da je podani imenik veljavni imenik izdelka.
+
+
+
+
+label.standard.out=Standardni izpis
+
+listing.nested.error={0}: {1}
+
+report.header=Poročilo o statusu namestitve izdelka IBM WebSphere Portal
+report.footer=Konec poročila o statusu namestitve
+
+info.report.on=Poročilo na datum in čas {0}
+
+info.source=Namestitev
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Imenik izdelka
+label.version.dir=Imenik različice
+label.version.dtd.dir=Imenik DTD
+label.version.log.dir=Imenik dnevnika
+label.version.backup.dir=Imenik varnostne kopije
+label.version.tmp.dir=Imenik TMP
+
+info.platform=Namestitvena platforma
+label.name=Ime
+label.version=Različica
+
+info.technology=Tehnološki seznam
+label.installed=nameščen
+
+info.product=Nameščeni izdelek
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=Raven gradnje
+label.build.date=Datum gradnje
+
+info.component=Nameščena komponenta
+label.component.name=Ime komponente
+label.configtasks=Konfiguracijske naloge
+label.spec.version=Različica spec.
+label.build.version=Različica gradnje
+# label.build.date=Build Date
+
+info.update.on.component=Nameščena posodobitev komponente
+#label.component.name=Component Name
+label.update.type=Tip posodobitve
+label.update.type.efix=popravek
+label.update.type.ptf=PTF
+
+label.efix.id=ID popravka
+label.ptf.id=ID PTF-ja
+
+label.update.effect=Učinek posodobitve
+
+label.is.required=Je zahtevana
+label.is.optional=Ni obvezna
+
+label.is.external=Je zunanja
+label.root.property.file=Datoteka korenskih lastnosti
+label.root.property.name=Ime korenske lastnosti
+label.root.property.value=Vrednost korenske lastnosti
+
+label.is.custom=Je po meri
+
+label.log.file.name=Ime datoteke dnevnika
+label.backup.file.name=Ime varnostne kopije datoteke
+label.install.date=Datum nameščanja
+
+label.initial.spec.version=Začetna različica spec.
+label.initial.build.date=Datum začetne gradnje
+label.initial.build.version=Različica začetne gradnje
+
+label.final.spec.version=Končna različica spec.
+label.final.build.date=Datum končne različice
+label.final.build.version=Različica končne gradnje
+
+info.extension=Nameščena razširitev
+# label.name=Name
+# label.id=ID
+
+info.efix=Nameščeni popravek
+# label.id=ID
+label.short.description=Opis
+label.is.trial=Je preskusni
+label.expiration.date=Datum poteka
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Izdaja
+
+label.apar=APAR
+label.apar.number=Število
+label.apar.date=Datum
+label.apar.short.description=Opis
+label.apar.long.description=Izdaja
+
+label.supported.platforms=Podprte platforme
+label.supported.products=Podprte platforme
+
+label.efix.efix.prereqs=Vnaprej zahtevani popravki
+
+label.component.updates=Posodobitve komponente
+label.component.requires=Zahteva {0} v {1}
+
+label.becomes=postane spec {0}, gradnja {1} v {2}
+
+label.custom.properties=Prilagojene lastnosti
+
+info.ptf=Nameščeni PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Vključeni popravki
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=true
+label.false=false
+
+label.is.absent=odsoten
+label.is.installed=nameščen v {0}
+
+label.update.effect.add=dodaj
+label.update.effect.replace=zamenjaj
+label.update.effect.remove=odstrani
+label.update.effect.patch=popravi
+label.update.effect.unknown=neznano
+
+label.is.negative=negativen
+label.is.positive=pozitiven
+
+label.is.required.tag=obvezno
+label.if.possible.tag=če je mogoče
+label.is.optional.tag=neobvezno
+label.is.recommended.tag=priporočeno
+
+label.is.custom.tag=prilagojena posodobitev
+label.is.standard.tag=standardna posodobitev

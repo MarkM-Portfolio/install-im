@@ -1,0 +1,94 @@
+[
+   {
+      "command": "\/tmp\/ic5addNFSaddOn\/addnfs.sh",
+      "description": "Mounts a remote NFS export to a local mountpoint",
+      "execmode": 0,
+      "filename": "ic5addNFSaddOn.zip",
+      "keys": [
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "892",
+            "scriptkey": "MOUNTD_PORT",
+            "scriptvalue": "892"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "875",
+            "scriptkey": "RQUOTAD_PORT",
+            "scriptvalue": "875"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "662",
+            "scriptkey": "STATD_PORT",
+            "scriptvalue": "662"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "HOST_NAME"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "REMOTE_EXPORT"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "MOUNT_POINT"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "nfs",
+            "scriptkey": "NFS_TYPE",
+            "scriptvalue": "nfs"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "rsize=8192,wsize=8192,timeo=14,intr",
+            "scriptkey": "OPTIONS",
+            "scriptvalue": "rsize=8192,wsize=8192,timeo=14,intr"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "111",
+            "scriptkey": "PORTMAPPER",
+            "scriptvalue": "111"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "2049",
+            "scriptkey": "NFS_PORT",
+            "scriptvalue": "2049"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "32803",
+            "scriptkey": "LOCKD_TCPPORT",
+            "scriptvalue": "32803"
+         },
+         {
+            "locked": true,
+            "required": false,
+            "scriptdefaultvalue": "32769",
+            "scriptkey": "LOCKD_UDPPORT",
+            "scriptvalue": "32769"
+         }
+      ],
+      "location": "\/tmp\/ic5addNFSaddOn",
+      "log": "\/tmp\/ic5addNFSaddOn\/logs",
+      "name": "Default add NFS without FW",
+      "ostype": "linux\/unix",
+      "timeout": 300000,
+      "type": "ADDON_NETWORK_ATTACHED_STORAGE"
+   }
+]

@@ -1,0 +1,308 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2012, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="lcui" default="development" basedir=".">
+
+    <import file="${env.WPLC_IMPORT}/std_props.xml"/>
+    <import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+    <import file="${env.WPLC_IMPORT}/copyright.xml"/>
+    <import file="${env.WPLC_IMPORT}/clean.xml"/>
+    <import file="${env.WPLC_IMPORT}/check.xml"/>
+    <import file="${env.WPLC_IMPORT}/ismp_targets.xml" />
+    <import file="${env.WPLC_IMPORT}/nojavadoc.xml" />
+	<import file="${env.WPLC_IMPORT}/wp_globalize.xml" />
+	<import file="${env.WPLC_IMPORT}/process_nls.xml" />
+
+	<loadproperties srcFile="${basedir}/nls.properties" />
+
+
+    <tstamp>
+	<format property="bld.number" pattern="yyyyMMdd_HHmm"/>
+    </tstamp>
+
+	<property name="dir.base.source"     value="${basedir}/source"/>
+	<property name="dir.base.resources"   value="${basedir}/resources"/>
+	<property name="dir.base.lib"        value="${basedir}/lib" />
+	<property name="WASLIBDIR"           value="${basedir}/lib"/>
+<!--	<property name="dir.base.devdoc"     value="${basedir}/docs"/> -->
+	<property name="dir.base.cdfiles"    value="${basedir}/cdfiles" />
+
+	<property name="dir.build.source"   value="${dir.build}/source" />
+	<property name="CLASSES"             value="${dir.build}/classes"/>
+	<property name="dir.build.cdfiles"   value="${dir.build}/cdfiles" />
+	<property name="dir.build.lib"       value="${dir.build.cdfiles}/lib" />
+
+	<property name="name.zip" value="updateInstaller.zip" />
+	<property name="name.tar" value="updateInstaller.tar" />
+	<property name="name.jar" value="lcui.jar" />
+	<property name="file.build.jar" location="${dir.build.lib}/${name.jar}" />
+	<property name="file.build.zip" location="${dir.build}/${name.zip}" />
+	<property name="file.build.tar" location="${dir.build}/${name.tar}" />
+
+	<!--
+	<locateComponent component="prereqs.sn/icu4j-4.0" locateBuildDir="false" property="icu4j" />
+	<property name="lib.icu4j" value="${icu4j}/icu4j-4_0.jar" />
+
+	<locateComponent component="prereqs.sn/jakarta.commons" locateBuildDir="false" property="jakarta.commons" />
+	<property name="lib.jakarta.commons.1" value="${jakarta.commons}/commons-configuration-1.5-plus-node-clone.jar" />
+	<property name="lib.jakarta.commons.2" value="${jakarta.commons}/commons-lang-2.4.jar" />
+    <property name="lib.jakarta.commons.3" value="${jakarta.commons}/commons-logging-1.0.4.jar" />
+    <property name="lib.jakarta.commons.4" value="${jakarta.commons}/commons-collections-3.2.1.jar" />
+
+    <echo message="lib.icu4j = ${lib.icu4j}" />
+    <echo message="lib.jakarta.commons = ${jakarta.commons}" />
+	-->
+	<property name="DELTA_JAR"              value="delta.jar"/>
+
+	 <path id="build.classpath">
+       <pathelement path="${dir.base.lib}/nativefile.jar"/>
+	   <!--pathelement path="${dir.build}/panelUtil.jar"/>
+       <pathelement path="${dir.build}/wpproduct.jar"/-->
+       <pathelement path="${WASLIBDIR}/xerces.jar"/>
+       <pathelement path="${WASLIBDIR}/xalan.jar"/>
+       <pathelement path="${WASLIBDIR}/j2ee.jar"/>  <!-- for org.w3c.dom.traversal.* -->
+       <pathelement path="${WASLIBDIR}/jmxc.jar"/>         <!-- Needed for WPWsAdmin support -->
+       <pathelement path="${WASLIBDIR}/admin.jar"/>        <!-- Needed for WPWsAdmin support -->
+       <pathelement path="${WASLIBDIR}/filetransfer.jar"/> <!-- Needed for WPWsAdmin support -->
+       <pathelement path="${WASLIBDIR}/wsexception.jar"/>  <!-- Needed for WPWsAdmin support -->
+       <pathelement path="${WASLIBDIR}/wjmxapp.jar"/>      <!-- Needed for WPWsAdmin support -->
+       <pathelement path="${WASLIBDIR}/wasjmx.jar"/>       <!-- Needed for WPWsAdmin support -->
+	   <pathelement path="${WASLIBDIR}/jt400Native.jar"/>
+	   <pathelement path="${WASLIBDIR}/com.ibm.ws.admin.client_7.0.0.jar"/> <!-- Needed for WPWsAdminRemote support -->
+
+		<pathelement path="${dir.base.lib}/org.eclipse.core.commands.jar"/>
+		<pathelement path="${dir.base.lib}/org.eclipse.core.runtime.jar"/>
+		<pathelement path="${dir.base.lib}/org.eclipse.equinox.common.jar"/>
+		<pathelement path="${dir.base.lib}/org.eclipse.equinox.registry.jar"/>
+		<pathelement path="${dir.base.lib}/org.eclipse.jface.jar"/>
+		<pathelement path="${dir.base.lib}/org.eclipse.osgi.jar"/>
+		<pathelement path="${dir.base.lib}/org.eclipse.swt.win32.win32.x86_64.jar"/>
+		<pathelement path="${dir.base.lib}/org.eclipse.ui.forms_3.5.100.v20110425.jar"/>
+
+        <pathelement path="${WASLIBDIR}/commons-configuration-1.5-plus-node-clone.jar"/>
+		<pathelement path="${WASLIBDIR}/commons-lang-2.4.jar"/>
+		<pathelement path="${WASLIBDIR}/commons-logging-1.0.4.jar"/>
+		<pathelement path="${WASLIBDIR}/commons-collections-3.2.1.jar"/>
+		<pathelement path="${WASLIBDIR}/icu4j-68.1.jar"/>
+
+    </path>
+
+	<target name="development" description="Performs a developement build of a single component." depends="BuildDeltaJar,make_jar_file,make_zip_file" />
+	<target name="production" description="Performs a production build of a single component." depends="BuildDeltaJar,make_jar_file,make_zip_file" />
+
+	<target name="clean">
+		<echo message="builddir: ${dir.build}"/>
+		<delete dir="${dir.build}" failonerror="false"/>
+    </target>
+
+    <target name="prepare" depends="clean">
+        <mkdir dir="${CLASSES}"/>
+        <mkdir dir="${dir.build}"/>
+        <mkdir dir="${dir.build.cdfiles}"/>
+        <mkdir dir="${dir.build.lib}"/>
+    </target>
+
+	<target name="BuildDeltaJar" depends="compile">
+      <tstamp>
+         <format property="NOW_MF" pattern="yyyy/MM/dd HH:mm:ss" locale="en"/>
+      </tstamp>
+      <jar jarfile="${dir.build}/${DELTA_JAR}" basedir="${CLASSES}">  <!-- ant1.4.1 uses "jarfile" attr -->
+      <!-- <jar destfile="${dir.build}/${DELTA_JAR}" basedir="${CLASSES}">  -->  <!-- ant1.5.x "destfile" attr -->
+          <!--
+          <fileset dir="${CLASSES}">
+            <include name="com/ibm/websphere/delta/**/*"/>
+            <include name="com/ibm/websphere/ioservices/**/*"/>
+          </fileset>
+          -->
+         <manifest>
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Main-Class" value="com.ibm.websphere.update.delta.Delta"/>
+            <attribute name="TimeStamp" value="${NOW_MF}"/>
+         </manifest>
+      </jar>
+    </target>
+	<!-- Set up source files with build-specific information -->
+	<target name="update-text" description="prepare nls files" depends="load_nls_properties">
+		<!-- Make the build directory to store files -->
+		<delete dir="${dir.build}/messages" failonerror="error"/>
+		<mkdir dir="${dir.build}/messages" />
+
+		<!-- Copy the resources to the build dircetory -->
+		<copy todir="${dir.build}/messages/com/ibm/lconn/update/msg" filtering="off" overwrite="yes">
+			<fileset dir="${dir.build}/properties/resources/com/ibm/lconn/update/msg" includes="**/*.properties" />
+		</copy>
+
+		<!-- Convert PII files using native2ascii -->
+		<forlist list="${PII.languages}" target="do.installmsg.languages" param="language.code" />
+
+		<!-- Escape quotes by replacing each single quote with two single quotes. -->
+		<echo message="Replacing single quotes with two single quotes" />
+		<replace dir="${dir.build}/messages_unicode/com/ibm/lconn/update/msg">
+			<include name="**/*" />
+			<replacefilter token="'" value="''" />
+		</replace>
+	</target>
+
+	<!-- Convert PII files using native2ascii -->
+	<target name="do.installmsg.languages">
+		<propertycopy name="encoding" from="encoding_${language.code}" />
+		<copy todir="${dir.build}/messages_unicode" overwrite="yes" filtering="off">
+			<fileset dir="${dir.build}/messages" includes="**/*_${language.code}.properties" />
+		</copy>
+		<echo message="Completed language ${language.code}, encoding ${encoding}." />
+	</target>
+
+	<target name="compile" depends="prepare,PropProcessing,update-text">
+	    <delete dir="${CLASSES}" failonerror="false" />
+		<mkdir dir="${CLASSES}" />
+		<!-- copy resource files -->
+		<copy todir="${CLASSES}">
+			<fileset dir="${dir.base.resources}">
+				<include name="**/*.properties" />
+				<include name="**/*.py" />
+				<include name="**/*.JPG" />
+				<include name="**/*.GIF" />
+				<include name="**/*.gif" />
+				<include name="**/*.png" />
+				<!--<exclude name="**/*_*.properties"/>-->
+			</fileset>
+		</copy>
+
+		<copy todir="${CLASSES}">
+			<fileset dir="${dir.base.source}">
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+				<include name="**/*.xsd" />
+				<include name="**/*.dtd" />
+				<include name="**/*.product" />
+			</fileset>
+		</copy>
+
+		<copy todir="${CLASSES}/com/ibm/lconn/update/msg" filtering="off" overwrite="true">
+			<fileset dir="${dir.build}/messages/com/ibm/lconn/update/msg" includes="**/*.properties" />
+		</copy>
+		<!-- copy default language files -->
+		<copy file="${CLASSES}/com/ibm/lconn/update/msg/messages_en.properties" tofile="${CLASSES}/com/ibm/lconn/update/msg/messages.properties" overwrite="true" />
+		<copy file="${CLASSES}/com/ibm/lconn/update/msg/errorMsg_en.properties" tofile="${CLASSES}/com/ibm/lconn/update/msg/errorMsg.properties" overwrite="true" />
+		<copy file="${CLASSES}/com/ibm/websphere/update/silent/SilentInstaller_en.properties" tofile="${CLASSES}/com/ibm/websphere/update/silent/SilentInstaller.properties" overwrite="true" />
+
+		<!-- only for outputing build version and date info when silent mode-->
+		<tstamp>
+            <format property="BUILD_DATE" pattern="MM/dd/yyyy"/>
+		</tstamp>
+        <property name="BUILD_VERSION" value="${bld.version}"/>
+		<copy todir="${dir.build.source}">
+			<fileset dir="${dir.base.source}">
+				<include name="**/**" />
+				<exclude name="**/.copyarea.db" />
+			</fileset>
+			<filterset>
+		      <filter token="BUILD_VERSION" value="${BUILD_VERSION}"/>
+		      <filter token="BUILD_DATE" value="${BUILD_DATE}"/>
+             </filterset>
+		</copy>
+
+	    <javac srcdir="${dir.build.source}"
+			 destdir="${CLASSES}"
+			 includes="com/ibm/**/*.java"
+			 fork="yes" verbose="no"
+			 executable="${env.JAVA_HOME}/bin/javac">
+		    <classpath refid="build.classpath"/>
+	    </javac>
+    </target>
+
+	<!-- copy cd files -->
+	<target name="copy_cd_files" depends="compile">
+		<tstamp>
+            <format property="BUILD_DATE" pattern="MM/dd/yyyy"/>
+			<format property="BLD_NUMBER" pattern="yyyyMMdd_HHmm"/>
+		</tstamp>
+        <property name="BUILD_VERSION" value="${bld.version}"/>
+		<delete dir="${dir.build.cdfiles}" failonerror="false" />
+		<mkdir dir="${dir.build.cdfiles}" />
+		<copy todir="${dir.build.cdfiles}">
+			<fileset dir="${dir.base.cdfiles}">
+				<include name="**/**" />
+				<exclude name="**/.copyarea.db" />
+				<exclude name="**/doc/**" />
+			</fileset>
+			<filterset>
+		      <filter token="BUILD_VERSION" value="${BUILD_VERSION}"/>
+		      <filter token="BUILD_DATE" value="${BUILD_DATE}"/>
+			  <filter token="BLD_NUMBER" value="${BLD_NUMBER}"/>
+             </filterset>
+		</copy>
+		<copy todir="${dir.build.lib}">
+			<fileset dir="${dir.base.lib}">
+				<exclude name="ant.jar"/>
+				<exclude name="admin.jar"/>
+				<exclude name="xerces.jar"/>
+				<exclude name="xalan.jar"/>
+				<exclude name="j2ee.jar"/>
+				<exclude name="jmxc.jar"/>
+				<exclude name="filetransfer.jar"/>
+				<exclude name="wsexception.jar"/>
+				<exclude name="wjmxapp.jar"/>
+				<exclude name="wasjmx.jar"/>
+				<exclude name="jt400Native.jar"/>
+				<exclude name="com.ibm.ws.admin.client_7.0.0.jar"/>
+				<exclude name="**/.copyarea.db" />
+			</fileset>
+		</copy>
+		<!--copy file="${lib.icu4j}" todir="${dir.build.lib}"/>
+		<copy file="${lib.jakarta.commons.1}" todir="${dir.build.lib}"/>
+		<copy file="${lib.jakarta.commons.2}" todir="${dir.build.lib}"/>
+		<copy file="${lib.jakarta.commons.3}" todir="${dir.build.lib}"/>
+		<copy file="${lib.jakarta.commons.4}" todir="${dir.build.lib}"/-->
+		<antcall target="format_sh_files"/>
+
+		<antcall target="crConvert_1to3">
+			<param name="dir.ToConvert" value="${dir.build.cdfiles}" />
+		</antcall>
+	</target>
+
+	<target name="format_sh_files">
+		<fixcrlf srcdir="${dir.build.cdfiles}" eol="lf" includes="**/*.sh" />
+		<chmod dir="${dir.build.cdfiles}" includes="**/*.sh" perm="777" />
+	</target>
+
+	<target name="make_jar_file" depends="copy_cd_files">
+		<jar basedir="${CLASSES}" destfile="${file.build.jar}" />
+		<delete dir="${CLASSES}" failonerror="false" />
+	</target>
+	<target name="make_zip_file" depends="copy_cd_files">
+		<copy todir="${dir.build}/tmp/ui/updateInstaller">
+			<fileset dir="${dir.build.cdfiles}">
+				<include name="**/**" />
+				<exclude name="**/.copyarea.db" />
+			</fileset>
+		</copy>
+		<property name="jre60" value="${pilot.components.server}/JRE60" />
+		<property name="jre60.aix" value="${jre60}/pap6460sr9fp2-20110627_03-jre.jar" />
+		<unjar src="${jre60.aix}" dest="${dir.build}/tmp/ui/updateInstaller/jvm/aix">
+			<patternset>
+				<exclude name="docs/**/license_*.*" />
+				<exclude name="docs/launchpad/content/**/license.*" />
+				<exclude name="license_en.txt" />
+			</patternset>
+		</unjar>
+
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/tools">
+			<fileset file="${dir.build}/tmp/ui/**" />
+		</copy>
+		<!--
+		<delete dir="${dir.build}/tmp/ui" failonerror="false" />
+		-->
+		<delete dir="${dir.build.source}" failonerror="false" />
+	</target>
+
+</project>

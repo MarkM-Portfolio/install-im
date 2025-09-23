@@ -1,0 +1,40 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+MachinName=`hostname`
+ping_count=2
+Ping_status="True"
+case `uname` in
+	SunOS)
+		responses_count=`ping -s $MachinName 64 $ping_count | grep "packets transmitted" | nawk -F ',' '{print $2}' | nawk -F ' ' '{print $1}'`
+		if [ $responses_count -eq 0 ]; then
+			Ping_status="FALSE"
+		fi
+	;;
+	HP-UX)
+		responses_count=`ping $MachinName -n $ping_count | grep "packets transmitted" | awk -F ',' '{print $2}' | awk -F ' ' '{print $1}'`
+                if [ $responses_count -eq 0 ]; then
+                        Ping_status="FALSE"
+                fi
+	;;
+	AIX)
+		responses_count=`ping -c $ping_count $MachinName | grep "packets transmitted" | awk -F ',' '{print $2}' | awk -F ' ' '{print $1}'`
+                if [ $responses_count -eq 0 ]; then
+                        Ping_status="FALSE"
+                fi
+        ;;
+	Linux)
+                responses_count=`ping -c $ping_count $MachinName | grep "packets transmitted" | awk -F ',' '{print $2}' | awk -F ' ' '{print $1}'`
+                if [ $responses_count -eq 0 ]; then
+                        Ping_status="FALSE"
+                fi
+        ;;
+	esac
+	echo $Ping_status
+		 

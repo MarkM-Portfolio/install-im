@@ -1,0 +1,264 @@
+Mi�dzynarodowa Umowa Licencyjna na Program
+
+Cz�� 1 - Warunki og�lne
+
+POBIERANIE, INSTALOWANIE, KOPIOWANIE, OTWIERANIE, KLIKANIE PRZYCISKU "AKCEPTUJ�" ORAZ U�YWANIE PROGRAMU W JAKIKOLWIEK INNY SPOS�B OZNACZA AKCEPTACJ� WARUNK�W NINIEJSZEJ UMOWY. ZAAKCEPTOWANIE PRZEZ U�YTKOWNIKA NINIEJSZYCH WARUNK�W W IMIENIU LICENCJOBIORCY OZNACZA, �E U�YTKOWNIK GWARANTUJE POSIADANIE PE�NYCH UPRAWNIE� DO PODPORZ�DKOWANIA LICENCJOBIORCY NINIEJSZYM WARUNKOM. JE�LI U�YTKOWNIK NIE WYRA�A ZGODY NA NINIEJSZE WARUNKI,
+
+- NIE B�DZIE POBIERA�, INSTALOWA�, KOPIOWA�, OTWIERA�, KLIKA� PRZYCISKU "AKCEPTUJ�" ANI U�YWA� PROGRAMU W INNY SPOS�B; ORAZ
+
+- NATYCHMIAST ZWR�CI NIEWYKORZYSTANE NO�NIKI, DOKUMENTACJ� ORAZ DOKUMENT PROOF OF ENTITLEMENT PODMIOTOWI, OD KT�REGO NABY� PROGRAM, ABY UZYSKA� ZWROT ZAP�ACONEJ KWOTY. JE�LI PROGRAM ZOSTA� POBRANY, NALE�Y ZNISZCZY� WSZELKIE JEGO KOPIE.
+
+1. Definicje
+
+"Autoryzowane U�ywanie" okre�la poziom, do jakiego Licencjobiorca ma upowa�nienie do wykonywania lub uruchamiania Programu. Poziom ten mo�e by� mierzony liczb� u�ytkownik�w, liczb� jednostek MSU (millions of service units), liczb� procesorowych jednostek warto�ci (PVU - Processor Value Units) lub w inny spos�b okre�lony przez IBM.
+
+"IBM" oznacza International Business Machines Corporation lub jedno z przedsi�biorstw podporz�dkowanych IBM Corp.
+
+"Informacje Licencyjne" ("LI") oznaczaj� dokument zawieraj�cy informacje i inne warunki dodatkowe na temat Programu. Dokument "Informacje Licencyjne" dla Programu jest dost�pny pod adresem www.ibm.com/software/sla. Informacje Licencyjne mo�na te� znale�� w katalogu Programu, u�ywaj�c komend systemowych. Dokument ten mo�e te� by� zawarty w Programie.
+
+"Program" oznacza orygina� oraz pe�ne lub cz�ciowe kopie: 1) instrukcji i danych w formie zapisu maszynowego, 2) komponent�w, plik�w i modu��w, 3) zapis�w audiowizualnych (takich jak obrazy, tekst, nagrania lub ilustracje), 4) odnosz�cych si� do Programu materia��w licencjonowanych (takich jak klucze i dokumentacja).
+
+"Proof of Entitlement" ("PoE") oznacza dokument upowa�niaj�cy Licencjobiorc� do Autoryzowanego U�ywania. Dokument PoE stanowi r�wnie� dow�d uprawniaj�cy Licencjobiorc� do korzystania z gwarancji, z cen obowi�zuj�cych na kolejne aktualizacje, je�li takowe maj� zastosowanie, oraz ewentualnych specjalnych ofert i promocji. Je�li IBM nie udost�pni Licencjobiorcy dokumentu PoE, to IBM mo�e zaakceptowa� jako PoE oryginalny op�acony rachunek lub inny dokument potwierdzaj�cy sprzeda�, otrzymany od podmiotu, od kt�rego Licencjobiorca naby� Program (od IBM lub reselera IBM), pod warunkiem �e na dokumencie takim wyszczeg�lniona jest nazwa nabytego Programu oraz nabyty poziom Autoryzowanego U�ywania.
+
+"Okres Gwarancyjny" oznacza jeden rok pocz�wszy od daty udzielenia licencji pierwotnemu Licencjobiorcy.
+
+2. Struktura Umowy
+
+Niniejsza Umowa zawiera Cz�� 1 - Warunki og�lne, Cz�� 2 - Warunki specyficzne dla poszczeg�lnych kraj�w (o ile maj� zastosowanie), Informacje Licencyjne oraz dokument PoE, kt�re tworz� kompletn� umow� mi�dzy Licencjobiorc� i IBM dotycz�c� u�ywania Programu. Umowa ta zast�puje wszelkie wcze�niejsze ustne lub pisemne ustalenia dokonane mi�dzy Licencjobiorc� i IBM w zakresie u�ywania Programu. Warunki Cz�ci 2 mog� zast�pi� lub zmodyfikowa� warunki Cz�ci 1. W przypadku jakiejkolwiek sprzeczno�ci, warunki dokumentu "Informacje Licencyjne" maj� znaczenie rozstrzygaj�ce nad warunkami obu Cz�ci.
+
+3. Udzielenie licencji
+
+Program ten jest w�asno�ci� IBM lub dostawcy IBM. Program ten jest chroniony prawem autorskim i stanowi przedmiot umowy licencyjnej, a nie umowy sprzeda�y.
+
+IBM udziela Licencjobiorcy niewy��cznej licencji na 1) u�ywanie Programu do poziomu Autoryzowanego U�ywania okre�lonego w dokumencie PoE, 2) wykonywanie i instalowanie kopii w celu �wiadczenia wsparcia do takiego Autoryzowanego U�ywania oraz 3) wykonywanie kopii zapasowych, pod warunkiem �e
+
+a. Licencjobiorca naby� Program legalnie i przestrzega warunk�w niniejszej Umowy;
+
+b. taka kopia zapasowa nie b�dzie u�ywana dop�ki Program, z kt�rego zosta�a zrobiona, b�dzie dzia�a�;
+
+c. Licencjobiorca powieli wszelkie uwagi dotycz�ce praw autorskich oraz wszelkie informacje o prawach w�asno�ci na ka�dej pe�nej lub cz�ciowej kopii Programu;
+
+d. Licencjobiorca zapewni, �e jakakolwiek osoba korzystaj�ca z Programu (lokalnie lub zdalnie) 1) dokonuje tego jedynie w imieniu Licencjobiorcy oraz 2) przestrzega warunk�w niniejszej Umowy;
+
+e. Licencjobiorca nie b�dzie 1) u�ywa�, kopiowa�, modyfikowa� ani dystrybuowa� Programu z wyj�tkiem sytuacji wyra�nie wskazanych w niniejszej Umowie; 2) deasemblowa�, dekompilowa� Programu i dokonywa� jego translacji w inny spos�b ani odtwarza� kodu �r�d�owego, z wyj�tkiem sytuacji dozwolonych przez bezwzgl�dnie obowi�zuj�ce przepisy prawa, bez mo�liwo�ci wy��czenia go w drodze umowy; 3) u�ywa� jakichkolwiek komponent�w Programu, jego plik�w, modu��w, tre�ci audiowizualnych ani zwi�zanych z nim materia��w licencjonowanych niezale�nie od Programu; 4) udziela� dalszych licencji na Program, wypo�ycza� go ani wydzier�awia�; oraz
+
+f. je�li Licencjobiorca nabywa niniejszy Program jako Program Dodatkowy, to b�dzie go u�ywa� jedynie do obs�ugi Programu G��wnego, zgodnie z ograniczeniami okre�lonymi w licencji na Program G��wny lub, je�li Licencjobiorca nabywa Program jako Program G��wny, to b�dzie u�ywa� wszystkich Program�w Dodatkowych jedynie w celu obs�ugi tego Programu, zgodnie z ograniczeniami okre�lonymi w niniejszej Umowie. Na potrzeby punktu "f" przyjmuje si�, �e "Program Dodatkowy" oznacza Program stanowi�cy cz�� innego Programu IBM ("Program G��wny"), okre�lany jako Program Dodatkowy w Informacjach Licencyjnych dla Programu G��wnego. (W celu nabycia oddzielnej licencji na u�ywanie Programu Dodatkowego bez ogranicze�, Licencjobiorca powinien skontaktowa� si� z podmiotem, od kt�rego naby� Program Dodatkowy).
+
+Niniejsza licencja ma zastosowanie do ka�dej kopii Programu wykonanej przez Licencjobiorc�.
+
+3.1 Nowsze wersje Programu, aktualizacje i poprawki
+
+3.1.1 Nowsze wersje Programu
+
+Je�li Program zostanie zast�piony Programem nowszej wersji, licencja na zast�powany Program wygasa ze skutkiem natychmiastowym.
+
+3.1.2 Aktualizacje i poprawki
+
+Otrzymanie przez Licencjobiorc� aktualizacji lub poprawek do Programu oznacza, �e Licencjobiorca akceptuje wszelkie dodatkowe lub odmienne warunki maj�ce zastosowanie do takich aktualizacji i poprawek, okre�lone w Informacjach Licencyjnych dla Programu. W przypadku braku dodatkowych lub odmiennych warunk�w, aktualizacje i poprawki podlegaj� wy��cznie postanowieniom niniejszej Umowy. Je�li Program zostanie zast�piony aktualizacj�, Licencjobiorca wyra�a zgod� na natychmiastowe zaprzestanie korzystania z zast�powanej wersji Programu.
+
+3.2 Licencje czasowe
+
+Je�li IBM licencjonuje Program na wyznaczony termin, to licencja udzielona Licencjobiorcy ko�czy si� wraz z ko�cem wyznaczonego terminu, chyba �e Licencjobiorca i IBM wyra�� zgod� na jej odnowienie.
+
+3.3 Czas trwania i rozwi�zanie
+
+Niniejsza Umowa obowi�zuje do momentu jej rozwi�zania.
+
+IBM mo�e rozwi�za� licencj� udzielon� Licencjobiorcy, je�li Licencjobiorca nie b�dzie przestrzega� warunk�w niniejszej Umowy.
+
+Je�li licencja zostanie rozwi�zana przez kt�r�kolwiek ze Stron z dowolnej przyczyny, Licencjobiorca wyra�a zgod� na natychmiastowe zaprzestanie u�ywania Programu oraz zniszczenie wszelkich posiadanych jego kopii. Wszelkie postanowienia niniejszej Umowy, kt�re ze wzgl�du na sw�j charakter pozostaj� w mocy po jej rozwi�zaniu, b�d� mie� zastosowanie do momentu ich wype�nienia i obowi�zywa� b�d� nast�pc�w prawnych i cesjonariuszy obu Stron.
+
+4. Op�aty
+
+Op�aty s� naliczane na podstawie nabytego poziomu Autoryzowanego U�ywania, okre�lonego w dokumencie PoE. IBM nie zwraca wcze�niej wniesionych lub nale�nych op�at ani nie uwzgl�dnia ich w rozliczeniach, chyba �e niniejsza Umowa stanowi inaczej.
+
+Je�li Licencjobiorca zamierza podwy�szy� poziom Autoryzowanego U�ywania, musi on powiadomi� z wyprzedzeniem IBM lub autoryzowanego reselera IBM i wnie�� odpowiednie op�aty.
+
+5. Podatki
+
+Je�li odpowiednie w�adze na�o�� na Program op�at� skarbow�, podatek, op�at� egzekucyjn� lub prowizj�, z wy��czeniem op�at wynikaj�cych z dochodu netto IBM, Licencjobiorca zgadza si� ui�ci� tak� op�at� w kwocie okre�lonej na fakturze lub dostarczy� dokumentacj� stwierdzaj�c� prawo do zwolnienia z tej op�aty. Od daty nabycia Programu Licencjobiorca ponosi odpowiedzialno�� z tytu�u nale�nego podatku po�redniego. Je�li odpowiednie w�adze na�o�� op�at� skarbow�, podatek, op�at� egzekucyjn� lub prowizj� w zwi�zku z importem lub eksportem, transferem, uzyskaniem dost�pu b�d� korzystaniem z Programu poza krajem, w kt�rym zosta�a udzielona licencja pierwotnemu Licencjobiorcy, to Licencjobiorca przyjmuje na siebie odpowiedzialno�� za wszelkie na�o�one op�aty oraz za ich uiszczenie.
+
+6. Gwarancja zwrotu pieni�dzy
+
+Je�li z jakiegokolwiek powodu Licencjobiorca nie jest zadowolony z Programu, a jest pierwotnym Licencjobiorc�, to mo�e rozwi�za� licencj� i uzyska� zwrot kwoty zap�aconej za Program pod warunkiem zwrotu Programu i dokumentu PoE do podmiotu, od kt�rego je naby�, w ci�gu 30 dni od daty wydania dokumentu PoE Licencjobiorcy. Je�li licencja jest licencj� czasow� podlegaj�c� odnowieniu, to Licencjobiorca mo�e otrzyma� zwrot kwoty pod warunkiem, �e Program wraz z dokumentem PoE zostan� zwr�cone w ci�gu pierwszych 30 dni pocz�tkowego okresu obowi�zywania. W przypadku pobrania Programu drog� elektroniczn� Licencjobiorca powinien skontaktowa� si� z podmiotem, od kt�rego naby� Program, aby dowiedzie� si�, w jaki spos�b uzyska� zwrot kwoty.
+
+7. Przeniesienie Programu
+
+Licencjobiorca mo�e przenie�� Program oraz wszelkie przys�uguj�ce mu prawa i obowi�zki licencyjne na osob� trzeci�, o ile osoba taka zaakceptuje warunki niniejszej Umowy. Je�li licencja zostanie rozwi�zana przez kt�r�kolwiek ze Stron z dowolnej przyczyny, to Licencjobiorca nie ma prawa do przeniesienia Programu na osob� trzeci�. Licencjobiorca nie mo�e przenosi� cz�ci 1) Programu ani 2) praw do Autoryzowanego U�ywania Programu. Wraz z przeniesieniem Programu Licencjobiorca jest zobowi�zany do przeniesienia egzemplarza niniejszej Umowy w postaci wydruku, ��cznie z Informacjami Licencyjnymi i dokumentem PoE. Licencja Licencjobiorcy wygasa natychmiast po dokonaniu takiego przeniesienia.
+
+8. Gwarancje i zastrze�enia
+
+8.1 Ograniczona gwarancja
+
+IBM gwarantuje, �e Program u�ywany w okre�lonym �rodowisku pracy b�dzie dzia�a� zgodnie ze specyfikacjami. Specyfikacje Programu oraz informacje dotycz�ce okre�lonego �rodowiska pracy mog� znajdowa� si� w dokumentacji za��czonej do Programu (na przyk�ad w pliku read-me) lub w formie innej informacji og�oszonej przez IBM (na przyk�ad w dokumencie announcement letter). Licencjobiorca zgadza si�, �e taka dokumentacja i inne informacje dotycz�ce Programu mog� by� dostarczane jedynie w j�zyku angielskim, chyba �e prawo krajowe stanowi inaczej, bez mo�liwo�ci wy��czenia go w ramach umowy.
+
+Gwarancja ma zastosowanie jedynie do niezmodyfikowanych fragment�w Programu. IBM nie gwarantuje nieprzerwanego ani wolnego od b��d�w dzia�ania Programu, ani te� usuni�cia wszystkich jego defekt�w. Licencjobiorca ponosi odpowiedzialno�� za wyniki u�ywania Programu.
+
+W Okresie Gwarancyjnym IBM zapewnia Licencjobiorcy bezp�atny dost�p do baz danych IBM zawieraj�cych informacje na temat znanych defekt�w Programu, poprawek defekt�w, ogranicze� i mo�liwo�ci obej�cia tych�e defekt�w. Wi�cej informacji na ten temat zawiera Podr�cznik Wsparcia dla Oprogramowania IBM (IBM Software Support Handbook) pod adresem www.ibm.com/software/support.
+
+W przypadku, gdy w Okresie gwarancyjnym Program nie dzia�a zgodnie z gwarancj�, a problemu nie mo�na rozwi�za�, korzystaj�c z informacji dost�pnych w bazach danych IBM, Licencjobiorca ma prawo zwr�ci� Program i odnosz�cy si� do niego dokument PoE podmiotowi, od kt�rego naby� Program (IBM lub reselerowi IBM) i otrzyma� zwrot zap�aconej kwoty. Licencja Licencjobiorcy wygasa natychmiast po dokonaniu zwrotu Programu. W przypadku pobrania Programu drog� elektroniczn� Licencjobiorca powinien skontaktowa� si� z podmiotem, od kt�rego naby� Program, aby dowiedzie� si�, w jaki spos�b uzyska� zwrot kwoty.
+
+8.2 Zastrze�enia
+
+NINIEJSZE GWARANCJE S� WY��CZNYMI GWARANCJAMI UDZIELANYMI LICENCJOBIORCY ORAZ ZAST�PUJ� WSZELKIE INNE GWARANCJE LUB WARUNKI (W TYM TAK�E R�KOJMI�), WYRA�NE LUB DOMNIEMANE, A W SZCZEG�LNO�CI DOMNIEMANE GWARANCJE LUB WARUNKI PRZYDATNO�CI HANDLOWEJ, PRZYDATNO�CI DO OKRE�LONEGO CELU, ZADOWALAJ�CEJ JAKO�CI, PRAWA W�ASNO�CI ORAZ GWARANCJE LUB WARUNKI NIENARUSZANIA PRAW OS�B TRZECICH. USTAWODAWSTWA NIEKT�RYCH KRAJ�W NIE DOPUSZCZAJ� WY��CZENIA WYRA�NYCH LUB DOMNIEMANYCH GWARANCJI. W ZWI�ZKU Z TYM POWY�SZE WY��CZENIE MO�E NIE MIE� ZASTOSOWANIA DO LICENCJOBIORCY. W TAKIM PRZYPADKU CZAS TRWANIA TAKICH GWARANCJI JEST OGRANICZONY DO OKRESU GWARANCYJNEGO. PO TYM OKRESIE NIE B�D� OBOWI�ZYWA� �ADNE GWARANCJE. USTAWODAWSTWA NIEKT�RYCH KRAJ�W NIE DOPUSZCZAJ� OGRANICZENIA CZASU TRWANIA GWARANCJI DOMNIEMANYCH, W ZWI�ZKU Z TYM POWY�SZE OGRANICZENIE MO�E NIE MIE� ZASTOSOWANIA DO LICENCJOBIORCY.
+
+NA MOCY NINIEJSZYCH GWARANCJI LICENCJOBIORCY PRZYZNAWANE S� SZCZEG�LNE PRAWA. LICENCJOBIORCY MOG� R�WNIE� PRZYS�UGIWA� INNE PRAWA, W ZALE�NO�CI OD OBOWI�ZUJ�CEGO W DANYM KRAJU USTAWODAWSTWA.
+
+GWARANCJE OKRE�LONE W PARAGRAFIE 8 (GWARANCJE I ZASTRZE�ENIA) S� UDZIELANE WY��CZNIE PRZEZ IBM. ZASTRZE�ENIA OKRE�LONE W PARAGRAFIE 8.2 (ZASTRZE�ENIA) MAJ� R�WNIE� ZASTOSOWANIE DO DOSTAWC�W IBM, KT�RZY DOSTARCZAJ� KOD OS�B TRZECICH. DOSTAWCY CI DOSTARCZAJ� TAKI KOD BEZ UDZIELANIA JAKICHKOLWIEK GWARANCJI I USTALANIA WARUNK�W (W TYM TAK�E R�KOJMI). ZAPISY TEGO AKAPITU NIE UNIEWA�NIAJ� OBOWI�ZK�W IBM WYNIKAJ�CYCH Z GWARANCJI OKRE�LONYCH NINIEJSZ� UMOW�.
+
+9. Dane i bazy danych Licencjobiorcy
+
+W celu udzielenia Licencjobiorcy pomocy przy okre�leniu przyczyny problemu z Programem, IBM mo�e za��da�, aby Licencjobiorca 1) zezwoli� IBM na zdalny dost�p do swoich system�w lub 2) przes�a� do IBM informacje na temat swoich system�w lub dane systemowe. Jednak�e IBM nie jest zobowi�zany do zapewnienia takiej pomocy, chyba �e IBM i Licencjobiorca podpisz� oddzieln� umow�, w ramach kt�rej IBM wyrazi zgod� na �wiadczenie na rzecz Licencjobiorcy tego rodzaju wsparcia technicznego w zakresie przekraczaj�cym zobowi�zania gwarancyjne IBM okre�lone niniejsz� Umow�. W ka�dym przypadku IBM wykorzystuje informacje o b��dach i problemach w celu udoskonalania swych produkt�w i us�ug oraz udzielania pomocy przy ich dostarczaniu w ramach powi�zanych z nimi ofert wsparcia. Przy realizacji tych cel�w IBM mo�e korzysta� z pomocy oddzia��w IBM i podwykonawc�w IBM (znajduj�cych si� nie tylko w kraju lokalizacji Licencjobiorcy, ale i poza nim), a Licencjobiorca upowa�nia IBM do takiego dzia�ania.
+
+Licencjobiorca pozostaje odpowiedzialny za 1) wszelkie dane i zawarto�� bazy danych, kt�re udost�pnia IBM, 2) wyb�r i implementacj� procedur oraz mechanizm�w kontrolnych dotycz�cych dost�pu do danych, ich bezpiecze�stwa, szyfrowania, u�ywania i transmisji (w tym wszelkich danych identyfikuj�cych osob� fizyczn�) oraz 3) tworzenie i odtwarzanie kopii zapasowych ka�dej bazy danych i wszelkich gromadzonych danych. Licencjobiorca nie b�dzie wysy�a� ani udost�pnia� IBM jakichkolwiek informacji identyfikuj�cych osob� fizyczn� (w postaci danych lub jakiejkolwiek innej) i b�dzie odpowiedzialny za uregulowanie uzasadnionych koszt�w i innych obci��e�, kt�re mo�e ponie�� IBM w zwi�zku z omy�kowym udost�pnieniem takich informacji IBM b�d� za utrat� lub ujawnienie takich informacji przez IBM, w tym informacji wynikaj�cych z roszcze� os�b trzecich.
+
+10. Ograniczenie odpowiedzialno�ci
+
+Ograniczenia i zastrze�enia paragrafu 10 (Ograniczenie odpowiedzialno�ci) maj� zastosowanie w pe�nym zakresie i nie s� zakazane przepisami obowi�zuj�cego prawa, bez mo�liwo�ci wy��czenia takiego prawa w ramach umowy.
+
+10.1 Sytuacje, w kt�rych IBM mo�e ponosi� odpowiedzialno��
+
+W przypadku wyst�pienia okre�lonych okoliczno�ci, za kt�re odpowiedzialno�� ponosi IBM, a w wyniku kt�rych Licencjobiorca dozna� szkody, Licencjobiorca b�dzie uprawniony do uzyskania od IBM odszkodowania. Bez wzgl�du na podstaw�, na jakiej Licencjobiorca jest uprawniony do domagania si� odszkodowania od IBM (w��czywszy w to naruszenie istotnych postanowie� niniejszej Umowy, niedbalstwo, wprowadzenie w b��d lub inne roszczenia z tytu�u odpowiedzialno�ci kontraktowej lub deliktowej), ca�kowita odpowiedzialno�� IBM z tytu�u wszelkich zsumowanych roszcze� wynikaj�cych z lub odnosz�cych si� do ka�dego Programu b�d� wynikaj�cych z niniejszej Umowy nie przekroczy: 1) kwoty odpowiedzialno�ci za uszczerbek na zdrowiu (��cznie ze �mierci�) oraz za szkody wyrz�dzone w nieruchomo�ciach lub maj�tku ruchomym, 2) w przypadku innych rzeczywi�cie poniesionych szk�d - wysoko�ci op�at (je�li Program podlega op�atom czasowym - wysoko�ci op�at za dwana�cie miesi�cy) uiszczanych przez Licencjobiorc� za Program b�d�cy przedmiotem roszczenia.
+
+Ograniczenie to ma r�wnie� zastosowanie do programist�w i dostawc�w Program�w IBM. Wskazany powy�ej zakres odpowiedzialno�ci stanowi ca�o�� odpowiedzialno�ci ponoszonej ��cznie przez IBM oraz programist�w i dostawc�w Program�w IBM.
+
+10.2 Sytuacje, w kt�rych IBM nie ponosi odpowiedzialno�ci
+
+W �ADNYCH OKOLICZNO�CIACH IBM, ANI TE� PROGRAMI�CI CZY DOSTAWCY PROGRAM�W IBM, NIE PONOSZ� ODPOWIEDZIALNO�CI ZA NAST�PUJ�CE SZKODY, NAWET JE�LI ZOSTALI POINFORMOWANI O MO�LIWO�CI ICH WYST�PIENIA:
+
+a. UTRAT� LUB USZKODZENIE DANYCH;
+
+b. SZKODY SZCZEG�LNE, UBOCZNE, WYNIKAJ�CE Z NARUSZENIA D�BR OSOBISTYCH, PO�REDNIE ORAZ SZKODY, KT�RYCH NIE MO�NA BY�O PRZEWIDZIE� PRZY ZAWIERANIU UMOWY, ANI TE�
+
+c. UTRACONE ZYSKI, KONTAKTY HANDLOWE, PRZYCHODY, REPUTACJ� (GOODWILL) ANI PRZEWIDYWANE OSZCZ�DNO�CI.
+
+11. Weryfikacja zgodno�ci
+
+Na potrzeby niniejszego paragrafu 11 (Weryfikacja zgodno�ci), przyjmuje si�, �e termin "Warunki IPLA dla Programu " oznacza 1) niniejsz� Umow� oraz odpowiednie poprawki i dokumenty transakcyjne dostarczone przez IBM, a tak�e 2) strategie IBM dotycz�ce oprogramowania, dost�pn� w serwisie WWW IBM Software Policy (www.ibm.com/softwarepolicies), a w szczeg�lno�ci strategie dotycz�ce tworzenia kopii zapasowych, okre�lania cen przy ograniczonej mocy obliczeniowej oraz migracji.
+
+Prawa i obowi�zki przedstawione w niniejszym paragrafie 11 obowi�zuj� w okresie licencjonowania Programu na rzecz Licencjobiorcy oraz dwa lata po tym okresie.
+
+11.1 Proces weryfikacji
+
+Licencjobiorca zgadza si� tworzy�, przechowywa� oraz dostarcza� IBM i rewidentom IMB dok�adn� pisemn� dokumentacj�, dane wyj�ciowe narz�dzi systemowych oraz inne informacje systemowe wystarczaj�ce do zapewnienia mo�liwo�ci weryfikacji, �e korzystanie przez Licencjobiorc� ze wszystkich Program�w odbywa si� zgodnie z Warunkami IPLA dla Programu, a w szczeg�lno�ci ze wszystkimi obowi�zuj�cymiwarunkami IBM w zakresie licencjonowania i cen. Licencjobiorca jest odpowiedzialny za 1) zapewnienie, �e nie zosta� przekroczony poziom Autoryzowanego U�ywania oraz 2) przestrzeganie zgodno�ci z Warunkami IPLA dla Programu.
+
+IBM mo�e zweryfikowa�, informuj�c o takim zamiarze z odpowiednim wyprzedzeniem, czy Licencjobiorca przestrzega Warunk�w IPLA dla Programu we wszystkich o�rodkach i �rodowiskach, gdzie Licencjobiorca u�ywa Program�w do jakichkolwiek cel�w zgodnie z Warunkami IPLA dla Programu. Weryfikacja taka mo�e by� przeprowadzana na terenie Licencjobiorcy, w normalnych godzinach pracy i b�dzie realizowana w spos�b w minimalnym stopniu zak��caj�cy t� prac�. IBM mo�e przy takiej weryfikacji skorzysta� z us�ug niezale�nego rewidenta, pod warunkiem, �e zosta�a z nim podpisana umowa o zachowaniu poufno�ci.
+
+11.2 Postanowienia
+
+IBM poinformuje Licencjobiorc� na pi�mie, je�li weryfikacja wyka�e, �e Licencjobiorca przekroczy� poziom Autoryzowanego U�ywania lub w inny spos�b naruszy� Warunki IPLA dla Programu. Licencjobiorca wyra�a zgod� na natychmiastowe i bezpo�rednie uiszczenie na rzecz IBM op�at wyszczeg�lnionych przez IBM na fakturze z tytu�u: 1) u�ywania niezgodnego z Warunkami, 2) �wiadczenia wsparcia w czasie takiego u�ywania lub przez okres dw�ch lat, w zale�no�ci od tego, kt�ry z tych okres�w by� kr�tszy oraz 3) dodatkowych op�at i innych zobowi�za� okre�lonych w trakcie przeprowadzonej weryfikacji.
+
+12. Uwagi os�b trzecich
+
+Program mo�e zawiera� kod os�b trzecich, kt�ry b�dzie licencjonowany na rzecz Licencjobiorcy w ramach niniejszej Umowy przez IBM, a nie przez osob� trzeci�. Ewentualne Uwagi na temat kodu os�b trzecich (Uwagi Os�b Trzecich) s� do��czane jedynie w celu powiadomienia Licencjobiorcy. Uwagi te mo�na znale�� w pliku NOTICES do��czonym do Programu. Informacje na temat uzyskania kodu �r�d�owego dla konkretnego kodu os�b trzecich mo�na znale�� w Uwagach Os�b Trzecich. Je�li w Uwagach Os�b Trzecich IBM okre�li kod os�b trzecich jako "Modyfikowany Kod Os�b Trzecich", to IBM upowa�ni Licencjobiorc� do 1) modyfikacji Modyfikowanego Kodu Os�b Trzecich oraz 2) odtwarzania kodu �r�d�owego modu��w Programu, kt�re s� bezpo�rednio wykorzystywane przez Modyfikowany Kod Os�b Trzecich pod warunkiem, �e czynno�� ta zostanie podj�ta jedynie w celu debugowania modyfikacji Licencjobiorcy na potrzebytakiego kodu os�b trzecich. Ewentualne zobowi�zania IBM w zakresie us�ug i wsparcia dotycz� jedynie Programu niezmodyfikowanego.
+
+13. Postanowienia og�lne
+
+a. Postanowienia zawarte w niniejszej Umowie pozostaj� bez wp�ywu na uprawnienia przys�uguj�ce konsumentom na podstawie bezwzgl�dnie obowi�zuj�cych przepis�w prawa.
+
+b. W przypadku Program�w, kt�re IBM dostarcza Licencjobiorcy w formie materialnej, IBM wype�nia swe obowi�zki w zakresie wysy�ki i dostawy z chwil� dostarczenia takich Program�w do wyznaczonego przez siebie przewo�nika, chyba �e Licencjobiorca uzgodni� z IBM na pi�mie inny tryb post�powania.
+
+c. W przypadku niewa�no�ci lub niewykonalno�ci kt�regokolwiek z postanowie� niniejszej Umowy, pozosta�e postanowienia niniejszej Umowy zachowuj� pe�n� moc prawn� i skuteczno��.
+
+d. Licencjobiorca wyra�a zgod� na przestrzeganie wszelkich obowi�zuj�cych praw i przepis�w w zakresie eksportu i importu, w tym przepis�w Stan�w Zjednoczonych dotycz�cych embarga i sankcji oraz zakazu eksportu do lub na rzecz okre�lonych u�ytkownik�w ko�cowych.
+
+e. Licencjobiorca upowa�nia International Business Machines Corporation oraz przedsi�biorstwa podporz�dkowane IBM Corp. (ich nast�pc�w prawnych i cesjonariuszy, wykonawc�w i Partner�w Handlowych IBM) do przechowywania i u�ywania biznesowych informacji kontaktowych Licencjobiorcy, bez wzgl�du na miejsce prowadzonej dzia�alno�ci, w zwi�zku z produktami i us�ugami IBM lub w celu utrzymania kontakt�w handlowych mi�dzy Stronami.
+
+f. Ka�da ze Stron stworzy drugiej Stronie rozs�dne mo�liwo�ci wype�nienia zobowi�za�, zanim zarzuci drugiej Stronie ich niewype�nienie w ramach niniejszej Umowy. Strony podejm� w dobrej wierze pr�b� rozstrzygni�cia spor�w, nieporozumie� lub roszcze� powsta�ych mi�dzy nimi w zwi�zku z Umow�.
+
+g. O ile obowi�zuj�ce prawo nie stanowi inaczej bez mo�liwo�ci wy��czenia takiego prawa w ramach umowy: 1) �adna ze Stron nie podejmie dzia�a� prawnych, w jakiejkolwiek formie, zwi�zanych z roszczeniem wynikaj�cym z niniejszej Umowy lub pozostaj�cym z ni� w zwi�zku po okresie dw�ch lat od czasu pojawienia si� przyczyny podj�cia takich dzia�a�; oraz 2) po wyga�ni�ciu takiego okresu, wszelkie roszczenia przedawniaj� si� i prawa z nimi zwi�zane wygasaj�.
+
+h. Ani Licencjobiorca, ani IBM nie odpowiadaj� za niedope�nienie jakichkolwiek obowi�zk�w, je�li przyczyny takiego niedope�nienia le�a�y poza ich kontrol�.
+
+i. Niniejsza Umowa nie daje osobom trzecim jakichkolwiek praw ani te� podstawy do roszcze�, a IBM nie ponosi odpowiedzialno�ci za jakiekolwiek roszczenie os�b trzecich wobec Licencjobiorcy, z wyj�tkiem zakresu przewidzianego w paragrafie 10.1 (Sytuacje, w kt�rych IBM mo�e nie ponosi� odpowiedzialno�ci) powy�ej, w cz�ci dotycz�cej uszczerbku na zdrowiu (��cznie ze �mierci�) lub szk�d wyrz�dzonych w nieruchomo�ciach lub w maj�tku ruchomym, za kt�re IBM ponosi odpowiedzialno�� prawn� wobec os�b trzecich.
+
+j. Przyst�puj�c do niniejszej Umowy �adna ze Stron nie korzysta z �adnych ustale�, kt�re nie zosta�y okre�lone w Umowie, a w szczeg�lno�ci z �adnych ustale� w zakresie: 1) wydajno�ci lub dzia�ania Programu odbiegaj�cych od wyra�nie gwarantowanych w paragrafie 8 (Gwarancje i zastrze�enia) powy�ej; 2) do�wiadcze� czy rekomendacji os�b trzecich lub 3) wynik�w lub oszcz�dno�ci, jakie mo�e osi�gn�� Licencjobiorca.
+
+k. IBM podpisa� umowy z konkretnymi organizacjami (zwanymi "Partnerami Handlowymi IBM") w celu promocji i sprzeda�y okre�lonych Program�w oraz udzielania dla nich wsparcia. Partnerzy Handlowi IBM dzia�aj� oddzielnie i niezale�nie od IBM. IBM nie ponosi odpowiedzialno�ci za dzia�ania lub o�wiadczenia Partner�w Handlowych IBM ani za ich zobowi�zania wobec Licencjobiorcy.
+
+l. Warunki licencji oraz warunki dotycz�ce zabezpieczenia i ochrony w�asno�ci intelektualnej okre�lone w innych umowach Licencjobiorcy z IBM (na przyk�ad w Umowie IBM z Klientem) nie maj� zastosowania do licencji na Program udzielonych na mocy niniejszej Umowy.
+
+14. Zasi�g geograficzny i obowi�zuj�ce ustawodawstwo
+
+14.1 Obowi�zuj�ce ustawodawstwo
+
+Obie Strony przyjmuj� jako obowi�zuj�ce prawo kraju, w kt�rym licencja na Program zosta�a nabyta, oraz wyra�aj� zgod� na stosowanie takiego prawa przy interpretowaniu oraz egzekwowaniu wszelkich praw, obowi�zk�w i zobowi�za� Stron, wynikaj�cych z niniejszej Umowy lub maj�cych w jakikolwiek spos�b z ni� zwi�zek, bez odwo�ywania si� do zasad kolizji przepis�w prawnych.
+
+Konwencja ONZ dotycz�ca um�w o Mi�dzynarodowej Sprzeda�y Towar�w (United Nations Convention on Contracts for the International Sale of Goods) nie ma zastosowania.
+
+14.2 Jurysdykcja
+
+Wszelkie prawa, obowi�zki i zobowi�zania podlegaj� w�a�ciwym s�dom kraju nabycia licencji na Program przez Licencjobiorc�.
+
+Cz�� 2 - Warunki specyficzne dla poszczeg�lnych kraj�w
+
+W przypadku licencji udzielanych na terenie Polski, poni�sze warunki zast�puj� lub modyfikuj� warunki okre�lone w Cz�ci 1. Wszystkie warunki Cz�ci 1, kt�rych nie dotyczy niniejsza poprawka, nie ulegaj� zmianom i pozostaj� w mocy. W sk�ad Cz�ci 2 wchodz�:
+
+- Zmiany krajowe do Cz�ci 1, paragraf 14 (Zasi�g geograficzny i obowi�zuj�ce ustawodawstwo) oraz
+
+- Zmiany krajowe do innych warunk�w Umowy dotycz�ce Europy, Bliskiego Wschodu i Afryki.
+
+Zmiany krajowe do Cz�ci 1, paragraf 14 (Zasi�g geograficzny i obowi�zuj�ce ustawodawstwo)
+
+14.1  Obowi�zuj�ce ustawodawstwo
+
+Fraza "prawo kraju, w kt�rym licencja na Program zosta�a nabyta" w pierwszym akapicie paragrafu 14.1 Obowi�zuj�ce ustawodawstwo zostaje w przypadku Polski zast�piona nast�puj�cym tekstem:
+
+prawo Austrii;
+
+14.3  Arbitra�
+
+Nast�puj�cy akapit maj�cy zastosowanie w Polsce zostaje dodany jako nowy do paragrafu 14.3 (Arbitra�). Postanowienia paragrafu 14.3 maj� znaczenie rozstrzygaj�ce nad postanowieniami paragrafu 14.2 (Jurysdykcja) w zakresie, w jakim zezwala na to obowi�zuj�ce ustawodawstwo i zasady proceduralne:
+
+Wszelkie kwestie sporne wynikaj�ce z niniejszej Umowy lub zwi�zane z jej naruszeniem, wypowiedzeniem lub niewa�no�ci� b�d� rozstrzygane w spos�b ostateczny zgodnie z Zasadami Post�powania Arbitra�owego i Ugodowego Mi�dzynarodowego Centrum Arbitra�u przy Federalnej Izbie Gospodarczej (Rules of Arbitration and Conciliation of the International Arbitral Center of the Federal Economic Chamber) w Wiedniu (Vienna Rules), przez trzech arbitr�w, powo�anych zgodnie ze wspomnianymi zasadami. Arbitra� b�dzie mia� miejsce w Wiedniu, w Austrii. J�zykiem obowi�zuj�cym podczas post�powania b�dzie j�zyk angielski. Orzeczenia arbitr�w b�d� ostateczne i wi���ce dla obu Stron. Oznacza to, �e zgodnie z artyku�em 598(2) Austriackiego Kodeksu Post�powania Cywilnego (Austrian Code of Civil Procedure), Strony rezygnuj� ze stosowania artyku�u 595(1) punkt 7 tego Kodeksu. Tym niemniej powy�sze warunki w �adnym stopniu nie ograniczaj� prawa IBM do wszcz�cia post�powania przed dowolnym w�a�ciwym s�dem w kraju instalacji.
+
+8. Gwarancje i zastrze�enia
+
+Nast�puj�cy tekst zosta� dodany do paragrafu 8 (Gwarancje i zastrze�enia):
+
+W krajach Unii Europejskiej ("UE") klientom przys�uguj� prawa wynikaj�ce z obowi�zuj�cego ustawodawstwa krajowego, kt�remu podlega sprzeda� artyku��w konsumpcyjnych. Postanowienia zawarte w paragrafie 8, Gwarancje i zastrze�enia pozostaj� bez wp�ywu na te prawa. Ograniczona gwarancja ma zasi�g og�lno�wiatowy.
+
+13. Postanowienia og�lne
+
+Nast�puj�cy tekst zast�puje punkt 13.e:
+
+(1) Definicje - do punktu 13.e maj� zastosowanie nast�puj�ce definicje dodatkowe:
+
+(a) Biznesowe Informacje Kontaktowe oznaczaj� informacje maj�ce zwi�zek z dzia�alno�ci� biznesow�, ujawnione przez Licencjobiorc� IBM, w tym imiona i nazwiska, stanowiska, adresy s�u�bowe, numery telefon�w i adresy e-mail pracownik�w i wykonawc�w Licencjobiorcy. W przypadku Austrii, W�och i Szwajcarii Biznesowe Informacje Kontaktowe zawieraj� r�wnie� informacje o Kliencie oraz jego wykonawcach posiadaj�cych osobowo�� prawn� (na przyk�ad dane na temat przychod�w Klienta i inne informacje o transakcjach).
+
+(b) Biznesowy Personel Kontaktowy oznacza pracownik�w i wykonawc�w Licencjobiorcy, do kt�rych odnosz� si� Biznesowe Informacje Kontaktowe.
+
+(c) Urz�d Ochrony Danych oznacza organ powo�any zgodnie z Ustawodawstwem o ochronie danych i ��czno�ci elektronicznej w okre�lonym kraju lub w przypadku kraj�w spoza Unii Europejskiej, organ odpowiedzialny za nadz�r nad ochron� danych osobowych w takim kraju b�d� (w obu powy�szych przypadkach) ka�dy nast�pca prawny takiego organu powo�any w odpowiedni spos�b.
+
+(d) Ustawodawstwo o ochronie danych i ��czno�ci elektronicznej oznacza (i) obowi�zuj�ce prawo i przepisy krajowe wdra�aj�ce wymagania dyrektywy Unii Europejskiej 95/46/WE (w sprawie ochrony os�b fizycznych w zakresie przetwarzania danych osobowych i swobodnego przep�ywu tych danych) oraz dyrektywy 2002/58/WE (dotycz�cej przetwarzania danych osobowych i ochrony prywatno�ci w sektorze ��czno�ci elektronicznej); lub (ii) w przypadku kraj�w spoza Unii Europejskiej, prawa i przepisy obowi�zuj�ce w takich krajach i odnosz�ce si� do ochrony danych osobowych i przepis�w o ��czno�ci elektronicznej z wykorzystaniem danych osobowych, w tym (w obu powy�szych przypadkach) ich ustawowe nowe wersje i modyfikacje.
+
+(e) Grupa IBM oznacza International Business Machines Corporation z siedzib� w Armonk, Nowy Jork, USA, przedsi�biorstwa podporz�dkowane International Business Machines Corporation oraz ich odpowiednich Partner�w Handlowych i podwykonawc�w.
+
+(2) Licencjobiorca upowa�nia IBM do:
+
+(a) przetwarzania i u�ywania Biznesowych Informacji Kontaktowych w ramach Grupy IBM w celu obs�ugi Licencjobiorcy, w tym w celu �wiadczenia us�ug wsparcia oraz rozszerzania relacji handlowych mi�dzy Licencjobiorc� i Grup� IBM, a w szczeg�lno�ci nawi�zywania kontakt�w z Biznesowym Personelem Kontaktowym (za po�rednictwem poczty e-mail lub w inny spos�b) oraz sprzeda�y produkt�w i us�ug Grupy IBM (zwanym dalej "Okre�lonym Celem"); oraz
+
+(b) ujawniania Biznesowych Informacji Kontaktowych innym cz�onkom Grupy IBM jedynie na potrzeby realizacji Okre�lonego Celu.
+
+(3) IBM wyra�a zgod� na przetwarzanie Biznesowych Informacji Kontaktowych zgodnie z Ustawodawstwem o ochronie danych i ��czno�ci elektronicznej.
+
+(4) Licencjobiorca o�wiadcza, �e w zakresie wymaganym Ustawodawstwem o ochronie danych i ��czno�ci elektronicznej (a) uzyska� (lub uzyska) zgod� Biznesowego Personelu Kontaktowego na przetwarzanie i u�ywanie przez Grup� IBM Biznesowych Informacji Kontaktowych do realizacji Okre�lonego Celu, oraz �e przygotowa� (lub przygotuje) powiadomienie dla Biznesowego Personelu Kontaktowego w tej sprawie.
+
+(5) Licencjobiorca upowa�nia IBM do przesy�ania Biznesowych Informacji Kontaktowych poza Europejsk� Stref� Ekonomiczn� pod warunkiem, �e b�dzie to realizowane na warunkach zatwierdzonych przez Urz�d Ochrony Danych lub zgodnie z Ustawodawstwem o ochronie danych i ��czno�ci elektronicznej.
+
+Z125-3301-13 (12/2009)
+
+
+INFORMACJE LICENCYJNE
+
+Wymienione poni�ej Programy s� licencjonowane na poni�szych warunkach, kt�re uzupe�niaj� warunki Mi�dzynarodowa Umowa Licencyjna na Program.
+
+Nazwa Programu: IBM Prerequisite Scanner R1.1
+Numer Programu: 5725-C13
+
+Komponenty �r�d�owe
+
+Program mo�e zawiera� komponenty w postaci kodu �r�d�owego (zwane dalej "Komponentami �r�d�owymi"). Licencjobiorca mo�e kopiowa� i modyfikowa� Komponenty �r�d�owe jedynie na u�ytek wewn�trzny, pod warunkiem, �e u�ytek taki mie�ci si� w granicach praw licencyjnych na mocy niniejszej Umowy, za� Licencjobiorca nie b�dzie zmienia� ani usuwa� �adnych informacji czy uwag o prawach autorskich zawartych w Komponentach �r�d�owych. IBM dostarcza Komponenty �r�d�owe bez zobowi�zania do wsparcia, W STANIE, W JAKIM SI� ZNAJDUJ� ("AS IS"), BEZ UDZIELANIA JAKICHKOLWIEK GWARANCJI (R�KOJMI� WY��CZA SI�), WYRA�NYCH LUB DOMNIEMANYCH, A W SZCZEG�LNO�CI GWARANCJI PRAWA W�ASNO�CI, NIENARUSZANIA PRAW OS�B TRZECICH ORAZ DOMNIEMANYCH GWARANCJI i WARUNK�W PRZYDATNO�CI HANDLOWEJ I PRZYDATNO�CI DO OKRE�LONEGO CELU.
+
+D/N:  L-JRCI-89W3MD
+P/N:  L-JRCI-89W3MD 

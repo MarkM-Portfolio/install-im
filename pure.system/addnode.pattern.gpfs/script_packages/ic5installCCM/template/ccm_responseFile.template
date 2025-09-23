@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent-input>
+    <profile installLocation='[RSFinstallLocation]' id='IBM Connections'>
+                    <!-- Deployment Manager Administrative User id.  Note there is one entry for each IBM Connections application -->
+                    <data key='user.was.adminuser.id' value='[RSFuserWasAdminuserId]'/>
+                    <data key='user.ccm.adminuser.id' value='[RSFuserCcmAdminuserId]'/>
+ 
+                    <!-- The password should be encrpted. Refer the Information Center to get the encryption method -->
+                    <data key='user.was.adminuser.password' value='[RSFuserWasAdminuserPassword]'/>
+                    <data key='user.ccm.adminuser.password' value='[RSFuserCcmAdminuserPassword]'/>
+ 
+                    <!-- Deployment type: -->
+                    <!-- small:  All applications installed into the same cluster; -->
+                    <!-- medium: Applications grouped into several clusters;       -->
+                    <!-- large:  Each application installed in its own cluster.    -->
+                    <data key='user.deployment.type' value='[RSFuserDeploymentType]'/>
+ 
+            <!-- IBM Connections Content Manager -->
+            <!-- Note: CCM can be installed only when communities is chosen or installed -->
+            <!-- Set to 'true' when using existing deployment, set to 'false' for a new deployment -->
+            <data key='user.ccm.existingDeployment' value='false'/>
+ 
+            <!-- CCM: new deployment -->
+            <!-- Following keys are needed only when you use new deployment, otherwise remove them. -->
+            <!-- Specify the location of the CCM installer binaries -->
+            <data key='user.ccm.installers.path' value='[RSFuserCcmInstallersPath]'/>
+            <!-- Specify whether to use an existing cluster -->
+            <data key='user.ccm.clusterExist' value='false'/>
+            <!-- Cluster name -->
+            <data key='user.ccm.clusterName' value='[RSFuserCcmClusterName]'/>
+            <!-- Specify the name of the first federated node(alphabetical order) to deploy the application on. -->
+            <data key='user.ccm.firstNodeName' value='[RSFuserCcmFirstNodeName]'/>
+            <!-- Specify the names of nodes other than the first federated node to deploy the application on. For example: node2,node3. If you use only one node, leave this value blank. -->
+            <data key='user.ccm.secondaryNodesNames' value='[RSFuserCcmSecondaryNodesNames]'/>
+            <!-- The format is {applicationName}.{nodeName}.Servername=server name. If you use multiple nodes for an application, use the semicolon character(";") to separate them. For example, news.node1.ServerName=server1;news.node2.ServerName=server2;  -->
+            <data key='user.ccm.serverInfo' value='[RSFuserCcmServerInfo]'/>
+            <!-- Specifies the database parameters for CCM with new deployment. -->
+            <!-- Note: The CCM with existing deployment don't need the following database settings. -->
+            <!-- The settings for the different database types are:                         -->
+            <!-- DB2:                          -->
+            <!-- dbType:db2; dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider -->
+            <!-- Oracle:                          -->
+            <!-- dbType:oracle; dataSourceTemplateName:Oracle JDBC Driver DataSource; jdbcProviderTemplateName:Oracle JDBC Driver -->
+            <!-- SqlServer:                    -->
+            <!-- dbType:sqlserver; dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver -->
+           <data key='user.ccm.dbType' value='[RSFuserCcmDbType]'/>
+            <data key='user.ccm.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+            <data key='user.ccm.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+            <data key='user.ccm.jdbcLibraryPath' value='[RSFuserCcmJdbcLibraryPath]'/>
+            <data key='user.ccm.selected' value='true'/>
+            <!-- If database type is DB2 or SQLServer, you need to input the settings for both gcd and objstore database. -->
+            <data key='user.ccm.gcd.dbHostName' value='[RSFuserCcmGcdDbHostName]'/>
+            <data key='user.ccm.gcd.dbPort' value='[RSFuserCcmGcdDbPort]'/>
+            <data key='user.ccm.gcd.dbName' value='FNGCD'/>
+            <data key='user.ccm.gcd.dbUser' value='[RSFuserCcmGcdDbUser]'/>
+            <data key='user.ccm.gcd.dbUserPassword' value='[RSFuserCcmGcdDbUserPassword]'/>
+            <data key='user.ccm.objstore.dbHostName' value='[RSFuserCcmObjstoreDbHostName]'/>
+            <data key='user.ccm.objstore.dbPort' value='[RSFuserCcmObjstoreDbPort]'/>
+            <data key='user.ccm.objstore.dbName' value='FNOS'/>
+            <data key='user.ccm.objstore.dbUser' value='[RSFuserCcmObjstoreDbUser]'/>
+            <data key='user.ccm.objstore.dbUserPassword' value='[RSFuserCcmObjstoreDbUserPassword]'/>
+    </profile>
+        <install modify='true'>
+                <offering profile='IBM Connections' version='[RSFcomIbmLotusConnectionsVersion]' features='ccm' id='com.ibm.lotus.connections'/>
+        </install>
+        <preference value='/opt/IBM/InstallationManager_AppServer_Shared' name='com.ibm.cic.common.core.preferences.eclipseCache'/>
+        <preference value='30' name='com.ibm.cic.common.core.preferences.connectTimeout'/>
+        <preference value='30' name='com.ibm.cic.common.core.preferences.readTimeout'/>
+        <preference value='0' name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount'/>
+        <preference value='true' name='offering.service.repositories.areUsed'/>
+        <preference value='false' name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode'/>
+        <preference value='false' name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication'/>
+        <preference value='true' name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts'/>
+        <preference value='false' name='PassportAdvantageIsEnabled'/>
+        <preference value='false' name='com.ibm.cic.common.core.preferences.searchForUpdates'/>
+</agent-input>

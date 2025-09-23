@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WASHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WASProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WASHistory.java:
+#
+WVER0201E=WVER0201E: 无法确定历史记录目录；无法确定产品目录
+WVER0201E.explanation=历史记录目录是产品目录的子目录。有关更多信息，请参阅在确定产品目录时所发生错误的说明。
+WVER0201E.useraction=按照与版本错误一同出现的指示信息来操作。
+
+# 
+WVER0202E=WVER0202E: 无法装入历史记录信息
+WVER0202E.explanation=无法从历史记录文件 {0} 装入历史记录信息。具体详细信息视所发生的错误而定。
+WVER0202E.useraction=确保历史记录文件可读，并且格式正确。
+
+# 
+WVER0203E=WVER0203E: 读 {0} 时发生异常
+WVER0203E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0203E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0204E=WVER0204E: 创建历史记录目录 {0} 时发生异常
+WVER0204E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0204E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0205E=WVER0205E: 将历史记录文件 {0} 的备份创建到 {1} 时发生异常
+WVER0205E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0205E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0206E=WVER0206E: 写事件历史记录 {0} 时发生异常
+WVER0206E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0206E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0210I.explanation=这是标准的版权声明。
+WVER0210I.useraction=不需要任何用户操作。这是一条参考消息。
+
+# 
+WVER0211I=WVER0211I: WebSphere Application Server R5.0
+WVER0211I.explanation=这是标准的产品描述声明。
+WVER0211I.useraction=不需要任何用户操作。这是一条参考消息。
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter V{0}，发行日期 {1}
+WVER0212I.explanation=这是标准的模块描述声明。
+WVER0212I.useraction=不需要任何用户操作。这是一条参考消息。
+
+# 
+WVER0225E=WVER0225E: 没有为“{0}”自变量指定任何值
+WVER0225E.explanation=所列自变量需要值。（使用“-help”或“-usage”可显示用法信息。）
+WVER0225E.useraction=为所列自变量指定值。
+
+# 
+WVER0226E=WVER0226E: 值“{0}”的格式值无效。
+WVER0226E.explanation=有效格式值为“text”和“html”。指定的值不是这两个值中的一个。（使用“-help”或“-usage”可显示用法信息。）
+WVER0226E.useraction=将格式值更改为以下某个有效值：“text”或“html”。
+
+# 
+WVER0228E=WVER0228E: 自变量“{0}”是无效的自变量。
+WVER0228E.explanation=指定的自变量无效。（使用“-help”或“-usage”可显示用法信息。）
+WVER0228E.useraction=将此自变量更改为有效自变量。
+
+# 
+WVER0230I=WVER0230I: 用法：historyInfo ( [ -format <text | html> ] [ -file <输出文件>] [ -updateId <更新标识> ] [ -component <组件名称> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=此参考消息描述 historyInfo 实用程序的自变量。historyInfo 实用程序接受 5 个可选关键字自变量，一个指定输出格式，一个指定输出文件，一个仅显示与指定的紧急修订程序关联的事件，一个仅显示与指定的组件关联的事件，还有一个用于显示用法信息。（使用“-usage”或“-help”可显示其他信息。）
+WVER0230I.useraction=不需要任何用户操作。根据请求显示用法信息消息。
+
+# 
+WVER0231I=WVER0231I: “-format”自变量用于指定输出格式，必须将其指定为“text”或“html”。“-file”自变量用于指定输出文件。必须提供文件名。“-updateId”自变量用于指定更新的标识，该标识会限制所显示的事件。“-component”自变量用于指定组件的名称，该名称会限制所显示的事件。“-help”自变量用于显示版本信息。“-usage”自变量用于显示该信息消息。
+WVER0231I.explanation=该消息描述 versionInfo 实用程序的有效自变量。
+WVER0231I.useraction=不需要任何用户操作。根据请求显示用法信息消息。
+
+# 
+WVER0240E=WVER0240E: 将版本报告写到 {0} 时出错：{1}
+WVER0240E.explanation=将历史记录报告写到指定的文件时发生指定的错误。
+WVER0240E.useraction=纠正操作取决于所发生的具体错误。尤其要确保指定的文件可写并且有足够空间可用于该报告。
+
+# 
+WVER0241E=WVER0241E: 将历史记录报告写到 {0} 时出错。无法显示错误文本，但类型为 {1}。检索错误文本时又发生一个错误，类型为 {2}。
+WVER0241E.explanation=将历史记录报告写到指定的文件时发生错误。检索错误文本时又发生一个错误。
+WVER0241E.useraction=没有可用的用户操作。请重试请求的操作，或与支持人员联系获取进一步的帮助。
+
+# 
+WVER0242E=WVER0242E: 处理历史记录信息时发生异常
+WVER0242E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0242E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0243E=WVER0243E: 处理历史记录信息时发生异常
+WVER0243E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0243E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0261E=WVER0261E: 无法记录文件 {2} 中组件 {1} 的紧急修订程序 {0} 的应用程序。无法保存指定的文件。
+WVER0261E.explanation=无法保存指定的文件。
+WVER0261E.useraction=确保目标文件可写，并且有足够的空间可用于新文件。
+
+# 
+WVER0262E=WVER0262E: 无法记录有关除去文件 {2} 中组件 {1} 的紧急修订程序 {0} 的应用程序这一信息。无法保存指定的文件。
+WVER0262E.explanation=无法保存指定的文件。
+WVER0262E.useraction=确保目标文件可写，并且有足够的空间可用于新文件。
+
+# 
+WVER0263E=WVER0263E: 无法记录有关除去存储在文件 {2} 中组件 {1} 的紧急修订程序 {0} 的应用程序这一信息。无法除去指定的文件。
+WVER0263E.explanation=无法除去指定的文件。
+WVER0263E.useraction=确保可以除去目标文件。
+
+# 
+WVER0264E=WVER0264E: 无法记录有关除去组件 {1} 的紧急修订程序 {0} 的应用程序这一信息 － 没有记录任何应用程序。
+WVER0264E.explanation=该组件没有任何指定紧急修订程序的应用程序的记录。产品信息可能毁坏或可能发生了内部错误
+WVER0264E.useraction=有关其他信息，请与支持人员联系。
+
+# 
+WVER0265E=WVER0265E: 无法除去存储在文件 {2} 中的紧急修订驱动程序 {0}。
+WVER0265E.explanation=无法除去指定的文件。
+WVER0265E.useraction=确保可以除去目标文件。
+
+# 
+WVER0266E=WVER0266E: 解析 PTF 驱动程序信息时发生可恢复错误。
+WVER0266E.explanation=在解析 PTF 信息时发生错误，后跟其列表。请参阅列出的错误获取其他信息。
+WVER0266E.useraction=请参阅列出的错误获取建议的用户操作。
+
+# 
+WVER0267E=WVER0267E: 无法记录有关除去文件 {2} 中组件 {1} 的 PTF {0} 的应用程序这一信息。无法保存指定的文件。
+WVER0267E.explanation=无法保存指定的文件。
+WVER0267E.useraction=确保目标文件可写，并且有足够的空间可用于新文件。
+
+# 
+WVER0268E=WVER0268E: 无法记录有关除去存储在文件 {2} 中组件 {1} 的 PTF {0} 的应用程序这一信息。无法除去指定的文件。
+WVER0268E.explanation=无法除去指定的文件。
+WVER0268E.useraction=确保可以除去目标文件。
+
+# 
+WVER0269E=WVER0269E: 无法记录有关除去组件 {1} 的 PTF {0} 的应用程序这一信息 － 没有记录任何应用程序。
+WVER0269E.explanation=该组件没有指定 PTF 的应用程序的任何记录。产品信息可能毁坏或可能发生了内部错误
+WVER0269E.useraction=有关其他信息，请与支持人员联系。
+
+# 
+WVER0270E=WVER0270E: 无法除去存储在文件 {2} 中的 PTF 驱动程序 {0}。
+WVER0270E.explanation=无法除去指定的文件。
+WVER0270E.useraction=确保可以除去目标文件。
+
+# 
+WVER0271E=WVER0271E: 无法识别的产品历史记录文件扩展名“{0}”。
+WVER0271E.explanation=装入历史记录信息时，此信息存储在具有特定扩展名的文件中。这些扩展名确定存储在每个文件中的信息类型。有效扩展名有：“.efixDriver”、“.efixApplied”、“.ptfDriver”和“.ptfApplied”。已尝试装入包含版本信息的文件，该文件的扩展名不是上述有效的扩展名。
+WVER0271E.useraction=这表明发生内部错误。
+
+# 
+WVER0272E=WVER0272E: 读 {0} 时发生异常
+WVER0272E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0272E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+label.standard.out=标准输出
+
+listing.nested.error={0}：{1}
+
+report.header=IBM WebSphere Application Server 历史记录报告
+report.header.update=更新 {0} 的 IBM WebSphere Application Server 历史记录报告
+report.header.component=组件 {0} 的 IBM WebSphere Application Server 历史记录报告
+report.header.update.component=更新 {0} 和组件 {1} 的 IBM WebSphere Application Server 历史记录报告
+
+warning.no.events=警告：没有可用的事件。
+warning.no.events.for.component=警告：没有可用于组件 {0} 的事件。
+warning.no.events.for.update=警告：没有可用于更新 {0} 的事件。
+warning.no.events.for.update.component=警告：没有可用于更新 {0} 和组件 {1} 的事件。
+
+info.report.on=报告的日期和时间：{0}
+
+report.footer=历史记录报告结束
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=安装
+label.product.dir=产品目录
+label.version.dir=版本目录
+label.version.dtd.dir=DTD 目录
+label.version.log.dir=日志目录
+label.version.backup.dir=备份目录
+label.version.tmp.dir=TMP 目录
+label.version.history.dir=历史记录目录
+label.version.history.file=历史记录文件
+
+info.event=安装事件
+info.component.event=组件安装事件
+
+label.efix.id=紧急修订程序标识
+label.ptf.id=PTF 标识
+label.unknown.id=未知标识
+
+label.action=操作
+
+label.start.time.stamp=开始时间
+label.end.time.stamp=结束时间
+
+label.log.file.name=日志文件名
+
+
+label.component.name=组件名称
+
+label.is.custom=定制
+label.primary.content=主要内容
+
+label.update.type=更新操作
+
+label.is.external=在外部
+label.root.property.file=根属性文件
+label.root.property.name=根属性名
+label.root.property.value=根属性值
+
+label.backup.file.name=备份文件名
+label.result=结果
+label.result.message=结果消息
+
+label.initial.version=初始版本
+label.initial.spec.version=初始规范
+label.initial.build.date=初始构建日期
+
+label.final.version=最终版本
+label.final.spec.version=最终版本规范
+label.final.build.date=最终构建日期
+
+
+label.install.action=安装
+label.uninstall.action=卸载
+label.selective.install.action=选择安装
+label.selective.uninstall.action=选择卸载
+label.unknown.action=*** 未知事件操作 ***
+
+label.update.add.tag=添加
+label.update.replace.tag=替换
+label.update.remove.tag=除去
+label.update.patch.tag=补丁
+label.update.composite.tag=组合
+label.update.unknown.tag=*** 未知更新类型 ***
+
+label.result.succeeded.tag=成功
+label.result.failed.tag=失败
+label.result.cancelled.tag=已取消
+label.result.unknown.tag=*** 未知事件结果 ***
+
+label.true=真
+label.false=假

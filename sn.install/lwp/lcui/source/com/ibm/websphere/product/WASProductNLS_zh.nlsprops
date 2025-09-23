@@ -1,0 +1,392 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WASProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0001E=WVER0001E: 无法确定版本目录。
+WVER0001E.explanation=版本目录是根据 Java 系统属性“was.version.dir”确定的，或确定为“<root>\\properties\\version”，其中 <root> java 系统属性“was.install.root”或“server.root”中的目录。按顺序检查这些属性并采用第一个可用的属性值。该错误表明未设置任何列出的 Java 系统属性，结果无法确定版本目录。
+WVER0001E.useraction=确保设置了某个列出的 Java 系统属性。必须通过进程配置或作为从命令行启动进程的一个选项设置 Java 系统属性。
+
+# 
+WVER0002E=WVER0002E: 无法识别的产品版本文件扩展名“{0}”。
+WVER0002E.explanation=装入产品版本信息时，此信息存储在具有特定扩展名的文件中。这些扩展名确定存储在每个文件中的信息类型。有效的扩展名有：“.websphere”、“.component”、“.product”、“.efix”和“.extension”。已尝试装入包含版本信息的文件，该文件的扩展名不是上述有效的扩展名。
+WVER0002E.useraction=这表明发生内部错误。
+
+# 
+WVER0003I=WVER0003I: 用法：versionInfo ( [ -format <text | html> ] [ -file <输出文件> ] [ -long ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=此参考消息描述 versionInfo 实用程序的选项。versionInfo 实用程序接受可选的关键字选项，一个指定输出格式，一个指定输出文件，一个能显示紧急修订程序，一个能显示紧急修订程序详细信息，一个能显示组件，还有一个用于显示用法信息。
+WVER0003I.useraction=不需要任何用户操作。根据请求显示用法信息消息。
+
+# 
+WVER0004E=WVER0004E: 将版本报告写到 {0} 时出错：{1}
+WVER0004E.explanation=将版本报告写到指定的文件时发生指定的错误。
+WVER0004E.useraction=纠正操作取决于所发生的具体错误。尤其要确保指定的文件可写并且有足够空间可用于该报告。
+
+# 
+WVER0005E=WVER0005E: 没有为“{0}”选项指定任何值
+WVER0005E.explanation=所列选项需要值。（使用“-help”或“-usage”可显示用法信息。）
+WVER0005E.useraction=为所列选项指定值。
+
+# 
+WVER0006E=WVER0006E: 值“{0}”的格式值无效。
+WVER0006E.explanation=有效格式值为“text”和“html”。指定的值不是这两个值中的一个。（使用“-help”或“-usage”可显示用法信息。）
+WVER0006E.useraction=将格式值更改为以下某个有效值：“text”或“html”。
+
+# 
+WVER0007E=WVER0007E: 选项“{0}”无效。
+WVER0007E.explanation=指定的选项无效。（使用“-help”或“-usage”可显示用法信息。）
+WVER0007E.useraction=更改为使用有效选项。
+
+# 
+WVER0008I=WVER0008I: “-format”选项指定输出格式，“text”或“html”。“-file”选项指定输出文件。文件名必须与“-file”选项一起提供。可使用“-long”选项来显示所有的紧急修订程序、PTF 和组件信息。可使用“-efixes”选项来显示紧急修订程序。可使用“-efixDetail”选项来显示紧急修订程序详细信息。可使用“-ptfs”选项来显示 PTF。可使用“-ptfDetail”选项来显示 PTF 详细信息。可使用“-components”选项来显示组件。可使用“-componentDetail”选项来显示组件详细信息。可使用“-help”选项来显示帮助文本。可使用“-usage”选项来显示此用法文本。
+WVER0008I.explanation=该消息描述 versionInfo 实用程序的有效选项。
+WVER0008I.useraction=不需要任何用户操作。根据请求显示用法信息消息。
+
+# 
+WVER0009E=WVER0009E: 将版本报告写到 {0} 时出错。无法显示错误文本，但类型为 {1}。检索错误文本时又发生一个错误，类型为 {2}。
+WVER0009E.explanation=将版本报告写到指定的文件时发生错误。检索错误文本时又发生一个错误。
+WVER0009E.useraction=没有可用的用户操作。请重试请求的操作，或与支持人员联系获取进一步的帮助。
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0010I.explanation=这是标准的版权声明。
+WVER0010I.useraction=不需要任何用户操作。这是一条参考消息。
+
+# 
+WVER0011I=WVER0011I: WebSphere Application Server R5.0
+WVER0011I.explanation=这是标准的产品描述声明。
+WVER0011I.useraction=不需要任何用户操作。这是一条参考消息。
+
+# 
+WVER0012I=WVER0012I: VersionInfo reporter V{0}，发行日期 {1}
+WVER0012I.explanation=这是标准的模块描述声明。
+WVER0012I.useraction=不需要任何用户操作。这是一条参考消息。
+
+# 
+WVER0013E=WVER0013E: 读 {0} 时发生异常
+WVER0013E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0013E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0014E=WVER0014E: 读 {0} 时发生异常
+WVER0014E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0014E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0015E=WVER0015E: 处理版本信息时发生异常
+WVER0015E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0015E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0016E=WVER0016E: 处理版本信息时发生异常
+WVER0016E.explanation=有关详细信息，请参阅嵌套异常详细信息。
+WVER0016E.useraction=有关详细信息，请参阅嵌套异常详细信息。
+
+# 
+WVER0017E=WVER0017E: 无法确定更新日志目录。
+WVER0017E.explanation=日志目录是根据 Java 系统属性“was.version.log.dir”确定的，或确定为版本目录的“log”目录。“was.version.log.dir”属性和版本目录都未设置。
+WVER0017E.useraction=确保设置了版本目录或设置了 Java 系统属性“was.version.log.dir”。
+
+# 
+WVER0018E=WVER0018E: 无法确定更新备份目录。
+WVER0018E.explanation=备份目录是根据 Java 系统属性“was.version.backup.dir”确定的，或确定为版本目录的“log”目录。“was.backup.dir”属性和版本目录都未设置。
+WVER0018E.useraction=确保设置了版本目录或设置了 Java 系统属性“was.version.backup.dir”。
+
+# 
+WVER0019E=WVER0019E: 无法确定产品版本信息的 DTD 目录。
+WVER0019E.explanation=DTD 目录是根据 Java 系统属性“was.version.dtd.dir”确定的，或确定为版本目录的“dtd”目录。“was.version.log.dir”属性和版本目录都未设置。
+WVER0019E.useraction=确保设置了版本目录或设置了 Java 系统属性“was.version.dtd.dir”。
+
+# 
+WVER0021E=WVER0021E: 解析紧急修订程序信息时发生可恢复错误。
+WVER0021E.explanation=在解析紧急修订程序信息时发生错误，后跟其列表。请参阅列出的错误获取其他信息。
+WVER0021E.useraction=请参阅列出的错误获取建议的用户操作。
+
+# 
+WVER0022E=WVER0022E: 读产品信息时发生错误。该错误是可恢复的；继续进行解析。在行号 {2} 和列号 {3} 处，具有系统标识 {0} 和公用标识 {1} 的实体中发生错误：{4}
+WVER0022E.explanation=如指定的错误所描述的，指定的实体结构无效。但此错误并非致命错误，解析继续。
+WVER0022E.useraction=应该查看指定的文件，如果可能的话改正此错误。
+
+# 
+WVER0023E=WVER0023E: 解析产品信息时发出警告。
+WVER0023E.explanation=在解析产品信息时发出警告，后跟其列表。请参阅列出的警告获取其他信息。
+WVER0023E.useraction=请参阅列出的警告获取建议的用户操作。
+
+# 
+WVER0024E=WVER0024E: 读产品信息时发出警告。在行号 {2} 和列号 {3} 处，具有系统标识 {0} 和公用标识 {1} 的实体中发出警告：{4}
+WVER0024E.explanation=如指定的警告所描述的，指定的实体结构无效。但此警告并非致命警告，解析继续。
+WVER0024E.useraction=应该查看指定的文件，如果可能的话改正此错误。
+
+# 
+WVER0029E=WVER0029E: 无法除去存储在文件 {2} 中的紧急修订程序 {0}。
+WVER0029E.explanation=无法除去指定的文件。
+WVER0029E.useraction=确保可以除去目标文件。
+
+# 
+WVER0030E=WVER0030E: 解析 PTF 信息时发生可恢复错误。
+WVER0030E.explanation=在解析 PTF 信息时发生错误，后跟其列表。请参阅列出的错误获取其他信息。
+WVER0030E.useraction=请参阅列出的错误获取建议的用户操作。
+
+# 
+WVER0031E=WVER0031E: 无法记录文件 {2} 中组件 {1} 的 PTF {0} 的应用程序。无法保存指定的文件。
+WVER0031E.explanation=无法保存指定的文件。
+WVER0031E.useraction=确保目标文件可写，并且有足够的空间可用于新文件。
+
+# 
+WVER0035E=WVER0035E: 无法除去存储在文件 {2} 中的 PTF {0}。
+WVER0035E.explanation=无法除去指定的文件。
+WVER0035E.useraction=确保可以除去目标文件。
+
+# 
+WVER0040E=WVER0040E: 指定的版本目录“{0}”不存在。
+WVER0040E.explanation=此版本目录不存在。
+WVER0040E.useraction=确保指定的目录是有效的产品版本目录。
+
+# 
+WVER0041E=WVER0041E: 指定的版本目录“{0}”不是目录。
+WVER0041E.explanation=此版本目录不是目录。
+WVER0041E.useraction=确保指定的目录是有效的产品版本目录。
+
+# 
+WVER0042E=WVER0042E: 指定的 DTD 目录“{0}”不存在。
+WVER0042E.explanation=此 DTD 目录不存在。
+WVER0042E.useraction=确保指定的目录是有效的产品 DTD 目录。
+
+# 
+WVER0043E=WVER0043E: 指定的 DTD 目录“{0}”不是目录。
+WVER0043E.explanation=此 DTD 目录不是目录。
+WVER0043E.useraction=确保指定的目录是有效的产品 DTD 目录。
+
+# 
+WVER0044E=WVER0044E: 无法创建指定的日志目录“{0}”
+WVER0044E.explanation=此 DTD 目录不是目录。
+WVER0044E.useraction=确保指定的目录是有效的产品 DTD 目录。
+
+# 
+WVER0045E=WVER0045E: 指定的日志目录“{0}”不是目录。
+WVER0045E.explanation=此 DTD 目录不是目录。
+WVER0045E.useraction=确保指定的目录是有效的产品 DTD 目录。
+
+# 
+WVER0046E=WVER0046E: 无法创建指定的备份目录“{0}”
+WVER0046E.explanation=此 DTD 目录不是目录。
+WVER0046E.useraction=确保指定的目录是有效的产品 DTD 目录。
+
+# 
+WVER0047E=WVER0047E: 指定的备份目录“{0}”不是目录。
+WVER0047E.explanation=此 DTD 目录不是目录。
+WVER0047E.useraction=确保指定的目录是有效的产品 DTD 目录。
+
+# 
+WVER0048E=WVER0048E: 指定的产品目录“{0}”不存在。
+WVER0048E.explanation=此产品目录不存在。
+WVER0048E.useraction=确保产品目录是有效的产品目录。
+
+# 
+WVER0049E=WVER0049E: 指定的产品目录“{0}”不是目录。
+WVER0049E.explanation=此产品目录不是目录。
+WVER0049E.useraction=确保指定的目录是有效的产品目录。
+
+
+
+
+label.standard.out=标准输出
+
+listing.nested.error={0}：{1}
+
+report.header=IBM WebSphere Application Server 产品安装状态报告
+report.footer=结束安装状态报告
+
+info.report.on=报告的日期和时间：{0}
+
+info.source=安装
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=产品目录
+label.version.dir=版本目录
+label.version.dtd.dir=DTD 目录
+label.version.log.dir=日志目录
+label.version.backup.dir=备份目录
+label.version.tmp.dir=TMP 目录
+
+info.platform=安装平台
+label.name=名称
+label.version=版本
+
+info.technology=技术列表
+label.installed=已安装
+
+info.product=已安装的产品
+# label.name=Name
+# label.version=Version
+label.id=标识
+label.build.level=构建级别
+label.build.date=构建日期
+
+info.component=已安装的组件
+label.component.name=组件名称
+label.spec.version=规范版本
+label.build.version=构建版本
+# label.build.date=Build Date
+
+info.update.on.component=已安装的组件更新
+#label.component.name=Component Name
+label.update.type=更新类型
+label.update.type.efix=紧急修订程序
+label.update.type.ptf=PTF
+
+label.efix.id=紧急修订程序标识
+label.ptf.id=PTF 标识
+
+label.update.effect=更新效果
+
+label.is.required=必需
+label.is.optional=可选
+
+label.is.external=在外部
+label.root.property.file=根属性文件
+label.root.property.name=根属性名
+label.root.property.value=根属性值
+
+label.is.custom=定制
+
+label.log.file.name=日志文件名
+label.backup.file.name=备份文件名
+label.install.date=安装日期
+
+label.initial.spec.version=初始规范版本
+label.initial.build.date=初始构建日期
+label.initial.build.version=初始构建版本
+
+label.final.spec.version=最终规范版本
+label.final.build.date=最终构建日期
+label.final.build.version=最终构建版本
+
+info.extension=已安装的扩展
+# label.name=Name
+# label.id=ID
+
+info.efix=已安装的紧急修订程序
+# label.id=ID
+label.short.description=描述
+label.is.trial=试用
+label.expiration.date=截至日期
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=说明
+
+label.apar=APAR
+label.apar.number=号
+label.apar.date=日期
+label.apar.short.description=描述
+label.apar.long.description=说明
+
+label.supported.platforms=支持的平台
+label.supported.products=支持的平台
+
+label.efix.efix.prereqs=必备紧急修订程序
+
+label.component.updates=组件更新
+label.component.requires=需要 {0} V{1}
+
+label.becomes=转换成规范 {0}，在 {2} 上构建 {1}
+
+label.custom.properties=定制属性
+
+info.ptf=已安装的 PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=包括的紧急修订程序
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=真
+label.false=假
+
+label.is.absent=缺少
+label.is.installed=在 {0} 上安装
+
+label.update.effect.add=添加
+label.update.effect.replace=替换
+label.update.effect.remove=除去
+label.update.effect.patch=补丁
+label.update.effect.unknown=未知
+
+label.is.negative=负
+label.is.positive=正
+
+label.is.required.tag=必需
+label.if.possible.tag=如果可能
+label.is.optional.tag=可选
+label.is.recommended.tag=建议
+
+label.is.custom.tag=定制更新
+label.is.standard.tag=标准更新

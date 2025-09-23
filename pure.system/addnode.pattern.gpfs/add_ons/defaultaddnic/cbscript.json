@@ -1,0 +1,14 @@
+[
+   {
+      "command": "sh \/tmp\/defaultaddnic\/addnic",
+      "description": "F\u00fcgt der virtuellen Maschine eine virtuelle Netzschnittstellenkarte hinzu, konfiguriert deren IP-Adressinformationen und aktiviert sie.",
+      "execmode": 0,
+      "filename": "defaultaddnic.zip",
+      "location": "\/tmp\/defaultaddnic",
+      "log": "\/tmp\/defaultaddnic",
+      "name": "Default add NIC",
+      "ostype": "linux\/unix",
+      "timeout": 120000,
+      "type": "ADDON_NIC"
+   }
+]

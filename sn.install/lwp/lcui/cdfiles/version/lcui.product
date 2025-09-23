@@ -1,0 +1,6 @@
+<!DOCTYPE product SYSTEM "product.dtd">
+<product name="Update Installer for IBM Connections">
+	<id>lcui</id>
+	<version>@BUILD_VERSION@</version>
+	<build-info date="@BUILD_DATE@" level="00000001"/>
+</product>

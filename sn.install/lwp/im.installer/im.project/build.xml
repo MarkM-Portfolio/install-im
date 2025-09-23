@@ -1,0 +1,292 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2006, 2018                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="im.installer/im.project" default="development" basedir=".">
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/> 
+	<import file="${env.WPLC_IMPORT}/copyright.xml"/>
+	<import file="${env.WPLC_IMPORT}/clean.xml"/>
+	<import file="${env.WPLC_IMPORT}/check.xml"/>
+	<import file="${env.WPLC_IMPORT}/nojavadoc.xml" />
+	
+	<property environment="env" />
+
+	<tstamp>
+		<format property="BUILD_DATE" pattern="MM/dd/yyyy" />
+		<format property="BUILD-DATE" pattern="yyyy-MM-dd" />
+		<format property="BUILD_LEVEL" pattern="yyyyMMdd_HHmm" />
+	</tstamp>
+	<property name="BUILD_RELEASE" value="${bld.version}_${BUILD_LEVEL}" />
+	
+	<property name="updateInstaller.work.dir" value="${dir.build}/updateInstallerWorkDir" />
+	<property name="migration.work.dir" value="${dir.build}/migrationWorkDir" />
+	<property name="theQualifier" value="0_${BUILD_LEVEL}" />
+	
+	<property name="version.work.dir" value="${dir.build}/version" />
+	<!--
+	<property name="ccmDomainTool" value="${env.LWP_HOME}/setup/HCL_Connections_Install/tools/ccmDomainTool_5.5.0.0.zip" />
+	
+	<property name="ccmDomainTool" value="${dir.build}/../im.assembler/setup/extensions/feature.config/common" />
+    -->
+	<macrodef name="manifestUpdate">
+		<attribute name="destfile" />
+		<attribute name="bundleversion" />
+		<attribute name="bundleclasspath" />
+		<sequential>
+			<jar update="true" destfile="@{destfile}">
+				<manifest>
+					<attribute name="Bundle-Version" value="@{bundleversion}"/>
+					<attribute name="Bundle-ClassPath" value="@{bundleclasspath}" />
+				</manifest>
+			</jar>
+		</sequential>
+	</macrodef>
+	
+	<target name="development" depends="collectProduct,updateResponseFiles,copyVersionToCCMDomainTool,buildIMOffering">
+	</target>
+	
+	<target name="production"  depends="collectProduct,updateResponseFiles,copyVersionToCCMDomainTool,buildIMOffering">
+	</target>
+	
+	<target name="collectProduct" >
+		<locateComponent component="lc.live.installer" property="lc.live.installer" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.assembler" property="ccmDomainToolDir" locatebuilddir="true" />
+		<locateComponent component="migration" property="migration" path="tmp" locatebuilddir="true" />
+		<locateComponent component="lcui" property="lcui" path="tmp/ui" locatebuilddir='true'/>
+		<locateComponent component="im.installer/im.assembler/cdfiles/feature.config/ccm" property="ccm.dir" locatebuilddir="false" />
+		<locateComponent component="im.installer/im.assembler/cdfiles/feature.config/iso-swid" property="iso.swid.dir" locatebuilddir="false" />
+		<locateComponent component="im.installer/im.assembler/cdfiles/feature.config/version" property="versiondir" locatebuilddir="false" />
+        <locateComponent component="FileNet.update" property="FileNet.update" path="setup/output" locatebuilddir="true" />
+		<!--
+		<locateComponent component="filenet.integration/ccmDomainTool" property="ccmDomainTool" locatebuilddir="true" />
+		<locateComponent component="filenet.integration/db.scripts" property="filenet.db.scripts" locatebuilddir="false" />
+		<locateComponent component="filenet.integration/FileNet.update" property="FileNet.update" locatebuilddir="true" />
+		<locateComponent component="filenet.integration/silent.install" property="filenet.silent.install" locatebuilddir="false" />
+		<locateComponent component="filenet.integration/waltz.tool" property="waltz.tool" locatebuilddir="false" />
+		-->
+		<locateComponent component="im.installer/im.utils/im.appendPropertyFile" property="im.appendPropertyFile" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.utils/im.createFile" property="im.createFile" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.utils/im.os400SetUmask" property="im.os400SetUmask" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.utils/im.utility" property="im.utility" locatebuilddir="true" />
+		
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.ccmPanel" property="ccmPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.cognosPanel" property="cognosPanel" locatebuilddir="true" />
+		<!--<locateComponent component="im.installer/im.panels/com.ibm.connections.filesViewerPanel" property="filesViewerPanel" locatebuilddir="true" />-->
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.contentStorePanel" property="contentStorePanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.databasePanel" property="databasePanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.webServerPanel" property="webServerPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.launcherPanel" property="launcherPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.licensePanel" property="licensePanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.notificationPanel" property="notificationPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.userMappingPanel" property="userMappingPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.panelUtil" property="panelUtil" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.topologyPanel" property="topologyPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.wasPanel" property="wasPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.resultPanel" property="resultPanel" locatebuilddir="true" />
+		<locateComponent component="im.installer/im.panels/com.ibm.connections.icecPanel" property="icecPanel" locatebuilddir="true" />
+		
+		<delete dir="${version.work.dir}" />
+		<mkdir dir="${version.work.dir}" />
+		
+		<copy todir="${version.work.dir}">
+			<fileset dir="${env.LWP_HOME}/sn.install/lwp/im.installer/im.assembler/cdfiles/feature.config/version" includes="*.product" />
+			<fileset dir="${env.LWP_HOME}/sn.install/lwp/im.installer/im.assembler/cdfiles/feature.config/version" includes="*.component" />
+		</copy>
+		
+		<mkdir dir="${version.work.dir}/dtd" />
+		<copy todir="${version.work.dir}/dtd">
+			<fileset dir="${env.LWP_HOME}/sn.install/lwp/im.installer/im.assembler/cdfiles/feature.config/version/dtd" includes="*.dtd" />
+			<fileset dir="${env.LWP_HOME}/sn.install/lwp/im.installer/im.assembler/cdfiles/feature.config/version/dtd" includes="*.xsd" />
+		</copy>
+		
+		<echo file="${dir.build}/version.properties">
+bldversion=${bld.version}
+bldlevel=${BUILD_LEVEL}
+bldrelease=${BUILD_RELEASE}
+qualifer=${theQualifier}
+date=${BUILD_DATE}
+		</echo>
+		<replace dir="${version.work.dir}" includes="*.product" token="@BLDVERSION@" value="${bld.version}" />
+		<replace dir="${version.work.dir}" includes="*.product" token="@BLDDATE@" value="${BUILD_DATE}" />
+		<replace dir="${version.work.dir}" includes="*.product" token="@BLDLEVEL@" value="${BUILD_LEVEL}" />
+
+		<replace dir="${version.work.dir}" includes="*.component" token="@BLDDATE@" value="${BUILD_DATE}" />
+		<replace dir="${version.work.dir}" includes="*.component" token="@BLDVERSION@" value="${bld.version}" />
+		
+		<echo file="${dir.build}/var.properties">
+lc.live.installer=${lc.live.installer}
+FileNet.update=${FileNet.update}
+ccmDomainToolDir=${ccmDomainToolDir}
+migration.work.dir=${migration.work.dir}
+migration=${migration}
+lcui=${lcui}
+#filenet.db.scripts=${filenet.db.scripts}
+#filenet.silent.install=${filenet.silent.install}
+ccm.dir=${ccm.dir}
+im.appendPropertyFile=${im.appendPropertyFile}
+im.createFile=${im.createFile}
+im.os400SetUmask=${im.os400SetUmask}
+im.utility=${im.utility}
+post.install.launcher.dir=${dir.build}/post-install-launcher
+iso.swid.dir=${iso.swid.dir}
+version.work.dir=${version.work.dir}
+		</echo>
+		<replace file="${dir.build}/var.properties">
+			<replacefilter token="\" value="/"/>
+		</replace>
+		
+		<copy todir="${dir.build}/plugins">
+			<fileset dir="${ccmPanel}/lib" includes="*.jar" />
+			<fileset dir="${cognosPanel}/lib" includes="*.jar" />
+			<!--<fileset dir="${filesViewerPanel}/lib" includes="*.jar" />-->
+			<fileset dir="${contentStorePanel}/lib" includes="*.jar" />
+			<fileset dir="${databasePanel}/lib" includes="*.jar" />
+			<fileset dir="${webServerPanel}/lib" includes="*.jar" />
+			<fileset dir="${launcherPanel}/lib" includes="*.jar" />
+			<fileset dir="${licensePanel}/lib" includes="*.jar" />
+			<fileset dir="${notificationPanel}/lib" includes="*.jar" />
+			<fileset dir="${userMappingPanel}/lib" includes="*.jar" />
+			<fileset dir="${panelUtil}/lib" includes="*.jar" />
+			<fileset dir="${topologyPanel}/lib" includes="*.jar" />
+			<fileset dir="${wasPanel}/lib" includes="*.jar" />
+			<fileset dir="${icecPanel}/lib" includes="*.jar" />
+			<globmapper from="*.jar" to="*_${BUILD_RELEASE}.jar" />
+		</copy>
+		<copy todir="${dir.build}/files">
+			<fileset dir="${resultPanel}/lib" includes="*.jar" />
+			<globmapper from="*.jar" to="*_${BUILD_RELEASE}.jar" />
+		</copy>
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.ccmPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar,lib/commons-codec-1.3.jar,lib/commons-httpclient-3.0.1.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.cognosPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<!--<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.filesViewerPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />-->
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.contentStorePanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.databasePanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar,lib/commons-codec-1.3.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.webServerPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.licensePanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.notificationPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<manifestUpdate
+				destfile="${dir.build}/plugins/com.ibm.connections.userMappingPanel_${BUILD_RELEASE}.jar"
+				bundleversion="${BUILD_RELEASE}"
+				bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.topologyPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.wasPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar,lib/commons-codec-1.3.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/plugins/com.ibm.connections.icecPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar,lib/commons-codec-1.3.jar, ." />
+		<manifestUpdate
+			destfile="${dir.build}/files/com.ibm.connections.resultPanel_${BUILD_RELEASE}.jar"
+			bundleversion="${BUILD_RELEASE}"
+			bundleclasspath="lib/com.ibm.connections.panelUtil.jar, ." />
+		<jar update="true" destfile="${dir.build}/plugins/com.ibm.connections.panelUtil_${BUILD_RELEASE}.jar">
+			<manifest>
+				<attribute name="Bundle-Version" value="${BUILD_RELEASE}"/>
+			</manifest>
+		</jar>
+		<jar update="true" destfile="${dir.build}/plugins/com.ibm.connections.launcherPanel_${BUILD_RELEASE}.jar">
+			<manifest>
+				<attribute name="Bundle-Version" value="${BUILD_RELEASE}"/>
+			</manifest>
+		</jar>
+		
+		<copy todir="${dir.build}/post-install-launcher">
+			<fileset dir="post-install-launcher" includes="*.bat,*.sh,*.py" />
+			<filterset>
+				<filter token="BUILD_RELEASE" value="${BUILD_RELEASE}"/>
+			</filterset>
+		</copy>
+		<fixcrlf srcdir="${dir.build}/post-install-launcher" includes="*.sh" eol="lf" eof="remove" />
+		<copy todir="${dir.build}/files">
+			<fileset dir="files" includes="*.xml" />
+		</copy>
+		
+		<!--
+		<locateComponent component="lcui" property="updateInstaller.zip" path="updateInstaller.zip" locatebuilddir="true" />
+		<delete dir="${updateInstaller.work.dir}" />
+		<mkdir dir="${updateInstaller.work.dir}" />
+		<unzip src="${updateInstaller.zip}" dest="${updateInstaller.work.dir}" />
+		-->
+		
+		<echo file="${dir.build}/migration.properties">
+migration=${migration}
+		</echo>
+		<!--
+		<delete dir="${migration.work.dir}" />
+		<mkdir dir="${migration.work.dir}" />
+		<unzip src="${migration}/migration.zip" dest="${migration.work.dir}" />
+		<copy todir="${migration.work.dir}/migration/xslt">
+			<fileset dir="${dir.build}/../im.assembler/setup/xslt" />
+		</copy>
+		-->
+	</target>
+	
+	<target name="updateResponseFiles">
+		<touch file="${dir.build}/version_qualifier.txt" mkdirs="true"/> 
+		<echo file="${dir.build}/version_qualifier.txt" append="false">${theQualifier}</echo>
+		<!--<replace dir="${dir.build}/../im.assembler/setup/extensions/feature.config/common/silentResponseFile" token="@QUALIFIER@" value="${theQualifier}" />-->
+	</target>
+	
+	<target name="buildIMOffering" >
+		<exec executable="${PD_HOME}/eclipsec.exe" resultproperty="resultCode" failonerror="false" outputproperty="outputProp">
+			<arg value="--launcher.ini" />
+			<arg value="${PD_HOME}/pdevbuild.ini" />
+			<arg value="-buildfile" />
+			<arg value="${basedir}/buildIMOffering.xml" />
+			<arg value="-Dqualifier=0_${BUILD_LEVEL}" />
+			<arg value="-Ddir.build=${dir.build}" />
+			<!--<arg value="-DLWP_HOME=${env.LWP_HOME}" />-->
+		</exec>
+		<echo message="resultCode: ${resultCode}" />
+		<echo message="outputProp: ${outputProp}" />
+	</target>
+	
+	<target name="copyVersionToCCMDomainTool" >
+		<!--
+		<echo file="${dir.build}/../im.assembler/setup/extensions/feature.config/common/ccmDomainTool/version_qualifier.txt" append="false">5.0.0.${theQualifier}</echo>
+		-->
+	</target>
+	
+	<property name="local.clean" value="local.clean"/>
+	<target name="local.clean">
+		<delete dir="${env.LWP_HOME}/setup/HCL_Connections_Install/HCLConnections" failonerror="false" />
+	</target>
+</project>

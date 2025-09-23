@@ -1,0 +1,31 @@
+[
+   {
+      "command": "\/tmp\/ic5searchConTool\/ic5searchConTool.sh",
+      "description": "This script pakage copys the search conversation binaries and sets the correct PATH to setupCmd.sh",
+      "execmode": 3,
+      "filename": "ic5searchConTool.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         }
+      ],
+      "location": "\/tmp\/ic5searchConTool",
+      "log": "\/tmp\/ic5searchConTool\/logs",
+      "name": "ic5searchConTool",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

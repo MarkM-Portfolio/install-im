@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2018                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="im.installer/im.project" default="development" description="HCL Connections installer" spec-version="${app.comp.version}" disabled="false">
+	<!--
+	<output-group name="dist">
+		<output type="dir" visibility="public" platform="all" location="${env.LWP_HOME}/setup/HCL_Connections_Install/HCLConnections" preferredInstallLocation="HCL_Connections_Install/HCLConnections" />
+	</output-group>
+	-->
+	
+	<dependency name="im.installer/im.panels/com.ibm.connections.ccmPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.cognosPanel" type="jar" version="${app.comp.version}" />
+	<!--<dependency name="im.installer/im.panels/com.ibm.connections.filesViewerPanel" type="jar" version="${app.comp.version}" />-->
+	<dependency name="im.installer/im.panels/com.ibm.connections.contentStorePanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.databasePanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.webServerPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.launcherPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.licensePanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.notificationPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.userMappingPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.panelUtil" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.topologyPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.wasPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.icecPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.panels/com.ibm.connections.resultPanel" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.utils/im.appendPropertyFile" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.utils/im.createFile" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.utils/im.os400SetUmask" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.utils/im.utility" type="jar" version="${app.comp.version}" />
+	<dependency name="im.installer/im.utils/im.wasDetection" type="jar" version="${app.comp.version}" />
+	<dependency name="FileNet.update" type="dir" version="1.0"/> 
+	<dependency name="migration" type="jar" version="1.0" />
+	<dependency name="lcui" type="jar" version="1.0" />
+	<!-- <dependency name="filenet.integration" type="app-component" version="6.0.0.0" /> -->
+</component>

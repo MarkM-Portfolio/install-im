@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Javítástelepítési hiba: Kivétel történt az itt tárolt eseménytörténet frissítése során: {0}
+WUPD0200E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0200E.useraction=További részleteket a kivételben találhat.
+
+WUPD0201E=WUPD0201E: Javítástelepítési hiba: Kivétel történt a(z) {0} naplófájl megnyitásakor.
+WUPD0201E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0201E.useraction=További részleteket a kivételben találhat.
+
+WUPD0211E=WUPD0211E: Javítástelepítési hiba: Kivétel történt a jelenlegi frissítésben található összetevők információinak beolvasásakor.
+WUPD0211E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0211E.useraction=További részleteket a kivételben találhat.
+
+WUPD0212E=WUPD0212E: Javítástelepítési hiba: A(z) {0} összetevő a frissítés részeként szerepel, de nem érhető el az összetevő frissítési képfájlja.
+WUPD0212E.explanation=Nem áll rendelkezésre a javításnak a megnevezett összetevő frissítésére használt része.
+WUPD0212E.useraction=Ez a probléma belső hibát jelez. További információkért forduljon az IBM szoftvertámogatáshoz.
+
+WUPD0214E=WUPD0214E: Javítástelepítési hiba: Kivétel történt {0} javítás rögzítésekor a(z) {1} JAR fájlból.
+WUPD0214E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0214E.useraction=További részleteket a kivételben találhat.
+
+WUPD0215E=WUPD0215E: Javítástelepítési hiba: A(z) {0} összetevő telepítése sikertelen.
+WUPD0215E.explanation=További részletekért lásd a telepítési naplót és az esemény-történetfájlt.
+WUPD0215E.useraction=További részletekért lásd a telepítési naplót és az esemény-történetfájlt.
+
+WUPD0216E=WUPD0216E: Javítástelepítési hiba: Kivétel történt {0} javítás megjelölésekor a(z) {1} összetevőre.
+WUPD0216E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0216E.useraction=További részleteket a kivételben találhat.
+
+
+WUPD0220E=WUPD0220E: Javításeltávolítási hiba: A(z) {0} javítás fájlja nem található meg.
+WUPD0220E.explanation=Olyan javítás eltávolítására történt kísérlet, amely nincs telepítve.
+WUPD0220E.useraction=Ez a probléma belső hibát jelez. Nem telepített javítást nem lehet eltávolítani.
+
+WUPD0221E=WUPD0221E: Javításeltávolítási hiba: A(z) {0} javítás fájlja nem olvasható.
+WUPD0221E.explanation=A megadott javítás fájlja nem olvasható. Az eltávolítási művelet leállt.
+WUPD0221E.useraction=Ellenőrizze, hogy a megadott javítást tartalmazó fájl érvényes-e.
+
+WUPD0222E=WUPD0222E: Javításeltávolítási hiba: Kivétel történt a(z) {0} javítás eltávolításakor.
+WUPD0222E.explanation=Kivétel történt a javítás eltávolításakor, ami miatt az eltávolítás meghiúsult. 
+WUPD0222E.useraction=További részleteket a kivételben találhat.
+
+WUPD0223E=WUPD0223E: Javításeltávolítási hiba: {1} összetevő frissítését {0} javításhoz nem lehetett eltávolítani.
+WUPD0223E.explanation=A megnevezett javítás részeként frissítették a megadott összetevőt. Az összetevő frissítését nem lehetett eltávolítani.
+WUPD0223E.useraction=Ez a probléma belső hibát jelez. További információkért forduljon az IBM szoftvertámogatáshoz.
+
+WUPD0224E=WUPD0224E: Javításeltávolítási hiba: Kivétel történt {0} javítás törlésekor {1} összetevőből.
+WUPD0224E.explanation=Kivétel történt a javítás eltávolításakor, ami miatt az eltávolítás meghiúsult.
+WUPD0224E.useraction=További részleteket a kivételben találhat.
+
+WUPD0232E=WUPD0232E: Javításfrissítési hiba: Kivétel történt {0} javítás, {1} összetevő, {2} JAR fájl, {3} bejegyzés tartalmának beolvasásakor.
+WUPD0232E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0232E.useraction=További részleteket a kivételben találhat.
+
+WUPD0233E=WUPD0233E: Javításfrissítési hiba: Kivétel történt {0} javítás, {1} összetevő tartalmának előzetes feldolgozásakor.
+WUPD0233E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0233E.useraction=További részleteket a kivételben találhat.
+
+WUPD0234E=WUPD0234E: Javításfrissítési hiba: Kivétel történt a(z) {1} összetevőre vonatkozó {0} javítás tartalmának feldolgozásakor.
+WUPD0234E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0234E.useraction=További részleteket a kivételben találhat.
+
+WUPD0235E=WUPD0235E: Javításfrissítési hiba: {0} javítás, {1} összetevő feldolgozása meghiúsult. A részletekért lásd a naplófájlt: {2}.
+WUPD0235E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0235E.useraction=A megadott naplófájlban nézze át a feldolgozási információkat.
+
+WUPD0236E=WUPD0236E: Javításfrissítési hiba: Kivétel történt a napló és biztonsági mentés könyvtárainak előkészítésekor.
+WUPD0236E.explanation=Kivétel történt a javítás telepítésekor, a telepítés meghiúsult.
+WUPD0236E.useraction=További részleteket a megadott kivételben talál.
+
+WUPD0237E=WUPD0237E: Javításeltávolítási hiba: Kivétel történt {0} javítás, {1} összetevő tartalmának előzetes feldolgozásakor.
+WUPD0237E.explanation=Kivétel történt a javítás eltávolításakor, ami miatt az eltávolítás meghiúsult.
+WUPD0237E.useraction=További részleteket a kivételben találhat.
+
+WUPD0238E=WUPD0238E: Javítás eltávolítási hiba: Kivétel történt a(z) {1} összetevőre vonatkozó {0} javítás tartalmának feldolgozásakor.
+WUPD0238E.explanation=Kivétel történt a javítás eltávolításakor, ami miatt az eltávolítás meghiúsult.
+WUPD0238E.useraction=További részleteket a kivételben találhat.
+
+WUPD0239E=WUPD0239E: Javításeltávolítási hiba: {0} javítás, {1} összetevő feldolgozása meghiúsult. A részletekért lásd a naplófájlt: {2}.
+WUPD0239E.explanation=Kivétel történt a javítás eltávolításakor, ami miatt az eltávolítás meghiúsult.
+WUPD0239E.useraction=További részleteket a naplófájlban találhat.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0}/{1}) {2} javítás telepítése.
+prefix.efix.revert   =({0}/{1}) {2} javítás telepítésének visszavonása.
+prefix.efix.uninstall=({0}/{1}) {2} javítás eltávolítása.
+
+#NOTAMSG
+prepare.update.install  =telepítés előkészítése
+prepare.update.uninstall=eltávolítás előkészítése
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  ={0}/{1} összetevő telepítése
+component.update.uninstall={0}/{1} összetevő eltávolítása
+
+#NOTAMSG
+complete.update.install  =telepítés befejezése
+complete.update.uninstall=eltávolítás befejezése
+
+#NOTAMSG
+result.cancelled.install=Telepítés megszakítva
+result.succeeded.install=Sikeres telepítés
+result.failed.install=Sikertelen telepítés
+
+result.cancelled.uninstall=Eltávolítás visszavonva
+result.succeeded.uninstall=Sikeres eltávolítás
+result.failed.uninstall=Sikertelen eltávolítás

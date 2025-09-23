@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent-input>
+<profile installLocation='/opt/HCL/Connections' id='HCL Connections'>
+<!-- Deployment Manager Administrative User id.  Note there is one entry for each HCL Connections application -->
+<data key='user.was.adminuser.id' value='wasadmin'/>
+<data key='user.activities.adminuser.id' value='wasadmin'/>
+<data key='user.blogs.adminuser.id' value='wasadmin'/>
+<data key='user.communities.adminuser.id' value='wasadmin'/>
+<data key='user.dogear.adminuser.id' value='wasadmin'/>
+<data key='user.profiles.adminuser.id' value='wasadmin'/>
+<data key='user.wikis.adminuser.id' value='wasadmin'/>
+<data key='user.files.adminuser.id' value='wasadmin'/>
+<data key='user.forums.adminuser.id' value='wasadmin'/>
+<data key='user.news.adminuser.id' value='wasadmin'/>
+<data key='user.search.adminuser.id' value='wasadmin'/>
+<data key='user.homepage.adminuser.id' value='wasadmin'/>
+<data key='user.mobile.adminuser.id' value='wasadmin'/>
+<data key='user.moderation.adminuser.id' value='wasadmin'/>
+<data key='user.metrics.adminuser.id' value='wasadmin'/>
+<data key='user.rte.adminuser.id' value='wasadmin'/>
+<data key='user.common.adminuser.id' value='wasadmin'/>
+<data key='user.widgetContainer.adminuser.id' value='wasadmin'/>
+<data key='user.pushNotification.adminuser.id' value='wasadmin'/>
+<data key='user.ic360.adminuser.id' value='wasadmin'/>
+
+<!-- The password should be encrpted. Refer the Information Center to get the encryption method -->
+<data key='user.was.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.news.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.activities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.blogs.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.communities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.dogear.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.profiles.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.wikis.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.files.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.forums.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.mobile.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.search.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.homepage.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.moderation.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.metrics.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.rte.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.common.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.widgetContainer.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.pushNotification.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.ic360.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+
+</profile>
+<uninstall modify='false'>
+<offering profile='HCL Connections' version='8.0.0.@QUALIFIER@' id='com.ibm.connections'/>
+</uninstall>
+<preference value='/opt/IBM/IMShared' name='com.ibm.cic.common.core.preferences.eclipseCache'/>
+<preference value='30' name='com.ibm.cic.common.core.preferences.connectTimeout'/>
+<preference value='30' name='com.ibm.cic.common.core.preferences.readTimeout'/>
+<preference value='0' name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount'/>
+<preference value='true' name='offering.service.repositories.areUsed'/>
+<preference value='false' name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode'/>
+<preference value='false' name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication'/>
+<preference value='true' name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts'/>
+<preference value='false' name='PassportAdvantageIsEnabled'/>
+<preference value='false' name='com.ibm.cic.common.core.preferences.searchForUpdates'/>
+</agent-input>

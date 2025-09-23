@@ -1,0 +1,1 @@
+d:\IBM\WP8\AppServer\bin\wsadmin.bat -host social-int.gccdemo.com -port 8879 -user gccadmin -password ghwpadm -lang jython -f wasJvmAdjust.py systemMemory=10000000k nodeName=socialNode01

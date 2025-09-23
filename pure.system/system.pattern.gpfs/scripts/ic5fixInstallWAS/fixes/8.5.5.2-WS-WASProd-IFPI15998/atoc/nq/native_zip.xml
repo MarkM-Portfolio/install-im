@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?atoc version='0.0.1'?>
+<cset q="zip" >
+<summary  count="1"  totalSize="4379408" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset id="8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations" >
+<summary  count="1"  totalSize="4379408" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="8.*" >
+<summary  count="1"  totalSize="4379408" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="4379408" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations"  v="8.5.0.20140618_1604"  p=""  ex="false"  sz="4379408" >
+<dig da="MD5"  dv="38e44f1370281b65dcb85115409b820b" />
+
+</af>
+</cset>
+</cset>
+</cset>
+</cset>

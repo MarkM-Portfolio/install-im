@@ -1,0 +1,50 @@
+## ***************************************************************** */
+##                                                                   */
+## IBM Confidential                                                  */
+##                                                                   */
+## OCO Source Materials                                              */
+##                                                                   */
+## (C) Copyright IBM Corp. 2008                                      */
+##                                                                   */
+## The source code for this program is not published or otherwise    */
+## divested of its trade secrets, irrespective of what has been      */
+## deposited with the U.S. Copyright Office.                         */
+##                                                                   */
+## ***************************************************************** */
+LOG ========== Starting to export data ===============
+CONDITION NULL
+CONDITION activities.installed true
+#CONDITION activities.version 2.0.0
+LOG ========== Activities =====================================
+LOAD_PROPERTY ${activities.home}/activities.properties
+FILE_COPY ${activities.objectstore.file.directory}>>migrationData/source/data/activities/content
+FILE_COPY ${activities.statistic.directory}>>migrationData/source/data/activities/statistic
+
+
+CONDITION NULL
+CONDITION blogs.installed true
+#CONDITION blogs.version 2.0.0
+LOG ========== Blogs ==========================================
+LOAD_PROPERTY ${blogs.home}/blogs.properties
+FILE_COPY ${blogs.UploadDirectory}>>migrationData/source/data/blogs/upload
+FILE_COPY ${blogs.was.home}/profiles/${blogs.profile.name}/installedApps/${blogs.cell.name}/Blogs.ear/blogs.war/WEB-INF/classes/roller.properties>>migrationData/source/data/blogs
+
+CONDITION NULL
+CONDITION communities.installed true
+#CONDITION communities.version 2.0.0
+LOG ========== Communities ====================================
+CONDITION_EXEC migration.export.version 1.0.2 FILE_COPY ${communities.was.home}/profiles/${communities.profile.name}/properties/communities.policy>>migrationData/source/data/communities/communities.policy
+
+CONDITION NULL
+CONDITION dogear.installed true
+#CONDITION dogear.version 2.0.0
+LOG ========== Dogear =========================================
+LOG Nothing. 
+
+CONDITION NULL
+CONDITION profiles.installed true
+#CONDITION profiles.version 2.0.0
+LOG ========== Profiles =======================================
+LOG Nothing. 
+LOG ========== Export data completed =================
+

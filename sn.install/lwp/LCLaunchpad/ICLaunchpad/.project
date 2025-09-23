@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ICLaunchpad</name>
+	<comment>version=3.1.1.201006022012;compatibleVersions=[123]\\.\\d*\\.\\d*\\.\\w*;launchpadUniqueId=8365;</comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.eec.launchpad.launchpadProjectNature</nature>
+	</natures>
+</projectDescription>

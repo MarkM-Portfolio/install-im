@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent-input>
+	<profile installLocation='/opt/HCL/Connections' id='HCL Connections'>
+		<!-- Deployment Manager Administrative User id.  Note there is one entry for each HCL Connections application -->
+		<data key='user.was.adminuser.id' value='wasadmin'/>
+		<data key='user.activities.adminuser.id' value='wasadmin'/>
+		<data key='user.blogs.adminuser.id' value='wasadmin'/>
+		<data key='user.communities.adminuser.id' value='wasadmin'/>
+		<data key='user.dogear.adminuser.id' value='wasadmin'/>
+		<data key='user.profiles.adminuser.id' value='wasadmin'/>
+		<data key='user.wikis.adminuser.id' value='wasadmin'/>
+		<data key='user.files.adminuser.id' value='wasadmin'/>
+		<data key='user.forums.adminuser.id' value='wasadmin'/>
+		<data key='user.news.adminuser.id' value='wasadmin'/>
+		<data key='user.search.adminuser.id' value='wasadmin'/>
+		<data key='user.homepage.adminuser.id' value='wasadmin'/>
+		<data key='user.mobile.adminuser.id' value='wasadmin'/>
+		<data key='user.moderation.adminuser.id' value='wasadmin'/>
+		<data key='user.metrics.adminuser.id' value='wasadmin'/>
+		<data key='user.rte.adminuser.id' value='wasadmin'/>
+		<data key='user.common.adminuser.id' value='wasadmin'/>
+		<data key='user.widgetContainer.adminuser.id' value='wasadmin'/>
+		<data key='user.pushNotification.adminuser.id' value='wasadmin'/>
+		<data key='user.ic360.adminuser.id' value='wasadmin'/>
+
+		<!-- The password should be encrpted. Refer the Information Center to get the encryption method -->
+		<data key='user.was.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.news.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.activities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.blogs.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.communities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.dogear.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.profiles.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.wikis.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.files.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.forums.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.mobile.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.search.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.homepage.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.moderation.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.metrics.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.rte.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.common.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.widgetContainer.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.pushNotification.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+		<data key='user.ic360.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+
+		<!-- Deployment type: -->
+		<!-- small:  All applications installed into the same cluster; -->
+		<!-- medium: Applications grouped into several clusters;       -->
+		<!-- large:  Each application installed in its own cluster.    -->
+		<data key='user.deployment.type' value='large'/>
+		
+		<!-- Activities application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.activities.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.activities.clusterName' value='ActivitiesCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.activities.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.activities.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, activities.node1.ServerName=server1;activities.node2.ServerName=server2;                 -->
+		<data key='user.activities.serverInfo' value='activities.sirloinNode01.ServerName=ActivitiesCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.activities.dbHostName' value='database.com'/>
+		<data key='user.activities.dbPort' value='50000'/>
+		<data key='user.activities.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.activities.dbName' value='OPNACT'/>
+		<data key='user.activities.dbUser' value='LCUSER'/>
+		<data key='user.activities.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.activities.dbType' value='DB2'/>
+		<data key='user.activities.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.activities.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.activities.selected' value='true'/>
+
+		<!-- Blogs application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.blogs.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.blogs.clusterName' value='BlogsCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.blogs.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.blogs.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, blogs.node1.ServerName=server1;blogs.node2.ServerName=server2;                 -->
+		<data key='user.blogs.serverInfo' value='blogs.sirloinNode01.ServerName=BlogsCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.blogs.dbHostName' value='database.com'/>
+		<data key='user.blogs.dbPort' value='50000'/>
+		<data key='user.blogs.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.blogs.dbName' value='BLOGS'/>
+		<data key='user.blogs.dbUser' value='LCUSER'/>
+		<data key='user.blogs.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.blogs.dbType' value='DB2'/>
+		<data key='user.blogs.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.blogs.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.blogs.selected' value='true'/>
+		
+		<!-- Communities application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.communities.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.communities.clusterName' value='CommunitiesCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.communities.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.communities.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, communities.node1.ServerName=server1;communities.node2.ServerName=server2;                 -->
+		<data key='user.communities.serverInfo' value='communities.sirloinNode01.ServerName=CommunitiesCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.communities.dbHostName' value='database.com'/>
+		<data key='user.communities.dbPort' value='50000'/>
+		<data key='user.communities.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.communities.dbName' value='SNCOMM'/>
+		<data key='user.communities.dbUser' value='LCUSER'/>
+		<data key='user.communities.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.communities.dbType' value='DB2'/>
+		<data key='user.communities.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.communities.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.communities.selected' value='true'/>
+
+		<!-- Bookmarks application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.dogear.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.dogear.clusterName' value='BookmarksCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.dogear.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.dogear.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, dogear.node1.ServerName=server1;dogear.node2.ServerName=server2;                 -->
+		<data key='user.dogear.serverInfo' value='dogear.sirloinNode01.ServerName=BookmarksCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.dogear.dbHostName' value='database.com'/>
+		<data key='user.dogear.dbPort' value='50000'/>
+		<data key='user.dogear.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.dogear.dbName' value='DOGEAR'/>
+		<data key='user.dogear.dbUser' value='LCUSER'/>
+		<data key='user.dogear.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.dogear.dbType' value='DB2'/>
+		<data key='user.dogear.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.dogear.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.dogear.selected' value='true'/>
+
+		<!-- Files application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.files.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.files.clusterName' value='FilesCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.files.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.files.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, files.node1.ServerName=server1;files.node2.ServerName=server2;                 -->
+		<data key='user.files.serverInfo' value='files.sirloinNode01.ServerName=FilesCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.files.dbHostName' value='database.com'/>
+		<data key='user.files.dbPort' value='50000'/>
+		<data key='user.files.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.files.dbName' value='FILES'/>
+		<data key='user.files.dbUser' value='LCUSER'/>
+		<data key='user.files.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.files.dbType' value='DB2'/>
+		<data key='user.files.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.files.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.files.selected' value='true'/>
+
+		<!-- Forums application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.forums.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.forums.clusterName' value='ForumsCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.forums.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.forums.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, forums.node1.ServerName=server1;forums.node2.ServerName=server2;                 -->
+		<data key='user.forums.serverInfo' value='forums.sirloinNode01.ServerName=ForumsCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.forums.dbHostName' value='database.com'/>
+		<data key='user.forums.dbPort' value='50000'/>
+		<data key='user.forums.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.forums.dbName' value='FORUM'/>
+		<data key='user.forums.dbUser' value='LCUSER'/>
+		<data key='user.forums.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.forums.dbType' value='DB2'/>
+		<data key='user.forums.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.forums.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.forums.selected' value='true'/>
+
+		<!-- Metrics application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.metrics.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.metrics.clusterName' value='MetricsCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.metrics.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.metrics.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, metrics.node1.ServerName=server1;metrics.node2.ServerName=server2;                 -->
+		<data key='user.metrics.serverInfo' value='metrics.sirloinNode01.ServerName=MetricsCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<!-- Note: Metrics on IBM i needs the DB2 on AIX -->
+		<data key='user.metrics.dbHostName' value='database.com'/>
+		<data key='user.metrics.dbPort' value='50000'/>
+		<data key='user.metrics.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.metrics.dbName' value='METRICS'/>
+		<data key='user.metrics.dbUser' value='LCUSER'/>
+		<data key='user.metrics.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.metrics.dbType' value='DB2'/>
+		<data key='user.metrics.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.metrics.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.metrics.selected' value='true'/>
+		
+		<!-- Mobile application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.mobile.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.mobile.clusterName' value='MobileCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.mobile.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.mobile.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, mobile.node1.ServerName=server1;mobile.node2.ServerName=server2;                 -->
+		<data key='user.mobile.serverInfo' value='mobile.sirloinNode01.ServerName=MobileCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.mobile.dbHostName' value='database.com'/>
+		<data key='user.mobile.dbPort' value='50000'/>
+		<data key='user.mobile.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.mobile.dbName' value='MOBILE'/>
+		<data key='user.mobile.dbUser' value='LCUSER'/>
+		<data key='user.mobile.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.mobile.dbType' value='DB2'/>
+		<data key='user.mobile.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.mobile.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.mobile.selected' value='true'/>
+		
+		<!-- Moderation application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.moderation.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.moderation.clusterName' value='ModerationCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.moderation.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.moderation.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, moderation.node1.ServerName=server1;moderation.node2.ServerName=server2;                 -->
+		<data key='user.moderation.serverInfo' value='moderation.sirloinNode01.ServerName=ModerationCluster_server1;'/>
+		<data key='user.moderation.selected' value='true'/>
+
+		<!-- Profiles application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.profiles.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.profiles.clusterName' value='ProfilesCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.profiles.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.profiles.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, profiles.node1.ServerName=server1;profiles.node2.ServerName=server2;                 -->
+		<data key='user.profiles.serverInfo' value='profiles.sirloinNode01.ServerName=ProfilesCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.profiles.dbHostName' value='database.com'/>
+		<data key='user.profiles.dbPort' value='50000'/>
+		<data key='user.profiles.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.profiles.dbName' value='PEOPLEDB'/>
+		<data key='user.profiles.dbUser' value='LCUSER'/>
+		<data key='user.profiles.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.profiles.dbType' value='DB2'/>
+		<data key='user.profiles.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.profiles.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.profiles.selected' value='true'/>
+		
+		<!-- Wikis application details. -->
+		<!-- Whether or not to use the existing cluster -->
+		<data key='user.wikis.clusterExist' value='false'/>
+		<!-- Cluster name -->
+		<data key='user.wikis.clusterName' value='WikisCluster'/>
+		<!-- Name of the first federated node(alphabetical oder) to deploy the application on. -->
+		<data key='user.wikis.firstNodeName' value='sirloinNode01'/>
+		<!-- Names of nodes other than the first federated node to deploy the application on, for example: node2,node3. If only one node, leave the value blank. -->
+		<data key='user.wikis.secondaryNodesNames' value=''/>
+		<!-- Specify node and server parameters.                                                                   -->
+		<!-- Set the server member name. The format is {applicationName}.{nodeName}.Servername=server{node count}. -->
+		<!-- If you have multiple nodes for the application, use semicolon to separate them.                       -->
+		<!-- For example, wikis.node1.ServerName=server1;wikis.node2.ServerName=server2;                 -->
+		<data key='user.wikis.serverInfo' value='wikis.sirloinNode01.ServerName=WikisCluster_server1;'/>
+		<!-- Specify database parameters. -->
+		<!-- Settings for different types of database are:                    -->
+		<!-- DB2:                                                             -->
+		<!--     dbType:DB2;                                                  -->
+		<!--     dataSourceTemplateName:DB2 Universal JDBC Driver DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 Universal JDBC Driver Provider  -->
+		<!-- DB2 on IBM i:                                                    -->
+		<!--     dbType:DB2_I;                                                -->
+		<!--     dataSourceTemplateName:DB2 UDB for iSeries (Toolbox) DataSource; -->
+		<!--     jdbcProviderTemplateName:DB2 UDB for iSeries (Toolbox)       -->
+		<!-- Oracle:                                                          -->
+		<!--     dbType:oracle;                                               -->
+		<!--     dataSourceTemplateName:Oracle JDBC Driver DataSource;        -->
+		<!--     jdbcProviderTemplateName:Oracle JDBC Driver                  -->
+		<!-- SQL Server:                                                      -->
+		<!--     dbType:sqlserver;                                            -->
+		<!--     dataSourceTemplateName:Microsoft SQL Server JDBC Driver - DataSource; -->
+		<!--     jdbcProviderTemplateName:Microsoft SQL Server JDBC Driver    -->
+		<data key='user.wikis.dbHostName' value='database.com'/>
+		<data key='user.wikis.dbPort' value='50000'/>
+		<data key='user.wikis.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.wikis.dbName' value='WIKIS'/>
+		<data key='user.wikis.dbUser' value='LCUSER'/>
+		<data key='user.wikis.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.wikis.dbType' value='DB2'/>
+		<data key='user.wikis.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.wikis.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.wikis.selected' value='true'/>
+
+		<data key='user.rte.clusterExist' value='false'/>
+		<data key='user.rte.clusterName' value='RTECluster'/>
+		<data key='user.rte.firstNodeName' value='sirloinNode01'/>
+		<data key='user.rte.secondaryNodesNames' value=''/>
+		<data key='user.rte.serverInfo' value='rte.sirloinNode01.ServerName=RTECluster_server1;'/>
+		
+		<data key='user.common.clusterExist' value='false'/>
+		<data key='user.common.clusterName' value='CommonCluster'/>
+		<data key='user.common.firstNodeName' value='sirloinNode01'/>
+		<data key='user.common.secondaryNodesNames' value=''/>
+		<data key='user.common.serverInfo' value='common.sirloinNode01.ServerName=CommonCluster_server1;'/>
+		
+		<data key='user.widgetContainer.clusterExist' value='false'/>
+		<data key='user.widgetContainer.clusterName' value='WidgetContainerCluster'/>
+		<data key='user.widgetContainer.firstNodeName' value='sirloinNode01'/>
+		<data key='user.widgetContainer.secondaryNodesNames' value=''/>
+		<data key='user.widgetContainer.serverInfo' value='widgetContainer.sirloinNode01.ServerName=WidgetContainerCluster_server1;'/>
+		
+		<data key='user.pushNotification.clusterExist' value='false'/>
+		<data key='user.pushNotification.clusterName' value='PushNotificationCluster'/>
+		<data key='user.pushNotification.firstNodeName' value='sirloinNode01'/>
+		<data key='user.pushNotification.secondaryNodesNames' value=''/>
+		<data key='user.pushNotification.serverInfo' value='pushNotification.sirloinNode01.ServerName=PushNotificationCluster_server1;'/>
+		
+		<data key='user.ic360.clusterExist' value='false'/>
+		<data key='user.ic360.clusterName' value='IC360Cluster'/>
+		<data key='user.ic360.firstNodeName' value='sirloinNode01'/>
+		<data key='user.ic360.secondaryNodesNames' value=''/>
+		<data key='user.ic360.serverInfo' value='ic360.sirloinNode01.ServerName=IC360Cluster_server1;'/>
+		
+		<data key='user.pushNotification.dbHostName' value='database.com'/>
+		<data key='user.pushNotification.dbPort' value='50000'/>
+		<data key='user.pushNotification.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.pushNotification.dbName' value='PNS'/>
+		<data key='user.pushNotification.dbUser' value='LCUSER'/>
+		<data key='user.pushNotification.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.pushNotification.dbType' value='DB2'/>
+		<data key='user.pushNotification.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.pushNotification.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.pushNotification.selected' value='true'/>
+		
+		<data key='user.icec.dbHostName' value='database.com'/>
+		<data key='user.icec.dbPort' value='50000'/>
+		<data key='user.icec.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.icec.dbName' value='XCC'/>
+		<data key='user.icec.dbUser' value='LCUSER'/>
+		<data key='user.icec.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.icec.dbType' value='DB2'/>
+		<data key='user.icec.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.icec.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.icec.selected' value='true'/>
+		
+		<data key='user.ic360.dbHostName' value='database.com'/>
+		<data key='user.ic360.dbPort' value='50000'/>
+		<data key='user.ic360.jdbcLibraryPath' value='/opt/jdbc'/>
+		<data key='user.ic360.dbName' value='ESSAPPS'/>
+		<data key='user.ic360.dbUser' value='LCUSER'/>
+		<data key='user.ic360.dbUserPassword' value='M5+qHAVIRySVYctQNKX8rg=='/>
+		<data key='user.ic360.dbType' value='DB2'/>
+		<data key='user.ic360.dataSourceTemplateName' value='DB2 Universal JDBC Driver DataSource'/>
+		<data key='user.ic360.jdbcProviderTemplateName' value='DB2 Universal JDBC Driver Provider'/>
+		<data key='user.ic360.selected' value='true'/>
+
+
+	</profile>
+	<install modify='true'>
+		<offering profile='HCL Connections' version='8.0.0.@QUALIFIER@' features='activities' id='com.ibm.connections'/>
+	</install>
+	<preference value='/opt/IBM/IMShared' name='com.ibm.cic.common.core.preferences.eclipseCache'/>
+	<preference value='30' name='com.ibm.cic.common.core.preferences.connectTimeout'/>
+	<preference value='30' name='com.ibm.cic.common.core.preferences.readTimeout'/>
+	<preference value='0' name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount'/>
+	<preference value='true' name='offering.service.repositories.areUsed'/>
+	<preference value='false' name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode'/>
+	<preference value='false' name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication'/>
+	<preference value='true' name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts'/>
+	<preference value='false' name='PassportAdvantageIsEnabled'/>
+	<preference value='false' name='com.ibm.cic.common.core.preferences.searchForUpdates'/>
+</agent-input>

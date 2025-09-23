@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agent-input>
+        <profile installLocation='/opt/IBM/Connections' id='IBM Connections'>
+                <!-- Deployment Manager Administrative User id.  Note there is one entry for each IBM Connections application -->
+                <data key='user.was.adminuser.id' value='[RSFuserWasAdminuserId]'/>
+                <data key='user.ccm.adminuser.id' value='[RSFuserWasAdminuserId]'/>
+
+                <!-- The password should be encrpted. Refer the Information Center to get the encryption method -->
+                <data key='user.was.adminuser.password' value='[RSFuserWasAdminuserPassword]'/>
+                <data key='user.ccm.adminuser.password' value='[RSFuserWasAdminuserPassword]'/>
+        </profile>
+        <uninstall modify='true'>
+                <!-- The applications which you want to remove -->
+                <offering profile='IBM Connections' version='[RSFcomIbmLotusConnectionsVersion]' features='ccm' id='com.ibm.lotus.connections'/>
+        </uninstall>
+        <preference value='/opt/IBM/InstallationManager_AppServer_Shared' name='com.ibm.cic.common.core.preferences.eclipseCache'/>
+        <preference value='30' name='com.ibm.cic.common.core.preferences.connectTimeout'/>
+        <preference value='30' name='com.ibm.cic.common.core.preferences.readTimeout'/>
+        <preference value='0' name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount'/>
+        <preference value='true' name='offering.service.repositories.areUsed'/>
+        <preference value='false' name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode'/>
+        <preference value='false' name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication'/>
+        <preference value='true' name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts'/>
+        <preference value='false' name='PassportAdvantageIsEnabled'/>
+        <preference value='false' name='com.ibm.cic.common.core.preferences.searchForUpdates'/>
+</agent-input>

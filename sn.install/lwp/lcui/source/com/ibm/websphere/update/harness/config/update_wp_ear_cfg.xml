@@ -1,0 +1,181 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- <property name="ear.work.dir" value="${WpsInstallLocation}/config/tmp"/>    -->
+
+<target name="action-determine-ear-work-dir">
+  <condition property="ear.work.dir" value="c:/eartmp">
+      <os family="windows"/>
+  </condition>
+
+  <property name="ear.work.dir" value="${java.io.tmpdir}"/>
+
+   
+</target>
+
+         
+<target name="action-check-update-ear-parameters">
+ <fail message="'iFixEarValue' not specified (value='${iFixEarValue}')" unless="iFixEarValue"/>
+ <fail message="'iFixEarName' not specified (value='${iFixEarName}')" unless="iFixEarName"/>
+ <fail message="'iFixEarLocation' not specified (value='${iFixEarLocation}')" unless="iFixEarLocation"/>
+ <fail message="'iFixEarAppName' not specified (value='${iFixEarAppName}')" unless="iFixEarAppName"/>
+ <fail message="'serviceEarJarName' not specified (value='${serviceEarJarName}')" unless="serviceEarJarName"/>
+</target>
+
+<target name="action-check-unconfig-ear-parameters">
+ <fail message="'iFixEarValue' not specified (value='${iFixEarValue}')" unless="iFixEarValue"/>
+ <fail message="'iFixEarName' not specified (value='${iFixEarName}')" unless="iFixEarName"/>
+ <fail message="'iFixEarLocation' not specified (value='${iFixEarLocation}')" unless="iFixEarLocation"/>
+
+</target>
+
+
+
+<target name="action-check-config-update-ear-parameter-values">
+    
+    <condition property="serviceEarJarNamePresent">
+        <available file="${serviceEarJarName}"/>
+    </condition>
+
+    <condition property="iFixEarFilePresent">
+        <available file="${iFixEarLocation}/${iFixEarName}"/>
+    </condition>
+
+   <fail message="'serviceEarJarName' does not point to valid location (value='${serviceEarJarName}')" unless="serviceEarJarNamePresent"/>
+
+   <fail message="'Ear location and Ear Name do not point to valid location'  (value='${iFixEarLocation}/${iFixEarName}')" unless="iFixEarFilePresent"/>
+
+</target>
+
+<target name="action-check-unconfig-ear-parameter-values">
+    <condition property="iFixEarFilePresent">
+        <available file="${iFixEarLocation}/${iFixEarName}"/>
+    </condition>
+    <fail message="'Ear location and Ear Name do not point to valid location'  (value='${iFixEarLocation}/${iFixEarName}')" unless="iFixEarFilePresent"/>
+</target>
+
+
+<target name="process-ear-changes" depends="action-determine-ear-work-dir" >
+  <antcall target="action-check-update-ear-parameters" />
+  <antcall target="action-check-config-update-ear-parameter-values" />
+
+  <!-- backup ear on file system -->
+  <if>
+    <condition>
+        <available file="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_fs" type="file"/>
+    </condition>
+  <then>
+    <echo message="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_fs already exists" />
+  </then>
+  <else>
+    <copy file="${iFixEarLocation}/${iFixEarName}" tofile="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_fs" overwrite="false"/>
+  </else>
+  </if>
+
+
+  <!-- backup ear on file system -->
+  <!-- <copy file="${iFixEarLocation}/${iFixEarName}" tofile="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_fs" overwrite="false"/>    -->
+
+
+  <antcall target="action-clean-ear-temp-directories" />  
+
+  <antcall target="action-extract-the-ear" />
+
+  <!-- backup ear exported (EXTRACT) with wsadmin  -->
+  <if>
+    <condition>
+        <available file="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_exported" type="file"/>
+    </condition>
+  <then>
+    <echo message="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_exported already exists" />
+  </then>
+  <else>
+    <copy file="${ear.work.dir}/${iFixEarValue}_${iFixEarName}/${iFixEarName}" tofile="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_exported" overwrite="false"/>
+  </else>
+  </if>
+
+  <!-- <copy file="${ear.work.dir}/${iFixEarValue}_${iFixEarName}/${iFixEarName}" tofile="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_exported" overwrite="false"/>   -->
+
+  <antcall target="action-expand-the-ear" />
+    
+  <antcall target="action-unjar-ear-changes-and-copy" />
+  <antcall target="action-collapse-the-ear" />
+  <antcall target="action-copy-updated-ear" />
+  <antcall target="action-clean-ear-temp-directories" />    
+
+  <antcall target="action-deploy-ear-${iFixEarValue}" />
+ 
+</target>
+
+
+<target name="process-unconfig-ear-changes">
+  <antcall target="action-check-unconfig-ear-parameters" />
+  <antcall target="action-check-unconfig-ear-parameter-values" />
+  <copy file="${WpsInstallLocation}/config/fixes/backup/${iFixEarValue}/${iFixEarName}_exported" tofile="${iFixEarLocation}/${iFixEarName}" overwrite="true"/>
+</target>
+
+
+<target name="action-extract-the-ear"   >
+     <wpwsadmin action="EXTRACT" appName="${iFixEarAppName}" earFile="${ear.work.dir}/${iFixEarValue}_${iFixEarName}/${iFixEarName}"/>  
+</target>
+
+<target name="action-expand-the-ear" >
+    <echo message="action-expand-the-ear"/>
+    <exec executable="${WasHome}/bin/EARExpander${was.platform.script.ext}" dir="${WasHome}/bin" failonerror="yes"> 
+    <arg value="-ear"/>
+    <arg value="${ear.work.dir}/${iFixEarValue}_${iFixEarName}/${iFixEarName}"/>
+    <arg value="-operationDir" />
+    <arg value="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Expanded" />
+    <arg value="-operation"/>
+    <arg value="expand"/>
+    <arg value="-expansionFlags"/>
+    <arg value="war"/>
+  </exec>
+</target>
+
+
+<target name="action-unjar-ear-changes-and-copy" >
+    <unjar src="${serviceEarJarName}"  dest="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Changes" /> 
+    <copy todir="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Expanded"  overwrite="true" >
+         <fileset dir="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Changes"/>
+    </copy>
+</target>
+
+
+
+<target name="action-collapse-the-ear" >
+   <echo message="action-collapse-the-ear"/>
+   <exec executable="${WasHome}/bin/EARExpander${was.platform.script.ext}" dir="${WasHome}/bin" failonerror="yes"> 
+   <arg value="-ear"/>
+   <arg value="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Collapsed/${iFixEarName}_updated.ear"/>
+   <arg value="-operationDir" />
+   <arg value="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Expanded" />
+   <arg value="-operation"/>
+   <arg value="collapse"/>
+  </exec>
+</target>
+
+ 
+<target name="action-copy-updated-ear" >
+  <copy file="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Collapsed/${iFixEarName}_updated.ear" tofile="${iFixEarLocation}/${iFixEarName}" overwrite="true"/>
+</target>
+
+<target name="action-clean-ear-temp-directories" >
+  <delete dir="${ear.work.dir}/${iFixEarValue}_${iFixEarName}" />
+  <delete dir="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Collapsed" />
+  <delete dir="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Changes" />
+  <delete dir="${ear.work.dir}/${iFixEarValue}_${iFixEarName}_Expanded" />
+</target>
+
+
+
+

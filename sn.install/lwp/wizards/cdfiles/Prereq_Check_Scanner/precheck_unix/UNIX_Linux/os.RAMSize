@@ -1,0 +1,71 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+type=`uname`
+
+if [ "$type" = "AIX" ]; then
+line=`vmstat | grep mem= | awk '{print $4}' | cut -d '=' -f2`
+len=`echo $line | wc -c`
+len1=`expr $len - 3`
+real=`echo $line | cut -c 1-$len1`
+real1=`echo $real / 1024 | bc -l | cut -c 1-3` 
+check=`echo $real1|cut -c 1`
+if [ "$check" = "." ]; then
+real2=0$real1
+else
+real2=$real1
+fi
+echo $real2"GB"
+
+exit
+fi 
+
+
+if [ "$type" = "SunOS" ]; then
+real=`/usr/sbin/prtconf | grep "Memory" | awk '{print $3}'`
+real1=`echo $real / 1024 | bc -l | cut -c 1-3`
+check=`echo $real1|cut -c 1`
+if [ "$check" = "." ]; then
+real2=0$real1
+else
+real2=$real1
+fi
+echo $real2"GB"
+
+exit
+fi
+
+
+if [ "$type" = "HP-UX" ]; then
+if [ -f /proc/meminfo ]; then
+        real=`machinfo | grep -i memory | awk '{print $2}'`
+else
+        real=`swapinfo -m| grep memory | awk '{print $2}'`
+fi
+real1=`echo $real / 1024 | bc -l | cut -c 1-3`
+check=`echo $real1|cut -c 1`
+if [ "$check" = "." ]; then
+real2=0$real1
+else
+real2=$real1
+fi
+echo $real2"GB"
+exit
+fi
+
+
+mem=`cat /proc/meminfo | grep MemTotal | awk {'print $2'}`
+real1=`echo "$mem / 1048576" | bc -l | cut -c 1-3`
+check=`echo $real1|cut -c 1`
+if [ "$check" = "." ]; then
+real2=0$real1
+else
+real2=$real1
+fi
+echo $real2"GB"

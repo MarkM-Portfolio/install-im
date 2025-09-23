@@ -1,0 +1,90 @@
+[
+   {
+      "command": "\/tmp\/ic5customizeTDI\/ic5customizeTDI.sh",
+      "description": "This script package configures TDI 7.1.1 FP3 with the GIS ( ldap.gish.de ) credentials and installs a crontab for sync",
+      "execmode": 3,
+      "filename": "ic5customizeTDI.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "LDAP_SRV",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "BIND_USER",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "BIND_USER_PW",
+            "scriptvalue": "",
+            "type": "password"
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "false",
+            "scriptkey": "ENABLE_SSL_LDAP",
+            "scriptvalue": "false",
+            "type": "boolean"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "389",
+            "scriptkey": "LDAP_PORT",
+            "scriptvalue": "389"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "LDAP_Search_Base",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptdefaultvalue": "",
+            "scriptkey": "LDAP_Search_Filter",
+            "scriptvalue": ""
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "LC_USER_PW",
+            "scriptvalue": "",
+            "type": "password"
+         }
+      ],
+      "location": "\/tmp\/ic5customizeTDI",
+      "log": "\/tmp\/ic5customizeTDI\/logs",
+      "name": "ic5customizeTDI",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

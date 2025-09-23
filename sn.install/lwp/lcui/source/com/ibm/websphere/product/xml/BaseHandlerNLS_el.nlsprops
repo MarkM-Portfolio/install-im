@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Παρουσιάστηκε εξαίρεση κατά τη φόρτωση του εγγράφου {1}, με τη χρήση του καταλόγου DTD {0}.
+WVER0101E.explanation=Η εξαίρεση που παρουσιάστηκε είχε ως αποτέλεσμα την αποτυχία φόρτωσης του καθορισμένου εγγράφου.
+WVER0101E.useraction=Οι πιθανές ενέργειες χρήστη εξαρτώνται από την εξαίρεση που παρουσιάστηκε.  Ειδικότερα, βεβαιωθείτε ότι το καθορισμένο αρχείο είναι διαθέσιμο και έχει κατάλληλη μορφή.  Επικοινωνήστε με την υπηρεσία υποστήριξης για περισσότερες πληροφορίες.
+
+# 
+WVER0102E=WVER0102E: Παρουσιάστηκε εξαίρεση κατά τη φόρτωση του εγγράφου {1}, με τη χρήση του καταλόγου DTD {0}.  Ορίστηκε ταυτότητα συστήματος {2} και δημόσια ταυτότητα {3}.  Το σφάλμα παρουσιάστηκε στη γραμμή {4} στήλη {5}.
+WVER0102E.explanation=Η εξαίρεση που παρουσιάστηκε είχε ως αποτέλεσμα την αποτυχία φόρτωσης του καθορισμένου εγγράφου.
+WVER0102E.useraction=Οι πιθανές ενέργειες χρήστη εξαρτώνται από την εξαίρεση που παρουσιάστηκε.  Ειδικότερα, βεβαιωθείτε ότι το καθορισμένο αρχείο είναι διαθέσιμο και έχει κατάλληλη μορφή.  Επικοινωνήστε με την υπηρεσία υποστήριξης για περισσότερες πληροφορίες.
+
+# 
+WVER0104E=WVER0104E: Παρουσιάστηκε εξαίρεση κατά τη δημιουργία κύριου στοιχείου εγγράφου είδους {0}
+WVER0104E.explanation=Η εξαίρεση παρουσιάστηκε κατά τη δημιουργία ενός κύριου στοιχείου εγγράφου.
+WVER0104E.useraction=Οι πιθανές ενέργειες χρήστη εξαρτώνται από την εξαίρεση που παρουσιάστηκε.  Συνήθως, οι ρυθμίσεις της ρουτίνας ανάλυσης XML είναι εσφαλμένες.  Βεβαιωθείτε ότι οι ιδιότητες συστήματος java δεν δημιουργούν εσφαλμένες ρυθμίσεις στη ρουτίνα ανάλυσης.  Επικοινωνήστε με την υπηρεσία υποστήριξης για περισσότερες πληροφορίες.
+
+# 
+WVER0105E=WVER0105E: Παρουσιάστηκε εξαίρεση κατά τη δημιουργία αντικειμένου μοντέλου XML (είδους {0})
+WVER0105E.explanation=Η εξαίρεση παρουσιάστηκε κατά την απόπειρα δημιουργίας αντικειμένου μοντέλου XML.
+WVER0105E.useraction=Οι πιθανές ενέργειες χρήστη εξαρτώνται από την εξαίρεση που παρουσιάστηκε.  Συνήθως, το είδος για το οποίο παρουσιάστηκε εξαίρεση δεν είναι διαθέσιμο στην ορισμένη διαδρομή κλάσεων.  Επικοινωνήστε με την υπηρεσία υποστήριξης για περισσότερες πληροφορίες.
+
+# 
+WVER0106E=WVER0106E: Έγινε προσπάθεια τοποθέτησης ενός στοιχείου σε αντικείμενο απλού είδους {0}
+WVER0106E.explanation=Εσωτερικό σφάλμα.
+WVER0106E.useraction=Επικοινωνήστε με την υπηρεσία υποστήριξης για περισσότερες πληροφορίες.
+
+# 
+WVER0107E=WVER0107E: Παρουσιάστηκε εξαίρεση κατά την προσπάθεια εγγραφής πληροφοριών έκδοσης στο αρχείο {0}
+WVER0107E.explanation=Η εξαίρεση παρουσιάστηκε κατά την απόπειρα εγγραφής πληροφοριών στο καθορισμένο αρχείο.
+WVER0107E.useraction=Οι πιθανές ενέργειες χρήστη εξαρτώνται από την εξαίρεση που παρουσιάστηκε.  Ειδικότερα, βεβαιωθείτε ότι στο καθορισμένο αρχείο υπάρχει δυνατότητα εγγραφής και ότι σε αυτό υπάρχει επαρκής διαθέσιμος χώρος.
+
+# 
+WVER0108E=WVER0108E: Παρουσιάστηκε εξαίρεση κατά την ανάλυση της οντότητας με δημόσια ταυτότητα {0}, ταυτότητα συστήματος {1} και όνομα αντιστοιχισμένου αρχείου {2}
+WVER0108E.explanation=Η εξαίρεση παρουσιάστηκε κατά την ανάλυση πληροφοριών DTD κατά την ανάλυση πληροφοριών του προϊόντος.  Δεν ήταν δυνατή η ανάλυση των πληροφοριών DTD που αναφέρονται.
+WVER0108E.useraction=Οι πιθανές ενέργειες χρήστη εξαρτώνται από την εξαίρεση που παρουσιάστηκε.
+
+# 
+WVER0201E=WVER0201E: Δεν έχει οριστεί το γνώρισμα ''{0}'' στο στοιχείο με είδος ''{1}''
+WVER0201E.explanation=Το συγκεκριμένο γνώρισμα δεν αποτελεί έγκυρο γνώρισμα για το καθορισμένο είδος στοιχείου.
+WVER0201E.useraction=Ενημερώστε το αρχείο XML διορθώνοντας τις πληροφορίες του γνωρίσματος.
+
+#
+WVER0202E=WVER0202E: Εσφαλμένη δομή στοιχείων: Περισσότερα κλεισίματα στοιχείων.
+WVER0202E.explanation=Ένα αρχείο XML που περιέχει πληροφορίες για το προϊόν διαθέτει εσφαλμένη δομή στοιχείων.
+WVER0202E.useraction=Ενημερώστε το αρχείο XML διορθώνοντας τη δομή των στοιχείων.
+
+#
+WVER0203E=WVER0203E: Εσφαλμένη δομή στοιχείων: Λιγότερα κλεισίματα στοιχείων.
+WVER0203E.explanation=Ένα αρχείο XML που περιέχει πληροφορίες για το προϊόν διαθέτει εσφαλμένη δομή στοιχείων.
+WVER0203E.useraction=Ενημερώστε το αρχείο XML διορθώνοντας τη δομή των στοιχείων.
+
+#
+WVER0204E=WVER0204E: Το στοιχείο ''{0}'' δεν είναι έγκυρο ως κύριο στοιχείο
+WVER0204E.explanation=Ένα αρχείο XML που περιέχει πληροφορίες για το προϊόν διαθέτει εσφαλμένη δομή στοιχείων.
+WVER0204E.useraction=Ενημερώστε το αρχείο XML διορθώνοντας τη δομή των στοιχείων.
+
+#
+WVER0205E=WVER0205E: Το στοιχείο ''{0}'' δεν είναι έγκυρο όταν περιέχεται στο στοιχείο ''{1}''
+WVER0205E.explanation=Ένα αρχείο XML που περιέχει πληροφορίες για το προϊόν διαθέτει εσφαλμένη δομή στοιχείων.
+WVER0205E.useraction=Ενημερώστε το αρχείο XML διορθώνοντας τη δομή των στοιχείων.
+
+#
+WVER0206E=WVER0206E: Έγινε προσπάθεια κλεισίματος του στοιχείου ''{0}'' ενώ βρίσκεται στο στοιχείο ''{1}''
+WVER0206E.explanation=Ένα αρχείο XML που περιέχει πληροφορίες για το προϊόν διαθέτει εσφαλμένη δομή στοιχείων.
+WVER0206E.useraction=Ενημερώστε το αρχείο XML διορθώνοντας τη δομή των στοιχείων.

@@ -1,0 +1,21 @@
+[
+  {
+      "name": "GPFS Add Client Node - 1.0.0.3",
+      "version": "1.0.0.3",
+      "description": "This script package adds a client node to the GPFS cluster.",
+      "command": "python /tmp/gpfs/gpfsInstall/gpfs.py",
+      "log": "/tmp/gpfs/gpfsAddClientNode/logs",
+      "location": "/tmp/gpfs/gpfsAddClientNode/",
+      "timeout": "1800000",
+      "execmode": 2,
+      "commandargs": "-operationName addClientNodeRemote -remoteServerHost ${Remote_GPFS_Server_IP}",
+      "keys":
+      [
+         {
+          "scriptkey": "Remote_GPFS_Server_IP",
+     	   "scriptvalue": "",
+          "scriptdefaultvalue": ""
+         }
+      ]
+  }
+]

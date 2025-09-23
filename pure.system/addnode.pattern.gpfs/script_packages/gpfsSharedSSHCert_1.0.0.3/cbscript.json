@@ -1,0 +1,15 @@
+[
+  {
+      "name": "GPFS Shared SSH Certificate - 1.0.0.3",
+      "version": "1.0.0.3",
+      "description": "This script package enables passwordless ssh between VMs",
+      "command": "python /tmp/gpfs/gpfsSharedSSHCert/gpfsSharedSSHCert.py",
+      "log": "/tmp/gpfs/gpfsSharedSSHCert/logs",
+      "location": "/tmp/gpfs/gpfsSharedSSHCert/",
+      "timeout": "1800000",
+      "commandargs": "",
+      "keys":
+      [
+      ]
+  }
+]

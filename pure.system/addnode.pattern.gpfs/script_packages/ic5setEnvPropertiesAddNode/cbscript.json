@@ -1,0 +1,36 @@
+[
+   {
+      "command": "\/tmp\/ic5setEnvPropertiesAddNode\/ic5setEnvPropertiesAddNode.sh",
+      "description": "This is the sample description of the script",
+      "execmode": 3,
+      "filename": "ic5setEnvPropertiesAddNode.zip",
+      "keys": [
+         {
+            "locked": true,
+            "required": true,
+            "scriptdefaultvalue": "${DB2_ESE_Primary.hostname}",
+            "scriptkey": "DBSYSHST",
+            "scriptvalue": "${DB2_ESE_Primary.hostname}"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "ehningen",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "ehningen"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "ROOT_PASSWORD",
+            "type": "password"
+         }
+      ],
+      "location": "\/tmp\/ic5setEnvPropertiesAddNode",
+      "log": "\/tmp\/ic5setEnvPropertiesAddNode\/logs",
+      "name": "ic5setEnvPropertiesAddNode",
+      "ostype": "linux\/unix",
+      "timeout": 300000,
+      "type": "APPLICATION"
+   }
+]

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja-jp" xml:lang="ja-jp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2006" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="Classic Express ランチパッド・テンプレートのヒント" />
+<meta name="abstract" content="Classic Express ランチパッド・テンプレートは、Express 製品に使用できるセットアップ・ランチパッド作成のための開始点として準備されています。" />
+<meta name="description" content="Classic Express ランチパッド・テンプレートは、Express 製品に使用できるセットアップ・ランチパッド作成のための開始点として準備されています。" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="ja-jp" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>Express ランチパッド・テンプレートのヒント</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">Classic Express ランチパッド・テンプレートのヒント</h1>
+<div><p>Classic Express ランチパッド・テンプレートは、Express 製品に使用できるセットアップ・ランチパッド作成のための開始点として準備されています。</p>
+<p> このテンプレートには、製品のインストール・プログラムの開始、資料の表示、
+およびローカライズされたコンテンツの提供のために使用できるコードが含まれています。
+</p>
+<p>Classic Express ランチパッド・テンプレートに関する注意点:</p>
+<ul><li>使用するすべてのコマンドおよびプログラムは、launchpadContent/global.properties に定義されています。</li>
+<li>サンプル・アプリケーションは、「ディスク・レイアウト」ページの DISK1 に入っています。
+カスタムのインストール・プログラムやアプリケーションを追加するには、launchpadContent\global.properties に
+アプリケーションを定義します (サンプル・アプリケーションの例に従ってください)。「ディスク・レイアウト」タブにあるコントロールを使用して、
+プロジェクト内の適切なディスクにアプリケーションをインポートします。</li>
+<li>すべての HTML ファイルは、launchpadContent ディレクトリーにある同じスタイルシート (content.css) を使用します。</li>
+</ul>
+<p>Classic Express ランチパッド・テンプレートには次のページを含みます。</p>
+<ul><li><strong>ようこそ</strong> -「ようこそ」ページには、通常、製品の概要と、ランチパッドの機能の説明が表示されます。
+「ようこそ」のページは簡潔にまとめられていますが、ページ内にある製品 Web サイトへのリンクを
+ご利用になれば、製品の詳細情報を参照することができます。
+「ようこそ」ページでは、ブラウザーに外部の Web サイトを表示させるためのコードが用意されています。
+JavaScript の <samp class="codeph">window.open()</samp> の代わりに、<samp class="codeph">viewPage()</samp> 機能を
+使用して新規ウィンドウを表示します。<samp class="codeph">window.open()</samp> の方がポップアップ・ブロッカーでブロックされる可能性が高いためです。</li>
+<li><strong>リリース情報</strong> - リリース情報のページでは通常、製品の固有のリリースに特定の情報が表示されます。例えば、
+インストールに関する考慮事項、前提条件の変更、そのリリースに加えられた主要なフィーチャーまたは修正などの内容が、
+リリース情報のページに適しています。リリース情報のページには、PDF の表示およびアプリケーションの実行のためのコードも用意されています。
+</li>
+<li><strong>前提条件</strong> - 前提条件のページでは通常、前提条件検証プログラムを実行することができます。
+これにより、システムの前提条件がコンピューターで正しく準備されているかどうかを判別し、検出できなかった前提条件があれば
+そのリストを返します。前提条件のページには、PDF の表示およびアプリケーションの実行のためのコードも用意されています。
+</li>
+<li><strong>インストール・シナリオ</strong> - インストール・シナリオの内容には通常、
+ユーザーが製品のインストールに選択できるシナリオがいくつか用意されています。
+ユーザーは製品の使用目的や使用方法に基づいて、特定のインストール・シナリオを選択できます。このコンテンツでは、
+ユーザーが選択できる各種のインストール・シナリオについてそれぞれの違いを説明し、
+ユーザーが最も適切なインストール・シナリオを選択するのに役立つ情報を提供します。すべての製品に
+インストール・シナリオがあるわけではありません。そのような製品の Classic Express ランチパッド・テンプレートを
+カスタマイズする場合は、このセクションをナビゲーションから除去できます。インストール・シナリオのページには、
+引数付きのカスタム・プログラムの実行のためのコードも用意されています。</li>
+<li><strong>マイグレーション情報</strong> - マイグレーションのコンテンツでは、通常、
+製品の古いバージョンからより新しいバージョンにアップグレードするためにユーザーが行う必要のある、
+マイグレーション・パスについて説明します。マイグレーション情報が特定の製品に該当しない場合は、
+このコンテンツはナビゲーションから除去してください。マイグレーション情報のページには、PDF の表示およびアプリケーションの実行のためのコードも用意されています。
+</li>
+<li><strong>インストール</strong> - 製品インストールのページで、製品のインストールを
+どのように開始するかを指定することができます。
+ランチパッドの設定で複数の製品インストールのページを追加すれば、複数の製品をインストールすることができます。
+インストール・ページには、製品のインストールを開始するコードが提供されます。</li>
+<li><strong>終了</strong> - ナビゲーション・メニューの終了リンクすると、ランチパッドが終了します。</li>
+</ul>
+</div>
+</body>
+</html>

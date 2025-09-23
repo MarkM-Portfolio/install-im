@@ -1,0 +1,43 @@
+#!/bin/bash
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+range_start=`echo $1 | cut -d '-' -f1`
+range_end=`echo $1 | cut -d '-' -f2`
+#echo $range_start
+#echo $range_end
+
+rm -f /$TMP_DIR/prs.res
+type=`uname`
+if [ "$type" = "SunOS" ]; then
+ netstat | grep LISTEN > /$TMP_DIR/prs.net
+else
+
+netstat -ant | grep LISTEN > /$TMP_DIR/prs.net
+fi
+while [ $range_start -le $range_end ]
+do
+#echo $range_start
+res=`grep -w $1 /$TMP_DIR/prs.net`
+res=`echo $res | cut -d' ' -f1`
+if [ $res ]; then
+ echo  "$Msg_FALSE" >> /$TMP_DIR/prs.res
+else
+ echo "$Msg_TRUE" >> /$TMP_DIR/prs.res
+fi
+
+
+((range_start++))
+done
+check=`grep -w Fail /$TMP_DIR/prs.res`
+if [ $check ]; then
+ echo "$Msg_FALSE"
+else
+ echo "$Msg_TRUE"
+fi

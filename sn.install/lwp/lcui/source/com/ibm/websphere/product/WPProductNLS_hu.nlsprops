@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Nem lehet meghatározni a változatkönyvtárat.
+WVER0001E.explanation=A változatkönyvtár keresése a 'was.version.dir' Java rendszertulajdonság alapján vagy a '<gyökér>\\properties\\version' könyvtárként történik, ahol a <gyökér> a 'was.install.root' vagy 'server.root' Java rendszertulajdonságokban meghatározott könyvtár.  A tulajdonságok vizsgálata egymás után történik, és az első rendelkezésre álló tulajdonság értéke kerül felhasználásra.  A hiba azt jelzi, hogy a felsorolt Java rendszertulajdonságok egyike sincs beállítva, amelynek következményeként a változatkönyvtár helye nem határozható meg.
+WVER0001E.useraction=Győződjön meg róla, hogy a felsorolt Java rendszertulajdonságok valamelyike be van állítva.  A Java rendszertulajdonságot a folyamat beállításával, vagy parancssorból indított folyamatok esetén parancssori paraméterrel kell meghatározni.
+
+# 
+WVER0002E=WVER0002E: Ismeretlen termékváltozat fájlkiterjesztés: ''{0}''.
+WVER0002E.explanation=A termék változatinformációinak betöltése adott kiterjesztésű fájlokból történik.  Az egyes fájlokban tárolt információk típusát a kiterjesztések határozzák meg.  Az érvényes kiterjesztések: '.websphere', '.component', '.product', '.fix', '.efix' és '.extension'.  Kísérlet történt egy olyan változatinformációkat tartalmazó fájl betöltésére, amelynek kiterjesztése nem felelt meg egyik érvényes kiterjesztésnek sem.
+WVER0002E.useraction=Ez belső hibára utal.
+
+# 
+WVER0003I=WVER0003I: Használat: versionInfo ( [ -format <text | html> ] [ -file <kimeneti fájl> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Ez az információs üzenet írja le a versionInfo segédprogram paramétereit.  A versionInfo segédprogram elhagyható paramétereket is elfogad a kimeneti formátum meghatározására, a kimeneti fájl meghatározására, a javítások megjelenítésére, a javítás részleteinek megjelenítésére, az összetevők megjelenítésére és a használati információk megjelenítésére.
+WVER0003I.useraction=Nincs felhasználói teendő.  A használatra vonatkozó információkat tartalmazó üzenet kérésre jelenik meg.
+
+# 
+WVER0004E=WVER0004E: Hiba a változatjelentés kiírásakor a(z) {0} helyre: {1}
+WVER0004E.explanation=A megadott hiba történt a változatjelentésnek a megadott fájlba írása során.
+WVER0004E.useraction=A helyreállítási tevékenységek a bekövetkezett hiba részleteitől függnek.  Elsősorban győződjön meg róla, hogy a megadott fájl írható, és elegendő lemezterület áll rendelkezésre a jelentésnek.
+
+# 
+WVER0005E=WVER0005E: A(z) ''{0}'' paraméternek nincs megadva érték
+WVER0005E.explanation=A megadott paraméternek értéket kell adni.  (A '-help' vagy a '-usage' segítségével jeleníthet meg a használatra vonatkozó információkat.)
+WVER0005E.useraction=Adjon értéket a kifogásolt paraméternek.
+
+# 
+WVER0006E=WVER0006E: A(z) ''{0}'' érték nem érvényes formátum érték.
+WVER0006E.explanation=Az érvényes formátum értékek a 'text' és a 'html'.  A megadott érték ezek egyikének sem felel meg.  (A '-help' vagy a '-usage' segítségével jeleníthet meg a használatra vonatkozó információkat.)
+WVER0006E.useraction=Módosítsa a formátum értéket a 'text' vagy a 'html' valamelyikére.
+
+# 
+WVER0007E=WVER0007E: A(z) ''{0}'' paraméter nem érvényes.
+WVER0007E.explanation=A megadott paraméter érvénytelen.  (A '-help' vagy a '-usage' segítségével jeleníthet meg a használatra vonatkozó információkat.)
+WVER0007E.useraction=Módosítsa egy érvényes paraméterre.
+
+# 
+WVER0008I=WVER0008I: A '-format' paraméter határozza meg a kimeneti formátumot, amely 'text' vagy 'html' lehet.  A '-file' paraméter ad meg kimeneti fájlt.  A '-file' paraméternek meg kell adni egy fájlnevet.  A '-long' hatására a javításokkal, javítócsomagokkal és összetevőkkel kapcsolatos összes információ megjelenik.  A '-fixes' paraméter megjeleníti a javításokat.  A '-fixDetail' paraméter megjeleníti a javítás részleteket.  A '-ptfs' paraméter megjeleníti a PTF javításokat.  A '-ptfDetail' paraméter megjeleníti a PTF részleteket.  A '-components' paraméter megjeleníti az összetevőket.  A '-componentDetail' paraméter megjeleníti az összetevők részleteit.  A '-help' paraméter megjeleníti a súgószöveget.  A '-usage' paraméter megjeleníti ezeket a használati információkat.
+WVER0008I.explanation=Ez az üzenet írja le a versionInfo segédprogram érvényes paramétereit.
+WVER0008I.useraction=Nincs felhasználói teendő.  A használatra vonatkozó információkat tartalmazó üzenet kérésre jelenik meg.
+
+# 
+WVER0009E=WVER0009E: Hiba a változatjelentés írásakor ide: {0}.  A hiba szövegét nem lehet megjeleníteni, de {1} típusú.  A hiba szövegének lekérdezésekor egy második, {2} típusú hiba történt.
+WVER0009E.explanation=Hiba történt a változatjelentésnek a megadott fájlba írása során.  A hiba szövegének lekérdezése során egy második hiba történt.
+WVER0009E.useraction=Nincs felhasználói teendő.  Próbálkozzon újra a kért művelettel, vagy kérjen segítséget a terméktámogatástól.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; Minden jog fenntartva.
+WVER0010I.explanation=Ez egy szabványos szerzői jogi feljegyzés.
+WVER0010I.useraction=Nincs felhasználói teendő.  Ez információs üzenet.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=Ez egy szabványos termékleírás feljegyzés.
+WVER0011I.useraction=Nincs felhasználói teendő.  Ez információs üzenet.
+
+# 
+WVER0012I=WVER0012I: VersionInfo jelentéskészítő {0} változat, dátum: {1}
+WVER0012I.explanation=Ez egy szabványos modulleírás feljegyzés.
+WVER0012I.useraction=Nincs felhasználói teendő.  Ez információs üzenet.
+
+# 
+WVER0013E=WVER0013E: Kivétel történt a(z) {0} beolvasásakor
+WVER0013E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0013E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0014E=WVER0014E: Kivétel történt a(z) {0} beolvasásakor
+WVER0014E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0014E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0015E=WVER0015E: Kivétel történt a változatinformációk feldolgozásakor
+WVER0015E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0015E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0016E=WVER0016E: Kivételek történtek a változatinformációk feldolgozásakor
+WVER0016E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0016E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0017E=WVER0017E: Nem lehet meghatározni a frissítési naplók helyét.
+WVER0017E.explanation=A naplókönyvtár keresése a 'was.version.log.dir' Java rendszertulajdonság alapján, vagy a változatkönyvtár 'log' alkönyvtárában történik.  Sem a 'was.version.log.dir' tulajdonság, sem a változatkönyvtár nincs beállítva.
+WVER0017E.useraction=Győződjön meg róla, hogy a változatkönyvtár be van állítva, vagy állítsa be a 'was.version.log.dir' Java rendszertulajdonságot.
+
+# 
+WVER0018E=WVER0018E: Nem lehet meghatározni a frissítési mentések helyét.
+WVER0018E.explanation=A mentési könyvtár keresése a 'was.version.backup.dir' Java rendszertulajdonság alapján, vagy a változatkönyvtár 'log' alkönyvtárában történik.  Sem a 'was.version.backup.dir' tulajdonság, sem a változatkönyvtár nincs beállítva.
+WVER0018E.useraction=Győződjön meg róla, hogy a változatkönyvtár be van állítva, vagy állítsa be a 'was.version.backup.dir' Java rendszertulajdonságot.
+
+# 
+WVER0019E=WVER0019E: Nem lehet meghatározni a termék változatinformációk DTD könyvtárának helyét.
+WVER0019E.explanation=A DTD könyvtár keresése a 'was.version.dtd.dir' Java rendszertulajdonság alapján, vagy a változatkönyvtár 'dtd' alkönyvtárában történik.  Sem a 'was.version.dtd.dir' tulajdonság, sem a változatkönyvtár nincs beállítva.
+WVER0019E.useraction=Győződjön meg róla, hogy a változatkönyvtár be van állítva, vagy állítsa be a 'was.version.dtd.dir' Java rendszertulajdonságot.
+
+# 
+WVER0021E=WVER0021E: A javításinformációk elemzése során helyreállítható hibák történtek.
+WVER0021E.explanation=A javításra vonatkozó információk elemzése során az alábbi listában felsorolt hibák történtek.  További információkat a felsorolt hibaüzenetekben talál.
+WVER0021E.useraction=A javasolt felhasználói teendőket a felsorolt hibák tartalmazzák.
+
+# 
+WVER0022E=WVER0022E: Hiba történt a termékinformációk beolvasásakor.  A hiba helyreállítható, az elemzés folytatódott.  A hiba a(z) {0} rendszer azonosítóval, {1} nyilvános azonosítóval kapcsolatban történt a(z) {2}. sor {3}. oszlopában: {4}
+WVER0022E.explanation=A kifogásolt egyednek a megadott hibában leírt módon érvénytelen a szerkezete.  A hiba azonban nem volt végzetes, így az elemzés folytatódott.
+WVER0022E.useraction=A megadott fájlt át kell tekinteni, és lehetőség szerint ki kell javítani.
+
+# 
+WVER0023E=WVER0023E: A termékinformációk elemzése során figyelmeztetések érkeztek.
+WVER0023E.explanation=A termékinformációk elemzése során az alábbi listában felsorolt figyelmeztetések érkeztek.  További információkat a felsorolt figyelmeztetésekben talál.
+WVER0023E.useraction=A javasolt felhasználói teendőket a felsorolt figyelmeztetések tartalmazzák.
+
+# 
+WVER0024E=WVER0024E: Figyelmeztetés érkezett a termékinformációk beolvasásakor.  A figyelmeztetés a(z) {0} rendszer azonosítóval, {1} nyilvános azonosítóval kapcsolatban történt a(z) {2}. sor {3}. oszlopában: {4}
+WVER0024E.explanation=A kifogásolt egyednek a megadott figyelmeztetésben leírt módon érvénytelen a szerkezete.  A figyelmeztetés azonban nem volt végzetes, így az elemzés folytatódott.
+WVER0024E.useraction=A megadott fájlt át kell tekinteni, és lehetőség szerint ki kell javítani.
+
+# 
+WVER0029E=WVER0029E: Nem lehet eltávolítani a(z) {2} fájlban található {0} javítást.
+WVER0029E.explanation=A megnevezett fájl nem távolítható el.
+WVER0029E.useraction=Győződjön meg róla, hogy a fájlt el lehet távolítani.
+
+# 
+WVER0030E=WVER0030E: A PTF információk elemzése során helyreállítható hibák történtek.
+WVER0030E.explanation=A PTF információk elemzése során az alábbi listában felsorolt hibák történtek.  További információkat a felsorolt hibaüzenetekben talál.
+WVER0030E.useraction=A javasolt felhasználói teendőket a felsorolt hibák tartalmazzák.
+
+# 
+WVER0031E=WVER0031E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} PTF alkalmazását a(z) {2} fájlba.  A megnevezett fájl nem menthető.
+WVER0031E.explanation=A megnevezett fájl nem menthető.
+WVER0031E.useraction=Győződjön meg róla, hogy a célfájl írható, és elegendő terület áll rendelkezésre az új fájlnak.
+
+# 
+WVER0035E=WVER0035E: Nem lehet eltávolítani a(z) {2} fájlban található {0} PTF javítást.
+WVER0035E.explanation=A megnevezett fájl nem távolítható el.
+WVER0035E.useraction=Győződjön meg róla, hogy a fájlt el lehet távolítani.
+
+# 
+WVER0040E=WVER0040E: A megadott ''{0}'' változatkönyvtár nem létezik.
+WVER0040E.explanation=A változatkönyvtár nem létezik.
+WVER0040E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék változatkönyvtár.
+
+# 
+WVER0041E=WVER0041E: A megadott ''{0}'' változatkönyvtár nem könyvtár.
+WVER0041E.explanation=A változatkönyvtár nem könyvtár.
+WVER0041E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék változatkönyvtár.
+
+# 
+WVER0042E=WVER0042E: A megadott ''{0}'' DTD könyvtár nem létezik.
+WVER0042E.explanation=A DTD könyvtár nem létezik.
+WVER0042E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék DTD könyvtár.
+
+# 
+WVER0043E=WVER0043E: A megadott ''{0}'' DTD könyvtár nem könyvtár.
+WVER0043E.explanation=A DTD könyvtár nem könyvtár.
+WVER0043E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék DTD könyvtár.
+
+# 
+WVER0044E=WVER0044E: A megadott ''{0}'' naplókönyvtárat nem lehet létrehozni.
+WVER0044E.explanation=A DTD könyvtár nem könyvtár.
+WVER0044E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék DTD könyvtár.
+
+# 
+WVER0045E=WVER0045E: A megadott ''{0}'' naplókönyvtár nem könyvtár.
+WVER0045E.explanation=A DTD könyvtár nem könyvtár.
+WVER0045E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék DTD könyvtár.
+
+# 
+WVER0046E=WVER0046E: A megadott ''{0}'' mentési könyvtárat nem lehet létrehozni.
+WVER0046E.explanation=A DTD könyvtár nem könyvtár.
+WVER0046E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék DTD könyvtár.
+
+# 
+WVER0047E=WVER0047E: A megadott ''{0}'' mentési könyvtár nem könyvtár.
+WVER0047E.explanation=A DTD könyvtár nem könyvtár.
+WVER0047E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termék DTD könyvtár.
+
+# 
+WVER0048E=WVER0048E: A megadott ''{0}'' termékkönyvtár nem létezik.
+WVER0048E.explanation=A termékkönyvtár nem létezik.
+WVER0048E.useraction=Győződjön meg róla, hogy a termékkönyvtár érvényes termékkönyvtár.
+
+# 
+WVER0049E=WVER0049E: A megadott ''{0}'' termékkönyvtár nem könyvtár.
+WVER0049E.explanation=A termékkönyvtár nem könyvtár.
+WVER0049E.useraction=Győződjön meg róla, hogy a megadott könyvtár érvényes termékkönyvtár.
+
+
+
+
+label.standard.out=Szabványos kimenet
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Portal termék telepítési állapotjelentés
+report.footer=Telepítési állapotjelentés vége
+
+info.report.on=Jelentés dátuma és ideje: {0}
+
+info.source=Telepítés
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Termékkönyvtár
+label.version.dir=Változatkönyvtár
+label.version.dtd.dir=DTD könyvtár
+label.version.log.dir=Naplókönyvtár
+label.version.backup.dir=Mentési könyvtár
+label.version.tmp.dir=Ideiglenes könyvtár
+
+info.platform=Telepítési platform
+label.name=Név
+label.version=Verziószám
+
+info.technology=Technológialista
+label.installed=telepítve
+
+info.product=Telepített termék
+# label.name=Name
+# label.version=Version
+label.id=Azonosító
+label.build.level=Összeállítási szint
+label.build.date=Összeállítási dátum
+
+info.component=Telepített összetevő
+label.component.name=Összetevő neve
+label.configtasks=Konfigurációs feladatok
+label.spec.version=Specifikáció verziószáma
+label.build.version=Összeállítás verziószáma
+# label.build.date=Build Date
+
+info.update.on.component=Telepített összetevő frissítés
+#label.component.name=Component Name
+label.update.type=Frissítés típusa
+label.update.type.efix=javítás
+label.update.type.ptf=PTF
+
+label.efix.id=Javítás azonosítója
+label.ptf.id=PTF azonosítója
+
+label.update.effect=Frissítési hatás
+
+label.is.required=Szükséges
+label.is.optional=Választható
+
+label.is.external=Külső
+label.root.property.file=Gyökér tulajdonságfájl
+label.root.property.name=Gyökér tulajdonságnév
+label.root.property.value=Gyökér tulajdonságérték
+
+label.is.custom=Egyéni
+
+label.log.file.name=Naplófájl neve
+label.backup.file.name=Mentési fájl neve
+label.install.date=Telepítés dátuma
+
+label.initial.spec.version=Kezdeti specifikáció verziószáma
+label.initial.build.date=Kezdeti összeállítási dátum
+label.initial.build.version=Kezdeti összeállítási verziószám
+
+label.final.spec.version=Végső specifikáció verziószáma
+label.final.build.date=Végső összeállítási dátum
+label.final.build.version=Végső összeállítási verziószám
+
+info.extension=Telepített kiterjesztés
+# label.name=Name
+# label.id=ID
+
+info.efix=Telepített javítás
+# label.id=ID
+label.short.description=Leírás
+label.is.trial=Próbaváltozat
+label.expiration.date=Lejárat dátuma
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Kifejtés
+
+label.apar=APAR
+label.apar.number=Szám
+label.apar.date=Dátum
+label.apar.short.description=Leírás
+label.apar.long.description=Kifejtés
+
+label.supported.platforms=Támogatott platformok
+label.supported.products=Támogatott platformok
+
+label.efix.efix.prereqs=Előfeltétel javítások
+
+label.component.updates=Összetevő frissítések
+label.component.requires=A(z) {0} {1} változatát igényli
+
+label.becomes=új specifikáció verziószáma {0}, összeállítási verziószáma {1}, dátuma {2} lesz
+
+label.custom.properties=Egyéni tulajdonságok
+
+info.ptf=Telepített PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Tartalmazott javítások
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=true
+label.false=false
+
+label.is.absent=hiányzik
+label.is.installed={0} napon telepítve
+
+label.update.effect.add=hozzáadás
+label.update.effect.replace=csere
+label.update.effect.remove=eltávolítás
+label.update.effect.patch=kijavítás
+label.update.effect.unknown=ismeretlen
+
+label.is.negative=negatív
+label.is.positive=pozitív
+
+label.is.required.tag=szükséges
+label.if.possible.tag=lehetőség szerint
+label.is.optional.tag=nem kötelező
+label.is.recommended.tag=ajánlott
+
+label.is.custom.tag=egyéni frissítés
+label.is.standard.tag=szabványos frissítés

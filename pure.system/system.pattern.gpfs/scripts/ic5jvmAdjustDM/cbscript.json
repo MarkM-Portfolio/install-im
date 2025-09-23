@@ -1,0 +1,31 @@
+[
+   {
+      "command": "\/tmp\/ic5jvmAdjustDM\/ic5jvmAdjustDM.sh",
+      "description": "adjusts JVM settings for DM",
+      "execmode": 3,
+      "filename": "ic5jvmAdjustDM.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         }
+      ],
+      "location": "\/tmp\/ic5jvmAdjustDM",
+      "log": "\/tmp\/ic5jvmAdjustDM\/logs",
+      "name": "ic5jvmAdjustDM",
+      "ostype": "linux\/unix",
+      "timeout": 9000000,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

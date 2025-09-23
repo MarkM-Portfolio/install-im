@@ -1,0 +1,107 @@
+#./bin/sh
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+resFlag=""
+res=""
+loc=""
+verdb=`db2level 2>/dev/null`
+# some shell not recognize awk -F"xxxxx", so use sed instead
+#vv=`echo $verdb | awk -F"\"DB2 " '{print $2;}' | awk -F"\"" '{print $1;}'` 
+vv=`echo "$verdb" | sed 's/.*\"DB2 \([v|V][0-9\.]\{1,\}\)\".*/\1/' | sed -n '/^[v|V][0-9\.]\{1,\}/p'`
+
+#fp=`echo $verdb | awk -F"Pack \"" '{print $2;}' | awk -F"\"" '{print $1;}'`
+fp=`echo "$verdb" | sed 's/^\"\([0-9\.]\{1\}\)\".*/\1/g' | sed -n '/^[0-9\.]\{1,\}/p'`
+if [ -z "$fp" ]; then
+	fp=`echo $verdb | awk -F"FixPak \"" '{print $2;}' | awk -F"\"" '{print $1;}'`
+fi
+
+if [ -z "$fp" ]; then
+	fp="0"
+fi
+Version=$vv"FP"$fp
+loc=`db2level 2>/dev/null | grep "installed" | cut -d '"' -f2`
+if [ "$verdb" = "" ]; then
+        #for toe in `find /opt -name db2level 2>/dev/null`
+        #do
+        #       verdb=`$toe`
+        #       break
+        #done
+
+        # find the db2profile from /home
+        prof=`find /home -name db2profile | sed -n '1p'`
+        if [ -z "$prof" ]; then
+                resFlag="$Msg_UNAVAILABLE"
+        else
+           . $prof
+           verdb=`db2level 2>/dev/null`
+           if [ "$verdb" = "" ]; then
+            resFlag="$Msg_UNAVAILABLE"
+            else
+            loc=`db2level 2>/dev/null | grep "installed" | cut -d '"' -f2`
+            
+            vv=`echo "$verdb" | sed 's/.*\"DB2 \([v|V][0-9\.]\{1,\}\)\".*/\1/' | sed -n '/^[v|V][0-9\.]\{1,\}/p'`
+
+			#fp=`echo $verdb | awk -F"Pack \"" '{print $2;}' | awk -F"\"" '{print $1;}'`
+			fp=`echo "$verdb" | sed 's/^\"\([0-9\.]\{1\}\)\".*/\1/g' | sed -n '/^[0-9\.]\{1,\}/p'`
+			if [ -z "$fp" ]; then
+			fp=`echo $verdb | awk -F"FixPak \"" '{print $2;}' | awk -F"\"" '{print $1;}'`
+			fi
+
+           if [ -z "$fp" ]; then
+	         fp="0"
+           fi
+             Version=$vv"FP"$fp
+            
+            res="DB2,$loc,$Version"
+            resFlag="$Msg_AVAILABLE"
+           fi
+        fi
+else
+res="DB2,$loc,$Version"
+resFlag="$Msg_AVAILABLE"
+        
+fi
+
+
+loc=""
+Version=""
+
+res0=`echo $ORACLE_HOME`
+res1=`echo $ORACLE_BASE`
+
+res2=""
+if [ "$ORACLE_HOME" != "" -a -d $res0 ]; then
+
+        res2="Oracle"
+        loc=$res0
+        Version=`$ORACLE_HOME/OPatch/opatch lsinventory 2>/dev/null | grep "OPatch version" | cut -d ":" -f2 | sed -e 's/^[ \t]*//'`
+else
+        Version="VersionNotFound"
+fi
+
+if [ "$res" != "" -a "$res2" != "" ];then
+	res=$res";Oracle,$loc,$Version"
+	resFlag=$resFlag" $Msg_AVAILABLE"
+elif [ "$res" != "" ]; then
+	res=$res
+	resFlag=$resFlag" $Msg_AVAILABLE"
+elif [ "$res2" != "" ]; then
+	res="Oracle,$loc,$Version"
+	resFlag=" $Msg_AVAILABLE"
+else
+	resFlag=$resFlag" $Msg_UNAVAILABLE"
+fi
+
+
+resFlagCheck=`echo $resFlag | grep $Msg_AVAILABLE`
+if [ "$resFlagCheck" != "" ]; then
+   echo "$res" 
+else
+   echo "Unknown"
+fi

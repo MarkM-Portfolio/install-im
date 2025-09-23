@@ -1,0 +1,24 @@
+{
+   "tooling": {
+      "nodes": [
+         {
+            "id": "CCM Node1",
+            "location": {
+               "y": "93px",
+               "x": "127px"
+            },
+            "ismini": false
+         },
+         {
+            "id": "CCM Node2",
+            "location": {
+               "y": "91px",
+               "x": "507px"
+            },
+            "ismini": false
+         }
+      ],
+      "links": [
+      ]
+   }
+}

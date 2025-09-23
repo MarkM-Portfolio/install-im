@@ -1,0 +1,32 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+###This script is only for AIX Operating System####
+if [ "`uname`" = "AIX" ]; then
+check=`oslevel -s | cut -d '-' -f1`
+if [ "$check" = "6100" ]; then
+ test=`oslevel -s | cut -d '-' -f2`
+ if [ $test -ge 03 ]; then
+   echo "$Msg_TRUE"
+ else
+   echo "$Msg_FALSE"
+ fi
+fi
+
+
+if [ "$check" = "5300" ]; then
+ test=`oslevel -s | cut -d '-' -f2`
+ if [ $test -ge 10 ]; then
+   echo "$Msg_TRUE"
+ else
+   echo "$Msg_FALSE"
+ fi
+fi
+else
+	echo "$Msg_UNAVAILABLE"
+fi

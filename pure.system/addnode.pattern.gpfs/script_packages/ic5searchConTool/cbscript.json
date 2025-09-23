@@ -1,0 +1,14 @@
+[
+   {
+      "command": "\/tmp\/ic5searchConTool\/ic5searchConTool.sh",
+      "description": "This script pakage copys the search conversation binaries and sets the correct PATH to setupCmd.sh",
+      "execmode": 3,
+      "filename": "ic5searchConTool.zip",
+      "location": "\/tmp\/ic5searchConTool",
+      "log": "\/tmp\/ic5searchConTool\/logs",
+      "name": "ic5searchConTool",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION"
+   }
+]

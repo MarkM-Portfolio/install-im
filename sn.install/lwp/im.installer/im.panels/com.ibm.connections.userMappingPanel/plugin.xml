@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="com.ibm.cic.agent.ui.commonCustomPanels">
+      <commonPanel
+            textClass="com.ibm.connections.install.ConsoleUserMappingPanel"
+            class="com.ibm.connections.install.UserMappingPanel"
+            id="com.ibm.connections.install.UserMappingPanel">
+         <wizardType
+               type="INSTALL">
+         </wizardType>
+      </commonPanel>
+   </extension>
+
+</plugin>

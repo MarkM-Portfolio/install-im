@@ -1,0 +1,21 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+dhclient -r 2>/$TMP_DIR/prs.dhc
+if [ -s /$TMP_DIR/prs.dhc ]; then
+        res=`cat /$TMP_DIR/prs.dhc | grep -w not`
+        res1=`echo $res | grep -w found | awk '{print $1}'`
+        if [ $res1 ]; then
+         echo "$Msg_FALSE"
+        else
+         echo "$Msg_TRUE"
+        fi
+else
+        echo "$Msg_FALSE"
+fi

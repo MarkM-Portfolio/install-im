@@ -1,0 +1,31 @@
+[
+  {
+      "name": "GPFS Create FileSet - 1.0.0.3",
+      "version": "1.0.0.3",
+      "description": "This script package allows the client to request creation of a fileset.",
+      "command": "python /tmp/gpfs/gpfsInstall/gpfs.py",
+      "log": "/tmp/gpfs/gpfsCreateFileSet/logs",
+      "location": "/tmp/gpfs/gpfsCreateFileSet/",
+      "timeout": "1800000",
+      "execmode": 2,
+      "commandargs": "-operationName createFileSetRemote -fileSetName ${FileSet_Name} -minQuotaSize ${MIN_Quota_Size} -maxQuotaSize ${MAX_Quota_Size}",
+      "keys":
+      [
+         {
+          "scriptkey": "FileSet_Name",
+     	   "scriptvalue": "",
+          "scriptdefaultvalue": ""
+         },
+         {
+          "scriptkey": "MIN_Quota_Size",
+     	   "scriptvalue": "",
+          "scriptdefaultvalue": ""
+         },
+         {
+          "scriptkey": "MAX_Quota_Size",
+     	   "scriptvalue": "",
+          "scriptdefaultvalue": ""
+         }
+      ]
+  }
+]

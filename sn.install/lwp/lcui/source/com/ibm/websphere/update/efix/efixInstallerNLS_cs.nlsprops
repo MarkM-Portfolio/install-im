@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Selhání při instalaci opravy: Při aktualizaci historie událostí uložené v umístění {0} došlo k výjimce.
+WUPD0200E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace. 
+WUPD0200E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0201E=WUPD0201E: Selhání při instalaci opravy: Při otevírání souboru protokolu {0} došlo k výjimce.
+WUPD0201E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace. 
+WUPD0201E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0211E=WUPD0211E: Selhání při instalaci opravy: Při načítání informací o komponentách obsažených v aktuální aktualizaci došlo k výjimce.
+WUPD0211E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace. 
+WUPD0211E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0212E=WUPD0212E: Selhání při instalaci opravy: Komponenta {0} je uvedena jako součást této aktualizace, k dispozici však není žádný obraz aktualizace komponenty.
+WUPD0212E.explanation=Část opravy používaná k aktualizaci uvedené komponenty není k dispozici.
+WUPD0212E.useraction=Tento problém indikuje interní chybu. Další informace získáte od střediska podpory společnosti IBM.
+
+WUPD0214E=WUPD0214E: Selhání při instalaci opravy: Při zaznamenávání použití opravy {0} ze souboru JAR opravy {1} došlo k výjimce.
+WUPD0214E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace. 
+WUPD0214E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0215E=WUPD0215E: Selhání při instalaci opravy: Komponentu {0} se nepodařilo nainstalovat.
+WUPD0215E.explanation=Další podrobnosti naleznete v protokolu instalace a v souboru historie událostí.
+WUPD0215E.useraction=Další podrobnosti naleznete v protokolu instalace a v souboru historie událostí.
+
+WUPD0216E=WUPD0216E: Selhání při instalaci opravy: Při označování použití opravy {0} v komponentě {1} došlo k výjimce.
+WUPD0216E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace. 
+WUPD0216E.useraction=Další podrobnosti naleznete ve výjimce.
+
+
+WUPD0220E=WUPD0220E: Selhání při odinstalaci opravy: Soubor pro opravu {0} se nenachází v očekávaném umístění.
+WUPD0220E.explanation=Byl proveden pokus o odebrání opravy, která není označena jako nainstalovaná.
+WUPD0220E.useraction=Tento problém indikuje interní chybu. Neměly by být prováděny pokusy o odebrání opravy, která není nainstalována.
+
+WUPD0221E=WUPD0221E: Selhání při odinstalaci opravy: Soubor pro opravu {0} nelze číst.
+WUPD0221E.explanation=Soubor pro uvedenou opravu nelze číst. Operace odinstalace byla zastavena.
+WUPD0221E.useraction=Ověřte platnost souboru obsahujícího uvedenou opravu.
+
+WUPD0222E=WUPD0222E: Selhání při odinstalaci opravy: Při vymazávání informace o použití opravy {0} došlo k výjimce.
+WUPD0222E.explanation=Během odinstalace opravy došlo k výjimce, která způsobila selhání odinstalace. 
+WUPD0222E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0223E=WUPD0223E: Selhání při odinstalaci opravy: Aktualizaci pro komponentu {1} pro opravu {0} nelze odinstalovat.
+WUPD0223E.explanation=Byla provedena aktualizace uvedené komponenty jako součást uvedené opravy. Tuto aktualizaci komponenty nelze odebrat.
+WUPD0223E.useraction=Tento problém indikuje interní chybu. Další informace získáte od střediska podpory společnosti IBM.
+
+WUPD0224E=WUPD0224E: Selhání při odinstalaci opravy: Při vymazávání informace o použití opravy {0} v komponentě {1} došlo k výjimce.
+WUPD0224E.explanation=Během odinstalace opravy došlo k výjimce, která způsobila selhání odinstalace. 
+WUPD0224E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0232E=WUPD0232E: Selhání při aktualizaci opravy: Při načítání obsahu opravy {0} pro komponentu {1}, soubor JAR opravy {2} a položku {3} došlo k výjimce.
+WUPD0232E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace. 
+WUPD0232E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0233E=WUPD0233E: Selhání při aktualizaci opravy: Při předběžném zpracování obsahu opravy {0} v komponentě {1} došlo k výjimce.
+WUPD0233E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace.
+WUPD0233E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0234E=WUPD0234E: Selhání při aktualizaci opravy: Při zpracování obsahu opravy {0} v komponentě {1} došlo k výjimce.
+WUPD0234E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace.
+WUPD0234E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0235E=WUPD0235E: Selhání při aktualizaci opravy: Zpracování opravy {0} pro komponentu {1} se nezdařilo. Podrobnosti o zpracování naleznete v souboru protokolu {2}.
+WUPD0235E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace.
+WUPD0235E.useraction=Zkontrolujte informace o zpracování v uvedeném souboru protokolu.
+
+WUPD0236E=WUPD0236E: Selhání při aktualizaci opravy: Při přípravě adresářů protokolu a zálohy došlo k výjimce.
+WUPD0236E.explanation=Během instalace opravy došlo k výjimce, která způsobila selhání instalace.
+WUPD0236E.useraction=Další podrobnosti naleznete v uvedené výjimce.
+
+WUPD0237E=WUPD0237E: Selhání při odebírání opravy: Při předběžném zpracování obsahu opravy {0} v komponentě {1} došlo k výjimce.
+WUPD0237E.explanation=Během odinstalace opravy došlo k výjimce, která způsobila selhání odinstalace.
+WUPD0237E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0238E=WUPD0238E: Selhání při odebírání opravy: Při zpracování obsahu opravy {0} v komponentě {1} došlo k výjimce.
+WUPD0238E.explanation=Během odinstalace opravy došlo k výjimce, která způsobila selhání odinstalace.
+WUPD0238E.useraction=Další podrobnosti naleznete ve výjimce.
+
+WUPD0239E=WUPD0239E: Selhání při odebírání opravy: Zpracování opravy {0} pro komponentu {1} se nezdařilo. Podrobnosti o zpracování naleznete v souboru protokolu {2}.
+WUPD0239E.explanation=Během odinstalace opravy došlo k výjimce, která způsobila selhání odinstalace.
+WUPD0239E.useraction=Další podrobnosti najdete v souboru protokolu.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} z {1}) Instalace opravy {2}.
+prefix.efix.revert   =({0} z {1}) Vracení instalace opravy {2}.
+prefix.efix.uninstall=({0} z {1}) Odinstalace opravy {2}.
+
+#NOTAMSG
+prepare.update.install  =příprava na instalaci
+prepare.update.uninstall=příprava na odinstalaci
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =instalace komponenty {0} z {1}
+component.update.uninstall=odinstalace komponenty {0} z {1}
+
+#NOTAMSG
+complete.update.install  =dokončování instalace
+complete.update.uninstall=dokončování odinstalace
+
+#NOTAMSG
+result.cancelled.install=Instalace byla zrušena.
+result.succeeded.install=Instalace byla úspěšně provedena.
+result.failed.install=Instalace se nezdařila.
+
+result.cancelled.uninstall=Odinstalace byla zrušena.
+result.succeeded.uninstall=Odinstalace byla úspěšně provedena.
+result.failed.uninstall=Odinstalace se nezdařila.

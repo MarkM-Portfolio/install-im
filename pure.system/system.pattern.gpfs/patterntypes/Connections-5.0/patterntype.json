@@ -1,0 +1,23 @@
+{
+   "build_id": "20141126-0900",
+   "name": "IBM Connections 5.0 Pattern Type",
+   "shortname": "connections",
+   "description":"IBM Connections 5.0",
+   "version": "5.0.1.0",
+   "status": "",
+   "prereqs":{
+      "foundation":"2.1.0.0"
+   },
+   "license": {
+       "pid" : "L-CMAS-9PQN7W",
+       "type" : "PVU"
+   },
+   "categories": [
+       {
+           "id"          : "",
+           "label"       : "DEFAULT_CATEGORY_LABEL",
+           "description" : "DEFAULT_CATEGORY_DESCRIPTION"
+       }
+   ]
+}
+

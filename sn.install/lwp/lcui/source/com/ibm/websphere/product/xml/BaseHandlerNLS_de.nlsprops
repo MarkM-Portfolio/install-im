@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Ausnahmebedingung beim Laden von Dokument {1} unter Verwendung von DTD-Verzeichnis {0}
+WVER0101E.explanation=Auf Grund der genannten Ausnahmebedingung konnte das angegebene Dokument nicht geladen werden.
+WVER0101E.useraction=Die erforderliche Benutzeraktion ist von der Ausnahmebedingung abhängig.  Stellen Sie vor allem sicher, dass die angegebene Datei verfügbar ist und das richtige Format hat.  Wenden Sie sich an den Support, wenn Sie weitere Informationen benötigen.
+
+# 
+WVER0102E=WVER0102E: Ausnahmebedingung beim Laden von Dokument {1} unter Verwendung von DTD-Verzeichnis {0}.  Als System-ID wurde {2} und als öffentliche ID {3} festgelegt.  Der Fehler trat in Zeilennummer {4} und Spaltennummer {5} auf.
+WVER0102E.explanation=Auf Grund der genannten Ausnahmebedingung konnte das angegebene Dokument nicht geladen werden.
+WVER0102E.useraction=Die erforderliche Benutzeraktion ist von der Ausnahmebedingung abhängig.  Stellen Sie vor allem sicher, dass die angegebene Datei verfügbar ist und das richtige Format hat.  Wenden Sie sich an den Support, wenn Sie weitere Informationen benötigen.
+
+# 
+WVER0104E=WVER0104E: Ausnahmebedingung beim Erstellen eines Stammdokumentelements des Typs {0}
+WVER0104E.explanation=Die genannte Ausnahmebedingung trat beim Erstellen eines Stammdokumentelements auf.
+WVER0104E.useraction=Die erforderliche Benutzeraktion ist von der Ausnahmebedingung abhängig.  In den meisten Fällen ist die Konfiguration des XML-Parsers ungültig.  Stellen Sie sicher, dass durch die Java-Systemeigenschaften keine ungültige Parser-Konfiguration erstellt wird.  Wenden Sie sich an den Support, wenn Sie weitere Informationen benötigen.
+
+# 
+WVER0105E=WVER0105E: Ausnahmebedingung beim Erstellen eines XML-Modellobjekts des Typs {0}
+WVER0105E.explanation=Die genannte Ausnahmebedingung trat beim Erstellen eines XML-Modellobjekts auf.
+WVER0105E.useraction=Die erforderliche Benutzeraktion ist von der Ausnahmebedingung abhängig.  In den meisten Fällen ist der angegebene Typ im gesetzten Klassenpfad nicht verfügbar.  Wenden Sie sich an den Support, wenn Sie weitere Informationen benötigen.
+
+# 
+WVER0106E=WVER0106E: Es wurde versucht, ein Element in ein Objekt mit dem einfachen Typ {0} zu platzieren
+WVER0106E.explanation=Dies ist ein interner Fehler.
+WVER0106E.useraction=Wenden Sie sich an den Support, wenn Sie weitere Informationen benötigen.
+
+# 
+WVER0107E=WVER0107E: Ausnahmebedingung bei dem Versuch, die Versionsnummer in Datei {0} zu schreiben
+WVER0107E.explanation=Die genannte Ausnahmebedingung trat beim Schreiben der angegebenen Datei auf.
+WVER0107E.useraction=Die erforderliche Benutzeraktion ist von der Ausnahmebedingung abhängig.  Stellen Sie vor allem sicher, dass Schreibzugriff auf die angegebene Datei besteht und ausreichend Kapazität für die Datei verfügbar ist.
+
+# 
+WVER0108E=WVER0108E: Ausnahmebedingung beim Entitätsauflösung, mit öffentlicher ID {0}, System-ID {1} und zugeordnetem Dateinamen {2}
+WVER0108E.explanation=Die genannte Ausnahmebedingung trat beim Auflösen von DTD-Informationen während der Syntaxanalyse von Produktinformationen auf.  Die angegebene DTD konnte nicht aufgelöst werden.
+WVER0108E.useraction=Die erforderliche Benutzeraktion ist von der Ausnahmebedingung abhängig.
+
+# 
+WVER0201E=WVER0201E: Fehlendes Attribut ''{0}'' innerhalb Element des Typs ''{1}''
+WVER0201E.explanation=Das genannte Attribut ist kein gültiges Attribut des angegebenen Elementtyps.
+WVER0201E.useraction=Korrigieren Sie die Attributinformationen in der XML-Datei.
+
+#
+WVER0202E=WVER0202E: Unpaarige Elementstruktur: Zusätzliches Element-Abschlusszeichen
+WVER0202E.explanation=Eine XML-Datei mit Produktinformationen enthält eine fehlerhafte Elementstruktur.
+WVER0202E.useraction=Korrigieren Sie die Elementstruktur in der XML-Datei.
+
+#
+WVER0203E=WVER0203E: Unpaarige Elementstruktur: Fehlendes Element-Abschlusszeichen
+WVER0203E.explanation=Eine XML-Datei mit Produktinformationen enthält eine fehlerhafte Elementstruktur.
+WVER0203E.useraction=Korrigieren Sie die Elementstruktur in der XML-Datei.
+
+#
+WVER0204E=WVER0204E: Element ''{0}'' ist kein gültiges Stammelement
+WVER0204E.explanation=Eine XML-Datei mit Produktinformationen enthält eine fehlerhafte Elementstruktur.
+WVER0204E.useraction=Korrigieren Sie die Elementstruktur in der XML-Datei.
+
+#
+WVER0205E=WVER0205E: Element ''{0}'' ist innerhalb des Elements ''{1}'' nicht gültig
+WVER0205E.explanation=Eine XML-Datei mit Produktinformationen enthält eine fehlerhafte Elementstruktur.
+WVER0205E.useraction=Korrigieren Sie die Elementstruktur in der XML-Datei.
+
+#
+WVER0206E=WVER0206E: Versuch, Element ''{0}'' zu schließen, während es innerhalb des Elements ''{1}'' ist
+WVER0206E.explanation=Eine XML-Datei mit Produktinformationen enthält eine fehlerhafte Elementstruktur.
+WVER0206E.useraction=Korrigieren Sie die Elementstruktur in der XML-Datei.

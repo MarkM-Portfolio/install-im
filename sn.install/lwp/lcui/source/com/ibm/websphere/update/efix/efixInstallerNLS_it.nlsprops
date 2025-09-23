@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Impossibile installare la correzione: si è verificata un''eccezione durante l''aggiornamento della cronologia eventi memorizzata in {0}
+WUPD0200E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione. 
+WUPD0200E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0201E=WUPD0201E: Impossibile installare la correzione: si è verificata un''eccezione durante l''apertura del file di log {0}
+WUPD0201E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione. 
+WUPD0201E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0211E=WUPD0211E: Impossibile installare la correzione: si è verificata un'eccezione durante il richiamare delle informazioni sui componenti inclusi nell'aggiornamento corrente.
+WUPD0211E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione. 
+WUPD0211E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0212E=WUPD0212E: Impossibile installare la correzione: il componente {0} è elencato come parte di questo aggiornamento, ma non è disponibile alcuna immagine di aggiornamento del componente.
+WUPD0212E.explanation=La parte di correzione utilizzata per aggiornare il componente denominato non è disponibile.
+WUPD0212E.useraction=Questo problema indica un errore interno. Per ulteriori informazioni, contattare l'assistenza IBM.
+
+WUPD0214E=WUPD0214E: Impossibile installare la correzione: si è verificata un''eccezione durante la registrazione dell''applicazione della correzione {0} dal file JAR di correzione {1}
+WUPD0214E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione. 
+WUPD0214E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0215E=WUPD0215E: Impossibile installare la correzione: si è verificato un errore durante l''installazione del componente {0}.
+WUPD0215E.explanation=Per ulteriori dettagli consultare i log di installazione e il file cronologia eventi.
+WUPD0215E.useraction=Per ulteriori dettagli consultare i log di installazione e il file cronologia eventi.
+
+WUPD0216E=WUPD0216E: Impossibile installare la correzione: si è verificata un''eccezione nel contrassegnare l''applicazione della correzione {0} nel componente {1}
+WUPD0216E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione. 
+WUPD0216E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+
+WUPD0220E=WUPD0220E: Impossibile disinstallare la correzione: il file per la correzione {0} non esiste.
+WUPD0220E.explanation=Si è tentato di rimuovere una correzione non contrassegnata come installata.
+WUPD0220E.useraction=Questo problema indica un errore interno. Nessun intervento da eseguire per rimuovere una correzione non installata.
+
+WUPD0221E=WUPD0221E: Impossibile disinstallare la correzione: il file per la correzione {0} non può essere letto.
+WUPD0221E.explanation=Il file per la correzione denominata non può essere letto.  L'operazione di disinstallazione è stata interrotta.
+WUPD0221E.useraction=Verificare che il file contenente la correzione denominata sia valido.
+
+WUPD0222E=WUPD0222E: Impossibile disinstallare la correzione: si è verificata un''eccezione durante l''eliminazione dell''applicazione della correzione {0}
+WUPD0222E.explanation=Si è verificata un'eccezione durante la disinstallazione della correzione, causando un problema alla disinstallazione. 
+WUPD0222E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0223E=WUPD0223E: Impossibile disinstallare la correzione: l''aggiornamento per il componente {1} della correzione {0} non può essere disinstallato.
+WUPD0223E.explanation=È stato eseguito un aggiornamento al componente denominato come parte della correzione denominata. Impossibile rimuovere l'aggiornamento di questo componente.
+WUPD0223E.useraction=Questo problema indica un errore interno. Per ulteriori informazioni, contattare l'assistenza IBM.
+
+WUPD0224E=WUPD0224E: Impossibile disinstallare la correzione: si è verificata un''eccezione durante l''eliminazione dell''applicazione della correzione {0} dal componente {1}
+WUPD0224E.explanation=Si è verificata un'eccezione durante la disinstallazione della correzione, causando un problema alla disinstallazione. 
+WUPD0224E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0232E=WUPD0232E: Impossibile aggiornare la correzione: si è verificata un''eccezione durante il richiamo del contenuto della correzione {0}, componente {1}, file JAR di correzione {2}, voce {3}
+WUPD0232E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione. 
+WUPD0232E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0233E=WUPD0233E: Impossibile aggiornare la correzione: si è verificata un''eccezione durante la pre-elaborazione del contenuto della correzione {0}, componente {1}
+WUPD0233E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione.
+WUPD0233E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0234E=WUPD0234E: Impossibile aggiornare la correzione: si è verificare un''eccezione durante l''elaborazione del contenuto della correzione {0}, componente {1}
+WUPD0234E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione.
+WUPD0234E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0235E=WUPD0235E: Impossibile aggiornare la correzione: L''elaborazione della correzione {0}, componente {1} non è riuscita.  Per i dettagli di elaborazione, consultare il file di log {2}.
+WUPD0235E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione.
+WUPD0235E.useraction=Riesaminare le informazioni di elaborazione contenute nel file di log elencato.
+
+WUPD0236E=WUPD0236E: Impossibile aggiornare la correzione: si è verificata un'eccezione durante la preparazione della directory di backup e di log.
+WUPD0236E.explanation=Si è verificata un'eccezione durante l'installazione della correzione, causando un problema all'installazione.
+WUPD0236E.useraction=Per ulteriori dettagli, fare riferimento alla eccezione elencata.
+
+WUPD0237E=WUPD0237E: Impossibile rimuovere la correzione: si è verificata un''eccezione durante la pre-elaborazione del contenuto della correzione {0}, componente {1}
+WUPD0237E.explanation=Si è verificata un'eccezione nella disinstallazione della correzione, causando un problema alla disinstallazione.
+WUPD0237E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0238E=WUPD0238E: Impossibile rimuovere la correzione: si è verificata un''eccezione durante l''elaborazione del contenuto della correzione {0}, componente {1}
+WUPD0238E.explanation=Si è verificata un'eccezione durante la disinstallazione della correzione, causando un problema alla disinstallazione.
+WUPD0238E.useraction=Per ulteriori dettagli, fare riferimento all'eccezione.
+
+WUPD0239E=WUPD0239E: Impossibile rimuovere la correzione: l''elaborazione della correzione {0}, componente {1} non è riuscita.  Per i dettagli di elaborazione, consultare il file di log {2}.
+WUPD0239E.explanation=Si è verificata un'eccezione durante la disinstallazione della correzione, causando un problema alla disinstallazione.
+WUPD0239E.useraction=Per ulteriori dettagli, fare riferimento al file di log.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} di {1}) Installazione correzione {2}.
+prefix.efix.revert   =({0} di {1}) Ripristino installazione della correzione {2}.
+prefix.efix.uninstall=({0} di {1}) Disinstallazione della correzione {2}.
+
+#NOTAMSG
+prepare.update.install  =preparazione per l'installazione
+prepare.update.uninstall=preparazione per la disinstallazione
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =installazione componente {0} di {1}
+component.update.uninstall=disinstallazione componente {0} di {1}
+
+#NOTAMSG
+complete.update.install  =completamento installazione
+complete.update.uninstall=completamento disinstallazione
+
+#NOTAMSG
+result.cancelled.install=Installazione annullata
+result.succeeded.install=Installazione completata correttamente
+result.failed.install=Installazione non riuscita
+
+result.cancelled.uninstall=Disinstallazione annullata
+result.succeeded.uninstall=Disinstallazione completata correttamente
+result.failed.uninstall=Disinstallazione non riuscita

@@ -1,0 +1,36 @@
+[
+   {
+      "command": "sh \/tmp\/defaultadddisk\/adddisk",
+      "description": "F\u00fcgt der virtuellen Maschine eine virtuelle Platte hinzu und formatiert und h\u00e4ngt die Platte optional an.",
+      "execmode": 0,
+      "filename": "defaultadddisk.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "10",
+            "scriptkey": "DISK_SIZE_GB",
+            "scriptvalue": "10",
+            "type": "positiveinteger"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "ext3",
+            "scriptkey": "FILESYSTEM_TYPE",
+            "scriptvalue": "ext3"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "MOUNT_POINT"
+         }
+      ],
+      "location": "\/tmp\/defaultadddisk",
+      "log": "\/tmp\/defaultadddisk",
+      "name": "Default add disk",
+      "ostype": "linux\/unix",
+      "timeout": 1800000,
+      "type": "ADDON_DISK"
+   }
+]

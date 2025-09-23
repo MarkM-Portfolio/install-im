@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WASHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WASProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WASHistory.java:
+#
+WVER0201E=WVER0201E: 히스토리 디렉토리를 판별할 수 없습니다. 제품 디렉토리를 판별할 수 없습니다.
+WVER0201E.explanation=히스토리 디렉토리가 제품 디렉토리의 서브디렉토리입니다. 자세한 정보는 제품 디렉토리를 판별할 때 발생한 오류 설명을 참조하십시오.
+WVER0201E.useraction=버전 오류와 함께 나타나는 지침을 수행하십시오.
+
+# 
+WVER0202E=WVER0202E: 히스토리 정보를 로드할 수 없습니다.
+WVER0202E.explanation=히스토리 파일 {0}에서 히스토리 정보를 로드할 수 없습니다. 특정 세부사항은 발생한 오류에 따라 다릅니다.
+WVER0202E.useraction=히스토리 파일을 읽을 수 있는지 그리고 올바른 형식을 갖고 있는지 확인하십시오.
+
+# 
+WVER0203E=WVER0203E: {0}을(를) 읽는 중에 예외가 발생했습니다.
+WVER0203E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0203E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0204E=WVER0204E: 히스토리 디렉토리 {0}을(를) 작성하는 중에 예외가 발생했습니다.
+WVER0204E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0204E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0205E=WVER0205E: {1}에 대한 히스토리 파일 {0}의 백업을 작성하는 중에 예외가 발생했습니다.
+WVER0205E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0205E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0206E=WVER0206E: 이벤트 히스토리 {0}을(를) 쓰는 중에 예외가 발생했습니다.
+WVER0206E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0206E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0210I.explanation=이것은 표준 저작권 문장입니다.
+WVER0210I.useraction=사용자 조치가 필요하지 않습니다. 이것은 정보 메시지입니다.
+
+# 
+WVER0211I=WVER0211I: WebSphere Application Server 릴리스 5.0
+WVER0211I.explanation=이것은 표준 제품 설명문입니다.
+WVER0211I.useraction=사용자 조치가 필요하지 않습니다. 이것은 정보 메시지입니다.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter 버전 {0}, 날짜 {1}
+WVER0212I.explanation=이것은 표준 모듈 설명문입니다.
+WVER0212I.useraction=사용자 조치가 필요하지 않습니다. 이것은 정보 메시지입니다.
+
+# 
+WVER0225E=WVER0225E: ''{0}'' 인수에 지정된 값이 없습니다.
+WVER0225E.explanation=나열된 인수에 값이 필요합니다. (사용법 정보를 표시하려면 '-help' 또는 '-usage'를 사용하십시오.)
+WVER0225E.useraction=나열된 인수의 값을 지정하십시오.
+
+# 
+WVER0226E=WVER0226E: ''{0}'' 값이 올바른 형식 값이 아닙니다.
+WVER0226E.explanation=올바른 형식 값은 'text' 및 'html'입니다. 지정한 값이 이 값 중 하나가 아닙니다. (사용법 정보를 표시하려면 '-help' 또는 '-usage'를 사용하십시오.)
+WVER0226E.useraction=형식 값을 올바른 값인 'text' 또는 'html' 중 하나로 변경하십시오.
+
+# 
+WVER0228E=WVER0228E: ''{0}'' 인수가 올바른 인수가 아닙니다.
+WVER0228E.explanation=지정된 인수가 올바르지 않습니다. (사용법 정보를 표시하려면 '-help' 또는 '-usage'를 사용하십시오.)
+WVER0228E.useraction=인수를 올바른 인수로 변경하십시오.
+
+# 
+WVER0230I=WVER0230I: 사용법: historyInfo ( [ -format <text | html> ] [ -file <output file> ] [ -updateId <updateId> ] [ -component <componentName> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=이 정보 메시지는 historyInfo 유틸리티 프로그램에 대한 인수를 설명합니다. HistoryInfo 유틸리티 프로그램은 다섯개의 선택적 키워드 인수를 승인합니다. 각 인수는 출력 형식을 지정하고, 출력 파일을 지정하며, 지정한 efix와 연관된 이베트만 표시하고, 지정한 구성요소와 연관된 이벤트만 표시하며, 사용법 정보를 표시하는 데 사용됩니다. (추가 정보를 표시하려면 '-usage' 또는 '-help'를 사용하십시오.)
+WVER0230I.useraction=사용자 조치가 필요하지 않습니다. 요청 시 사용법 정보 메시지가 표시됩니다.
+
+# 
+WVER0231I=WVER0231I: '-format' 인수를 사용하여 출력 형식을 지정합니다. 출력 형식은 'text' 또는 'html'중 하나로 지정해야 합니다. '-file' 인수를 사용하여 출력 파일을 지정합니다. 파일 이름을 제공해야 합니다. '-updateId' 인수를 사용하여 표시되는 이벤트를 제한하는 갱신 ID를 지정합니다. '-component' 인수를 사용하여 표시되는 이벤트를 제한하는 구성요소 이름을 지정합니다. '-help' 인수를 사용하여 버전 정보를 표시합니다. '-usage' 인수를 사용하여 이 정보 메시지를 표시합니다.
+WVER0231I.explanation=메시지는 versionInfo 유틸리티 프로그램에 대한 올바른 인수를 설명합니다.
+WVER0231I.useraction=사용자 조치가 필요하지 않습니다. 요청 시 사용법 정보 메시지가 표시됩니다.
+
+# 
+WVER0240E=WVER0240E: 버전 보고서를 {0}에 쓰는 중 오류 발생: {1}
+WVER0240E.explanation=히스토리 보고서를 지정된 파일에 쓰는 중에 지정한 오류가 발생했습니다.
+WVER0240E.useraction=수정 조치는 발생한 오류 특성에 따라 다릅니다. 특히 지정된 파일에 쓸 수 있는지 그리고 보고서에 사용할 수 있는 충분한 공간이 있는지 확인하십시오.
+
+# 
+WVER0241E=WVER0241E: 히스토리 보고서를 {0}에 쓰는 중에 오류가 발생했습니다. 오류 텍스트를 표시할 수 없지만 {1} 유형입니다. 오류 텍스트를 검색하는 중에 {2} 유형의 두 번째 오류가 발생했습니다.
+WVER0241E.explanation=히스토리 보고서를 지정된 파일에 쓰는 중에 오류가 발생했습니다. 오류 텍스트를 검색하는 중에 두 번째 오류가 발생했습니다.
+WVER0241E.useraction=사용 가능한 사용자 조치가 없습니다. 요청한 조작을 다시 시도하거나 추가 지원에 대해서는 지원 부서에 문의하십시오.
+
+# 
+WVER0242E=WVER0242E: 히스토리 정보를 처리하는 중에 예외가 발생했습니다.
+WVER0242E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0242E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0243E=WVER0243E: 히스토리 정보를 처리하는 중에 예외가 발생했습니다.
+WVER0243E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0243E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+# 
+WVER0261E=WVER0261E: {2} 파일의 {1} 구성요소에서 efix {0}의 응용프로그램을 기록할 수 없습니다. 이름 지정된 파일을 저장할 수 없습니다.
+WVER0261E.explanation=이름 지정된 파일을 저장할 수 없습니다.
+WVER0261E.useraction=대상 파일에 쓸 수 있는지 그리고 새 파일에 사용할 수 있는 공간이 있는지 확인하십시오.
+
+# 
+WVER0262E=WVER0262E: {2} 파일의 {1} 구성요소에서 efix {0}의 응용프로그램 제거를 기록할 수 없습니다. 이름 지정된 파일을 저장할 수 없습니다.
+WVER0262E.explanation=이름 지정된 파일을 저장할 수 없습니다.
+WVER0262E.useraction=대상 파일에 쓸 수 있는지 그리고 새 파일에 사용할 수 있는 공간이 있는지 확인하십시오.
+
+# 
+WVER0263E=WVER0263E: {2} 파일에 저장된 {1} 구성요소에서 efix {0}의 응용프로그램 제거를 기록할 수 없습니다. 이름 지정된 파일을 제거할 수 없습니다.
+WVER0263E.explanation=이름 지정된 파일을 제거할 수 없습니다.
+WVER0263E.useraction=대상 파일을 제거할 수 있는지 확인하십시오.
+
+# 
+WVER0264E=WVER0264E: {1} 구성요소에서 efix {0}의 응용프로그램 제거를 기록할 수 없습니다. 레코드에 응용프로그램이 없습니다.
+WVER0264E.explanation=구성요소에 지정한 efix의 응용프로그램 레코드가 없습니다. 제품 정보가 손상되었거나 내부 오류가 발생했을 수 있습니다.
+WVER0264E.useraction=추가 정보는 지원 부서에 문의하십시오.
+
+# 
+WVER0265E=WVER0265E: {2} 파일에 저장된 efix 드라이버 {0}을(를) 제거할 수 없습니다.
+WVER0265E.explanation=이름 지정된 파일을 제거할 수 없습니다.
+WVER0265E.useraction=대상 파일을 제거할 수 있는지 확인하십시오.
+
+# 
+WVER0266E=WVER0266E: PTF 드라이버 정보를 구문 분석하는 중에 복구 가능한 오류가 발생했습니다.
+WVER0266E.explanation=PTF 정보를 구문 분석하는 중에 오류 목록이 발생했습니다. 추가 정보는 나열된 오류를 참조하십시오.
+WVER0266E.useraction=제안된 사용자 조치는 오류 목록을 참조하십시오.
+
+# 
+WVER0267E=WVER0267E: {2} 파일의 {1} 구성요소에서 PTF {0}의 응용프로그램 제거를 기록할 수 없습니다. 이름 지정된 파일을 저장할 수 없습니다.
+WVER0267E.explanation=이름 지정된 파일을 저장할 수 없습니다.
+WVER0267E.useraction=대상 파일에 쓸 수 있는지 그리고 새 파일에 사용할 수 있는 공간이 있는지 확인하십시오.
+
+# 
+WVER0268E=WVER0268E: {2} 파일에 저장된 {1} 구성요소에서 PTF {0}의 응용프로그램 제거를 기록할 수 없습니다. 이름 지정된 파일을 제거할 수 없습니다.
+WVER0268E.explanation=이름 지정된 파일을 제거할 수 없습니다.
+WVER0268E.useraction=대상 파일을 제거할 수 있는지 확인하십시오.
+
+# 
+WVER0269E=WVER0269E: {1} 구성요소에서 PTF {0}의 응용프로그램 제거를 기록할 수 없습니다. 레코드에 응용프로그램이 없습니다.
+WVER0269E.explanation=구성요소에 지정한 PTF의 응용프로그램 레코드가 없습니다. 제품 정보가 손상되었거나 내부 오류가 발생했을 수 있습니다.
+WVER0269E.useraction=추가 정보는 지원 부서에 문의하십시오.
+
+# 
+WVER0270E=WVER0270E: {2} 파일에 저장된 PTF 드라이버 {0}을(를) 제거할 수 없습니다.
+WVER0270E.explanation=이름 지정된 파일을 제거할 수 없습니다.
+WVER0270E.useraction=대상 파일을 제거할 수 있는지 확인하십시오.
+
+# 
+WVER0271E=WVER0271E: 인식되지 않은 제품 히스토리 파일 확장자 ''{0}''입니다.
+WVER0271E.explanation=히스토리 정보를 로드할 경우 특정 확장자를 가진 파일에 이 정보가 저장됩니다. 확장자는 각 파일에 저장된 정보 유형을 판별합니다. 올바른 확장자는 '.efixDriver', '.efixApplied', '.ptfDriver' 및 '.ptfApplied'입니다. 파일 확장자가 올바른 확장자 중 하나가 아닌 버전 정보를 포함하는 파일을 로드하려고 했습니다.
+WVER0271E.useraction=이는 내부 오류를 나타냅니다.
+
+# 
+WVER0272E=WVER0272E: {0}을(를) 읽는 중에 예외가 발생했습니다.
+WVER0272E.explanation=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+WVER0272E.useraction=기타 정보는 내포된 예외 세부사항을 참조하십시오.
+
+label.standard.out=표준 출력
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Application Server History 보고서
+report.header.update=갱신 {0}용 IBM WebSphere Application Server History 보고서
+report.header.component=구성요소 {0}용 IBM WebSphere Application Server History 보고서
+report.header.update.component=갱신 {0} 및 구성요소 {1}용 IBM WebSphere Application Server History 보고서
+
+warning.no.events=경고: 사용 가능한 이벤트가 없습니다.
+warning.no.events.for.component=경고: 구성요소 {0}에 사용 가능한 이벤트가 없습니다.
+warning.no.events.for.update=경고: 갱신 {0}에 사용 가능한 이벤트가 없습니다.
+warning.no.events.for.update.component=경고: 갱신 {0} 및 구성요소 {1}에 사용 가능한 이벤트가 없습니다.
+
+info.report.on={0} 날짜 및 시간의 보고서
+
+report.footer=히스토리 보고서 종료
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=설치
+label.product.dir=제품 디렉토리
+label.version.dir=버전 디렉토리
+label.version.dtd.dir=DTD 디렉토리
+label.version.log.dir=로그 디렉토리
+label.version.backup.dir=백업 디렉토리
+label.version.tmp.dir=TMP 디렉토리
+label.version.history.dir=히스토리 디렉토리
+label.version.history.file=히스토리 파일
+
+info.event=설치 이벤트
+info.component.event=구성요소 설치 이벤트
+
+label.efix.id=EFix ID
+label.ptf.id=PTF ID
+label.unknown.id=알 수 없는 ID
+
+label.action=조치
+
+label.start.time.stamp=시작 시간
+label.end.time.stamp=종료 시간
+
+label.log.file.name=로그 파일 이름
+
+
+label.component.name=구성요소 이름
+
+label.is.custom=사용자 정의
+label.primary.content=기본 컨텐츠
+
+label.update.type=갱신 조치
+
+label.is.external=외부
+label.root.property.file=루트 등록 정보 파일
+label.root.property.name=루트 등록 정보 이름
+label.root.property.value=루트 등록 정보 값
+
+label.backup.file.name=백업 파일 이름
+label.result=결과
+label.result.message=결과 메시지
+
+label.initial.version=초기 버전
+label.initial.spec.version=초기 스펙
+label.initial.build.date=초기 빌드 날짜
+
+label.final.version=최종 버전
+label.final.spec.version=최정 버전 스펙
+label.final.build.date=최종 빌드 날짜
+
+
+label.install.action=설치
+label.uninstall.action=설치 제거
+label.selective.install.action=선택적 설치
+label.selective.uninstall.action=선택적 설치 제거
+label.unknown.action=*** 알 수 없는 이벤트 조치 ***
+
+label.update.add.tag=추가
+label.update.replace.tag=바꾸기
+label.update.remove.tag=제거
+label.update.patch.tag=패치
+label.update.composite.tag=복합
+label.update.unknown.tag=*** 알 수 없는 갱신 유형 ***
+
+label.result.succeeded.tag=성공함
+label.result.failed.tag=실패함
+label.result.cancelled.tag=취소됨
+label.result.unknown.tag=*** 알 수 없는 이벤트 결과 ***
+
+label.true=참
+label.false=거짓

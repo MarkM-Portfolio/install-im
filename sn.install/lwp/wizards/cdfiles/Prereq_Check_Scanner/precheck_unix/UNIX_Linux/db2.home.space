@@ -1,0 +1,35 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+if [ -d "/home" ]; then
+ type=`uname`
+  if [ "$type" = "Linux" ]; then
+  res=` df -h /home | tail -n 1`
+  len=`echo $res | wc -w`
+  len1=`expr $len - 2`
+  avail=`echo $res | cut -d ' ' -f$len1` 
+  echo $avail"B"
+  fi
+  if [ "$type" = "SunOS" ]; then
+	avail=`df -k /home | awk '{ if(NF<7 && NF>1){ print $(4)/1024"MB" } }'`
+	echo $avail
+  fi 
+  if [ "$type" = "AIX" ]; then
+  res=`df -g /home | tail -n 1`
+   len=`echo $res | wc -w`
+  len1=`expr $len - 4`
+  avail=`echo $res | cut -d ' ' -f$len1`
+  echo $avail"GB"
+ 
+  fi
+
+else
+  echo "Unavailable"
+fi
+

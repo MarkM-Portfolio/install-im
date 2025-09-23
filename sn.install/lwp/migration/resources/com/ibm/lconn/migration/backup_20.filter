@@ -1,0 +1,28 @@
+## ***************************************************************** */
+##                                                                   */
+## IBM Confidential                                                  */
+##                                                                   */
+## OCO Source Materials                                              */
+##                                                                   */
+## (C) Copyright IBM Corp. 2008                                      */
+##                                                                   */
+## The source code for this program is not published or otherwise    */
+## divested of its trade secrets, irrespective of what has been      */
+## deposited with the U.S. Copyright Office.                         */
+##                                                                   */
+## ***************************************************************** */
+LOG ========== Starting to backup 2.0 configuration ===============
+CONDITION NULL
+CONDITION activities.installed true
+#CONDITION activities.version 2.0.0
+LOG ========== Activities =====================================
+FILE_COPY ${activities.cell.config.home}/oa-config.xml>>migrationData/backup/dest/config/activities/oa-config.xml
+FILE_COPY ${activities.cell.config.home}/extern/oa-jobs.xml>>migrationData/backup/dest/config/activities/extern/oa-jobs.xml
+
+CONDITION NULL
+CONDITION dogear.installed true
+#CONDITION dogear.version 2.0.0
+LOG ========== Dogear =========================================
+FILE_COPY ${dogear.cell.config.home}/dogear-config-cell.xml>>migrationData/backup/dest/config/dogear/dogear-config-cell.xml
+FILE_COPY ${dogear.node.config.home}/dogear-config-node.xml>>migrationData/backup/dest/config/dogear/dogear-config-node.xml
+LOG ========== Backup 2.0 configuration completed =================

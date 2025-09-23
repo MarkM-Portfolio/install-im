@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Wystąpił wyjątek podczas ładowania dokumentu {1} z katalogu DTD {0}.
+WVER0101E.explanation=Ładowanie dokumentu zakończyło się niepowodzeniem z powodu wyjątku.
+WVER0101E.useraction=Akcja, jaką należy podjąć, zależy od rodzaju wyjątku. W szczególności należy sprawdzić, czy określony plik jest dostępny i czy jego format jest właściwy. Aby uzyskać dodatkowe informacje, skontaktuj się z działem wsparcia.
+
+# 
+WVER0102E=WVER0102E: Wystąpił wyjątek podczas ładowania dokumentu {1} z katalogu DTD {0}. Ustawiono identyfikator systemowy {2} i identyfikator publiczny {3}. Błąd wystąpił w wierszu {4} i kolumnie {5}.
+WVER0102E.explanation=Ładowanie dokumentu zakończyło się niepowodzeniem z powodu wyjątku.
+WVER0102E.useraction=Akcja, jaką należy podjąć, zależy od rodzaju wyjątku. W szczególności należy sprawdzić, czy określony plik jest dostępny i czy jego format jest właściwy. Aby uzyskać dodatkowe informacje, skontaktuj się z działem wsparcia.
+
+# 
+WVER0104E=WVER0104E: Wystąpił wyjątek podczas tworzenia głównego elementu dokumentu typu {0}.
+WVER0104E.explanation=Wystąpił wyjątek podczas tworzenia głównego elementu dokumentu.
+WVER0104E.useraction=Akcja, jaką należy podjąć, zależy od rodzaju wyjątku. Bardzo często przyczyną jest niepoprawna konfiguracja analizatora składni XML. Sprawdź, czy właściwości systemowe języka Java nie wpływają na tworzenie niepoprawnej konfiguracji analizatora składni. Aby uzyskać dodatkowe informacje, skontaktuj się z działem wsparcia.
+
+# 
+WVER0105E=WVER0105E: Wystąpił wyjątek podczas tworzenia obiektu modelu XML (typu {0}).
+WVER0105E.explanation=Wystąpił wyjątek podczas próby utworzenia obiektu modelu XML.
+WVER0105E.useraction=Akcja, jaką należy podjąć, zależy od rodzaju wyjątku. Powodem jest bardzo często to, że wymieniony typ obiektu modelu jest niedostępny w ustawionej ścieżce klasy. Aby uzyskać dodatkowe informacje, skontaktuj się z działem wsparcia.
+
+# 
+WVER0106E=WVER0106E: Podjęto próbę umieszczenia elementu w obiekcie typu prostego {0}.
+WVER0106E.explanation=Jest to błąd wewnętrzny.
+WVER0106E.useraction=Aby uzyskać dodatkowe informacje, skontaktuj się z działem wsparcia.
+
+# 
+WVER0107E=WVER0107E: Wystąpił wyjątek podczas próby zapisania informacji o wersji w pliku {0}.
+WVER0107E.explanation=Wystąpił wyjątek podczas próby zapisu w określonym pliku.
+WVER0107E.useraction=Akcja, jaką należy podjąć, zależy od rodzaju wyjątku. W szczególności należy sprawdzić, czy określony plik jest dostępny do zapisu oraz czy jest odpowiednia ilość wolnego miejsca.
+
+# 
+WVER0108E=WVER0108E: Wystąpił wyjątek podczas rozpoznawania obiektu o identyfikatorze publicznym {0}, identyfikatorze systemowym {1} i nazwie pliku odwzorowanego {2}.
+WVER0108E.explanation=Wystąpił wyjątek podczas rozpoznawania informacji DTD w czasie analizowania informacji o produkcie. Nie można rozpoznać definicji DTD.
+WVER0108E.useraction=Akcja, jaką należy podjąć, zależy od rodzaju wyjątku.
+
+# 
+WVER0201E=WVER0201E: Brak atrybutu {0} w elemencie typu {1}.
+WVER0201E.explanation=Wymieniony atrybut nie jest poprawny dla określonego typu elementu.
+WVER0201E.useraction=Zaktualizuj plik XML w celu poprawienia informacji o atrybutach.
+
+#
+WVER0202E=WVER0202E: Niepoprawna struktura elementu: Dodatkowe domknięcia elementu.
+WVER0202E.explanation=Plik XML zawierający informacje o produkcie ma niepoprawną strukturę elementu.
+WVER0202E.useraction=Zaktualizuj plik XML w celu poprawienia struktury elementu.
+
+#
+WVER0203E=WVER0203E: Niepoprawna struktura elementu: Brak domknięć elementu.
+WVER0203E.explanation=Plik XML zawierający informacje o produkcie ma niepoprawną strukturę elementu.
+WVER0203E.useraction=Zaktualizuj plik XML w celu poprawienia struktury elementu.
+
+#
+WVER0204E=WVER0204E: Element {0} nie jest poprawnym elementem głównym.
+WVER0204E.explanation=Plik XML zawierający informacje o produkcie ma niepoprawną strukturę elementu.
+WVER0204E.useraction=Zaktualizuj plik XML w celu poprawienia struktury elementu.
+
+#
+WVER0205E=WVER0205E: Element {0} nie jest poprawny w elemencie {1}.
+WVER0205E.explanation=Plik XML zawierający informacje o produkcie ma niepoprawną strukturę elementu.
+WVER0205E.useraction=Zaktualizuj plik XML w celu poprawienia struktury elementu.
+
+#
+WVER0206E=WVER0206E: Usiłowano zamknąć element {0} przed zamknięciem elementu {1}.
+WVER0206E.explanation=Plik XML zawierający informacje o produkcie ma niepoprawną strukturę elementu.
+WVER0206E.useraction=Zaktualizuj plik XML w celu poprawienia struktury elementu.

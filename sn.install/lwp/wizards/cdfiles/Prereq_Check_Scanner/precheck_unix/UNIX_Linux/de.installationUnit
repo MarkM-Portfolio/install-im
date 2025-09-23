@@ -1,0 +1,35 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+	user=`whoami`
+	 if [ -f "/$TMP_DIR/deout.txt" ]; then
+          rm -f /$TMP_DIR/deout.txt
+     fi
+	
+	if [ "$user" != "root" ]; then
+        deInstall="$HOME/.acsi_$user/ACUApplication.properties"
+            if [ -f "$deInstall" ]; then
+              #echo "True"
+              deinstLoc=`cat $deInstall | grep acu.installLocation= | cut -d'=' -f2`
+              echo "$deinstLoc/bin/listIU.sh"
+              
+              $deinstLoc/bin/listIU.sh -v >/$TMP_DIR/deout.txt
+              exit
+            else
+              echo "DENotAvailable"
+              exit
+            fi
+        fi
+if [ -f "/var/ibm/common/acsi/ACUApplication.properties" ]; then
+    deinstLoc=`cat "/var/ibm/common/acsi/ACUApplication.properties" | grep acu.installLocation= | cut -d'=' -f2`
+              echo "$deinstLoc/bin/listIU.sh"
+              $deinstLoc/bin/listIU.sh -v >/$TMP_DIR/deout.txt
+else
+    echo "DENotAvailable"
+fi

@@ -1,0 +1,25 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- (C) Copyright IBM Corp. 2004                                      -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="prereqs.install/apache-ant-1.6.1" 
+           type="binary" 
+           description="ANT 1.6.1 Libraries" 
+           spec-version="1.6.1"
+           build-version=""
+           owner=""
+           owner-email="">
+   <output-group name="default">
+	<output type="jar" visibility="external" platform="all" location="lib/ant.jar"/>
+   </output-group>
+</component>

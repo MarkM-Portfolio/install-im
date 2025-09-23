@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<agent-input>
+  <variables>
+    <variable name='sharedLocation' value='/opt/IBM/IMShared'/>
+  </variables>
+  <server>
+    <repository location='/opt/install/vin/HCLConnections'/>
+    <repository location='/root/HCL_Connections/HCL_Connections_Install/HCLConnections'/>
+  </server>
+  <profile id='HCL Connections' installLocation='/opt/HCL/Connections7'>
+    <data key='cic.selector.arch' value='x86_64'/>
+    <data key='user.connections.offering.installed' value='7.0.0.0'/>
+    <data key='user.connections.offering.installing' value='8.0.0.0'/>
+    <data key='user.job' value='UPDATE'/>
+    <data key='user.lcinstallscript.path' value='/tmp/LCInstallScript'/>
+    <data key='user.clusterlist' value='ICCluster,'/>
+    <data key='user.nodeslist' value='oscar1-node,'/>
+    <data key='user.clusterfullinfo' value='ICCluster:oscar1-node#ICCluster_server1,;'/>
+    <data key='user.nodesHostnamelist' value='oscar1.cnx.cwp.pnp-hcl.com,'/>
+    <data key='user.nodesServerlist' value='oscar1-node:ICCluster_server1,oscar1;'/>
+    <data key='user.nodeAgentList' value='oscar1-node:true;'/>
+    <data key='user.was.install.location' value='/opt/IBM/WebSphere/AppServer'/>
+    <data key='user.was.install.location.configproperties' value='/opt/IBM/WebSphere/AppServer'/>
+    <data key='user.was.install.location.win32format' value='/opt/IBM/WebSphere/AppServer'/>
+    <data key='user.was.userhome.original' value='/opt/IBM/WebSphere/AppServer/profiles/Dmgr01'/>
+    <data key='user.was.userhome' value='/opt/IBM/WebSphere/AppServer/profiles/Dmgr01'/>
+    <data key='user.was.userhome.configproperties' value='/opt/IBM/WebSphere/AppServer/profiles/Dmgr01'/>
+    <data key='user.was.wasSoapPort' value='8879'/>
+    <data key='user.was.profileName' value='Dmgr01'/>
+    <data key='user.was.dmCellName' value='ConnectionsCell'/>
+    <data key='user.was.dmHostname' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.was.domainName' value='.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.was.adminuser.id' value='wasadmin'/>
+    <data key='user.was.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.was.adminuser.xor.encrypted.password' value='{xor}Lz4sLCgwLTs='/>
+    <data key='user.activities.adminuser.id' value='wasadmin'/>
+    <data key='user.activities.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.blogs.adminuser.id' value='wasadmin'/>
+    <data key='user.blogs.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.dogear.adminuser.id' value='wasadmin'/>
+    <data key='user.dogear.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.communities.adminuser.id' value='wasadmin'/>
+    <data key='user.communities.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.files.adminuser.id' value='wasadmin'/>
+    <data key='user.files.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.forums.adminuser.id' value='wasadmin'/>
+    <data key='user.forums.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.homepage.adminuser.id' value='wasadmin'/>
+    <data key='user.homepage.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.ccm.adminuser.id' value='wasadmin'/>
+    <data key='user.ccm.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.metrics.adminuser.id' value='wasadmin'/>
+    <data key='user.metrics.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.mobile.adminuser.id' value='wasadmin'/>
+    <data key='user.mobile.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.moderation.adminuser.id' value='wasadmin'/>
+    <data key='user.moderation.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.news.adminuser.id' value='wasadmin'/>
+    <data key='user.news.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.profiles.adminuser.id' value='wasadmin'/>
+    <data key='user.profiles.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.search.adminuser.id' value='wasadmin'/>
+    <data key='user.search.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.wikis.adminuser.id' value='wasadmin'/>
+    <data key='user.wikis.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.rte.adminuser.id' value='wasadmin'/>
+    <data key='user.rte.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.common.adminuser.id' value='wasadmin'/>
+    <data key='user.common.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.widgetContainer.adminuser.id' value='wasadmin'/>
+    <data key='user.widgetContainer.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.pushNotification.adminuser.id' value='wasadmin'/>
+    <data key='user.pushNotification.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.ic360.adminuser.id' value='wasadmin'/>
+    <data key='user.ic360.adminuser.password' value='fufgZbY47EfxLYarBAIxeQ=='/>
+    <data key='user.deployment.type' value='small'/>
+    <data key='user.activities.clusterExist' value='false'/>
+    <data key='user.activities.clusterName' value='ICCluster'/>
+    <data key='user.activities.firstNodeName' value='oscar1-node'/>
+    <data key='user.activities.serverInfo' value='activities.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.activities.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.blogs.clusterExist' value='false'/>
+    <data key='user.blogs.clusterName' value='ICCluster'/>
+    <data key='user.blogs.firstNodeName' value='oscar1-node'/>
+    <data key='user.blogs.serverInfo' value='blogs.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.blogs.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.dogear.clusterExist' value='false'/>
+    <data key='user.dogear.clusterName' value='ICCluster'/>
+    <data key='user.dogear.firstNodeName' value='oscar1-node'/>
+    <data key='user.dogear.serverInfo' value='dogear.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.dogear.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.communities.clusterExist' value='false'/>
+    <data key='user.communities.clusterName' value='ICCluster'/>
+    <data key='user.communities.firstNodeName' value='oscar1-node'/>
+    <data key='user.communities.serverInfo' value='communities.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.communities.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.files.clusterExist' value='false'/>
+    <data key='user.files.clusterName' value='ICCluster'/>
+    <data key='user.files.firstNodeName' value='oscar1-node'/>
+    <data key='user.files.serverInfo' value='files.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.files.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.forums.clusterExist' value='false'/>
+    <data key='user.forums.clusterName' value='ICCluster'/>
+    <data key='user.forums.firstNodeName' value='oscar1-node'/>
+    <data key='user.forums.serverInfo' value='forums.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.forums.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.homepage.clusterExist' value='false'/>
+    <data key='user.homepage.clusterName' value='ICCluster'/>
+    <data key='user.homepage.firstNodeName' value='oscar1-node'/>
+    <data key='user.homepage.serverInfo' value='homepage.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.homepage.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.metrics.clusterExist' value='false'/>
+    <data key='user.metrics.clusterName' value='ICCluster'/>
+    <data key='user.metrics.firstNodeName' value='oscar1-node'/>
+    <data key='user.metrics.serverInfo' value='metrics.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.metrics.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.mobile.clusterExist' value='false'/>
+    <data key='user.mobile.clusterName' value='ICCluster'/>
+    <data key='user.mobile.firstNodeName' value='oscar1-node'/>
+    <data key='user.mobile.serverInfo' value='mobile.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.mobile.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.moderation.clusterExist' value='false'/>
+    <data key='user.moderation.clusterName' value='ICCluster'/>
+    <data key='user.moderation.firstNodeName' value='oscar1-node'/>
+    <data key='user.moderation.serverInfo' value='moderation.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.moderation.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.news.clusterExist' value='false'/>
+    <data key='user.news.clusterName' value='ICCluster'/>
+    <data key='user.news.firstNodeName' value='oscar1-node'/>
+    <data key='user.news.serverInfo' value='news.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.news.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.profiles.clusterExist' value='false'/>
+    <data key='user.profiles.clusterName' value='ICCluster'/>
+    <data key='user.profiles.firstNodeName' value='oscar1-node'/>
+    <data key='user.profiles.serverInfo' value='profiles.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.profiles.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.search.clusterExist' value='false'/>
+    <data key='user.search.clusterName' value='ICCluster'/>
+    <data key='user.search.firstNodeName' value='oscar1-node'/>
+    <data key='user.search.serverInfo' value='search.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.search.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.wikis.clusterExist' value='false'/>
+    <data key='user.wikis.clusterName' value='ICCluster'/>
+    <data key='user.wikis.firstNodeName' value='oscar1-node'/>
+    <data key='user.wikis.serverInfo' value='wikis.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.wikis.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.rte.clusterExist' value='false'/>
+    <data key='user.rte.clusterName' value='ICCluster'/>
+    <data key='user.rte.firstNodeName' value='oscar1-node'/>
+    <data key='user.rte.serverInfo' value='rte.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.rte.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.common.clusterExist' value='false'/>
+    <data key='user.common.clusterName' value='ICCluster'/>
+    <data key='user.common.firstNodeName' value='oscar1-node'/>
+    <data key='user.common.serverInfo' value='common.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.common.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.widgetContainer.clusterExist' value='false'/>
+    <data key='user.widgetContainer.clusterName' value='ICCluster'/>
+    <data key='user.widgetContainer.firstNodeName' value='oscar1-node'/>
+    <data key='user.widgetContainer.serverInfo' value='widgetContainer.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.widgetContainer.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.pushNotification.clusterExist' value='false'/>
+    <data key='user.pushNotification.clusterName' value='ICCluster'/>
+    <data key='user.pushNotification.firstNodeName' value='oscar1-node'/>
+    <data key='user.pushNotification.serverInfo' value='pushNotification.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.pushNotification.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.ic360.clusterExist' value='false'/>
+    <data key='user.ic360.clusterName' value='ICCluster'/>
+    <data key='user.ic360.firstNodeName' value='oscar1-node'/>
+    <data key='user.ic360.serverInfo' value='ic360.oscar1-node.ServerName=ICCluster_server1;'/>
+    <data key='user.ic360.clusterInfo' value='[{&quot;node&quot;: &quot;oscar1-node&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.database.type' value='DB2'/>
+    <data key='user.activities.dbType' value='DB2'/>
+    <data key='user.activities.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.activities.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.activities.dbPort' value='50000'/>
+    <data key='user.activities.dbName' value='OPNACT'/>
+    <data key='user.activities.dbUser' value='LCUSER'/>
+    <data key='user.activities.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.blogs.dbType' value='DB2'/>
+    <data key='user.blogs.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.blogs.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.blogs.dbPort' value='50000'/>
+    <data key='user.blogs.dbName' value='BLOGS'/>
+    <data key='user.blogs.dbUser' value='LCUSER'/>
+    <data key='user.blogs.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.communities.dbType' value='DB2'/>
+    <data key='user.communities.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.communities.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.communities.dbPort' value='50000'/>
+    <data key='user.communities.dbName' value='SNCOMM'/>
+    <data key='user.communities.dbUser' value='LCUSER'/>
+    <data key='user.communities.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.dogear.dbType' value='DB2'/>
+    <data key='user.dogear.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.dogear.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.dogear.dbPort' value='50000'/>
+    <data key='user.dogear.dbName' value='DOGEAR'/>
+    <data key='user.dogear.dbUser' value='LCUSER'/>
+    <data key='user.dogear.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.profiles.dbType' value='DB2'/>
+    <data key='user.profiles.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.profiles.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.profiles.dbPort' value='50000'/>
+    <data key='user.profiles.dbName' value='PEOPLEDB'/>
+    <data key='user.profiles.dbUser' value='LCUSER'/>
+    <data key='user.profiles.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.wikis.dbType' value='DB2'/>
+    <data key='user.wikis.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.wikis.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.wikis.dbPort' value='50000'/>
+    <data key='user.wikis.dbName' value='WIKIS'/>
+    <data key='user.wikis.dbUser' value='LCUSER'/>
+    <data key='user.wikis.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.files.dbType' value='DB2'/>
+    <data key='user.files.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.files.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.files.dbPort' value='50000'/>
+    <data key='user.files.dbName' value='FILES'/>
+    <data key='user.files.dbUser' value='LCUSER'/>
+    <data key='user.files.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.forums.dbType' value='DB2'/>
+    <data key='user.forums.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.forums.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.forums.dbPort' value='50000'/>
+    <data key='user.forums.dbName' value='FORUM'/>
+    <data key='user.forums.dbUser' value='LCUSER'/>
+    <data key='user.forums.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.news.dbType' value='DB2'/>
+    <data key='user.news.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.news.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.news.dbPort' value='50000'/>
+    <data key='user.news.dbName' value='HOMEPAGE'/>
+    <data key='user.news.dbUser' value='LCUSER'/>
+    <data key='user.news.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.search.dbType' value='DB2'/>
+    <data key='user.search.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.search.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.search.dbPort' value='50000'/>
+    <data key='user.search.dbName' value='HOMEPAGE'/>
+    <data key='user.search.dbUser' value='LCUSER'/>
+    <data key='user.search.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.homepage.dbType' value='DB2'/>
+    <data key='user.homepage.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.homepage.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.homepage.dbPort' value='50000'/>
+    <data key='user.homepage.dbName' value='HOMEPAGE'/>
+    <data key='user.homepage.dbUser' value='LCUSER'/>
+    <data key='user.homepage.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.metrics.dbType' value='DB2'/>
+    <data key='user.metrics.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.metrics.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.metrics.dbPort' value='50000'/>
+    <data key='user.metrics.dbName' value='METRICS'/>
+    <data key='user.metrics.dbUser' value='LCUSER'/>
+    <data key='user.metrics.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.mobile.dbType' value='DB2'/>
+    <data key='user.mobile.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.mobile.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.mobile.dbPort' value='50000'/>
+    <data key='user.mobile.dbName' value='MOBILE'/>
+    <data key='user.mobile.dbUser' value='LCUSER'/>
+    <data key='user.mobile.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.pushNotification.dbType' value='DB2'/>
+    <data key='user.pushNotification.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.pushNotification.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.pushNotification.dbPort' value='50000'/>
+    <data key='user.pushNotification.dbName' value='PNS'/>
+    <data key='user.pushNotification.dbUser' value='LCUSER'/>
+    <data key='user.pushNotification.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.icec.dbType' value='DB2'/>
+    <data key='user.icec.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.icec.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.icec.dbPort' value='50000'/>
+    <data key='user.icec.dbName' value='XCC'/>
+    <data key='user.icec.dbUser' value='LCUSER'/>
+    <data key='user.icec.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.ic360.dbType' value='DB2'/>
+    <data key='user.ic360.jdbcLibraryPath' value='/opt/IBM/db2/V11.1/java'/>
+    <data key='user.ic360.dbHostName' value='oscar1.cnx.cwp.pnp-hcl.com'/>
+    <data key='user.ic360.dbPort' value='50000'/>
+    <data key='user.ic360.dbName' value='ESSAPPS'/>
+    <data key='user.ic360.dbUser' value='LCUSER'/>
+    <data key='user.ic360.dbUserPassword' value='UquZEzLwkJl5qCJ9J+B/jun8+DTdsGMJFQuIiHl8MZA='/>
+    <data key='user.web.server.name' value='oscar1'/>
+    <data key='user.web.server.node' value='oscar1-node'/>
+    <data key='user.contentStore.local.path' value='/opt/IBM/Connections/data/local'/>
+    <data key='user.contentStore.shared.path' value='/opt/IBM/Connections/data/shared'/>
+    <data key='user.contentStore.shared.path.configproperties' value='/opt/IBM/Connections/data/shared/ccm'/>
+    <data key='user.messageStore.shared.path' value='/opt/IBM/Connections/data/shared/messageStores'/>
+    <data key='user.connections.install.location' value='/opt/HCL/Connections7'/>
+    <data key='user.connections.install.location.win32format' value='/opt/HCL/Connections7'/>
+    <data key='user.ce.install.location' value='/opt/HCL/Connections7/FileNet/ContentEngine'/>
+    <data key='user.ceclient.install.location' value='/opt/HCL/Connections7/FileNet/CEClient'/>
+    <data key='user.fncs.install.location' value='/opt/HCL/Connections7/FNCS'/>
+    <data key='user.notification.enabled.key.value' value='&quot;enableMailNotification&quot;: &quot;false&quot;,'/>
+    <data key='user.notification.replyto.enabled' value='false'/>
+    <data key='user.activities.new.add' value='false'/>
+    <data key='user.blogs.new.add' value='false'/>
+    <data key='user.communities.new.add' value='false'/>
+    <data key='user.ccm.new.add' value='false'/>
+    <data key='user.dogear.new.add' value='false'/>
+    <data key='user.profiles.new.add' value='false'/>
+    <data key='user.wikis.new.add' value='false'/>
+    <data key='user.files.new.add' value='false'/>
+    <data key='user.forums.new.add' value='false'/>
+    <data key='user.mobile.new.add' value='false'/>
+    <data key='user.metrics.new.add' value='false'/>
+    <data key='user.moderation.new.add' value='false'/>
+    <data key='user.isGUIMode' value='F'/>
+  </profile>
+  <install>
+    <!-- HCL Connections 8.0.0.0 -->
+    <offering profile='HCL Connections' id='com.ibm.connections' version='8.0.0.0_20211216_0143' features='main,common,files,homepage,news,pushNotification,search,rte,widgetContainer,activities,blogs,communities,icec,dogear,forums,ic360,metrics,mobile,moderation,profiles,wikis'/>
+  </install>
+  <preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='${sharedLocation}'/>
+  <preference name='offering.service.repositories.areUsed' value='false'/>
+</agent-input>

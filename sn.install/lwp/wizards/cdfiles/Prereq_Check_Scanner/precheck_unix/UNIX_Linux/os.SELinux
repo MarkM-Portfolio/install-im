@@ -1,0 +1,73 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+#set -n
+######Checking for Qualifier####
+IsSeLinuxFound=`rpm -qa | grep -c "selinux"`
+if [ $IsSeLinuxFound -gt 0 ]; then
+        IfQualFound=`echo "$1" | grep "]" | cut -d "]" -f2`
+        if [ $IfQualFound ]; then
+                ####Differentitating B/w SUSE and RHEL####
+                SUSECheck=`cat /etc/issue | grep SUSE | cut -d' ' -f1`
+                if [ $SUSECheck ]; then
+                        sestatus 1>/dev/null 2>/dev/null
+                        if [ "$?" = "0" ]; then
+                                SeLinuxValue=`sestatus | cut -d ":" -f2 | sed 's/       /g'`
+                                if [ "$SeLinuxValue" = "disabled" -o "$SeLinuxValue" = "Permissive" ]; then
+                                        echo "$Msg_Disabled"
+                                else
+                                        echo "$Msg_Enabled"
+                                fi
+                                exit
+                        else
+                                echo "$Msg_Disabled"
+                        fi
+                        exit
+                else
+                        getenforce 1>/dev/null 2>/dev/null
+                        if [ "$?" = "0" ]; then
+                                SeLinuxValue=`getenforce`
+                                if [ "$SeLinuxValue" = "$Msg_Disabled" -o "$SeLinuxValue" = "Permissive" ]; then
+                                        echo "$Msg_Disabled"
+                                else
+                                        echo "$Msg_Enabled"
+                                fi
+                                exit
+                        else
+                                echo "$Msg_Disabled"
+                        fi
+                        exit
+                fi
+        fi
+else
+        echo "$Msg_Disabled"
+        exit
+fi
+
+type=`uname`
+if [ "$type" = "Linux" ]; then
+IsSeLinuxFound=`rpm -qa | grep -c "selinux"`
+if [ $IsSeLinuxFound -gt 0 ]; then
+
+	check=`grep "SELINUX=disabled" /etc/selinux/config`
+	check1=`grep "SELINUX=permissive" /etc/selinux/config`
+
+	if [ $check ]; then
+     		echo "$Msg_Disabled"
+   	else
+     		if [ $check1 ]; then
+      			echo "$Msg_Disabled"
+      		else
+      			echo "$Msg_Enabled"
+     		fi
+  	fi
+else
+        echo "$Msg_Disabled"
+fi
+fi
+

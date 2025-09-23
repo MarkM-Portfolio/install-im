@@ -1,0 +1,755 @@
+{
+   "references": [
+   ],
+   "model": {
+      "attribute_metadata": [
+         {
+            "id": "gpfsInformation",
+            "description": "",
+            "name": "GPFS File System Name",
+            "sampleValue": "",
+            "label": "GPFS File System Name",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "sharedContentStore",
+            "description": "",
+            "name": "Shared Content Store",
+            "sampleValue": "",
+            "label": "Shared Content Store",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "contentStoreLink",
+            "description": "",
+            "name": "Content Store Link",
+            "sampleValue": "",
+            "label": "Content Store Link",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "ConfigPWD_ROOT.password",
+            "description": "This is the root password for the system",
+            "displayType": "password",
+            "name": "ConfigPWD_ROOT.password",
+            "advanced": false,
+            "sampleValue": "",
+            "label": "Password (root)",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "was_admin",
+            "description": "The username for the system and WebSphere",
+            "name": "WebSphere Administrative Username",
+            "sampleValue": "",
+            "label": "WebSphere Administrative Username",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "PROJECTNAME",
+            "description": "",
+            "name": "Project Name",
+            "sampleValue": "Connections",
+            "label": "Project Name",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "NFS_MOUNT_POINT",
+            "description": "",
+            "name": "NFS Mount Point",
+            "sampleValue": "",
+            "label": "NFS Mount Point",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "DmgrPort",
+            "description": "",
+            "name": "Deployment Manager Port",
+            "sampleValue": "8879",
+            "label": "Deployment Manager Port",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "REMOTE_EXPORT",
+            "description": "",
+            "name": "NFS Remote Export",
+            "sampleValue": "/ibm/nfsshare",
+            "label": "NFS Remote Export",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "Core_VIRTUSER_PW",
+            "description": "",
+            "displayType": "password",
+            "name": "Connections Core Virtuser Password",
+            "sampleValue": "",
+            "label": "Connections Core Virtuser Password",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "CORE_RTUSER_PW",
+            "description": "",
+            "displayType": "password",
+            "name": "Connections Core Root Password",
+            "sampleValue": "",
+            "label": "Connections Core Root Password",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "DB_PASSWORD",
+            "description": "",
+            "displayType": "password",
+            "name": "DB User Password",
+            "sampleValue": "",
+            "label": "DB User Password",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "DmgrHostName",
+            "description": "",
+            "name": "Deployment Manager IP",
+            "sampleValue": "",
+            "label": "Deployment Manager IP",
+            "required": true,
+            "type": "string"
+         },
+         {
+            "id": "NFS_IP",
+            "description": "",
+            "name": "NFS Server IP",
+            "sampleValue": "",
+            "label": "NFS Server IP",
+            "required": true,
+            "type": "string"
+         }
+      ],
+      "nodes": [
+         {
+            "id": "CCM Node1",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "name",
+               "HWAttributes.numvcpus",
+               "HWAttributes.memsize",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.Core_VIRTUSER_PW}",
+               "HWAttributes.memsize": 8192,
+               "HWAttributes.numvcpus": 1,
+               "ConfigPWD_ROOT.password": "${pattern.ConfigPWD_ROOT.password}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45"
+         },
+         {
+            "id": "Custom nodes",
+            "startsAfter": [
+               "CCM Node1"
+            ],
+            "locked": [
+               "was_admin",
+               "install_directory",
+               "profile_home",
+               "was_bitness",
+               "cn_cell_name",
+               "cn_node_name",
+               "cn_profile_name",
+               "was_admin_password"
+            ],
+            "attributes": {
+               "install_directory": "/opt/IBM/WebSphere/AppServer",
+               "was_bitness": "64",
+               "cn_profile_name": "CCMProfile1",
+               "was_admin_password": "${pattern.Core_VIRTUSER_PW}",
+               "profile_home": "/opt/IBM/WebSphere/Profiles",
+               "was_admin": "${pattern.was_admin}",
+               "cn_node_name": "CCMNode1",
+               "cn_cell_name": "CCMCell1"
+            },
+            "type": "custom_node8552_8552_IM",
+            "groups": {
+               "federate_cn_with_dmgr": false,
+               "installFeatures": false
+            }
+         },
+         {
+            "id": "CCM Node2",
+            "parent_type": "image:OS Node:2.1",
+            "locked": [
+               "ConfigPWD_ROOT.password",
+               "HWAttributes.memsize",
+               "name",
+               "HWAttributes.numvcpus",
+               "ConfigPWD_USER.password"
+            ],
+            "attributes": {
+               "ConfigPWD_USER.password": "${pattern.Core_VIRTUSER_PW}",
+               "HWAttributes.memsize": 8192,
+               "HWAttributes.numvcpus": 1,
+               "ConfigPWD_ROOT.password": "${pattern.ConfigPWD_ROOT.password}"
+            },
+            "type": "image:OS Node:IBM OS Image for Red Hat Linux Systems:2.1.0.0:45"
+         },
+         {
+            "id": "Custom nodes_1",
+            "startsAfter": [
+               "CCM Node2"
+            ],
+            "locked": [
+               "was_admin",
+               "install_directory",
+               "profile_home",
+               "was_bitness",
+               "cn_cell_name",
+               "cn_node_name",
+               "cn_profile_name",
+               "was_admin_password"
+            ],
+            "attributes": {
+               "install_directory": "/opt/IBM/WebSphere/AppServer",
+               "was_bitness": "64",
+               "cn_profile_name": "CCMProfile2",
+               "was_admin_password": "${pattern.Core_VIRTUSER_PW}",
+               "profile_home": "/opt/IBM/WebSphere/Profiles",
+               "was_admin": "${pattern.was_admin}",
+               "cn_node_name": "CCMNode2",
+               "cn_cell_name": "CCMCell2"
+            },
+            "type": "custom_node8552_8552_IM",
+            "groups": {
+               "federate_cn_with_dmgr": false,
+               "installFeatures": false
+            }
+         },
+         {
+            "id": "ic5federateNode",
+            "startsAfter": [
+               "Custom nodes"
+            ],
+            "locked": [
+               "WAS_Admin",
+               "was_admin",
+               "DmgrPort",
+               "DmgrHostName",
+               "WAS_Password"
+            ],
+            "attributes": {
+               "DmgrHostName": "${pattern.DmgrHostName}",
+               "DmgrPort": "${pattern.DmgrPort}",
+               "WAS_Password": "${pattern.Core_VIRTUSER_PW}"
+            },
+            "type": "script:ic5federateNode:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5copyDB2driver",
+            "startsAfter": [
+               "ic5federateNode"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "MOUNT_POINT",
+               "NFS_MOUNT_POINT"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.PROJECTNAME}",
+               "MOUNT_POINT": "${pattern.NFS_MOUNT_POINT}"
+            },
+            "type": "script:ic5copyDB2driver:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5federateNode_1",
+            "startsAfter": [
+               "ic5copyDB2driver",
+               "Custom nodes_1"
+            ],
+            "locked": [
+               "WAS_Admin",
+               "was_admin",
+               "WAS_Password",
+               "DmgrPort",
+               "DmgrHostName"
+            ],
+            "attributes": {
+               "DmgrHostName": "${pattern.DmgrHostName}",
+               "DmgrPort": "${pattern.DmgrPort}",
+               "WAS_Password": "${pattern.Core_VIRTUSER_PW}"
+            },
+            "type": "script:ic5federateNode:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add disk",
+            "locked": [
+               "DISK_SIZE_GB",
+               "FILESYSTEM_TYPE",
+               "MOUNT_POINT",
+               "VOLUME_GROUP",
+               "OWNER"
+            ],
+            "attributes": {
+               "VOLUME_GROUP": "",
+               "DISK_SIZE_GB": 20,
+               "FILESYSTEM_TYPE": "ext3",
+               "OWNER": "",
+               "MOUNT_POINT": "/"
+            },
+            "type": "add-on:Default add disk:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add disk_1",
+            "locked": [
+               "DISK_SIZE_GB",
+               "FILESYSTEM_TYPE",
+               "MOUNT_POINT",
+               "VOLUME_GROUP",
+               "OWNER"
+            ],
+            "attributes": {
+               "VOLUME_GROUP": "",
+               "DISK_SIZE_GB": 20,
+               "FILESYSTEM_TYPE": "ext3",
+               "OWNER": "",
+               "MOUNT_POINT": "/"
+            },
+            "type": "add-on:Default add disk:1.0.0",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5copyDB2driver_1",
+            "startsAfter": [
+               "ic5federateNode_1"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "MOUNT_POINT",
+               "NFS_MOUNT_POINT"
+            ],
+            "attributes": {
+               "PROJECTNAME": "${pattern.PROJECTNAME}",
+               "MOUNT_POINT": "${pattern.NFS_MOUNT_POINT}"
+            },
+            "type": "script:ic5copyDB2driver:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "GPFS Client Policy",
+            "locked": [
+               "FILE_SET_LINK_1_NAME",
+               "FILE_SYSTEM_1_NAME",
+               "FILE_SET_1_NAME",
+               "FILE_SIZE_1_NAME"
+            ],
+            "attributes": {
+               "FILE_SET_LINK_1_NAME": "${pattern.contentStoreLink}",
+               "FILE_SYSTEM_1_NAME": "${pattern.gpfsInformation}",
+               "FILE_SIZE_1_NAME": "40G",
+               "FILE_SET_1_NAME": "${pattern.sharedContentStore}"
+            },
+            "type": "gpfsPolicy",
+            "groups": {
+               "FS3": false,
+               "FS4": false,
+               "FS1": true,
+               "GPFS_Client_Install_And_Config": true,
+               "FS2": false,
+               "FS5": false,
+               "GPFS_Client_Install_Only": false
+            }
+         },
+         {
+            "id": "GPFS Client Policy_1",
+            "locked": [
+               "FILE_SET_LINK_1_NAME",
+               "FILE_SYSTEM_1_NAME",
+               "FILE_SET_1_NAME",
+               "FILE_SIZE_1_NAME"
+            ],
+            "attributes": {
+               "FILE_SET_LINK_1_NAME": "${pattern.contentStoreLink}",
+               "FILE_SYSTEM_1_NAME": "${pattern.gpfsInformation}",
+               "FILE_SIZE_1_NAME": "40G",
+               "FILE_SET_1_NAME": "${pattern.sharedContentStore}"
+            },
+            "type": "gpfsPolicy",
+            "groups": {
+               "FS3": false,
+               "FS4": false,
+               "FS1": true,
+               "GPFS_Client_Install_And_Config": true,
+               "FS2": false,
+               "FS5": false,
+               "GPFS_Client_Install_Only": false
+            }
+         },
+         {
+            "id": "ic5installCCM",
+            "startsAfter": [
+               "Custom nodes",
+               "Custom nodes_1",
+               "ic5copyDB2driver_1",
+               "ic5copyDB2driver"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "WAS_Admin",
+               "WAS_Password",
+               "CCMNODE1_BASE",
+               "CCMNODE2_BASE",
+               "Core_WAS_Admin",
+               "Core_WAS_Password",
+               "CORE_RTUSER_PW",
+               "MOUNT_POINT",
+               "REMOTE_EXPORT",
+               "Core_VIRTUSER_PW",
+               "DB_PASSWORD",
+               "NFS_IP",
+               "NFS_MOUNT_POINT",
+               "DmgrPort"
+            ],
+            "attributes": {
+               "contentStoreLink": "${pattern.contentStoreLink}",
+               "CORE_RTUSER_PW": "${pattern.CORE_RTUSER_PW}",
+               "Core_VIRTUSER_PW": "${pattern.Core_VIRTUSER_PW}",
+               "REMOTE_EXPORT": "${pattern.REMOTE_EXPORT}",
+               "PROJECTNAME": "${pattern.PROJECTNAME}",
+               "CCMNODE1_BASE": "${Custom nodes.cn_node_name}",
+               "NFS_IP": "${pattern.NFS_IP}",
+               "DmgrPort": "${pattern.DmgrPort}",
+               "DB_PASSWORD": "${pattern.DB_PASSWORD}",
+               "CCMNODE2_BASE": "${Custom nodes_1.cn_node_name}",
+               "MOUNT_POINT": "${pattern.NFS_MOUNT_POINT}"
+            },
+            "type": "script:ic5installCCM:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5jvmAdjustCCM",
+            "startsAfter": [
+               "CCM Node1",
+               "ic5installCCM"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "HOST_NAME",
+               "WAS_Password",
+               "MOUNT_POINT",
+               "NFS_MOUNT_POINT",
+               "DmgrPort"
+            ],
+            "attributes": {
+               "DmgrPort": "${pattern.DmgrPort}",
+               "HOST_NAME": "${CCM Node1.hostname}",
+               "WAS_Password": "${pattern.Core_VIRTUSER_PW}",
+               "MOUNT_POINT": "${pattern.NFS_MOUNT_POINT}"
+            },
+            "type": "script:ic5jvmAdjustCCM:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "ic5jvmAdjustCCM_1",
+            "startsAfter": [
+               "CCM Node2",
+               "ic5jvmAdjustCCM",
+               "ic5copyDB2driver_1"
+            ],
+            "locked": [
+               "PROJECTNAME",
+               "HOST_NAME",
+               "WAS_Password",
+               "MOUNT_POINT",
+               "NFS_MOUNT_POINT",
+               "DmgrPort"
+            ],
+            "attributes": {
+               "DmgrPort": "${pattern.DmgrPort}",
+               "HOST_NAME": "${CCM Node2.hostname}",
+               "WAS_Password": "${pattern.Core_VIRTUSER_PW}",
+               "MOUNT_POINT": "${pattern.NFS_MOUNT_POINT}"
+            },
+            "type": "script:ic5jvmAdjustCCM:5.0-CR1",
+            "groups": {
+            }
+         },
+         {
+            "id": "Default add NFS",
+            "locked": [
+               "NFS_TYPE",
+               "OPTIONS",
+               "PORTMAPPER",
+               "NFS_PORT",
+               "LOCKD_TCPPORT",
+               "LOCKD_UDPPORT",
+               "MOUNTD_PORT",
+               "RQUOTAD_PORT",
+               "STATD_PORT"
+            ],
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "PORTMAPPER": "111",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "HOST_NAME": "",
+               "MOUNT_POINT": "",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0"
+         },
+         {
+            "id": "Default add NFS_1",
+            "locked": [
+               "NFS_TYPE",
+               "OPTIONS",
+               "PORTMAPPER",
+               "NFS_PORT",
+               "LOCKD_TCPPORT",
+               "LOCKD_UDPPORT",
+               "MOUNTD_PORT",
+               "RQUOTAD_PORT",
+               "STATD_PORT"
+            ],
+            "attributes": {
+               "NFS_TYPE": "nfs",
+               "MOUNTD_PORT": "892",
+               "RQUOTAD_PORT": "875",
+               "STATD_PORT": "662",
+               "LOCKD_UDPPORT": "32769",
+               "REMOTE_EXPORT": "",
+               "LOCKD_TCPPORT": "32803",
+               "PORTMAPPER": "111",
+               "OPTIONS": "rsize=8192,wsize=8192,timeo=14,intr",
+               "HOST_NAME": "",
+               "MOUNT_POINT": "",
+               "NFS_PORT": "2049"
+            },
+            "type": "add-on:Default add NFS:1.0.0"
+         }
+      ],
+      "description": "",
+      "name": "CCM-5.0CR1",
+      "app_type": "application",
+      "patterntype": "vsys",
+      "links": [
+         {
+            "id": "HostedOnLink_1",
+            "source": "Custom nodes",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_3",
+            "source": "Custom nodes_1",
+            "target": "CCM Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_5",
+            "source": "ic5federateNode",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_6",
+            "source": "ic5copyDB2driver",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_7",
+            "source": "ic5federateNode_1",
+            "target": "CCM Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_8",
+            "source": "Default add disk",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_9",
+            "source": "Default add disk_1",
+            "target": "CCM Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_10",
+            "source": "ic5copyDB2driver_1",
+            "target": "CCM Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "policy.gpfsPolicy_1",
+            "source": "GPFS Client Policy",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "policy.gpfsPolicy",
+            "groups": {
+            }
+         },
+         {
+            "id": "policy.gpfsPolicy_2",
+            "source": "GPFS Client Policy_1",
+            "target": "CCM Node2",
+            "attributes": {
+            },
+            "type": "policy.gpfsPolicy",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_11",
+            "source": "ic5installCCM",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_12",
+            "source": "ic5jvmAdjustCCM",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_13",
+            "source": "ic5jvmAdjustCCM_1",
+            "target": "CCM Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink",
+            "groups": {
+            }
+         },
+         {
+            "id": "HostedOnLink_2",
+            "source": "Default add NFS",
+            "target": "CCM Node1",
+            "attributes": {
+            },
+            "type": "HostedOnLink"
+         },
+         {
+            "id": "HostedOnLink_4",
+            "source": "Default add NFS_1",
+            "target": "CCM Node2",
+            "attributes": {
+            },
+            "type": "HostedOnLink"
+         }
+      ],
+      "locked": false,
+      "attributes": {
+         "contentStoreLink": "/ConnectionsContentStoreLink",
+         "gpfsInformation": "fileSystemName",
+         "REMOTE_EXPORT": "/ibm/nfsshare",
+         "PROJECTNAME": "Connections",
+         "DmgrHostName": "",
+         "was_admin": "virtuser",
+         "NFS_IP": "",
+         "DmgrPort": "8879",
+         "sharedContentStore": "ConnectionsShared",
+         "NFS_MOUNT_POINT": "/nfsshare"
+      },
+      "readonly": false,
+      "version": "1.0",
+      "lockedAttributes": [
+         "was_admin",
+         "NFS_MOUNT_POINT",
+         "REMOTE_EXPORT"
+      ],
+      "patternversion": "5.0-CR1"
+   },
+   "layers": [
+      {
+         "id": "layer",
+         "nodes": [
+            "CCM Node1",
+            "Custom nodes",
+            "CCM Node2",
+            "Custom nodes_1",
+            "ic5copyDB2driver",
+            "ic5copyDB2driver_1",
+            "Default add disk",
+            "Default add disk_1",
+            "ic5federateNode",
+            "ic5federateNode_1",
+            "GPFS Client Policy",
+            "GPFS Client Policy_1",
+            "ic5installCCM",
+            "ic5jvmAdjustCCM",
+            "ic5jvmAdjustCCM_1",
+            "Default add NFS",
+            "Default add NFS_1"
+         ]
+      }
+   ],
+   "export_id": "a-20fddb19-7c06-42a3-8531-255fb1427780"
+}

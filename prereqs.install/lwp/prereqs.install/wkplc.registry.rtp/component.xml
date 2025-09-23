@@ -1,0 +1,28 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- Licensed Materials - Property of IBM                              -->
+<!--                                                                   -->
+<!-- 5724-L21                                                          -->
+<!--                                                                   -->
+<!-- (C) Copyright IBM Corp. 2006  All Rights Reserved                 -->
+<!--                                                                   -->
+<!-- US Government Users Restricted Rights - Use, duplication or       -->
+<!-- disclosure restricted by GSA ADP Schedule Contract with           -->
+<!-- IBM Corp.                                                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="prereqs.install/wkplc.registry.rtp"
+           type="binary"
+           description="libraries for the configuration registry RTP version"
+           spec-version="1.0"
+           build-version=""
+           owner="Barry Pellas"
+           owner-email="bpellas@us.ibm.com">
+
+   <output-group name="compile">
+      <output type="jar" visibility="public" platform="all" location="lib/wkplc.comp.registry.jar"/>
+   </output-group>
+
+</component>
+

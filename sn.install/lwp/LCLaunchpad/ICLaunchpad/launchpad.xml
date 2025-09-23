@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited 2014, 2022                                   -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<launchpad>
+
+    <productName>HCL&lt;span style=&quot;font-size:11px; vertical-align:text-top;&quot;&gt;&amp;#174;&lt;/span&gt; Connections 8.0.0</productName>
+
+    <productVersion>8.0.0</productVersion>
+
+    <productEdition />
+
+    <template>expressLaunchpadTemplate</template>
+
+    <operatingSystems>
+        <operatingSystem>
+            <name>Linux</name>
+            <architecture>x86</architecture>
+            <architecture>IA64</architecture>
+            <architecture>AMD64</architecture>
+            <architecture>s390</architecture>
+            <architecture>s390x</architecture>
+            <architecture>PPC64</architecture>
+            <architecture>PPC32</architecture>
+        </operatingSystem>
+        <operatingSystem>
+            <name>windows</name>
+            <architecture>x86</architecture>
+            <architecture>AMD64</architecture>
+            <architecture>IA64</architecture>
+        </operatingSystem>
+        <operatingSystem>
+            <name>AIX</name>
+            <architecture>PPC64</architecture>
+            <architecture>PPC32</architecture>
+        </operatingSystem>
+        <operatingSystem>
+            <name>SunOS</name>
+            <architecture>SPARC</architecture>
+            <architecture>SPARC64</architecture>
+            <architecture>AMD64</architecture>
+            <architecture>x86</architecture>
+        </operatingSystem>
+        <operatingSystem>
+            <name>HP-UX</name>
+            <architecture>IA64</architecture>
+            <architecture>PARISC</architecture>
+        </operatingSystem>
+        <operatingSystem>
+            <name>Mac</name>
+            <architecture>x86</architecture>
+        </operatingSystem>
+    </operatingSystems>
+
+    <translationLanguages>
+        <selectionType>embedded</selectionType>
+        <default>en</default>
+        <language>en</language>
+    </translationLanguages>
+
+    <preferredBrowser>defaultBrowser</preferredBrowser>
+
+    <userExtensionsClass />
+
+    <menuItems>
+        <menuItem>
+            <name>Welcome</name>
+            <tooltip>Welcome</tooltip>
+            <type>document</type>
+            <prereq />
+            <prereqClass />
+            <menuId>welcome</menuId>
+            <document>launchpadContent/welcome.html</document>
+            <pageClass />
+            <propertiesFile>launchpadContent/en/welcome.properties</propertiesFile>
+            <anchor />
+            <action />
+            <actionClass />
+            <activate />
+            <show />
+            <enable />
+            <state />
+            <enableButtons />
+            <enableNext />
+            <enablePrevious />
+            <enableCancel />
+            <showButtons />
+            <showNext />
+            <showPrevious />
+            <showCancel />
+            <nextText />
+            <previousText />
+            <cancelText />
+            <enterAction />
+            <exitAction />
+            <nextAction />
+            <previousAction />
+            <cancelAction />
+            <nextItem />
+            <previousItem />
+            <icon />
+            <description />
+        </menuItem>
+        <menuItem>
+            <name>Install HCL Connections 8.0.0</name>
+            <tooltip>Install HCL Connections 8.0.0</tooltip>
+            <type>document</type>
+            <prereq />
+            <prereqClass />
+            <menuId>install</menuId>
+            <document>launchpadContent/install.html</document>
+            <pageClass />
+            <propertiesFile>launchpadContent/en/install.properties</propertiesFile>
+            <anchor />
+            <action />
+            <actionClass />
+            <activate />
+            <show />
+            <enable />
+            <state />
+            <enableButtons />
+            <enableNext />
+            <enablePrevious />
+            <enableCancel />
+            <showButtons />
+            <showNext />
+            <showPrevious />
+            <showCancel />
+            <nextText />
+            <previousText />
+            <cancelText />
+            <enterAction />
+            <exitAction />
+            <nextAction />
+            <previousAction />
+            <cancelAction />
+            <nextItem />
+            <previousItem />
+            <icon />
+            <description />
+        </menuItem>
+        <menuItem>
+            <name>Exit</name>
+            <tooltip>Exit</tooltip>
+            <type>action</type>
+            <prereq />
+            <prereqClass />
+            <menuId>exit</menuId>
+            <document />
+            <pageClass />
+            <propertiesFile />
+            <anchor />
+            <action>top.Exit(true);</action>
+            <actionClass />
+            <activate />
+            <show />
+            <enable />
+            <state />
+            <enableButtons />
+            <enableNext />
+            <enablePrevious />
+            <enableCancel />
+            <showButtons />
+            <showNext />
+            <showPrevious />
+            <showCancel />
+            <nextText />
+            <previousText />
+            <cancelText />
+            <enterAction />
+            <exitAction />
+            <nextAction />
+            <previousAction />
+            <cancelAction />
+            <nextItem />
+            <previousItem />
+            <icon />
+            <description />
+        </menuItem>
+    </menuItems>
+
+    <appearanceInfo>
+        <title>HCL Connections 8.0.0</title>
+        <icon>launchpadImages/xb.ico</icon>
+        <colorScheme>crossBrandContemporaryAppearanceScheme</colorScheme>
+        <backgroundColor>255 255 255</backgroundColor>
+        <textColor>0 0 0</textColor>
+        <highlightColor>255 255 255</highlightColor>
+        <rolloverColor>255 255 255</rolloverColor>
+        <logoAltText>Logo for HCL Connections 8.0.0</logoAltText>
+        <splash />
+        <splashDuration />
+        <logo>launchpadImages/HCL_1.5px_gray.gif</logo>
+        <banner>launchpadImages/background.jpg</banner>
+        <navigation>launchpadImages/background.jpg</navigation>
+        <content>launchpadImages/background.jpg</content>
+        <footer>launchpadImages/background.jpg</footer>
+    </appearanceInfo>
+
+    <disks>
+        <disk>
+            <label>HCL Connections 8.0.0</label>
+            <name>disk1</name>
+            <customProperties />
+            <compatibilityChecks />
+            <id>disk1</id>
+        </disk>
+        <exportLpToAllDisks>true</exportLpToAllDisks>
+    </disks>
+
+</launchpad>

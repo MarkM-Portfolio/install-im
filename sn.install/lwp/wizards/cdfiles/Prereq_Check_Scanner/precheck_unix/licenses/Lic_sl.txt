@@ -1,0 +1,250 @@
+Mednarodna licen�na pogodba za program
+
+1. del - splo�ne dolo�be
+
+S TEM, KO IMETNIK LICENCE PRENESE, NAMESTI, PREKOPIRA, DOSTOPI DO, KLIKNE GUMB "SPREJMEM" ALI KAKO DRUGA�E UPORABI PROGRAM, SOGLA�A Z DOLO�BAMI TE POGODBE. �E SPREJMETE TE DOLO�BE V IMENU IMETNIKA LICENCE, ODGOVARJATE IN JAM�ITE, DA IMATE VSA POOBLASTILA ZA POVEZAVO IMETNIKA LICENCE S TEMI DOLO�BAMI. �E S TEMI DOLO�BAMI NE SOGLA�ATE,
+
+- PROGRAMA NE PRENESITE, NE NAMESTITE, NE PREKOPIRAJTE, NE DOSTOPITE DO NJEGA, NE KLIKNITE GUMBA "SPREJMEM" ALI GA NE UPORABITE IN
+
+- NEMUDOMA VRNITE NEUPORABLJEN MEDIJ, DOKUMENTACIJO IN DOKAZILO O UPRAVI�ENOSTI STRANKI, KI VAM JIH JE POSLALA, TA PA VAM BO POVRNILA PLA�AN ZNESEK. �E STE PROGRAM PRENESLI, UNI�ITE VSE NJEGOVE KOPIJE.
+
+1. Definicije
+
+"Poobla��ena uporaba" - podana raven, s katero lahko imetnik licence uporablja ali izvaja program. Ta raven je lahko merjena s �tevilom uporabnikov, z milijoni storitvenih enot ("MSU-ji"), enotami vrednosti procesorja ("PVU-ji") ali drugimi ravnmi uporabe, ki jih poda IBM.
+
+"IBM" - International Business Machines Corporation ali ena od njegovih podru�nic.
+
+"Podatki o licenciranju" ("LI") - dokument, ki podaja informacije in kakr�nekoli dodatne pogoje, specifi�ne za program. Podatke o licenciranju programa si lahko ogledate na naslovu www.ibm.com/software/sla, najdete pa jih lahko tudi v imeniku programa, jih prika�ete z vnosom sistemskega ukaza ali si jih ogledate v knji�ici, ki je prilo�ena programu.
+
+"Program" - naslednje, vklju�no z izvirnikom in vsemi celotnimi ali delnimi kopijami: 1) strojno �itljiva navodila in podatki, 2) komponente, datoteke in moduli, 3) avdiovizualna vsebina (kot so slike, besedilo, posnetki ali slike) in 4) s tem povezano licen�no gradivo (kot so klju�i in dokumentacija).
+
+"Potrdilo o upravi�enosti" ("PoE") - dokazilo o poobla��eni uporabi imetnika licence. Potrdilo o upravi�enosti dokazuje tudi kvalifikacijo imetnika licence za garancijo, cene bodo�ih posodobitev (�e obstajajo) in potencialne posebne ali promocijske prilo�nosti. �e IBM imetniku licence ne posreduje potrdila o upravi�enosti, lahko IBM namesto njega sprejme izvirno potrdilo o pla�ilu ali kak�en drug zapis o prodaji pri stranki (IBM ali njegov preprodajalec), pri kateri je imetnik licence pridobil program, in sicer pod pogojem, da podaja ime programa in pridobljeno poobla��eno uporabo.
+
+"Garancijski rok" - eno leto, ki za�ne te�i na datum, na katerega je izvornemu imetniku licence odobrena licenca.
+
+2. Struktura pogodbe
+
+Ta pogodba je sestavljena iz 1. dela - splo�ne dolo�be, iz 2. dela - pogoji, zna�ilni za posamezne dr�ave (�e obstajajo), podatkov o licenciranju in potrdila o upravi�enosti. To je celotna pogodba med imetnikom licence in IBM-om v zvezi z uporabo programa. Kot tak�na nadome��a vse predhodne ustne ali pisne komunikacije med imetnikom licence in IBM-om v zvezi z njegovo uporabo programa. Dolo�be iz 2. dela lahko nadomestijo ali spremenijo tiste iz 1. dela. V primeru, da pride do navzkri�ja, imajo prednost pred obema deloma podatki o licenciranju.
+
+3. Dodelitev licence
+
+Lastnik programa je IBM ali IBM-ov dobavitelj. Program se ne prodaja, pa� pa se zanj podeljujejo avtorske pravice in licenca.
+
+IBM dodeli imetniku licence neizklju�no licenco za 1) uporabo programa v skladu s poobla��eno uporabo, dolo�eno v potrdilu o upravi�enosti, 2) izdelavo in namestitev kopij, ki bodo v podporo pri tak�ni poobla��eni uporabi in 3) izdelavo varnostne kopije, vendar pod pogojem, da
+
+a. je imetnik licence pridobil program na zakonit na�in in zadovoljuje dolo�be te pogodbe;
+
+b. se varnostna kopija uporabi samo, �e ni mogo�e zagnati varnostno prekopiranega programa;
+
+c. imetnik licence opremi vsako kopijo ali delno kopijo programa z vsemi obvestili in drugimi oznakami o avtorskih pravicah, ki dokazujejo lastni�tvo;
+
+d. imetnik licence zagotovi, da vsak uporabnik, ki dostopi do programa (lokalno ali na daljavo) 1) to naredi samo v imenu imetnika licence in 2) pri tem upo�teva dolo�be te pogodbe;
+
+e. imetnik licence program 1) uporablja, kopira, spreminja ali distribuira izklju�no v skladu z dolo�bami te pogodbe; 2) v programu ne uporabi vzvratnega prevajanja, vzvratnega in�enirstva ali ga kako druga�e prevede, razen kot izrecno dopu��a zakon brez mo�nosti odpovedi pogodbe; 3) ne uporabi komponent, datotek, modulov, avdiovizualne vsebine ali s tem povezanega licen�nega gradiva lo�eno od programa; ali 4) programa ne podlicencira, daje v najem ali v zakup; in
+
+f. �e pridobi imetnik licence ta program kot podporni program, ga bo uporabljal izklju�no kot podporo glavnemu programu in je predmet vseh omejitev iz licence za glavni program; ali, �e pridobi imetnik licence ta program kot glavni program, bo uporabil vse podporne programe samo kot podporo temu programu in zanj veljajo vse omejitve iz te pogodbe. Za namen te to�ke "f" je "podporni program" tisti program, ki je del drugega IBM-ovega programa ("glavni program") in je v podatkih o licenciranju glavnega programa dolo�en kot podporni program. (�e �eli imetnik licence pridobiti lo�eno licenco za podporni program brez teh omejitev, se mora obrniti na stranko, pri kateri je pridobil podporni program.)
+
+Ta licenca velja za vsako kopijo programa, ki jo izdela imetnik licence.
+
+3.1 Zamenjave, posodobitve in popravki
+
+3.1.1 Zamenjave
+
+�e zamenjate program s programom iz zamenjave, licenca za zamenjan program nemudoma preneha veljati.
+
+3.1.2 Posodobitve in popravki
+
+�e prejme imetnik licence posodobitev ali popravek za program, sprejme vse dodatne ali druga�ne dolo�be, ki veljajo za tak�no posodobitev ali popravek, in so podane v podatkih o licenciranju. �e niso podane nobene dodatne ali druga�ne dolo�be, za posodobitev ali popravek velja izklju�no ta pogodba. �e imetnik licence zamenja program s posodobitvijo, sogla�a, da bo nemudoma prenehal uporabljati zamenjan program.
+
+3.2 Licence za dolo�eno dobo
+
+�e dodeli IBM licenco za program za dolo�eno dobo, licenca imetnika licence preneha veljati ob koncu te dobe, razen v primeru, �e se imetnik licence in IBM dogovorita, da jo bosta podalj�ala.
+
+3.3 Doba in prenehanje veljavnosti
+
+Ta pogodba ostane v veljavi, dokler se je ne odpove.
+
+IBM lahko odpove licenco imetnika licence, �e ta ne upo�teva dolo�b te pogodbe.
+
+�e katerakoli stranka zaradi kakr�negakoli razloga odpove licenco, imetnik licence sogla�a, da bo nemudoma prenehal uporabljati vse kopije programa in jih bo uni�il. Vse dolo�be te pogodbe, ki zaradi svoje narave ostanejo v veljavi tudi po izteku te pogodbe, ostanejo v veljavi do svoje izpolnitve, in veljajo za ustrezne naslednike in poobla��ence obeh pogodbenih strank.
+
+4. Bremenitve
+
+Bremenitve temeljijo na pridobljeni poobla��eni uporabi, dolo�eni v potrdilu o upravi�enosti. IBM ne daje nobenih posojil ali povra�il za �e zapadle ali pla�ane bremenitve, razen �e je to dolo�eno kje drugje v tej pogodbi.
+
+�e �eli imetnik licence pove�ati svojo poobla��eno uporabo, mora o tem vnaprej obvestiti IBM ali poobla��enega IBM-ovega prodajalca in pla�ati vse ustrezne bremenitve.
+
+5. Davki
+
+�e ustrezna slu�ba za program dolo�i takso, davek, pristojbino ali prispevek, kar ne vklju�uje tistih, ki temeljijo na IBM-ovem �istem dohodku, imetnik licence sogla�a, da bo pla�al ta znesek, podan na ra�unu, ali pa posredoval dokumente o oprostitvi. Imetnik licence je odgovoren za vse davke na osebno lastnino za program od datuma njegove pridobitve. �e ustrezna slu�ba dolo�i carinsko takso, davek, dajatev ali pristojbino za uvoz ali izvoz, prenos, dostop do ali uporabo programa izven dr�ave, v kateri je bila zanj imetniku licence dodeljena licenca, imetnik licence sogla�a, da je odgovoren za kakr�enkoli zara�unan znesek in ga bo tudi pla�al.
+
+6. Zagotovilo o povrnitvi denarja
+
+�e imetnik licence iz kakr�negakoli vzroka ni zadovoljen s programom in je izvirni imetnik licence, lahko odpove licenco in si priskrbi povra�ilo zneska, ki ga je pla�al za program, vendar pod pogojem, da imetnik licence vrne program in potrdilo o upravi�enosti stranki, pri kateri ju je pridobil, v roku 30 dni od datuma izdaje potrdila o upravi�enosti za imetnika licence. �e gre za licenco za dolo�eno dobo, ki je predmet podalj�anja, si lahko imetnik licence priskrbi denarno vra�ilo samo, �e vrne program in njegovo potrdilo u upravi�enosti v prvih 30 dneh za�etne dobe. �e je imetnik licence prenesel program, naj se za navodila o denarnem vra�ilu obrne na stranko, pri kateri ga je pridobil.
+
+7. Prenos programa
+
+Imetnik licence lahko prenese program in vse njegove pravice in dol�nosti na drugo stranko samo, �e ta stranka sogla�a z dolo�bami te pogodbe. �e katerakoli pogodbena stranka zaradi kakr�negakoli vzroka odpove licenco, imetnik licence ne sme prenesti programa na drugo stranko. Imetnik licence ne sme prenesti dela 1) programa ali 2) poobla��ene uporabe programa. �e imetnik licence prenese program, mora prenesti tudi natisnjeno razli�ico te pogodbe, vklju�no s podatki o licenciranju in potrdilom o upravi�enosti. Licenca imetnika licence preneha veljati nemudoma po prenosu.
+
+8. Garancija in izklju�itve
+
+8.1 Omejena garancija
+
+IBM jam�i, da program pri uporabi v dolo�enem operacijskem okolju ustreza njegovim specifikacijam. Specifikacije programa in informacije o dolo�enem operacijskem okolju boste na�li v dokumentaciji, ki ste jo dobili s programom (kot je na primer datoteka Preberi) ali v drugih informacijah, ki jih je objavil IBM (kot je na primer najava). Imetnik licence sogla�a, da so lahko tak�na dokumentacija in druga vsebina programa posredovani samo v angle�kem jeziku, razen �e druga�e zahteva zakon brez mo�nosti pogodbene odpovedi ali omejitve.
+
+Garancija velja samo za nespremenjeni del programa. IBM ne jam�i neprekinjenega ali brezhibnega delovanja programa ali da bo IBM odpravil vse okvare v programu. Za rezultate pri uporabi programa je odgovoren imetnik licence sam.
+
+V �asu garancijskega roka nudi IBM imetniku licence brezpla�en dostop do IBM-ovih baz podatkov, ki vsebujejo informacije o znanih okvarah programa, popravkih okvar, omejitvah in zaobitjih. Za nadaljnje informacije preglejte priro�nik za podporo IBM-ovi programski opremi na naslovu www.ibm.com/software/support.
+
+�e program v �asu garancijskega roka ne deluje v skladu z jamstvi in te�ave ni mogo�e razre�iti z informacijami, ki so na voljo v IBM-ovih bazah podatkov, lahko imetnik licence vrne program in njegovo potrdilo o upravi�enosti stranki (IBM-u ali njegovemu prodajalcu), pri kateri ga je pridobil in si priskrbi povra�ilo za pla�an znesek. Po vrnitvi programa licenca imetnika licence preneha veljati. �e je imetnik licence prenesel program s spleta, naj se za navodila o denarnem vra�ilu obrne na stranko, pri kateri ga je pridobil.
+
+8.2 Izklju�itve
+
+TE GARANCIJE SO IZKLJU�NE GARANCIJE IMETNIKA LICENCE IN NADOME��AJO VSE DRUGE GARANCIJE ALI POGOJE, PA NAJ BODO IZRECNI ALI NAKAZANI, KAR VKLJU�UJE TUDI (VENDAR NI OMEJENO NA) ZAKONSKE GARANCIJE ALI POGOJE PRIMERNOSTI ZA PRODAJO, ZADOVOLJIVO KAKOVOST, USTREZNOST ZA DOLO�EN NAMEN, NASLOV IN KAKR�NOKOLI GARANCIJO ALI POGOJ NEKR�ENJA. NEKATERE DR�AVE ALI SODNE PRISTOJNOSTI NE DOVOLJUJEJO IZKLJU�ITVE IZRECNIH ALI NAKAZANIH GARANCIJ, ZATO ZGORNJA OMEJITEV ZA VAS LAHKO NE VELJA. V TEM PRIMERU SO TAK�NE GARANCIJE OMEJENE NA TRAJANJE GARANCIJSKEGA ROKA. PO IZTEKU TEGA ROKA NE VELJA VE� NOBENA GARANCIJA. NEKATERE DR�AVE ALI SODNE PRISTOJNOSTI NE DOVOLJUJEJO OMEJITVE V TRAJANJU ZAKONSKE GARANCIJE, ZATO ZGORNJA OMEJITEV ZA IMETNIKA LICENCE LAHKO NE VELJA.
+
+TE GARANCIJE DAJEJO IMETNIKU LICENCE POSEBNE ZAKONSKE PRAVICE. IMETNIKU LICENCE LAHKO PRIPADAJO TUDI DRUGE PRAVICE, KI SE OD DR�AVE DO DR�AVE IN SODNE PRISTOJNOSTI DO SODNE PRISTOJNOSTI RAZLIKUJEJO.
+
+GARANCIJE V TEM 8. RAZDELKU (GARANCIJA IN IZKLJU�ITVE) DOLO�A IZKLJU�NO IBM. TODA IZKLJU�ITVE IZ TEGA PODRAZDELKA 8.2 (IZKLJU�ITVE) VELJAJO TUDI ZA IBM-OVE DOBAVITELJE KODE DRUGIH PROIZVAJALCEV. TI DOBAVITELJI NUDIJO TAK�NO KODO BREZ GARANCIJ ALI POGOJEV KAKR�NEKOLI VRSTE. TA ODSTAVEK NE RAZVELJAVLJA IBM-OVIH GARANCIJSKIH DOL�NOSTI, KI IZHAJAJO IZ TE POGODBE.
+
+9. Podatki in baze podatkov imetnika licence
+
+Da bi imetniku licence pomagali pri osamitvi vzroka te�ave v programu, lahko IBM od njega zahteva, da 1) omogo�i IBM-u oddaljen dostop do svojega sistema ali 2) IBM-u po�lje podatke o licenciranju ali sistemske podatke. Vendar pa IBM ni dol�an nuditi tak�ne pomo�i, �e IBM in imetnik licence ne podpi�eta lo�ene pisne pogodbe, v skladu s katero IBM sogla�a, da bo nudil imetniku licence to vrsto tehni�ne podpore, ki presega IBM-ove garancijske obveznosti iz te pogodbe. V vsakem primeru bo IBM uporabil informacije o napakah in te�avah za izbolj�anje svojih izdelkov in storitev in kot pomo� pri nudenju s tem povezanih ponudb za podporo. V ta namen lahko IBM vklju�i IBM-ove pravne osebe in podpogodbenike (kar vklju�uje tudi tiste v eni ali ve� dr�avah, v katerih se ne nahaja imetnik licence), imetnik licence pa daje IBM-u v ta namen pooblastilo.
+
+Imetnik licence ostaja odgovoren za 1) vse podatke in vsebino vseh baz podatkov, ki jih imetnik licence omogo�i za IBM, 2) izbiro in uvedbo postopkov in nadzora v zvezi z dostopanjem, za��ito, �ifriranjem, uporabljanjem in prena�anjem podatkov (vklju�no z vsemi osebnimi podatki) in 3) varnostno kopiranje in obnavljanje vseh baz podatkov in shranjenih podatkov. Imetnik licence IBM-u ne bo poslal ali priskrbel dostopa do osebnih informacij, ki so lahko v podatkovni ali kakr�nikoli drugi obliki, in bo odgovoren za sprejemljive stro�ke in druge zneske, ki jih lahko nalo�i IBM v zvezi s tak�nimi informacijami, ki so po nesre�i posredovane IBM-u, ali za izgubo ali razkritje tak�nih informacij s strani IBM-a, vklju�no s tistimi, do katerih pride zaradi zahtevkov katerihkoli tretjih strank.
+
+10. Omejitev odgovornosti
+
+Omejitve in izklju�itve iz tega razdelka 10 (Omejitev odgovornosti) veljajo v celoti, �e jih ne prepoveduje veljaven zakon brez mo�nosti pogodbene odpovedi.
+
+10.1 Primeri, za katere je IBM lahko odgovoren
+
+Zaradi napake IBM-a ali zaradi kak�ne druge obveznosti lahko pride do okoli��in, v katerih je imetnik licence od IBM-a upravi�en terjati od�kodnino. Ne glede na osnovo, na kateri je imetnik licence upravi�en do od�kodnine od IBM-a (vklju�no s temeljno kr�itvijo, malomarnostjo, napa�no predstavitvijo dejstev ali kak�nim drugim pogodbenim ali kazenskim zahtevkom), je IBM-ova celotna odgovornost za vse zahtevke, ki so vlo�eni skupaj v povezavi z vsakim programom ali kako druga�e izhajajo iz te pogodbe, omejena na znesek kakr�nekoli 1) od�kodnine za telesne po�kodbe (vklju�no s smrtjo) in �kode v nepremi�ninah ali v osebnih premi�ninah in 2) drugo dejansko neposredno �kodo do zneska (�e je program predmet bremenitev za dolo�eno dobo, do dvanajstmese�ne bremenitve), ki ga je imetnik licence pla�al za program, ki je predmet zahtevka.
+
+Ta omejitev velja tudi za vse IBM-ove razvijalce in dobavitelje programa, in predstavlja maksimum, za katerega so IBM in razvijalci in dobavitelji programa kolektivno odgovorni.
+
+10.2 Primeri, za katere IBM ni odgovoren
+
+IBM IN NJEGOVI RAZVIJALCI ALI DOBAVITELJI PROGRAMA POD NOBENIMI POGOJI NE ODGOVARJAJO ZA NASLEDNJE PRIMERE, TUDI �E SO OBVE��ENI O MO�NOSTI, DA DO NJIH PRIDE:
+
+a. IZGUBO ALI PO�KODBO PODATKOV;
+
+b. POSEBNO, NAKLJU�NO, KAZENSKO ALI POSLEDI�NO �KODO ALI KAKR�NOKOLI EKONOMSKO POSLEDI�NO �KODO; ALI
+
+c. IZGUBLJENE DOBI�KE, POSLOVANJE, DOHODKE, DOBRO IME ALI PRI�AKOVANE PRIHRANKE.
+
+11. Preverjanje skladnosti
+
+Za namen tega razdelka 11 (Preverjanje skladnosti) pomenijo "Dolo�be programa IPLA" 1) to pogodbo in ustrezne dodatke in transakcijske dokumente, ki jih priskrbi IBM in 2) IBM-ova na�ela za programsko opremo, ki jih lahko najdete na spletnem mestu IBM-ovih na�el za programsko opremo (www.ibm.com/softwarepolicies), kar vklju�uje, vendar ni omejeno na tista na�ela, ki se nana�ajo na varnostno kopiranje, dolo�anje cen za podkapaciteto in selitev.
+
+Pravice in obveznosti iz tega razdelka 11 ostanejo v veljavi v obdobju, v katerem je program licenciran za imetnika licence in �e dve leti zatem.
+
+11.1 Postopek preverjanja
+
+Imetnik licence sogla�a, da bo izdelal, ohranil in IBM-u in njegovim revizorjem omogo�il vpogled v natan�ne zabele�ene zapise, izhodne podatke sistemskih orodij in druge sistemske informacije, ki zadostujejo za preverjanje, ali imetnik licence uporablja vse programe v skladu z dolo�bami programa IPLA, kar vklju�uje, vendar ni omejeno na vse kvalifikacijske dolo�be za IBM-ovo ustrezno licenciranje in dolo�anje cen. Dol�nost imetnika licence je 1) zagotoviti, da ne prese�e svoje poobla��ene uporabe in 2) delovati v skladu z dolo�bami programa IPLA.
+
+Na podlagi ustreznega predhodnega obvestila lahko IBM preveri, ali imetnik licence upo�teva dolo�be programa IPLA na vseh lokacijah in v vseh okoljih, kjer imetnik licence uporablja (za kakr�enkoli namen) programe, ki so predmet dolo�b programa IPLA. Pri tak�nem preverjanju bomo posku�ali �im manj motiti poslovanje imetnika licence in ga lahko opravimo na lokaciji imetnika licence med obi�ajnimi poslovnimi urami. IBM lahko kot pomo� pri preverjanju vklju�i neodvisnega revizorja, pod pogojem, da je IBM z njim podpisal pogodbo o zaupnosti.
+
+11.2 Sklep
+
+IBM bo imetnika licence v pisni obliki obvestil, �e tak�no preverjanje poka�e, da je imetnik licence pri uporabi kateregakoli programa presegel poobla��eno uporabo ali �e kako druga�e ne zadovoljuje dolo�b programa IPLA. Imetnik licence sogla�a, da bo IBM-u nemudoma in neposredno pla�al bremenitve, ki jih IBM poda na ra�unu za 1) tak�no prese�eno uporabo, 2) podporo za tak�no prese�eno uporabo za trajanje tak�ne prese�ene uporabe ali za dve leti (kar je kraj�e) in 3) vse dodatne stro�ke in druge obveznosti, ki so ugotovljene kot rezultat tak�nega preverjanja.
+
+12. Obvestila za druge proizvajalce
+
+Program lahko vklju�uje kodo drugega proizvajalca, za katero dodeli v tej pogodbi licenco IBM in ne drug proizvajalec. Opombe (�e obstajajo) za kodo drugega proizvajalca ("Obvestila za druge proizvajalce") so vklju�ena zgolj kot informacija za imetnika licence. Ta obvestila boste na�li v datoteki (datotekah) OPOMBE programa. Informacije o tem, kako pridobiti izvorno kodo za kodo dolo�enih drugih proizvajalcev, boste na�li v razdelku Obvestila za druge proizvajalce. �e IBM v razdelku Obvestila za druge proizvajalce identificira kodo drugega proizvajala kot "kodo drugega proizvajalca z mo�nostjo spreminjanja", daje IBM imetniku licence pooblastilo za 1) spreminjanje kode drugega proizvajalca z mo�nostjo spreminjanja in 2) vzvratno in�enirstvo v modulih programa, ki so v neposrednem stiku s kodo drugega proizvajalca z mo�nostjo spreminjanja, pod pogojem, da gre izklju�no za namen razhro��evanja (debugging) popravkov imetnika licence v tak�ni kodi drugega proizvajalca. IBM-ove servisne in podporne obveznosti (�e obstajajo) veljajo samo za nespremenjen program.
+
+13. Splo�no
+
+a. Noben del te pogodbe ne vpliva na nobene zakonite pravice potro�nikov, ki jih ni mogo�e odpovedati ali omejiti s pogodbo.
+
+b. Za programe, ki jih IBM posreduje imetniku licence v materialni obliki, bo IBM izpolnil svoje obveznosti glede dobave in dostave ob dostavi tak�nih programov �pediterju, ki ga imenuje IBM, razen �e se IBM in imetnik licence v pisni obliki ne dogovorita druga�e.
+
+c. �e se za katero dolo�bo iz te pogodbe ugotovi, da ni veljavna ali da je ni mogo�e uveljaviti, preostale dolo�be iz te pogodbe ostanejo v polni veljavi.
+
+d. Imetnik licence sogla�a, da bo upo�teval vse lokalne zakone in predpise v zvezi z izva�anjem in uva�anjem, vklju�no s predpisi in prepovedmi v povezavi z embargom in sankcijami o izvozu za dolo�ene kon�ne uporabe ali za dolo�ene uporabnike.
+
+e. Imetnik licence poobla��a dru�bo International Business Machines Corporation in njene podru�nice (in njene naslednike in poobla��ence, pogodbenike in IBM-ove poslovne partnerje) za shranjevanje in uporabo poslovnih kontaktnih informacij imetnika licence tam, kjer poslujejo, v povezavi z IBM-ovimi izdelki in storitvami ali pri pospe�evanju IBM-ovega odnosa z imetnikom licence.
+
+f. Vsaka pogodbena stranka bo drugi stranki omogo�ila sprejemljivo prilo�nost za zadovoljitev dolo�b, preden bo za�ela trditi, da druga ne zadovoljuje svojih obveznosti iz te pogodbe. Pogodbeni stranki bosta poskusili v dobri veri razre�iti vse spore, nesoglasja ali druge zahteve med strankami v povezavi s to pogodbo.
+
+g. Razen �e druga�e ne zahteva lokalen zakon brez mo�nosti pogodbene odpovedi ali omejitve: 1) nobena stranka ne bo spro�ila pravnega postopka, ne glede na njegovo obliko, za katerokoli zahtevo, nastalo v povezavo s to pogodbo, ve� kot dve leti po nastanku vzroka za zahtevo; in 2) po izteku tega �asovnega obdobja vsi tak�ni zahtevki in druge ustrezne pravice, povezane z zahtevkom, zastarajo.
+
+h. Niti imetnik licence niti IBM nista odgovorna za neizpolnitev katerekoli obveznosti zaradi vzrokov, ki jih ni mogo�e nadzorovati.
+
+i. Ta pogodba ne daje osnove za nobene pravice ali zahtevke katerihkoli tretjih strank, niti ni IBM odgovoren za nobene zahtevke tretjih strank proti imetniku licence, razen kot dovoljuje zgornji podrazdelek 10.1 (Primeri, za katere je IBM lahko odgovoren) za telesne po�kodbe (vklju�no s smrtjo) ali �kodo na nepremi�ninah ali v osebnih premi�ninah, za katere je IBM zakonsko odgovoren tej tretji stranki.
+
+j. S podpisom te pogodbe se nobena pogodbena stranka ne zana�a na nobeno predstavljeno dejstvo, ki ni dolo�eno v tej pogodbi, kar vklju�uje, vendar ni omejeno na nobeno predstavljeno dejstvo, ki se nana�a na: 1) zmogljivost ali delovanje programa, razen kot je izrecno zajam�eno v razdelku 8 (Garancija in izklju�itve) zgoraj; 2) izku�nje ali priporo�ila drugih strank; ali 3) kakr�nekoli rezultate ali prihranke, ki jih lahko pridobi imetnik licence.
+
+k. IBM je z dolo�enimi organizacijami (imenovanimi "IBM-ovi poslovni partnerji") podpisal pogodbe za promoviranje, tr�enje in podpiranje dolo�enih programov. IBM-ovi poslovni partnerji so neodvisni in lo�eni od IBM-a. IBM ni odgovoren za dejanja ali izjave IBM-ovih poslovnih partnerjev ali za obveznosti, ki jih imajo do imetnika licence.
+
+l. Dolo�be v zvezi z od�kodnino za licenco in intelektualno lastnino iz drugih pogodb, ki jih je imetnik licence podpisal z IBM-om (kot je na primer IBM-ova pogodba za stranke), ne veljajo za programske licence, dodeljene s to pogodbo.
+
+14. Geografsko podro�je in zakonodaja
+
+14.1 Zakonodaja
+
+Obe pogodbeni stranki sogla�ata, da bodo zakoni dr�ave, v kateri je imetnik licence pridobil licenco za program, uporabljeni za upravljanje, interpretiranje in uveljavljanje vseh ustreznih pravic, dol�nosti in obveznosti imetnika licence in IBM-a, nastalih na osnovi predmeta te pogodbe ali v povezavi z njim, ne glede na navzkri�je zakonskih na�el.
+
+Konvencija Zdru�enih narodov v zvezi s pogodbami za mednarodno prodajo blaga ne velja.
+
+14.2 Sodna pristojnost
+
+Vse pravice, dol�nosti in obveznosti bodo obravnavala sodi��a v dr�avi, v kateri imetnik licence pridobi licenco za program.
+
+2. del - Pogoji, zna�ilni za posamezne dr�ave
+
+Za licence, dodeljene v Sloveniji, naslednji pogoji nadomestijo ali spremenijo omenjene pogoje iz 1. dela. Vsi pogoji iz 1. dela, ki jih ta dopolnila ne spremenijo, ostanejo nespremenjeni in v veljavi.
+
+DOPOLNILA ZA DR�AVE EMEA (EVROPA, SREDNJI VZHOD, AFRIKA)
+
+DR�AVE �LANICE EVROPSKE UNIJE
+
+8. Garancija in izklju�itve
+
+8. razdelku (Garancija in izklju�itve) je dodano naslednje:
+
+V Evropski uniji ("EU") za porabnike veljajo zakonske pravice iz ustrezne lokalne zakonodaje, ki je v uporabi za prodajo potro�ni�kih dobrin. Na te pravice ne vplivajo dolo�be iz 8. razdelka z naslovom Garancija in izklju�itve. Omejena garancija velja po vsem svetu.
+
+13. Splo�no
+
+Naslednje nadome��a to�ko 13.e:
+
+(1) Definicije - Za namene te to�ke 13.e veljajo naslednje dodatne definicije:
+
+(a) Poslovne kontaktne informacije - kontaktne informacije, povezane s poslovanjem, ki jih imetnik licence posreduje IBM-u, vklju�no z imeni, delovnimi mesti, poslovnimi naslovi, telefonskimi �tevilkami in elektronskimi naslovi uslu�bencev in pogodbenikov imetnika licence. Za Avstrijo, Italijo in �vico vklju�ujejo poslovne kontaktne informacije tudi informacije o naro�niku in njegovih pogodbenikih kot pravnih enotah (kot so na primer podatki o dohodkih naro�nika in druge transakcijske informacije).
+
+(b) Osebje poslovnega stika - uslu�benci in pogodbeniki imetnika licence, s katerimi so povezane poslovne kontaktne informacije.
+
+(c) Slu�ba za za��ito podatkov - slu�ba, osnovana na osnovi zakonodaje za za��ito podatkov in elektronske komunikacije v ustrezni dr�avi, za dr�ave, ki niso v Evropski uniji pa slu�ba, ki je odgovorna za nadzorovanje za��ite osebnih podatkov v tej dr�avi ali (za karkoli od zgoraj omenjenega) katerakoli njena ustrezno imenovana nasledna enota.
+
+(d) Zakonodaja za za��ito podatkov in elektronske komunikacije - (i) ustrezna lokalna zakonodaja in predpisi, ki so v veljavi z namenom izvajanja zahtev smernice EU 95/46/EC (za za��ito posameznikov pri obdelavi osebnih podatkov in pri prostem prena�anju tak�nih podatkov) in smernice EU 2002/58/EC (glede obdelave osebnih podatkov in za��ite zasebnosti v sektorju elektronskih komunikacij); ali (ii) za dr�ave, ki niso v Evropski uniji zakonodaja in/ali predpisi, ki so v veljavi v ustrezni dr�avi za za��ito osebnih podatkov in reguliranje elektronskih komunikacij, ki vklju�ujejo osebne podatke, kar vklju�uje (za karkoli od zgoraj omenjenega) kakr�nokoli njihovo ustavno zamenjavo ali popravek.
+
+(e) IBM-ova skupina - International Business Machines Corporation iz Armonka, New York, ZDA, njegove podru�nice ter ustrezni poslovni partnerji in podpogodbeniki.
+
+(2) Imetnik licence poobla��a IBM za:
+
+(a) obdelavo in uporabo poslovnih kontaktnih informacij znotraj IBM-ove skupine za nudenje podpore imetniku licence, kar vklju�uje tudi nudenje podpornih storitev, in za izbolj�anje poslovnega odnosa med imetnikom licence in IBM-ovo skupno, kar brez omejitve vklju�uje tudi stik z osebjem za poslovni stik (po elektronski po�ti ali v kak�ni drugi obliki), in tr�enje izdelkov in storitev IBM-ove skupine ("dolo�en namen"); in
+
+(b) razkritje poslovnih kontaktnih informacij drugim �lanom iz IBM-ove skupine izklju�no za "dolo�en namen".
+
+(3) IBM sogla�a, da bodo vse poslovne kontaktne informacije obdelane v skladu z zakonodajo o za��iti podatkov in elektronske komunikacije in bodo uporabljene izklju�no za "dolo�en namen".
+
+(4) Do mere, ki jo zahteva zakonodaja za za��ito podatkov in elektronske komunikacije, imetnik licence izjavlja, da (a) je pridobil (ali bo pridobil) privolitve osebja zstika (ali je izdal ali bo izdal obvestila zanje), potrebne, da bi IBM-ovi skupini omogo�il obdelavo in uporabo poslovnih kontaktnih informacij za "dolo�en namen".
+
+(5) Imetnik licence poobla��a IBM za prenos poslovnih kontaktnih informacij izven evropskega tr�nega prostora, pod pogojem, da je prenos izveden v skladu s pogodbenimi pogoji, ki jih odobri slu�ba za za��ito podatkov, ali da je kako druga�e dovoljen z zakonodajo za za��ito podatkov in elektronske komunikacije.
+
+Z125-3301-13 (05/2009)
+
+
+PODATKI O LICENCIRANJU
+
+Licence za programe, navedene spodaj, se izdajajo v skladu z naslednjimi dolo�bami in pogoji, in veljajo poleg tistih iz Mednarodna licen�na pogodba za program.
+
+Ime programa: IBM Prerequisite Scanner R1.1
+�tevilka programa: 5725-C13
+
+Izvorne komponente
+
+Program lahko vklju�uje nekatere komponente v obliki izvorne kode ("izvorne komponente"). Imetnik licence lahko kopira in spreminja izvorne komponente samo za notranjo uporabo in pod pogojem, da pri tak�ni uporabi upo�teva omejitve licen�nih pravic iz te pogodbe, in pod pogojem, da ne sme spreminjati ali brisati katerihkoli informacij o avtorskih pravicah ali obvestil, vsebovanih v izvornih komponentah. IBM nudi izvorne komponente brez obveze za nudenje podpore in "TAK�NE, KAKR�NE SO", BREZ GARANCIJ KAKR�NEKOLI VRSTE, PA NAJ BODO IZRECNE ALI NAKAZANE, KAR VKLJU�UJE TUDI GARANCIJO NASLOVA, NEKR�ENJA ALI NEOVIRANJA, IN NAKAZANE GARANCIJE IN POGOJE TR�NOSTI IN PRIMERNOSTI ZA DOLO�EN NAMEN.
+
+D/N:  L-JRCI-89W3MD
+P/N:  L-JRCI-89W3MD 

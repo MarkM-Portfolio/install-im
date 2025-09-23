@@ -1,0 +1,22 @@
+## ***************************************************************** */
+##                                                                   */
+## IBM Confidential                                                  */
+##                                                                   */
+## OCO Source Materials                                              */
+##                                                                   */
+## (C) Copyright IBM Corp. 2008                                      */
+##                                                                   */
+## The source code for this program is not published or otherwise    */
+## divested of its trade secrets, irrespective of what has been      */
+## deposited with the U.S. Copyright Office.                         */
+##                                                                   */
+## ***************************************************************** */
+LOG ========== Starting to re-organizing Blogs upload file ===============
+CONDITION NULL
+CONDITION blogs.installed true
+#CONDITION blogs.version 2.0.1
+#LOG ========== Blogs ==========================================
+LOG Reading Blogs upload file location... ... 
+LOAD_WAS_VARIABLE ${blogs.was.home} ${blogs.profile.name} ${blogs.cell.name.federated} ${blogs.node.name}
+CLASS com.ibm.lconn.migration.blogs.FilesExtractor ${BLOGS_CONTENT_DIR} ${BLOGS_CONTENT_DIR}
+

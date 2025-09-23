@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Das Versionsverzeichnis kann nicht bestimmt werden.
+WVER0001E.explanation=Das Versionsverzeichnis wird abhängig von Java-Systemeigenschaft 'was.version.dir' oder als '<Stammverzeichnis>\\properties\\version' gesucht, wobei <Stammverzeichnis> für ein Verzeichnis steht, das den Java-Systemeigenschaften 'was.install.root' oder 'server.root' entnommen wurde. Diese Eigenschaften werden nacheinander überprüft und der erste verfügbare Eigenschaftenwert genommen.  Der Fehler weist darauf hin, dass keines der genannten Java-Systemeigenschaften festgelegt wurde, mit der Folge, dass das Versionsverzeichnis nicht ermittelt werden konnte.
+WVER0001E.useraction=Stellen Sie sicher, dass mindestens eins der Java-Systemeigenschaften festgelegt ist.  Die Java-Systemeigenschaft muss entweder über die Prozesskonfiguration oder als Option eines über die Befehlszeile gestarteten Prozesses festgelegt werden.
+
+# 
+WVER0002E=WVER0002E: Nicht erkannte Dateierweiterung ''{0}'' für Produktversion.
+WVER0002E.explanation=Beim Laden von Produktversionsinformationen werden die Informationen in Dateien mit bestimmten Erweiterungen gespeichert.  Die Erweiterungen bestimmen die Art der in den Dateien gespeicherten Informationen.  Gültige Erweiterungen sind '.websphere', '.component', '.product', '.fix', '.efix' und '.extension'.  Es wurde versucht, eine Datei mit Versionsinformationen zu laden, deren Erweiterung keiner dieser gültigen Erweiterungen entspricht.
+WVER0002E.useraction=Dies weist auf einen internen Fehler hin.
+
+# 
+WVER0003I=WVER0003I: Syntax: versionInfo ( [ -format <text | html> ] [ -file <Ausgabedatei> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Diese Informationsnachricht beschreibt die Optionen des Dienstprogramms versionInfo.  Dieses Dienstprogramm akzeptiert optionale Schlüsselwortoptionen: eine zur Angabe des Ausgabeformats, eine zur Angabe einer Ausgabedatei, eine zur Anzeige von Fixes, eine zur Anzeige von Details zu Fixes, eine zur Anzeige von Komponenten und eine zur Anzeige von Syntaxinformationen.
+WVER0003I.useraction=Es ist keine Benutzeraktion erforderlich.  Die Syntaxinformationen werden auf Anforderung angezeigt.
+
+# 
+WVER0004E=WVER0004E: Fehler beim Schreiben des Versionsberichts an {0}: {1}
+WVER0004E.explanation=Der angegebene Fehler trat beim Schreiben eines Versionsberichts in die genannte Datei auf.
+WVER0004E.useraction=Die Fehlerberichtigung ist von den Spezifikationen des aufgetretenen Fehlers abhängig.  Stellen Sie vor allem sicher, dass Schreibzugriff auf die angegebene Datei besteht und ausreichend Kapazität für den Bericht verfügbar ist.
+
+# 
+WVER0005E=WVER0005E: Für die Option ''{0}'' wurde kein Wert angegeben.
+WVER0005E.explanation=Für die genannte Option ist ein Wert erforderlich.  (Mit '-help' oder '-usage' können Syntaxinformationen angezeigt werden.)
+WVER0005E.useraction=Geben Sie einen Wert für die genannte Option an.
+
+# 
+WVER0006E=WVER0006E: Der Wert ''{0}'' ist kein gültiger Formatwert.
+WVER0006E.explanation=Die gültigen Formatwerte lauten 'text' und 'html'.  Der angegebene Wert entspricht keinem dieser Werte.  (Mit '-help' oder '-usage' können Syntaxinformationen angezeigt werden.)
+WVER0006E.useraction=Ändern Sie den Formatwert in einen der gültigen Werte 'text' oder 'html'.
+
+# 
+WVER0007E=WVER0007E: Die Option ''{0}'' ist nicht gültig.
+WVER0007E.explanation=Die angegebene Option ist ungültig.  (Mit '-help' oder '-usage' können Syntaxinformationen angezeigt werden.)
+WVER0007E.useraction=Geben Sie eine gültige Option an.
+
+# 
+WVER0008I=WVER0008I: Die Option '-format' gibt das Ausgabeformat an, entweder 'text' oder 'html'.  Die Option '-file' gibt eine Ausgabedatei an.  Mit der Option '-file' muss ein Dateiname angegeben werden.  Die Option '-long' bewirkt, dass alle Fix-, PTF- und Komponenteninformationen angezeigt werden.  Die Option '-fixes' bewirkt, dass Fix-Informationen angezeigt werden.  Die Option '-fixDetail' bewirkt, dass Fix-Details angezeigt werden.  Die Option '-ptfs' bewirkt, dass vorläufige Programmkorrekturen (PTFs) angezeigt werden.  Die Option '-ptfDetail' bewirkt, dass PTF-Details angezeigt werden.  Die Option '-components' bewirkt, dass Komponenten angezeigt werden.  Die Option '-componentDetail' bewirkt, dass Komponentendetails angezeigt werden.  Die Option '-help' bewirkt, dass Hilfetext angezeigt wird.  Die Option '-usage' bewirkt, dass diese Syntaxinformationen angezeigt werden.
+WVER0008I.explanation=Die Nachricht beschreibt die gültigen Optionen des Dienstprogramms versionInfo.
+WVER0008I.useraction=Es ist keine Benutzeraktion erforderlich.  Die Syntaxinformationen werden auf Anforderung angezeigt.
+
+# 
+WVER0009E=WVER0009E: Fehler beim Schreiben des Versionsberichts an {0}.  Der Text des Fehlers kann nicht angezeigt werden, es handelt sich jedoch um Typ {1}.  Ein zweiter Fehler (Typ {2}) trat beim Abrufen des Fehlertextes auf.
+WVER0009E.explanation=Beim Schreiben eines Versionsberichts in die angegebene Datei ist ein Fehler aufgetreten.  Ein zweiter Fehler trat beim Abrufen des Fehlertextes auf.
+WVER0009E.useraction=Es ist keine Benutzeraktion verfügbar.  Wiederholen Sie die angeforderte Operation, oder fordern Sie weitere Unterstützung an.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; Alle Rechte vorbehalten.
+WVER0010I.explanation=Dies ist ein Standard-Copyrightvermerk.
+WVER0010I.useraction=Es ist keine Benutzeraktion erforderlich.  Dies ist eine Informationsnachricht.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=Dies ist eine Standardproduktbeschreibung.
+WVER0011I.useraction=Es ist keine Benutzeraktion erforderlich.  Dies ist eine Informationsnachricht.
+
+# 
+WVER0012I=WVER0012I: VersionInfo Reporter Version {0}, Datum: {1}
+WVER0012I.explanation=Dies ist eine Standardmodulbeschreibung.
+WVER0012I.useraction=Es ist keine Benutzeraktion erforderlich.  Dies ist eine Informationsnachricht.
+
+# 
+WVER0013E=WVER0013E: Ausnahmebedingung beim Lesen von {0}
+WVER0013E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0013E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0014E=WVER0014E: Ausnahmebedingung beim Lesen von {0}
+WVER0014E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0014E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0015E=WVER0015E: Ausnahmebedingung bei der Verarbeitung von Versionsinformationen
+WVER0015E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0015E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0016E=WVER0016E: Ausnahmebedingungen bei der Verarbeitung von Versionsinformationen
+WVER0016E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0016E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0017E=WVER0017E: Das Protokollverzeichnis für Aktualisierungen kann nicht bestimmt werden.
+WVER0017E.explanation=Das Protokollverzeichnis wird abhängig von Java-Systemeigenschaft 'was.version.log.dir' oder als Verzeichnis 'log' des Versionsverzeichnisses gesucht.  Es ist weder die Eigenschaft 'was.version.log.dir' festgelegt, noch das Versionsverzeichnis angegeben.
+WVER0017E.useraction=Stellen Sie sicher, dass das Versionsverzeichnis angegeben ist, oder legen Sie die Java-Systemeigenschaft 'was.version.log.dir' fest.
+
+# 
+WVER0018E=WVER0018E: Das Sicherungsverzeichnis für Aktualisierungen kann nicht ermittelt werden.
+WVER0018E.explanation=Das Sicherungsverzeichnis wird abhängig von Java-Systemeigenschaft 'was.version.backup.dir' oder als Verzeichnis 'log' des Versionsverzeichnisses gesucht.  Es ist weder die Eigenschaft 'was.version.backup.dir' festgelegt, noch das Versionsverzeichnis angegeben.
+WVER0018E.useraction=Stellen Sie sicher, dass das Versionsverzeichnis angegeben ist, oder legen Sie die Java-Systemeigenschaft 'was.version.backup.dir' fest.
+
+# 
+WVER0019E=WVER0019E: Das DTD-Verzeichnis für Produktversionsinformationen kann nicht ermittelt werden.
+WVER0019E.explanation=Das DTD-Verzeichnis wird abhängig von Java-Systemeigenschaft 'was.version.dtd.dir' oder als Verzeichnis 'dtd' des Versionsverzeichnisses gesucht.  Es ist weder die Eigenschaft 'was.version.dtd.dir' festgelegt, noch das Versionsverzeichnis angegeben.
+WVER0019E.useraction=Stellen Sie sicher, dass das Versionsverzeichnis angegeben ist, oder legen Sie die Java-Systemeigenschaft 'was.version.dtd.dir' fest.
+
+# 
+WVER0021E=WVER0021E: Behebbare Fehler bei der Syntaxanalyse von Fix-Informationen.
+WVER0021E.explanation=Die Fehler, die im Folgenden aufgelistet werden, traten bei der Syntaxanalyse von Fix-Informationen auf.  Überprüfen Sie die aufgelisteten Fehler auf weitere Informationen.
+WVER0021E.useraction=Überprüfen Sie die aufgelisteten Fehler auf Vorschläge für Benutzeraktionen.
+
+# 
+WVER0022E=WVER0022E: Fehler beim Lesen von Produktinformationen.  Der Fehler ist behebbar; Syntaxanalyse wurde fortgesetzt.  Der Fehler trat in der Definitionseinheit mit System-ID {0} und öffentlicher ID {1} in Zeilennummer {2} und Spaltennummer {3} auf: {4}
+WVER0022E.explanation=Die genannte Definitionseinheit hat keine gültige Struktur (siehe Fehlerbeschreibung).  Der Fehler war jedoch nicht schwer wiegend, sodass die Syntaxanalyse fortgesetzt wurde.
+WVER0022E.useraction=Die genannte Datei sollte überprüft und, wenn möglich, korrigiert werden.
+
+# 
+WVER0023E=WVER0023E: Warnungen bei der Syntaxanalyse von Produktinformationen.
+WVER0023E.explanation=Die Warnungen, die im Folgenden aufgelistet werden, traten bei der Syntaxanalyse von Produktinformationen auf.  Überprüfen Sie die aufgelisteten Warnungen auf weitere Informationen.
+WVER0023E.useraction=Überprüfen Sie die aufgelisteten Warnungen auf Vorschläge für Benutzeraktionen.
+
+# 
+WVER0024E=WVER0024E: Warnung beim Lesen von Produktinformationen.  Die Warnung trat in der Definitionseinheit mit System-ID {0} und öffentlicher ID {1} in Zeilennummer {2} und Spaltennummer {3} auf: {4}
+WVER0024E.explanation=Die genannte Definitionseinheit hat keine gültige Struktur (siehe Warnungsbeschreibung).  Die Warnung war jedoch nicht schwer wiegend, sodass die Syntaxanalyse fortgesetzt wurde.
+WVER0024E.useraction=Die genannte Datei sollte überprüft und, wenn möglich, korrigiert werden.
+
+# 
+WVER0029E=WVER0029E: Fix {0}, der in Datei {2} gespeichert ist, kann nicht entfernt werden.
+WVER0029E.explanation=Die genannte Datei konnte nicht entfernt werden.
+WVER0029E.useraction=Stellen Sie sicher, dass die Zieldatei entfernt werden kann.
+
+# 
+WVER0030E=WVER0030E: Behebbare Fehler bei der Syntaxanalyse von PTF-Informationen.
+WVER0030E.explanation=Die Fehler, die im Folgenden aufgelistet werden, traten bei der Syntaxanalyse von PTF-Informationen auf.  Überprüfen Sie die aufgelisteten Fehler auf weitere Informationen.
+WVER0030E.useraction=Überprüfen Sie die aufgelisteten Fehler auf Vorschläge für Benutzeraktionen.
+
+# 
+WVER0031E=WVER0031E: Die Anwendung von PTF {0} auf Komponente {1} in Datei {2} kann nicht aufgezeichnet werden.  Die genannte Datei konnte nicht gespeichert werden.
+WVER0031E.explanation=Die genannte Datei konnte nicht gespeichert werden.
+WVER0031E.useraction=Stellen Sie sicher, dass Schreibzugriff auf die Zieldatei besteht und Speicherbereich für eine neue Datei verfügbar ist.
+
+# 
+WVER0035E=WVER0035E: PTF {0}, der in Datei {2} gespeichert ist, kann nicht entfernt werden.
+WVER0035E.explanation=Die genannte Datei konnte nicht entfernt werden.
+WVER0035E.useraction=Stellen Sie sicher, dass die Zieldatei entfernt werden kann.
+
+# 
+WVER0040E=WVER0040E: Das angegebene Versionsverzeichnis ''{0}'' ist nicht vorhanden.
+WVER0040E.explanation=Das Versionsverzeichnis ist nicht vorhanden.
+WVER0040E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges Produktversionsverzeichnis ist.
+
+# 
+WVER0041E=WVER0041E: Das angegebene Versionsverzeichnis ''{0}'' ist kein Verzeichnis.
+WVER0041E.explanation=Das Versionsverzeichnis ist kein Verzeichnis.
+WVER0041E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges Produktversionsverzeichnis ist.
+
+# 
+WVER0042E=WVER0042E: Das angegebene DTD-Verzeichnis ''{0}'' ist nicht vorhanden.
+WVER0042E.explanation=Das DTD-Verzeichnis ist nicht vorhanden.
+WVER0042E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges DTD-Verzeichnis für das Produkt ist.
+
+# 
+WVER0043E=WVER0043E: Das angegebene DTD-Verzeichnis ''{0}'' ist kein Verzeichnis.
+WVER0043E.explanation=Das DTD-Verzeichnis ist kein Verzeichnis.
+WVER0043E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges DTD-Verzeichnis für das Produkt ist.
+
+# 
+WVER0044E=WVER0044E: Das angegebene Protokollverzeichnis ''{0}'' konnte nicht erstellt werden.
+WVER0044E.explanation=Das DTD-Verzeichnis ist kein Verzeichnis.
+WVER0044E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges DTD-Verzeichnis für das Produkt ist.
+
+# 
+WVER0045E=WVER0045E: Das angegebene Protokollverzeichnis ''{0}'' ist kein Verzeichnis.
+WVER0045E.explanation=Das DTD-Verzeichnis ist kein Verzeichnis.
+WVER0045E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges DTD-Verzeichnis für das Produkt ist.
+
+# 
+WVER0046E=WVER0046E: Das angegebene Sicherungsverzeichnis ''{0}'' konnte nicht erstellt werden.
+WVER0046E.explanation=Das DTD-Verzeichnis ist kein Verzeichnis.
+WVER0046E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges DTD-Verzeichnis für das Produkt ist.
+
+# 
+WVER0047E=WVER0047E: Das angegebene Sicherungsverzeichnis ''{0}'' ist kein Verzeichnis.
+WVER0047E.explanation=Das DTD-Verzeichnis ist kein Verzeichnis.
+WVER0047E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges DTD-Verzeichnis für das Produkt ist.
+
+# 
+WVER0048E=WVER0048E: Das angegebene Produktverzeichnis ''{0}'' ist nicht vorhanden.
+WVER0048E.explanation=Das Produktverzeichnis ist nicht vorhanden.
+WVER0048E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges Produktverzeichnis ist.
+
+# 
+WVER0049E=WVER0049E: Das angegebene Produktverzeichnis ''{0}'' ist kein Verzeichnis.
+WVER0049E.explanation=Das Produktverzeichnis ist kein Verzeichnis.
+WVER0049E.useraction=Stellen Sie sicher, dass das angegebene Verzeichnis ein gültiges Produktverzeichnis ist.
+
+
+
+
+label.standard.out=Standardausgabe
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Portal - Statusbericht Produktinstallation
+report.footer=Ende Installationsstatusbericht
+
+info.report.on=Berichtsdatum/-uhrzeit: {0}
+
+info.source=Installation
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Produktverzeichnis
+label.version.dir=Versionsverzeichnis
+label.version.dtd.dir=DTD-Verzeichnis
+label.version.log.dir=Protokollverzeichnis
+label.version.backup.dir=Sicherungsverzeichnis
+label.version.tmp.dir=TMP-Verzeichnis
+
+info.platform=Installationsplattform
+label.name=Name
+label.version=Version
+
+info.technology=Technologieliste
+label.installed=Installiert
+
+info.product=Installiertes Produkt
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=Build-Version
+label.build.date=Build-Datum
+
+info.component=Installierte Komponente
+label.component.name=Komponentenname
+label.configtasks=Konfigurationstasks
+label.spec.version=Spez.-Version
+label.build.version=Build-Version
+# label.build.date=Build Date
+
+info.update.on.component=Installierte Komponentenaktualisierung
+#label.component.name=Component Name
+label.update.type=Aktualisierungstyp
+label.update.type.efix=Fix
+label.update.type.ptf=PTF
+
+label.efix.id=Fix-ID
+label.ptf.id=PTF-ID
+
+label.update.effect=Aktualisierungseffekt
+
+label.is.required=Ist erforderlich
+label.is.optional=Ist optional
+
+label.is.external=Ist extern
+label.root.property.file=Stamm-Eigenschaftendatei
+label.root.property.name=Stamm-Eigenschaftenname
+label.root.property.value=Stamm-Eigenschaftenwert
+
+label.is.custom=Ist angepasst
+
+label.log.file.name=Protokolldateiname
+label.backup.file.name=Sicherungsdateiname
+label.install.date=Installationsdatum
+
+label.initial.spec.version=Erste Spez.-Version
+label.initial.build.date=Erstes Build-Datum
+label.initial.build.version=Erste Build-Version
+
+label.final.spec.version=Letzte Spez.-Version
+label.final.build.date=Letztes Build-Datum
+label.final.build.version=Letzte Build-Version
+
+info.extension=Installierte Erweiterung
+# label.name=Name
+# label.id=ID
+
+info.efix=Installierter Fix
+# label.id=ID
+label.short.description=Beschreibung
+label.is.trial=Ist ein Test
+label.expiration.date=Ablaufdatum
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Erläuterung
+
+label.apar=APAR
+label.apar.number=Nummer
+label.apar.date=Datum
+label.apar.short.description=Beschreibung
+label.apar.long.description=Erläuterung
+
+label.supported.platforms=Unterstützte Plattformen
+label.supported.products=Unterstützte Plattformen
+
+label.efix.efix.prereqs=Vorausgesetzte Fixes
+
+label.component.updates=Komponentenaktualisierungen
+label.component.requires=Erfordert {0} v {1}
+
+label.becomes=Wird Spez. {0}, Build {1} am {2}
+
+label.custom.properties=Angepasste Eigenschaften
+
+info.ptf=Installierter PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Enthaltene Fixes
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=Wahr
+label.false=Falsch
+
+label.is.absent=Nicht vorhanden
+label.is.installed=Installiert auf {0}
+
+label.update.effect.add=Hinzufügen
+label.update.effect.replace=Ersetzen
+label.update.effect.remove=Entfernen
+label.update.effect.patch=Programmkorrektur
+label.update.effect.unknown=Unbekannt
+
+label.is.negative=Negativ
+label.is.positive=Positiv
+
+label.is.required.tag=Erforderlich
+label.if.possible.tag=Wenn möglich
+label.is.optional.tag=Optional
+label.is.recommended.tag=Empfohlen
+
+label.is.custom.tag=Angepasste Aktualisierung
+label.is.standard.tag=Standardaktualisierung

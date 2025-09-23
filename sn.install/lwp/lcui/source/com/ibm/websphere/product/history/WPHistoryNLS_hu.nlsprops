@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: Nem található a történetkönyvtár: a termékkönyvtár helye nem határozható meg
+WVER0201E.explanation=A történetkönyvtár a termékkönyvtár alkönyvtára.  További információkért nézze meg a termékkönyvtár helyének meghatározása során bekövetkezett hibát.
+WVER0201E.useraction=Kövesse a változathibában megadott útmutatásokat.
+
+# 
+WVER0202E=WVER0202E: Nem lehet betölteni a történetinformációkat
+WVER0202E.explanation=Nem lehet betölteni a történetinformációkat a(z) {0} történetfájlból.  Az egyedi részleteket a bekövetkezett hiba adja meg.
+WVER0202E.useraction=Győződjön meg róla, hogy a történetfájl olvasható és megfelelő a formátuma.
+
+# 
+WVER0203E=WVER0203E: Kivétel történt a(z) {0} beolvasásakor
+WVER0203E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0203E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0204E=WVER0204E: Kivétel történt a(z) {0} történetkönyvtár létrehozásakor
+WVER0204E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0204E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0205E=WVER0205E: Kivétel történt a(z) {0} történetfájl biztonsági mentésének létrehozásakor itt: {1}
+WVER0205E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0205E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0206E=WVER0206E: Kivétel történt a(z) {0} eseménytörténet írásakor
+WVER0206E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0206E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Minden jog fenntartva.
+WVER0210I.explanation=Ez egy szabványos szerzői jogi feljegyzés.
+WVER0210I.useraction=Nincs felhasználói teendő.  Ez információs üzenet.
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=Ez egy szabványos termékleírás feljegyzés.
+WVER0211I.useraction=Nincs felhasználói teendő.  Ez információs üzenet.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo jelentéskészítő {0} változat, dátum: {1}
+WVER0212I.explanation=Ez egy szabványos modulleírás feljegyzés.
+WVER0212I.useraction=Nincs felhasználói teendő.  Ez információs üzenet.
+
+# 
+WVER0225E=WVER0225E: A(z) ''{0}'' paraméternek nincs megadva érték
+WVER0225E.explanation=A megadott paraméternek értéket kell adni.  (A '-help' vagy a '-usage' segítségével jeleníthet meg a használatra vonatkozó információkat.)
+WVER0225E.useraction=Adjon értéket a kifogásolt paraméternek.
+
+# 
+WVER0226E=WVER0226E: A(z) ''{0}'' érték nem érvényes formátum érték.
+WVER0226E.explanation=Az érvényes formátum értékek a 'text' és a 'html'.  A megadott érték ezek egyikének sem felel meg.  (A '-help' vagy a '-usage' segítségével jeleníthet meg a használatra vonatkozó információkat.)
+WVER0226E.useraction=Módosítsa a formátum értéket a 'text' vagy a 'html' valamelyikére.
+
+# 
+WVER0228E=WVER0228E: A(z) ''{0}'' paraméter nem érvényes paraméter.
+WVER0228E.explanation=A megadott paraméter érvénytelen.  (A '-help' vagy a '-usage' segítségével jeleníthet meg a használatra vonatkozó információkat.)
+WVER0228E.useraction=Módosítsa a paramétert egy érvényes paraméterre.
+
+# 
+WVER0230I=WVER0230I: Használat: historyInfo ( [ -format <text | html> ] [ -file <kimeneti fájl> ] [ -updateId <frissítésazonosító> ] [ -component <összetevő> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Ez az információs üzenet írja le a historyInfo segédprogram paramétereit.  A historyInfo segédprogram elhagyható paramétereket is elfogad a kimeneti formátum meghatározására, a kimeneti fájl meghatározására, csak egy adott javítással kapcsolatos események megjelenítésére, csak a megadott összetevővel kapcsolatos események megjelenítésére és a használati információk megjelenítésére.  (A '-usage' vagy a '-help' segítségével jeleníthet meg a használatra vonatkozó információkat.)
+WVER0230I.useraction=Nincs felhasználói teendő.  A használatra vonatkozó információkat tartalmazó üzenet kérésre jelenik meg.
+
+# 
+WVER0231I=WVER0231I: A '-format' paraméter a kimeneti formátum meghatározására szolgál, amely vagy 'text' vagy 'html' lehet.  A '-file' paraméter ad meg kimeneti fájlt.  Meg kell adni egy fájl nevét.  Az '-updateId' paraméterrel korlátozható az események megjelenítése a megadott frissítésre.  A '-component' paraméterrel korlátozható az események megjelenítése a megadott összetevőre.  A '-help' paraméter a változatinformációkat jeleníti meg.  A '-usage' paraméter ezeket a használati információkat jeleníti meg.
+WVER0231I.explanation=Ez az üzenet írja le a versionInfo segédprogram érvényes paramétereit.
+WVER0231I.useraction=Nincs felhasználói teendő.  A használatra vonatkozó információkat tartalmazó üzenet kérésre jelenik meg.
+
+# 
+WVER0240E=WVER0240E: Hiba a változatjelentés kiírásakor a(z) {0} helyre: {1}
+WVER0240E.explanation=A megadott hiba történt a történeti jelentésnek a megadott fájlba írása során.
+WVER0240E.useraction=A helyreállítási tevékenységek a bekövetkezett hiba részleteitől függnek.  Elsősorban győződjön meg róla, hogy a megadott fájl írható, és elegendő lemezterület áll rendelkezésre a jelentésnek.
+
+# 
+WVER0241E=WVER0241E: Hiba a történeti jelentés kiírásakor a(z) {0} helyre.  A hiba szövegét nem lehet megjeleníteni, de {1} típusú.  A hiba szövegének lekérdezésekor egy második, {2} típusú hiba történt.
+WVER0241E.explanation=Hiba történt a történeti jelentésnek a megadott fájlba írása során.  A hiba szövegének lekérdezése során egy második hiba történt.
+WVER0241E.useraction=Nincs felhasználói teendő.  Próbálkozzon újra a kért művelettel, vagy kérjen segítséget a terméktámogatástól.
+
+# 
+WVER0242E=WVER0242E: Kivétel történt a történetinformációk feldolgozásakor
+WVER0242E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0242E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0243E=WVER0243E: Kivételek történtek a történetinformációk feldolgozásakor
+WVER0243E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0243E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+# 
+WVER0261E=WVER0261E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} javítás alkalmazását a(z) {2} fájlba.  A megnevezett fájl nem menthető.
+WVER0261E.explanation=A megnevezett fájl nem menthető.
+WVER0261E.useraction=Győződjön meg róla, hogy a célfájl írható, és elegendő terület áll rendelkezésre az új fájlnak.
+
+# 
+WVER0262E=WVER0262E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} javítás alkalmazásának eltávolítását a(z) {2} fájlba.  A megnevezett fájl nem menthető.
+WVER0262E.explanation=A megnevezett fájl nem menthető.
+WVER0262E.useraction=Győződjön meg róla, hogy a célfájl írható, és elegendő terület áll rendelkezésre az új fájlnak.
+
+# 
+WVER0263E=WVER0263E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} javítás alkalmazásának eltávolítását a(z) {2} fájlban.  A megnevezett fájl nem távolítható el.
+WVER0263E.explanation=A megnevezett fájl nem távolítható el.
+WVER0263E.useraction=Győződjön meg róla, hogy a fájlt el lehet távolítani.
+
+# 
+WVER0264E=WVER0264E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} javítás eltávolítását -- nincs feljegyzett alkalmazás.
+WVER0264E.explanation=Az összetevővel kapcsolatban nincs feljegyzés a megadott javítás alkalmazásáról.  Elképzelhető, hogy sérültek a termékinformációk, vagy belső hiba történt.
+WVER0264E.useraction=További információkért keresse meg a terméktámogatást.
+
+# 
+WVER0265E=WVER0265E: Nem lehet eltávolítani a(z) {2} fájlban található {0} javítás illesztőprogramot.
+WVER0265E.explanation=A megnevezett fájl nem távolítható el.
+WVER0265E.useraction=Győződjön meg róla, hogy a fájlt el lehet távolítani.
+
+# 
+WVER0266E=WVER0266E: A PTF illesztőprogramra vonatkozó információk elemzése során helyreállítható hibák történtek.
+WVER0266E.explanation=A PTF információk elemzése során az alábbi listában felsorolt hibák történtek.  További információkat a felsorolt hibaüzenetekben talál.
+WVER0266E.useraction=A javasolt felhasználói teendőket a felsorolt hibák tartalmazzák.
+
+# 
+WVER0267E=WVER0267E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} PTF alkalmazásának eltávolítását a(z) {2} fájlba.  A megnevezett fájl nem menthető.
+WVER0267E.explanation=A megnevezett fájl nem menthető.
+WVER0267E.useraction=Győződjön meg róla, hogy a célfájl írható, és elegendő terület áll rendelkezésre az új fájlnak.
+
+# 
+WVER0268E=WVER0268E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} PTF alkalmazásának eltávolítását a(z) {2} fájlban.  A megnevezett fájl nem távolítható el.
+WVER0268E.explanation=A megnevezett fájl nem távolítható el.
+WVER0268E.useraction=Győződjön meg róla, hogy a fájlt el lehet távolítani.
+
+# 
+WVER0269E=WVER0269E: Nem lehet feljegyezni a(z) {1} összetevőre vonatkozó {0} PTF eltávolítását -- nincs feljegyzett alkalmazás.
+WVER0269E.explanation=Az összetevővel kapcsolatban nincs feljegyzés a megadott PTF alkalmazásáról.  Elképzelhető, hogy sérültek a termékinformációk, vagy belső hiba történt.
+WVER0269E.useraction=További információkért keresse meg a terméktámogatást.
+
+# 
+WVER0270E=WVER0270E: Nem lehet eltávolítani a(z) {2} fájlban található {0} PTF illesztőprogramot.
+WVER0270E.explanation=A megnevezett fájl nem távolítható el.
+WVER0270E.useraction=Győződjön meg róla, hogy a fájlt el lehet távolítani.
+
+# 
+WVER0271E=WVER0271E: Ismeretlen termék történetfájl kiterjesztés: ''{0}''.
+WVER0271E.explanation=A termék történetinformációk betöltése adott kiterjesztésű fájlokból történik.  Az egyes fájlokban tárolt információk típusát a kiterjesztések határozzák meg.  Az érvényes kiterjesztések: '.fixDriver', '.fixApplied', '.efixDriver', '.efixApplied', '.ptfDriver' és '.ptfApplied'.  Kísérlet történt egy olyan változatinformációkat tartalmazó fájl betöltésére, amelynek kiterjesztése nem felelt meg egyik érvényes kiterjesztésnek sem.
+WVER0271E.useraction=Ez belső hibára utal.
+
+# 
+WVER0272E=WVER0272E: Kivétel történt a(z) {0} beolvasásakor
+WVER0272E.explanation=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+WVER0272E.useraction=További információkért tekintse át a beágyazott kivételre vonatkozó részleteket.
+
+label.standard.out=Szabványos kimenet
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Portal történeti jelentés
+report.header.update=IBM WebSphere Portal történeti jelentés a(z) {0} frissítésről
+report.header.component=IBM WebSphere Portal történeti jelentés a(z) {0} összetevőről
+report.header.update.component=IBM WebSphere Portal történeti jelentés a(z) {0} frissítésről és {1} összetevőről
+
+warning.no.events=Figyelmeztetés: Nincsenek rendelkezésre álló események.
+warning.no.events.for.component=Figyelmeztetés: Nincsenek rendelkezésre álló események a(z) {0} összetevőhöz.
+warning.no.events.for.update=Figyelmeztetés: Nincsenek rendelkezésre álló események a(z) {0} frissítéshez.
+warning.no.events.for.update.component=Figyelmeztetés: Nincsenek rendelkezésre álló események a(z) {0} frissítéshez és {1} összetevőhöz.
+
+info.report.on=Jelentés dátuma és ideje: {0}
+
+report.footer=Történeti jelentés vége
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Telepítés
+label.product.dir=Termékkönyvtár
+label.version.dir=Változatkönyvtár
+label.version.dtd.dir=DTD könyvtár
+label.version.log.dir=Naplókönyvtár
+label.version.backup.dir=Mentési könyvtár
+label.version.tmp.dir=Ideiglenes könyvtár
+label.version.history.dir=Történetkönyvtár
+label.version.history.file=Történetfájl
+
+info.event=Telepítési esemény
+info.component.event=Összetevő telepítési esemény
+
+label.efix.id=Javítás azonosítója
+label.ptf.id=PTF azonosítója
+label.unknown.id=Ismeretlen azonosító
+
+label.action=Művelet
+
+label.start.time.stamp=Kezdés időpontja
+label.end.time.stamp=Befejezés időpontja
+
+label.log.file.name=Naplófájl neve
+
+
+label.component.name=Összetevő neve
+
+label.is.custom=Egyéni
+label.primary.content=Elsődleges tartalom
+
+label.update.type=Művelet frissítése
+
+label.is.external=Külső
+label.root.property.file=Gyökér tulajdonságfájl
+label.root.property.name=Gyökér tulajdonságnév
+label.root.property.value=Gyökér tulajdonságérték
+
+label.backup.file.name=Mentési fájl neve
+label.result=Eredmény
+label.result.message=Eredmény üzenet
+
+label.initial.version=Kezdeti verziószám
+label.initial.spec.version=Kezdeti specifikáció
+label.initial.build.date=Kezdeti összeállítási dátum
+
+label.final.version=Végső verziószám
+label.final.spec.version=Végső specifikáció verziószáma
+label.final.build.date=Végső összeállítási dátum
+
+
+label.install.action=telepítés
+label.uninstall.action=eltávolítás
+label.selective.install.action=szelektív telepítés
+label.selective.uninstall.action=szelektív eltávolítás
+label.unknown.action=*** ISMERETLEN ESEMÉNY TEVÉKENYSÉG ***
+
+label.update.add.tag=hozzáadás
+label.update.replace.tag=csere
+label.update.remove.tag=eltávolítás
+label.update.patch.tag=kijavítás
+label.update.composite.tag=összetett
+label.update.unknown.tag=*** ISMERETLEN FRISSÍTÉSTÍPUS ***
+
+label.result.succeeded.tag=sikerült
+label.result.failed.tag=meghiúsult
+label.result.cancelled.tag=megszakítva
+label.result.unknown.tag=*** ISMERETLEN ESEMÉNY EREDMÉNY ***
+
+label.true=true
+label.false=false

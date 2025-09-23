@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Sürüm (version) dizini saptanamıyor
+WVER0001E.explanation=Sürüm (version) dizini 'was.version.dir' java sistem özelliğiyle ya da '<kök>\\properties\\version' olarak ayarlanır; <kök>, 'was.install.root' ve 'server.root' java sistem özelliklerinin birinden alınır.  Bu özellikler sırayla incelenir ve varolan ilk özellik değeri alınır.  Bu hata, belirtilen java sistem özelliklerinden hiçbirinin ayarlanmadığını ve bu nedenle sürüm dizininin saptanamadığını gösterir.
+WVER0001E.useraction=Belirtilen java sistem özelliklerinden birinin ayarlandığını doğrulayın.  Java sistem özelliği işlem yapılanışı yoluyla ya da komut satırından başlatılan bir işlemin seçeneği olarak ayarlanmalıdır.
+
+# 
+WVER0002E=WVER0002E: Ürün sürümü dosyası uzantısı ''{0}'' tanınmıyor.
+WVER0002E.explanation=Ürün sürümü bilgileri yüklenirken, bu bilgiler özel uzantıları olan dosyalarda saklanır.  Bu uzantılar, her bir dosyadaki bilgilerin tipini belirler.  Geçerli uzantılar şunlardır: '.websphere', '.component', '.product', '.fix', '.efix' ve '.extension'.  Sürüm bilgisi içeren, ancak uzantısı geçerli uzantılardan biri olmayan bir dosyayı yükleme girişimde buluuldu.
+WVER0002E.useraction=Bu bir iç hatayı gösterir.
+
+# 
+WVER0003I=WVER0003I: Kullanım: versionInfo ( [ -format <text | html> ] [ -file <çıkış dosyası> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Bu bilgi iletisi, versionInfo yardımcı programına ilişkin seçenekleri açıklar.  versionInfo yardımcı programı, çıkış biçimini, çıkış dosyasını, düzeltmelerin görüntülenmesini, düzeltme ayrıntılarının görüntülenmesini, bileşenlerin görüntülenmesini ve kullanım bilgilerinin görüntülenmesini belirten isteğe bağlı anahtar sözcük seçeneklerini kabul eder.
+WVER0003I.useraction=Herhangi bir işlem yapılması gerekmez.  Kullanım bilgileri iletisi istek üzerine görüntülenir.
+
+# 
+WVER0004E=WVER0004E: Sürüm raporu {0} dosyasına yazılırken hata: {1}
+WVER0004E.explanation=Belirtilen dosyaya bir sürüm raporu yazılırken bu hata oluştu.
+WVER0004E.useraction=Yapılması gerekenler, oluşan hatanın ayrıntılarına bağlıdır.  Genellikle, belirtilen dosyanın yazılabilir olduğunu ve rapor için yeterli yer bulunduğunu doğrulamanız gerekir.
+
+# 
+WVER0005E=WVER0005E: ''{0}'' seçeneği için değer belirtilmedi
+WVER0005E.explanation=Bu seçenek için değer belirtilmesi gereklidir.  (Kullanım bilgilerini görüntülemek için '-help' ya da '-usage' seçeneğini kullanın.)
+WVER0005E.useraction=Bu seçenek için bir değer belirtin.
+
+# 
+WVER0006E=WVER0006E: ''{0}'' değeri geçerli bir biçim değeri değil.
+WVER0006E.explanation=Geçerli biçim değerleri şunlardır: 'text' ve 'html'.  Belirtilen değer bu değerlerden biri değil.  (Kullanım bilgilerini görüntülemek için '-help' ya da '-usage' seçeneğini kullanın.)
+WVER0006E.useraction=Biçim değerini geçerli değerlerden birine ('text' ya da 'html') çevirin.
+
+# 
+WVER0007E=WVER0007E: ''{0}'' seçeneği geçersiz.
+WVER0007E.explanation=Belirtilen seçenek geçersiz.  (Kullanım bilgilerini görüntülemek için '-help' ya da '-usage' seçeneğini kullanın.)
+WVER0007E.useraction=Geçerli bir seçeneği kullanın.
+
+# 
+WVER0008I=WVER0008I: '-format' seçeneği çıkış biçimini belirtir: 'text' ya da 'html'.  '-file' seçeneği bir çıkış dosyasını belirtir.  '-file' seçeneğiyle bir dosya adı belirtilmelidir.  '-long' seçeneği tüm düzeltme, ptf ve bileşen bilgilerinin görüntülenmesini sağlar.  '-fixes' seçeneği düzeltmelerin görüntülenmesini sağlar.  '-fixDetail' seçeneği düzeltme ayrıntılarının görüntülenmesini sağlar.  '-ptfs' seçeneği PTF'lerin görüntülenmesini sağlar.  '-ptfDetail' seçeneği PTF ayrıntılarının görüntülenmesini sağlar.  '-components' seçeneği bileşenlerin görüntülenmesini sağlar.  '-componentDetail' seçeneği bileşen ayrıntılarının görüntülenmesini sağlar.  '-help' seçeneği yardım metninin görüntülenmesini sağlar.  '-usage' seçeneği bu kullanım metninin görüntülenmesini sağlar.
+WVER0008I.explanation=Bu ileti, versionInfo yardımcı programına ilişkin geçerli seçenekleri açıklar.
+WVER0008I.useraction=Herhangi bir işlem yapılması gerekmez.  Kullanım bilgileri iletisi istek üzerine görüntülenir.
+
+# 
+WVER0009E=WVER0009E: Sürüm raporu {0} dosyasına yazılırken hata oluştu.  Hatanın metni görüntülenemiyor, ancak tipi {1}.  Hata metni alınırken, {2} tipinde ikinci bir hata oluştu.
+WVER0009E.explanation=Belirtilen dosyaya bir sürüm raporu yazılırken bir hata oluştu.  Hatanın metni alınırken ikinci bir hata oluştu.
+WVER0009E.useraction=Kullanıcının yapabileceği herhangi bir işlem yoktur.  İstenen işlemi yeniden deneyin ya da yardım almak için destek görevlilerine başvurun.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006. Her hakkı saklıdır.
+WVER0010I.explanation=Bu ileti, standart bir yayın hakkı bildirimidir.
+WVER0010I.useraction=Herhangi bir işlem yapılması gerekmez.  Bu bir bilgi iletisidir.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=Bu ileti, standart bir ürün tanımı bildirimidir.
+WVER0011I.useraction=Herhangi bir işlem yapılması gerekmez.  Bu bir bilgi iletisidir.
+
+# 
+WVER0012I=WVER0012I: VersionInfo raporlayıcı sürüm {0}, tarih {1}
+WVER0012I.explanation=Bu ileti, standart bir birim tanımı bildirimidir.
+WVER0012I.useraction=Herhangi bir işlem yapılması gerekmez.  Bu bir bilgi iletisidir.
+
+# 
+WVER0013E=WVER0013E: {0} okunurken kural dışı durum oluştu
+WVER0013E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0013E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0014E=WVER0014E: {0} okunurken kural dışı durum oluştu
+WVER0014E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0014E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0015E=WVER0015E: Sürüm bilgileri işlenirken kural dışı durum oluştu
+WVER0015E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0015E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0016E=WVER0016E: Sürüm bilgileri işlenirken kural dışı durumlar oluştu
+WVER0016E.explanation=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+WVER0016E.useraction=Ek bilgi için, kural dışı durum zinciri ayrıntılarına bakın.
+
+# 
+WVER0017E=WVER0017E: Güncelleme günlükleri dizini saptanamıyor
+WVER0017E.explanation=Günlük (log) dizini 'was.version.log.dir' Java sistem özelliğiyle ya da sürüm (version) dizininin 'log' dizini olarak ayarlanır.  Ne 'was.version.log.dir' özelliği, ne de sürüm dizini ayarlı.
+WVER0017E.useraction=Sürüm dizininin ayarlı olduğunu doğrulayın ya da 'was.version.log.dir' java sistem özelliğini ayarlayın.
+
+# 
+WVER0018E=WVER0018E: Güncelleme yedekleri dizini saptanamıyor
+WVER0018E.explanation=Yedek (backup) dizini 'was.version.backup.dir' Java sistem özelliğiyle ya da sürüm (version) dizininin 'log' dizini olarak ayarlanır.  Ne 'was.version.backup.dir' özelliği, ne de sürüm dizini ayarlı.
+WVER0018E.useraction=Sürüm dizininin ayarlı olduğunu doğrulayın ya da 'was.version.backup.dir' java sistem özelliğini ayarlayın.
+
+# 
+WVER0019E=WVER0019E: Ürün sürümü bilgileri için DTD dizini saptanamıyor.
+WVER0019E.explanation=DTD dizini 'was.version.dtd.dir' Java sistem özelliğiyle ya da sürüm (version) dizininin 'dtd' dizini olarak ayarlanır.  Ne 'was.version.dtd.dir' özelliği, ne de sürüm dizini ayarlı.
+WVER0019E.useraction=Sürüm dizininin ayarlı olduğunu doğrulayın ya da 'was.version.dtd.dir' java sistem özelliğini ayarlayın.
+
+# 
+WVER0021E=WVER0021E: Düzeltme bilgileri ayrıştırılırken kurtarılabilir hatalar oluştu.
+WVER0021E.explanation=Düzeltme bilgileri ayrıştırılırken, aşağıda listelenen hatalar oluştu.  Ek bilgi için, listelenen hatalar bakın.
+WVER0021E.useraction=Önerilen kullanıcı işlemleri için listelenen hatalara bakın.
+
+# 
+WVER0022E=WVER0022E: Ürün bilgileri okunurken hata oluştu.  Hata kurtarılabilir bir hata olduğundan ayrıştırma devam etti.  Hata sistem tanıtıcısı {0} ve genel tanıtıcısı {1} olan varlıkta, {2} nummaralı satır ve {3} numaralı kolonda oluştu: {4}
+WVER0022E.explanation=Belirtilen hatada açıklandığı şekilde, bu varlığın yapısı geçersiz.  Ancak, hata onulmaz bir hata olmadığından ayrıştırma devam etti.
+WVER0022E.useraction=Belirtilen dosya gözden geçirilmeli ve yapılabiliyorsa düzeltilmelidir.
+
+# 
+WVER0023E=WVER0023E: Ürün bilgileri ayrıştırılırken uyarılar oluştu.
+WVER0023E.explanation=Düzeltme bilgileri ayrıştırılırken, aşağıda listelenen uyarılar oluştu.  Ek bilgi için, listelenen uyarılara bakın.
+WVER0023E.useraction=Önerilen kullanıcı işlemleri için listelenen uyarılara bakın.
+
+# 
+WVER0024E=WVER0024E: Ürün bilgileri okunurken uyarı oluştu.  Uyarı sistem tanıtıcısı {0} ve genel tanıtıcısı {1} olan varlıkta, {2} nummaralı satır ve {3} numaralı kolonda oluştu: {4}
+WVER0024E.explanation=Belirtilen uyarıda açıklandığı şekilde, bu varlığın yapısı geçersiz.  Ancak, uyarı onulmaz bir uyarı olmadığından ayrıştırma devam etti.
+WVER0024E.useraction=Belirtilen dosya gözden geçirilmeli ve yapılabiliyorsa düzeltilmelidir.
+
+# 
+WVER0029E=WVER0029E: {2} dosyasında saklanan {0} düzeltmesi kaldırılamadı.
+WVER0029E.explanation=Belirtilen dosya kaldırılamadı.
+WVER0029E.useraction=Hedef dosyanın kaldırılabilir olduğunu doğrulayın.
+
+# 
+WVER0030E=WVER0030E: PTF bilgileri ayrıştırılırken kurtarılabilir hatalar oluştu.
+WVER0030E.explanation=PTF bilgileri ayrıştırılırken, aşağıda listelenen hatalar oluştu.  Ek bilgi için, listelenen hatalar bakın.
+WVER0030E.useraction=Önerilen kullanıcı işlemleri için listelenen hatalara bakın.
+
+# 
+WVER0031E=WVER0031E: {1} bileşenine ilişkin {0} tanıtıcılı PTF''''in uygulanması {2} dosyasına kaydedilemiyor.  Belirtilen dosya saklanamadı.
+WVER0031E.explanation=Belirtilen dosya saklanamadı.
+WVER0031E.useraction=Hedef dosyanın yazılabilir olduğunu ve yeni bir dosya için yeterli yer bulunduğunu doğrulayın.
+
+# 
+WVER0035E=WVER0035E: {2} dosyasında saklanan {0} tanıtıcılı PTF kaldırılamadı.
+WVER0035E.explanation=Belirtilen dosya kaldırılamadı.
+WVER0035E.useraction=Hedef dosyanın kaldırılabilir olduğunu doğrulayın.
+
+# 
+WVER0040E=WVER0040E: Belirtilen ''{0}'' sürüm dizini yok.
+WVER0040E.explanation=Sürüm dizini yok.
+WVER0040E.useraction=Belirtilen dizinin geçerli bir ürün sürümü dizini olduğunu doğrulayın.
+
+# 
+WVER0041E=WVER0041E: Belirtilen ''{0}'' sürüm dizini bir dizin değil.
+WVER0041E.explanation=Sürüm dizini bir dizin değil.
+WVER0041E.useraction=Belirtilen dizinin geçerli bir ürün sürümü dizini olduğunu doğrulayın.
+
+# 
+WVER0042E=WVER0042E: Belirtilen ''{0}'' DTD dizini yok.
+WVER0042E.explanation=DTD dizini yok.
+WVER0042E.useraction=Belirtilen dizinin geçerli bir ürün DTD dizini olduğunu doğrulayın.
+
+# 
+WVER0043E=WVER0043E: Belirtilen ''{0}'' DTD dizini bir dizin değil.
+WVER0043E.explanation=DTD dizini bir dizin değil.
+WVER0043E.useraction=Belirtilen dizinin geçerli bir ürün DTD dizini olduğunu doğrulayın.
+
+# 
+WVER0044E=WVER0044E: Belirtilen ''{0}'' günlük dizini yaratılamadı
+WVER0044E.explanation=DTD dizini bir dizin değil.
+WVER0044E.useraction=Belirtilen dizinin geçerli bir ürün DTD dizini olduğunu doğrulayın.
+
+# 
+WVER0045E=WVER0045E: Belirtilen ''{0}'' günlük dizini bir dizin değil.
+WVER0045E.explanation=DTD dizini bir dizin değil.
+WVER0045E.useraction=Belirtilen dizinin geçerli bir ürün DTD dizini olduğunu doğrulayın.
+
+# 
+WVER0046E=WVER0046E: Belirtilen ''{0}'' yedekleme dizini yaratılamadı
+WVER0046E.explanation=DTD dizini bir dizin değil.
+WVER0046E.useraction=Belirtilen dizinin geçerli bir ürün DTD dizini olduğunu doğrulayın.
+
+# 
+WVER0047E=WVER0047E: Belirtilen ''{0}'' yedekleme dizini bir dizin değil.
+WVER0047E.explanation=DTD dizini bir dizin değil.
+WVER0047E.useraction=Belirtilen dizinin geçerli bir ürün DTD dizini olduğunu doğrulayın.
+
+# 
+WVER0048E=WVER0048E: Belirtilen ''{0}'' ürün dizini yok.
+WVER0048E.explanation=Ürün dizini yok.
+WVER0048E.useraction=Ürün dizininin geçerli bir ürün dizini olduğunu doğrulayın.
+
+# 
+WVER0049E=WVER0049E: Belirtilen ''{0}'' ürün dizini bir dizin değil.
+WVER0049E.explanation=Ürün dizini bir dizin değil.
+WVER0049E.useraction=Belirtilen dizinin geçerli bir ürün dizini olduğunu doğrulayın.
+
+
+
+
+label.standard.out=Standart Çıkış
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Portal Ürün Kuruluş Durumu Raporu
+report.footer=Ürün Kuruluş Durumu Raporu Sonu
+
+info.report.on=Raporlama tarihi ve saati: {0}
+
+info.source=Kuruluş
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Ürün Dizini
+label.version.dir=Sürüm Dizini
+label.version.dtd.dir=DTD Dizini
+label.version.log.dir=Günlük Dizini
+label.version.backup.dir=Yedekleme Dizini
+label.version.tmp.dir=Geçici Dizin
+
+info.platform=Kuruluş Altyapısı
+label.name=Ad
+label.version=Sürüm
+
+info.technology=Teknoloji Listesi
+label.installed=kurulu
+
+info.product=Kurulan Ürün
+# label.name=Name
+# label.version=Version
+label.id=Tanıtıcı
+label.build.level=Oluşturma Düzeyi
+label.build.date=Oluşturma Tarihi
+
+info.component=Kurulan Bileşen
+label.component.name=Bileşen Adı
+label.configtasks=Yapılanış Görevleri
+label.spec.version=Belirtim Sürümü
+label.build.version=Oluşturma Sürümü
+# label.build.date=Build Date
+
+info.update.on.component=Kurulan Bileşen Güncellemesi
+#label.component.name=Component Name
+label.update.type=Güncelleme Tipi
+label.update.type.efix=Düzeltme
+label.update.type.ptf=PTF
+
+label.efix.id=Düzeltme Tanıtıcısı
+label.ptf.id=PTF Tanıtıcısı
+
+label.update.effect=Güncelleme Sonucu
+
+label.is.required=Gerekli
+label.is.optional=İsteğe Bağlı
+
+label.is.external=Dış
+label.root.property.file=Kök Özellik Dosyası
+label.root.property.name=Kök Özellik Adı
+label.root.property.value=Kök Özellik Değeri
+
+label.is.custom=Özel
+
+label.log.file.name=Günlük Dosyası Adı
+label.backup.file.name=Yedekleme Dosyası Adı
+label.install.date=Kuruluş Tarihi
+
+label.initial.spec.version=İlk Belirtim Sürümü
+label.initial.build.date=İlk Oluşturma Tarihi
+label.initial.build.version=İlk Oluşturma Sürümü
+
+label.final.spec.version=Son Belirtim Sürümü
+label.final.build.date=Son Oluşturma Tarihi
+label.final.build.version=Son Oluşturma Sürümü
+
+info.extension=Kurulan Uzantı
+# label.name=Name
+# label.id=ID
+
+info.efix=Kurulan Düzeltme
+# label.id=ID
+label.short.description=Tanım
+label.is.trial=Deneme
+label.expiration.date=Süre Bitim Tarihi
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Sergileme
+
+label.apar=APAR
+label.apar.number=No.
+label.apar.date=Tarih
+label.apar.short.description=Tanım
+label.apar.long.description=Sergileme
+
+label.supported.platforms=Desteklenen Altyapılar
+label.supported.products=Desteklenen Altyapılar
+
+label.efix.efix.prereqs=Önkoşul Olan Düzeltmeler
+
+label.component.updates=Bileşen Güncellemeleri
+label.component.requires={0} v {1} gerektirir
+
+label.becomes=belirtim {0}, oluşturma {1} - {2}
+
+label.custom.properties=Uyarlanmış Özellikler
+
+info.ptf=Kurulan PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=İçerilen Düzeltmeler
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=doğru
+label.false=yanlış
+
+label.is.absent=yok
+label.is.installed=kuruluşu {0}
+
+label.update.effect.add=ekle
+label.update.effect.replace=yerinekoy
+label.update.effect.remove=kaldır
+label.update.effect.patch=yama
+label.update.effect.unknown=bilinmiyor
+
+label.is.negative=eksi
+label.is.positive=artı
+
+label.is.required.tag=gerekli
+label.if.possible.tag=olanaklıysa
+label.is.optional.tag=isteğe bağlı
+label.is.recommended.tag=önerilir
+
+label.is.custom.tag=özel güncelleme
+label.is.standard.tag=standart güncelleme

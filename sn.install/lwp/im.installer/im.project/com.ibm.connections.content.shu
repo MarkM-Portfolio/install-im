@@ -1,0 +1,1765 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited 2006, 2020                     -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<su id='com.ibm.connections.content' version='8.0.0.qualifier'>
+    <selector id='main'/>
+	<selector id='homepage'/>
+	<selector id='news'/>
+	<selector id='search'/>
+	<selector id='common'/>
+	<selector id='widgetContainer'/>
+	<selector id='pushNotification'/>
+	<selector id='activities'/>
+	<selector id='blogs'/>
+	<selector id='communities'/>
+	<selector id='dogear'/>
+	<selector id='files'/>
+	<selector id='forums'/>
+	<selector id='metrics'/>
+	<selector id='mobile'/>
+	<selector id='moderation'/>
+	<selector id='profiles'/>
+	<selector id='wikis'/>
+	<selector id='ccm'/>
+	<selector id='rte'/>
+	<selector id='icec'/>
+	<selector id='ic360'/>
+	<!--<selector id='quickResults'/>-->
+
+	<iu version='6.0.0.0' adapterId='native' id='setConfig_iu'>
+		<!--
+		<property name='passive.order.dependencies' value='product_news_iu,product_search_iu,product_profiles_iu,product_profiles_iu,product_activities_iu,product_blogs_iu,product_communities_iu,product_dogear_iu,product_files_iu,product_forums_iu,product_homepage_iu,product_metrics_iu,product_wikis_iu,product_mobile_iu,product_moderation_iu,product_ccm_iu'/>
+		-->
+		<property name='order.dependencies' value='appendPropertyFile_iu' />
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${profile:user.connections.install.location}/cfg.py'>
+				<line># Common settings</line>
+				<line>common_options = {</line>
+				<line>  "installationManagerMode": "true",</line>
+				<line>  "installType": "nd",</line>
+				<!-- <line>  "cell": "${profile:user.was.dmCellName}",</line> -->
+				<line>  "port": "${profile:user.was.wasSoapPort}",</line>
+				<line>  "profileName": "${profile:user.was.profileName}",</line>
+				<line>  "SOAP_CONNECTOR_ADDRESS": "${profile:user.was.wasSoapPort}",</line>
+				<line>  "webserverNode": "${profile:user.web.server.node}",</line>
+				<line>  "webserver": "${profile:user.web.server.name}",</line>
+				<line>  "connectionsAdminUser": "${profile:user.was.adminuser.id}",</line>
+				<line>  "connectionsAdminPassword": "${decrypt:${profile:user.was.adminuser.password}}",</line>
+				<line>  "dataDirectory": "${profile:user.contentStore.shared.path}",</line>
+				<line>  "dataDirectoryLocal": "${profile:user.contentStore.local.path}",</line>
+				<line>  "msgStoreHome": "${profile:user.messageStore.shared.path}",</line>
+				<line>  "msgStore": {</line>
+				<line>    "logSize": 100,</line>
+				<line>    "minPermanentStoreSize": 200,</line>
+				<line>    "minTemporaryStoreSize": 200,</line>
+				<line>    "maxPermanentStoreSize": 500,</line>
+				<line>    "maxTemporaryStoreSize": 500</line>
+				<line>  },</line>
+				<line>  "lcHome": "${profile:user.connections.install.location}",</line>
+				<line>  "enableWPI": "true",</line>
+				<line>  "enableWCI": "true",</line>
+				<line>  "replaceEAR": "true",</line>
+				<line>  "disableTAMTAI": "true",</line>
+				<line>  "disableSpnegoTAI": "true",</line>
+				<line>  ${profile:user.notification.enabled.key.value}</line>
+				<line>  "mailSession": {</line>
+				<line>    ${profile:user.notification.port.key.value}</line>
+				<line>    ${profile:user.notification.user.key.value}</line>
+				<line>    ${profile:user.notification.password.key.value}</line>
+				<line>    ${profile:user.notification.protocol.key.value}</line>
+				<line>    "host": "${profile:user.notification.host}"</line>
+				<line>    #"properties": {</line>
+				<line>    #  "mail.smtp.connectiontimeout":12000</line>
+				<line>    #}</line>
+				<line>  },</line>
+				<line>  ${profile:user.notification.replyto.info} </line>
+				<line>  ${profile:user.notification.dns.url.key.value}</line>
+				<line>  "ssoDomain": "${profile:user.was.domainName}",</line>
+				<line>  "dmhostname": "${profile:user.was.dmHostname}",</line>
+				<line>  "dmcellname": "${profile:user.was.dmCellName}",</line>
+				<line>  "admin": "${profile:user.user.mapping.administrative.users}",</line>
+				<line>  "global-moderator": "${profile:user.user.mapping.global.moderater.users}",</line>
+				<!--
+				<line>  "customize-roles-maps": {</line>
+				<line>    "admin": [ "Yes", "No", "${profile:user.was.adminuser.id}", "" ],</line>
+				<line>    "search-admin": [ "Yes", "No", "${profile:user.was.adminuser.id}", "" ],</line>
+				<line>    "widgets-admin": [ "Yes", "No", "${profile:user.was.adminuser.id}", "" ],</line>
+				<line>  },</line>
+				-->
+				<line>  "notificationEmailDomain": "${profile:user.notification.domain}",</line>
+				<line>  "security": {"com.ibm.websphere.security.disableGetTokenFromMBean": "true"},</line>
+				<line>  "log_options":{</line>
+				<line>    "maxNumLogFiles":30,</line>
+				<line>    "rolloverType":"BOTH",</line>
+				<line>    "rolloverPeriod":24,</line>
+				<line>    "baseHour":24</line>
+				<line>  },</line>
+				<line>  "webContainer":{"HttpSessionCloneId":"someValue","Description":"put_a_description_here"},</line>
+				<line>  "jvm":{"verboseModeGarbageCollection":"true"},</line>
+				<line>  "dbType": "${profile:user.database.type}",</line>
+				<line>  "dbServer": "localhost",</line>
+				<line>  "dbPassword": "-",</line>
+				<line>  "dbDriverPath": "/"</line>
+				<line>}</line>
+				<line>#</line>
+				<line># When install, put component specific settings here, any settings find in</line>
+				<line># this section will override the same settings from the common_options.</line>
+				<line>#</line>
+				<line># application specific settings:</line>
+				<line>#   "disableModule": ['calendar.war', 'catalog.war', 'qkr.search.engine.jar'],</line>
+				<line>#   "deleteModule": ['calendar.war', 'catalog.war', 'qkr.search.engine.jar'],</line>
+				<line>#</line>
+				<line>apps_options = {</line>
+				<line>##feature-config##</line>
+				<line>}</line>
+				<line>clusters_options = {</line>
+				<line>##cluster-config##</line>
+				<line>}</line>
+			</createFile>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='native' id='connectionsSQL_iu'>
+		<selectedByExpression>
+			<or>
+				<selectedBy value='linux' id='os'/>
+				<selectedBy value='aix' id='os'/>
+				<selectedBy value='win32' id='os'/>
+			</or>
+		</selectedByExpression>
+		<adapterSpecificData>
+			<zip id='connections.sql' destination='${profile:installLocation}/xkit' overwrite='true'>
+				<zipfileset dir='${lc.live.installer}/xkit'>
+					<include name='connections.sql/**/*'/>
+					<exclude name='connections.sql/**/fixup/*'/>
+					<exclude name='connections.sql/**/fixup'/>
+					<exclude name='connections.sql/**/db2_IBMi/**/*'/>
+					<exclude name='connections.sql/**/db2_IBMi'/>
+					<exclude name='connections.sql/**/db2_i/**/*'/>
+					<exclude name='connections.sql/**/db2_i'/>
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='native' id='appendPropertyFile_iu'>
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<zip id='appendPropertyFile' destination='${profile:installLocation}/lib' overwrite='true'>
+				<zipfileset dir='${im.appendPropertyFile}/lib'>
+					<include name='*.jar'/>
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='native' id='utility_iu'>
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<zip id='utility' destination='${profile:installLocation}/lib' overwrite='true'>
+				<zipfileset dir='${im.utility}/lib'>
+					<include name='*.jar'/>
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='native' id='os400SetUmask_iu'><!-- OS400_Enablement -->
+		<selectedBy value='os400' id='os'/>	
+		<adapterSpecificData>
+			<zip id='os400SetUmask' destination='${profile:installLocation}/lib' overwrite='true'>
+				<zipfileset dir='${im.os400SetUmask}/lib'>
+					<include name='*.jar'/>
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='postInstallLauncher_iu'>
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<zip id='postInstallLauncher' destination='${profile:installLocation}/bin' overwrite='true' perm="a+x">
+				<zipfileset dir='${post.install.launcher.dir}' filemode='a+x'>
+					<include name='*.bat'/>
+					<include name='*.sh'/>
+					<include name='*.py'/>
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzip_iu'>
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<perform duringPhases='pre_install_configure'>
+				<delete file="xkit" deleteDirIfEmpty="false" />
+				<delete file="lib/*.class" deleteDirIfEmpty="true" />
+			</perform>
+			<zip id='product_common' destination='${profile:installLocation}' overwrite='true'>
+				<zipfileset dir='${lc.live.installer}'>
+					<include name='xkit/**/*'/>
+					<exclude name='xkit/connections.sql/**/db2_IBMi/**/*'/>
+					<exclude name='xkit/connections.sql/**/db2_IBMi'/>
+					<exclude name='xkit/connections.sql/**/db2_i/**/*'/>
+					<exclude name='xkit/connections.sql/**/db2_i'/>
+					<include name='bin/*'/>
+					<include name='lib/**/*'/>
+				</zipfileset>
+			</zip>
+			
+			<!-- Per agreement with the Offering Team, we're not refreshing the CCM package for IC6.0, so we didn't request a new Library tag. 
+			Customers will install 6.0 & continue to use the CCM 5.5 package, so the existing tag should suffice.  -->
+			<zip id='connections.swidtag' destination='${profile:installLocation}/swidtag' overwrite='true'>
+				<zipfileset dir='${iso.swid.dir}'>
+					<include name='*.swidtag' />
+					<exclude name='1986-03.com.ibm_IBM_Connections_-_Library-5.5.0.swidtag' />
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='ant' id='product_common_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/common-cfg.py'>
+				<line>  "common": {</line>
+				<line>    "cluster": "${profile:user.common.clusterName}",</line>
+				<line>    "dbType": "${profile:user.news.dbType}",</line>
+				<line>    "dbServer": "${profile:user.news.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.news.dbPort},</line>
+				<line>    "dbName": "${profile:user.news.dbName}",</line>
+				<line>    "dbUser": "${profile:user.news.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.news.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.news.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.news.dbCustomProperties}</line>
+				<line>    #"contextRoot": "common"</line>
+				<line>  },</line>
+				<line>  "widgetcontainer": {</line>
+				<line>    "cluster": "${profile:user.widgetContainer.clusterName}",</line>
+				<line>    "dbType": "${profile:user.news.dbType}",</line>
+				<line>    "dbServer": "${profile:user.news.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.news.dbPort},</line>
+				<line>    "dbName": "${profile:user.news.dbName}",</line>
+				<line>    "dbUser": "${profile:user.news.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.news.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.news.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.news.dbCustomProperties}</line>
+				<line>  },</line>
+				<line>  "proxy": {</line>
+				<line>    "cluster": "${profile:user.news.clusterName}",</line>
+				<line>    "dbType": "${profile:user.news.dbType}",</line>
+				<line>    "dbServer": "${profile:user.news.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.news.dbPort},</line>
+				<line>    "dbName": "${profile:user.news.dbName}",</line>
+				<line>    "dbUser": "${profile:user.news.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.news.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.news.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.news.dbCustomProperties}</line>
+				<line>  },</line>
+				<line>  "urlpreview": {</line>
+				<line>    "cluster": "${profile:user.news.clusterName}",</line>
+				<line>    "dbType": "${profile:user.news.dbType}",</line>
+				<line>    "dbServer": "${profile:user.news.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.news.dbPort},</line>
+				<line>    "dbName": "${profile:user.news.dbName}",</line>
+				<line>    "dbUser": "${profile:user.news.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.news.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.news.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.news.dbCustomProperties}</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/common-cluster-cfg.py'>
+				<line>"${profile:user.common.clusterName}": ${profile:user.common.clusterInfo},</line>
+			</createFile>
+			<createFile resolveString='true' file='${profile:installLocation}/lcinstall.properties'>
+				<line>    lchome=${profile:user.connections.install.location}</line>
+				<line>    washome=${profile:user.was.userhome}</line>
+				<line>    cellname=${profile:user.was.dmCellName}</line>
+				<line>    nd.DMgrCellName=${profile:user.was.dmCellName}</line>
+			</createFile>
+			<artifact id='im-install-cfg' ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Common'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/common-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Common (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/common-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='8.0.0.0' adapterId='ant' id='product_assets_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/asset-cfg.py'>
+				<line>  "sidebar": {</line>
+				<line>    "cluster": "${profile:user.homepage.clusterName}",</line>
+				<line>  },</line>
+				<line>  "touchpoint": {</line>
+				<line>    "cluster": "${profile:user.homepage.clusterName}",</line>
+				<line>  },</line>
+				<line>  "invite": {</line>
+				<line>    "cluster": "${profile:user.homepage.clusterName}",</line>
+				<line>  },</line>
+				<line>  "sharepoint.widget": {</line>
+				<line>    "cluster": "${profile:user.homepage.clusterName}",</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/asset-cluster-cfg.py'>
+				<line>"${profile:user.common.clusterName}": ${profile:user.common.clusterInfo},</line>
+			</createFile>
+			<createFile resolveString='true' file='${profile:installLocation}/lcinstall.properties'>
+				<line>    lchome=${profile:user.connections.install.location}</line>
+				<line>    washome=${profile:user.was.userhome}</line>
+				<line>    cellname=${profile:user.was.dmCellName}</line>
+				<line>    nd.DMgrCellName=${profile:user.was.dmCellName}</line>
+			</createFile>
+			<artifact id='im-install-cfg' ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for assets'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/asset-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for assets (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/asset-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.5.0.0' adapterId='ant' id='product_ic360_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='ic360'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/ic360-cfg.py'>
+				<line>  "ic360": {</line>
+				<line>    #update#ic360</line>
+				<line>    #remove#ic360</line>
+				<line>    "cluster": "${profile:user.ic360.clusterName}",</line>
+				<line>    "dbType": "${profile:user.ic360.dbType}",</line>
+				<line>    "dbServer": "${profile:user.ic360.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.ic360.dbPort},</line>
+				<line>    "dbName": "${profile:user.ic360.dbName}",</line>
+				<line>    "dbUser": "${profile:user.ic360.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.ic360.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.ic360.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.ic360.dbCustomProperties}</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/ic360-cluster-cfg.py'>
+				<line>"${profile:user.ic360.clusterName}": ${profile:user.ic360.clusterInfo},</line>
+			</createFile>
+			<createFile resolveString='true' file='${profile:installLocation}/lcinstall.properties'>
+				<line>    lchome=${profile:user.connections.install.location}</line>
+				<line>    washome=${profile:user.was.userhome}</line>
+				<line>    cellname=${profile:user.was.dmCellName}</line>
+				<line>    nd.DMgrCellName=${profile:user.was.dmCellName}</line>
+			</createFile>
+			<artifact id='im-install-cfg' ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for ic360'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/ic360-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for ic360 (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/ic360-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_ic360' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='ant' id='product_news_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='news'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/news-cfg.py'>
+				<line>  "news": {</line>
+				<line>    "cluster": "${profile:user.news.clusterName}",</line>
+				<line>    "dbType": "${profile:user.news.dbType}",</line>
+				<line>    "dbServer": "${profile:user.news.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.news.dbPort},</line>
+				<line>    "dbName": "${profile:user.news.dbName}",</line>
+				<line>    "dbUser": "${profile:user.news.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.news.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.news.jdbcLibraryPath}",</line>
+				<line>    "activation_specs":[{"name":"News Deleted Event Consumer AS","maxConcurrency":"3"}], </line>
+				<line>    ${profile:user.news.dbCustomProperties}</line>
+				<line>  },</line>
+				<line>  "help": {"cluster":"${profile:user.news.clusterName}",</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/news-cluster-cfg.py'>
+				<line>"${profile:user.news.clusterName}": ${profile:user.news.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg' ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for News'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/news-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for News (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/news-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionNews_iu'>
+		<selectedBy id='news'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_news' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='news.product'/>
+					<include name='news.component'/>
+					<include name='common.component'/>
+					<include name='config.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/news.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/news.component' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/common.component' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/config.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='ant' id='product_search_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='search'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/search-cfg.py'>
+				<line>  "search": {</line>
+				<line>    "cluster": "${profile:user.search.clusterName}",</line>
+				<line>    "dbType": "${profile:user.search.dbType}",</line>
+				<line>    "dbServer": "${profile:user.search.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.search.dbPort},</line>
+				<line>    "dbName": "${profile:user.search.dbName}",</line>
+				<line>    "dbUser": "${profile:user.search.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.search.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.search.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.search.dbCustomProperties}</line>
+				<line>    # "was_variables": { "SEARCH_INDEX_DIR" : "/opt/IBM/index" },</line>
+				<line>    #update#search</line>
+				<line>    #remove#search</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/search-cluster-cfg.py'>
+				<line>"${profile:user.search.clusterName}": ${profile:user.search.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Search'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/search-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Search (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/search-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionSearch_iu'>
+		<selectedBy id='search'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_search' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='search.product'/>
+					<include name='search.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/search.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/search.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<!--<iu version='6.0.0.qualifier' adapterId='ant' id='product_profiles_iu'>-->
+	<iu version='6.0.0.0' adapterId='ant' id='product_profiles_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='profiles'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/profiles-cfg.py'>
+				<line>  "profiles": {</line>
+				<line>    "cluster": "${profile:user.profiles.clusterName}",</line>
+				<line>    "dbType": "${profile:user.profiles.dbType}",</line>
+				<line>    "dbServer": "${profile:user.profiles.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.profiles.dbPort},</line>
+				<line>    "dbName": "${profile:user.profiles.dbName}",</line>
+				<line>    "dbUser": "${profile:user.profiles.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.profiles.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.profiles.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.profiles.dbCustomProperties}</line>
+				<line>    ${profile:user.profiles.role.mapping}</line>
+				<line>    #update#profiles</line>
+				<line>    #remove#profiles</line>	
+				<line>  },</line>
+				<!--Added for deploying profiles.bridge.ear -->
+				<!--<line> "profilesBridge": {</line>
+				<line> "cluster": "${profile:user.profiles.clusterName}",</line>
+				<line> #update#profiles</line>
+				<line> #remove#profiles</line>
+				<line> },</line>-->
+				<!--end Added-->
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/profiles-cluster-cfg.py'>
+				<line>"${profile:user.profiles.clusterName}": ${profile:user.profiles.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Profiles'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/profiles-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Profiles (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/profiles-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_profiles' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionProfiles_iu'>
+		<selectedBy id='profiles'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_profiles' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='profiles.product'/>
+					<include name='profiles.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/profiles.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/profiles.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='ant' id='product_activities_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='activities'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/activities-cfg.py'>
+				<line>  "activities": {</line>
+				<line>    "cluster": "${profile:user.activities.clusterName}",</line>
+				<line>    "dbType": "${profile:user.activities.dbType}",</line>
+				<line>    "dbServer": "${profile:user.activities.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.activities.dbPort},</line>
+				<line>    "dbName": "${profile:user.activities.dbName}",</line>
+				<line>    "dbUser": "${profile:user.activities.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.activities.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.activities.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.activities.dbCustomProperties}</line>
+				<line>    ${profile:user.activities.role.mapping}</line>
+				<line>    #update#activities</line>
+				<line>    #remove#activities</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/activities-cluster-cfg.py'>
+				<line>"${profile:user.activities.clusterName}": ${profile:user.activities.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg' ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Activities'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/activities-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Activities (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/activities-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_activities' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionActivities_iu'>
+		<selectedBy id='activities'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_activities' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='activities.product'/>
+					<include name='activities.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/activities.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/activities.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='ant' id='product_blogs_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='blogs'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/blogs-cfg.py'>
+				<line>  "blogs": {</line>
+				<line>    "cluster": "${profile:user.blogs.clusterName}",</line>
+				<line>    "dbType": "${profile:user.blogs.dbType}",</line>
+				<line>    "dbServer": "${profile:user.blogs.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.blogs.dbPort},</line>
+				<line>    "dbName": "${profile:user.blogs.dbName}",</line>
+				<line>    "dbUser": "${profile:user.blogs.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.blogs.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.blogs.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.blogs.dbCustomProperties}</line>
+				<line>    ${profile:user.blogs.role.mapping}</line>
+				<line>    #update#blogs</line>
+				<line>    #remove#blogs</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/blogs-cluster-cfg.py'>
+				<line>"${profile:user.blogs.clusterName}": ${profile:user.blogs.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg' ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Blogs'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/blogs-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Blogs (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/blogs-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_blogs' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>			
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionBlogs_iu'>
+		<selectedBy id='blogs'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_blogs' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='blogs.product'/>
+					<include name='blogs.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/blogs.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/blogs.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='ant' id='product_rte_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='rte'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/rte-cfg.py'>
+				<line>  "rte": {</line>
+				<line>    "cluster": "${profile:user.rte.clusterName}",</line>
+				<line>    #update#rte</line>
+				<line>    #remove#rte</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/rte-cluster-cfg.py'>
+				<line>"${profile:user.rte.clusterName}": ${profile:user.rte.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for RTE'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/rte-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for RTE (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/rte-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='ant' id='product_communities_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='communities'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/communities-cfg.py'>
+				<line>  "communities": {</line>
+				<line>    "cluster": "${profile:user.communities.clusterName}",</line>
+				<line>    "dbType": "${profile:user.communities.dbType}",</line>
+				<line>    "dbServer": "${profile:user.communities.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.communities.dbPort},</line>
+				<line>    "dbName": "${profile:user.communities.dbName}",</line>
+				<line>    "dbUser": "${profile:user.communities.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.communities.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.communities.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.ccm.userName}</line>
+				<line>    ${profile:user.ccm.password}</line>
+				<line>    ${profile:user.communities.dbCustomProperties}</line>
+				<line>    ${profile:user.communities.role.mapping}</line>
+				<line>    #update#communities</line>
+				<line>    #remove#communities</line>	
+				<line>  },</line>
+				<!--Added for deploying ICEC app in 60CR3-->
+				<line>  "icec": {</line>
+				<line>    "cluster": "${profile:user.communities.clusterName}",</line>
+				<line>    "dbType": "${profile:user.icec.dbType}",</line>
+				<line>    "dbServer": "${profile:user.icec.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.icec.dbPort},</line>
+				<line>    "dbName": "${profile:user.icec.dbName}",</line>
+				<line>    "dbUser": "${profile:user.icec.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.icec.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.icec.jdbcLibraryPath}",</line>
+				<line>    "dbCustomProperties": {</line>
+				<line>      "resultSetHoldability": 1,</line>
+				<line>      "downgradeHoldCursorsUnderXa": "true"</line>
+				<line>    },</line>
+				<line>    #update#communities</line>
+				<line>    #remove#communities</line>	
+				<line>  },</line>
+				<!--Added End-->
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/communities-cluster-cfg.py'>
+				<line>"${profile:user.communities.clusterName}": ${profile:user.communities.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Communities'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/communities-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Communities (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/communities-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_communities' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionCommunities_iu'>
+		<selectedBy id='communities'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_communities' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='communities.product'/>
+					<include name='communities.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/communities.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/communities.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='native' id='unzipupdateInstaller_iu'>
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}' id='lcui' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${lcui}'>
+					<include name='updateInstaller/**/*'/>
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+    
+    <!-- 
+         If some files in a project need to be updated during CR upgrade, you need to
+         make the project's iu version number changable automatically for every build. Use something 
+         like "6.0.0.qualifier" will let package developer automatically generating a new version
+         number such as "6.0.0.0_20170921_1118". Thus, the whole project files will be updated
+         during CR upgrade process.
+         
+         Refer to LC RTC 193213.
+    -->
+	<iu version='6.0.0.qualifier' adapterId='ant' id='unzipFileNetUpdate_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='ccm'/>		
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/FileNet.update' id='FileNet.update' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${FileNet.update}'>
+					<include name='**/*'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='post_install_configure'>
+				<chmod perm="a+x" recursive="true">
+					<file>${profile:installLocation}/FileNet.update/**/*.sh</file>
+				</chmod>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='native' id='unzipMigrationTool_iu'>
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}' id='migration' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${migration}'>
+					<include name='migration/**/*'/>
+				</zipfileset>
+			</zip>
+			
+			<createFile resolveString='true' file='${profile:installLocation}/migration/migrate_util.properties'>
+				<line>    lc.home=${profile:user.connections.install.location}</line>
+				<line>    WasUserHome=${profile:user.was.userhome.configproperties}</line>
+				<line>    CellName=${profile:user.was.dmCellName}</line>
+				<line>    WasRemoteHostName=${profile:user.was.dmHostname}</line>
+				<line>    DMSoapPort=${profile:user.was.wasSoapPort}</line>
+                <line>    DMUserid=${profile:user.was.adminuser.id}</line>
+                <line>    DMPassword=</line>
+			</createFile>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionFolder_iu'>
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='dtd/*'/>
+				</zipfileset>
+			</zip>
+		</adapterSpecificData>
+	</iu>
+	
+
+	<iu version='6.0.0.0' adapterId='ant' id='product_ccm_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='ccm'/>
+		<adapterSpecificData>
+			<!-- Per agreement with the Offering Team, we're not refreshing the CCM package for IC6.0, so we didn't request a new Library tag. 
+			Customers will install 6.0 & continue to use the CCM 5.5 package, so the existing tag should suffice.  -->
+			<zip id='ccm.swidtag' destination='${profile:installLocation}/swidtag' overwrite='true'>
+				<zipfileset dir='${iso.swid.dir}'>
+					<include name='1986-03.com.ibm_IBM_Connections_-_Library-5.5.0.swidtag' />
+				</zipfileset>
+			</zip>
+			
+			<zip id='ccmDomainTool' destination='${profile:installLocation}' overwrite='true'>
+				<zipfileset dir='${ccmDomainToolDir}'>
+					<include name='ccmDomainTool/**/*'/>
+				</zipfileset>
+			</zip>
+			
+			<zip id='waltzTool' overwrite='true'>
+				<zipfileset dir='${ccm.dir}'>
+					<include name='waltz/*'/>
+					<exclude name='properties/**/*' />
+				</zipfileset>
+			</zip>
+			
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/ccm-cfg.py'>
+				<line>  "ccm": {</line>
+				<line>    "existing" : {</line>
+				<line>      "href": "${profile:user.ccm.url}",</line>
+				<line>      "ssl_href": "${profile:user.ccm.url.https}",},</line>
+				<line>    "cluster": "${profile:user.ccm.clusterName}",</line>
+				<line>    "dbType": "${profile:user.ccm.dbType}",</line>
+				<line>    "fnKitsDir": "${profile:user.ccm.installers.path}",</line>
+				<line>    "ceInstallDir": "${profile:user.ce.install.location}",</line>
+				<line>    "ceclientInstallDir": "${profile:user.ceclient.install.location}",</line>
+				<line>    "fncsInstallDir": "${profile:user.fncs.install.location}",</line>
+				<line>    "gcdDbServer": "${profile:user.ccm.gcd.dbHostName}",</line>
+				<line>    "gcdDbPort": ${profile:user.ccm.gcd.dbPort},</line>
+				<line>    "gcdDbName": "${profile:user.ccm.gcd.dbName}",</line>
+				<line>    "gcdDbUser": "${profile:user.ccm.gcd.dbUser}",</line>
+				<line>    "gcdDbPassword": "${decrypt:${profile:user.ccm.gcd.dbUserPassword}}",</line>
+				<line>    "osDbServer": "${profile:user.ccm.objstore.dbHostName}",</line>
+				<line>    "osDbPort": ${profile:user.ccm.objstore.dbPort},</line>
+				<line>    "osDbName": "${profile:user.ccm.objstore.dbName}",</line>
+				<line>    "osDbUser": "${profile:user.ccm.objstore.dbUser}",</line>
+				<line>    "osDbPassword": "${decrypt:${profile:user.ccm.objstore.dbUserPassword}}",</line>
+				<line>    "firstNodeName": "${profile:user.ccm.firstNodeName}",</line>
+				<line>    "secondNodeName": "${profile:user.ccm.secondaryNodesNames}",</line>
+				<line>    "serverName": "${profile:user.ccm.serverName}",</line>
+				<line>    "dbDriverPath": "${profile:user.ccm.jdbcLibraryPath}",</line>
+				<line>    "ccmInstallerPath": "${profile:user.ccm.installers.path}",</line>
+				<line>    "ccmInstallNow": "${profile:user.ccm.install.now}",</line>
+				<line>	  "filenetAnonymousUser": "${profile:user.ccm.anonymous.user}", </line>
+				<line>	  "filenetAnonymousPassword": "${decrypt:${profile:user.ccm.anonymous.password}}", </line>
+				<line>    "fnInstallers" : {</line>
+                <line>    "ce": ["${profile:user.ccm.ce.installer}", "${profile:user.ccm.ce.fp.installer}"],</line>
+                <line>    "ceclient": ["${profile:user.ccm.ceclient.installer}"],</line>
+                <line>    "fncs": ["${profile:user.ccm.fncs.installer}", "${profile:user.ccm.fncs.fp.installer}"]},</line>
+				<line>    ${profile:user.ccm.dbCustomProperties}</line>
+				<line>    ${profile:user.ccm.role.mapping}</line>
+				<line>    #update#ccm</line>
+				<line>    #remove#ccm</line>	
+				<line>  },</line>
+			</createFile>
+			
+			<createFile resolveString='true' file='${profile:installLocation}/config.properties'>
+				<line>    WasHome=${profile:user.was.install.location.configproperties}</line>
+		        <!-- <line>    WasHomeW32=${profile:user.was.install.location.win32format}</line> -->
+				<line>    WasUserHome=${profile:user.was.userhome.configproperties}</line>
+				<line>    ccm.FirstNodeName=${profile:user.ccm.firstNodeName}</line>
+				<line>    ccm.SecondaryNodeNames=${profile:user.ccm.secondaryNodesNames}</line>
+				<line>    ccm.adminuser.id=${profile:user.ccm.adminuser.id}</line>
+				<line>    ccm.contentStore.shared.path=${profile:user.contentStore.shared.path.configproperties}</line>
+				<line>    WasRemoteHostName=${profile:user.was.dmHostname}</line>
+				<line>    WasSoapPort=${profile:user.was.wasSoapPort}</line>
+				<line>    ccm.existingDeployment=${profile:user.ccm.existingDeployment}</line>
+				<line>    ccm.${profile:user.ccm.firstNodeName}.ServerName=${profile:user.ccm.serverName}</line>
+				<!-- <line>    ccm.${profile:user.ccm.secondaryNodesNames}.ServerName=${profile:user.ccm.secondServerName}</line>  -->
+				<line>    ${profile:user.ccm.secondaryNodeNames.ServerName}</line>
+			</createFile>
+			
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/ccm-cluster-cfg.py'>
+				<line>${profile:user.ccm.cluster.key.value}</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for CCM'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/ccm-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for CCM (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/ccm-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			
+			
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/extensions-cfg.py'>
+				<line>  "extensions": {</line>
+				<line>  "cluster": "${profile:user.ccm.clusterName}",</line>
+				<line>	#update#ccm</line>
+				<line>	#remove#ccm</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/extensions-cluster-cfg.py'>
+				<line>${profile:user.ccm.cluster.key.value}</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for CCM Extensions'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/extensions-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for CCM Extensions (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/extensions-cluster-cfg.py'/>
+				</ant>
+				
+				<chmod perm="u+x" recursive="false">
+					<file>${profile:installLocation}/ccmDomainTool/*.sh</file>
+					<file>${profile:installLocation}/ccmDomainTool/*.py</file>
+					<file>${profile:installLocation}/ccmDomainTool/*.jar</file>
+					<file>${profile:installLocation}/ccmDomainTool/lib/*.jar</file>
+				</chmod>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_ccm' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionCCM_iu'>
+		<selectedBy id='ccm'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_ccm' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='ccm.product'/>
+					<include name='ccm.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/ccm.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/ccm.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='ant' id='product_dogear_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='dogear'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/dogear-cfg.py'>
+				<line>  "dogear": {</line>
+				<line>    "cluster": "${profile:user.dogear.clusterName}",</line>
+				<line>    "dbType": "${profile:user.dogear.dbType}",</line>
+				<line>    "dbServer": "${profile:user.dogear.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.dogear.dbPort},</line>
+				<line>    "dbName": "${profile:user.dogear.dbName}",</line>
+				<line>    "dbUser": "${profile:user.dogear.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.dogear.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.dogear.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.dogear.dbCustomProperties}</line>
+				<line>    ${profile:user.dogear.role.mapping}</line>
+				<line>    #update#dogear</line>
+				<line>    #remove#dogear</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/dogear-cluster-cfg.py'>
+				<line>"${profile:user.dogear.clusterName}": ${profile:user.dogear.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Bookmarks'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/dogear-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Bookmarks (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/dogear-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_dogear' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionDogear_iu'>
+		<selectedBy id='dogear'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_dogear' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='dogear.product'/>
+					<include name='dogear.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/dogear.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/dogear.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='ant' id='product_files_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='files'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/files-cfg.py'>
+				<line>  "files": {</line>
+				<line>    "cluster": "${profile:user.files.clusterName}",</line>
+				<line>    "dbType": "${profile:user.files.dbType}",</line>
+				<line>    "dbServer": "${profile:user.files.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.files.dbPort},</line>
+				<line>    "dbName": "${profile:user.files.dbName}",</line>
+				<line>    "dbUser": "${profile:user.files.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.files.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.files.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.files.dbCustomProperties}</line>
+				<line>  },</line>
+				<line>  "storageproxy": {</line>
+				<line>    "cluster": "${profile:user.files.clusterName}",</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/files-cluster-cfg.py'>
+				<line>"${profile:user.files.clusterName}": ${profile:user.files.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Files'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/files-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Files (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/files-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionFiles_iu'>
+		<selectedBy id='files'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_files' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='files.product'/>
+					<include name='files.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/files.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/files.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='ant' id='product_pushNotification_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='pushNotification'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/pushNotification-cfg.py'>
+				<line>  "pushnotification": {</line>
+				<line>    "cluster": "${profile:user.pushNotification.clusterName}",</line>
+				<line>    "dbType": "${profile:user.pushNotification.dbType}",</line>
+				<line>    "dbServer": "${profile:user.pushNotification.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.pushNotification.dbPort},</line>
+				<line>    "dbName": "${profile:user.pushNotification.dbName}",</line>
+				<line>    "dbUser": "${profile:user.pushNotification.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.pushNotification.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.pushNotification.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.pushNotification.dbCustomProperties}</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/pushNotification-cluster-cfg.py'>
+				<line>"${profile:user.pushNotification.clusterName}": ${profile:user.pushNotification.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for pushNotification'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/pushNotification-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for pushNotification (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/pushNotification-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='ant' id='product_forums_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='forums'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/forums-cfg.py'>
+				<line>  "forums": {</line>
+				<line>    "cluster": "${profile:user.forums.clusterName}",</line>
+				<line>    "dbType": "${profile:user.forums.dbType}",</line>
+				<line>    "dbServer": "${profile:user.forums.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.forums.dbPort},</line>
+				<line>    "dbName": "${profile:user.forums.dbName}",</line>
+				<line>    "dbUser": "${profile:user.forums.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.forums.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.forums.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.forums.dbCustomProperties}</line>
+				<line>    ${profile:user.forums.role.mapping}</line>
+				<line>    #update#forums</line>
+				<line>    #remove#forums</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/forums-cluster-cfg.py'>
+				<line>"${profile:user.forums.clusterName}": ${profile:user.forums.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Forums'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/forums-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Forums (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/forums-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_forums' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionForums_iu'>
+		<selectedBy id='forums'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_forums' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='forum.product'/>
+					<include name='forum.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/forum.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/forum.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='ant' id='product_homepage_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='homepage'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/homepage-cfg.py'>
+				<line>  "homepage": {</line>
+				<line>    "cluster": "${profile:user.homepage.clusterName}",</line>
+				<line>    "dbType": "${profile:user.homepage.dbType}",</line>
+				<line>    "dbServer": "${profile:user.homepage.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.homepage.dbPort},</line>
+				<line>    "dbName": "${profile:user.homepage.dbName}",</line>
+				<line>    "dbUser": "${profile:user.homepage.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.homepage.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.homepage.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.homepage.dbCustomProperties}</line>
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/homepage-cluster-cfg.py'>
+				<line>"${profile:user.homepage.clusterName}": ${profile:user.homepage.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Homepage'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/homepage-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Homepage (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/homepage-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionHomepage_iu'>
+		<selectedBy id='homepage'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_homepage' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='homepage.product'/>
+					<include name='homepage.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/homepage.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/homepage.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+		
+	<iu version='6.0.0.qualifier' adapterId='ant' id='product_metrics_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='metrics'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/metrics-cfg.py'>
+				<line>  "metrics": {</line>
+				<line>    "cluster": "${profile:user.metrics.clusterName}",</line>
+				<line>    "dbType": "${profile:user.metrics.dbType}",</line>
+				<line>    "dbServer": "${profile:user.metrics.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.metrics.dbPort},</line>
+				<line>    "dbName": "${profile:user.metrics.dbName}",</line>
+				<line>    "dbUser": "${profile:user.metrics.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.metrics.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.metrics.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.metrics.dbCustomProperties}</line>
+				<line>    ${profile:user.metrics.role.mapping}</line>
+				<line>    #update#metrics</line>
+				<line>    #remove#metrics</line>	
+				<line>  },</line>
+				
+				<!--Added for deploying MetricsUI and MetricsEventCapture apps, refer LC RTC 193873-->
+				<line> "metricsEventCapture": {</line>
+				<line> "cluster": "${profile:user.metrics.clusterName}",</line>
+				<line> #update#metrics</line>
+				<line> #remove#metrics</line>
+				<line> },</line>
+				<line> "metricsUI": {</line>
+				<line> "cluster": "${profile:user.metrics.clusterName}",</line>
+				<line> ${profile:user.metrics.role.mapping}</line>
+				<line> #update#metrics</line>
+				<line> #remove#metrics</line>
+				<line> },</line>
+				<!--end Added-->
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/metrics-cluster-cfg.py'>
+				<line>"${profile:user.metrics.clusterName}": ${profile:user.metrics.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Metrics'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/metrics-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Metrics (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/metrics-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_metrics' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionMetrics_iu'>
+		<selectedBy id='metrics'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_metrics' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='metrics.product'/>
+					<include name='metrics.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/metrics.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/metrics.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+		
+	<iu version='6.0.0.0' adapterId='ant' id='product_wikis_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='wikis'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/wikis-cfg.py'>
+				<line>  "wikis": {</line>
+				<line>    "cluster": "${profile:user.wikis.clusterName}",</line>
+				<line>    "dbType": "${profile:user.wikis.dbType}",</line>
+				<line>    "dbServer": "${profile:user.wikis.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.wikis.dbPort},</line>
+				<line>    "dbName": "${profile:user.wikis.dbName}",</line>
+				<line>    "dbUser": "${profile:user.wikis.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.wikis.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.wikis.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.wikis.dbCustomProperties}</line>
+				<line>    ${profile:user.wikis.role.mapping}</line>
+				<line>    #update#wikis</line>
+				<line>    #remove#wikis</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/wikis-cluster-cfg.py'>
+				<line>"${profile:user.wikis.clusterName}": ${profile:user.wikis.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Wikis'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/wikis-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Wikis (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/wikis-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_wikis' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionWikis_iu'>
+		<selectedBy id='wikis'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_wikis' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='wikis.product'/>
+					<include name='wikis.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/wikis.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/wikis.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+		
+	<iu version='6.0.0.0' adapterId='ant' id='product_mobile_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='mobile'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/mobile-cfg.py'>
+				<line>  "mobile": {</line>
+				<line>    "cluster": "${profile:user.mobile.clusterName}",</line>
+				<line>    "dbType": "${profile:user.mobile.dbType}",</line>
+				<line>    "dbServer": "${profile:user.mobile.dbHostName}",</line>
+				<line>    "dbPort": ${profile:user.mobile.dbPort},</line>
+				<line>    "dbName": "${profile:user.mobile.dbName}",</line>
+				<line>    "dbUser": "${profile:user.mobile.dbUser}",</line>
+				<line>    "dbPassword": "${decrypt:${profile:user.mobile.dbUserPassword}}",</line>
+				<line>    "dbDriverPath": "${profile:user.mobile.jdbcLibraryPath}",</line>
+				<line>    ${profile:user.mobile.dbCustomProperties}</line>
+				<line>    ${profile:user.mobile.role.mapping}</line>
+				<line>    #update#mobile</line>
+				<line>    #remove#mobile</line>	
+				<line>   },</line>
+				<line>  "mobile.admin": {"cluster":"${profile:user.mobile.clusterName}",</line>
+				<line>    #update#mobile</line>
+				<line>    #remove#mobile</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/mobile-cluster-cfg.py'>
+				<line>"${profile:user.mobile.clusterName}": ${profile:user.mobile.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Mobile'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/mobile-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Mobile (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/mobile-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_mobile' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionMobile_iu'>
+		<selectedBy id='mobile'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_mobile' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='mobile.product'/>
+					<include name='mobile.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/mobile.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/mobile.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+		
+	<iu version='6.0.0.0' adapterId='ant' id='product_widgetContainer_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='widgetContainer'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/widgetContainer-cluster-cfg.py'>
+				<line>"${profile:user.widgetContainer.clusterName}": ${profile:user.widgetContainer.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for widgetContainer (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/widgetContainer-cluster-cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+			
+	<iu version='6.0.0.0' adapterId='ant' id='product_moderation_iu'>
+		<property name='order.dependencies' value='setConfig_iu' />
+		<selectedBy id='moderation'/>
+		<adapterSpecificData>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/moderation-cfg.py'>
+				<line>  "moderation": {</line>
+				<line>    "cluster": "${profile:user.moderation.clusterName}",</line>
+				<line>    ${profile:user.moderation.role.mapping}</line>
+				<line>    #update#moderation</line>
+				<line>    #remove#moderation</line>	
+				<line>  },</line>
+			</createFile>
+			<createFile resolveString='true' file='${system:java.io.tmpdir}/IC-install-cfg/moderation-cluster-cfg.py'>
+				<line>"${profile:user.moderation.clusterName}": ${profile:user.moderation.clusterInfo},</line>
+			</createFile>
+			<artifact id='im-install-cfg'  ext='xml' type='file'/>
+			<perform duringPhases='post_install_configure'>
+				<ant antfile='${artifact}' target='addFeature' description='Updating cfg.py for Moderation'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/moderation-cfg.py'/>
+				</ant>
+				<ant antfile='${artifact}' target='addFeatureClusterInfo' description='Updating cfg.py for Moderation (cluster info)'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+					<property name='fragPyFile' value='${system:java.io.tmpdir}/IC-install-cfg/moderation-cluster-cfg.py'/>
+				</ant>
+			</perform>
+			<perform duringPhases='uninstall'>
+				<ant antfile='${artifact}' target='remove_moderation' description='Updating cfg.py for Removing'>
+					<property name='cfgPyFile' value='${profile:installLocation}/cfg.py'/>
+				</ant>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='unzipVersionModeration_iu'>
+		<selectedBy id='moderation'/>
+		<adapterSpecificData>
+			<zip destination='${profile:installLocation}/version' id='connVersion_moderation' tolerance='[0.0.0,0.0.0]' overwrite='true'>
+				<zipfileset dir='${version.work.dir}'>
+					<include name='moderation.product'/>
+					<include name='moderation.component'/>
+				</zipfileset>
+			</zip>
+			<perform duringPhases='uninstall'>
+				<delete file='${profile:user.connections.install.location}/version/moderation.product' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version/moderation.component' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+		
+	<iu version='6.0.0.0' adapterId='ant' id='filesRecover_iu_LA'>
+	  <property name='passive.order.dependencies' value='updateNews_iu_W,updateNews_iu_LA,updateNews_iu_OS400,updateSearch_iu_W,updateSearch_iu_LA,updateSearch_iu_OS400,updateProfiles_iu_W,updateProfiles_iu_LA,updateProfiles_iu_OS400,updateActivities_iu_W,updateActivities_iu_LA,updateActivities_iu_OS400,updateBlogs_iu_W,updateBlogs_iu_LA,updateBlogs_iu_OS400,updateCommunities_iu_W,updateCommunities_iu_LA,updateCommunities_iu_OS400,updateDogear_iu_W,updateDogear_iu_LA,updateDogear_iu_OS400,updateFiles_iu_W,updateFiles_iu_LA,updateFiles_iu_OS400,updateForum_iu_W,updateForum_iu_LA,updateForum_iu_OS400,updateHomepage_iu_W,updateHomepage_iu_LA,updateHomepage_iu_OS400,updateMetrics_iu_W,updateMetrics_iu_LA,updateMetrics_iu_OS400,updateWikis_iu_W,updateWikis_iu_LA,updateWikis_iu_OS400,updateMobile_iu_W,updateMobile_iu_LA,updateMobile_iu_OS400,updateModeration_iu_W,updateModeration_iu_LA,updateModeration_iu_OS400,updateCCM_iu_W,updateCCM_iu_LA'/>
+		<selectedByExpression>
+	  <and> 
+			<or>
+					<selectedBy value='linux' id='os'/>
+					<selectedBy value='aix' id='os'/>
+			</or>
+			<selectedBy id='${profile:user.job}' value='ROLLBACK'/>
+		</and>
+		</selectedByExpression>
+		<adapterSpecificData>
+			<perform duringPhases='install'>
+					<invoke
+                  class='com.ibm.connections.install.AppendPropertyFile'
+                  classpath='${profile:user.connections.install.location}/lib/appendPropertyFile.jar'>
+                    <arg>${profile:user.connections.install.location}/config.properties</arg>
+					<!--
+					<arg>activities.selected</arg>
+					<arg>${profile:user.activities.selected}</arg>
+					<arg>blogs.selected</arg>
+					<arg>${profile:user.blogs.selected}</arg>
+					<arg>communities.selected</arg>
+					<arg>${profile:user.communities.selected}</arg>
+					<arg>dogear.selected</arg>
+					<arg>${profile:user.dogear.selected}</arg>
+					<arg>profiles.selected</arg>
+					<arg>${profile:user.profiles.selected}</arg>
+					<arg>wikis.selected</arg>
+					<arg>${profile:user.wikis.selected}</arg>				
+					<arg>files.selected</arg>
+					<arg>${profile:user.files.selected}</arg>
+					<arg>forum.selected</arg>
+					<arg>${profile:user.forum.selected}</arg>
+					<arg>news.selected</arg>
+					<arg>${profile:user.news.selected}</arg>
+					<arg>search.selected</arg>
+					<arg>${profile:user.search.selected}</arg>
+					<arg>homepage.selected</arg>
+					<arg>${profile:user.homepage.selected}</arg>
+					<arg>mobile.selected</arg>
+					<arg>${profile:user.mobile.selected}</arg>	
+					<arg>metrics.selected</arg>
+					<arg>${profile:user.metrics.selected}</arg>	
+					<arg>moderation.selected</arg>
+					<arg>${profile:user.moderation.selected}</arg>	
+					<arg>ccm.selected</arg>
+					<arg>${profile:user.ccm.selected}</arg>
+					-->	
+                </invoke>
+				<!--
+					<ant antfile='${profile:user.connections.install.location}/configEngine_execution.xml' 
+				  workingDirectory='${profile:user.connections.install.location}/' 
+				  target='filesRecover_linux' loglevel='info' output='${profile:installLocation}/logs/ConfigureFilesRecover.log' description='ConfigureFilesRecover...'/>
+				-->
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='jython_installer'>
+		<property name='order.dependencies' value='unzip_iu,product_common_iu,product_assets_iu,product_ic360_iu,product_news_iu,product_search_iu,product_profiles_iu,product_activities_iu,product_blogs_iu,product_rte_iu,product_communities_iu,product_dogear_iu,product_files_iu,product_pushNotification_iu,product_forums_iu,product_homepage_iu,product_metrics_iu,product_wikis_iu,product_widgetContainer_iu,product_mobile_iu,product_moderation_iu,product_ccm_iu'/>
+		<selectedByExpression>
+		<and>
+		<selectedBy id='os' value='win32'/>
+		<or>
+			<selectedBy id='${profile:user.job}' value='INSTALL'/>
+			<selectedBy id='${profile:user.job}' value='MODIFY_ADD'/>
+			<selectedBy id='${profile:user.job}' value='MODIFY_REMOVE'/>
+			<selectedBy id='${profile:user.job}' value='UPDATE'/>
+			<selectedBy id='${profile:user.job}' value='ROLLBACK'/>			
+		</or>
+		</and>
+		</selectedByExpression>
+		<adapterSpecificData>
+		<artifact type='file' id='com.ibm.connections.resultPanel' version='0.0.0' ext='jar' active='true'/>
+		<perform duringPhases='post_install_configure'>
+		<exec command="${profile:user.connections.install.location.win32format}${system:file.separator}bin${system:file.separator}post-install-launcher.bat" description='Deploying application to WebSphere, it may take a while.'>
+				<arg>${profile:user.was.install.location.win32format}</arg>
+				<arg>${profile:user.connections.install.location.win32format}</arg>
+				<arg>${profile:user.was.adminuser.id}</arg>
+				<arg>${decrypt:${profile:user.was.adminuser.password}}</arg>
+				<arg>${profile:user.was.wasSoapPort}</arg>
+				<arg>${profile:user.was.userhome.original}</arg>
+				<arg>${environment:skipjython}</arg>
+				<arg>${profile:user.job}</arg>
+				<arg>${profile:user.was.dmCellName}</arg>
+				<arg>${profile:user.connections.offering.installed}</arg>
+				<arg>${profile:user.connections.offering.installing}</arg>
+        </exec>
+		<invoke class='com.ibm.connections.install.Resultpanel' classpath='${artifact:id=com.ibm.connections.resultPanel,type=file,ext=jar}'>
+			<arg>${profile:user.connections.install.location}/post-install-launcher.log</arg>
+			<arg>${profile:user.connections.install.location}/cfg.py</arg>
+        </invoke>
+		</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.qualifier' adapterId='native' id='jython_installer_LA'>
+		<property name='order.dependencies' value='unzip_iu,product_common_iu,product_assets_iu,product_ic360_iu,product_news_iu,product_search_iu,product_profiles_iu,product_activities_iu,product_blogs_iu,product_rte_iu,product_communities_iu,product_dogear_iu,product_files_iu,product_pushNotification_iu,product_forums_iu,product_homepage_iu,product_metrics_iu,product_wikis_iu,product_widgetContainer_iu,product_mobile_iu,product_moderation_iu,product_ccm_iu,ccm_installer'/>
+		<selectedByExpression>
+		<and>
+			<or>
+				<selectedBy value='linux' id='os'/>
+				<selectedBy value='aix' id='os'/>
+				<selectedBy value='os400' id='os'/>
+			</or>
+			<or>
+				<selectedBy id='${profile:user.job}' value='INSTALL'/>
+				<selectedBy id='${profile:user.job}' value='MODIFY_ADD'/>
+				<selectedBy id='${profile:user.job}' value='MODIFY_REMOVE'/>
+				<selectedBy id='${profile:user.job}' value='UPDATE'/>
+				<selectedBy id='${profile:user.job}' value='ROLLBACK'/>
+			</or>
+		</and>
+		</selectedByExpression>
+		<adapterSpecificData>
+		<artifact type='file' id='com.ibm.connections.resultPanel' version='0.0.0' ext='jar' active='true'/>
+		<perform duringPhases='post_install_configure'>
+		<chmod perm="u+x" recursive="false"> 
+        <file>${profile:user.connections.install.location}/bin/*.sh</file>
+		</chmod>
+		    <exec command="${profile:user.connections.install.location}/bin/post-install-launcher.sh" description='Deploying application to WebSphere, it may take a while.'>
+				<arg>${profile:user.was.install.location}</arg>
+				<arg>${profile:user.connections.install.location}</arg>
+				<arg>${profile:user.was.adminuser.id}</arg>
+				<arg>${decrypt:${profile:user.was.adminuser.password}}</arg>
+				<arg>${profile:user.was.wasSoapPort}</arg>
+				<arg>${profile:user.was.userhome}</arg>
+				<arg>${environment:skipjython}</arg>
+				<arg>${profile:user.job}</arg>
+				<arg>${profile:user.was.dmCellName}</arg>
+				<arg>${profile:user.connections.offering.installed}</arg>
+				<arg>${profile:user.connections.offering.installing}</arg>
+            </exec>
+			<invoke class='com.ibm.connections.install.Resultpanel' classpath='${artifact:id=com.ibm.connections.resultPanel,type=file,ext=jar}'>
+				<arg>${profile:user.connections.install.location}/post-install-launcher.log</arg>
+				<arg>${profile:user.connections.install.location}/cfg.py</arg>
+			</invoke>
+		</perform>
+		</adapterSpecificData>
+	</iu>
+
+	<iu version='6.0.0.0' adapterId='native' id='jython_uninstaller'>
+		<selectedBy id='os' value='win32'/>
+		<adapterSpecificData>
+			<artifact type='file' id='com.ibm.connections.resultPanel' version='0.0.0' ext='jar' active='true' />
+			<perform duringPhases='pre_uninstall_configure'>
+				<exec command="${profile:user.connections.install.location.win32format}${system:file.separator}bin${system:file.separator}uninstall-launcher.bat"
+				      description='Undo Deployment on WebSphere, it may take a while.'>
+					<arg>${profile:user.was.install.location.win32format}</arg>
+					<arg>${profile:user.connections.install.location.win32format}</arg>
+					<arg>${profile:user.was.adminuser.id}</arg>
+					<arg>${decrypt:${profile:user.was.adminuser.password}}</arg>
+					<arg>${profile:user.was.wasSoapPort}</arg>
+					<arg>${profile:user.was.userhome.original}</arg>
+					<arg>${environment:skipjython}</arg>
+					<arg>${profile:user.job}</arg>
+				</exec>
+				<invoke class='com.ibm.connections.install.Resultpanel' classpath='${artifact:id=com.ibm.connections.resultPanel,type=file,ext=jar}'>
+					<arg>${profile:user.connections.install.location}/uninstall-launcher.log</arg>
+					<arg>${profile:user.connections.install.location}/cfg.py</arg>
+				</invoke>
+				<delete file='${profile:user.connections.install.location}/lib' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/tmp' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/ccmDomainTool' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	
+	<iu version='6.0.0.0' adapterId='native' id='jython_uninstaller_LA'>
+		<selectedByExpression>
+			<or>
+				<selectedBy id='os' value='os400'/>
+				<selectedBy id='os' value='aix'/>
+				<selectedBy id='os' value='linux'/>
+			</or>
+		</selectedByExpression>
+		<adapterSpecificData>
+			<artifact type='file' id='com.ibm.connections.resultPanel' version='0.0.0' ext='jar' active='true'/>
+			<perform duringPhases='pre_uninstall_configure'>
+				<chmod perm="a+x" recursive="false">
+					<file>${profile:user.connections.install.location}/bin/*.sh</file>
+				</chmod>
+				<exec command="${profile:user.connections.install.location}/bin/uninstall-launcher.sh" description='Undo deployment on WebSphere, it may take a while.'>
+					<arg>${profile:user.was.install.location}</arg>
+					<arg>${profile:user.connections.install.location}</arg>
+					<arg>${profile:user.was.adminuser.id}</arg>
+					<arg>${decrypt:${profile:user.was.adminuser.password}}</arg>
+					<arg>${profile:user.was.wasSoapPort}</arg>
+					<arg>${profile:user.was.userhome}</arg>
+					<arg>${environment:skipjython}</arg>
+					<arg>${profile:user.job}</arg>
+				</exec>
+				<invoke class='com.ibm.connections.install.Resultpanel' classpath='${artifact:id=com.ibm.connections.resultPanel,type=file,ext=jar}'>
+					<arg>${profile:user.connections.install.location}/uninstall-launcher.log</arg>
+					<arg>${profile:user.connections.install.location}/cfg.py</arg>
+				</invoke>
+				<delete file='${profile:user.connections.install.location}/lib' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/version' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/tmp' deleteDirIfEmpty='false'/>
+				<delete file='${profile:user.connections.install.location}/ccmDomainTool' deleteDirIfEmpty='false'/>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+	<!--
+	<iu version='6.0.0.0' adapterId='native' id='resultpanel'>
+		<property name='order.dependencies' value='jython_uninstaller,jython_uninstaller_LA' />
+		<selectedBy id='main'/>
+		<adapterSpecificData>
+		<artifact type='file' id='com.ibm.connections.resultPanel' version='0.0.0' ext='jar' active='true' duringPhases='post_install_configure,post_uninstall_configure'/>
+		<perform duringPhases='post_install_configure,post_uninstall_configure'>
+		<invoke class='com.ibm.connections.install.Resultpanel' classpath='${artifact:id=com.ibm.connections.resultPanel,type=file,ext=jar}'>
+        <arg>${profile:user.connections.install.location}/uninstall-launcher.log</arg>
+        <arg>${profile:user.connections.install.location}/cfg.py</arg>
+        </invoke>
+		</perform>
+		</adapterSpecificData>
+	</iu>
+	-->
+	<iu version='6.0.0.0' adapterId='native' id='ccm_installer'>
+		<property name='order.dependencies' value='product_common_iu,setConfig_iu'/>
+		<selectedByExpression>
+			<and>
+				<selectedBy id='ccm'/>
+				<or>
+					<selectedBy id='os' value='linux'/>
+					<selectedBy id='os' value='aix'/>
+				</or>
+			</and>
+		</selectedByExpression>
+		<adapterSpecificData>
+			<perform duringPhases='post_install_configure'>
+				<chmod perm="755" recursive="true"> 
+					<file>${profile:user.ccm.installers.path}</file>
+				</chmod>
+			</perform>
+		</adapterSpecificData>
+	</iu>
+</su>

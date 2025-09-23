@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2006" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="reference" />
+<meta name="DC.Title" content="Directory structure" />
+<meta name="abstract" content="This topic shows the naming conventions used to denote the location of files on the server and the types of resources you can find in those directories." />
+<meta name="description" content="This topic shows the naming conventions used to denote the location of files on the server and the types of resources you can find in those directories." />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="wpsdirstr" />
+<meta name="DC.Language" content="en-us" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="./ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="./websphere.css" />
+<title>Directory structure</title>
+</head>
+<body id="wpsdirstr"><a name="wpsdirstr"><!-- --></a>
+<h1 class="topictitle1">Directory structure</h1>
+<div><p>This topic shows the naming conventions used to denote the location
+of files on the server and the types of resources you can find in those directories.</p>
+<div class="section"><ul><li><a href="#wpsdirstr__wp_root">WebSphere Portal directory structure (portal_server_root)</a></li>
+<li><a href="#wpsdirstr__was_root">WebSphere Application Server directory structure (app_server_root)</a></li>
+<li><a href="#wpsdirstr__lng">Directories for languages</a></li>
+</ul>
+</div>
+<div class="section" id="wpsdirstr__wp_root"><a name="wpsdirstr__wp_root"><!-- --></a><h4 class="sectiontitle"><span>WebSphere Portal</span> directory
+structure (<samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"><var class="varname">portal_server_root</var></a></span></samp>)</h4><p>Throughout this documentation,  the install location for the
+portal server component of <span>IBM<sup>®</sup> WebSphere<sup>®</sup> Portal</span> is
+noted as <samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"><var class="varname">portal_server_root</var></a></span></samp>. </p>
+<p>For <span>i5/OS</span>,
+the install location for the portal server component of <span>WebSphere Portal</span> is
+noted as <var class="varname">portal_server_root</var> and refers to the UserData
+path, unless otherwise specified in the topic where you see it. The <var class="varname">profile_root</var> variable
+below refers to the name given to the <span>IBM WebSphere Application Server</span> profile
+in use.</p>
+<p>The following table shows the default location
+if it is not otherwise specified during installation:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" width="100%" frame="border" border="1" rules="all"><thead align="left"><tr><th valign="top" id="d0e75">Operating system</th>
+<th valign="top" id="d0e77">Location</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" headers="d0e75 "><span>AIX</span></td>
+<td valign="top" headers="d0e77 "><samp class="codeph">/usr/IBM/WebSphere/PortalServer</samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e75 "><span>HP-UX</span></td>
+<td valign="top" headers="d0e77 "><samp class="codeph">/opt/IBM/WebSphere/PortalServer</samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e75 "><span>Linux</span></td>
+<td valign="top" headers="d0e77 "><samp class="codeph">/opt/IBM/WebSphere/PortalServer</samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e75 "><span>Solaris</span></td>
+<td valign="top" headers="d0e77 "><samp class="codeph">/opt/IBM/WebSphere/PortalServer</samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e75 "><span>Windows</span></td>
+<td valign="top" headers="d0e77 "><samp class="codeph">C:\Program Files\IBM\WebSphere\PortalServer</samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e75 "><span>i5/OS</span></td>
+<td valign="top" headers="d0e77 "><ul><li id="wpsdirstr__portal_server_root_prod"><a name="wpsdirstr__portal_server_root_prod"><!-- --></a><samp class="codeph">portal_server_root</samp> (ProdData)
+   <ul><li><samp class="codeph">/QIBM/ProdData/PortalServer/V6</samp></li>
+</ul>
+    </li>
+<li id="wpsdirstr__portal_server_root_usr"><a name="wpsdirstr__portal_server_root_usr"><!-- --></a><samp class="codeph">portal_server_root</samp> (UserData)
+  <ul><li><span>WebSphere
+Application Server</span> Version 6 for
+Base and Express:            <ul><li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/Base/profiles/<var class="varname">profile_root</var>/PortalServer</samp></li>
+</ul>
+        </li>
+<li><span>WebSphere
+Application Server</span> Version 6 for
+Network Deployment:           <ul><li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/ND/profiles/<var class="varname">profile_root</var>/PortalServer</samp></li>
+</ul>
+        </li>
+</ul>
+    </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section"><h4 class="sectiontitle"><span>WebSphere Portal</span> directory
+structure after installation on <span><span>Windows</span> and <span>UNIX</span></span></h4><p><span>WebSphere Portal</span> has the following directory
+structure after installation.</p>
+<div class="p"> <pre><samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"><var class="varname">portal_server_root</var></a></span></samp>         Root directory for <span>WebSphere Portal</span>
+ |
+ +-- bin                    <span>WebSphere Portal</span> tools
+ |
+ +-- cloudscape             Cloudscape database files
+ |
+ +-- collections            Default directory for Portal Search collections
+ |
+ +-- config                 Portal configuration files
+ |
+ +-- deployed/archive       This directory contains all deployed .WAR files, except for predeployed ones.
+ |
+ +-- designer               Directory for Lotus Workplace Designer
+ |
+ +-- doc                    Javadoc and sample XMLAccess input files
+ |
+ +-- firstSteps             First Steps Launcher
+ |
+ +-- IBMTrans               Transcoding component
+ |
+ +-- installableApps        Source portlet application files prior to deployment
+ |
+ |
+ +-- installableConnectors  Source JCA connectors for enterprise applications
+ |
+ +-- itlm                   IBM Tivoli License Manager files
+ |
+ +-- jcr                    Resources for searching content repositories
+ |
+ +-- license                <span>WebSphere Portal</span> license agreement
+ |
+ +-- log                    <span>WebSphere Portal</span> log files
+ |
+ +-- migration              Scripts used to assist in migrating from 
+ |                          previous releases of <span>WebSphere Portal</span>
+ |
+ +-- odc                    Source Web application files for Productivity Components 
+ |                          prior to deployment
+ |
+ +-- package                Response files and utilities for install
+ |
+ +-- pb                     Productivity components
+ |
+ +-- portletscripts         XML files for installing portlets individually
+ |
+ +-- pzn                    Source personalization resources
+ |
+ +-- reguninstall           Resources for uninstalling registry keys
+ | <span id="wpsdirstr__wpslib"><a name="wpsdirstr__wpslib"><!-- --></a></span><span id="wpsdirstr__shared"><a name="wpsdirstr__shared"><!-- --></a></span>
+ +-- shared                 Shared resources, including runtime JARs, TLDs, and other resources. 
+ |                          The /app subdirectory is the application server's <strong>WPSLib</strong> shared
+ |                          library for <span>WebSphere Portal</span>
+ |
+ +-- sync 
+ |
+ +-- uninstall              Resources for uninstalling <span>WebSphere Portal</span> and components
+ |
+ +-- version                Version information for various components
+ |
+ +-- wcm                    Source Web application files for web content management
+ |
+ +-- wmm                    <span>Member Manager</span> configuration, including attributes of portal users
+
+ |
+ +-- workflow                    </pre>
+</div>
+</div>
+<div class="section"><h4 class="sectiontitle"><span>WebSphere Portal</span> directory
+structure after installation on <span>i5/OS</span></h4><p><span>WebSphere Portal</span> has the following directory
+structure after an <span class="uicontrol">Install only</span> installation.</p>
+<div class="p"><pre><samp class="codeph">ProdData's <span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"><var class="varname">portal_server_root</var></a></span></samp>         Root directory for <span>WebSphere Portal</span>
+ |
+ +-- depcheck          Dependency checker files
+ |
+ +-- dist              Distributed files
+ |
+ +-- doc               <span>WebSphere Portal</span> <span>information
+center</span> and Javadoc
+ |
+ +-- img               Image files 
+ |
+ +-- license           <span>WebSphere Portal</span> license agreement
+ |
+ +-- log               Log files
+ |
+ +-- package           Response files and utilities for install
+ |
+ +-- uninstall         Resources for uninstalling &lt;ph conref="../define.dita#define/prod_wp_short"&gt;&lt;/ph&gt; and components
+</pre>
+</div>
+<p><span>WebSphere Portal</span> has the following directory
+structure after an <span class="uicontrol">Install and Configure</span> installation.</p>
+<div class="p"><pre><samp class="codeph">UserData's <span><a href="../wps/wpsdirstr.html#wpsdirstr__wp_root"><var class="varname">portal_server_root</var></a></span></samp>         Root directory for <span>WebSphere Portal</span>
+ |
+ +-- bin               <span>WebSphere Portal</span> tools
+ |
+ +-- cloudscape        Cloudscape database files
+ |
+ +-- collections       Collection files 
+ |
+ +-- config            Portal configuration files
+ |
+ +-- designer          Directory for Lotus Workplace Designer
+ |
+ +-- deployed          Portal configuration files
+ |
+ +-- deployed/archive  This directory contains all deployed .WAR files, except for predeployed ones.
+ |
+ +-- doc               <span>WebSphere Portal</span> <span>information
+center</span> and Javadoc
+ |
+ +-- IBMTrans          Transcoding Technology resources
+ |
+ +-- installableApps   WAR files prior to deployment
+ |
+ +-- installedApps     WAR files after deployment
+ |
+  +-- installableConnectors   Source JCA connectors for enterprise applications
+ |
+  +-- itlm             IBM Tivoli License Manager files
+ |
+ +-- jcr               Resources for searching content repositories
+ |
+ +-- license           <span>WebSphere Portal</span> license agreement
+ |
+ +-- log               Log files
+ |
+ +-- META-INF          
+ |
+ +-- migration         Scripts used to assist in migrating from previous releases 
+ |                     of <span>WebSphere Portal</span>
+ |
+ +-- odc               Productivity components
+ |
+ +-- package           Response files and utilities for install
+ |
+ +-- pb                Productivity components
+ |
+ +-- pzn               <span>Personalization</span> runtime and resources
+ |
+ +-- shared            Shared resources, including runtime JARs, TLDs, and other resources. 
+ |                     The /app subdirectory is the application server's <strong>WPSLib</strong> shared
+ |                     library for <span>WebSphere Portal</span>
+ |
+ +-- sync
+ |
+ +-- version           Version information for various components
+ |
+ +-- wcm               Source Web application files for web content management
+ |
+ +-- wmm               <span>Member Manager</span> configuration, including attributes of portal users
+ |
+ +-- workflow 
+ +-- version           Version information for various components
+ |
+ +-- wcm               Source Web application files for web content management
+ |
+ +-- wmm               Member Manager configuration, including attributes of portal users</pre>
+</div>
+</div>
+<div class="section" id="wpsdirstr__was_root"><a name="wpsdirstr__was_root"><!-- --></a><h4 class="sectiontitle"><span>WebSphere
+Application Server</span> directory
+structure (<samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__was_root"><var class="varname">app_server_root</var></a></span></samp>)</h4><dl><dt class="dlterm" id="wpsdirstr__was_install_root"><a name="wpsdirstr__was_install_root"><!-- --></a><span>WebSphere
+Application Server</span> installation
+directory</dt>
+<dd><p>Throughout this documentation, the install location for <span>WebSphere
+Application Server</span> is noted as <samp class="codeph"><span><a href="../wps/wpsdirstr.html#wpsdirstr__was_root"><var class="varname">app_server_root</var></a></span></samp></p>
+<p><span>For <span>i5/OS</span>,
+the install location for <span>WebSphere
+Application Server</span> is
+noted as <var class="varname">app_server_root</var> and refers to the UserData path,
+unless otherwise specified in the topic where you see it. The <var class="varname">profile_root</var> variable
+below refers to the name given to the <span>WebSphere
+Application Server</span> profile
+in use.</span></p>
+<p>The following table shows the default <span>WebSphere
+Application Server</span> installation
+location if it is not otherwise specified during installation:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" width="90%" frame="border" border="1" rules="all"><div>Default location of <span>WebSphere
+Application Server</span></div><thead align="left"><tr><th valign="top" id="d0e361">Operating system</th>
+<th valign="top" id="d0e363">Location</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" headers="d0e361 "><span>AIX</span></td>
+<td valign="top" headers="d0e363 "><samp class="codeph">/usr/IBM/WebSphere/AppServer </samp></td>
+</tr>
+<tr><td valign="top" headers="d0e361 "><span>HP-UX</span></td>
+<td valign="top" headers="d0e363 "><samp class="codeph">/opt/IBM/WebSphere/AppServer </samp></td>
+</tr>
+<tr><td valign="top" headers="d0e361 "><span>Linux</span></td>
+<td valign="top" headers="d0e363 "><samp class="codeph">/opt/IBM/WebSphere/AppServer </samp></td>
+</tr>
+<tr><td valign="top" headers="d0e361 "><span>Solaris</span></td>
+<td valign="top" headers="d0e363 "><samp class="codeph">/opt/IBM/WebSphere/AppServer </samp></td>
+</tr>
+<tr><td valign="top" headers="d0e361 "><span>Windows</span></td>
+<td valign="top" headers="d0e363 "><samp class="codeph">C:\Program Files\IBM\WebSphere\AppServer </samp></td>
+</tr>
+<tr><td valign="top" headers="d0e361 "><span>i5/OS</span></td>
+<td valign="top" headers="d0e363 "><ul><li id="wpsdirstr__app_server_root_prod"><a name="wpsdirstr__app_server_root_prod"><!-- --></a> <samp class="codeph">app_server_root</samp> (product data) <ul><li><span>WebSphere
+Application Server</span> Version 6 for
+Base and Express:      <ul><li><samp class="codeph">/QIBM/ProdData/WebSphere/AppServer/V6/Base</samp>   </li>
+</ul>
+    </li>
+<li><span>WebSphere
+Application Server</span> Version 6 for
+Network Deployment:      <ul><li><samp class="codeph">/QIBM/ProdData/WebSphere/AppServer/V6/ND</samp>   </li>
+</ul>
+    </li>
+</ul>
+  </li>
+<li id="wpsdirstr__app_server_root_usr"><a name="wpsdirstr__app_server_root_usr"><!-- --></a><samp class="codeph">app_server_root</samp> (user data)
+  <ul><li><span>WebSphere
+Application Server</span>  Version 6 for
+Base and Express:<ul><li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/Base/profiles/<var class="varname">profile_root</var></samp> 
+ </li>
+</ul>
+    </li>
+<li><span>WebSphere
+Application Server</span>  Version 6 for
+Network Deployment:     <ul><li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/ND/profiles/<var class="varname">profile_root</var></samp> 
+  </li>
+</ul>
+	  </li>
+</ul>
+      </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd>
+<dt class="dlterm" id="wpsdirstr__was_profile_root"><a name="wpsdirstr__was_profile_root"><!-- --></a><span>WebSphere
+Application Server</span> profile
+directory</dt>
+<dd><p>Throughout this documentation, the location for the <span>WebSphere
+Application Server</span> profiles
+is noted as <var class="varname">was_profile_root</var>. </p>
+<p>The following table
+shows the default <span>WebSphere
+Application Server</span> location
+for profiles if it is not otherwise specified during installation.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" width="90%" frame="border" border="1" rules="all"><div>Default location of <span>WebSphere
+Application Server</span> profiles</div><thead align="left"><tr><th valign="top" id="d0e494">Operating system</th>
+<th valign="top" id="d0e496">Location</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" headers="d0e494 "><span>AIX</span></td>
+<td valign="top" headers="d0e496 "><samp class="codeph">/usr/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var></samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e494 "><span>HP-UX</span></td>
+<td valign="top" headers="d0e496 "><samp class="codeph">/opt/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var></samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e494 "><span>Linux</span></td>
+<td valign="top" headers="d0e496 "> <samp class="codeph">/opt/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var></samp></td>
+</tr>
+<tr><td valign="top" headers="d0e494 "><span>Solaris</span></td>
+<td valign="top" headers="d0e496 "><samp class="codeph">/opt/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var></samp> </td>
+</tr>
+<tr><td valign="top" headers="d0e494 "><span>Windows</span></td>
+<td valign="top" headers="d0e496 "><samp class="codeph"> C:\IBM\WebSphere\profiles\<var class="varname">profile_name</var></samp></td>
+</tr>
+<tr><td valign="top" headers="d0e494 "><span>i5/OS</span></td>
+<td valign="top" headers="d0e496 "><ul><li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/Base/profiles/<var class="varname">profile_root</var></samp></li>
+<li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/ND/profiles/<var class="varname">profile_root</var></samp></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd>
+<dt class="dlterm" id="wpsdirstr__was_config_root"><a name="wpsdirstr__was_config_root"><!-- --></a><span>WebSphere
+Application Server</span> configuration
+directory</dt>
+<dd><p>Throughout this documentation, the  location for the <span>WebSphere
+Application Server</span> configuration
+files is noted as <var class="varname">was_config_root</var>.</p>
+<p>The following
+table shows the default <span>WebSphere
+Application Server</span> location
+if it is not otherwise specified during installation.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" width="90%" frame="border" border="1" rules="all"><div>Default location of <span>WebSphere
+Application Server</span> configuration
+files</div><thead align="left"><tr><th valign="top" id="d0e594">Operating system</th>
+<th valign="top" id="d0e596">Location</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" headers="d0e594 "><span>AIX</span></td>
+<td valign="top" headers="d0e596 "><samp class="codeph">/usr/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var>/config</samp></td>
+</tr>
+<tr><td valign="top" headers="d0e594 "><span>HP-UX</span></td>
+<td valign="top" headers="d0e596 "> <samp class="codeph">/opt/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var>/config</samp></td>
+</tr>
+<tr><td valign="top" headers="d0e594 "><span>Linux</span></td>
+<td valign="top" headers="d0e596 "> <samp class="codeph">/opt/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var>/config</samp></td>
+</tr>
+<tr><td valign="top" headers="d0e594 "><span>Solaris</span></td>
+<td valign="top" headers="d0e596 "> <samp class="codeph">/opt/IBM/WebSphere/AppServer/profiles/<var class="varname">profile_name</var>/config</samp></td>
+</tr>
+<tr><td valign="top" headers="d0e594 "><span>Windows</span></td>
+<td valign="top" headers="d0e596 "><samp class="codeph">C:\IBM\WebSphere\profiles\<var class="varname">profile_name</var>\config</samp></td>
+</tr>
+<tr><td valign="top" headers="d0e594 "><span>i5/OS</span></td>
+<td valign="top" headers="d0e596 "><ul><li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/Base/profiles/<var class="varname">profile_root</var>/config</samp></li>
+<li><samp class="codeph">/QIBM/UserData/WebSphere/AppServer/V6/ND/profiles/<var class="varname">profile_root</var>/config</samp></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd>
+<dt class="dlterm" id="wpsdirstr__war"><a name="wpsdirstr__war"><!-- --></a>wps.war directory</dt>
+<dd><p>The <span>WebSphere Portal</span> enterprise
+application is installed to the following location within <span>WebSphere
+Application Server</span>'s
+path:</p>
+ <pre>/installedApps/<var class="varname">cellname</var>/wps.ear/wps.war</pre>
+  <div class="p">The WAR file directory structure for the <span>WebSphere Portal</span> enterprise
+application contains the following resources. <pre>wps.war
+ |   
+ +-- c2a              Cooperative portlet resources
+ |
+ +-- doc              Portal-level help and readme
+ |
+ +-- DocEditor        JSPs for the Rich Text Editor
+ |
+ +-- dtd              XML DTDs and schema definitions 
+ |
+ +-- html             License and privacy HTML files for the portal.  
+ |
+ +-- images           Common images for the portal
+ |
+ +-- menu             Resources for MenuService applet (Collaborative Components API)
+ |
+ +-- META-INF         Standard Java MANIFEST.MF for the portal Web application
+ |
+ +-- peopleawareness  Resources for the people awareness features
+ |
+ +-- screens          Screen JSPs for the portal
+ |   |
+ |   +-- <var class="varname">markup_name</var>     Subdirectory for each markup type
+ |    
+ |-- skins            Skin JSPs for the portal
+ |   |
+ |   +-- <var class="varname">markup_name</var>     Subdirectory for each markup type
+ |    
+ |-- themes           Theme JSPs for the portal
+ |   | 
+ |   +-- <var class="varname">markup_name</var>     Subdirectory for each markup type
+ |   
+ +-- virtualportal    XMLAccess file for setting up a virtual portal
+ |
+ +-- WEB-INF          Protected resources for the portal Web application
+ |
+ +-- wts              JavaScript resources for Transcoding Technology
+</pre>
+ </div>
+<div class="p">The following directories contain resources for customization.
+Resources for all other directories in the portal Web application directory
+structure must not be modified. <ul><li>/doc</li>
+<li>/html</li>
+<li>/images</li>
+<li>/screens</li>
+<li>/skins</li>
+<li>/themes</li>
+<li>/virtualportal</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="wpsdirstr__lng"><a name="wpsdirstr__lng"><!-- --></a><h4 class="sectiontitle">Directories for languages</h4><p>The following
+shows the languages supported by <span>WebSphere Portal</span> and
+the directories used for storing locale-specific resources.  These directories
+are used in portlet Web application directories and in the <span>WebSphere Portal</span> enterprise
+application  (themes, skins, and other Web application resources).</p>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" width="100%" frame="border" border="1" rules="all"><thead align="left"><tr><th valign="top" id="d0e746">Language (locale)</th>
+<th valign="top" id="d0e748">Directory</th>
+<th rowspan="1" valign="top" id="d0e750">&nbsp;</th>
+<th valign="top" id="d0e751">Language (locale)</th>
+<th valign="top" id="d0e753">Directory</th>
+<th rowspan="1" valign="top" id="d0e755">&nbsp;</th>
+<th valign="top" id="d0e756">Language (locale)</th>
+<th valign="top" id="d0e758">Directory</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" headers="d0e746 ">Arabic</td>
+<td valign="top" headers="d0e748 ">/ar</td>
+<td rowspan="10" valign="top" headers="d0e750 ">&nbsp;</td>
+<td valign="top" headers="d0e751 ">Hungarian</td>
+<td valign="top" headers="d0e753 ">/hu</td>
+<td rowspan="10" valign="top" headers="d0e755 ">&nbsp;</td>
+<td valign="top" headers="d0e756 ">Romanian</td>
+<td valign="top" headers="d0e758 ">/ro</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">Catalan</td>
+<td valign="top" headers="d0e748 ">/ca</td>
+<td valign="top" headers="d0e751 ">Italian</td>
+<td valign="top" headers="d0e753 ">/it</td>
+<td valign="top" headers="d0e756 ">Russian</td>
+<td valign="top" headers="d0e758 ">/ru</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">Czech</td>
+<td valign="top" headers="d0e748 ">/cs</td>
+<td valign="top" headers="d0e751 ">Hebrew</td>
+<td valign="top" headers="d0e753 ">/iw</td>
+<td valign="top" headers="d0e756 ">Slovak</td>
+<td valign="top" headers="d0e758 ">/sk</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">Danish</td>
+<td valign="top" headers="d0e748 ">/da</td>
+<td valign="top" headers="d0e751 ">Japanese</td>
+<td valign="top" headers="d0e753 ">/ja</td>
+<td valign="top" headers="d0e756 ">Slovenian</td>
+<td valign="top" headers="d0e758 ">/sl</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">German</td>
+<td valign="top" headers="d0e748 ">/de</td>
+<td valign="top" headers="d0e751 ">Korean</td>
+<td valign="top" headers="d0e753 ">/ko</td>
+<td valign="top" headers="d0e756 ">Swedish</td>
+<td valign="top" headers="d0e758 ">/sv</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">English</td>
+<td valign="top" headers="d0e748 ">/en</td>
+<td valign="top" headers="d0e751 ">Dutch</td>
+<td valign="top" headers="d0e753 ">/nl</td>
+<td valign="top" headers="d0e756 ">Thai</td>
+<td valign="top" headers="d0e758 ">/th</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">Greek</td>
+<td valign="top" headers="d0e748 ">/el</td>
+<td valign="top" headers="d0e751 ">Norwegian</td>
+<td valign="top" headers="d0e753 ">/no</td>
+<td valign="top" headers="d0e756 ">Turkish</td>
+<td valign="top" headers="d0e758 ">/tr</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">Spanish</td>
+<td valign="top" headers="d0e748 ">/es</td>
+<td valign="top" headers="d0e751 ">Polish</td>
+<td valign="top" headers="d0e753 ">/pl</td>
+<td valign="top" headers="d0e756 ">Ukrainian</td>
+<td valign="top" headers="d0e758 ">/uk</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">Finnish</td>
+<td valign="top" headers="d0e748 ">/fi</td>
+<td valign="top" headers="d0e751 ">Portuguese</td>
+<td valign="top" headers="d0e753 ">/pt</td>
+<td valign="top" headers="d0e756 ">Simplified Chinese</td>
+<td valign="top" headers="d0e758 ">/zh</td>
+</tr>
+<tr><td valign="top" headers="d0e746 ">French</td>
+<td valign="top" headers="d0e748 ">/fr</td>
+<td valign="top" headers="d0e751 ">Brazilian Portuguese</td>
+<td valign="top" headers="d0e753 ">/pt_BR</td>
+<td valign="top" headers="d0e756 ">Traditional Chinese</td>
+<td valign="top" headers="d0e758 ">/zh_TW</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section"><h4 class="sectiontitle">Notices and trademarks</h4></div>
+<div class="section"><p>(c) Copyright IBM Corporation 2000, 2006.</p>
+<p>U.S.
+Government Users Restricted Rights - Use, duplication or disclosure restricted
+by GSA ADP Schedule Contract with IBM Corp.</p>
+<p>This information was developed
+for products and services offered in the U.S.A. IBM may not offer the products,
+services, or features discussed in this documentation in other countries.
+Consult your local IBM representative for information on the products and
+services currently available in your area. Any reference to an IBM product,
+program, or service is not intended to state or imply that only that IBM product,
+program, or service may be used. Any functionally equivalent product, program,
+or service that does not infringe any IBM intellectual property right may
+be used instead. However, it is the user's responsibility to evaluate and
+verify the operation of any non-IBM product, program, or service.</p>
+<p>IBM may
+have patents or pending patent applications covering subject matter described
+in this documentation. The furnishing of this documentation does not give
+you any license to these patents. You can send license inquiries, in writing,
+to:</p>
+<div class="p"><p><em>IBM Director of Licensing <br />
+IBM Corporation <br />
+North Castle Drive <br />
+Armonk, NY 10504-1785 <br />
+U.S.A.</em></p>
+</div>
+<p>For license inquiries regarding double-byte (DBCS)
+information, contact the IBM Intellectual Property Department in your country
+or send inquiries, in writing, to: </p>
+<p><em>IBM World Trade Asia Corporation<br />
+Licensing<br />
+2-31 Roppongi 3-chome, Minato-ku <br />
+Tokyo 106, Japan </em></p>
+<p><strong>The following paragraph does not apply to the United Kingdom
+or any other country where such provisions are inconsistent with local law:</strong> INTERNATIONAL
+BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OR CONDITIONS OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS
+FOR A PARTICULAR PURPOSE. Some states do not allow disclaimer of express or
+implied warranties in certain transactions, therefore, this statement may
+not apply to you.</p>
+<p>This information could include technical inaccuracies
+or typographical errors. Changes are periodically made to the information
+herein; these changes will be incorporated in new editions of the publication. IBM may
+make improvements and/or changes in the product(s) and/or the program(s) described
+in this publication at any time without notice.</p>
+<p>Any references in this
+information to non-IBM Web sites are provided for convenience only and do
+not in any manner serve as an endorsement of those Web sites. The materials
+at those Web sites are not part of the materials for this IBM product and
+use of those Web sites is at your own risk. Licensees of this program who
+wish to have information about it for the purpose of enabling: (i) the exchange
+of information between independently created programs and other programs (including
+this one) and (ii) the mutual use of the information which has been exchanged,
+should contact:</p>
+<div class="p"><p><em>Vice President<br />
+Intellectual Property &amp; Licensing<br />
+North Castle Drive<br />
+Armonk, New York 10504<br />
+<br />
+U.S.A.</em></p>
+</div>
+<p>Such information may be available, subject to appropriate
+terms and conditions, including in some cases, payment of a fee.</p>
+<p>The
+licensed program described in this documentation and all licensed material
+available for it are provided by IBM under terms of the IBM Customer Agreement, IBM International
+Program License Agreement or any equivalent agreement between us.</p>
+<p>Any
+performance data contained herein was determined in a controlled environment.
+Therefore, the results obtained in other operating environments may vary significantly.
+Some measurements may have been made on development-level systems and there
+is no guarantee that these measurements will be the same on generally available
+systems. Furthermore, some measurements may have been estimated through extrapolation.
+Actual results may vary. Users of this document should verify the applicable
+data for their specific environment.</p>
+<p>Information concerning non-IBM
+products was obtained from the suppliers of those products, their published
+announcements or other publicly available sources. IBM has not tested those products and cannot
+confirm the accuracy of performance, compatibility or any other claims related
+to non-IBM products. Questions on the capabilities of non-IBM products should
+be addressed to the suppliers of those products.</p>
+<p>All statements regarding
+IBM's future direction or intent are subject to change or withdrawal without
+notice, and represent goals and objectives only.This information contains
+examples of data and reports used in daily business operations. To illustrate
+them as completely as possible, the examples may include the names of individuals,
+companies, brands, and products. All of these names are fictitious and any
+similarity to the names and addresses used by an actual business enterprise
+is entirely coincidental.</p>
+</div>
+<div class="section"><h4 class="sectiontitle">Trademarks and service marks</h4><p>The
+following are trademarks in the United States, other countries, or both.</p>
+<p>AIX<sup>®</sup>, DB2<sup>®</sup>, IBM,
+the IBM logo, iSeries™, i5/OS<sup>®</sup>, OS/390<sup>®</sup>, OS/400<sup>®</sup>, RS/6000<sup>®</sup>, RACF<sup>®</sup>, Tivoli<sup>®</sup>, WebSphere,
+ and z/OS<sup>®</sup> are
+trademarks of the IBM Corporation in the United States, other countries,
+ or both.</p>
+<p>Lotus<sup>®</sup>, Notes<sup>®</sup>, Domino<sup>®</sup>, QuickPlace<sup>®</sup>, Sametime<sup>®</sup>, Lotus
+Discovery Server™ are trademarks or registered trademarks of IBM Corporation
+and/or Lotus Development
+Corporation in the United States, other countries, or both.</p>
+<p>Solaris, Java™,
+and all Java-based trademarks and logos are trademarks of Sun Microsystems,
+Inc. in the United States, other countries, or both.</p>
+<p>Microsoft<sup>®</sup>, Windows<sup>®</sup>, Windows
+NT<sup>®</sup>, and the Windows logo are trademarks of Microsoft Corporation
+in the United States, other countries, or both.</p>
+<p>Linux<sup>®</sup> is a registered
+trademark of Torvalds in the United States, other countries, or both.</p>
+<p>Intel<sup>®</sup>, Intel
+Inside<sup>®</sup> (logos), MMX and Pentium<sup>®</sup> are trademarks of Intel Corporation in the United States,
+other countries, or both.</p>
+<p>Other company, product, and service names
+may be trademarks or service marks of others.</p>
+<p>See <a href="http://www.ibm.com/legal/copytrade.html" target="_blank">www.ibm.com/legal/copytrade.html</a> for
+additional trademarks.</p>
+</div>
+</div>
+</body>
+</html>

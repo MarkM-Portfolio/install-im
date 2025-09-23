@@ -1,0 +1,671 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; CHARSET=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="Content-Language" content="en">
+  <title>IBM Prerequisite Scanner Version 1.2 Sprint 3 Driver - README</title>
+        <style>
+	<!--
+	BODY {
+		FONT-WEIGHT: normal;
+		FONT-SIZE: 13px;
+		WORD-SPACING: normal;
+		MARGIN-LEFT: 7px;
+		COLOR: #000000;
+		MARGIN-RIGHT: 16px;
+		FONT-STYLE: normal;
+		FONT-FAMILY: Arial, Verdana, Helvetica,  sans-serif;
+		LETTER-SPACING: normal;
+		BACKGROUND-COLOR: #ffffff;
+		TEXT-ALIGN: left
+	}
+	P {
+		FONT-WEIGHT: normal;
+		FONT-SIZE: 13px;
+		WORD-SPACING: normal;
+		MARGIN-LEFT: 7px;
+		COLOR: #000000;
+		MARGIN-RIGHT: 16px;
+		FONT-STYLE: normal;
+		FONT-FAMILY: Arial, Verdana, Helvetica,  sans-serif;
+		LETTER-SPACING: normal;
+		TEXT-ALIGN: left
+	}
+	P.large {
+			FONT-SIZE: 120%;
+	}
+	PRE {
+		FONT-SIZE: 13px;
+		MARGIN-LEFT: 7px;
+		FONT-FAMILY: Courier, monospace
+	}
+	PRE.BAL {
+		FONT-SIZE: 10pt;
+		MARGIN-LEFT: 7px;
+		MARGIN-RIGHT: 16px;
+		FONT-FAMILY: Verdana, Helvetica, Arial, sans-serif
+	}
+	CODE {
+		FONT-SIZE: 13px;
+		FONT-FAMILY: Courier, monospace
+	}
+	H1 {
+		FONT-WEIGHT: bold;
+		FONT-SIZE: 20px;
+		MARGIN: 6px 16px 0px 7px;
+		COLOR: #53565d
+	}
+	H2 {
+		FONT-WEIGHT: bold; FONT-SIZE: 16px;
+		MARGIN: 6px 16px 0px 7px;
+		COLOR: #53565d
+	}
+	H3 {
+		FONT-WEIGHT: bold;
+		FONT-SIZE: 13px;
+		MARGIN-LEFT: 7px;
+		COLOR: #53565d;
+		MARGIN-RIGHT: 16px
+	}
+	H4 {
+		FONT-WEIGHT: bold;
+		FONT-SIZE: 13px;
+		MARGIN-LEFT: 7px;
+		COLOR: #53565d;
+		MARGIN-RIGHT: 16px;
+		FONT-STYLE: italic
+	}
+	H5 {
+		MARGIN-LEFT: 7px
+	}
+	H6 {
+		MARGIN-LEFT: 7px
+	}
+	A {
+		COLOR: #005da0
+	}
+	A:active {
+		COLOR: #05386b
+	}
+	A:hover {
+		COLOR: #05386b
+	}
+	A:visited {
+		COLOR: #704d90
+	}
+	a:active.legalpart {
+		COLOR: #cc9900; TEXT-DECORATION: none
+	}
+	a:hover.legalpart {
+		COLOR: #cc9900; TEXT-DECORATION: none
+	}
+	A.legalpart {
+		COLOR: #005da0; TEXT-DECORATION: none
+	}
+	a:visited.legalpart {
+		COLOR: #704d90; TEXT-DECORATION: none
+	}
+	TABLE {
+		BORDER-RIGHT: #808080 1px solid;
+		BORDER-TOP: #808080 1px solid;
+		MARGIN-TOP: 13px;
+		FONT-SIZE: 13px;
+		MARGIN-BOTTOM: 13px;
+		BORDER-LEFT: #808080 1px solid;
+		MARGIN-RIGHT: 7px;
+		BORDER-BOTTOM: #808080 1px solid
+	}
+	TH {
+		FONT-WEIGHT: bold;
+		FONT-SIZE: 13px;
+		MARGIN: 3px 16px 3px 7px;
+		COLOR: #ffffff;
+		BACKGROUND-COLOR: #53565d;
+		TEXT-ALIGN: left
+	}
+	TD {
+		BORDER-RIGHT: #808080 1px solid;
+		BORDER-TOP: #808080 1px solid;
+		BORDER-LEFT: #808080 1px solid;
+		BORDER-BOTTOM: #808080 1px solid
+	}
+	caption {
+		FONT-WEIGHT: bold; FONT-SIZE: 12px;
+		MARGIN: 6px 16px 0px 7px;
+		COLOR: #53565d;
+		TEXT-ALIGN: left
+	}
+	TABLE.noborder {
+		MARGIN-TOP: 7px;
+		FONT-SIZE: 13px;
+		MARGIN-LEFT: 7px;
+		BORDER-TOP-STYLE: none;
+		BORDER-RIGHT-STYLE: none;
+		BORDER-LEFT-STYLE: none;
+		BORDER-BOTTOM-STYLE: none
+	}
+	TD.noborder {
+		BORDER-TOP-STYLE: none;
+		BORDER-RIGHT-STYLE: none;
+		BORDER-LEFT-STYLE: none;
+		BORDER-BOTTOM-STYLE: none
+	}
+	TH.WarningTitle {
+		FONT-WEIGHT: bold;
+		FONT-SIZE: 13px;
+		COLOR: #d82020;
+		BACKGROUND-COLOR: #ffffff
+	}
+	.WarningTable {
+		BORDER-RIGHT: #808080 1px solid;
+		BORDER-TOP: #808080 1px solid;
+		MARGIN: 13px 16px 13px 7px;
+		BORDER-LEFT: #808080 1px solid;
+		WIDTH: 95%;
+		BORDER-BOTTOM: #808080 1px solid;
+		BACKGROUND-COLOR: #ffffff
+	}
+	TH.NoteTitle {
+		FONT-WEIGHT: bold;
+		FONT-SIZE: 13px;
+		COLOR: #858a8b;
+		BACKGROUND-COLOR: #ffffff
+	}
+	.NoteTable {
+		BORDER-RIGHT: #808080;
+		BORDER-TOP: #808080;
+		MARGIN: 13px 16px 13px 7px;
+		BORDER-LEFT: #808080;
+		WIDTH: 95%;
+		BORDER-BOTTOM: #808080;
+		BACKGROUND-COLOR: #ffffff
+	}
+	TABLE.legalpart {
+		BORDER-TOP-STYLE: none;
+		BORDER-RIGHT-STYLE: none;
+		BORDER-LEFT-STYLE: none;
+		BORDER-BOTTOM-STYLE: none
+	}
+	.legalpart a:active.bluelink {
+		COLOR: #cc9900;
+		TEXT-DECORATION: none
+	}
+	.legalpart a:hover.bluelink {
+		COLOR: #cc9900;
+		TEXT-DECORATION: none
+	}
+	.legalpart A.bluelink {
+		COLOR: #005da0;
+		TEXT-DECORATION: none
+	}
+	.legalpart a:visited.bluelink {
+		COLOR: #704d90;
+		TEXT-DECORATION: none
+	}
+	.legalpart {
+		FONT-SIZE: 10px;
+		COLOR: #858a8b
+	}a.bluelink {color: #005da0}
+div.Section1
+	{page:Section1;}
+
+.docfnt { font-size: 11px; }
+-->
+    </style>  </head>
+<body>
+
+
+<!-- INTRODUCTION -->
+
+<h1>IBM Prerequisite Scanner Version 1.2 Sprint 3 Driver - README</h1>
+<p>These notes applies to IBM® IPrerequisite Scanner Version 1.2 Sprint 3 Driver and to all subsequent
+releases, modifications, and service refreshes, until otherwise indicated
+in a new README file. </p>
+<!--<p><b>Build number: 20123101 </b></p>-->
+<p><b>Date: 28 March 2012 </b></p>
+<h1>Contents</h1>
+
+<table width="95%" class="noborder" id="table_contents">
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#description">General description</a></td>
+	<td class="noborder">Describes Prerequisite Scanner, and how to access the product documentation.</td>
+	</tr>
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#new_in_release">
+	What's new</a></td>
+	<td class="noborder">Provides information about what is new and changed in this release.</td>
+	</tr>
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#platform_removal">
+	Compatibility issues with earlier versions</a></td>
+	<td class="noborder">Lists any removed features or changes in behavior that impact compatibility with configuration files from earlier versions.</td>
+	</tr>
+	
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#platforms">Architecture</a></td>
+	<td class="noborder">Provides high-level overview of Prerequisite Scanner.</td>
+	</tr>
+	
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#prereqs">Requirements for Prerequisite Scanner and its supported products</a></td>
+	<td class="noborder">Provides information about system requirements.</td>
+	</tr>
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#image_contents">
+	Image directory content</a></td>
+	<td class="noborder">Lists the contents of the platform packages.</td>
+	</tr>
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#installing">Installation instructions</a></td>
+	<td class="noborder">Describes how to install the latest version of Prerequisite Scanner.</td>
+	</tr>
+
+
+<tr valign="top">
+	<td class="noborder"> <a class="bluelink" href="#running">Running Prerequisite Scanner</a></td>
+	<td class="noborder">Provides topic links that describe how to run Prerequisite Scanner.</td>
+	</tr>
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#extending">Extending Prerequisite Scanner</a></td>
+	<td class="noborder">Provides topic links that describe how to extend Prerequisite Scanner.</td>
+	</tr>
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#known_problems">Known problems and workarounds</a></td>
+	<td class="noborder">Lists any known issues and workarounds with Prerequisite Scanner.</td>
+	</tr>
+
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#support">Technical support</a></td>
+	<td class="noborder">Provides information about obtaining support and links to support information.</td>
+	</tr>
+	
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#support">Feedback and product request enhancements</a></td>
+	<td class="noborder">Provides information about providing feedback, requests for product enhancements, and links to associated sites.</td>
+	</tr>
+	
+<tr valign="top">
+	<td class="noborder"><a class="bluelink" href="#notices">Notices</a></td>
+	<td class="noborder">Provides notice information.</td>
+	</tr>
+
+</table>
+
+
+<hr >
+<!-- GENERAL DESCRIPTION SECTION -->
+<h1><a name="description"></a>General description</h1>
+
+<p>IBM Prerequisite Scanner is a stand-alone prerequisite checking tool that analyzes system environments before the installation or upgrade of a Tivoli® product or IBM solution.</p>
+<p>When you run Prerequisite Scanner, it scans for the specified prerequisites and detects any missing ones before the actual product installation or upgrade takes place; thus, the scan can enable remediation without impacting the deployment schedule. </p>
+<p></p>
+<p>Prerequisite Scanner provides a user's guide with each platform package, or you can use the <a href="http://publib.boulder.ibm.com/infocenter/tivihelp/v3r1/index.jsp?topic=/com.ibm.ips.doc_1.1.1.10/ips_ic-homepage.html" target="_blank">IBM Prerequisite Scanner Information Center</a>.</p>
+<p>For further information on installing Prerequisite Scanner, see <a href="#installing">Installation instructions</a>.
+
+
+<hr >
+
+<!-- WHAT'S NEW SECTION -->
+<h1><a name="new_in_release"></a>What's new</h1>
+<p>IBM Prerequisite Scanner Version 1.2 Sprint 3 driver provides enhancements to prerequisite properties, new configuration files, and changes to documentation. It also contains fixes for defects and APARs.</p>
+<h2>New configuration files and product codes in this modification</h2>
+<!--<p>None in this modification.</p>-->
+
+<p>Table 1 outlines the new configuration files and product codes shipped with Prerequisite Scanner Version 1.2 Sprint 3 driver.</p>  
+<table class="noborder" width="95%" id="table_new_config_files" cellpadding="4">
+<caption>Table 1: New configuration files in Prerequisite Scanner Version 1.2 Sprint 3 driver </caption>
+<tr valign="top">
+<th width="40%">
+Products and Components</th>
+<th width="20%">
+Product Code</th>
+<th width="40%">
+Configuration File</th>
+</tr>
+<tr valign="top">
+<td height="48">Tivoli Composite Application
+Manager Agent for WebSphere MQ Version 7.1</td>
+<td height="48">KMQ</td>
+<td height="45"><i>ips_root</i>/Windows|UNIX_Linux/KMQ_07010000.cfg</td>
+</tr>
+</table>
+
+<h2>New prerequisite properties in this modification</h2>
+<p>None in this modification.</p>
+<h2>New features in this modification</h2>
+<p><b>Ability to parse and read the new scan results XML file.</b></p>
+<p>The Prerequisite Scanner Java Developer toolkit is a set of APIs to allow
+developers to programmatically parse and read the contents of the results
+XML file for their needs; for example, parse the results of the scan to use in
+an installation program.</p>
+<h2>Enhancements in this modification</h2>
+<p><b>Ability to write scan results to an XML file.</b></p>
+<p><code><i>ips_output_dir</i>/result.xml</code> is the new scan results file in XML format. By
+default the tool outputs the results to the plain text result file only.</p>
+<p><code>xmlResult</code>is a new, optional input parameter for the Prerequisite Scanner
+script in Prerequisite Scanner Version 1.2 Sprint 3 driver. You can use it to
+indicate to the tool to output the results to the XML result file in addition
+to the plain test result file.</p>
+
+<p><b>Removal of the aggregated section in the results if neither memory nor
+disk space prerequisite properties exist in the configuration files.</b></p>
+<p>Prerequisite Scanner no longer displays the aggregated sections in the
+result file when none of the memory or disk space prerequisite properties
+exist in the configuration files.</p>
+<h2>Defects fixed with this modification</h2>
+<p>Table 2 outlines the defects and bug reports fixed with this modification.</p>
+<table class="noborder" width="95%" id="table_opdir_products" cellpadding="4">
+<caption>Table 2: Fixed defects in Prerequisite Scanner Version 1.2 Sprint 3 Driver </caption>
+<tr valign="top">
+<th width="25%">
+Defect number</th>
+<th width="75%">
+Description</th>
+</tr><tr valign="top">
+<td height="48">25890</td>
+<td height="48">Previous versions of the documentation did not document how Prerequisite
+Scanner handles the expected value for the Memory prerequisite property, when
+running a scan on a computer that already has an existing version of the Tivoli
+Monitoring agent installed. It has been added to the documentation for the Prerequisite Scanner Version 1.2 Sprint 3 driver.</td>
+</tr>
+<tr valign="top">
+<td height="48">26489</td>
+<td height="48"><code>network.ValidateHostsFile</code> prerequisite property was missing from the previous
+versions of the documentation. It has been added to the documentation for the Prerequisite Scanner Version 1.2 Sprint 3 driver.</td>
+</tr>
+</table>
+<hr/>
+
+<!-- COMPATIBILITY ISSUES SECTION -->
+<h1><a name="platform_removal"></a>Compatibility issues with earlier versions</h1>
+<!--<p>This section provides information about any removed features or changes in behavior that impact compatibility with configuration files from earlier versions or product usage.</p>-->
+<p>None in this modification.</p>
+<hr/>
+
+<!-- PREREQUISITES SECTION -->
+<h1><a name="platforms"></a>Architecture</h1>
+<p>Prerequisite Scanner comprises the following main components: a script to
+run in a command-line interface, a set of properties for the prerequisite checks,
+prerequisite property configuration files, prerequisite collectors, and prerequisite
+evaluators. The results of running the Prerequisite Scanner are available in various
+output formats. Prerequisite Scanner produces output for the following screen and human-readable file formats: output to the command-line interface, 
+debugging and trace log files, and a simple text file for the results. </p>
+
+<hr >
+<h1><a name="prereqs"></a>Requirements for Prerequisite Scanner and its supported products</h1>
+<p>Prerequisite Scanner can run on Windows systems, Windows XP or above,
+32-bit, or 64-bit. It can also run on variants of AIX, HP-UX, Linux, and Solaris
+operating systems.</p>
+
+<p>Ensure that you have the following utilities installed or enabled in the target
+environments as outlined in Table 3.</p>
+<table class="noborder" width="95%" id="table_opdir_products" cellpadding="4">
+<caption>Table 4: Prerequisites for Prerequisite Scanner Version 1.2 Sprint 3 Driver </caption>
+<tr valign="top">
+<th width="30%">
+Platform</th>
+<th width="70%">
+Prerequisites</th>
+</tr>
+<tr valign="top">
+<td >Windows systems</td>
+<td>The Telnet client is enabled, so that the connectivity
+checks in the predefined Connectivity collector can function correctly.
+</td>
+</tr>
+<tr valign="top">
+<td>UNIX systems</td>
+<td><ul>
+<li>Bash is installed, so that the Prerequisite Scanner UNIX
+collectors can function correctly.</li>
+<li>For non-root users, the location of the
+<code>mount, swapinfo</code>, and <code>psrinfo</code> commands
+must be set in the <code>PATH</code> environment
+variable, so that the commands are
+available to Prerequisite Scanner. The
+commands are in the <code>/usr/sbin</code> directory; for
+example, set the code>PATH</code> environment
+variable as follows:<br/>
+<code>export PATH=$PATH:/usr/sbin/</code></li>
+<li>Ensure the correct access permissions are
+assigned to the <code>lscfg</code> command, including
+any specific permissions that are set by
+the access-right flags such as <code>setuid</code> bit.
+The correct access permissions mean that
+Prerequisite Scanner can run the
+command and retrieve system
+information. The command is in the 
+<code>/usr/sbin</code> directory; for example to set the
+<code>setuid</code> bit for <code>lscfg</code>, run <code>chmod</code> command
+as follows:<br/>
+<code>chmod 4777 /usr/sbin/lscfg</code></li>
+</ul></td>
+</tr>
+</table>
+
+
+
+<p>Prerequisite Scanner supports all hardware and operating systems of the specified
+product or IBM solution for which you are running Prerequisite Scanner.</p>
+
+<p>Prerequisite Scanner currently supports the following products and components:</p>
+<ul>
+<li>IBM Connections Version 4.0 (requires Prerequisite Scanner from the IBM Connections Bill of Materials)</li>
+<li>Maximo Asset Management 7.5 (requires Prerequisite Scanner from the Tivoli Process Automation Engine Bill of Materials)</li>
+<li>Tivoli Autonomic Deployment Engine Version 1.4</li>
+<li>Tivoli Asset Discovery for Distributed Versions 7.2 and 7.2.2</li>
+<li>Tivoli Business Service Manager Versions 4.2.1 and 6.1 </li>
+<li>Tivoli Common Reporting Version 2.1.1</li>
+<li>Tivoli Enterprise Portal Versions 6.2 and 6.2.2</li>
+<li>Tivoli License Compliance Manager Version 2.3</li>
+<li>Tivoli License Metric Tool Versions 7.2 and 7.2.2</li>
+<li>Tivoli Monitoring Versions 6.1, 6.2, 6.2.1 and 6.2.2</li>
+<li>Tivoli Monitoring for Databases: DB2 Agent Versions 6.1 6.2, 6.2.1 and 6.2.2</li>
+<li>Tivoli Monitoring for Databases: Oracle Agent Version 6.2.2</li>
+<li>Tivoli Netcool/Impact Version 6.1</li>
+<li>Tivoli Netcool/OMNIbus Server Components Version 7.3.1</li>
+<li>Tivoli Netcool/OMNIbus Desktop Component Version 7.3.1</li>
+<li>Tivoli Netcool Performance Manager Version 1.3.2 (UNIX/Linux Systems)</li>
+<li>Tivoli Composite Application Manager Agent for WebSphere MQ Version 7.1</li>
+<li>Tivoli Composite Application Manager Agent for WebSphere MQ File Transfer Edition Version 7.1 (Windows only)</li>
+<li>Tivoli Composite Application Manager for Applications: DB2 Version 6.2.2</li>
+<li>Tivoli Composite Application Manager for Transactions: Internet Service Monitoring Versions 7.2 and 7.3</li>
+<li>Tivoli Composite Application Manager for Transactions: Transaction Reporter Versions 7.2.2 (Windows only) and 7.3 (UNIX/Linux Systems)</li>
+<li>Tivoli Composite Application Manager for Transactions: Transaction Collector Versions 7.2.2 (Windows only) and 7.3 (UNIX/Linux Systems)</li>
+<li>Tivoli Composite Application Manager for Transactions: Application Management Console Version 7.3</li>
+<li>Tivoli Composite Application Manager for Transactions: Client Response Time Version 7.3</li>
+<li>Tivoli Composite Application Manager for Transactions: Web Response Time Version 7.3</li>
+<li>Tivoli Composite Application Manager for Transactions: Robotic Response Time Version 7.3</li>
+<li>Tivoli Provisioning Manager Versions 7.2 and 7.2.1</li>
+<li>Tivoli zEnterprise Monitoring Agent Version 6.2.3</li>
+</ul>
+
+<hr/>
+
+<!-- IMAGE CONTENTS SECTION -->
+<h1><a name="image_contents"></a>Image directory content</h1>
+<p>There are two separate packages available to download from IBM Fix Central to support  Windows and UNIX platforms as follows:</p>
+<ul>
+<li> The <code>version_num-Tivoli-PRS-Windows-fp0001.zip</code> Windows package supports Windows Server, XP, Vista, and Windows 7. </li>
+<li>The <code>version_num-Tivoli-PRS-Unix-fp0001.tar.gz</code> UNIX package  supports the AIX, HP-UX, Linux, SLES, Solaris, and z/OS platforms.</li>
+</ul>
+
+<p>When you extract the contents of the compressed file, the core files are in the root directory, such as the Prerequisite Scanner script and product code configuration file. It also has the following subdirectories: 
+<ul>
+<li><code>/api</code> for the XML query API</li>
+<li><code>/Documentation</code> the PDF file for the Prerequisite Scanner User's Guide</li>
+<li><code>/lib</code> for the collectors and common scripts</li>
+<li><code>/Windows</code> for the evaluators and configuration files on Windows</li>
+<li><code>/UNIX_Linux</code> for the evaluators and configuration files on UNIX platforms</li>
+<li><code>/licenses</code> for the license files</li>
+</ul>
+
+<hr/>
+
+<!-- INSTALLING SECTION -->
+<h1><a name="installing"></a>Installation instructions</h1>
+<p>The latest platform packages for Prerequisite Scanner are available for download from 
+<a href="http://www.ibm.com/support/fixcentral/swg/selectFixes?parent=ibm~Tivoli&product=ibm/Tivoli/Prerequisite+Scanner&release=All&platform=All&function=all" target="_blank">IBM Fix Central</a>.</p>
+
+<p>Alternatively, you can browse for the latest version as follows:</p>
+<ol>
+<li>Open your web browser and enter the URL to <a href="http://www-933.ibm.com/support/fixcentral/" target="_blank">IBM Fix Central</a>. Ensure that you sign into IBM.com or IBM Support Portal.</li>
+<li>From the <b>Product Group</b> list, select Tivoli.</li>
+<li>From the <b>Product list</b>, select IBM Prerequisite Scanner.</li>
+<li>From the <b>Installed Version</b> list, select the version that you want to download.</li>
+<li>From the <b>Platform</b> list, select the platform on which you want to install Prerequisite Scanner.</li>
+<li>Click <b>Continue</b>. The Identify Fixes page opens.</li>
+<li>Use the default option, Browse for fixes, and click <b>Continue</b>.</li>
+<li>On the Select fixes page, select the platform package, and click <b>Continue</b>.</li>
+<li>On the Download option page, select the download option, and click <b>Download now</b>.</li>
+<li>Extract the contents of the compressed files to your preferred location on the computers on which you want to run Prerequisite Scanner.</li>
+</ol>
+
+<hr/>
+
+<!-- RUNNING PREREQUISITE SCANNER SECTION-->
+<h1><a name="running"></a>Running Prerequisite Scanner</h1>
+
+<p>You can use a command-line interface to run the IBM Prerequisite Scanner. The
+Prerequisite Scanner script, <code>prereq_checker</code>, takes a set of required and optional
+parameters and a command flag for additional optional parameters. </p>
+<table class="NoteTable">
+<tr>
+<th>Note:</th>
+<th class="NoteTitle">Ensure that you check your product’s installation documentation or Technotes for any additional steps that must be performed before running Prerequisite Scanner. For example, you might need to set the environment variable that
+indicates to Prerequisite Scanner which components or features are being installed on the target computer
+and consequently, which prerequisites to check.</th></tr>
+</table>
+<p>To run Prerequisite Scanner, review the script parameters described in the 
+<i><a href="http://publib.boulder.ibm.com/infocenter/tivihelp/v3r1/index.jsp?topic=/com.ibm.ips.doc_1.1.1.10/ips_cli_prereq_chkr.html" target="_blank">prereq_checker</a></i> topic in the Prerequisite Scanner Information Center or the user's guide.</p>
+<p>The script requires individual product codes to identify the product or component against which to run prerequisite checks. 
+Review the set of predefined product codes outlined in the <i><a href="http://publib.boulder.ibm.com/infocenter/tivihelp/v3r1/index.jsp?topic=/com.ibm.ips.doc_1.1.1.10/ips_prd_codes_ref.html" target="_blank">Product code references</a></i> topic in the Prerequisite Scanner Information Center or the user's guide.</p>
+<p>&nbsp;</p>
+
+<hr/>
+<!-- EXTENDING PREREQUISITE SCANNER SECTION-->
+<h1><a name="extending"></a>Extending Prerequisite Scanner</h1>
+
+<p>You can also extend the Prerequisite Scanner to scan for prerequisites not originally supplied with the tool. For more information about extending it to meet your additional prerequisite needs, see the <i><a href="http://publib.boulder.ibm.com/infocenter/tivihelp/v3r1/index.jsp?topic=/com.ibm.ips.doc_1.1.1.10/ips_extend.html" target="_blank">Extending Prerequisite Scanner</a></i> topic in the Prerequisite Scanner Information Center or the user's guide. </p>
+
+<hr/>
+
+<!-- KNOWN LIMITATIONS SECTION -->
+<h1><a name="known_problems"></a>Known problems, workarounds, and limitations</h1>
+
+<!--<h2>Known issues</h2>
+<p>The following table list the issues known at the time of release.</p>
+<table class="noborder" width="95%" id="table31" cellpadding="4">
+<tr valign="top">
+<th width="40%">
+Defect</th>
+<th width="60%">
+Description</th>
+</tr>
+<tr valign="top">
+<td height="59"></td>
+<td height="59"></td>
+</tr>
+
+</table>-->
+<p>There are no known issues with this modification.</p>
+<hr/>
+<!-- TECHNICAL SUPPORT SECTION -->
+<h1><a name="support"></a>Technical support</h1>
+<p>Customers can contact IBM Support should they require assistance on the products that IBM Prerequisite Scanner supports. To ensure that the request is routed correctly, all PMRs must be reported against the product being scanned.</p>
+
+<p>The following sites contain troubleshooting information:</p>
+<ul>
+<li>Go to IBM Prerequisite Scanner page on the <a href="http://www-947.ibm.com/support/entry/portal/Overview/Software/Tivoli/IBM_Prerequisite_Scanner" target="_blank">IBM Support Portal</a>.</li>
+<li> Go to the IBM Prerequisite Scanner topics at <a href="https://www.ibm.com/developerworks/mydeveloperworks/wikis/home/wiki/W0ca2fa980cd2_4596_8e7b_92f8f0c1fa05/page/IBM%20Prerequisite%20Scanner?lang=en" target="_blank">Service Management
+Connect</a>. </li>
+</ul>
+
+<hr/>
+<!-- FEEDBACK SECTION -->
+<h1><a name="feedback"></a>Feedback and product request enhancements</h1>
+<p>Customers can submit or review product request enhancements for Prerequisite Scanner in the <a href="http://www.ibm.com/developerworks/rfe/?BRAND_ID=90" target="_blank">Tivoli RFE Community</a>. </p>
+<p>Customers can provide feedback on the following sites:</p>
+
+<ul>
+<li> IBM Prerequisite Scanner topics at <a href="https://www.ibm.com/developerworks/mydeveloperworks/wikis/home/wiki/W0ca2fa980cd2_4596_8e7b_92f8f0c1fa05/page/IBM%20Prerequisite%20Scanner?lang=en" target="_blank">Service Management
+Connect</a>. Feel free to contribute to these topics.</li>
+<li><a href="https://www.ibm.com/developerworks/mydeveloperworks/groups/service/forum/topics?communityUuid=dda18b1a-faa4-44a9-9220-52e2eb7ce891&amp;ps=10&amp;page=0" target="_blank">Integrated Service Management Message Board</a> at Service Management Connect.</li>
+
+</ul>
+
+<hr/>
+
+<!-- NOTICES SECTION -->
+<h1><a name="notices"></a>Notices</h1>
+<p>This information was developed for products and services offered in the
+United States. IBM may not offer the products, services, or features
+discussed in this document in other countries. Consult your local IBM
+representative for information on the products and services currently
+available in your area. Any reference to an IBM product, program, or
+service is not intended to state or imply that only that IBM product,
+program, or service may be used. Any functionally equivalent product,
+program, or service that does not infringe any IBM intellectual
+property right may be used instead. However, it is the user's
+responsibility to evaluate and verify the operation of any non-IBM
+product, program, or service.</p>
+
+<p>IBM may have patents or pending patent applications covering subject
+matter described in this document. The furnishing of this document does
+not grant you any license to these patents. You can send license
+inquiries, in writing, to:</p>
+
+<p>IBM Director of Licensing<br/>
+IBM Corporation<br/>
+North Castle Drive<br/>
+Armonk, NY 10504-1785<br/>
+U.S.A.</p>
+
+<p>The following paragraph does not apply to the United Kingdom or any
+other country where such provisions are inconsistent with local law:</p>
+
+<p>INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION 
+"AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+INCLUDING,   BUT NOT LIMITED TO,   THE IMPLIED WARRANTIES OF 
+NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+<p>Some states do not allow disclaimer of express or implied warranties in
+certain transactions, therefore, this statement may not apply to you.</p>
+
+<h2>Trademarks and service marks</h2>
+
+<p>IBM, the IBM logo, and ibm.com® are trademarks or registered trademarks 
+of International Business Machines Corp., registered in many 
+jurisdictions worldwide.  Other product and service names might be 
+trademarks of IBM or other companies.  A current list of IBM trademarks 
+is available on the Web at "Copyright and trademark information" at 
+<a href"http://www.ibm.com/legal/copytrade.shtml" target="_blank">http://www.ibm.com/legal/copytrade.shtml</a>.</p>
+
+<p>Microsoft and Windows are trademarks of Microsoft Corporation in the
+United States, other countries, or both.</p>
+
+<p>UNIX is a registered trademark of The Open Group in the United States
+and other countries.</p>
+
+<p>Linux is a registered trademark of Linus Torvalds in the United States,
+other countries, or both.</p>
+
+<p>Other company, product, and service names may be trademarks or service
+marks of others.</p>
+
+<hr/>
+<h1><a name="Copyright"></a>Copyright</h1>
+<p>
+ &copy; Copyright IBM Corp. 2009, 2012<br>
+	US Government Users Restricted Rights - Use, duplication or disclosure 
+	restricted by GSA ADP Schedule Contract with IBM Corp.
+</p>
+</body> </html>

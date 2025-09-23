@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WASHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WASProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WASHistory.java:
+#
+WVER0201E=WVER0201E: Protokollverzeichnis kann nicht ermittelt werden; das Produktverzeichnis wurde nicht gefunden
+WVER0201E.explanation=Das Protokollverzeichnis ist ein Unterverzeichnis des Produktverzeichnisses.  Weitere Informationen enthält die Erläuterung zu dem Fehler, der beim Ermitteln des Produktverzeichnisses auftrat.
+WVER0201E.useraction=Befolgen Sie die Anweisungen, die mit dem Versionsfehler gegeben werden.
+
+# 
+WVER0202E=WVER0202E: Protokolldaten können nicht geladen werden
+WVER0202E.explanation=Protokolldaten konnten nicht aus der Protokolldatei {0} geladen werden.  Bestimmte Details betreffen den aufgetretenen Fehler.
+WVER0202E.useraction=Stellen Sie sicher, dass die Protokolldatei gelesen werden kann und ein korrektes Format hat.
+
+# 
+WVER0203E=WVER0203E: Ausnahmebedingung beim Lesen von {0}
+WVER0203E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0203E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0204E=WVER0204E: Ausnahmebedingung beim Erstellen von Protokollverzeichnis {0}
+WVER0204E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0204E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0205E=WVER0205E: Ausnahmebedingung beim Erstellen einer Sicherung für Protokolldatei {0} in {1}
+WVER0205E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0205E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0206E=WVER0206E: Ausnahmebedingung beim Schreiben von Ereignisprotokoll {0}
+WVER0206E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0206E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Alle Rechte vorbehalten.
+WVER0210I.explanation=Dies ist ein Standard-Copyrightvermerk.
+WVER0210I.useraction=Es ist keine Benutzeraktion erforderlich.  Dies ist eine Informationsnachricht.
+
+# 
+WVER0211I=WVER0211I: WebSphere Application Server Release 5.0
+WVER0211I.explanation=Dies ist eine Standardproduktbeschreibung.
+WVER0211I.useraction=Es ist keine Benutzeraktion erforderlich.  Dies ist eine Informationsnachricht.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter Version {0}, Datum: {1}
+WVER0212I.explanation=Dies ist eine Standardmodulbeschreibung.
+WVER0212I.useraction=Es ist keine Benutzeraktion erforderlich.  Dies ist eine Informationsnachricht.
+
+# 
+WVER0225E=WVER0225E: Für das Argument ''{0}'' wurde kein Wert angegeben.
+WVER0225E.explanation=Für das genannte Argument ist ein Wert erforderlich.  (Mit '-help' oder '-usage' können Syntaxinformationen angezeigt werden.)
+WVER0225E.useraction=Geben Sie einen Wert für das genannte Argument an.
+
+# 
+WVER0226E=WVER0226E: Der Wert ''{0}'' ist kein gültiger Formatwert.
+WVER0226E.explanation=Die gültigen Formatwerte lauten 'text' und 'html'.  Der angegebene Wert entspricht keinem dieser Werte.  (Mit '-help' oder '-usage' können Syntaxinformationen angezeigt werden.)
+WVER0226E.useraction=Ändern Sie den Formatwert in einen der gültigen Werte 'text' oder 'html'.
+
+# 
+WVER0228E=WVER0228E: Das Argument ''{0}'' ist kein gültiges Argument.
+WVER0228E.explanation=Das angegebene Argument ist ungültig.  (Mit '-help' oder '-usage' können Syntaxinformationen angezeigt werden.)
+WVER0228E.useraction=Geben Sie ein gültiges Argument an.
+
+# 
+WVER0230I=WVER0230I: Syntax: historyInfo ( [ -format <text | html> ] [ -file <Ausgabedatei> ] [ -updateId <updateId> ] [ -component <Komponentenname> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Diese Informationsnachricht beschreibt die Argumente des Dienstprogramms historyInfo.  Dieses Dienstprogramm akzeptiert fünf optionale Schlüsselwortargumente: eins zur Angabe des Ausgabeformats, eins zur Angabe der Ausgabedatei, eins zur Anzeige nur derjenigen Ereignisse, die mit einem bestimmten E-Fix verbunden sind, eins zur Anzeige nur derjenigen Ereignisse, die mit einer bestimmten Komponente verbunden sind, und eins zur Anzeige von Syntaxinformationen.  (Mit '-usage' oder '-help' können zusätzliche Informationen angezeigt werden.)
+WVER0230I.useraction=Es ist keine Benutzeraktion erforderlich.  Die Syntaxinformationen werden auf Anforderung angezeigt.
+
+# 
+WVER0231I=WVER0231I: Mit dem Argument '-format' wird das Ausgabeformat angegeben, das entweder 'text' oder 'html' sein muss.  Das Argument '-file' gibt eine Ausgabedatei an.  Es muss ein Dateiname angegeben werden.  Mit dem Argument '-updateId' wird die ID einer Aktualisierung angegeben, um die angezeigten Ereignisse zu beschränken.  Mit dem Argument '-component' wird der Name einer Komponente angegeben, um die angezeigten Ereignisse zu beschränken.  Mit dem Argument'-help' können Versionsinformationen angezeigt werden.  Mit dem Argument '-usage' kann diese Informationsnachricht angezeigt werden.
+WVER0231I.explanation=Die Nachricht beschreibt die gültigen Argumente des Dienstprogramms versionInfo.
+WVER0231I.useraction=Es ist keine Benutzeraktion erforderlich.  Die Syntaxinformationen werden auf Anforderung angezeigt.
+
+# 
+WVER0240E=WVER0240E: Fehler beim Schreiben des Versionsberichts an {0}: {1}
+WVER0240E.explanation=Der angegebene Fehler trat beim Schreiben des Protokollberichts in die genannte Datei auf.
+WVER0240E.useraction=Die Fehlerberichtigung ist von den Spezifikationen des aufgetretenen Fehlers abhängig.  Stellen Sie vor allem sicher, dass Schreibzugriff auf die angegebene Datei besteht und ausreichend Kapazität für den Bericht verfügbar ist.
+
+# 
+WVER0241E=WVER0241E: Fehler beim Schreiben des Protokollberichts in {0}.  Der Text des Fehlers kann nicht angezeigt werden, es handelt sich jedoch um Typ {1}.  Ein zweiter Fehler (Typ {2}) trat beim Abrufen des Fehlertextes auf.
+WVER0241E.explanation=Beim Schreiben eines Protokollberichts in die angegebene Datei ist ein Fehler aufgetreten.  Ein zweiter Fehler trat beim Abrufen des Fehlertextes auf.
+WVER0241E.useraction=Es ist keine Benutzeraktion verfügbar.  Wiederholen Sie die angeforderte Operation, oder fordern Sie weitere Unterstützung an.
+
+# 
+WVER0242E=WVER0242E: Ausnahmebedingung bei der Verarbeitung von Protokolldaten
+WVER0242E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0242E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0243E=WVER0243E: Ausnahmebedingungen bei der Verarbeitung von Protokolldaten
+WVER0243E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0243E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+# 
+WVER0261E=WVER0261E: Die Anwendung von E-Fix {0} auf Komponente {1} in Datei {2} kann nicht aufgezeichnet werden.  Die genannte Datei konnte nicht gespeichert werden.
+WVER0261E.explanation=Die genannte Datei konnte nicht gespeichert werden.
+WVER0261E.useraction=Stellen Sie sicher, dass Schreibzugriff auf die Zieldatei besteht und Speicherbereich für eine neue Datei verfügbar ist.
+
+# 
+WVER0262E=WVER0262E: Die Entfernung der Anwendung von E-Fix {0} auf Komponente {1} in Datei {2} kann nicht aufgezeichnet werden.  Die genannte Datei konnte nicht gespeichert werden.
+WVER0262E.explanation=Die genannte Datei konnte nicht gespeichert werden.
+WVER0262E.useraction=Stellen Sie sicher, dass Schreibzugriff auf die Zieldatei besteht und Speicherbereich für eine neue Datei verfügbar ist.
+
+# 
+WVER0263E=WVER0263E: Die Entfernung der Anwendung von E-Fix {0} auf Komponente {1}, die in Datei {2} gespeichert ist, kann nicht aufgezeichnet werden.  Die genannte Datei konnte nicht entfernt werden.
+WVER0263E.explanation=Die genannte Datei konnte nicht entfernt werden.
+WVER0263E.useraction=Stellen Sie sicher, dass die Zieldatei entfernt werden kann.
+
+# 
+WVER0264E=WVER0264E: Die Entfernung der Anwendung von E-Fix {0} auf Komponente {1} kann nicht aufgezeichnet werden -- Es ist keine Anwendung eingetragen.
+WVER0264E.explanation=Für die Komponente ist keine Anwendung des genannten E-Fixes eingetragen.  Möglicherweise ist die Produktinformation fehlerhaft oder ein interner Fehler aufgetreten.
+WVER0264E.useraction=Wenden Sie sich an den Support, wenn Sie weitere Informationen benötigen.
+
+# 
+WVER0265E=WVER0265E: E-Fix-Treiber {0}, der in Datei {2} gespeichert ist, kann nicht entfernt werden.
+WVER0265E.explanation=Die genannte Datei konnte nicht entfernt werden.
+WVER0265E.useraction=Stellen Sie sicher, dass die Zieldatei entfernt werden kann.
+
+# 
+WVER0266E=WVER0266E: Behebbare Fehler bei der Syntaxanalyse von PTF-Treiberinformationen
+WVER0266E.explanation=Die Fehler, die im Folgenden aufgelistet werden, traten bei der Syntaxanalyse von PTF-Informationen auf.  Überprüfen Sie die aufgelisteten Fehler auf weitere Informationen.
+WVER0266E.useraction=Überprüfen Sie die aufgelisteten Fehler auf Vorschläge für Benutzeraktionen.
+
+# 
+WVER0267E=WVER0267E: Die Entfernung der Anwendung von PTF {0} auf Komponente {1} in Datei {2} kann nicht aufgezeichnet werden.  Die genannte Datei konnte nicht gespeichert werden.
+WVER0267E.explanation=Die genannte Datei konnte nicht gespeichert werden.
+WVER0267E.useraction=Stellen Sie sicher, dass Schreibzugriff auf die Zieldatei besteht und Speicherbereich für eine neue Datei verfügbar ist.
+
+# 
+WVER0268E=WVER0268E: Die Entfernung der Anwendung von PTF {0} auf Komponente {1}, die in Datei {2} gespeichert ist, kann nicht aufgezeichnet werden.  Die genannte Datei konnte nicht entfernt werden.
+WVER0268E.explanation=Die genannte Datei konnte nicht entfernt werden.
+WVER0268E.useraction=Stellen Sie sicher, dass die Zieldatei entfernt werden kann.
+
+# 
+WVER0269E=WVER0269E: Die Entfernung der Anwendung von PTF {0} auf Komponente {1} kann nicht aufgezeichnet werden -- Es ist keine Anwendung eingetragen.
+WVER0269E.explanation=Für die Komponente ist keine Anwendung der genannten PTF eingetragen.  Möglicherweise ist die Produktinformation fehlerhaft oder ein interner Fehler aufgetreten.
+WVER0269E.useraction=Wenden Sie sich an den Support, wenn Sie weitere Informationen benötigen.
+
+# 
+WVER0270E=WVER0270E: PTF-Treiber {0}, der in Datei {2} gespeichert ist, kann nicht entfernt werden.
+WVER0270E.explanation=Die genannte Datei konnte nicht entfernt werden.
+WVER0270E.useraction=Stellen Sie sicher, dass die Zieldatei entfernt werden kann.
+
+# 
+WVER0271E=WVER0271E: Nicht erkannte Dateierweiterung ''{0}'' für Produktprotokoll.
+WVER0271E.explanation=Beim Laden von Protokolldaten werden die Daten in Dateien mit bestimmten Erweiterungen gespeichert.  Die Erweiterungen bestimmen die Art der in den Dateien gespeicherten Informationen.  Gültige Erweiterungen sind '.efixDriver', '.efixApplied', '.ptfDriver' und '.ptfApplied'.  Es wurde versucht, eine Datei mit Versionsinformationen zu laden, deren Erweiterung keiner dieser gültigen Erweiterungen entspricht.
+WVER0271E.useraction=Dies weist auf einen internen Fehler hin.
+
+# 
+WVER0272E=WVER0272E: Ausnahmebedingung beim Lesen von {0}
+WVER0272E.explanation=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+WVER0272E.useraction=Überprüfen Sie die verschachtelten Ausnahmedetails auf weitere Informationen.
+
+label.standard.out=Standardausgabe
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Application Server - Protokollbericht
+report.header.update=IBM WebSphere Application Server - Protokollbericht für Aktualisierung {0}
+report.header.component=IBM WebSphere Application Server - Protokollbericht für Komponente {0}
+report.header.update.component=IBM WebSphere Application Server - Protokollbericht für Aktualisierung {0} und Komponente {1}
+
+warning.no.events=Achtung: Es sind keine Ereignisse verfügbar.
+warning.no.events.for.component=Achtung: Es sind keine Ereignisse für Komponente {0} verfügbar.
+warning.no.events.for.update=Achtung: Es sind keine Ereignisse für Aktualisierung {0} verfügbar.
+warning.no.events.for.update.component=Achtung: Es sind keine Ereignisse für Aktualisierung {0} und Komponente {1} verfügbar.
+
+info.report.on=Berichtsdatum/-uhrzeit: {0}
+
+report.footer=Ende Protokollbericht
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Installation
+label.product.dir=Produktverzeichnis
+label.version.dir=Versionsverzeichnis
+label.version.dtd.dir=DTD-Verzeichnis
+label.version.log.dir=Protokollverzeichnis
+label.version.backup.dir=Sicherungsverzeichnis
+label.version.tmp.dir=TMP-Verzeichnis
+label.version.history.dir=Protokollverzeichnis
+label.version.history.file=Protokolldatei
+
+info.event=Installationsereignis
+info.component.event=Komponenteninstallationsereignis
+
+label.efix.id=E-Fix-ID
+label.ptf.id=PTF-ID
+label.unknown.id=Unbekannte ID
+
+label.action=Aktion
+
+label.start.time.stamp=Startzeit
+label.end.time.stamp=Endzeit
+
+label.log.file.name=Protokolldateiname
+
+
+label.component.name=Komponentenname
+
+label.is.custom=Ist angepasst
+label.primary.content=Primärer Inhalt
+
+label.update.type=Aktualisierungsaktion
+
+label.is.external=Ist extern
+label.root.property.file=Stamm-Eigenschaftendatei
+label.root.property.name=Stamm-Eigenschaftenname
+label.root.property.value=Stamm-Eigenschaftenwert
+
+label.backup.file.name=Sicherungsdateiname
+label.result=Ergebnis
+label.result.message=Ergebnisnachricht
+
+label.initial.version=Erste Version
+label.initial.spec.version=Erste Spezifikation
+label.initial.build.date=Erstes Build-Datum
+
+label.final.version=Letzte Version
+label.final.spec.version=Letzte Versionsspezifikation
+label.final.build.date=Letztes Build-Datum
+
+
+label.install.action=Installation
+label.uninstall.action=Deinstallation
+label.selective.install.action=Selektive Installation
+label.selective.uninstall.action=Selektive Deinstallation
+label.unknown.action=*** UNBEKANNTE EREIGNISAKTION ***
+
+label.update.add.tag=Hinzufügen
+label.update.replace.tag=Ersetzen
+label.update.remove.tag=Entfernen
+label.update.patch.tag=Programmkorrektur
+label.update.composite.tag=Kombination
+label.update.unknown.tag=*** UNBEKANNTER AKTUALISIERUNGSTYP ***
+
+label.result.succeeded.tag=Erfolgreich
+label.result.failed.tag=Fehlgeschlagen
+label.result.cancelled.tag=Abgebrochen
+label.result.unknown.tag=*** UNBEKANNTES EREIGNISERGEBNIS ***
+
+label.true=Wahr
+label.false=Falsch

@@ -1,0 +1,14 @@
+[
+   {
+      "command": "\/tmp\/ic5customizeTDI\/ic5customizeTDI.sh",
+      "description": "This script package configures TDI 7.1.1 FP3 with the GIS ( ldap.gish.de ) credentials and installs a crontab for sync",
+      "execmode": 3,
+      "filename": "ic5customizeTDI.zip",
+      "location": "\/tmp\/ic5customizeTDI",
+      "log": "\/tmp\/ic5customizeTDI\/logs",
+      "name": "ic5customizeTDI",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION"
+   }
+]

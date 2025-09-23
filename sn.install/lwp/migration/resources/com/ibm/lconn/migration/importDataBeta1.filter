@@ -1,0 +1,66 @@
+## ***************************************************************** */
+##                                                                   */
+## IBM Confidential                                                  */
+##                                                                   */
+## OCO Source Materials                                              */
+##                                                                   */
+## (C) Copyright IBM Corp. 2008                                      */
+##                                                                   */
+## The source code for this program is not published or otherwise    */
+## divested of its trade secrets, irrespective of what has been      */
+## deposited with the U.S. Copyright Office.                         */
+##                                                                   */
+## ***************************************************************** */
+
+CLASS com.ibm.lconn.commom.operator.FilterExecOperator /com/ibm/lconn/migration/backup_20.filter
+
+LOG ========== Starting importing data ===============
+
+CONDITION NULL
+CONDITION activities.installed true
+CONDITION activities.source.data.exist true
+#CONDITION activities.version 2.0.0
+LOG ========== Activities =====================================
+LOAD_PROPERTY ${activities.home}/activities.properties
+FILE_COPY migrationData/source/data/activities/content>>${activities.objectstore.file.directory}>>true>>true
+FILE_COPY migrationData/source/data/activities/statistic>>${activities.statistic.directory}>>true>>true
+
+CONDITION NULL
+CONDITION blogs.installed true
+CONDITION blogs.source.data.exist true
+#CONDITION blogs.version 2.0.0
+LOG ========== Blogs ==========================================
+LOAD_PROPERTY ${blogs.home}/blogs.properties
+FILE_COPY migrationData/source/data/blogs/upload>>${blogs.UploadDirectory}>>true>>true
+
+
+CONDITION NULL
+CONDITION communities.installed true
+CONDITION communities.source.data.exist true
+#CONDITION communities.version 2.0.0
+LOG ========== Communities ====================================
+LOG Nothing. 
+
+CONDITION NULL
+CONDITION dogear.installed true
+CONDITION dogear.source.data.exist true
+#CONDITION dogear.version 2.0.0
+LOG ========== Dogear =========================================
+LOG Nothing. 
+
+CONDITION NULL
+CONDITION profiles.installed true
+CONDITION profiles.source.data.exist true
+#CONDITION profiles.version 2.0.0
+LOG ========== Profiles =======================================
+LOG Nothing. 
+
+CONDITION NULL
+CONDITION homepage.installed true
+CONDITION homepage.source.data.exist true
+#CONDITION homepage.version 2.0.0
+LOG ========== Homepage =======================================
+LOG Nothing.
+
+CONDITION NULL
+LOG ========== Importing data completed =================

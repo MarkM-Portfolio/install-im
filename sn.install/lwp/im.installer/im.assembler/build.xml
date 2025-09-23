@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * IBM Licensed Material
+ * 
+ * Copyright IBM Corp. 2006, 2016
+ * 
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has been
+ * deposited with the U.S. Copyright Office.
+ * 
+-->
+<project name="im.installer/im.assembler" default="development" basedir="."> 
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+
+	<import file="${env.WPLC_IMPORT}/check.xml"/>
+	<import file="${env.WPLC_IMPORT}/compile.xml"/>
+	<import file="${env.WPLC_IMPORT}/rmic.xml"/>
+	<import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+	<import file="${env.WPLC_IMPORT}/javadoc.xml"/>
+	<import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+	<import file="${env.WPLC_IMPORT}/clean.xml"/>
+	<import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+	<import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+	<import file="${env.WPLC_IMPORT}/performance.xml"/>  
+
+	<property environment="env" />
+	<property name="ccmDomainTool" value="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool" />
+	<property name="waltz.tool" value="${dir.build}/setup/extensions/feature.config/ccm/waltz" />
+	
+	<target name="development" depends="addTools, collcect_migration_xsl_files"/>
+	<target name="production" depends="addTools, collcect_migration_xsl_files"/>
+	
+	<target name="addTools">
+		<locateComponent component="directory.services.jre15" property="directory.services.jre15" locateBuildDir="true" />
+		<locateComponent component="lc.customauthclient.jre15" property="lc.customauthclient.jre15" locateBuildDir="true" />
+
+
+		<!--
+		<locateComponent component="filenet.integration/waltz.tool" property="waltz.tool" locatebuilddir="false" />
+		-->
+		<locateComponent component="lc.live.installer" property="lc.live.installer" locatebuilddir="true" />
+		
+		<mkdir dir="${env.LWP_HOME}/setup/HCL_Connections_Install/tools" />
+		
+		<copy todir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool" overwrite="true">
+			<fileset dir="./cdfiles/feature.config/common/ccmDomainTool">
+				<include name="src/**" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/bin" />
+
+		<locateComponent component="prereq.commons.httpclient" property="prereqCommonsHttpClient" locatebuilddir="false" />
+
+		<javac srcdir="./cdfiles/feature.config/common/ccmDomainTool/src" destdir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/bin" includes="com/ibm/connections/ccmDomainTool/*.java" fork="yes" verbose="no" classpath="./cdfiles/feature.config/common/ccmDomainTool/lib/Jace.jar:${prereqCommonsHttpClient}/lib/commons-codec-1.3.jar" executable="${env.JAVA_HOME}/bin/javac">
+		</javac>
+
+		<mkdir dir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/lib" />
+		<jar destfile="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/ccmDomainTool.jar" basedir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/bin">
+			<manifest>
+				<attribute name="Main-Class" value="ccmDomainTool" />
+			</manifest>
+		</jar>
+
+		<copy todir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool" overwrite="true">
+			<fileset dir="./cdfiles/feature.config/common/ccmDomainTool">
+				<exclude name="ccmUpdate.*" />
+				<include name="*.sh" />
+				<include name="*.bat" />
+				<include name="*.py" />
+			</fileset>
+			<fileset dir="${prereqCommonsHttpClient}">
+				<include name="**/commons-codec-1.3.jar" />
+			</fileset>
+		</copy>
+		<!-- Files already there from copy operation at start of this task, so let's delete them -->
+		<delete failonerror="false">
+			<fileset dir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool">
+				<include name="ccmUpdate.*" />
+			</fileset>
+		</delete>
+
+		<copy todir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool" overwrite="true">
+			<fileset dir="./cdfiles/feature.config/common/tools">
+				<include name="wkplc_GetDMInfo.py" />
+			</fileset>
+		</copy>
+
+		<delete dir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/bin">
+		</delete>
+		<delete dir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/src">
+		</delete>
+		
+		<copy todir="${dir.build}">
+			<fileset dir="${dir.build}/setup/extensions/feature.config/common" includes="ccmDomainTool/**" />
+		</copy>
+		
+		<!-- 
+		<zip destfile="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool_5.5.0.0.zip" basedir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool" includes="*,lib/commons-codec-1.3.jar" />
+		<zip destfile="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool_5.5.0.0.tar" basedir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool" includes="*,lib/commons-codec-1.3.jar" />
+		
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/tools">
+			<fileset dir="${dir.build}/setup/extensions/feature.config/common" includes="ccmDomainTool_5.5.0.0.zip" />
+		</copy>
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/tools">
+			<fileset dir="${dir.build}/setup/extensions/feature.config/common" includes="ccmDomainTool_5.5.0.0.tar" />
+		</copy>
+		
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/HCLConnections/ccmDomainTool">
+			<fileset dir="${dir.build}/setup/extensions/feature.config/common" includes="ccmDomainTool_5.5.0.0.zip" />
+		</copy>
+		
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/HCLConnections/ccmDomainTool">
+			<fileset dir="${dir.build}/setup/extensions/feature.config/common" includes="ccmDomainTool_5.5.0.0.tar" />
+		</copy>
+		-->
+		
+		<!--<delete dir="${dir.build}/setup/extensions/feature.config/common/ccmDomainTool/lib" />-->
+		
+		<copy todir="${basedir}/cdfiles/feature.config/ccm/waltz">
+			<fileset dir="${directory.services.jre15}/XML" />
+		</copy>
+		
+		<copy todir="${basedir}/cdfiles/feature.config/ccm/waltz">
+			<fileset dir="${lc.customauthclient.jre15}/XML" />
+		</copy>		
+		
+		<!--
+ 		<zip destfile="${dir.build}/setup/extensions/feature.config/ccm/waltz/waltz.zip">
+			<fileset dir="${basedir}/cdfiles/feature.config/ccm/waltz" excludes="**/apache-ant-1.8.2-bin.tar.gz" />
+ 			<fileset dir="${directory.services.jre15}/XML" />
+			<fileset dir="${lc.customauthclient.jre15}/XML" />
+		</zip>
+		
+
+		<tar destfile="${dir.build}/setup/extensions/feature.config/ccm/waltz/waltz.tar">
+			<fileset dir="${basedir}/cdfiles/feature.config/ccm/waltz" excludes="**/apache-ant-1.8.2-bin.zip" />
+			<fileset dir="${directory.services.jre15}/XML" />
+			<fileset dir="${lc.customauthclient.jre15}/XML" />
+		</tar>
+		-->
+		
+		<!--
+		<mkdir dir="${dir.build}/setup/HCL_Connections_Content_Manager" />
+		<zip destfile="${dir.build}/setup/HCL_Connections_Content_Manager/waltz.zip">
+			<fileset dir="${basedir}/cdfiles/feature.config/ccm/waltz" excludes="**/apache-ant-1.8.2-bin.tar.gz" />
+			<fileset dir="${directory.services.jre15}/XML" />
+			<fileset dir="${lc.customauthclient.jre15}/XML" />
+		</zip>
+
+		<tar destfile="${dir.build}/setup/HCL_Connections_Content_Manager/waltz.tar">
+			<fileset dir="${basedir}/cdfiles/feature.config/ccm/waltz" excludes="**/apache-ant-1.8.2-bin.zip" />
+			<fileset dir="${directory.services.jre15}/XML" />
+			<fileset dir="${lc.customauthclient.jre15}/XML" />
+		</tar>
+
+		<copy todir="${dir.build}/setup/extensions/feature.config/ccm/ccm/ccm/waltz-jre15" overwrite="true">
+			<fileset dir="${directory.services.jre15}/lib" />
+			<fileset dir="${lc.customauthclient.jre15}/lib" />
+		</copy>
+
+		<mkdir dir="${dir.build}/setup/extensions/feature.config/ccm/ccm/ccm/waltz-jre15/APP-INF/APP-INF/lib" />
+		<copy todir="${dir.build}/setup/extensions/feature.config/ccm/ccm/ccm/waltz-jre15/APP-INF/APP-INF/lib" overwrite="true">
+			<fileset dir="${directory.services.jre15}/lib" />
+			<fileset dir="${lc.customauthclient.jre15}/lib" />
+		</copy>
+		<zip destfile="${dir.build}/setup/extensions/feature.config/ccm/ccm/ccm/waltz-jre15/APP-INF.zip">
+			<fileset dir="${dir.build}/setup/extensions/feature.config/ccm/ccm/ccm/waltz-jre15/APP-INF" />
+		</zip>
+		-->
+		
+		<copy todir="${env.LWP_HOME}/setup/HCL_Connections_Install/tools">
+			<fileset dir="${lc.live.installer}/xkit" includes="tdisol.tar" />
+		</copy>
+		<zip destfile="${env.LWP_HOME}/setup/HCL_Connections_Install/tools/tdisol.zip">
+			<tarfileset src="${lc.live.installer}/xkit/tdisol.tar"/>
+		</zip>
+	</target>
+	
+	
+	<target name="collcect_migration_xsl_files">
+		<property name="dir.build.xslt.50_55" value="${dir.build}/setup/xslt/50_55" />
+		<property name="dir.build.xslt.55_60" value="${dir.build}/setup/xslt/55_60" />
+		
+		<locateComponent component="lc.live.installer" property="lc.live.installer" locatebuilddir="true" />
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-50-50CR1.xsl" casesensitive="false" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-50CR1-50CR2.xsl" casesensitive="false" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-50CR2-50CR3.xsl" casesensitive="false" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-50CR3-55.xsl" casesensitive="false" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-50CR1-55.xsl" casesensitive="false" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-55CR1-55CR2.xsl" casesensitive="false" />
+		</copy>
+
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-55-55CR1.xsl" casesensitive="false" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-55-60.xsl" casesensitive="false" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-55CR1-60.xsl" casesensitive="false" />
+		</copy>
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/*-update-55CR2-60.xsl" casesensitive="false" />
+		</copy>
+
+		<!-- Following files need special handling to allow it to be called in migration path -->
+		<!-- Migration path: 50 - 50CR1 - 50CR2 - 50CR3 - 55 -->
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/files-config-update-50-50CR2.xsl" casesensitive="false" />
+			<mapper type="glob" from="files-config-update-50-50CR2.xsl" to="files-config-update-50-50CR1.xsl" />
+		</copy>
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/files-config-update-50CR2-55.xsl" casesensitive="false" />
+			<mapper type="glob" from="files-config-update-50CR2-55.xsl" to="files-config-update-50CR3-55.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/wikis-config-update-50-50CR2.xsl" casesensitive="false" />
+			<mapper type="glob" from="wikis-config-update-50-50CR2.xsl" to="wikis-config-update-50-50CR1.xsl" />
+		</copy>
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/wikis-config-update-50CR2-55.xsl" casesensitive="false" />
+			<mapper type="glob" from="wikis-config-update-50CR2-55.xsl" to="wikis-config-update-50CR3-55.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/mobile-config-update-50CR1-55.xsl" casesensitive="false" />
+			<mapper type="glob" from="mobile-config-update-50CR1-55.xsl" to="mobile-config-update-50CR3-55.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/oa-config-update-50CR1-55.xsl" casesensitive="false" />
+			<mapper type="glob" from="oa-config-update-50CR1-55.xsl" to="oa-config-update-50CR3-55.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/search-config-update-50cr1-55.xsl" casesensitive="false" />
+			<mapper type="glob" from="search-config-update-50cr1-55.xsl" to="search-config-update-50cr3-55.xsl" />
+		</copy>
+		<copy todir="${dir.build.xslt.50_55}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/pushnotification-config-update-50cr1-55.xsl" casesensitive="false" />
+			<mapper type="glob" from="pushnotification-config-update-50cr1-55.xsl" to="pushnotification-config-update-50cr3-55.xsl" />
+		</copy>		
+		
+		
+		<!-- Migration path: 55 - 55CR1 - 55CR2 - 60 -->
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/metrics-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="metrics-config-update-55-60.xsl" to="metrics-config-update-55CR2-60.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/oa-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="oa-config-update-55-60.xsl" to="oa-config-update-55CR2-60.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/mobile-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="mobile-config-update-55-60.xsl" to="mobile-config-update-55CR2-60.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/profiles-config-update-55CR1-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="profiles-config-update-55CR1-60.xsl" to="profiles-config-update-55CR2-60.xsl" />
+		</copy>
+
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/files-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="files-config-update-55-60.xsl" to="files-config-update-55CR2-60.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/wikis-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="wikis-config-update-55-60.xsl" to="wikis-config-update-55CR2-60.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/search-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="search-config-update-55-60.xsl" to="search-config-update-55CR2-60.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/LotusConnections-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="LotusConnections-config-update-55-60.xsl" to="LotusConnections-config-update-55CR2-60.xsl" />
+		</copy>
+		
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/library-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="library-config-update-55-60.xsl" to="library-config-update-55CR2-60.xsl" />
+		</copy>
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/news-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="news-config-update-55-60.xsl" to="news-config-update-55CR2-60.xsl" />
+		</copy>
+		<copy todir="${dir.build.xslt.55_60}" overwrite="true" failonerror="false">
+			<fileset dir="${lc.live.installer}/xkit/migration" includes="**/pushnotification-config-update-55-60.xsl" casesensitive="false" />
+			<mapper type="glob" from="pushnotification-config-update-55-60.xsl" to="pushnotification-config-update-55CR2-60.xsl" />
+		</copy>
+	</target>
+	
+</project>

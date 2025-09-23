@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<fix id='8.5.0.2-WS-WASProd-IFPI15998' version='8.5.2.20140618_1604' assemblyId='8.5.0.2-WS-WASProd-IFPI15998a' assemblyVersion='8.5.2.20140618_1604' iseCount='5'>
+  <applicability>
+    <offering id='com.ibm.websphere.BASE.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.EXPRESS.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.ND.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.zOS.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.BASETRIAL.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.EXPRESSTRIAL.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.NDTRIAL.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.WEBENAB.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.DEVELOPERS.v85' tolerance='[8.5.2,8.5.5003)'/>
+    <offering id='com.ibm.websphere.DEVELOPERSILAN.v85' tolerance='[8.5.2,8.5.5003)'/>
+  </applicability>
+  <categories/>
+  <information name='8.5.0.2-WS-WASProd-IFPI15998' version='8.5.2.20140618_1604'>
+    EJBDEPLOY JDT HANGING
+  </information>
+  <property name='dependencies.bundles' value='com.ibm.im.dependency.was.apar:CheckAparDependencies'/>
+  <property name='im.tolerance' value='1.5.2000'/>
+  <property name='displayable.im.tolerance' value='1.5.2'/>
+  <property name='prereq.bundles' value='com.ibm.ws.detect.running.process.v80:DetectRunningProcessSelector,com.ibm.was.ifix.prereq.detect.temp.fix:DetectTempIFixSelector,com.ibm.was.ifix.prereq.osarch:DetectOSArchSelector'/>
+  <property name='beta.compatible' value='true'/>
+  <property name='recommended' value='false'/>
+  <property name='was.install.supported.os.arch' value='AllOS'/>
+  <property name='eclipseCompatibility' value='both'/>
+  <iu id='com.ibm.im.dependency.was.apar' version='999.999.999.-508116832' adapterId='eclipse'>
+    <selectedBy id='InstallDependencyHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.im.dependency.was.apar/1.0.7.v20110714_1849' type='plugin' exploded='false' downloadSize='68914' installSize='68914'/>
+      <agentBundle
+        id='com.ibm.im.dependency.was.apar'
+        version='1.0.7.v20110714_1849'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.ws.detect.running.process.v80' version='999.999.999.1146677777' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.ws.detect.running.process.v80/8.5.0.20120529_0000' type='plugin' exploded='false' downloadSize='64323' installSize='64323'/>
+      <agentBundle
+        id='com.ibm.ws.detect.running.process.v80'
+        version='8.5.0.20120529_0000'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.was.ifix.prereq.detect.temp.fix' version='999.999.999.-595851090' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.was.ifix.prereq.detect.temp.fix/8.0.0.201206111438' type='plugin' exploded='false' downloadSize='5735' installSize='5735'/>
+      <agentBundle
+        id='com.ibm.was.ifix.prereq.detect.temp.fix'
+        version='8.0.0.201206111438'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.ws.check.os.v80' version='999.999.999.1049846940' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.ws.check.os.v80/8.0.2.20130111_1128' type='plugin' exploded='false' downloadSize='71098' installSize='71098'/>
+      <agentBundle
+        id='com.ibm.ws.check.os.v80'
+        version='8.0.2.20130111_1128'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.was.ifix.prereq.osarch' version='999.999.999.-2065386692' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.was.ifix.prereq.osarch/8.0.0.201308131118' type='plugin' exploded='false' downloadSize='13029' installSize='13029'/>
+      <agentBundle
+        id='com.ibm.was.ifix.prereq.osarch'
+        version='8.0.0.201308131118'/>
+    </adapterSpecificData>
+  </iu>
+  <resolves problemCount='1' description='%resolves.description' showList='true'>
+    <problem id='com.ibm.ws.apar.PI15998' displayId='PI15998' description='PI15998'/>
+  </resolves>
+  <assembly id='8.5.0.2-WS-WASProd-IFPI15998a' version='8.5.2.20140618_1604' seCount='4'>
+    <selector id='fragment.core'/>
+    <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2' version='8.5.2.20140618_1604'/>
+    <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-4s-8.5.5002' version='8.5.5002.20140618_1604'/>
+    <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-2s-8.5.5000' version='8.5.5000.20140618_1604'/>
+    <includedSuFragment id='8.5.0.2-WS-WASProd-IFPI15998-3s-8.5.5001' version='8.5.5001.20140618_1604'/>
+  </assembly>
+  <suFragment id='8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2' version='8.5.2.20140618_1604' targetSuId='com.ibm.websphere.WAS.ejbdeploy' targetSuTolerance='[8.5.2,8.5.3)' iuCount='2'>
+    <property name='order.dependencies.categories' value='PI15998,PI15998_SUPERSEDABLE'/>
+    <property name='passive.order.dependencies' value='category:was.offering.su'/>
+    <selector id='fragment.core'>
+      <selectedByTarget id='required.com.ibm.websphere.WAS.ejbdeploy'/>
+    </selector>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i' version='8.5.2.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <selectedBy id='accessRights' value='group'/>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='9203354'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-ng-1i' version='8.5.2.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <not>
+            <selectedBy id='accessRights' value='group'/>
+          </not>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='18408756'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+  </suFragment>
+  <suFragment id='8.5.0.2-WS-WASProd-IFPI15998-4s-8.5.5002' version='8.5.5002.20140618_1604' targetSuId='com.ibm.websphere.WAS.ejbdeploy' targetSuTolerance='[8.5.5002.20140408_1947,99.0.0)' iuCount='2'>
+    <property name='order.dependencies.categories' value='PI15998,PI15998_SUPERSEDABLE'/>
+    <property name='passive.order.dependencies' value='category:was.offering.su'/>
+    <selector id='fragment.core'>
+      <selectedByTarget id='required.com.ibm.websphere.WAS.ejbdeploy'/>
+    </selector>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-4s-8.5.5002-1i' version='8.5.5002.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <selectedBy id='accessRights' value='group'/>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='9203354'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-4s-8.5.5002-ng-1i' version='8.5.5002.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <not>
+            <selectedBy id='accessRights' value='group'/>
+          </not>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='18408756'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+  </suFragment>
+  <suFragment id='8.5.0.2-WS-WASProd-IFPI15998-2s-8.5.5000' version='8.5.5000.20140618_1604' targetSuId='com.ibm.websphere.WAS.ejbdeploy' targetSuTolerance='[8.5.5000,8.5.5001)' iuCount='2'>
+    <property name='order.dependencies.categories' value='PI15998,PI15998_SUPERSEDABLE'/>
+    <property name='passive.order.dependencies' value='category:was.offering.su'/>
+    <selector id='fragment.core'>
+      <selectedByTarget id='required.com.ibm.websphere.WAS.ejbdeploy'/>
+    </selector>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-2s-8.5.5000-1i' version='8.5.5000.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <selectedBy id='accessRights' value='group'/>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='9203354'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-2s-8.5.5000-ng-1i' version='8.5.5000.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <not>
+            <selectedBy id='accessRights' value='group'/>
+          </not>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='18408756'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+  </suFragment>
+  <suFragment id='8.5.0.2-WS-WASProd-IFPI15998-3s-8.5.5001' version='8.5.5001.20140618_1604' targetSuId='com.ibm.websphere.WAS.ejbdeploy' targetSuTolerance='[8.5.5001.20131018_2242,8.5.5002.20140408_1947)' iuCount='2'>
+    <property name='order.dependencies.categories' value='PI15998,PI15998_SUPERSEDABLE'/>
+    <property name='passive.order.dependencies' value='category:was.offering.su'/>
+    <selector id='fragment.core'>
+      <selectedByTarget id='required.com.ibm.websphere.WAS.ejbdeploy'/>
+    </selector>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-3s-8.5.5001-1i' version='8.5.5001.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <selectedBy id='accessRights' value='group'/>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='9203354'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+    <iu id='8.5.0.2-WS-WASProd-IFPI15998-3s-8.5.5001-ng-1i' version='8.5.5001.20140618_1604' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <not>
+            <selectedBy id='accessRights' value='group'/>
+          </not>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='18408756'/>
+        <zip
+          key='artifact:/native/8.5.0.2-WS-WASProd-IFPI15998-1s-8.5.2-1i.file.operations/8.5.0.20140618_1604'
+          destination='${context:installLocation}'
+          overwrite='true' downloadSize='4379408' installSize='4600653'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3277' installSize='3277'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_uninstall_configure'>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/deploytool/itp/plugins/org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+  </suFragment>
+</fix>

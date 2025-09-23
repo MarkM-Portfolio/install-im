@@ -1,0 +1,27 @@
+[
+   {
+      "command": "sh \/tmp\/defaultadduser\/adduser",
+      "description": "Definierte einen weiteren Benutzer auf der virtuellen Maschine.",
+      "execmode": 0,
+      "filename": "defaultadduser.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "USERNAME"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "PASSWORD",
+            "type": "password"
+         }
+      ],
+      "location": "\/tmp\/defaultadduser",
+      "log": "\/tmp\/defaultadduser",
+      "name": "Default add user",
+      "ostype": "linux\/unix",
+      "timeout": 120000,
+      "type": "ADDON_USER"
+   }
+]

@@ -1,0 +1,310 @@
+Acuerdo Internacional de Programas bajo Licencia
+
+Parte 1 - Condiciones Generales
+
+EL LICENCIATARIO ACEPTA LOS T�RMINOS DE ESTE ACUERDO MEDIANTE LA DESCARGA, INSTALACI�N, COPIA, ACCESO, PULSANDO EL BOT�N "ACEPTAR" O MEDIANTE CUALQUIER TIPO DE UTILIZACI�N DEL PROGRAMA. SI EL CLIENTE ACEPTA ESTOS T�RMINOS EN NOMBRE DEL LICENCIATARIO, EL CLIENTE DECLARA Y GARANTIZA QUE TIENE PLENA AUTORIDAD PARA OBLIGAR AL LICENCIATARIO A CUMPLIR DICHOS T�RMINOS. SI EL CLIENTE NO ACEPTA ESTOS T�RMINOS, NO DEBER�
+
+- DESCARGAR, INSTALAR, COPIAR, ACCEDER, PULSAR EL BOT�N "ACEPTAR" NI USAR EL PROGRAMA; Y DEBER�
+
+- DEVOLVER INMEDIATAMENTE LOS MEDIOS NO UTILIZADOS, LA DOCUMENTACI�N Y EL DOCUMENTO DE TITULARIDAD A LA ENTIDAD A LA CUAL LOS ADQUIRI� PARA EL REEMBOLSO DEL IMPORTE PAGADO. SI EL PROGRAMA FUE DESCARGADO, DEBER�N DESTRUIRSE TODAS LAS COPIAS DEL PROGRAMA.
+
+1. Definiciones
+
+"Uso Autorizado" - es el nivel especificado para el cual el Licenciatario est� autorizado para ejecutar o hacer funcionar el Programa. Dicho nivel puede medirse por el n�mero de usuarios, millones de unidades de servicio ("MSUs"), Unidades de Valor de Procesador (Processor Value Units o "PVUs"), u otro nivel de uso especificado por IBM.
+
+"IBM" - International Business Machines Corporation o una de sus subsidiarias.
+
+"Informaci�n sobre Licencia" ("LI") - es un documento que proporciona informaci�n y cualquier t�rmino adicional espec�fico para un Programa. La LI del Programa est� disponible en www.ibm.com/software/sla. Tambi�n puede encontrar la LI en el directorio del Programa, mediante el uso de un mandato del sistema, o como un folleto informativo incluido en el Programa.
+
+"Programa" - es lo siguiente, incluyendo el original y cualquier copia total o parcial de: 1) instrucciones y datos legibles por m�quina, 2) componentes, archivos y m�dulos, 3) contenido audiovisual (como im�genes, texto, grabaciones o dibujos), y 4) materiales bajo licencia relacionados (como claves y documentaci�n).
+
+"Documento de Titularidad" ("PoE") - es la prueba del Uso Autorizado del Licenciatario. El PoE es tambi�n la prueba que tiene el Licenciatario de su elegibilidad para recibir garant�as, futuras actualizaciones de precios, si las hubiera, y posibles oportunidades promocionales o especiales. Si IBM no proporcionara un PoE al Licenciatario, IBM puede aceptar como PoE el recibo original de venta u otro comprobante de venta de la parte (ya sea IBM o su distribuidor) a la cual el Licenciatario adquiri� el Programa, siempre que se especifique el nombre del Programa y el Uso Autorizado obtenido.
+
+"Periodo de Garant�a" - es un a�o, empezando en la fecha en la que se le concedi� la licencia al Licenciatario original.
+
+2. Estructura del Acuerdo
+
+Este Acuerdo incluye la Parte 1 - Condiciones Generales, Parte 2 - Condiciones exclusivas para cada pa�s (si las hubiera), la Informaci�n sobre Licencia y el Documento de titularidad que constituyen el acuerdo completo entre el Licenciatario e IBM en relaci�n al uso del Programa. Sustituye a cualquier comunicaci�n oral o escrita anterior entre las partes en relaci�n al uso del Programa por parte del Licenciatario. Los t�rminos de la Parte 2 pueden sustituir o modificar los t�rminos de la Parte 1. En el supuesto de cualquier conflicto, los t�rminos de la LI prevalecen sobre los de ambas Partes.
+
+3. Licencia
+
+El Programa es propiedad de IBM o de un distribuidor de IBM y est� sujeto a derechos de autor y se otorga bajo licencia, no se vende.
+
+IBM le concede al Licenciatario una licencia no exclusiva para 1) utilizar el Programa seg�n los t�rminos establecidos en el Uso Autorizado especificado en el PoE, 2) realizar e instalar copias que respalden dicho Uso Autorizado, y 3) realizar una copia de seguridad, todo ello siempre y cuando:
+
+a. el Licenciatario haya obtenido el Programa de forma leg�tima y cumpla los t�rminos de este Acuerdo;
+
+b. la copia de seguridad no se ejecute a menos que el Programa del que se haya realizado la copia no pueda ejecutarse;
+
+c. el Licenciatario reproduzca todas las notificaciones de copyright y otros distintivos de titularidad en cada copia, o copia parcial del Programa;
+
+d. el Licenciatario se asegure de que cualquier persona que utilice el Programa (tanto si accede localmente o de forma remota): 1) lo hace �nicamente en nombre del Licenciatario, y 2) cumple los t�rminos de este Acuerdo;
+
+e. el Licenciatario no podr� 1) utilizar, copiar, modificar ni distribuir el Programa excepto del modo permitido expresamente en este Acuerdo; 2) desensamblar, descompilar, traducir de otro modo o realizar t�cnicas de ingenier�a inversa en el Programa, excepto en la medida permitida expresamente por ley sin posibilidad de renuncia contractual; 3) utilizar cualquiera de los componentes, archivos, m�dulos, contenido audiovisual del Programa, o materiales bajo licencia relacionados, de forma separada de dicho Programa; o 4) sublicenciar, alquilar o arriendar el Programa; y
+
+f. si el Licenciatario obtiene este Programa como un Programa de Soporte, el Licenciatario utilizar� el Programa �nicamente como soporte del Programa Principal y sujeto a cualquier limitaci�n de la licencia del Programa Principal, o, si el Licenciatario obtiene este Programa como Programa Principal, el Licenciatario utilizar� todos los Programas de Soporte �nicamente como soporte de este Programa y sujetos a cualquier limitaci�n establecida en este Acuerdo. A los efectos de este apartado "f," un "Programa de Soporte" es un Programa que forma parte de otro Programa de IBM ("Programa Principal") y se identifica como Programa de Soporte en la LI del Programa Principal. Para obtener una licencia independiente para un Programa de Soporte sin estas restricciones, el Licenciatario debe ponerse en contacto con la parte a la cual adquiri� el Programa de Soporte.
+
+Esta licencia se aplica a cada copia del Programa que realice el Licenciatario.
+
+3.1 Actualizaciones, Mejoras, Correcciones y Parches
+
+3.1.1 Actualizaciones
+
+Si se sustituye el Programa por una actualizaci�n, la licencia del Programa sustituido se rescindir� inmediatamente.
+
+3.1.2 Mejoras, Correcciones y Parches
+
+En el caso en que el Licenciatario reciba una mejora, correcci�n o parche para un Programa, el Licenciatario acepta cualquier t�rmino adicional o diferente que sea aplicable a dicha mejora, correcci�n o parche que est� especificada en su LI. Si no se proporcionan t�rminos adicionales o diferentes, la mejora, correcci�n o parche estar� sujeto �nicamente a este Acuerdo. Si el Programa se sustituye por una mejora, el Licenciatario acuerda interrumpir inmediatamente el uso del Programa sustituido.
+
+3.2 Licencias a Plazo Fijo
+
+Si IBM otorga el Programa bajo licencia durante un plazo determinado, la licencia del Licenciatario terminar� al final del plazo determinado, a menos que el Licenciatario e IBM acuerden su renovaci�n.
+
+3.3 Vigencia y Terminaci�n
+
+Los t�rminos de este Acuerdo son efectivos hasta su terminaci�n.
+
+IBM puede terminar la licencia del Licenciatario en caso que �ste incumpla los t�rminos de este Acuerdo.
+
+En el caso en que cualquiera de las partes termine la licencia por cualquier causa, el Licenciatario acuerda interrumpir el uso inmediatamente y destruir todas sus copias del Programa. Cualquier t�rmino de este Acuerdo que por su car�cter tenga una vigencia superior a la terminaci�n del Acuerdo permanecer� en vigor hasta su cumplimiento y se aplicar� a los sucesores y cesionarios respectivos de ambas partes.
+
+4. Cargos
+
+Los Cargos se basan en el Uso Autorizado obtenido, que se especifica en el PoE. IBM no concede cr�ditos ni realiza reembolsos de los cargos ya vencidos o pagados, excepto si se especifica lo contrario en este Acuerdo.
+
+Si el Licenciatario desea aumentar su Uso Autorizado, el Licenciatario deber� notificarlo con antelaci�n a IBM o a un distribuidor autorizado de IBM y pagar cualquier cargo aplicable.
+
+5. Impuestos
+
+Si cualquier autoridad impone una tasa, impuesto, gravamen o cargo al Programa, con exclusi�n de aquellos impuestos relativos al beneficio neto empresarial de IBM, el Licenciatario acuerda pagar las cantidades correspondientes a dichos conceptos, tal y como se especifique en una factura, o presentar� la documentaci�n justificante de estar exento de los mismos. El Licenciatario es responsable de cualquier impuesto que grave la propiedad del Programa desde la fecha en la que el Licenciatario obtuvo el Programa. Si cualquier autoridad impone una tasa, impuesto, gravamen o cargo por la importaci�n o exportaci�n, traspaso, acceso o uso del Programa fuera del pa�s en el que se otorg� la licencia al Licenciatario, el Licenciatario acuerda ser responsable de, y pagar, cualquier cantidad impuesta.
+
+6. Garant�a de Devoluci�n
+
+Si el Licenciatario no est� satisfecho con el Programa por cualquier motivo y es el Licenciatario original, el Licenciatario puede terminar la licencia y obtener el reembolso del importe que ha pagado por el Programa, siempre y cuando el Licenciatario devuelva el Programa y el PoE a la parte a la cual adquiri� el Programa dentro del plazo de 30 d�as tras la fecha en la que se emiti� el PoE para el Licenciatario. Si la licencia es de plazo fijo y est� sujeta a renovaci�n, el Licenciatario podr� obtener un reembolso �nicamente si devuelve el Programa y su PoE dentro de los primeros 30 d�as del plazo inicial. Si el Licenciatario descarg� el Programa, el Licenciatario deber� ponerse en contacto con la parte a la cual adquiri� el Programa para recibir instrucciones sobre c�mo obtener el reembolso.
+
+7. Transferencia del Programa
+
+El Licenciatario puede transferir el Programa y todos sus derechos de licencia y obligaciones a cualquier tercero �nicamente si dicha parte acepta los t�rminos de este Acuerdo. Si cualquiera de las partes termina la licencia por cualquier motivo, se proh�be que el Licenciatario transfiera el Programa a un tercero. El Licenciatario no transferir� una parte: 1) del Programa, o 2) del Uso Autorizado del Programa. Cuando el Licenciatario transfiere el Programa, deber� transferir tambi�n una copia impresa de este Acuerdo, incluyendo la LI y el PoE. Despu�s de la transferencia, se considera terminada la licencia del Licenciatario.
+
+8. Garant�a y Exclusiones
+
+8.1 Limitaci�n de Garant�a
+
+IBM garantiza que cuando el Programa sea utilizado en el entorno operativo especificado cumplir� con sus especificaciones. Las especificaciones del Programa y la informaci�n sobre el entorno operativo especificado, pueden encontrarse en la documentaci�n que se adjunta al Programa (como el archivo "l�ame") o en otra informaci�n publicada por IBM (como en una carta de anuncio). El Licenciatario acepta que dicha documentaci�n y otros contenidos del Programa pueden proporcionarse s�lo en ingl�s, a menos que la legislaci�n local requiera lo contrario sin posibilidad de renuncia contractual o limitaci�n.
+
+La garant�a se aplica �nicamente a la parte no modificada del Programa. IBM no garantiza el funcionamiento ininterrumpido o libre de errores de un Programa, ni que IBM corregir� todos los defectos del Programa. El Licenciatario es responsable de los resultados obtenidos a partir del uso del Programa.
+
+Durante el Periodo de Garant�a, IBM proporciona acceso al Licenciatario a las bases de datos de IBM que contienen informaci�n sobre los defectos conocidos del Programa, las correcciones de dichos defectos, restricciones y circunvalaciones (bypass) sin cargo adicional. Para m�s informaci�n, consulte el manual de soporte de software de IBM (IBM Software Support Handbook) en www.ibm.com/software/support.
+
+Si el Programa no funciona conforme a lo garantizado durante el Periodo de Garant�a y no puede resolverse el problema con la informaci�n disponible en las bases de datos de IBM, el Licenciatario podr� devolver el Programa y su PoE a la parte (ya sea IBM o su distribuidor) a la cual adquiri� el Programa y recibir un reembolso del importe pagado por el Licenciatario. Tras la devoluci�n del Programa, finaliza la licencia del Licenciatario. Si el Licenciatario descarg� el Programa, el Licenciatario deber� ponerse en contacto con la parte a la cual adquiri� el Programa para recibir instrucciones sobre c�mo obtener el reembolso.
+
+8.2 Exclusiones
+
+ESTAS GARANT�AS SON LAS GARANT�AS EXCLUSIVAS DEL LICENCIATARIO Y SUSTITUYEN A CUALQUIER OTRA GARANT�A O CONDICI�N, EXPL�CITA O IMPL�CITA, INCLUIDAS PERO SIN LIMITARSE A, LAS GARANT�AS O CONDICIONES IMPL�CITAS DE COMERCIALIZACI�N, CALIDAD SATISFACTORIA, IDONEIDAD PARA UNA FINALIDAD CONCRETA, TITULARIDAD Y CUALQUIER GARANT�A O CONDICI�N DE NO INFRACCI�N DE LOS DERECHOS DE TERCEROS. LA EXCLUSI�N DE GARANT�AS EXPL�CITAS O IMPL�CITAS PUEDE NO ESTAR PERMITIDA POR ALGUNOS ESTADOS O JURISDICCIONES Y, POR TANTO, PUEDE QUE DICHA EXCLUSI�N NO SEA APLICABLE AL LICENCIATARIO. EN TAL CASO, LA DURACI�N DE DICHAS GARANT�AS SE LIMITA AL PERIODO DE GARANT�A. NO SE APLICAR�N GARANT�AS DESPU�S DE DICHO PERIODO. ALGUNOS ESTADOS O JURISDICCIONES NO PERMITEN LIMITACIONES EN CUANTO A LA DURACI�N DE UNA GARANT�A IMPL�CITA, POR LO PUEDE QUE LA LIMITACI�N ANTERIOR NO SEA APLICABLE AL LICENCIATARIO.
+
+ESTAS GARANT�AS OTORGAN UNOS DERECHOS LEGALES ESPEC�FICOS AL LICENCIATARIO. EL LICENCIATARIO PUEDE CONTAR ASIMISMO CON OTROS DERECHOS QUE VAR�AN SEG�N EL ESTADO O LA JURISDICCI�N.
+
+LAS GARANT�AS INCLUIDAS EN LA CL�USULA 8 "GARANT�A Y EXCLUSIONES" SON OTORGADAS EXCLUSIVAMENTE POR IBM. NO OBSTANTE, LAS EXENCIONES DE RESPONSABILIDAD EXPUESTAS EN ESTA CL�USULA 8.2 "EXCLUSIONES", SE APLICAN TAMBI�N A LOS PROVEEDORES DE IBM DEL C�DIGO DE TERCEROS. DICHOS PROVEEDORES PROPORCIONAN EL C�DIGO SIN GARANT�AS NI CONDICIONES DE NINGUNA CLASE. ESTE P�RRAFO NO ANULA LAS OBLIGACIONES DE GARANT�A DE IBM ESTABLECIDAS EN ESTE ACUERDO.
+
+9. Datos y Bases de Datos del Licenciatario
+
+Para ayudar al Licenciatario a aislar el origen de un problema con el Programa, IBM podr� solicitar que el Licenciatario: 1) permita que IBM acceda de forma remota al sistema del Licenciatario, o 2) env�e informaci�n sobre el Licenciatario o datos del sistema a IBM. No obstante, IBM no est� obligada a proporcionar dicha asistencia a menos que las Partes tengan un acuerdo, independiente y por escrito, mediante el cual IBM proporcione al Licenciatario dicho tipo de soporte t�cnico que no est� incluido en las obligaciones de garant�a de IBM en este Acuerdo. En cualquier caso, IBM utilizar� la informaci�n sobre errores y problemas para mejorar sus productos y servicios as� como para prestar asistencia con su oferta de servicios de mantenimiento relacionados. Con esa finalidad, IBM podr� utilizar a subcontratistas y Empresas IBM (incluyendo en uno o m�s pa�ses distintos del pa�s en el que se encuentra el Licenciatario) y el Licenciatario autoriza a IBM para ello.
+
+El Licenciatario permanecer� responsable de: 1) los datos y contenidos de cualquier base de datos que el Licenciatario ponga a disposici�n de IBM, 2) la selecci�n y la implementaci�n de los procedimientos y controles relacionados con el acceso, seguridad, encriptaci�n, uso y transmisi�n de los datos (incluyendo cualquier dato personal que pueda identificarse), y 3) las copias de seguridad y la recuperaci�n de cualquier base de datos y de cualquier dato almacenado. El Licenciatario no enviar� a IBM ni le permitir� acceso a datos personales y permanecer� responsable por cualquier coste razonable u otras cantidades que IBM tenga que hacer frente en relaci�n a cualquier informaci�n equivocadamente suministrada a IBM, o a la p�rdida o revelaci�n de la misma por IBM, incluso las originadas de reclamaciones de terceros.
+
+10. Limitaci�n de Responsabilidad
+
+Las limitaciones y exclusiones de esta Cl�usula 10 "Limitaci�n de Responsabilidad" se aplicar�n en la medida en que no las proh�ba la legislaci�n aplicable sin la posibilidad de una renuncia contractual.
+
+10.1 Aspectos por los que IBM Puede Ser Responsable
+
+Pueden surgir circunstancias en las cuales, debido a un incumplimiento de IBM de sus obligaciones contractuales u otra responsabilidad, el Licenciatario tuviera derecho a reclamar da�os a IBM. Independientemente de las razones por las que el Licenciatario tenga derecho a reclamar da�os a IBM (incluyendo un incumplimiento, negligencia, falsedad u otra reclamaci�n contractual o extracontractual), la responsabilidad de IBM por todas las reclamaciones que surjan de, en relaci�n con, cada Programa o que de otra manera surjan en relaci�n con este Acuerdo estar� limitada �nicamente a: 1) los da�os f�sicos a las personas (incluyendo la muerte) y da�os a las propiedades, y 2) otros da�os directos probados hasta el importe de los cargos (si el Programa est� sujeto a cargos de plazo determinado, hasta el importe de los cargos de doce meses) que ha pagado el Licenciatario por el Programa que sea objeto de la reclamaci�n.
+
+Este l�mite se aplica tambi�n a cualquier proveedor o desarrollador de Programas de IBM. Es la cantidad m�xima por la que IBM y sus proveedores y desarrolladores de Programas ser�n responsables colectivamente.
+
+10.2 Aspectos por los que IBM No Es Responsable
+
+BAJO NINGUNA CIRCUNSTANCIA, IBM, SUS PROVEEDORES O DESARROLLADORES DE PROGRAMAS SER�N RESPONSABLES, AUNQUE HUBIESEN SIDO INFORMADOS DE SU POSIBILIDAD, DE:
+
+a. LA P�RDIDA DE, O DA�O A LOS DATOS;
+
+b. DA�OS ESPECIALES, INCIDENTALES, PUNITIVOS, INDIRECTOS O CUALQUIER DA�O ECON�MICO CONSECUENCIAL; O
+
+c. P�RDIDA DE BENEFICIOS, NEGOCIOS, INGRESOS, PLUSVAL�AS O ECONOM�AS PREVISTAS.
+
+11. Verificaci�n
+
+A los efectos de esta Cl�usula 11 "Verificaci�n", "T�rminos del Programa IPLA" significa: 1) este Acuerdo as� como los Anexos aplicables y los documentos transaccionales proporcionados por IBM, y 2) las pol�ticas de software de IBM que pueden encontrarse en el sitio web sobre Pol�ticas de Software de IBM (www.ibm.com/softwarepolicies), incluyendo pero sin limitarse a las pol�ticas relativas a las copias de seguridad, condiciones para los precios de subcapacidad y migraci�n.
+
+Los derechos y obligaciones establecidos en esta Cl�usula 11 permanecer�n vigentes mientras el Licenciatario tenga una licencia en vigor para el Programa y durante los dos a�os siguientes.
+
+11.1 Proceso de Verificaci�n
+
+El Licenciatario acuerda crear, conservar y proporcionar a IBM y a sus auditores registros escritos precisos, salidas de las herramientas del sistema y otra informaci�n sobre el sistema suficiente para verificar que el uso de todos los Programas por parte del Licenciatario se realiza conforme a los T�rminos del Programa IPLA, incluyendo, sin limitarse, todos los t�rminos IBM sobre licencias y de calificaci�n de precios aplicables. El Licenciatario es responsable de: 1) asegurar que no excede su Uso Autorizado, y 2) actuar de conformidad con los T�rminos del Programa IPLA.
+
+Previa notificaci�n con antelaci�n suficiente, IBM podr� verificar el cumplimiento por parte del Licenciatario de los T�rminos del Programa IPLA en todas las ubicaciones y para todos los entornos en los que el Licenciatario utilice, con cualquier finalidad, los Programas sujetos a los T�rminos del Programa IPLA. Dicha verificaci�n se realizar� de manera que se minimice la interferencia en la operativa de negocio del Licenciatario, en las instalaciones del Licenciatario, y durante su horario habitual de trabajo. IBM podr� utilizar a un auditor independiente para ayudar en la verificaci�n, siempre que IBM tenga suscrito, por escrito y con anterioridad, un acuerdo de confidencialidad con dicho auditor.
+
+11.2 Resoluci�n
+
+IBM notificar� al Licenciatario, por escrito, si conforme a dicha verificaci�n el Licenciatario ha utilizado cualquier Programa sobrepasando su Uso Autorizado o no ha cumplido de otro modo con los T�rminos del Programa IPLA. El Licenciatario acuerda pagar, a la mayor brevedad posible, directamente a IBM los cargos que IBM especifique en una factura por: 1) cualquier uso en exceso, 2) el soporte por dicho uso en exceso durante el periodo que se ha realizado dicho uso en exceso o por dos a�os, lo que sea menor, y 3) cualquier cargo adicional y cualquier otra responsabilidad que el Cliente est� obligado a pagar como resultado de dicha verificaci�n.
+
+12. Notificaciones a Terceros
+
+El Programa puede incluir c�digo de terceros que IBM, no el tercero, otorga bajo licencia al Licenciatario en virtud de este Acuerdo. Las notificaciones, si las hubiera, para el c�digo de terceros, ("Notificaciones a Terceros") se incluyen �nicamente para informaci�n del Licenciatario. Estas notificaciones pueden encontrarse en los archivos de avisos del Programa. Se puede encontrar informaci�n sobre c�mo obtener un c�digo fuente para determinados c�digos de terceros en los Avisos de Terceros. Si en los Avisos de Terceros, IBM identifica el c�digo de terceros como "C�digo de Terceros Modificable", IBM autoriza al Licenciatario a: 1) modificar el C�digo de Terceros Modificable, y 2) realizar t�cnicas de ingenier�a inversa a los m�dulos del Programa que se conectan con el C�digo de Terceros Modificable, siempre y cuando su �nica finalidad sea depurar las modificaciones realizadas por el Licenciatario a dicho c�digo de terceros. Las obligaciones de servicio y soporte de IBM, si las hubiera, se aplican �nicamente al Programa sin modificar.
+
+13 General
+
+a. Nada de lo dispuesto en este Acuerdo afectar� a los derechos de los consumidores establecidos por ley que no puedan ser cancelados o limitados por contrato.
+
+b. En relaci�n con los Programas que IBM proporciona al Licenciatario de forma tangible, IBM cumple sus obligaciones de env�o y entrega en el momento en que se entreguen dichos Programas al transportista designado por IBM, salvo que las partes lo acuerden, por escrito, de otro modo.
+
+c. Si cualquier disposici�n de este Acuerdo se declara inv�lida o no exigible, las disposiciones restantes de este Acuerdo permanecer�n en vigor.
+
+d. El Licenciatario acuerda cumplir todas las leyes y normas aplicables sobre exportaciones e importaciones, incluyendo las normativas sobre sanciones y embargo de EE.UU. y las prohibiciones de exportaciones para ciertos usos o a determinados usuarios finales.
+
+e. El Licenciatario autoriza a International Business Machines Corporation y sus filiales (as� como a sus sucesores y cesionarios, contratistas e IBM Business Partners) para almacenar y utilizar la informaci�n de contacto del Licenciatario, en cualquier lugar en el que desarrollen su actividad empresarial, en relaci�n a los productos y servicios de IBM, o como consecuencia de la relaci�n empresarial de IBM con el Licenciatario.
+
+f. Cada parte dar� a la otra la oportunidad razonable de cumplir sus obligaciones en virtud del presente Acuerdo antes de reclamar a la otra por un incumplimiento de sus obligaciones contractuales. Las partes intentar�n resolver de buena fe cualesquiera controversias, desacuerdos o reclamaciones relacionadas con este Acuerdo.
+
+g. Salvo que se establezca de otra manera en la legislaci�n aplicable, sin posibilidad de renuncia contractual o limitaci�n: 1) ninguna de las partes interpondr� acci�n legal alguna, independientemente de la forma, relacionada con este Acuerdo transcurridos m�s de dos a�os desde que se produjo su causa; y 2) transcurrido dicho periodo de tiempo, cualquier acci�n legal que surgiera en relaci�n con el Acuerdo, as� como todos los respectivos derechos relacionados con dicha acci�n, prescribir�n.
+
+h. Ninguna de las partes ser� responsable del incumplimiento de cualquier obligaci�n debido a causas fuera de control.
+
+i. Este Acuerdo no crear� derecho alguno o causa de demanda para ning�n tercero, ni IBM ser� responsable de las reclamaciones al Cliente de terceros, salvo por lo especificado en la Cl�usula 10.1 "Aspectos por los que IBM Puede Ser Responsable" en relaci�n con da�os a las personas (incluyendo muerte) y a las propiedades de las que IBM sea legalmente responsable frente a dichos terceros.
+
+j. Al aceptar los t�rminos de este Acuerdo, ambas partes acuerdan que no se est�n basando en ninguna manifestaci�n que no est� incluida en este Acuerdo, incluyendo pero sin limitarse a cualquier manifestaci�n en relaci�n con: 1) el rendimiento o funcionamiento del Programa, distinto del expresamente garantizado en la Cl�usula 8 "Garant�a y Exclusiones" ; 2) las experiencias o recomendaciones de otras partes; o 3) cualquier resultado o ahorro que el Licenciatario pudiera obtener.
+
+k. IBM tiene firmados acuerdos con determinadas organizaciones (denominadas "IBM Business Partners") para promocionar, comercializar y dar soporte a ciertos Programas. Los IBM Business Partners permanecer�n independientes y son distintos de IBM. IBM no se hace responsable de las acciones o declaraciones de los IBM Business Partners ni de las obligaciones que �stos hayan contra�do con el Licenciatario.
+
+l. Los t�rminos de indemnizaci�n de propiedad intelectual y de licencia de otros acuerdos del Licenciatario con IBM (como las Condiciones Generales de IBM) no son de aplicaci�n a las licencias de Programas concedidas en virtud de este Acuerdo.
+
+13. �mbito Geogr�fico y Legislaci�n Aplicable
+
+14.1 Legislaci�n Aplicable
+
+Ambas partes aceptan la aplicaci�n de las leyes del pa�s en el que el Licenciatario haya obtenido la licencia del Programa a fin de regir, interpretar y asegurar el cumplimiento de los derechos, deberes y obligaciones del Licenciatario y de IBM, respectivamente, que puedan surgir en virtud de, o que est�n de cualquier manera relacionados con este Acuerdo, a pesar de cualquier posible conflicto de ley.
+
+No se aplican los t�rminos de la Convenci�n de las Naciones Unidas sobre los Contratos de Compraventa Internacional de Bienes.
+
+14.2 Jurisdicci�n
+
+Todos los derechos, deberes y obligaciones est�n sujetos a los tribunales del pa�s en el que el Licenciatario haya obtenido la licencia del Programa.
+
+Parte 2 - Condiciones Exclusivas para cada Pa�s
+
+Para las licencias otorgadas en los pa�ses especificados a continuaci�n, los siguientes t�rminos sustituyen o modifican los t�rminos incluidos en la Parte 1. Todos los t�rminos de la Parte 1 que no sean modificados por estas enmiendas permanecer�n sin cambios y en vigor. Esta Parte 2 se estructura del siguiente modo:
+
+- Enmiendas para varios pa�ses de la Parte 1, Cl�usula 14 "Legislaci�n Aplicable y Jurisdicci�n";
+
+- Enmiendas de otros t�rminos del Acuerdo para los pa�ses de Am�rica y
+
+- Enmiendas de otros t�rminos del Acuerdo para los pa�ses de Europa, Oriente Medio y �frica.
+
+Enmiendas para varios pa�ses de la Parte 1, Cl�usula 14 "Legislaci�n Aplicable y Jurisdicci�n"
+
+14.1 Legislaci�n Aplicable
+
+La frase "las leyes del pa�s en el que el Licenciatario haya obtenido la licencia del Programa" en el primer p�rrafo de la Cl�usula 14.1 "Legislaci�n Aplicable" se sustituye por las frases siguientes en los pa�ses que figuran a continuaci�n:
+
+AM�RICA
+
+(1) en M�xico: las leyes federales de la Rep�blica de M�xico;
+
+(2) en Venezuela: las leyes de la Rep�blica Bolivariana de Venezuela;
+
+14.2 Jurisdicci�n
+
+El siguiente p�rrafo pertenece al apartado de jurisdicci�n y sustituye a la Cl�usula 14.2 "Jurisdicci�n" tal y como se aplica a los pa�ses identificados en negrita a continuaci�n:
+
+Todos los derechos, deberes y obligaciones est�n sometidos a los tribunales del pa�s en el que el Licenciatario haya obtenido la licencia del Programa excepto en los pa�ses identificados a continuaci�n, en los que todas las disputas que surjan o se relacionen con este Acuerdo, incluyendo los procedimientos sumarios, se presentar�n ante y se someter�n a la jurisdicci�n exclusiva de los siguientes tribunales competentes:
+
+AM�RICA
+
+(1) en Argentina: el Tribunal de Comercio Ordinario de la ciudad de Buenos Aires,
+
+(2) en Chile: el Juzgado de lo Civil de Santiago;
+
+(3) en Ecuador: los jueces de lo civil de Quito para los procesos sumarios o ejecutivos (seg�n sea el caso);
+
+(4) en M�xico: los tribunales ubicados en Ciudad de M�xico, Distrito Federal;
+
+(5) en Per�: los jueces y tribunales del distrito judicial de Lima, Cercado;
+
+(6) en Uruguay: los tribunales de la ciudad de Montevideo; y
+
+(7) en Venezuela: los tribunales del �rea metropolitana de la ciudad de Caracas.
+
+EUROPA, ORIENTE MEDIO Y �FRICA
+
+(8) en Espa�a: los tribunales de Madrid.
+
+ENMIENDAS PARA LOS PA�SES DE AM�RICA
+
+PER�
+
+10. Limitaci�n de Responsabilidad
+
+Se a�ade lo siguiente al final de la Cl�usula 10 "Limitaci�n de Responsabilidad":
+
+Salvo que la legislaci�n lo requiera expresamente sin posibilidad de renuncia contractual, el Licenciatario e IBM tienen la intenci�n de que la limitaci�n de responsabilidad expuesta en esta cl�usula "Limitaci�n de Responsabilidad" se aplique a los da�os causados por todo tipo de reclamaciones y causa de acci�n. En el caso que un tribunal competente declare no exigible cualquier limitaci�n o exclusi�n de responsabilidad de esta cl�usula con respecto a una reclamaci�n o derecho de iniciar acciones legales concreto, las partes tienen la intenci�n de que se aplique a todas las dem�s reclamaciones y derechos de iniciar acciones legales hasta el grado m�ximo que permita la legislaci�n aplicable.
+
+10.1 Aspectos por los que IBM Puede Ser Responsable
+
+Se a�ade lo siguiente al final de la Cl�usula 10.1:
+
+De conformidad con el Art�culo 1328 del C�digo Civil de Per�, las limitaciones y exclusiones especificadas en este apartado no se aplicar�n a los da�os causados por conducta indebida intencionada ("dolo") o negligencia grave ("culpa inexcusable") por parte de IBM.
+
+ENMIENDAS PARA LOS PA�SES DE EUROPA, ORIENTE MEDIO, �FRICA (EMEA)
+
+ESTADOS MIEMBROS DE LA UNI�N EUROPEA
+
+8. Garant�a y Exclusiones
+
+Se a�ade lo siguiente a la Cl�usula 8 "Garant�a y Exclusiones":
+
+En la Uni�n Europea ("EU"), los consumidores tienen derechos legales en virtud de la legislaci�n nacional aplicable que rija la venta de bienes de consumo. Tales derechos no se ven afectados por las disposiciones expuestas en esta Cl�usula 8 "Garant�a y Exclusiones". El �mbito territorial de la Garant�a Limitada es todo el mundo.
+
+13. General
+
+Lo siguiente sustituye a la Cl�usula 13.e:
+
+(1) Definiciones - A los efectos de esta Cl�usula 13.e , se aplicar�n las siguientes definiciones adicionales:
+
+(a) Informaci�n Comercial de Contacto - se entender� como los datos de contacto relacionados al negocio, revelados a IBM por el Licenciatario, incluyendo nombres, puestos de trabajo, direcci�n profesional, n�meros de tel�fono y direcciones de correo electr�nico de los empleados y contratistas del Licenciatario. Para Austria, Italia y Suiza, la Informaci�n Comercial de Contacto incluye tambi�n informaci�n sobre el Cliente y sus contratistas como entidades legales (por ejemplo, datos sobre los ingresos del Cliente y otra informaci�n transaccional)
+
+(b) Personal Comercial de Contacto - se entender� como los empleados y contratistas del Licenciatario a los cuales se proporciona la Informaci�n Comercial de Contacto.
+
+(c) Autoridad de Protecci�n de Datos - se entender� como la autoridad establecida por la Legislaci�n de Protecci�n de Datos y Comunicaciones Electr�nicas en el pa�s aplicable o, para los pa�ses que no formen parte de la UE, la autoridad responsable de supervisar la protecci�n de los datos personales en dichos pa�ses o (para cualquiera de los anteriores) cualquier entidad debidamente designada para ello con posterioridad.
+
+(d) Legislaci�n de Protecci�n de Datos y Comunicaciones Electr�nicas - es: (i) la legislaci�n nacional espec�fica relacionada a la Directiva 46/95/CE, del Parlamento Europeo y del Consejo, de 24 de octubre de 1995, relativa a la protecci�n de las personas f�sicas en lo que respecta al tratamiento de datos personales y a la libre circulaci�n de estos datos, y Directiva 58/2002/CE, del Parlamento Europeo y del Consejo, de 12 de julio de 2002, relativa al tratamiento de los datos personales y a la protecci�n de la intimidad en el sector de las comunicaciones electr�nicas (Directiva sobre la privacidad y las comunicaciones electr�nicas); o (ii) para los pa�ses que no pertenezcan a la UE, significar� la legislaci�n espec�fica relevante aplicable en el respectivo pa�s relacionada con el uso y protecci�n de datos de car�cter personal y la intimidad en las comunicaciones electr�nicas, incluyendo (para cualquiera de los anteriores) cualquier normativa posterior que las sustituya o modifique.
+
+(e) Grupo IBM - International Business Machines Corporation, ubicada en Armonk, Nueva York, EE.UU., sus subsidiarias as� como sus respectivos Business Partners y subcontratistas.
+
+(2) El Licenciatario autoriza a IBM para:
+
+(a) procesar y utilizar la Informaci�n Comercial de Contacto dentro del Grupo IBM en beneficio del Licenciatario, incluyendo la prestaci�n de servicios de soporte y con el fin de gestionar la relaci�n empresarial entre el Licenciatario y el Grupo IBM, incluyendo, sin limitarse, a contactar con el Personal Comercial de Contacto (por correo electr�nico o por otra v�a) as� como el marketing de productos y servicios del Grupo IBM (la "Finalidad Espec�fica"); y
+
+(b) revelar la Informaci�n Comercial de Contacto a otros miembros del Grupo IBM �nicamente a los efectos de la Finalidad Espec�fica.
+
+(3) IBM acuerda que toda Informaci�n Comercial de Contacto se procesar� de conformidad con la Legislaci�n de Protecci�n de Datos y Comunicaciones Electr�nicas y se utilizar� �nicamente para la Finalidad Espec�fica.
+
+(4) El Licenciatario declara que, antes de proporcionar a IBM la Informaci�n Comercial de Contacto, ha obtenido o deber� obtener, cuando as� lo requiera la Legislaci�n de Protecci�n de Datos y Comunicaciones Electr�nicas, el consentimiento del Personal Comercial de Contacto, asimismo confirma que ha enviado o enviar� las notificaciones pertinentes a dicho Personal Comercial de Contacto, de manera que el Grupo IBM est� facultado para procesar o usar la Informaci�n Comercial de Contacto para contactar con ellos para la Finalidad Especificada.
+
+(5) El Licenciatario consiente que IBM transfiera la Informaci�n Comercial de Contacto fuera del Espacio Econ�mico Europeo, siempre y cuando dicha transferencia se realice bajo los t�rminos contractuales aprobados por la Autoridad de Protecci�n de Datos o por otra parte que la Legislaci�n de Protecci�n de Datos y Comunicaciones Electr�nicas permita la transferencia.
+
+Z125-3301-13 (05/2009)
+
+
+INFORMACI�N SOBRE LICENCIA
+
+Los Programas que se enumeran a continuaci�n se licencian bajo los siguientes t�rminos y condiciones, adem�s de los del Acuerdo Internacional de Programas bajo Licencia.
+
+Nombre de Programa: IBM Prerequisite Scanner R1.1
+N�mero de Programa: 5725-C13
+
+Componentes en C�digo Fuente
+
+El Programa puede incluir algunos componentes en formato de c�digo fuente ("Componente en C�digo Fuente"). El Licenciatario puede copiar y modificar los Componentes en C�digo Fuente �nicamente para uso interno, siempre que dicho uso est� dentro de los l�mites de los derechos de licencia bajo este Acuerdo, y siempre y cuando el Licenciatario no altere ni suprima ninguna informaci�n de copyright ni de avisos de los Componentes en C�digo Fuente. IBM proporciona los Componentes en C�digo Fuente sin ning�n tipo de obligaci�n de soporte y "TAL CUAL", SIN GARANT�A DE NING�N TIPO, NI IMPL�CITA NI EXPL�CITA, INCLUIDAS LA GARANT�A DE T�TULO, LA GARANT�A DE NO INFRACCI�N DE DERECHOS DE TERCEROS O LIBRE DE INTERFERENCIAS Y LAS GARANT�AS Y CONDICIONES IMPL�CITAS DE COMERCIALIZACI�N E IDONEIDAD PARA UNA FINALIDAD DETERMINADA.
+
+D/N:  L-JRCI-89W3MD
+P/N:  L-JRCI-89W3MD 

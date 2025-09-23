@@ -1,0 +1,314 @@
+#!/bin/bash
+
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure RESTRICTEd by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+#set -n
+####SPECIAL CASE,QUALIFIER####
+check=`echo $1 | grep ]`
+if [ $check ]; then
+
+####Getting the Values to be checked #####
+Parameter=`echo "$1" | cut -d "[" -f2 | cut -d "]" -f1 | cut -d ":" -f2`
+ExpValue=`echo "$1" | cut -d "]" -f2`
+
+	VALUE_STRING="a=ALL c=corefilesizelimit d=datasegmentlimit f=filesizelimit h=hardlimit m=maxmemorysizelimit n=filedescriptorlimit r=threadlimit s=stacksizelimit t=processlimit u=maxprocesseslimit"
+
+	for EachField in $VALUE_STRING
+	do 
+		###Parameter refining from script ###
+		SystemPara=`echo "$EachField" | cut -d "=" -f2`
+		SystemValue=`echo "$EachField" | cut -d "=" -f1`
+		if [ "$SystemPara" = "$Parameter" ]; then
+			UlimitOpt=$SystemValue
+			break
+		fi
+	done
+	ActVal=`ulimit -$UlimitOpt`
+	ResultString=""
+	###Getting the System values and comparing according to the Values given####
+	for EachVal in `echo "$ExpValue" | sed 's/,/ /g'`
+	do
+
+		####Validating the Value and deciding the Operator####
+		PlusFound=`echo "$EachVal" | grep "+"`
+		if [ $PlusFound ]; then
+			EachValue=`echo "$EachVal" | sed 's/.$/ /g'`
+			operator=ge
+		else
+			EachValue=$EachVal
+			operator=eq
+		fi
+		####Changing the "Unlimited String to Numeric Value to reduce The Code ####
+                EachValue=`echo "$EachValue" | sed 's/unlimited/999999/g'`
+                ActValue=`echo $ActVal | sed 's/unlimited/999999/g'`
+
+		if [ $ActValue -$operator $EachValue ]; then
+			ResultString=$ResultString" $Msg_AVAILABLE"
+		else
+			ResultString=$ResultString" $Msg_UNAVAILABLE"
+		fi
+	done
+	#echo $ResultString
+	###Validating the OutPut Based on Result String ###
+	PassFound=`echo "$ResultString" | grep -c "$Msg_AVAILABLE"`
+	#echo $PassFound
+	if [ $PassFound -gt 0 ]; then
+		echo "$Msg_AVAILABLE"
+	else
+		echo "$Msg_UNAVAILABLE"
+	fi
+exit	
+fi
+
+
+type=`uname`
+if [ "$type" = "SunOS" ]; then
+
+  cd /
+#echo `pwd`
+if [ -e .profile ] ; then
+        res=`grep "ulimit -s" .profile | awk '{print $3}'`
+#       echo $res
+        if [ "$res" = "unlimited" ] ; then
+                echo "$Msg_AVAILABLE"
+        else
+                echo "$Msg_UNAVAILABLE"
+        fi
+else
+        echo "$Msg_UNAVAILABLE"
+fi
+cd -
+exit
+fi
+
+
+if [ "$type" = "AIX" ]; then
+
+	flag=-1
+	flag1=-1
+	flag2=-1
+	flag3=-1
+	flag4=-1
+	cp=0
+	
+	ln0=`grep -ne ":" /etc/security/limits | grep -e "ctginst1:" | cut -d ":" -f1`
+	c0=`grep -ne ":" /etc/security/limits | grep -ne "ctginst1:" | cut -c 1`
+	c1=`expr $c0 + 1`
+	c2=`grep -ne ":" /etc/security/limits | sed -n $c1,${c1}p | cut -d ":" -f1` 
+	ln1=`expr $c2 - 1`
+
+	ln2=`grep -ne ":" /etc/security/limits | grep -e "root:" | cut -d ":" -f1`
+	c3=`grep -ne ":" /etc/security/limits | grep -ne "root:" | cut -c 1`
+	c4=`expr $c3 + 1`
+	c5=`grep -ne ":" /etc/security/limits | sed -n $c4,${c4}p | cut -d ":" -f1`
+	ln3=`expr $c5 - 1`
+
+	ln4=`grep -ne ":" /etc/security/limits | grep -e "tioadmin:" | cut -d ":" -f1`
+	c6=`grep -ne ":" /etc/security/limits | grep -ne "tioadmin:" | cut -c 1`
+	c7=`expr $c6 + 1`
+	c8=`grep -ne ":" /etc/security/limits | sed -n $c7,${c7}p | cut -d ":" -f1`
+	ln5=`expr $c8 - 1`
+
+	ln6=`grep -ne "^default:" -ne ":" /etc/security/limits  | grep default | cut -d ":" -f1`
+	ln7=`grep -ne "^default:" -ne ":" /etc/security/limits  | grep -n default | cut -c 1`
+	ln8=`expr $ln7 + 1`
+	ln9=`grep -ne "^default:" -ne ":" /etc/security/limits | sed -n $ln8,${ln8}p | cut -d ":" -f1`
+
+
+	cat /etc/security/limits | sed -n $ln0,${ln1}p > ctginst_par.txt
+	#cat /etc/security/limits | sed -e $ln0,$ln1d' > ctginst_par.txt
+
+	cat /etc/security/limits | sed -n $ln2,${ln3}p > root_par.txt
+
+	cat /etc/security/limits | sed -n $ln4,${ln5}p > tioadmin_par.txt
+
+	cat /etc/security/limits | sed -n $ln6,${ln9}p > default_par.txt
+
+	cat ctginst_par.txt > Main_par.txt
+
+	cat root_par.txt >> Main_par.txt
+
+	cat tioadmin_par.txt >> Main_par.txt
+	cat default_par.txt | sed '/^$/d' > default_par.txt1
+	count=`cat default_par.txt1 | wc -l`
+	count1=`expr $count - 2`
+	cat default_par.txt | sed 's/#/# /g' > File.txt
+
+	res8=`cat File.txt | cut -d " " -f1 | sed '/^$/d' | grep "#" | wc -l`
+
+
+
+	res0=`grep "fsize = -1" Main_par.txt | wc -l`
+
+	res1=`grep "cpu = -1" Main_par.txt | wc -l`
+
+	res2=`grep "data = -1" Main_par.txt | wc -l`
+
+	res3=`grep "rss = -1" Main_par.txt | wc -l`
+
+	res4=`grep "stack = -1" Main_par.txt | wc -l`
+
+	res5=`grep "stack_hard = -1" Main_par.txt | wc -l`
+
+	res6=`grep "nofiles = 8192" root_par.txt | wc -l`
+
+	res9=`grep "nofiles = 32767" tioadmin_par.txt | wc -l`
+
+	res7=`grep "nofiles_hard = 32767" Main_par.txt | wc -l`
+
+	res10=`cat Main_par.txt | grep '^$' | wc -l`
+
+	res11=`cat Main_par.txt | sed 's/ //g' | sed 's/	//g' | cut -c 1 | grep "#" | wc -l`
+
+	if [ $count -le 2 ]; then
+		res8=7
+		if [ $res8 -eq 7 ]; then
+			cp=1
+		else
+			cp=o
+
+        	fi
+	else
+                if [ $res8 -eq $count1 ]; then
+                        cp=1
+                else
+                        cp=0
+
+                fi
+	
+	fi
+	if [ $cp -eq 1 ]; then
+		if [ $res0 -eq 2 ]; then
+			if [ $res1 -eq 2 ]; then
+				flag=0
+			fi
+		fi
+
+		if [ $res2 -eq 2 ]; then
+			if [ $res3 -eq 2 ]; then
+				flag1=0
+			fi
+		fi
+
+		if [ $res4 -eq 2 ]; then
+			if [ $res5 -eq 2 ]; then
+				flag2=0
+			fi
+		fi
+
+		if [ $res6 -eq 1 ]; then
+			if [ $res7 -eq 1 ]; then
+				flag3=0
+			fi
+		fi
+
+		if [ $res9 -eq 1 ]; then
+			if [ $res10 -eq 0 ]; then
+				if [ $res11 -eq 0 ]; then
+					flag4=0
+				fi
+			fi
+		fi
+		if [ $flag -eq 0 -a $flag1 -eq 0 -a $flag2 -eq 0 -a $flag3 -eq 0 -a $flag4 -eq 0 ] ; then
+        		echo "$Msg_AVAILABLE"
+
+		else
+
+ 			echo "$Msg_UNAVAILABLE"
+
+		fi
+
+	else
+		echo "$Msg_UNAVAILABLE"
+
+	fi
+
+
+
+else
+
+
+	check=`cat /etc/issue | grep SUSE | cut -d' ' -f1`
+	if [ $check ]; then
+		res0=0
+		res1=0
+		check0=`grep "ulimit -v unlimited" /etc/profile | cut -d' ' -f1`
+		if [ "$check0" = "ulimit" ]; then
+			res0=1
+		else
+			res0=-1
+		fi
+
+		check1=`grep "ulimit -m unlimited" /etc/profile | cut -d' ' -f1`
+		if [ "$check1" = "ulimit" ]; then
+			res1=1
+		else
+			res1=-1
+		fi
+
+
+		if [ $res0 -eq 1 -a $res1 -eq 1 ]; then
+			echo "$Msg_AVAILABLE"
+  			exit
+		else
+			echo "$Msg_UNAVAILABLE"
+			exit
+		fi
+
+
+	fi
+
+
+	flag=0
+	flag1=0
+	flag2=0
+	flag3=0
+
+	check=`cat /etc/security/limits.conf | grep "root - stack unlimited" | cut -d' ' -f1`
+	if [ "$check" = "root" ]; then
+		flag=1
+	else
+		flag=-1
+	fi
+
+	check=`cat /etc/security/limits.conf | grep "ctginst1 - stack unlimited" | cut -d' ' -f1`
+	if [ "$check" = "ctginst1" ]; then
+		flag1=1
+	else
+		flag1=-1
+	fi
+
+	check=`cat /etc/security/limits.conf | grep "root - nofile 8192" | cut -d' ' -f1`
+	if [ "$check" = "root" ]; then
+		flag2=1
+	else
+		flag2=-1
+	fi
+
+	check=`cat /etc/security/limits.conf | grep "tioadmin - nofile 32767" | cut -d' ' -f1`
+	if [ "$check" = "tioadmin" ]; then
+		flag3=1
+	else
+		flag3=-1
+	fi
+
+	if [ $flag -eq 1 -a $flag1 -eq 1 -a $flag2 -eq 1 -a $flag3 -eq 1 ]; then
+		echo "$Msg_AVAILABLE"
+	else
+		echo "$Msg_UNAVAILABLE"
+	fi
+fi
+
+rm -f tioadmin_par.txt 2>/dev/null
+rm -f root_par.txt 2>/dev/null
+rm -f default_par.txt 2>/dev/null
+rm -f ctginst_par.txt 2>/dev/null
+rm -f Main_par.txt 2>/dev/null
+rm -f File.txt 2>/dev/null
+rm -f default_par.txt1 2>/dev/null

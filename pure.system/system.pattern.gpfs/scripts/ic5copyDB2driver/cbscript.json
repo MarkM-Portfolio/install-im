@@ -1,0 +1,31 @@
+[
+   {
+      "command": "\/tmp\/ic5copyDB2driver\/ic5copyDB2driver.sh",
+      "description": "This script pakage copys the required DB2 JDBC driver to the correct PATH",
+      "execmode": 3,
+      "filename": "ic5copyDB2driver.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         }
+      ],
+      "location": "\/tmp\/ic5copyDB2driver",
+      "log": "\/tmp\/ic5copyDB2driver\/logs",
+      "name": "ic5copyDB2driver",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: Fehler bei der Installation des Fixes: Beim Aktualisieren des in {0} gespeicherten Ereignisprotokolls ist eine Ausnahme aufgetreten.
+WUPD0200E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen. 
+WUPD0200E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0201E=WUPD0201E: Fehler bei der Installation des Fixes: Beim Öffnen der Protokolldatei "{0}" ist eine Ausnahme aufgetreten.
+WUPD0201E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen. 
+WUPD0201E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0211E=WUPD0211E: Fehler bei der Installation des Fixes: Beim Abrufen von Informationen zu den in der aktuellen Aktualisierung enthaltenen Komponenten ist eine Ausnahme aufgetreten.
+WUPD0211E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen. 
+WUPD0211E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0212E=WUPD0212E: Fehler bei der Installation des Fixes: Die Komponente "{0}" ist als Teil dieser Aktualisierung aufgelistet, es ist jedoch kein Image für die Aktualisierung der Komponente verfügbar.
+WUPD0212E.explanation=Der Teil des Fixes, der für die Aktualisierung der betreffenden Komponente verwendet wird, ist nicht verfügbar.
+WUPD0212E.useraction=Dieser Fehler weist auf einen internen Fehler hin. Weitere Informationen erhalten Sie von der IBM Unterstützungsfunktion.
+
+WUPD0214E=WUPD0214E: Fehler bei der Installation des Fixes: Beim Aufzeichnen der Anwendung des Fixes "{0}" aus der Fix-JAR-Datei "{1}" ist eine Ausnahme aufgetreten.
+WUPD0214E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen. 
+WUPD0214E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0215E=WUPD0215E: Fehler bei der Installation des Fixes: Die Komponente "{0}" konnte nicht installiert werden.
+WUPD0215E.explanation=Weitere Details hierzu finden Sie im Installationsprotokoll und in der Ereignisprotokolldatei.
+WUPD0215E.useraction=Weitere Details hierzu finden Sie im Installationsprotokoll und in der Ereignisprotokolldatei.
+
+WUPD0216E=WUPD0216E: Fehler bei der Installation des Fixes: Beim Markieren der Anwendung des Fixes "{0}" für die Komponente "{1}" ist eine Ausnahme aufgetreten.
+WUPD0216E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen. 
+WUPD0216E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+
+WUPD0220E=WUPD0220E: Fehler bei der Deinstallation des Fixes: Die Datei für den Fix "{0}" ist nicht vorhanden.
+WUPD0220E.explanation=Es wurde versucht, einen Fix zu entfernen, der nicht als installiert markiert ist.
+WUPD0220E.useraction=Dieser Fehler weist auf einen internen Fehler hin. Es sollte nicht versucht werden, einen nicht installierten Fix zu entfernen.
+
+WUPD0221E=WUPD0221E: Fehler bei der Deinstallation des Fixes: Die Datei für den Fix "{0}" konnte nicht gelesen werden.
+WUPD0221E.explanation=Die Datei für den betreffenden Fix konnte nicht gelesen werden. Der Deinstallationvorgang läuft in einer Endlosschleife.
+WUPD0221E.useraction=Überprüfen Sie, ob die Datei, die den betreffenden Fix enthält, gültig ist.
+
+WUPD0222E=WUPD0222E: Fehler bei der Deinstallation des Fixes: Beim Löschen der Anwendung des Fixes "{0}" ist eine Ausnahme aufgetreten.
+WUPD0222E.explanation=Bei der Deinstallation des Fixes ist eine Ausnahme aufgetreten; die Deinstallation ist fehlgeschlagen. 
+WUPD0222E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0223E=WUPD0223E: Fehler bei der Deinstallation des Fixes: Die Aktualisierung für die Komponente "{1}" für den Fix "{0}" konnte nicht deinstalliert werden.
+WUPD0223E.explanation=Die betreffende Komponente wurde als Teil des betreffenden Fixes aktualisiert. Diese Komponente konnte nicht entfernt werden.
+WUPD0223E.useraction=Dieser Fehler weist auf einen internen Fehler hin. Weitere Informationen erhalten Sie von der IBM Unterstützungsfunktion.
+
+WUPD0224E=WUPD0224E: Fehler bei der Deinstallation des Fixes: Beim Löschen der Anwendung des Fixes "{0}" aus der Komponente "{1}" ist eine Ausnahme aufgetreten.
+WUPD0224E.explanation=Bei der Deinstallation des Fixes ist eine Ausnahme aufgetreten; die Deinstallation ist fehlgeschlagen. 
+WUPD0224E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0232E=WUPD0232E: Fehler bei der Aktualisierung des Fixes: Beim Abrufen des folgenden Inhalts ist eine Ausnahme aufgetreten: Fix "{0}", Komponente "{1}", Fix-JAR-Datei "{2}", Eintrag "{3}"
+WUPD0232E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen. 
+WUPD0232E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0233E=WUPD0233E: Fehler bei der Aktualisierung des Fixes: Bei der Vorverarbeitung des folgenden Inhalts ist eine Ausnahme aufgetreten: Fix "{0}", Komponente "{1}"
+WUPD0233E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen.
+WUPD0233E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0234E=WUPD0234E: Fehler bei der Aktualisierung des Fixes: Beim Verarbeiten des folgenden Inhalts ist eine Ausnahme aufgetreten: Fix "{0}", Komponente "{1}"
+WUPD0234E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen.
+WUPD0234E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0235E=WUPD0235E: Fehler bei der Aktualisierung des Fixes: Die Verarbeitung von Fix "{0}", Komponente "{1}" ist fehlgeschlagen. Details zur Verarbeitung finden Sie in der Protokolldatei "{2}".
+WUPD0235E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen.
+WUPD0235E.useraction=Lesen Sie die Verarbeitungsinformationen in der aufgelisteten Protokolldatei.
+
+WUPD0236E=WUPD0236E: Fehler bei der Aktualisierung des Fixes: Ausnahme beim Vorbereiten der Protokoll- und Sicherungsverzeichnisse
+WUPD0236E.explanation=Bei der Installation des Fixes ist eine Ausnahme aufgetreten; die Installation ist fehlgeschlagen.
+WUPD0236E.useraction=Weitere Details hierzu finden Sie in der aufgelisteten Ausnahme.
+
+WUPD0237E=WUPD0237E: Fehler beim Entfernen des Fixes: Bei der Vorverarbeitung des folgenden Inhalts ist eine Ausnahme aufgetreten: Fix "{0}", Komponente "{1}"
+WUPD0237E.explanation=Bei der Deinstallation des Fixes ist eine Ausnahme aufgetreten; die Deinstallation ist fehlgeschlagen.
+WUPD0237E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0238E=WUPD0238E: Fehler beim Entfernen des Fixes: Beim Verarbeiten des folgenden Inhalts ist eine Ausnahme aufgetreten: Fix "{0}", Komponente "{1}"
+WUPD0238E.explanation=Bei der Deinstallation des Fixes ist eine Ausnahme aufgetreten; die Deinstallation ist fehlgeschlagen.
+WUPD0238E.useraction=Weitere Details hierzu finden Sie in der Ausnahme.
+
+WUPD0239E=WUPD0239E: Fehler beim Entfernen des Fixes: Die Verarbeitung von Fix "{0}", Komponente "{1}" ist fehlgeschlagen. Details zur Verarbeitung finden Sie in der Protokolldatei "{2}".
+WUPD0239E.explanation=Bei der Deinstallation des Fixes ist eine Ausnahme aufgetreten; die Deinstallation ist fehlgeschlagen.
+WUPD0239E.useraction=Weitere Details hierzu erhalten Sie in der Protokolldatei.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0} von {1}) Fix {2} wird installiert.
+prefix.efix.revert   =({0} von {1}) Die Installation von Fix {2} wird rückgängig gemacht.
+prefix.efix.uninstall=({0} von {1}) Fix {2} wird deinstalliert.
+
+#NOTAMSG
+prepare.update.install  =Installation wird vorbereitet
+prepare.update.uninstall=Deinstallation wird vorbereitet
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =Komponente {0} von {1} wird installiert
+component.update.uninstall=Komponente {0} von {1} wird deinstalliert
+
+#NOTAMSG
+complete.update.install  =Installation wird abgeschlossen
+complete.update.uninstall=Deinstallation wird abgeschlossen
+
+#NOTAMSG
+result.cancelled.install=Installation abgebrochen
+result.succeeded.install=Installation erfolgreich
+result.failed.install=Installation fehlgeschlagen
+
+result.cancelled.uninstall=Deinstallation abgebrochen
+result.succeeded.uninstall=Deinstallation erfolgreich
+result.failed.uninstall=Deinstallation fehlgeschlagen

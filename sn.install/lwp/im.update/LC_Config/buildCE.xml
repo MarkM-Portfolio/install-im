@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2018                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project default="buildCE" name="CDIBuild">
+	<property name="dest.artifact.dir" value="./output"/>
+	<property name="dest.metadata.dir" value="./output"/>
+	
+	<target depends="delta,deleteBuildDir" name="buildCE"/>
+	
+	<tstamp/>
+  <property name="version.qualifier" value="${DSTAMP}_${TSTAMP}"/>
+  <property name="offeringRepo" value="../new_offering" />
+  <property name="offeringBaseRepo" value="../old_offering" />
+  <property name="destBase" value="../update_output" />
+  <property name="destDelta" value="../update_output_delta" />
+  <property name="destServiceDelta" value="../update_output_servicedelta" />
+
+  <property name="offeringIdString" value="com.ibm.connections" />
+  <property name="baseVersion" value="6.0.0.0_20170314_1528" />
+  <property name="updateTolerance" value="[6.0.0.0,8.0.0.0)" />
+	
+  <target name="delta">
+	<delete dir="${destBase}" failonerror="false"></delete>
+	<cic.copyOffering destmetadatadir="${destBase}" destartifactdir="${destBase}" >
+	  <updateOffering id="${offeringIdString}" version="${baseVersion}" tolerance="${updateTolerance}"
+		baseVersion="${baseVersion}" method="service"/>
+	  <dirrepository file="${offeringBaseRepo}" />
+	</cic.copyOffering>
+	<delete dir="${destDelta}" failonerror="false"></delete>
+	<cic.copyOffering destmetadatadir="${destDelta}" destartifactdir="${destDelta}" >
+	  <updateOffering id="${offeringIdString}" version="0.0.0" tolerance="${updateTolerance}"
+		baseVersion="${baseVersion}" method="delta"/>
+	  <dirrepository file="${offeringBaseRepo}" />
+	  <dirrepository file="${offeringRepo}" />
+	</cic.copyOffering>
+	<cic.copyOffering destmetadatadir="${destServiceDelta}" destartifactdir="${destServiceDelta}">
+		<updateOffering id="${offeringIdString}" tolerance="${updateTolerance}"
+			baseVersion="${baseVersion}" method="servicedelta" />
+  <dirrepository file="${offeringRepo}" />
+		<dirrepository file="${offeringBaseRepo}" />
+</cic.copyOffering>
+  </target>
+  
+	<target name="deleteBuildDir" >
+		<echo message="${OLD_OFFERING}" />
+		<echo message="${IMBuildDir}" />
+		<delete dir="${IMBuildDir}" />
+		<delete dir="${OLD_OFFERING}" />
+		<delete dir="${NEW_OFFERING}" />
+		<copy todir="${dir.build}/fixpack_output/base" >
+			<fileset dir="${OUTPUT}" />
+		</copy>
+		<copy todir="${dir.build}/fixpack_output/base" >
+			<fileset dir="../../im.installer/im.assembler/cdfiles/feature.config/common/silentResponseFile" >
+				<include name="LC_CR_update.rsp" />
+				<include name="LC_CR_rollback.rsp" />
+			</fileset>	
+		</copy>
+
+		<loadfile property="theQualifier" srcFile="${dir.build}/../im.installer/im.project/version_qualifier.txt"/>
+		<replace file="${dir.build}/fixpack_output/base/LC_CR_update.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${dir.build}/fixpack_output/base/LC_CR_rollback.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		
+		<copy todir="${dir.build}/fixpack_output/delta" >
+			<fileset dir="${OUTPUT_delta}" />
+		</copy>
+		<copy todir="${dir.build}/fixpack_output/servicedelta" >
+			<fileset dir="${OUTPUT_servicedelta}" />
+		</copy>
+		
+		<mkdir dir="${dir.build}/fixpack_output/updates" />
+		<echo file="${dir.build}/fixpack_output/updates/repository.config">
+LayoutPolicy=Composite
+LayoutPolicyVersion=0.0.0.1
+repository.url.01=../base
+repository.url.02=../delta
+repository.url.03=../servicedelta
+		</echo>
+
+		<cic.createRepositoryDigest>
+			<processedrepository path="${dir.build}/fixpack_output/updates/repository.config" outputlocation="${dir.build}/fixpack_output/updates" />
+		</cic.createRepositoryDigest>
+		
+		<delete dir="${OUTPUT}" />
+		<delete dir="${OUTPUT_delta}" />
+		<delete dir="${OUTPUT_servicedelta}" />
+	</target>  
+
+</project>

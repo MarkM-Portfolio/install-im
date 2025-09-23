@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<offering assemblyId='com.ibm.connections.main' assemblyVersion='8.0.0.qualifier' id='com.ibm.connections' version='8.0.0.qualifier'>
+	<information name='%offering.display.name' version='8.0.0.0'>
+	%offering.description
+	</information>
+	<!-- offering.efdVersion need to be updated when doing a new CR release.
+	  For example, 6.0 CR1 uses 6.0.0.1000, 6.0 CR2 uses 6.0.0.2000 -->
+	<property name='offering.efdVersion' value='8.0.0.0'/>
+	<property name='vendor.name' value='%vendor.name.value'/>
+	<property name='default.location' value='HCL/Connections'/>
+	<property name='default.location.os400' value='/QIBM/ProdData/HCL/Connections'/>
+	<property name='default.profile' value='HCL Connections'/>
+	<property name='default.commonlocation' value='IBM/IBMIMShared'/>
+	<property name='supports.console.mode' value='true'/>
+	<property name='offering.RequiresAdmin' value='false'/>
+	<property name='supportedPlatforms' value='(|(&amp;(os=aix)(arch=ppc64))(&amp;(os=linux)(|(arch=x86_64)(arch=s390x)))(&amp;(os=os400)(arch=ppc64))(&amp;(os=win32)(arch=x86_64)))'/>
+	<property name='offering.supports.64bit.im' value='(|(&amp;(os=aix)(arch=ppc64))(&amp;(os=linux)(|(arch=x86_64)(arch=s390x)))(&amp;(os=os400)(arch=ppc64))(&amp;(os=win32)(arch=x86_64)))'/>
+	<offeringBundle id='com.ibm.connections.licensePanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='OfferingLicense'/>
+	</offeringBundle>
+	<featureGroup kind='RequiredAndVisible'>
+		<featureGroup kind='RequiredAndVisible'>
+			<information name='%feature.lc.base.name'/>
+			<feature id='main' kind='RequiredAndNotVisible' selectionId='main'>
+			</feature>
+			<feature id='common' kind='RequiredAndVisible' selectionId='common'>
+				<information name='%feature.lc.common.name'>
+				%feature.lc.common.description
+				</information>
+			</feature>
+			<feature id='files' kind='RequiredAndVisible' selectionId='files'>
+				<information name='%feature.lc.files.name'>
+				%feature.lc.files.description
+				</information>
+			</feature>
+			<feature id='homepage' kind='RequiredAndVisible' selectionId='homepage'>
+				<information name='%feature.lc.homepage.name'>
+				%feature.lc.homepage.description
+				</information>
+			</feature>
+			<feature id='news' kind='RequiredAndVisible' selectionId='news'>
+				<information name='%feature.lc.news.name'>
+				%feature.lc.news.description
+				</information>
+			</feature>
+			<feature id='pushNotification' kind='RequiredAndVisible' selectionId='pushNotification'>
+				<information name='%feature.lc.pushNotification.name'>
+				%feature.lc.pushNotification.description
+				</information>
+			</feature>
+			<feature id='search' kind='RequiredAndVisible' selectionId='search'>
+				<information name='%feature.lc.search.name'>
+				%feature.lc.search.description
+				</information>
+			</feature>
+			<feature id='rte' kind='RequiredAndVisible' selectionId='rte'>
+				<information name='%feature.lc.rte.name'>
+				%feature.lc.rte.description
+				</information>
+			</feature>
+			<feature id='widgetContainer' kind='RequiredAndVisible' selectionId='widgetContainer'>
+				<information name='%feature.lc.widgetContainer.name'>
+				%feature.lc.widgetContainer.description
+				</information>
+			</feature>
+		</featureGroup>
+		<featureGroup kind='SelectedByDefault'>
+			<information name='%feature.lc.all.name'/>
+			<feature id='activities' kind='SelectedByDefault' selectionId='activities'>
+				<information name='%feature.lc.activities.name'>
+				%feature.lc.activities.description
+				</information>
+			</feature>
+			<feature id='blogs' kind='SelectedByDefault' selectionId='blogs'>
+				<information name='%feature.lc.blogs.name'>
+				%feature.lc.blogs.description
+				</information>
+			</feature>
+			<feature id='dogear' kind='SelectedByDefault' selectionId='dogear'>
+				<information name='%feature.lc.dogear.name'>
+				%feature.lc.dogear.description
+				</information>
+			</feature>
+			<feature id='communities' kind='SelectedByDefault' selectionId='communities'>
+				<information name='%feature.lc.communities.name'>
+				%feature.lc.communities.description
+				</information>
+			</feature>
+			<feature id='forums' kind='SelectedByDefault' selectionId='forums'>
+				<information name='%feature.lc.forum.name'>
+				%feature.lc.forum.description
+				</information>
+			</feature>
+			<feature id='metrics' kind='SelectedByDefault' selectionId='metrics'>
+				<information name='%feature.lc.metrics.name'>
+				%feature.lc.metrics.description
+				</information>
+			</feature>
+			<feature id='mobile' kind='SelectedByDefault' selectionId='mobile'>
+				<information name='%feature.lc.mobile.name'>
+				%feature.lc.mobile.description
+				</information>
+			</feature>
+			<feature id='moderation' kind='SelectedByDefault' selectionId='moderation'>
+				<information name='%feature.lc.moderation.name'>
+				%feature.lc.moderation.description
+				</information>
+			</feature>
+			<feature id='profiles' kind='SelectedByDefault' selectionId='profiles'>
+				<information name='%feature.lc.profiles.name'>
+				%feature.lc.profiles.description
+				</information>
+			</feature>
+			<feature id='wikis' kind='SelectedByDefault' selectionId='wikis'>
+				<information name='%feature.lc.wikis.name'>
+				%feature.lc.wikis.description
+				</information>
+			</feature>
+			<feature id='ic360' kind='SelectedByDefault' selectionId='ic360'>
+				<information name='%feature.lc.ic360.name'>
+				%feature.lc.ic360.description
+				</information>
+			</feature>
+			<feature id='icec' kind='SelectedAndNotVisible' selectionId='icec'>
+				<information name='%feature.lc.icec.name'>
+				%feature.lc.icec.description
+				</information>
+			</feature>
+		</featureGroup>
+		<featureGroup kind='SelectedAndNotVisible'>
+			<information name='%feature.lc.addon.name'/>
+			<feature id='ccm' kind='NotSelectedByDefault' selectionId='ccm'>
+				<information name='%feature.lc.ccm.name'>
+				%feature.lc.ccm.description
+				</information>
+			</feature>
+		</featureGroup>
+	</featureGroup>
+
+	<offeringBundle id='com.ibm.connections.wasPanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='InstallWizardPages'/>
+	</offeringBundle>
+	<offeringBundle id='com.ibm.connections.topologyPanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='InstallWizardPages'/>
+	</offeringBundle>
+	<offeringBundle id='com.ibm.connections.databasePanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='InstallWizardPages'/>
+	</offeringBundle>
+	<offeringBundle id='com.ibm.connections.webServerPanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='InstallWizardPages'/>
+	</offeringBundle>
+	<offeringBundle id='com.ibm.connections.contentStorePanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='InstallWizardPages'/>
+	</offeringBundle>
+	<offeringBundle id='com.ibm.connections.notificationPanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='InstallWizardPages'/>
+	</offeringBundle>
+	<offeringBundle id='com.ibm.connections.userMappingPanel' tolerance='[0.0.0,0.0.0]'>
+		<selectedBy id='InstallWizardPages'/>
+	</offeringBundle>
+
+</offering>

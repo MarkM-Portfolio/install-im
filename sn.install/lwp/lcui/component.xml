@@ -1,0 +1,20 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2007, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<component name="lcui" description="IBM Connections update installer" default="development" basedir="." disabled="false" spec-version="1.0.0">
+	<output-group name="lcui">
+		<output type="dir"
+			visibility="public" 
+			platform="all" 
+			location="${env.LWP_COMP_BUILD}/lib/lcui.jar"
+			preferredInstallLocation=""/>
+	</output-group>
+</component>

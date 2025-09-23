@@ -1,0 +1,29 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+cinfopath=`find / -name cinfo -print 2>/dev/null`
+cinfopathlines=`echo $cinfopath | wc -l`
+if [ $cinfopathlines -gt 1 ]; then
+    cinfopath=`echo $cinfopath | sed -n 1p`
+fi
+if [ "$cinfopath" != "" ]; then
+TEMScheck=`$cinfopath -i | grep "Tivoli Enterprise Monitoring Server"`
+TEPScheck=`$cinfopath -i | grep "Tivoli Enterprise Portal Server"`
+TEPCcheck=`$cinfopath -i | grep "Tivoli Enterprise Portal clients"`
+if [ "$TEMScheck" != "" -a "$TEPScheck" != "" -a "$TEPCcheck" != "" ]; then
+cinfoCheck=$Msg_TRUE
+fi
+fi
+
+if [ "$cinfoCheck" = "$Msg_TRUE" ]; then
+itmversion=`$cinfopath -i | grep "Installer Lvl" | cut -d ":" -f3`
+echo $itmversion
+else
+echo "$Msg_UNAVAILABLE"
+fi

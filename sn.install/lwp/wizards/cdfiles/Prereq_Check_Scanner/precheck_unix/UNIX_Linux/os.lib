@@ -1,0 +1,171 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+#set -n
+echo "****$1*****$2*******$3*****" >> /tmp/xx
+############Fix for Chirstopher hambridge's Bug ######
+QualFound=`echo "$1" | grep "]"`
+if [ $QualFound ]; then
+	Valuetocheck=`echo $1 | cut -d "]" -f2`
+fi
+###Finding the Flag for Qualifier###
+Flag=`echo $1 | cut -d "[" -f2 | cut -d "]" -f1 | cut -d ":" -f2`
+
+####Checking for "/"#####
+IsFound=`echo "$1" | grep "/"`
+key=$2
+if [ $IsFound ]; then
+        res=`ls $1`
+        if [ $res ]; then
+                echo $res
+        else
+                echo "$Msg_UNAVAILABLE"
+        fi
+else
+        ###Checking for "+" #####
+        IsPlusFound=`echo "$1" | grep "+" | cut -d "." -f1`
+        if [ $IsPlusFound ]; then
+                Valuetocheck=`echo "$1" | sed 's/.$//g' | sed 's/'$key'/'$key' /g' | cut -d " " -f1`
+        else
+                Valuetocheck=$1
+        fi
+ 
+        type=`uname`
+        if [ "$type" = "SunOS" ];then
+        Valuetocheck_sun=$Valuetocheck
+         res=""
+       regexFound=`echo "$1" | grep "regex{"`
+                    if [ "$regexFound" != "" ]; then
+                     Valuetocheck_sun=`echo $Valuetocheck | sed 's/regex{//g' | sed 's/}//g'`
+                     res=`cat /var/sadm/install/contents | grep "$Valuetocheck_sun" | sed -n 1p | awk '{print $1}'`
+                     else
+                     res=`cat /var/sadm/install/contents | grep -w "$Valuetocheck_sun" | sed -n 1p | awk '{print $1}'`
+                    fi
+        
+       
+       if [ "$Flag" = "True" ]; then
+                  regexFound=`echo "$1" | grep "regex{"`
+                    if [ "$regexFound" != "" ]; then
+                     Valuetocheck_sun=`echo $Valuetocheck | cut -d ']' -f2 | sed 's/regex{//g' | sed 's/}//g'` 
+                     res=`cat /var/sadm/install/contents | grep "$Valuetocheck_sun" | sed -n 1p | awk '{print $1}'`
+                     else
+                     res=`cat /var/sadm/install/contents | grep -w "$Valuetocheck_sun" | sed -n 1p | awk '{print $1}'`
+                    fi
+         
+      fi
+      
+          if [ "$res" = "" ]; then
+          	echo "$Msg_UNAVAILABLE"
+           	exit
+          else
+          	echo $res
+                
+         	exit
+          fi
+           	
+        fi
+
+        if [ "$type" = "Linux" ];then
+         	Valuetocheck_lin=$2
+		Is64bit=`echo $2 | grep 64`
+		if [ $Is64bit ]; then
+			LibType="64"
+		else
+			LibType="64"
+		fi
+		res=""
+		regexFound=`echo "$1" | grep "regex{"`
+		if [ "$regexFound" != "" ]; then
+			Valuetocheck_lin=`echo $Valuetocheck | sed 's/regex{//g' | sed 's/}//g'`
+			if [ $Is64bit ]; then
+				res=`rpm -qal | grep "$Valuetocheck_lin" | grep ".so" | grep $LibType | sed -n 1p | awk '{print $1}'`
+			else
+				res=`rpm -qal | grep "$Valuetocheck_lin" | grep ".so" | grep -v $LibType | sed -n 1p | awk '{print $1}'`
+			fi
+		else
+			if [ $Is64bit ]; then
+				res=`rpm -qal | grep -w "$Valuetocheck_lin" | grep ".so" | grep $LibType | grep $LibType |sed -n 1p | awk '{print $1}'`
+			else
+				res=`rpm -qal | grep -w "$Valuetocheck_lin" | grep ".so" | grep -v $LibType | grep $LibType |sed -n 1p | awk '{print $1}'`
+			fi
+		fi
+ 
+          
+		if [ "$res" = "" ]; then
+			if [ "$Flag" = "True" ]; then
+				res=""
+				regexFound=`echo "$1" | grep "regex{"`
+				if [ "$regexFound" != "" ]; then
+					Valuetocheck_lin=`echo $Valuetocheck | cut -d ']' -f2 | sed 's/regex{//g' | sed 's/}//g'`
+					if [ $Is64bit ]; then
+						res=`rpm -qal | grep "$Valuetocheck_lin" | grep ".so" | grep $LibType | sed -n 1p | awk '{print $1}'`
+					else
+						res=`rpm -qal | grep "$Valuetocheck_lin" | grep ".so" | grep -v $LibType | sed -n 1p | awk '{print $1}'`
+					fi
+				else
+					if [ $Is64bit ]; then
+						res=`rpm -qal | grep -w "$Valuetocheck_lin" | grep ".so" | grep $LibType | sed -n 1p | awk '{print $1}'`
+					else
+						res=`rpm -qal | grep -w "$Valuetocheck_lin" | grep ".so" | grep -v $LibType | sed -n 1p | awk '{print $1}'`
+					fi
+				fi		
+	
+				if [ "$res" = "" ]; then
+					echo "$Msg_UNAVAILABLE"
+					exit
+				else
+					echo $res
+					exit
+				fi
+			fi
+			echo "$Msg_UNAVAILABLE"
+			exit
+		  else
+			echo $res
+			exit
+		  fi
+        fi
+
+       if [ "$type" = "AIX" ];then
+         Valuetocheck_aix=$2
+         res1=""
+         regexFound=`echo "$1" | grep "regex{"`
+                    if [ "$regexFound" != "" ]; then
+                     Valuetocheck_aix=`echo $Valuetocheck | sed 's/regex{//g' | sed 's/}//g'`
+                     res1=`rpm -qal | grep  $Valuetocheck_aix | sed -n 1p | awk '{print $1}'`
+                     else
+                     res1=`rpm -qal | grep -w $Valuetocheck_aix | sed -n 1p | awk '{print $1}'`
+                    fi
+
+             
+          if [ "$res1" = "" ]; then
+                if [ "$Flag" = "True" ]; then
+                            Valuetocheck_aix=`echo $Valuetocheck | cut -d ']' -f2 sed 's/regex{//g' | sed 's/}//g'`
+                        res=`rpm -qal |grep "$Valuetocheck_aix" | grep ".so" |sed -n 1p | awk '{print $1}'`
+                        if [ "$res" = "" ]; then
+                                echo "$Msg_UNAVAILABLE"
+                                exit
+                        else
+                                echo $res
+                                exit 
+                        fi
+                fi
+
+	     	res=`lslpp -L | awk '{print $1"."$2}' | grep "$Valuetocheck_aix"` 2>/dev/null
+        	Val=`echo "$res" | cut -d "." -f1`
+        	if [ $Val ]; then
+                	echo $res
+			echo "Package="$key >/$TMP_DIR/prs.lib.txt
+        	else
+                 	echo "$Msg_UNAVAILABLE"
+        	fi
+          else
+            	echo $res1
+          fi
+      fi
+fi

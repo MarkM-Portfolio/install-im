@@ -1,0 +1,55 @@
+# Tue Jul 01 08:06:10 UTC 2014
+# Replay feature output
+# ---------------------
+# This file was built by the Replay feature of InstallAnywhere.
+# It contains variables that were set by Panels, Consoles or Custom Code.
+
+
+
+#Angeben, ob die Lizenzvereinbarung akzeptiert wurde
+#---------------------------------------------------
+LICENSE_ACCEPTED=TRUE
+
+#Installationsordner auswählen
+#-----------------------------
+USER_INSTALL_DIR=/opt/IBM/TDI/V7.1.1
+
+#Installationsgruppe auswählen
+#-----------------------------
+CHOSEN_FEATURE_LIST=JavaDocs,Examples,Server,CE,lwi,amc
+CHOSEN_INSTALL_FEATURE_LIST=JavaDocs,Examples,Server,CE,lwi,amc
+CHOSEN_INSTALL_SET=Typical
+
+#Lösungsverzeichnis
+#------------------
+TDI_SOLDIR_HOME=1
+TDI_SOLDIR_INSTALL=0
+TDI_SOLDIR_SELECT=0
+TDI_SOLDIR_CWD=0
+
+#Server-Port-Werte
+#-----------------
+TDI_SERVER_PORT=1099
+TDI_SYSTEM_STORE_PORT=1527
+TDI_REST_API_PORT=1098
+TDI_MQE_SYSTEMQ_PORT=61616
+
+#Server als Service registrieren
+#-------------------------------
+TDI_REGISTER_SERVER=0
+
+#Integrated Solutions Console-Portwerte
+#--------------------------------------
+TDI_HTTP_PORT=13100
+TDI_HTTPS_PORT=13101
+TDI_AM_API_PORT=13104
+
+#AMC-Service
+#-----------
+TDI_REGISTER_AMC=0
+
+#Install
+#-------
+-fileOverwrite_/opt/IBM/TDI/V7.1.1/maintenance/UpdateInstaller.jar=Yes
+-fileOverwrite_/opt/IBM/TDI/V7.1.1/TDI_LUM.zip=Yes
+-fileOverwrite_/opt/IBM/TDI/V7.1.1/_uninst/uninstaller.lax=Yes

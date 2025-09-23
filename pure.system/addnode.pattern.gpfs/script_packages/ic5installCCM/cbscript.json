@@ -1,0 +1,15 @@
+[
+   {
+      "command": "\/tmp\/ic5installCCM\/ic5installCCM.sh",
+      "commandargs": "initialExecute",
+      "description": "This is a script for Installing CCM into an existing WAS cell",
+      "execmode": 3,
+      "filename": "ic5installCCM.zip",
+      "location": "\/tmp\/ic5installCCM",
+      "log": "\/tmp\/ic5installCCM\/logs",
+      "name": "ic5installCCM",
+      "ostype": "linux\/unix",
+      "timeout": 60000000,
+      "type": "APPLICATION"
+   }
+]

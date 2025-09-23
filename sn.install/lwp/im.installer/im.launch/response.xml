@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<agent-input temporary='true' clean='true'>
+	<server>
+		<repository location='../HCLConnections/repository.config'/>
+		<repository location='aix/repository.config' />
+		<repository location='linux/repository.config' />
+		<repository location='windows/repository.config' />
+		<repository location='zlinux/repository.config' />
+	</server>
+	<install>
+		<offering features='agent_core,agent_jre' id='com.ibm.cic.agent' version='1.8.5001.20161016_1705'/>
+	</install>
+	<install>
+		<offering id='com.ibm.connections'/>
+	</install>
+</agent-input>

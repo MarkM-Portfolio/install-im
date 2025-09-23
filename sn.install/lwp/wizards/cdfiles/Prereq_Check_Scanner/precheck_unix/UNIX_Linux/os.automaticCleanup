@@ -1,0 +1,35 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+SuseCheck=`cat /etc/issue | grep SUSE | cut -d' ' -f1`
+if [ $SuseCheck ]; then
+        check=`cat /etc/crontab | grep cron.daily | cut -d' ' -f1`
+        if [ $check ]; then
+                res=`ls /etc/cron.daily/suse.de-clean-tmp 2>/dev/null`
+                if [ $res ]; then
+                        echo "$Msg_Enabled"
+                else
+                        echo "$Msg_Disabled"
+                fi
+        else
+                echo "$Msg_Disabled"
+        fi
+else
+        check=`cat /etc/crontab | grep cron.daily | cut -d' ' -f1`
+        if [ $check ]; then
+                res=`ls /etc/cron.daily/tmpwatch 2>/dev/null`
+                if [ $res ]; then
+                        echo "$Msg_Enabled"
+                else
+                        echo "$Msg_Disabled"
+                fi
+        else
+                echo "$Msg_Disabled"
+        fi
+fi
+

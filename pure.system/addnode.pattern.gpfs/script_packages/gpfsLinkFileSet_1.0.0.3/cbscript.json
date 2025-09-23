@@ -1,0 +1,26 @@
+[
+  {
+      "name": "GPFS Link FileSet - 1.0.0.3",
+      "version": "1.0.0.3",
+      "description": "This script package allows the client to create a local link to the fileset.",
+      "command": "python /tmp/gpfs/gpfsInstall/gpfs.py",
+      "log": "/tmp/gpfs/gpfsLinkFileSet/logs",
+      "location": "/tmp/gpfs/gpfsLinkFileSet/",
+      "timeout": "1800000",
+      "execmode": 2,
+      "commandargs": "-operationName linkFileSet -fileSetName ${FileSet_Name} -linkDir ${Link_Directory}",
+      "keys":
+      [
+         {
+          "scriptkey": "FileSet_Name",
+     	   "scriptvalue": "",
+          "scriptdefaultvalue": ""
+         },
+         {
+          "scriptkey": "Link_Directory",
+     	   "scriptvalue": "",
+          "scriptdefaultvalue": ""
+         }
+      ]
+  }
+]

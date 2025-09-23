@@ -1,0 +1,98 @@
+[
+   {
+      "command": "\/tmp\/ic5installCCM\/ic5installCCM.sh",
+      "commandargs": "initialExecute",
+      "description": "This is a script for Installing CCM into an existing WAS cell",
+      "execmode": 3,
+      "filename": "ic5installCCM.zip",
+	  "keys": [
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "Connections",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "Connections"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "NFS_IP",
+            "scriptvalue": ""
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/ibm\/nfsshare",
+            "scriptkey": "REMOTE_EXPORT",
+            "scriptvalue": "\/ibm\/nfsshare"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "Core_VIRTUSER_PW",
+            "scriptvalue": "",
+			"type": "password"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "CORE_RTUSER_PW",
+            "scriptvalue": "",
+            "type": "password"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "CCMNode1",
+            "scriptkey": "CCMNODE1_BASE",
+            "scriptvalue": "CCMNode1"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "CCMNode2",
+            "scriptkey": "CCMNODE2_BASE",
+            "scriptvalue": "CCMNode2"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "",
+            "scriptkey": "DB_PASSWORD",
+            "scriptvalue": "",
+            "type": "password"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "8879",
+            "scriptkey": "DmgrPort",
+            "scriptvalue": "8879"
+         },
+		 {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/ConnectionsContentStoreLink",
+            "scriptkey": "contentStoreLink",
+            "scriptvalue": "\/ConnectionsContentStoreLink"
+         }
+	  ],
+      "location": "\/tmp\/ic5installCCM",
+      "log": "\/tmp\/ic5installCCM\/logs",
+      "name": "ic5installCCM",
+      "ostype": "linux\/unix",
+      "timeout": 60000000,
+      "type": "APPLICATION",
+	  "version": "5.0-CR1"
+   }
+]

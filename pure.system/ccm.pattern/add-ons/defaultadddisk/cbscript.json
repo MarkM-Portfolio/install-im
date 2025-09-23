@@ -1,0 +1,49 @@
+[
+   {
+      "command": "sh \/tmp\/defaultadddisk\/adddisk",
+      "description": "\u5c06\u865a\u62df\u76d8\u6dfb\u52a0\u5230\u865a\u62df\u673a\uff0c\uff08\u53ef\u9009\uff09\u7136\u540e\u683c\u5f0f\u5316\u5e76\u5b89\u88c5\u8be5\u78c1\u76d8\u3002",
+      "execmode": 0,
+      "filename": "defaultadddisk.zip",
+      "hypervisortypes": "[\"ESX\",\"zVM\",\"PureSystems_ESX\",\"PureSystems_XBM\",\"OpenStack\"]",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "10",
+            "scriptkey": "DISK_SIZE_GB",
+            "scriptvalue": "10",
+            "type": "positiveinteger"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "ext3",
+            "scriptkey": "FILESYSTEM_TYPE",
+            "scriptvalue": "ext3"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptkey": "MOUNT_POINT"
+         },
+         {
+            "locked": false,
+            "required": false,
+            "scriptkey": "VOLUME_GROUP"
+         },
+         {
+            "description": "Change ownership of the new mount point to this user",
+            "locked": false,
+            "required": false,
+            "scriptkey": "OWNER"
+         }
+      ],
+      "location": "\/tmp\/defaultadddisk",
+      "log": "\/tmp\/defaultadddisk",
+      "name": "Default add disk",
+      "ostype": "linux\/unix",
+      "timeout": 1800000,
+      "type": "ADDON_DISK",
+      "version": "1.0.0"
+   }
+]

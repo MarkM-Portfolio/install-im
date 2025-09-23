@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="com.ibm.cic.agent.ui.commonCustomPanels">
+      <commonPanel
+            textClass="com.ibm.connections.install.ConsoleCCMPanel"
+            class="com.ibm.connections.install.CCMPanel"
+            id="com.ibm.connections.install.CCMPanel">
+         <wizardType
+               type="INSTALL">
+         </wizardType>
+         <wizardType
+               type="MODIFY">
+         </wizardType>
+         <wizardType
+               type="UPDATE">
+         </wizardType>
+      </commonPanel>
+   </extension>
+
+</plugin>

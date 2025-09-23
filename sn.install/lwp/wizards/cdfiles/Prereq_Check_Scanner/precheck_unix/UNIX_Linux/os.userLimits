@@ -1,0 +1,24 @@
+#!/bin/bash
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+cd /
+#echo `pwd`
+if [ -e .profile ] ; then
+	res=`grep "ulimit -s" .profile | awk '{print $3}'`
+#	echo $res
+	if [ "$res" = "unlimited" ] ; then
+		echo "$Msg_AVAILABLE"
+	else 
+		echo "$Msg_UNAVAILABLE"
+	fi
+else
+	echo "$Msg_UNAVAILABLE"
+fi
+cd - 1>/dev/null

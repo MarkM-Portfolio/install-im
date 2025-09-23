@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Kivétel történt a(z) {1} dokumentumnak a(z) {0} DTD könyvtár szerinti betöltésekor.
+WVER0101E.explanation=Az említett kivétel miatt a megadott dokumentum betöltése meghiúsult.
+WVER0101E.useraction=Az adott helyzetben alkalmazandó felhasználói teendő a bekövetkezett kivételtől függ.  Elsősorban győződjön meg róla, hogy a megadott fájl elérhető és a formátuma megfelelő.  További információkért keresse meg a terméktámogatást.
+
+# 
+WVER0102E=WVER0102E: Kivétel történt a(z) {1} dokumentumnak a(z) {0} DTD könyvtár szerinti betöltésekor.  {2} rendszer azonosító és {3} nyilvános azonosító volt beállítva.  A hiba a(z) {4}. sor {5}. pozíciójában történt.
+WVER0102E.explanation=Az említett kivétel miatt a megadott dokumentum betöltése meghiúsult.
+WVER0102E.useraction=Az adott helyzetben alkalmazandó felhasználói teendő a bekövetkezett kivételtől függ.  Elsősorban győződjön meg róla, hogy a megadott fájl elérhető és a formátuma megfelelő.  További információkért keresse meg a terméktámogatást.
+
+# 
+WVER0104E=WVER0104E: Kivétel történt egy {0} típusú gyökér dokumentumelem létrehozásakor.
+WVER0104E.explanation=Egy gyökér dokumentumelem létrehozása során az említett kivétel történt.
+WVER0104E.useraction=Az adott helyzetben alkalmazandó felhasználói teendő a bekövetkezett kivételtől függ.  A leggyakoribb ok, hogy érvénytelen az XML elemző konfigurációja.  Győződjön meg róla, hogy a Java rendszertulajdonságok nem érvénytelen elemző konfigurációt hoznak létre.  További információkért keresse meg a terméktámogatást.
+
+# 
+WVER0105E=WVER0105E: Kivétel történt egy ({0} típusú) XML modellobjektum létrehozásakor.
+WVER0105E.explanation=Egy XML modellobjektum létrehozására tett kísérlet során az említett kivétel történt.
+WVER0105E.useraction=Az adott helyzetben alkalmazandó felhasználói teendő a bekövetkezett kivételtől függ.  A leggyakoribb ok, hogy az említett típus nem áll rendelkezésre a beállított osztály elérési útvonalon.  További információkért keresse meg a terméktámogatást.
+
+# 
+WVER0106E=WVER0106E: Kísérlet történt egy elem behelyezésére egy {0} egyszerű típusú objektumba.
+WVER0106E.explanation=Ez egy belső hiba.
+WVER0106E.useraction=További információkért keresse meg a terméktámogatást.
+
+# 
+WVER0107E=WVER0107E: Kivétel történt a változatinformációknak a(z) {0} fájlba írásakor.
+WVER0107E.explanation=A megadott fájl írására tett kísérlet közben az említett kivétel történt.
+WVER0107E.useraction=Az adott helyzetben alkalmazandó felhasználói teendő a bekövetkezett kivételtől függ.  Elsősorban győződjön meg róla, hogy az említett fájl írható és elegendő lemezterület áll rendelkezésre.
+
+# 
+WVER0108E=WVER0108E: Kivétel történt a(z) {0} nyilvános azonosító, {1} rendszer azonosító és {2} leképezett fájlnév felhasználásával végzett egyedfeloldás során.
+WVER0108E.explanation=A termékinformációk elemzése közben a DTD információk feloldásakor az említett kivétel történt.  A DTD nem oldható fel.
+WVER0108E.useraction=Az adott helyzetben alkalmazandó felhasználói teendő a bekövetkezett kivételtől függ.
+
+# 
+WVER0201E=WVER0201E: ''{0}'' hiányzó attribútum ''{1}'' típusú elemen belül
+WVER0201E.explanation=A megnevezett attribútum nem érvényes attribútuma a megadott elemtípusnak.
+WVER0201E.useraction=Az attribútum-információk javításához módosítsa az XML fájlt.
+
+#
+WVER0202E=WVER0202E: Kiegyensúlyozatlan elemszerkezet: Extra elemlezárások.
+WVER0202E.explanation=A termékinformációkat tartalmazó XML fájl elemszerkezete hibás.
+WVER0202E.useraction=Az elemszerkezet javításához módosítsa az XML fájlt.
+
+#
+WVER0203E=WVER0203E: Kiegyensúlyozatlan elemszerkezet: Hiányzó elemlezárások.
+WVER0203E.explanation=A termékinformációkat tartalmazó XML fájl elemszerkezete hibás.
+WVER0203E.useraction=Az elemszerkezet javításához módosítsa az XML fájlt.
+
+#
+WVER0204E=WVER0204E: A(z) ''{0}'' elem érvénytelen gyökér elemként.
+WVER0204E.explanation=A termékinformációkat tartalmazó XML fájl elemszerkezete hibás.
+WVER0204E.useraction=Az elemszerkezet javításához módosítsa az XML fájlt.
+
+#
+WVER0205E=WVER0205E: A(z) ''{0}'' elem nem érvényes a(z) ''{1}'' elemen belül
+WVER0205E.explanation=A termékinformációkat tartalmazó XML fájl elemszerkezete hibás.
+WVER0205E.useraction=Az elemszerkezet javításához módosítsa az XML fájlt.
+
+#
+WVER0206E=WVER0206E: A(z) ''{0}'' elem lezárására tett kísérlet a(z) ''{1}'' elemen belül
+WVER0206E.explanation=A termékinformációkat tartalmazó XML fájl elemszerkezete hibás.
+WVER0206E.useraction=Az elemszerkezet javításához módosítsa az XML fájlt.

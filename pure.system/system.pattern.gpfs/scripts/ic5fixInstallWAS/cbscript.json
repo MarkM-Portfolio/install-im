@@ -1,0 +1,32 @@
+[
+   {
+      "command": "\/tmp\/ic5fixInstallWAS\/ic5fixInstallWAS.sh",
+      "commandargs": "initialExecute",
+      "description": "This is a script for installing necessary WAS iFixes needed by Connections",
+      "execmode": 3,
+      "filename": "ic5fixInstallWAS.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "${MOUNT_POINT_VALUE}"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "dl_test",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "dl_test"
+         }
+      ],
+      "location": "\/tmp\/ic5fixInstallWAS",
+      "log": "\/tmp\/ic5fixInstallWAS\/logs",
+      "name": "ic5fixInstallWAS",
+      "ostype": "linux\/unix",
+      "timeout": 60000000,
+      "type": "APPLICATION",
+      "version": "5.0-CR1"
+   }
+]

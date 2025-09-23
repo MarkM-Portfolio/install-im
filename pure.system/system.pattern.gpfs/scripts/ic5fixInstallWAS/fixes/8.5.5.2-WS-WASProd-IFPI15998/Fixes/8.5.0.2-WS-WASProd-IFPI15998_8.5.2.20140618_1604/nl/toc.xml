@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?toc version='0.0.1'?>
+<toc fileCount='15'>
+    <file name='messages.properties'/>
+    <file name='messages_cs.properties'/>
+    <file name='messages_de.properties'/>
+    <file name='messages_es.properties'/>
+    <file name='messages_fr.properties'/>
+    <file name='messages_hu.properties'/>
+    <file name='messages_it.properties'/>
+    <file name='messages_ja.properties'/>
+    <file name='messages_ko.properties'/>
+    <file name='messages_pl.properties'/>
+    <file name='messages_pt_BR.properties'/>
+    <file name='messages_ro.properties'/>
+    <file name='messages_ru.properties'/>
+    <file name='messages_zh.properties'/>
+    <file name='messages_zh_TW.properties'/>
+</toc>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?atoc version='0.0.1'?>
+<cset q="plugin" >
+<summary  count="5"  totalSize="223099" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset id="com.ibm.im*" >
+<summary  count="1"  totalSize="68914" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="1.*" >
+<summary  count="1"  totalSize="68914" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="68914" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.im.dependency.was.apar"  v="1.0.7.v20110714_1849"  p=""  ex="false"  sz="68914" >
+<dig da="MD5"  dv="3f0c4862cfa084101d57e48f82ee8e23" />
+
+</af>
+</cset>
+</cset>
+</cset>
+<cset id="com.ibm.ws*" >
+<summary  count="2"  totalSize="135421" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="8.*" >
+<summary  count="2"  totalSize="135421" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="2"  totalSize="135421" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.ws.detect.running.process.v80"  v="8.5.0.20120529_0000"  p=""  ex="false"  sz="64323" >
+<dig da="MD5"  dv="bdde8d2125a73f790b260e282f597cd0" />
+
+</af>
+<af id="com.ibm.ws.check.os.v80"  v="8.0.2.20130111_1128"  p=""  ex="false"  sz="71098" >
+<dig da="MD5"  dv="5b442dfefae2cfc8c3215283eae81010" />
+
+</af>
+</cset>
+</cset>
+</cset>
+<cset id="com.ibm.was*" >
+<summary  count="2"  totalSize="18764" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="8.*" >
+<summary  count="2"  totalSize="18764" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="2"  totalSize="18764" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.was.ifix.prereq.osarch"  v="8.0.0.201308131118"  p=""  ex="false"  sz="13029" >
+<dig da="MD5"  dv="4e66e0d76a148c67040c96543f9a1492" />
+
+</af>
+<af id="com.ibm.was.ifix.prereq.detect.temp.fix"  v="8.0.0.201206111438"  p=""  ex="false"  sz="5735" >
+<dig da="MD5"  dv="4a858d5f03d244d062b54ee5f777a41a" />
+
+</af>
+</cset>
+</cset>
+</cset>
+</cset>

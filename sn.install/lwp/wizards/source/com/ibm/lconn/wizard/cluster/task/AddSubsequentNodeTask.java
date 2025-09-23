@@ -1,0 +1,88 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2008, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+package com.ibm.lconn.wizard.cluster.task;
+
+import java.io.File;
+import java.util.regex.Pattern;
+
+import com.ibm.lconn.wizard.cluster.backend.CommandExec;
+import com.ibm.lconn.wizard.cluster.data.FeatureInfo;
+import com.ibm.lconn.wizard.cluster.ui.ClusterConstant;
+import com.ibm.lconn.wizard.common.Constants;
+import com.ibm.lconn.wizard.common.DataPool;
+import com.ibm.lconn.wizard.common.LCUtil;
+import com.ibm.lconn.wizard.common.command.LogAnalysis;
+
+/**
+ * @author joey (pengzsh@cn.ibm.com)
+ * 
+ */
+public class AddSubsequentNodeTask extends AbstractTask {
+
+	public int run() {
+		String feature = DataPool.getValue(ClusterConstant.WIZARD_ID_CLUSTER,
+				ClusterConstant.INPUT_RUNNING_FEATURE);
+
+		FeatureInfo featureInfo = LCUtil.getFeature(feature);
+
+		String nodeName = featureInfo.getNodeName();
+		String serverName = featureInfo.getServerName();
+
+		DataPool.setValue(ClusterConstant.WIZARD_ID_CLUSTER,
+				ClusterConstant.INPUT_clusterNodeProfile, featureInfo
+						.getProfileName());
+		writeProperties(feature, ClusterConstant.TASK_ADD_SUBSEQUENT_NODE);
+
+		CommandExec ct = CommandExec
+				.create(ClusterConstant.TASK_ADD_SUBSEQUENT_NODE);
+
+		File f = new File(LOG_DIR);
+		if (!f.exists() || !f.isDirectory()) {
+			f.mkdir();
+		}
+
+		log = LOG_DIR + Constants.FS + "action-cluster-setup-" + feature
+				+ ".log";
+
+		ct.setOutput(log);
+		ct.setReplace(new String[] { DataPool.getValue(
+				ClusterConstant.WIZARD_ID_CLUSTER,
+				ClusterConstant.INPUT_clusterDMWasPassword) });
+		int exitCode = ct.execute();
+
+		if (exitCode == 0) {
+			Pattern[] errors = new Pattern[] {
+					Pattern.compile(".*error.*", Pattern.CASE_INSENSITIVE),
+					Pattern.compile(".*fail.*", Pattern.CASE_INSENSITIVE) };
+			exitCode = LogAnalysis.analyze(log, 2, null, errors, null)
+					.getExecState();
+		}
+
+		// Remove the old server information form the DM admin console.
+		DataPool.setValue(ClusterConstant.WIZARD_ID_CLUSTER,
+				ClusterConstant.INPUT_PROFILE_HOME, LCUtil.getWASProfileHome());
+		DataPool.setValue(ClusterConstant.WIZARD_ID_CLUSTER,
+				ClusterConstant.INPUT_MEMBER_NODE_NAME, nodeName);
+		DataPool.setValue(ClusterConstant.WIZARD_ID_CLUSTER,
+				ClusterConstant.INPUT_MEMBER_ORIGINAL_SERVER_NAME, serverName);
+		ct = CommandExec.create(ClusterConstant.TASK_REMOVE_OLD_SERVER);
+
+		log = LOG_DIR + Constants.FS + "remove-serverInfo-" + feature + ".log";
+		ct.setOutput(log);
+		ct.execute();
+
+		return exitCode;
+	}
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="(C) Copyright IBM Corporation 2006" />
+<meta name="DC.rights.owner" content="(C) Copyright IBM Corporation 2006" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0) "http://www.classify.org/safesurf/" l gen true r (SS~~000 1))' />
+<meta name="DC.Type" content="topic" />
+<meta name="DC.Title" content="Sugestões e Dicas para o Modelo de Painel de Ativação do Classic Express" />
+<meta name="abstract" content="O Modelo de Painel de Ativação do Classic Express fornece um ponto de início para criar um painel de ativação de configuração que você pode usar com produtos com a marca Express." />
+<meta name="description" content="O Modelo de Painel de Ativação do Classic Express fornece um ponto de início para criar um painel de ativação de configuração que você pode usar com produtos com a marca Express." />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="hintsandtips" />
+<meta name="DC.Language" content="pt-br" />
+<!-- All rights reserved. Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="swg_info_common.css" />
+<link rel="stylesheet" type="text/css" href="../ibmdita.css" />
+<link rel="stylesheet" type="text/css" href="../swg_info_common.css" />
+<title>Sugestões e Dicas para o Modelo de Launchpad do Express</title>
+</head>
+<body id="hintsandtips"><a name="hintsandtips"><!-- --></a>
+<h1 class="topictitle1">Sugestões e Dicas para o Modelo de Painel de Ativação do Classic Express</h1>
+<div><p>O Modelo de Painel de Ativação do Classic Express fornece um ponto de início para criar um painel de ativação
+de configuração que você pode usar com produtos com a marca Express.</p>
+<p> Este modelo possui um código que pode ser utilizado para iniciar um programa de
+instalação do produto, exibir a documentação e fornecer o conteúdo localizado.</p>
+<p>Coisas a serem observadas sobre o Modelo de Painel de Ativação do Classic Express:</p>
+<ul><li>Todos os comandos e programas utilizados são definidos em launchpadContent/global.properties.</li>
+<li>Os aplicativos de amostra estão inclusos em DISK1, na página Layout do Disco.
+Para incluir programas ou aplicativos de instalação customizados, defina o aplicativo
+em launchpadContent\global.properties (seguindo os exemplos para os aplicativos de
+amostra). Importe os aplicativos no disco apropriado do projeto,
+utilizando os controles localizados na guia de layout do disco.</li>
+<li>Todos os arquivos HTML utilizam a mesma folha de estilo (content.css) que reside
+no diretório launchpadContent.</li>
+</ul>
+<p>O Modelo de Painel de Ativação do Classic Express contém as seguintes páginas:</p>
+<ul><li><strong>Bem-vindo</strong> - Geralmente, a página de boas-vindas apresenta uma
+visão geral do produto e uma explicação dos recursos do launchpad.  A página de boas-vindas
+deve ser concisa, porém deve conter as opções do usuário para localização de informações adicionais
+sobre o produto, apresentando um link para o Web site do produto que é exibido em uma nova
+janela do navegador. A página de boas-vindas possui código para exibir um Web site externo
+em um navegador.  Utilize a função <samp class="codeph">viewPage()</samp> para exibir novas janelas, em vez de <samp class="codeph">window.open()</samp> do JavaScript, porque <samp class="codeph">window.open() </samp>
+tem grandes chances de ser bloqueado por um bloqueador de pop-up.</li>
+<li><strong>Informações sobre o Release</strong> - Geralmente, a página de informações sobre o release
+apresenta informações específicas para um release exclusivo de um produto.  Por exemplo, questões de instalação,
+alterações feitas nos pré-requisitos, principais recursos ou correções que foram tratados no release e
+conteúdo semelhante é apropriado para uma página de informações sobre o release.  A página de informações sobre o release apresenta código para visualização de um PDF e execução de um aplicativo.</li>
+<li><strong>Informações sobre Pré-requisito</strong> - Geralmente, a página de pré-requisitos apresenta um
+controle para execução de um programa de verificação de pré-requisitos que determina se os pré-requisitos
+do sistema existem no computador, e retorna uma lista dos pré-requisitos que não são detectados.  A página de informações sobre pré-requisito apresenta código para visualização de um PDF e execução de um aplicativo.</li>
+<li><strong>Cenário de Instalação</strong> - Geralmente, o conteúdo dos
+cenários de instalação fornece as diversas abordagens possíveis para instalação de um produto para o usuário.
+Os usuários podem escolher um cenário de instalação específico com base na forma como
+ele deseja utilizar o produto.  Esse conteúdo explica as diferenças entre os diversos cenários
+de instalação que o usuário pode escolher e apresenta informações que explicam porque o usuário
+escolhe um cenário de instalação em vez de outro.  Nem todos os produtos
+apresentam cenários de instalação.  Se você estiver customizando o
+Modelo de Painel de Ativação do Classic Express para um produto desse tipo, é possível remover esta
+seção da navegação. A página de cenários de instalação apresenta código para
+execução de um programa customizado com um argumento.</li>
+<li><strong>Informações de Migração</strong> - Geralmente, o conteúdo de migração explica um
+caminho de migração que o usuário deve seguir para fazer upgrade de uma versão anterior do
+produto para uma versão mais recente. Se as informações de migração não forem relevantes para
+um produto específico, este conteúdo deverá ser removido da navegação. A página de informações
+de migração apresenta código para visualização de um PDF e execução de um aplicativo.</li>
+<li><strong>Instalar</strong> - Geralmente, a página de instalação do produto apresenta um
+controle para iniciar a instalação de um produto. Você pode incluir várias páginas de instalação
+do produto em um launchpad de configuração para suportar as instalações de diversos produtos.
+A página de instalação apresenta código para iniciar a instalação de um produto.</li>
+<li><strong>Sair</strong> - O link de saída no menu de navegação fecha o launchpad.</li>
+</ul>
+</div>
+</body>
+</html>

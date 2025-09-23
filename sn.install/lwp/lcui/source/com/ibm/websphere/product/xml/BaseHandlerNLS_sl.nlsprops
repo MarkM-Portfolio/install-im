@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Izjemno stanje med nalaganjem dokumenta {1}, z uporabo imenika DTD {0}
+WVER0101E.explanation=Nalaganje podanega dokumenta ni uspelo zaradi navedenega izjemnega stanja.
+WVER0101E.useraction=Posamezni ukrepi uporabnika so odvisno od prikazanega izjemnega stanja.  Pri tem zagotovite, da je podana datoteka na voljo in je v ustreznem formatu.  Za dodatne informacije se obrnite na podporo.
+
+# 
+WVER0102E=WVER0102E: Izjemno stanje med nalaganjem dokumenta {1}, z uporabo imenika DTD {0}.  Nastavili ste sistemski ID {2} in javni ID {3}.  V številki vrstice {4} in številki stolpca {5} je prišlo do napake
+WVER0102E.explanation=Nalaganje podanega dokumenta ni uspelo zaradi navedenega izjemnega stanja.
+WVER0102E.useraction=Posamezni ukrepi uporabnika so odvisno od prikazanega izjemnega stanja.  Pri tem zagotovite, da je podana datoteka na voljo in je v ustreznem formatu.  Za dodatne informacije se obrnite na podporo.
+
+# 
+WVER0104E=WVER0104E: Izjemno stanje med izdelavo elementa korenskega dokumenta tipa {0}
+WVER0104E.explanation=Med izdelavo elementa korenskega dokumenta je prišlo do navedenega izjemnega stanja.
+WVER0104E.useraction=Posamezni ukrepi uporabnika so odvisno od prikazanega izjemnega stanja.  Najpogosteje je neveljavna konfiguracija razčlenjevalnika XML.  Prepričajte se, da sistemske lastnosti java ne povzročijo neveljavne konfiguracije razčlenjevalnika.  Za dodatne informacije se obrnite na podporo.
+
+# 
+WVER0105E=WVER0105E: Izjemno stanje med izdelavo objekta modela XML (tipa {0})
+WVER0105E.explanation=Med poskusom izdelave objekta modela XML je prišlo do izjemnega stanja.
+WVER0105E.useraction=Posamezni ukrepi uporabnika so odvisno od prikazanega izjemnega stanja.  Najpogosteje je vzrok navedeni tip, ki v nastavljeni poti razreda ni na voljo.  Za dodatne informacije se obrnite na podporo.
+
+# 
+WVER0106E=WVER0106E: Element ste poskusili postaviti v objekt, ki je preprostega tipa {0}
+WVER0106E.explanation=Gre za notranjo napako.
+WVER0106E.useraction=Za dodatne informacije se obrnite na podporo.
+
+# 
+WVER0107E=WVER0107E: Izjemno stanje med poskusom pisanja informacij o različici v datoteko {0}
+WVER0107E.explanation=Med poskusom zapisovanja podane datoteke je prišlo do izjemnega stanja.
+WVER0107E.useraction=Posamezni ukrepi uporabnika so odvisno od prikazanega izjemnega stanja.  Pri tem zagotovite, da navedena datoteka omogoča zapisovanje in da je zanjo na voljo dovolj prostora.
+
+# 
+WVER0108E=WVER0108E: Izjemno stanje med izvajanjem razreševanja entitete z javnim ID-jem {0}, sistemskim ID-jem {1} in preslikanim imenom datoteke {2}
+WVER0108E.explanation=Med razreševanjem informacij DTD pri razčlenjevanju informacij o izdelku je prišlo do izjemnega stanja.  Navedenega DTD ni mogoče razrešiti.
+WVER0108E.useraction=Posamezni ukrepi uporabnika so odvisno od prikazanega izjemnega stanja.
+
+# 
+WVER0201E=WVER0201E: Manjkajoči atribut ''{0}'' v elementu tipa ''{1}''
+WVER0201E.explanation=Navedeni atribut ni veljaven atribut za podani tip elementa.
+WVER0201E.useraction=Uredite datoteko XML in popravite informacije atributa.
+
+#
+WVER0202E=WVER0202E: Neuravnotežena struktura elementa: dodatne zaključitve elementov.
+WVER0202E.explanation=Datoteka XML, ki vsebuje informacije o izdelku, ima neveljavno strukturo elementov.
+WVER0202E.useraction=Uredite datoteko XML in popravite strukturo elementov.
+
+#
+WVER0203E=WVER0203E: Neuravnotežena struktura elementa: manjkajoče zaključitve elementov.
+WVER0203E.explanation=Datoteka XML, ki vsebuje informacije o izdelku, ima neveljavno strukturo elementov.
+WVER0203E.useraction=Uredite datoteko XML in popravite strukturo elementov.
+
+#
+WVER0204E=WVER0204E: Element ''{0}'' ni veljavni korenski element
+WVER0204E.explanation=Datoteka XML, ki vsebuje informacije o izdelku, ima neveljavno strukturo elementov.
+WVER0204E.useraction=Uredite datoteko XML in popravite strukturo elementov.
+
+#
+WVER0205E=WVER0205E: Element ''{0}'' ni veljaven znotraj elementa ''{1}''
+WVER0205E.explanation=Datoteka XML, ki vsebuje informacije o izdelku, ima neveljavno strukturo elementov.
+WVER0205E.useraction=Uredite datoteko XML in popravite strukturo elementov.
+
+#
+WVER0206E=WVER0206E: Poskus zaključitve elementa ''{0}'' znotraj elementa ''{1}''
+WVER0206E.explanation=Datoteka XML, ki vsebuje informacije o izdelku, ima neveljavno strukturo elementov.
+WVER0206E.useraction=Uredite datoteko XML in popravite strukturo elementov.

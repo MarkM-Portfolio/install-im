@@ -1,0 +1,126 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+#set -n
+ValidateDir(){
+
+	DirtoCheck=$1
+	###Checking the Valid Path####
+	ValidPath=`echo "$DirtoCheck" | sed -n '/^\//p'`
+	if [ -z "$ValidPath" ]; then
+		DirtoCheck=""
+	fi	
+		df -k $DirtoCheck 1>/dev/null 2>/dev/null
+		while [ "$?" != "0" ]
+		do
+		        DirtoCheck=`echo "$DirtoCheck" | sed 's/^\(.*\)\/[^ ]\{1,\}/\1/g'`
+		        if [ -z "$DirtoCheck" ]; then
+       		        	DirtoCheck="/"
+        	        	break
+        		fi
+			df -k $DirtoCheck 1>/dev/null 2>/dev/null
+		done
+		echo $DirtoCheck
+
+}
+
+Validate_ID=`id | awk '{print $1}'| cut -d "(" -f1 | cut -d "=" -f2`
+           ##### CHECKING THE NO OF ARG IN THE SPECIFIER ############
+ActDir=`echo $1 | sed 's/#/;/g'`
+Qual=`echo "$ActDir" | grep "]" | cut -d "=" -f1`
+if [ $Qual ]; then
+NoofArg=`echo "$ActDir" | grep "," | wc -l`
+	Found=`echo "$ActDir" | grep ";"`
+	if [ $NoofArg -gt 0 ]; then
+		if [ $Validate_ID -eq 0 ]; then
+			###Validating for root and non-root####
+			if [ $Found ]; then
+        			DirtoCheck=`echo "$ActDir" | cut -d"=" -f2 | cut -d ";" -f1`
+			else
+				DirtoCheck=`echo  "$ActDir" | cut -d"=" -f2 | cut -d "," -f1`
+			fi
+		else
+			###Validating for root and non-root####
+                        if [ $Found ]; then
+				Dir=`echo "$ActDir" | cut -d "=" -f3 | cut -d "," -f1`
+			else
+				Dir=`echo "$ActDir" | cut -d "=" -f2 | cut -d "," -f1`
+			fi
+			UsrHome=`echo $HOME`
+			HostName=`hostname`
+			DirtoCheck=`echo $Dir | sed 's:USERHOME:'$UsrHome':g' | sed 's:HOST:'$HostName':g'`
+		fi
+	else
+		if [ $Validate_ID -eq 0 ]; then
+			###Validating for root and non-root####
+			if [ $Found ]; then
+				DirtoCheck=`echo "$ActDir" | cut -d ";" -f1 | cut -d '=' -f2`
+			else
+				DirtoCheck=`echo "$ActDir" | cut -d "=" -f2 | cut -d "]" -f1`
+			fi
+		else
+			###Validating for root and non-root####
+			if [ $Found ]; then
+				Dir=`echo "$ActDir" | cut -d"=" -f3 | cut -d "]" -f1`
+			else
+				Dir=`echo "$ActDir" | cut -d "=" -f2 | cut -d "]" -f1`
+			fi 
+			UsrHome=`echo $HOME`
+			HostName=`hostname`
+			DirtoCheck=`echo $Dir | sed 's:USERHOME:'$UsrHome':g' | sed 's:HOST:'$HostName':g'`
+		fi
+	fi
+else
+	    type=`uname`
+        if [ "$type" = "SunOS" -a "$1" = "home" ]; then
+                DirtoCheck=/export/$1
+        else
+                DirtoCheck=/$1
+        fi
+
+fi
+
+#Get the username from the environment variable
+if [ "$DirtoCheck" = "USERHOME" ]; then
+        DirtoCheck=/$HOME
+fi
+
+ActDirtoCheck=`ValidateDir $DirtoCheck`
+if [ -d "$ActDirtoCheck" ]; then
+ 	type=`uname`
+	if [ "$type" = "Linux" ]; then 
+  		res=` df -h $ActDirtoCheck | tail -n 1`
+  		len=`echo $res | wc -w`
+  		len1=`expr $len - 2`
+  		avail=`echo $res | cut -d ' ' -f$len1`
+  		echo $avail"B"
+  	fi
+	if [ "$type" = "SunOS" ]; then
+		avail=`df -kh $ActDirtoCheck | awk '{ if(NF<7 && NF>1){ print $(4)"B" } }'`
+		echo $avail
+	fi
+  	if [ "$type" = "AIX" ]; then
+  		#res=`df -g $ActDirtoCheck | tail -n 1`
+   		#len=`echo $res | wc -w`
+  		#len1=`expr $len - 5`
+  		#avail=`echo $res | cut -d ' ' -f$len1`
+		avail=`df -g $ActDirtoCheck | sed -n 2p | awk '{print $3}'`
+  		echo $avail"GB"
+
+  	fi
+     if [ "$type" = "HP-UX" ]; then
+            avail=`df -k $ActDirtoCheck | sed -n 2p | awk '{print $1}'`
+            avail1=`expr $avail / 1024`
+            echo $avail1"MB"
+     fi
+    
+
+else
+  	echo "$Msg_UNAVAILABLE"
+fi
+

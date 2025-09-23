@@ -1,0 +1,39 @@
+!/bin/bash
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+
+type=`uname`
+#user=`whoami`
+#echo $PROD_NAME
+if [ "$type" = "AIX" ]; then
+   user=`whoami`
+   quotacheck -u $user > /$TMP_DIR/prs.quota.txt 2>/dev/null
+   quota_value=`cat /$TMP_DIR/prs.quota.txt | grep /dev`
+fi
+
+if [ "$type" = "Linux" ]; then
+   user=`whoami`
+   edquota $user > /$TMP_DIR/prs.quota.txt 2>/dev/null
+   quota_value=`cat /$TMP_DIR/prs.quota.txt | grep /dev`
+fi
+
+if [ "$type" = "SunOS" ]; then
+      user=`who -m | awk '{print $1}'`
+      edquota $user > /$TMP_DIR/prs.quota.txt 2>/dev/null
+      quota_value=`cat /$TMP_DIR/prs.quota.txt | grep /dev`
+fi
+
+if [ $quota_value ]; then
+   value=`echo quota_value | awk '{ print $2 }'`
+   echo $value
+else 
+  echo "$Msg_UNLIMITED"
+fi

@@ -1,0 +1,27 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+type=`uname`
+if [ "$type" = "SunOS" ]; then
+check=`ping $1 | awk '{print $3}'`
+if [ $check ]; then
+ echo  "$Msg_TRUE"
+else
+ echo "$Msg_FALSE"
+fi
+else
+res=`ping -c 1 $1 | grep loss | awk -F, '{print $3}' | awk '{print $1}' | cut -d'%' -f1 | grep -w 0`
+if [ $res ]; then
+ echo  "$Msg_TRUE"
+else
+ echo "$Msg_FALSE"
+fi
+fi
+

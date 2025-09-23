@@ -1,0 +1,25 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+	user=`whoami`
+	if [ "$user" != "root" ]; then
+        deInstall="$HOME/.acsi_$user/ACUApplication.properties"
+            if [ -f "$deInstall" ]; then
+              echo "$Msg_TRUE"
+              exit
+            else
+              echo "$Msg_FALSE"
+              exit
+            fi
+        fi
+if [ -f "/var/ibm/common/acsi/ACUApplication.properties" ]; then
+    echo "$Msg_TRUE"
+else
+    echo "$Msg_FALSE"
+fi

@@ -1,0 +1,48 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2014                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+
+body  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	background-color: #FFFFFF;
+	margin: 10px 0px;
+	padding: 15px;
+}
+
+h1 {
+	font-size: 13pt;
+	width: 100%;
+}
+
+h2 {
+	font-size: 12pt;
+}
+
+img {
+	vertical-align: middle;
+}
+
+.copyright {
+	font-size: 8pt;
+	margin-top: 0px;
+}
+
+a:visited {
+	color: blue;
+}
+
+#java{float:right; background:url('images/Java_Compatible.jpg') no-repeat; height:78px; width:45px;}
+
+span.reserved{font-size:9px;}

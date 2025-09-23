@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: Nu s-a putut determina directorul istoric; directorul produs nu a putut fi determinat
+WVER0201E.explanation=Directorul istoric este un subdirector al directorului produs.  Consultaţi explicaţia pentru eroarea care a vut loc la determinarea directorului produs pentru informaţii suplimentare.
+WVER0201E.useraction=Urmaţi instrucţiunile care apar cu eroarea de versiune.
+
+# 
+WVER0202E=WVER0202E: Nu s-au putut încărca informaţiile de istoric
+WVER0202E.explanation=Informaţiile de istoric nu au putut fi încărcate din fişierul istoric {0}.  Detalii particulare sunt în funcţie de eroarea care a avut loc.
+WVER0202E.useraction=Asiguraţi-vă că fişierul istoric este citibil şi are formatul corect.
+
+# 
+WVER0203E=WVER0203E: A avut loc o excepţie la citirea {0}
+WVER0203E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0203E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0204E=WVER0204E: A avut loc o excepţie la crearea directorului istoric {0}
+WVER0204E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0204E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0205E=WVER0205E: A avut loc o excepţie la crearea unei salvări de rezervă pentru fişierul istoric {0} în {1}
+WVER0205E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0205E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0206E=WVER0206E: A avut loc o excepţie la scrierea istoricului de evenimente {0}
+WVER0206E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0206E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Toate drepturile rezervate.
+WVER0210I.explanation=Aceasta este o declaraţie standard de copyright.
+WVER0210I.useraction=Nu este necesară nici o acţiune utilizator.  Acesta este un mesaj informativ.
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=Aceasta este o declaraţie standard de descriere produs.
+WVER0211I.useraction=Nu este necesară nici o acţiune utilizator.  Acesta este un mesaj informativ.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter versiunea {0}, datată {1}
+WVER0212I.explanation=Aceasta este o declaraţie standard de descriere modul.
+WVER0212I.useraction=Nu este necesară nici o acţiune utilizator.  Acesta este un mesaj informativ.
+
+# 
+WVER0225E=WVER0225E: Nu a fost specificată nici o valoare pentru argumentul ''{0}''
+WVER0225E.explanation=Argumentul listat necesită o valoare.  (Folosiţi '-help' sau '-usage' pentru a afişa informaţii de folosire.)
+WVER0225E.useraction=Specificaţi o valoare pentru argumentul listat.
+
+# 
+WVER0226E=WVER0226E: Valoarea ''{0}'' nu este o valoare de format validă.
+WVER0226E.explanation=Valorile de format valid sunt 'text' şi 'html'.  Valoarea specificată nu este una din aceste valori.  (Folosiţi '-help' sau '-usage' pentru a afişa informaţii de folosire.)
+WVER0226E.useraction=Modificaţi valoarea de format la una din valorile valide, 'text' sau 'html'.
+
+# 
+WVER0228E=WVER0228E: Argumentul ''{0}'' nu este un argument valid.
+WVER0228E.explanation=Argumentul specificat nu este valid.  (Folosiţi '-help' sau '-usage' pentru a afişa informaţii de folosire.)
+WVER0228E.useraction=Modificaţi argumentul la un argument valid.
+
+# 
+WVER0230I=WVER0230I: Folosire: historyInfo ( [ -format <text | html> ] [ -file <output file> ] [ -updateId <updateId> ] [ -component <componentName> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Acest mesaj informaţional descrie argumentele programului utilitar historyInfo.  Programul utilitar historyInfo acceptă cinci argumente cuvânt cheie opţional, unul care specifică formatul de ieşire, unul care specifică un fişier de ieşire, unul care afişează doar acele evenimente care sunt asociate cu efix-ul specificat, unul care afişeazădoar acele evenimente care sunt asociate cu o componentă specificată şi unul care este folosit pentru a afişa informaţii de folosire.  (Folosiţi '-usage' sau '-help' pentru a afişa informaţii suplimentare.)
+WVER0230I.useraction=Nu este necesară nici o acţiune utilizator.  Mesajul de informaţii de folosire este afişat la cerere.
+
+# 
+WVER0231I=WVER0231I: Argumentul '-format' este folosit pentru a specifica formatul de ieşire, care trebuie specificat ca unul dintre 'text' sau 'html'.  Argumentul '-file' este folosit pentru a specifica fişierul de ieşire.  Trebuie furnizat un nume de fişier.  Argumentul '-updateId' este folosit pentru a specifica ID-ul unei actualizări,care va restricţiona evenimentele care sunt afişate.  Argumentul '-component' este folosit pentru a specifica numele unei componente, care va restricţiona evenimentele care sunt afişate.  Argumentul '-help' este folosit pentru aafişa informaţii de versiune.  Argumentul '-usage' este folosit pentru a afişa acest mesaj informativ.
+WVER0231I.explanation=Mesajul descrie argumentele valide ale programului utilitar versionInfo.
+WVER0231I.useraction=Nu este necesară nici o acţiune utilizator.  Mesajul de informaţii de folosire este afişat la cerere.
+
+# 
+WVER0240E=WVER0240E: Eroare la scrierea raportului de versiune la {0}: {1}
+WVER0240E.explanation=Eroarea specificată a avut loc la scrierea raportul istoric în fişierul specificat.
+WVER0240E.useraction=Acţiunea corectivă depinde de specificele erori care a avut loc.  În particular, asiguraţi-vă că înfişierul specificat se poate scrie şi că există spaţiu suficient pentru raport.
+
+# 
+WVER0241E=WVER0241E: Eroare la scrierea raportului de istoric la {0}.  Textul erorii nu poate fi afişat, dar este de tipul {1}.  O a doua eroare de tipul {2}, a apărut la extragerea textului erorii.
+WVER0241E.explanation=A avut loc o eroare la scrierea raportul istoric în fişierul specificat. A avut loc o a doua eroare la extragerea textului erorii.
+WVER0241E.useraction=Nu este disponibilă nici o acţiune utilizator.  Vă rugăm încercaţi din nou operaţia cerută sau contactaţi suportul pentru ajutor suplimentar.
+
+# 
+WVER0242E=WVER0242E: A apărut o excepţie în timpul procesării informaţiilor de istoric
+WVER0242E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0242E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0243E=WVER0243E: Au apărut excepţii în timpul procesării informaţiilor de istoric
+WVER0243E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0243E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+# 
+WVER0261E=WVER0261E: Nu s-a putut înregistra aplicaţia pe fix-ul {0} pe componenta {1} în fişierul {2}.  Fişierul numit nu a putut fi salvat.
+WVER0261E.explanation=Fişierul numit nu a putut fi salvat.
+WVER0261E.useraction=Asiguraţi-vă că fişierul destinaţie nu este protejat la scriere şi că este disponibil spaţiu pentru un nou fişier.
+
+# 
+WVER0262E=WVER0262E: Nu s-a putut înregistra înlăturarea aplicaţiei pe fix-ul {0} pe componenta {1} în fişierul {2}.  Fişierul numit nu a putut fi salvat.
+WVER0262E.explanation=Fişierul numit nu a putut fi salvat.
+WVER0262E.useraction=Asiguraţi-vă că fişierul destinaţie nu este protejat la scriere şi că este disponibil spaţiu pentru un nou fişier.
+
+# 
+WVER0263E=WVER0263E: Nu s-a putut înregistra înlăturarea aplicaţiei de fix {0} pe componenta {1} stocată în fişierul {2}.  Fişierul numit nu a putut fi înlăturat.
+WVER0263E.explanation=Fişierul numit nu a putut fi înlăturat.
+WVER0263E.useraction=Asiguraţi-vă că fişierul destinaţie poate fi înlăturat.
+
+# 
+WVER0264E=WVER0264E: Nu s-a putut înregistra înlăturarea aplicaţiei corecţiiei {0} pe componenta {1} -- nu există nici o aplicaţie pe înregistrare.
+WVER0264E.explanation=Componenta nu are nici o înregistrare de aplicaţie a corecţiei specificate.  Informaţiile produs pot fi corupte sau se poate să fi avut loc o eroare internă
+WVER0264E.useraction=Vă rugăm consultaţi suportul pentru informaţii suplimentare.
+
+# 
+WVER0265E=WVER0265E: Nu s-a putut înlătura driver-ul corecţiei {0} stocată în fişierul {2}.
+WVER0265E.explanation=Fişierul numit nu a putut fi înlăturat.
+WVER0265E.useraction=Asiguraţi-vă că fişierul destinaţie poate fi înlăturat.
+
+# 
+WVER0266E=WVER0266E: Au apărut erori recuperabile la parsarea informaţiilor PTF Driver.
+WVER0266E.explanation=Erorile, a căror listă urmează, au apărut la parsarea informaţiilor PTF.  Consultaţi erorile listate pentru informaţii suplimentare.
+WVER0266E.useraction=Consultaţi erorile listate pentru acţiuni utilizator sugestate.
+
+# 
+WVER0267E=WVER0267E: Nu se poate înregistra înlăturarea aplicaţiei sau PTF-ului {0} pe componenta{1} în fişierul {2}.  Fişierul numit nu a putut fi salvat.
+WVER0267E.explanation=Fişierul numit nu a putut fi salvat.
+WVER0267E.useraction=Asiguraţi-vă că fişierul destinaţie nu este protejat la scriere şi că este disponibil spaţiu pentru un nou fişier.
+
+# 
+WVER0268E=WVER0268E: Nu s-a putut înregistra înlăturarea aplicaţiei de PTF {0} pe componenta {1} stocată în fişierul {2}.  Fişierul numit nu a putut fi înlăturat.
+WVER0268E.explanation=Fişierul numit nu a putut fi înlăturat.
+WVER0268E.useraction=Asiguraţi-vă că fişierul destinaţie poate fi înlăturat.
+
+# 
+WVER0269E=WVER0269E: Nu s-a putut înregistra înlăturarea aplicaţiei din PTF {0} pe componenta {1} -- nu există nici o aplicaţie pe înregistrare.
+WVER0269E.explanation=Componenta nu are nici o înregistrare de aplicaţie cu PTF-ul specificat.  Informaţiile produs pot fi corupte sau se poate să fi avut loc o eroare internă
+WVER0269E.useraction=Vă rugăm consultaţi suportul pentru informaţii suplimentare.
+
+# 
+WVER0270E=WVER0270E: Nu s-a putut înlătura driver-ul PTF {0} stocat în fişierul {2}.
+WVER0270E.explanation=Fişierul numit nu a putut fi înlăturat.
+WVER0270E.useraction=Asiguraţi-vă că fişierul destinaţie poate fi înlăturat.
+
+# 
+WVER0271E=WVER0271E: Extensie fişier istoric produs nerecunoscut ''{0}''.
+WVER0271E.explanation=La încărcarea informaţiilor istoric, aceste informaţii sunt stocate în fişiere care au extensii specifice.  Extensiile determină tipul de informaţii stocate în fiecare fişier.  Extensii valide sunt '.fixDriver', '.fixApplied', '.efixDriver', '.efixApplied', '.ptfDriver' şi '.ptfApplied'.  A fost făcută o încercare de a încărca un fişier care conţine informaţii de versiune unde extensia fişierului nu este printe extensiile valide.
+WVER0271E.useraction=Aceasta indică o eroare internă.
+
+# 
+WVER0272E=WVER0272E: A avut loc o excepţie la citirea {0}
+WVER0272E.explanation=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+WVER0272E.useraction=Vă rugăm să consultaţi detaliile de excepţie imbricate pentru informaţii suplimentare.
+
+label.standard.out=Ieşirea standard
+
+listing.nested.error={0}: {1}
+
+report.header=Raport istoric IBM WebSphere portal
+report.header.update=Raport istoric IBM WebSphere Portal Server pentru actualizarea {0}
+report.header.component=Raport istoric IBM WebSphere Portal pentru componenta {0}
+report.header.update.component=Raport istoric IBM WebSphere Portal pentru actualizarea {0} şi componenta {1}
+
+warning.no.events=Avertisment:Nu sunt disponibile evenimente.
+warning.no.events.for.component=Avertisment:Nu sunt disponibile evenimente pentru componenta {0}.
+warning.no.events.for.update=Avertisment:Nu sunt disponibile evenimente pentru actualizarea {0}.
+warning.no.events.for.update.component=Avertisment:Nu sunt disponibile evenimente pentru actualizarea {0} şi componenta {1}.
+
+info.report.on=Raport la data şi ora {0}
+
+report.footer=Terminare raport istoric
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Instalare
+label.product.dir=Director produs
+label.version.dir=Director versiune
+label.version.dtd.dir=Director DTD
+label.version.log.dir=Director istoric
+label.version.backup.dir=Director salvare de rezervă
+label.version.tmp.dir=Director TMP
+label.version.history.dir=Director istoric
+label.version.history.file=Fişier istoric
+
+info.event=Eveniment instalare
+info.component.event=Eveniment instalare componentă
+
+label.efix.id=ID fix
+label.ptf.id=PTF ID
+label.unknown.id=ID necunoscut
+
+label.action=Acţiune
+
+label.start.time.stamp=Oră începere
+label.end.time.stamp=Timp terminare
+
+label.log.file.name=Nume fişier istoric
+
+
+label.component.name=Nume componentă
+
+label.is.custom=Este personalizat
+label.primary.content=Conţinut primar
+
+label.update.type=Acţiune actualizare
+
+label.is.external=Este extern
+label.root.property.file=Fişier proprietate root
+label.root.property.name=Nume proprietate root
+label.root.property.value=Valoare proprietate root
+
+label.backup.file.name=Nume fişier salvare de rezervă
+label.result=Rezultat
+label.result.message=Mesaj rezultat
+
+label.initial.version=Versiune iniţială
+label.initial.spec.version=Specificare iniţială
+label.initial.build.date=Dată de build iniţială
+
+label.final.version=Versiune finală
+label.final.spec.version=Specificare versiune finală
+label.final.build.date=Dată de build finală
+
+
+label.install.action=instalare
+label.uninstall.action=dezinstalare
+label.selective.install.action=instalare selectivă
+label.selective.uninstall.action=dezinstalare selectivă
+label.unknown.action=*** ACŢIUNE EVENIMENT NECUNOSCUT ***
+
+label.update.add.tag=adăugare
+label.update.replace.tag=înlocuire
+label.update.remove.tag=înlăturare
+label.update.patch.tag=patch
+label.update.composite.tag=compusă
+label.update.unknown.tag=*** TIP NECUNOSCUT ACTUALIZARE ***
+
+label.result.succeeded.tag=reuşit
+label.result.failed.tag=eşuat
+label.result.cancelled.tag=anulat
+label.result.unknown.tag=*** REZULTAT NECUNOSCUT EVENIMENT ***
+
+label.true=adevărat
+label.false=fals

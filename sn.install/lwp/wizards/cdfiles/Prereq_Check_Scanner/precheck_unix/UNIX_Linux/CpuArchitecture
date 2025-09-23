@@ -1,0 +1,23 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2010
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+######Checking for CPU Architectures of the Servers #####
+
+if [ "`uname`" = "Linux" ]; then
+        CPUArch=`arch`
+elif [ "`uname`" = "AIX" ]; then
+        CPUArch=`prtconf |grep  "Processor Type" | cut -d ":" -f2 |  cut -d "_" -f2`
+else
+        CPUArch=`isainfo -k`
+fi
+
+echo $CPUArch
+
+

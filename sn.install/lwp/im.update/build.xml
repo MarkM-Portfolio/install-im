@@ -1,0 +1,135 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2006, 2017                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="im.update" default="build" basedir="."> 
+
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+    <import file="${env.WPLC_IMPORT}/std_dirs.xml"/> 
+    <import file="${env.WPLC_IMPORT}/copyright.xml"/>
+    <import file="${env.WPLC_IMPORT}/clean.xml"/>
+    <import file="${env.WPLC_IMPORT}/check.xml"/>
+    <import file="${env.WPLC_IMPORT}/nojavadoc.xml" />
+	
+    <property name="lap.current" value="true" />
+    <property environment="env" />
+		<property name="precompile.override" value="all"/>
+		<locateComponent component="im.update" property="im.update.dir" />
+		<property name="CE_HOME" value="LC_Config" />
+		<property name="IMBuildDir" value="./IMBuildDir" />
+		<property name="OLD_OFFERING" value="./old_offering" />
+		<property name="NEW_OFFERING" value="./new_offering" />
+		<property name="OUTPUT" value="update_output" />
+	    <property name="OUTPUT_delta" value="update_output_delta" />
+	    <property name="OUTPUT_servicedelta" value="update_output_servicedelta" />
+		<property name="offering.file.home" value="${IMBuildDir}/com.ibm.connections.offering" />
+		<locateComponent component="prereq-panelJars" property="prereq-panelJars" />
+		<property name="destination.dir" value="${dir.build}/cdSetup" />
+
+    <target name="development" depends="compare">  	   
+    </target>
+	
+	<target name="production" depends="compare">  	   
+    </target>
+	
+	<!--<target name="development">  	   
+	</target>
+		
+	<target name="production">  	   
+	</target>-->
+	
+	<target name="compare"  depends="build">
+	</target>
+
+	<target name="build" >
+		<delete dir="${IMBuildDir}" />
+		<delete dir="${OLD_OFFERING}" />
+		<delete dir="${NEW_OFFERING}" />
+		<delete dir="${OUTPUT}" />
+		<delete dir="${OUTPUT_delta}" />
+		<delete dir="${OUTPUT_servicedelta}" />
+		
+		<mkdir dir="${IMBuildDir}" />
+		<mkdir dir="${OLD_OFFERING}" />
+		<mkdir dir="${NEW_OFFERING}" />
+		<mkdir dir="${OUTPUT}" />
+		<mkdir dir="${OUTPUT_delta}" />
+		<mkdir dir="${OUTPUT_servicedelta}" />
+		
+		<copy todir="${IMBuildDir}" >
+			<fileset dir="${CE_HOME}" />
+		</copy>
+		<copy todir="${OLD_OFFERING}" >
+			<fileset dir="${connections.gold.build}" />
+		</copy>
+		<copy todir="${NEW_OFFERING}" >
+			<fileset dir="${env.LWP_HOME}/setup/HCL_Connections_Install/HCLConnections" />
+		</copy>
+		
+		<exec executable="${PD_HOME}/eclipsec.exe" >
+			<arg value="--launcher.ini" />
+			<arg value="${PD_HOME}/pdevbuild.ini" />
+			<arg value="-buildfile" />
+			<arg value="${im.update.dir}/${IMBuildDir}/buildCE.xml" />
+			<arg value="-Ddir.build=${dir.build}" />
+			<arg value="-DIMBuildDir=${im.update.dir}/${IMBuildDir}" />
+			<arg value="-DOLD_OFFERING=${im.update.dir}/${OLD_OFFERING}" />
+			<arg value="-DNEW_OFFERING=${im.update.dir}/${NEW_OFFERING}" />
+			<arg value="-DOUTPUT=${im.update.dir}/${OUTPUT}" />
+			<arg value="-DOUTPUT_delta=${im.update.dir}/${OUTPUT_delta}" />
+			<arg value="-DOUTPUT_servicedelta=${im.update.dir}/${OUTPUT_servicedelta}" />
+		</exec>
+
+	</target>	
+  <!-- deleteBuildDir target is of no use -->	
+	<target name="deleteBuildDir" >
+		<echo message="${OLD_OFFERING}" />
+		<echo message="${IMBuildDir}" />
+		<delete dir="${IMBuildDir}" />
+		<delete dir="${OLD_OFFERING}" />
+		<delete dir="${NEW_OFFERING}" />
+		<copy todir="${dir.build}/fixpack_output" >
+			<fileset dir="${OUTPUT}" />
+		</copy>
+		<copy todir="${dir.build}/fixpack_output" >
+			<fileset dir="../im.assembler/cdfiles/feature.config/common/silentResponseFile" >
+				<include name="LC_CR_update.rsp" />
+				<include name="LC_CR_rollback.rsp" />
+			</fileset>	
+		</copy>
+
+		<loadfile property="theQualifier" srcFile="${dir.build}/../im.projects/version_qualifier.txt"/>
+		<replace file="${dir.build}/fixpack_output/LC_CR_update.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		<replace file="${dir.build}/fixpack_output/LC_CR_rollback.rsp" token="@QUALIFIER@" value="${theQualifier}" />
+		
+		<copy todir="${dir.build}/fixpack_output/delta" >
+			<fileset dir="${OUTPUT_delta}" />
+		</copy>
+		<copy todir="${dir.build}/fixpack_output/servicedelta" >
+			<fileset dir="${OUTPUT_servicedelta}" />
+		</copy>
+		<echo file="${dir.build}/fixpack_output/updates/repository.config">
+LayoutPolicy=Composite
+LayoutPolicyVersion=0.0.0.1
+repository.url.01=../base/repository
+repository.url.02=../delta/repository
+repository.url.03=../servicedelta/serviceDelta
+		</echo>
+		<!-- This needs to be moved into buildCE.xml
+		<cic.createRepositoryDigest>
+			<processedrepository path="${dir.build}/fixpack_output/updates" />
+		</cic.createRepositoryDigest>
+		-->
+		<delete dir="${OUTPUT}" />
+		<delete dir="${OUTPUT_delta}" />
+		<delete dir="${OUTPUT_servicedelta}" />
+	</target>
+</project>

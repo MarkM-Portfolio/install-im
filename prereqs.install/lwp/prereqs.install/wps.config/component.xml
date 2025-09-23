@@ -1,0 +1,38 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- (C) Copyright IBM Corp. 2006                                      -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="prereqs.install/wps.config" 
+           type="binary" 
+           description="libs for configuration engine" 
+           spec-version="1.6.1"
+           build-version=""
+           owner=""
+           owner-email="">
+   <output-group name="default">
+	<output type="jar" visibility="external" platform="all" location="bootstrap.jar"/>
+	<output type="jar" visibility="external" platform="all" location="lwp.MantisDeployTasks.jar"/>
+	<output type="jar" visibility="external" platform="all" location="dbt.jar"/>
+	<output type="jar" visibility="external" platform="all" location="tools.jar"/>
+	<output type="jar" visibility="external" platform="all" location="windows_system_services.dll"/>
+	<output type="jar" visibility="external" platform="all" location="wp.config.jar"/>
+	<output type="jar" visibility="external" platform="all" location="wp.depcheck.jar"/>
+	<output type="jar" visibility="external" platform="all" location="wkplc.comp.registry.jar"/>
+   </output-group>
+
+   <output-group name="dist">
+	<output type="jar" visibility="external" platform="all" location="tools.jar"/>
+	<output type="jar" visibility="external" platform="all" location="windows_system_services.dll"/>
+   </output-group>
+
+</component>

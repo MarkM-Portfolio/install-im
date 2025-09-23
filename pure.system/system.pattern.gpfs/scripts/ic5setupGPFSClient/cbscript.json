@@ -1,0 +1,52 @@
+[
+   {
+      "command": "\/tmp\/ic5setupGPFSClient\/ic5setupGPFSClient.sh",
+      "description": "This script pakage copys the required DB2 JDBC driver to the correct PATH",
+      "execmode": 3,
+      "filename": "ic5setupGPFSClient.zip",
+      "keys": [
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/nfsshare",
+            "scriptkey": "MOUNT_POINT",
+            "scriptvalue": "\/nfsshare"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "dl_test",
+            "scriptkey": "PROJECTNAME",
+            "scriptvalue": "dl_test"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "fileSystemName",
+            "scriptkey": "GPFS File System",
+            "scriptvalue": "fileSystemName"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "shared",
+            "scriptkey": "sharedContentStore",
+            "scriptvalue": "shared"
+         },
+         {
+            "locked": false,
+            "required": true,
+            "scriptdefaultvalue": "\/ConnectionsSharedLink",
+            "scriptkey": "contentStoreLink",
+            "scriptvalue": "\/ConnectionsSharedLink"
+         }
+      ],
+      "location": "\/tmp\/ic5setupGPFSClient",
+      "log": "\/tmp\/ic5setupGPFSClient\/logs",
+      "name": "ic5setupGPFSClient",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION",
+      "version": "1.0.0"
+   }
+]

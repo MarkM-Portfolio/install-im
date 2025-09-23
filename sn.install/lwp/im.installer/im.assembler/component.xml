@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * IBM Licensed Material
+ * 
+ * Copyright IBM Corp. 2006, 2016                                    
+ * 
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has been
+ * deposited with the U.S. Copyright Office.
+ * 
+-->
+<component name="im.installer/im.assembler" description="Assemble other files for Connections" spec-version="${app.comp.version}" disabled="false">
+	<output-group name="default">
+		<output type="dir" visibility="public" platform="all" location="tools" preferredInstallLocation="tools"/>
+	</output-group>
+	
+	<!--<dependency name="filenet.integration/waltz.tool" type="dir" />-->
+	<dependency name="lc.live.installer" type="dir" />
+</component>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="com.ibm.cic.common.core.licenseText">
+		<license
+			file="licenses/notices.txt"
+			licenseId="com.ibm.connections.notices">
+		</license>
+		<licenseOfferingBinding
+			grouping="%Offering.name"
+			licenseId="com.ibm.connections.notices"
+			offeringId="com.ibm.connections"
+			offeringVersion="[5.0.0,8.0.0)"
+			label="%Offering3.name"
+			primary="false">
+		</licenseOfferingBinding>
+		
+		<license
+			file="licenses/non_hcl_license.txt"
+			licenseId="com.ibm.connections.non_hcl_license">
+		</license>
+		<licenseOfferingBinding
+			grouping="%Offering.name"
+			licenseId="com.ibm.connections.non_hcl_license"
+			offeringId="com.ibm.connections"
+			offeringVersion="[5.0.0,8.0.0)"
+			label="%Offering4.name"
+			primary="false">
+		</licenseOfferingBinding>
+
+		<license
+			file="licenses/LA.txt"
+			licenseId="com.ibm.connections.LA">
+		</license>
+		<licenseOfferingBinding
+			grouping="%Offering.name"
+			licenseId="com.ibm.connections.LA"
+			offeringId="com.ibm.connections"
+			offeringVersion="[5.0.0,8.0.0)"
+			label="%Offering1.name"
+			primary="true">
+		</licenseOfferingBinding>
+
+		<license
+			file="licenses/LI.txt"
+			licenseId="com.ibm.connections.LI">
+		</license>
+		<licenseOfferingBinding
+			grouping="%Offering.name"
+			licenseId="com.ibm.connections.LI"
+			offeringId="com.ibm.connections"
+			offeringVersion="[5.0.0,8.0.0)"
+			label="%Offering2.name"
+			primary="false">
+		</licenseOfferingBinding> 
+   </extension>
+
+</plugin>

@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Ocorreu uma excepção ao carregar o documento {1} utilizando o directório DTD {0}
+WVER0101E.explanation=A excepção indicada provocou uma falha no carregamento do documento especificado.
+WVER0101E.useraction=A acção de utilizador específica depende da excepção ocorrida. Certifique-se, nomeadamente, de que o ficheiro especificado se encontra disponível e de que possui o formato apropriado. Contacte o suporte técnico para obter mais informações.
+
+# 
+WVER0102E=WVER0102E: Ocorreu uma excepção ao carregar o documento {1} utilizando o directório DTD {0}. Foi definido um ID de sistema de {2} e um ID público de {3}. O erro ocorreu na linha número {4} e na coluna número {5}
+WVER0102E.explanation=A excepção indicada provocou uma falha no carregamento do documento especificado.
+WVER0102E.useraction=A acção de utilizador específica depende da excepção ocorrida. Certifique-se, nomeadamente, de que o ficheiro especificado se encontra disponível e de que possui o formato apropriado. Contacte o suporte técnico para obter mais informações.
+
+# 
+WVER0104E=WVER0104E: Ocorreu uma excepção ao criar um elemento de documento de raiz do tipo {0}
+WVER0104E.explanation=A excepção indicada ocorreu durante a criação de um elemento de documento raiz.
+WVER0104E.useraction=A acção de utilizador específica depende da excepção ocorrida. Na maioria das situações, a configuração do interpretador de XML não é válida. Certifique-se de que as propriedades do sistema java não criam uma configuração de interpretador não válida. Contacte o suporte técnico para obter mais informações.
+
+# 
+WVER0105E=WVER0105E: Ocorreu uma excepção ao criar um objecto de modelo XML (do tipo {0})
+WVER0105E.explanation=A excepção indicada ocorreu durante a tentativa de criação de um objecto de modelo XML.
+WVER0105E.useraction=A acção de utilizador específica depende da excepção ocorrida. Na maioria das situações, o tipo indicado não está disponível no caminho de classe definido. Contacte o suporte técnico para obter mais informações.
+
+# 
+WVER0106E=WVER0106E: Foi efectuada uma tentativa de colocar um elemento num objecto com o tipo simples {0}
+WVER0106E.explanation=Este erro é interno.
+WVER0106E.useraction=Contacte o suporte técnico para obter mais informações.
+
+# 
+WVER0107E=WVER0107E: Ocorreu uma excepção ao tentar escrever as informações de versão no ficheiro {0}
+WVER0107E.explanation=A excepção indicada ocorreu durante a tentativa de escrita do ficheiro especificado.
+WVER0107E.useraction=A acção de utilizador específica depende da excepção ocorrida. Certifique-se, nomeadamente, de que o ficheiro indicado é passível de escrita e de que existe espaço disponível suficiente para o ficheiro indicado.
+
+# 
+WVER0108E=WVER0108E: Ocorreu uma excepção ao executar a resolução de entidades, com o ID público {0}, ID de sistema {1} e nome de ficheiro carregado em memória {2}
+WVER0108E.explanation=A excepção indicada ao processar a informação DTD durante a interpretação de informações de produto. Não foi possível processar o DTD indicado.
+WVER0108E.useraction=A acção de utilizador específica depende da excepção ocorrida.
+
+# 
+WVER0201E=WVER0201E: Atributo em falta ''{0}'' no elemento do tipo ''{1}''
+WVER0201E.explanation=O atributo designado não é um atributo válido do tipo de elemento especificado.
+WVER0201E.useraction=Actualize o ficheiro XML por forma a corrigir as informações de atributo.
+
+#
+WVER0202E=WVER0202E: Estrutura de elemento desequilibrada: Fechos de elemento em excesso.
+WVER0202E.explanation=Um ficheiro XML que inclui informações de produto contém uma estrutura de elementos com defeito.
+WVER0202E.useraction=Actualize o ficheiro XML por forma a corrigir a estrutura de elementos.
+
+#
+WVER0203E=WVER0203E: Estrutura de elemento desequilibrada: Fechos de elemento em falta.
+WVER0203E.explanation=Um ficheiro XML que inclui informações de produto contém uma estrutura de elementos com defeito.
+WVER0203E.useraction=Actualize o ficheiro XML por forma a corrigir a estrutura de elementos.
+
+#
+WVER0204E=WVER0204E: O elemento ''{0}'' não é válido como elemento de raiz
+WVER0204E.explanation=Um ficheiro XML que inclui informações de produto contém uma estrutura de elementos com defeito.
+WVER0204E.useraction=Actualize o ficheiro XML por forma a corrigir a estrutura de elementos.
+
+#
+WVER0205E=WVER0205E: O elemento ''{0}'' não é válido no elemento ''{1}''
+WVER0205E.explanation=Um ficheiro XML que inclui informações de produto contém uma estrutura de elementos com defeito.
+WVER0205E.useraction=Actualize o ficheiro XML por forma a corrigir a estrutura de elementos.
+
+#
+WVER0206E=WVER0206E: Tente fechar o elemento ''{0}'' dentro do elemento ''{1}''
+WVER0206E.explanation=Um ficheiro XML que inclui informações de produto contém uma estrutura de elementos com defeito.
+WVER0206E.useraction=Actualize o ficheiro XML por forma a corrigir a estrutura de elementos.

@@ -1,0 +1,303 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WASHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WASProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WASHistory.java:
+#
+WVER0201E=WVER0201E: Не найден каталог хронологии; не удалось определить каталог продукта
+WVER0201E.explanation=Каталог хронологии является подкаталогом каталога продукта. За информацией обращайтесь к описанию ошибки, возникшей при определении каталога продукта.
+WVER0201E.useraction=Следуйте инструкциям, появившимся после ошибки версии.
+
+# 
+WVER0202E=WVER0202E: Не удалось загрузить информацию хронологии.
+WVER0202E.explanation=Сведения о хронологи не удалось загрузить из файла хронологи {0}. Конкретные причины зависят от возникшей ошибки.
+WVER0202E.useraction=Убедитесь, что файл хронологии может быть прочитан и имеет правильный формат.
+
+# 
+WVER0203E=WVER0203E: Возникла исключительная ситуация при чтении {0}
+WVER0203E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0203E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0204E=WVER0204E: При создании каталога хронологии {0} возникла исключительная ситуация
+WVER0204E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0204E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0205E=WVER0205E: Возникла исключительная ситуация при создании резервной копи файла хронологии {0} в файле {1}
+WVER0205E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0205E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0206E=WVER0206E: Возникла исключительная ситуация при записи в хронологию событий {0}
+WVER0206E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0206E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0210I.explanation=Это стандартное заявление об авторских правах.
+WVER0210I.useraction=Действия пользователя не требуются. Это информационное сообщение.
+
+# 
+WVER0211I=WVER0211I: WebSphere Application Server, выпуск 5.0
+WVER0211I.explanation=Это стандартное описание продукта.
+WVER0211I.useraction=Действия пользователя не требуются. Это информационное сообщение.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter версии {0}, дата {1}
+WVER0212I.explanation=Это стандартное описание модуля.
+WVER0212I.useraction=Действия пользователя не требуются. Это информационное сообщение.
+
+# 
+WVER0225E=WVER0225E: Не указано значение аргумента ''{0}''
+WVER0225E.explanation=Для данного аргумента необходимо указать значение. (Для просмотра справочной информации укажите аргумент '-help' или '-usage').
+WVER0225E.useraction=Укажите значение аргумента.
+
+# 
+WVER0226E=WVER0226E: Недопустимое значение формата ''{0}''.
+WVER0226E.explanation=Допустимые значения формата: 'text' и 'html'. Указанное значение отличается от допустимых. (Для просмотра справочной информации укажите аргумент '-help' или '-usage').
+WVER0226E.useraction=Укажите допустимое значение формата ('text' или 'html').
+
+# 
+WVER0228E=WVER0228E: Недопустимый аргумент ''{0}''.
+WVER0228E.explanation=Указано недопустимое значение аргумента. (Для просмотра справочной информации укажите аргумент '-help' или '-usage').
+WVER0228E.useraction=Измените значение аргумента на одно из допустимых.
+
+# 
+WVER0230I=WVER0230I: Формат: historyInfo ( [ -format <text | html> ] [ -file  <файл вывода> ] [ -updateId <ИД обновления> ] [ -component <имя компонента> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=В этом сообщении описаны аргументы утилиты historyInfo. Утилита historyInfo принимает пять необязательных аргументов, первый из которых определяет формат вывода, второй указывает на файл вывода, третий используется для отображения только событий, связанных с указанным аварийным исправлением, четвертый - для отображения событий, связанных с определенным компонентом, а пятый выводит на экран справочную информацию о формате команды. (Для просмотра дополнительной справочной информации укажите аргумент '-usage' или '-help').
+WVER0230I.useraction=Действия пользователя не требуются. Справочная информация отображается по запросу.
+
+# 
+WVER0231I=WVER0231I: Аргумент '-format' используется для задания формата вывода и может принимать два значения: 'text' и 'html'.  Аргумент '-file' указывает на файл вывода. Необходимо ввести имя файла.  Аргумент '-updateId' указывает на то, что следует показывать только события, касающиеся обновления с определенным ИД. Аргумент '-component' указывает на то, что следует показывать только события, касающиеся компонента с определенным именем. Аргумент '-help' вызывает сообщение с информацией о версии. Аргумент '-usage' используется для вызова данного информационного сообщения.
+WVER0231I.explanation=В этом сообщении описаны допустимые аргументы утилиты versionInfo.
+WVER0231I.useraction=Действия пользователя не требуются. Справочная информация отображается по запросу.
+
+# 
+WVER0240E=WVER0240E: Ошибка при записи о версии отчета в {0}: {1}
+WVER0240E.explanation=Данная ошибка возникла при записи хронологического отчета в указанный файл.
+WVER0240E.useraction=Действия по устранению зависят от типа возникшей ошибки. Необходимо убедиться, что данный файл доступен для записи и дисковый накопитель содержит достаточно свободного пространства для записи данных.
+
+# 
+WVER0241E=WVER0241E: Произошла ошибка при сохранении отчета о хронологии в {0}. Ошибка типа {1}. Просмотреть  текст сообщения об ошибке нельзя.  Вторая ошибка (типа {2}) возникла при получении текста сообщения об ошибке.
+WVER0241E.explanation=При записи хронологического отчета в указанный файл возникла ошибка. Вторая ошибка возникла при получении текста сообщения об ошибке.
+WVER0241E.useraction=Участие пользователя не требуется. Повторите операцию или обратитесь в службу поддержки.
+
+# 
+WVER0242E=WVER0242E: В процессе обработки сведений о хронологии возникла исключительная ситуация
+WVER0242E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0242E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0243E=WVER0243E: В процессе обработки информации о хронологии возникли исключительные ситуации
+WVER0243E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0243E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+# 
+WVER0261E=WVER0261E: Не удалось зарегистрировать применение аварийного исправления {0} для компонента {1} в файле {2}. Указанный файл невозможно сохранить.
+WVER0261E.explanation=Указанный файл невозможно сохранить.
+WVER0261E.useraction=Убедитесь, что целевой файл доступен для записи и на диске достаточно свободного места для его сохранения.
+
+# 
+WVER0262E=WVER0262E: Не удалось зарегистрировать удаление аварийного исправления {0} из компонента {1} в файле {2}.  Указанный файл невозможно сохранить.
+WVER0262E.explanation=Указанный файл невозможно сохранить.
+WVER0262E.useraction=Убедитесь, что целевой файл доступен для записи и на диске достаточно свободного места для его сохранения.
+
+# 
+WVER0263E=WVER0263E: Не удалось зарегистрировать удаление аварийного исправления {0} из компонента {1} в файле {2}. Указанный файл невозможно удалить.
+WVER0263E.explanation=Указанный файл невозможно удалить.
+WVER0263E.useraction=Убедитесь в том, что целевой файл можно удалить.
+
+# 
+WVER0264E=WVER0264E: Не удалось зарегистрировать удаление аварийного исправления {0} из компонента {1} -- отсутствует запись о применении этого исправления.
+WVER0264E.explanation=Для компонента нет записи об установке указанного аварийного исправления. Возможно, повреждена информация о продукте или возникла внутренняя ошибка.
+WVER0264E.useraction=За дополнительной информацией обращайтесь в службу технической поддержки.
+
+# 
+WVER0265E=WVER0265E: Невозможно удалить драйвер аварийного исправления {0} из файла {2}.
+WVER0265E.explanation=Указанный файл невозможно удалить.
+WVER0265E.useraction=Убедитесь в том, что целевой файл можно удалить.
+
+# 
+WVER0266E=WVER0266E: При синтаксическом анализе информации драйвера PTF возникли устранимые ошибки.
+WVER0266E.explanation=При синтаксическом анализе информации PTF возникли устранимые ошибки, список которых приведен ниже. Дополнительная информация приведена в тексте связанных сообщений об ошибках.
+WVER0266E.useraction=Возможные действия пользователя описаны в перечисленных сообщениях об ошибках.
+
+# 
+WVER0267E=WVER0267E: Не удалось зарегистрировать удаление PTF {0} из компонента {1} в файле {2}. Указанный файл невозможно сохранить.
+WVER0267E.explanation=Указанный файл невозможно сохранить.
+WVER0267E.useraction=Убедитесь, что целевой файл доступен для записи и на диске достаточно свободного места для его сохранения.
+
+# 
+WVER0268E=WVER0268E: Не удалось зарегистрировать удаление PTF {0} из компонента {1} в файле {2}. Указанный файл невозможно удалить.
+WVER0268E.explanation=Указанный файл невозможно удалить.
+WVER0268E.useraction=Убедитесь в том, что целевой файл можно удалить.
+
+# 
+WVER0269E=WVER0269E: Не удалось зарегистрировать удаление PTF {0} из компонента {1} -- отсутствует запись о применении этого исправления.
+WVER0269E.explanation=Для компонента нет записи об установке указанного PTF. Возможно, повреждена информация о продукте или возникла внутренняя ошибка.
+WVER0269E.useraction=За дополнительной информацией обращайтесь в службу технической поддержки.
+
+# 
+WVER0270E=WVER0270E: Невозможно удалить драйвер PTF {0} из файла {2}.
+WVER0270E.explanation=Указанный файл невозможно удалить.
+WVER0270E.useraction=Убедитесь в том, что целевой файл можно удалить.
+
+# 
+WVER0271E=WVER0271E: Неизвестное расширение файла хронологии продукта ''{0}''.
+WVER0271E.explanation=При загрузке информации о хронологии она сохраняется в файлах с определенным расширением. Расширение указывает на тип информации, хранящейся в каждом из файлов. Допустимые расширения: '.efixDriver', '.efixApplied', '.ptfDriver' и '.ptfApplied'. Файл, содержащий информацию о версии, с недопустимым расширением загрузить нельзя.
+WVER0271E.useraction=Внутренняя ошибка.
+
+# 
+WVER0272E=WVER0272E: Возникла исключительная ситуация при чтении {0}
+WVER0272E.explanation=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+WVER0272E.useraction=Дополнительная информация приведена в описании вложенной исключительной ситуации.
+
+label.standard.out=Стандартный вывод
+
+listing.nested.error={0}: {1}
+
+report.header=Отчет о хронологии IBM WebSphere Application Server
+report.header.update=Отчет о хронологии IBM WebSphere Application Server для обновления {0}
+report.header.component=Отчет о хронологии IBM WebSphere Application Server для компонента {0}
+report.header.update.component=Отчет о хронологии IBM WebSphere Application Server для обновления {0} и компонента {1}
+
+warning.no.events=Предупреждение: Нет событий.
+warning.no.events.for.component=Предупреждение: Нет событий для компонента {0}.
+warning.no.events.for.update=Предупреждение: Нет событий для обновления {0}.
+warning.no.events.for.update.component=Предупреждение: Нет событий для обновления {0} и компонента {1}. 
+info.report.on=Дата и время отчета: {0}
+
+report.footer=Конец отчета о хронологии
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Установка
+label.product.dir=Каталог продукта
+label.version.dir=Каталог версии
+label.version.dtd.dir=Каталог DTD
+label.version.log.dir=Каталог протоколов
+label.version.backup.dir=Каталог резервных копий
+label.version.tmp.dir=Каталог TMP
+label.version.history.dir=Каталог хронологии
+label.version.history.file=Файл хронологии
+
+info.event=Установка
+info.component.event=Установка компонента
+
+label.efix.id=ИД аварийного исправления
+label.ptf.id=ИД PTF
+label.unknown.id=ИД неизвестен
+
+label.action=Действие
+
+label.start.time.stamp=Время начала
+label.end.time.stamp=Время окончания
+
+label.log.file.name=Имя файла протокола
+
+
+label.component.name=Имя компонента
+
+label.is.custom=Пользовательское
+label.primary.content=Основное содержимое
+
+label.update.type=Действие Обновить
+
+label.is.external=Внешнее
+label.root.property.file=Файл корневого параметра
+label.root.property.name=Имя корневого параметра
+label.root.property.value=Значение корневого параметра
+
+label.backup.file.name=Имя файла резервной копии
+label.result=Результат
+label.result.message=Сообщение о результате
+
+label.initial.version=Исходная версия
+label.initial.spec.version=Исходная спецификация
+label.initial.build.date=Дата создания исходной версии
+
+label.final.version=Окончательная версия
+label.final.spec.version=Спецификация окончательной версии
+label.final.build.date=Дата создания окончательной версии
+
+
+label.install.action=установка
+label.uninstall.action=удаление
+label.selective.install.action=выборочная установка
+label.selective.uninstall.action=выборочное удаление
+label.unknown.action=*** НЕИЗВЕСТНОЕ ДЕЙСТВИЕ ***
+
+label.update.add.tag=добавление
+label.update.replace.tag=замена
+label.update.remove.tag=удаление
+label.update.patch.tag=исправление
+label.update.composite.tag=комбинация
+label.update.unknown.tag=*** НЕИЗВЕСТНЫЙ ТИП ОБНОВЛЕНИЯ ***
+
+label.result.succeeded.tag=выполнено успешно
+label.result.failed.tag=не выполнено
+label.result.cancelled.tag=отменено
+label.result.unknown.tag=*** РЕЗУЛЬТАТ НЕИЗВЕСТЕН ***
+
+label.true=true
+label.false=false

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+
+<!--
+#********************* Begin Standard Header - Do not add comments here ***************
+#
+#************************************* Begin XML Header ***********'***************************
+#  
+#  File:     com.ibm.prs.common.reports.schema
+#  Schema Version:  1.0
+#  Last Modified: <dd/mm/yy>
+#
+#********************* Begin Copyright - Do not add comments here ***********************
+#  Licensed Materials - Property of IBM'
+# "Restricted Materials of IBM"
+#
+#  5725-C13
+#
+# (C) Copyright IBM Corp. 2009, 2012 All Rights Reserved.
+#
+#  US Government Users Restricted Rights - Use, duplication, or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#************************************ End Standard Header ************'**************************
+-->
+
+
+
+<!-- define new types -->
+<xs:simpleType name="resultType"> 
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="PASS"/>
+        <xs:enumeration value="FAIL"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<!-- ================= -->
+<!-- define simple elements -->
+<!-- PRS info elements -->
+<xs:element name="PRSName" type="xs:string" />
+<xs:element name="PRSVersion" type="xs:string" />
+<xs:element name="PRSBuild" type="xs:string" />
+<xs:element name="PRSOutputDir" type="xs:string" />
+<xs:element name="PRSResultXmlFile" type="xs:string" />
+<!-- Machine info elements -->
+<xs:element name="MachineName" type="xs:string" />
+<xs:element name="MachineSerialNumber" type="xs:string" />
+<xs:element name="MachineOSSerial" type="xs:string" />
+<xs:element name="MachineOSName" type="xs:string" />
+<!-- User info elements -->
+<xs:element name="UserName" type="xs:string" />
+<!-- Product info elements -->
+<xs:element name="ProductCode" type="xs:string" />
+<xs:element name="ProductName" type="xs:string" />
+<xs:element name="ProductVersion" type="xs:string" />
+<!-- results elements -->
+<xs:element name="PropertyName" type="xs:string" />
+<xs:element name="Result" type="resultType" />
+<xs:element name="Found" type="xs:string" />
+<xs:element name="Expected" type="xs:string" />
+<xs:element name="OverallResult" type="resultType" />
+
+<!-- ================= -->
+<!-- define complex elements -->
+<xs:element name="PRSInfo">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="PRSName" />
+      <xs:element ref="PRSVersion" />
+      <xs:element ref="PRSBuild" />      
+      <xs:element ref="PRSOutputDir" />
+      <xs:element ref="PRSResultXmlFile" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element> 
+
+<xs:element name="MachineInfo">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="MachineName" minOccurs="0"/>
+      <xs:element ref="MachineSerialNumber" minOccurs="0"/>
+      <xs:element ref="MachineOSSerial" minOccurs="0"/>
+      <xs:element ref="MachineOSName" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element> 
+
+<xs:element name="UserInfo">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="UserName" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element> 
+
+
+<xs:element name="ProductElement">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="ProductCode" />
+      <xs:element ref="ProductName" />
+      <xs:element ref="ProductVersion" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element> 
+
+<xs:element name="ResultElement">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="PropertyName" />
+      <xs:element ref="Result" />
+      <xs:element ref="Found" />
+      <xs:element ref="Expected" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="ProductInfo">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="ProductElement" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="DetailedProductResultsElement">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="ProductCode" />
+      <xs:element ref="ResultElement" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="DetailedResults">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="DetailedProductResultsElement" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="AggregatedResults">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="ResultElement" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+<!-- ================= -->
+<!-- define overall xml schema -->
+<xs:element name="Results">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="PRSInfo" minOccurs="1"/>
+      <xs:element ref="MachineInfo" minOccurs="0"/>
+      <xs:element ref="UserInfo" minOccurs="0"/>
+      <xs:element ref="ProductInfo" minOccurs="1"/>
+      <xs:element ref="DetailedResults" minOccurs="1"/>
+      <xs:element ref="AggregatedResults" minOccurs="0"/>
+      <xs:element ref="OverallResult" minOccurs="1"/>
+    </xs:sequence>    
+    <xs:attribute name="schemaVersion" type="xs:decimal" use="required" fixed="1.0"/>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

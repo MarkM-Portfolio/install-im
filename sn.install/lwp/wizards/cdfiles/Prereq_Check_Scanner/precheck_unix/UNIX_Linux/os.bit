@@ -1,0 +1,30 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+type=`uname`
+
+if [ "$type" = "AIX" ]; then
+    arch=`bootinfo -y`
+fi
+
+if [ "$type" = "Linux" ]; then
+       arch=`getconf LONG_BIT`
+fi
+
+if [ "$type" = "SunOS" ]; then
+      arch=`isainfo -kv | cut -d' ' -f1`
+fi
+
+res=`echo $arch | grep $1`
+
+if [ $res ]; then
+ echo "$Msg_PASS"
+else
+ echo "$Msg_FAIL"
+fi

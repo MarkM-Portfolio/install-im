@@ -1,0 +1,37 @@
+#!/bin/bash
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+
+type=`uname`
+if [ "$type" = "SunOS" ]; then
+	netstat -an | grep LISTEN > /$TMP_DIR/prs.net
+	cat /$TMP_DIR/prs.net | awk '{print $1}' | cut -d '.' -f2 | grep -v 0 >/$TMP_DIR/prs.ports
+fi
+if [ "$type" = "AIX" ]; then
+	netstat -ant | grep LISTEN > /$TMP_DIR/prs.net
+	cat /$TMP_DIR/prs.net | awk '{print $4}' | cut -d '.' -f2 | grep -v 0 >/$TMP_DIR/prs.ports
+fi
+
+if [ "$type" = "Linux" ]; then
+	netstat -ant | grep LISTEN > /$TMP_DIR/prs.net
+	cat /$TMP_DIR/prs.net | awk '{print$4}' | cut -d':' -f2 >/$TMP_DIR/prs.ports
+fi
+if [ "$type" = "HP-UX" ]; then
+	netstat -a | grep LISTEN > /$TMP_DIR/prs.net
+	cat /$TMP_DIR/prs.net | awk '{print$4}' | cut -d':' -f2 >/$TMP_DIR/prs.ports
+fi
+for line in `cat /$TMP_DIR/prs.ports`
+do
+	res=$line,$res 
+done
+len=`echo $res | wc -m`
+#echo $len
+final=`echo $res | cut -c 1-35`
+echo $final..

@@ -1,0 +1,21 @@
+#!/bin/bash
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+res0=`grep -w "#CONSOLE"  /etc/default/login | wc -l`
+res1=`grep -w "PATH="  /etc/default/login | grep -vw "#PATH=" | wc -l`
+res2=`grep -w "SUPATH=" /etc/default/login | grep -vw "#SUPATH=" | wc -l`
+res=`expr $res0 \* $res1 \* $res2`
+#res="$res0"*"$res1"*"$res2" | bc
+#res = [ $res0 -a $res1 -a $res2 ]
+if [ $res = 0 ]; then
+    echo "$Msg_UNAVAILABLE"
+else
+    echo "$Msg_AVAILABLE"
+fi  

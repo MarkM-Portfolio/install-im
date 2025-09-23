@@ -1,0 +1,393 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WPProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product Information
+#
+
+# 
+WVER0001E=WVER0001E: Unable to determine the version directory.
+WVER0001E.explanation=The version directory is located according to java system property 'was.version.dir', or as '<root>\\properties\\version', where <root> is a directory taken from one of the java system properties 'was.install.root' or 'server.root'.  These properties are examined in order and the first available property value is taken.  The error indicates that none of the listed java system properties is set, with the consequence that the version directory could not be determined.
+WVER0001E.useraction=Make sure that one of the listed java system properties is set.  The java system property must be set either through process configuration or as an option to a process launched from the command line.
+
+# 
+WVER0002E=WVER0002E: Unrecognized product version file extension ''{0}''.
+WVER0002E.explanation=When loading product version information, this information is stored in files having specific extensions.  The extensions determine the type of information stored in each file.  Valid extensions are '.websphere', '.component', '.product', '.fix', '.efix', and '.extension'.  An attempt was made to load a file containing version information where the extension of the file is not one of the valid extensions.
+WVER0002E.useraction=This indicates an internal error.
+
+# 
+WVER0003I=WVER0003I: Usage: versionInfo ( [ -format <text | html> ] [ -file <output file> ] [ -long ] [ -fixes ] [ -fixDetail ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=This informational message describes the options to the versionInfo utility program.  The versionInfo utility program accepts optional keyword options, one which specifies the output format, one which specifies an output file, one which causes fixes to be displayed, one which causes fix details to be displayed, one which causes components to be displayed, and one which is used to display usage information.
+WVER0003I.useraction=No user action is required.  The usage information message is displayed upon request.
+
+# 
+WVER0004E=WVER0004E: Error writing version report to {0}: {1}
+WVER0004E.explanation=The specified error occurred while writing out a version report to the specified file.
+WVER0004E.useraction=Corrective action depends on the specifics of the error which occurred.  In particular, make sure that the specified file is writable and that sufficient space is available for the report.
+
+# 
+WVER0005E=WVER0005E: No value was specified for the ''{0}'' option
+WVER0005E.explanation=The listed option requires an value.  (Use '-help' or '-usage' to display usage information.)
+WVER0005E.useraction=Specify a value for the listed option.
+
+# 
+WVER0006E=WVER0006E: The value ''{0}'' is not valid format value.
+WVER0006E.explanation=The valid format values are 'text' and 'html'.  The value specified is not one of these values.  (Use '-help' or '-usage' to display usage information.)
+WVER0006E.useraction=Change the format value to one of the valid values, 'text' or 'html'.
+
+# 
+WVER0007E=WVER0007E: The option ''{0}'' is not valid.
+WVER0007E.explanation=The specified option is not valid.  (Use '-help' or '-usage' to display usage information.)
+WVER0007E.useraction=Change to use a valid option.
+
+# 
+WVER0008I=WVER0008I: The '-format' option specifies the output format, either 'text' or 'html'.  The '-file' option specifies an output file.  A file name must be provided with the '-file' option.  The '-long' option causes all fix, ptf, and component information to be displayed.  The '-fixes' option causes fixes to be displayed.  The '-fixDetail' option causes fix detail to be displayed.  The '-ptfs' option causes PTFs to be displayed.  The '-ptfDetail' option causes PTF detail to be displayed.  The '-components' option causes components to be displayed.  The '-componentDetail' option causes component detail to be displayed.  The '-help' option causes help text to be displayed.  The '-usage' option causes this usage text to be displayed.
+WVER0008I.explanation=The message describes the valid options to the versionInfo utility program.
+WVER0008I.useraction=No user action is required.  The usage information message is displayed upon request.
+
+# 
+WVER0009E=WVER0009E: Error writing version report to {0}.  The text of the error cannot be displayed, but is of type {1}.  A second error, of type {2}, occurred while retrieving the error text.
+WVER0009E.explanation=An error occurred while writing out a version report to the specified file.  A second error occurred while retrieving the text of the error.
+WVER0009E.useraction=No user action is available.  Please retry the requested operation, or contact support for further assistance.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; All rights reserved.
+WVER0010I.explanation=This is a standard copyright statement.
+WVER0010I.useraction=No user action is required.  This is an informational message.
+
+# 
+WVER0011I=WVER0011I: WebSphere Portal
+WVER0011I.explanation=This is a standard product description statement.
+WVER0011I.useraction=No user action is required.  This is an informational message.
+
+# 
+WVER0012I=WVER0012I: VersionInfo reporter version {0}, dated {1}
+WVER0012I.explanation=This is a standard module description statement.
+WVER0012I.useraction=No user action is required.  This is an informational message.
+
+# 
+WVER0013E=WVER0013E: An exception occurred while reading {0}
+WVER0013E.explanation=Please refer to the nested exception details for further information.
+WVER0013E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0014E=WVER0014E: An exception occurred while reading {0}
+WVER0014E.explanation=Please refer to the nested exception details for further information.
+WVER0014E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0015E=WVER0015E: An exception occurred while processing version information
+WVER0015E.explanation=Please refer to the nested exception details for further information.
+WVER0015E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0016E=WVER0016E: Exceptions occurred while processing version information
+WVER0016E.explanation=Please refer to the nested exception details for further information.
+WVER0016E.useraction=Please refer to the nested exception details for further information.
+
+# 
+WVER0017E=WVER0017E: Unable to determine the update logs directory.
+WVER0017E.explanation=The logs directory is located according to the java system property 'was.version.log.dir', or as the 'log' directory of the version directory.  Neither the 'was.version.log.dir' property nor the version directory is set.
+WVER0017E.useraction=Ensure that the version directory is set, or set the java system property 'was.version.log.dir'.
+
+# 
+WVER0018E=WVER0018E: Unable to determine the update backups directory.
+WVER0018E.explanation=The backups directory is located according to the java system property 'was.version.backup.dir', or as the 'log' directory of the version directory.  Neither the 'was.version.backup.dir' property nor the version directory is set.
+WVER0018E.useraction=Ensure that the version directory is set, or set the java system property 'was.version.backup.dir'.
+
+# 
+WVER0019E=WVER0019E: Unable to determine the DTD directory for product version information.
+WVER0019E.explanation=The DTD directory is located according to the java system property 'was.version.dtd.dir', or as the 'dtd' directory of the version directory.  Neither the 'was.version.dtd.dir' property nor the version directory is set.
+WVER0019E.useraction=Ensure that the version directory is set, or set the java system property 'was.version.dtd.dir'.
+
+# 
+WVER0021E=WVER0021E: Recoverable errors occurred while parsing fix information.
+WVER0021E.explanation=The errors, a list of which follows, occurred while parsing fix information.  Refer to the listed errors for additional information.
+WVER0021E.useraction=Refer to the listed errors for suggested user actions.
+
+# 
+WVER0022E=WVER0022E: An error occurred while reading product information.  The error is recoverable; parsing was continued.  The error occurred in the entity with system ID {0} and public ID {1}, on line number {2} and column number {3}: {4}
+WVER0022E.explanation=The specified entity has structure which is not valid, as described by the specified error.  However, the error was not fatal and parsing was continued.
+WVER0022E.useraction=The specified file should be reviewed and, if possible, corrected.
+
+# 
+WVER0023E=WVER0023E: Warnings occurred while parsing product information.
+WVER0023E.explanation=The warnings, a list of which follows, occurred while parsing product information.  Refer to the listed warnings for additional information.
+WVER0023E.useraction=Refer to the listed warnings for suggested user actions.
+
+# 
+WVER0024E=WVER0024E: A warning occurred while reading product information.  The warning occurred in the entity with system ID {0} and public ID {1}, on line number {2} and column number {3}: {4}
+WVER0024E.explanation=The specified entity has structure which is not valid, as described by the specified warning.  However, the warning was not fatal and parsing was continued.
+WVER0024E.useraction=The specified file should be reviewed and, if possible, corrected.
+
+# 
+WVER0029E=WVER0029E: Unable to remove fix {0} stored in file {2}.
+WVER0029E.explanation=The named file could not be removed.
+WVER0029E.useraction=Ensure that the target file can be removed.
+
+# 
+WVER0030E=WVER0030E: Recoverable errors occurred while parsing PTF information.
+WVER0030E.explanation=The errors, a list of which follows, occurred while parsing PTF information.  Refer to the listed errors for additional information.
+WVER0030E.useraction=Refer to the listed errors for suggested user actions.
+
+# 
+WVER0031E=WVER0031E: Unable to record the application of PTF {0} on component {1} in file {2}.  The named file could not be saved.
+WVER0031E.explanation=The named file could not be saved.
+WVER0031E.useraction=Ensure that the target file is writable, and that space is available for a new file.
+
+# 
+WVER0035E=WVER0035E: Unable to remove PTF {0} stored in file {2}.
+WVER0035E.explanation=The named file could not be removed.
+WVER0035E.useraction=Ensure that the target file can be removed.
+
+# 
+WVER0040E=WVER0040E: The specified version directory ''{0}'' does not exist.
+WVER0040E.explanation=The version directory does not exist.
+WVER0040E.useraction=Ensure that the specified directory is a valid product version directory.
+
+# 
+WVER0041E=WVER0041E: The specified version directory ''{0}'' is not a directory.
+WVER0041E.explanation=The version directory is not a directory.
+WVER0041E.useraction=Ensure that the specified directory is a valid product version directory.
+
+# 
+WVER0042E=WVER0042E: The specified DTD directory ''{0}'' does not exist.
+WVER0042E.explanation=The DTD directory does not exist.
+WVER0042E.useraction=Ensure that the specified directory is a valid product DTD directory.
+
+# 
+WVER0043E=WVER0043E: The specified DTD directory ''{0}'' is not a directory.
+WVER0043E.explanation=The DTD directory is not a directory.
+WVER0043E.useraction=Ensure that the specified directory is a valid product DTD directory.
+
+# 
+WVER0044E=WVER0044E: The specified log directory ''{0}'' could not be created
+WVER0044E.explanation=The DTD directory is not a directory.
+WVER0044E.useraction=Ensure that the specified directory is a valid product DTD directory.
+
+# 
+WVER0045E=WVER0045E: The specified log directory ''{0}'' is not a directory.
+WVER0045E.explanation=The DTD directory is not a directory.
+WVER0045E.useraction=Ensure that the specified directory is a valid product DTD directory.
+
+# 
+WVER0046E=WVER0046E: The specified backup directory ''{0}'' could not be created
+WVER0046E.explanation=The DTD directory is not a directory.
+WVER0046E.useraction=Ensure that the specified directory is a valid product DTD directory.
+
+# 
+WVER0047E=WVER0047E: The specified backup directory ''{0}'' is not a directory.
+WVER0047E.explanation=The DTD directory is not a directory.
+WVER0047E.useraction=Ensure that the specified directory is a valid product DTD directory.
+
+# 
+WVER0048E=WVER0048E: The specified product directory ''{0}'' does not exist.
+WVER0048E.explanation=The product directory does not exist.
+WVER0048E.useraction=Ensure that the product directory is a valid product directory.
+
+# 
+WVER0049E=WVER0049E: The specified product directory ''{0}'' is not a directory.
+WVER0049E.explanation=The product directory is not a directory.
+WVER0049E.useraction=Ensure that the specified directory is a valid product directory.
+
+
+
+
+label.standard.out=Standard Output
+
+listing.nested.error={0}: {1}
+
+report.header=IBM WebSphere Portal Product Installation Status Report
+report.footer=End Installation Status Report
+
+info.report.on=Report at date and time {0}
+
+info.source=Installation
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Product Directory
+label.version.dir=Version Directory
+label.version.dtd.dir=DTD Directory
+label.version.log.dir=Log Directory
+label.version.backup.dir=Backup Directory
+label.version.tmp.dir=TMP Directory
+
+info.platform=Installation Platform
+label.name=Name
+label.version=Version
+
+info.technology=Technology List
+label.installed=installed
+
+info.product=Installed Product
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=Build Level
+label.build.date=Build Date
+
+info.component=Installed Component
+label.component.name=Component Name
+label.configtasks=Configuration Tasks
+label.spec.version=Spec Version
+label.build.version=Build Version
+# label.build.date=Build Date
+
+info.update.on.component=Installed Component Update
+#label.component.name=Component Name
+label.update.type=Update Type
+label.update.type.efix=fix
+label.update.type.ptf=PTF
+
+label.efix.id=Fix ID
+label.ptf.id=PTF ID
+
+label.update.effect=Update Effect
+
+label.is.required=Is Required
+label.is.optional=Is Optional
+
+label.is.external=Is External
+label.root.property.file=Root Property File
+label.root.property.name=Root Property Name
+label.root.property.value=Root Property Value
+
+label.is.custom=Is Custom
+
+label.log.file.name=Log File Name
+label.backup.file.name=Backup File Name
+label.install.date=Install Date
+
+label.initial.spec.version=Initial Spec Version
+label.initial.build.date=Initial Build Date
+label.initial.build.version=Initial Build Version
+
+label.final.spec.version=Final Spec Version
+label.final.build.date=Final Build Date
+label.final.build.version=Final Build Version
+
+info.extension=Installed Extension
+# label.name=Name
+# label.id=ID
+
+info.efix=Installed Fix
+# label.id=ID
+label.short.description=Description
+label.is.trial=Is Trial
+label.expiration.date=Expiration Date
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Exposition
+
+label.apar=APAR
+label.apar.number=Number
+label.apar.date=Date
+label.apar.short.description=Description
+label.apar.long.description=Exposition
+
+label.supported.platforms=Supported Platforms
+label.supported.products=Supported Platforms
+
+label.efix.efix.prereqs=Prerequisite Fixes
+
+label.component.updates=Component Updates
+label.component.requires=Requires {0} v {1}
+
+label.becomes=becomes spec {0}, build {1} on {2}
+
+label.custom.properties=Custom Properties
+
+info.ptf=Installed PTF
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Included Fixes
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=true
+label.false=false
+
+label.is.absent=absent
+label.is.installed=installed on {0}
+
+label.update.effect.add=add
+label.update.effect.replace=replace
+label.update.effect.remove=remove
+label.update.effect.patch=patch
+label.update.effect.unknown=unknown
+
+label.is.negative=negative
+label.is.positive=positive
+
+label.is.required.tag=required
+label.if.possible.tag=if-possible
+label.is.optional.tag=optional
+label.is.recommended.tag=recommended
+
+label.is.custom.tag=custom update
+label.is.standard.tag=standard update

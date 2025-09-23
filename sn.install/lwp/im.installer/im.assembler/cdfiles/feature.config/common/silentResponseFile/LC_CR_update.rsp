@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--The "acceptLicense" attribute has been deprecated. Use "-acceptLicense" command line option to accept license agreements.-->
+<agent-input acceptLicense='true'>
+<server>
+<repository location='/opt/CR1/HCL_Connections_Install/HCLConnections'/>
+</server>
+<profile id='HCL Connections' installLocation='/opt/HCL/Connections'>
+<data key='eclipseLocation' value='/opt/HCL/Connections'/>
+<data key='user.import.profile' value='false'/>
+<data key='cic.selector.os' value='linux'/>
+<data key='cic.selector.ws' value='gtk'/>
+<data key='cic.selector.arch' value='x86'/>
+<data key='cic.selector.nl' value='en'/>
+<data key='user.job' value='UPDATE'/>
+<data key='user.lcinstallscript.path' value='/var/ibm/InstallationManager/../LCInstallScript'/>
+<data key='user.clusterlist' value='LCCluster,'/>
+<data key='user.nodeslist' value='CognosNode02,'/>
+<data key='user.clusterfullinfo' value='LCCluster:CognosNode02#CognosNode02_server1,;'/>
+<data key='user.nodesServerlist' value='CognosNode02:CognosNode02_server1,server1;'/>
+<data key='user.nodesHostnamelist' value='Cognos.dyn.webahead.ibm.com,'/>
+<data key='user.isGUIMode' value='F'/>
+<data key='user.was.installlocation' value='/opt/IBM/WebSphere/AppServer'/>
+<data key='user.was.userhome' value='/opt/IBM/WebSphere/AppServer/profiles/Dmgr01'/>
+<data key='user.was.wasSoapPort' value='8879'/>
+<data key='user.was.profileName' value='Dmgr01'/>
+<data key='user.was.dmCellName' value='CognosCell01'/>
+<data key='user.was.dmHostname' value='Cognos.dyn.webahead.ibm.com'/>
+<data key='user.was.adminuser.id' value='wasadmin'/>
+<data key='user.was.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.activities.adminuser.id' value='wasadmin'/>
+<data key='user.activities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.blogs.adminuser.id' value='wasadmin'/>
+<data key='user.blogs.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.dogear.adminuser.id' value='wasadmin'/>
+<data key='user.dogear.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.communities.adminuser.id' value='wasadmin'/>
+<data key='user.communities.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.files.adminuser.id' value='wasadmin'/>
+<data key='user.files.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.forum.adminuser.id' value='wasadmin'/>
+<data key='user.forum.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.homepage.adminuser.id' value='wasadmin'/>
+<data key='user.homepage.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.metrics.adminuser.id' value='wasadmin'/>
+<data key='user.metrics.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.mobile.adminuser.id' value='wasadmin'/>
+<data key='user.mobile.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.moderation.adminuser.id' value='wasadmin'/>
+<data key='user.moderation.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.news.adminuser.id' value='wasadmin'/>
+<data key='user.news.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.profiles.adminuser.id' value='wasadmin'/>
+<data key='user.profiles.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.search.adminuser.id' value='wasadmin'/>
+<data key='user.search.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.wikis.adminuser.id' value='wasadmin'/>
+<data key='user.wikis.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.rte.adminuser.id' value='wasadmin'/>
+<data key='user.rte.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.common.adminuser.id' value='wasadmin'/>
+<data key='user.common.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.widgetContainer.adminuser.id' value='wasadmin'/>
+<data key='user.widgetContainer.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.pushNotification.adminuser.id' value='wasadmin'/>
+<data key='user.pushNotification.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.ic360.adminuser.id' value='wasadmin'/>
+<data key='user.ic360.adminuser.password' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.deployment.type' value='small'/>
+<data key='user.activities.clusterExist' value='false'/>
+<data key='user.activities.clusterName' value='LCCluster'/>
+<data key='user.activities.firstNodeName' value='CognosNode02'/>
+<data key='user.activities.secondaryNodesNames' value=''/>
+<data key='user.activities.serverInfo' value='activities.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.blogs.clusterExist' value='false'/>
+<data key='user.blogs.clusterName' value='LCCluster'/>
+<data key='user.blogs.firstNodeName' value='CognosNode02'/>
+<data key='user.blogs.secondaryNodesNames' value=''/>
+<data key='user.blogs.serverInfo' value='blogs.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.dogear.clusterExist' value='false'/>
+<data key='user.dogear.clusterName' value='LCCluster'/>
+<data key='user.dogear.firstNodeName' value='CognosNode02'/>
+<data key='user.dogear.secondaryNodesNames' value=''/>
+<data key='user.dogear.serverInfo' value='dogear.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.communities.clusterExist' value='false'/>
+<data key='user.communities.clusterName' value='LCCluster'/>
+<data key='user.communities.firstNodeName' value='CognosNode02'/>
+<data key='user.communities.secondaryNodesNames' value=''/>
+<data key='user.communities.serverInfo' value='communities.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.files.clusterExist' value='false'/>
+<data key='user.files.clusterName' value='LCCluster'/>
+<data key='user.files.firstNodeName' value='CognosNode02'/>
+<data key='user.files.secondaryNodesNames' value=''/>
+<data key='user.files.serverInfo' value='files.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.forum.clusterExist' value='false'/>
+<data key='user.forum.clusterName' value='LCCluster'/>
+<data key='user.forum.firstNodeName' value='CognosNode02'/>
+<data key='user.forum.secondaryNodesNames' value=''/>
+<data key='user.forum.serverInfo' value='forum.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.homepage.clusterExist' value='false'/>
+<data key='user.homepage.clusterName' value='LCCluster'/>
+<data key='user.homepage.firstNodeName' value='CognosNode02'/>
+<data key='user.homepage.secondaryNodesNames' value=''/>
+<data key='user.homepage.serverInfo' value='homepage.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.metrics.clusterExist' value='false'/>
+<data key='user.metrics.clusterName' value='LCCluster'/>
+<data key='user.metrics.firstNodeName' value='CognosNode02'/>
+<data key='user.metrics.secondaryNodesNames' value=''/>
+<data key='user.metrics.serverInfo' value='metrics.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.mobile.clusterExist' value='false'/>
+<data key='user.mobile.clusterName' value='LCCluster'/>
+<data key='user.mobile.firstNodeName' value='CognosNode02'/>
+<data key='user.mobile.secondaryNodesNames' value=''/>
+<data key='user.mobile.serverInfo' value='mobile.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.moderation.clusterExist' value='false'/>
+<data key='user.moderation.clusterName' value='LCCluster'/>
+<data key='user.moderation.firstNodeName' value='CognosNode02'/>
+<data key='user.moderation.secondaryNodesNames' value=''/>
+<data key='user.moderation.serverInfo' value='moderation.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.news.clusterExist' value='false'/>
+<data key='user.news.clusterName' value='LCCluster'/>
+<data key='user.news.firstNodeName' value='CognosNode02'/>
+<data key='user.news.secondaryNodesNames' value=''/>
+<data key='user.news.serverInfo' value='news.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.profiles.clusterExist' value='false'/>
+<data key='user.profiles.clusterName' value='LCCluster'/>
+<data key='user.profiles.firstNodeName' value='CognosNode02'/>
+<data key='user.profiles.secondaryNodesNames' value=''/>
+<data key='user.profiles.serverInfo' value='profiles.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.search.clusterExist' value='false'/>
+<data key='user.search.clusterName' value='LCCluster'/>
+<data key='user.search.firstNodeName' value='CognosNode02'/>
+<data key='user.search.secondaryNodesNames' value=''/>
+<data key='user.search.serverInfo' value='search.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.wikis.clusterExist' value='false'/>
+<data key='user.wikis.clusterName' value='LCCluster'/>
+<data key='user.wikis.firstNodeName' value='CognosNode02'/>
+<data key='user.wikis.secondaryNodesNames' value=''/>
+<data key='user.wikis.serverInfo' value='wikis.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.rte.clusterExist' value='false'/>
+<data key='user.rte.clusterName' value='LCCluster'/>
+<data key='user.rte.firstNodeName' value='CognosNode02'/>
+<data key='user.rte.secondaryNodesNames' value=''/>
+<data key='user.rte.serverInfo' value='rte.CognosNode02.ServerName=CognosNode02_server1;'/>  
+<data key='user.common.clusterExist' value='false'/>
+<data key='user.common.clusterName' value='LCCluster'/>
+<data key='user.common.firstNodeName' value='CognosNode02'/>
+<data key='user.common.secondaryNodesNames' value=''/>
+<data key='user.common.serverInfo' value='common.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.widgetContainer.clusterExist' value='false'/>
+<data key='user.widgetContainer.clusterName' value='LCCluster'/>
+<data key='user.widgetContainer.firstNodeName' value='CognosNode02'/>
+<data key='user.widgetContainer.secondaryNodesNames' value=''/>
+<data key='user.widgetContainer.serverInfo' value='widgetContainer.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.pushNotification.clusterExist' value='false'/>
+<data key='user.pushNotification.clusterName' value='LCCluster'/>
+<data key='user.pushNotification.firstNodeName' value='CognosNode02'/>
+<data key='user.pushNotification.secondaryNodesNames' value=''/>
+<data key='user.pushNotification.serverInfo' value='pushNotification.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.ic360.clusterExist' value='false'/>
+<data key='user.ic360.clusterName' value='LCCluster'/>
+<data key='user.ic360.firstNodeName' value='CognosNode02'/>
+<data key='user.ic360.secondaryNodesNames' value=''/>
+<data key='user.ic360.serverInfo' value='ic360.CognosNode02.ServerName=CognosNode02_server1;'/>
+<data key='user.database.type' value='ORCL'/>
+<data key='user.activities.dbHostName' value='db.ibm.com'/>
+<data key='user.activities.dbPort' value='1521'/>
+<data key='user.activities.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.activities.dbName' value='ORCL'/>
+<data key='user.activities.dbUser' value='OAUSER'/>
+<data key='user.activities.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.activities.dbType' value='oracle'/>
+<data key='user.activities.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.activities.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.activities.selected' value='true'/>
+<data key='user.blogs.dbHostName' value='db.ibm.com'/>
+<data key='user.blogs.dbPort' value='1521'/>
+<data key='user.blogs.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.blogs.dbName' value='ORCL'/>
+<data key='user.blogs.dbUser' value='BLOGSUSER'/>
+<data key='user.blogs.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.blogs.dbType' value='oracle'/>
+<data key='user.blogs.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.blogs.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.blogs.selected' value='true'/>
+<data key='user.dogear.dbHostName' value='db.ibm.com'/>
+<data key='user.dogear.dbPort' value='1521'/>
+<data key='user.dogear.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.dogear.dbName' value='ORCL'/>
+<data key='user.dogear.dbUser' value='DOGEARUSER'/>
+<data key='user.dogear.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.dogear.dbType' value='oracle'/>
+<data key='user.dogear.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.dogear.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.dogear.selected' value='true'/>
+<data key='user.communities.dbHostName' value='db.ibm.com'/>
+<data key='user.communities.dbPort' value='1521'/>
+<data key='user.communities.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.communities.dbName' value='ORCL'/>
+<data key='user.communities.dbUser' value='SNCOMMUSER'/>
+<data key='user.communities.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.communities.dbType' value='oracle'/>
+<data key='user.communities.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.communities.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.communities.selected' value='true'/>
+<data key='user.files.dbHostName' value='db.ibm.com'/>
+<data key='user.files.dbPort' value='1521'/>
+<data key='user.files.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.files.dbName' value='ORCL'/>
+<data key='user.files.dbUser' value='FILESUSER'/>
+<data key='user.files.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.files.dbType' value='oracle'/>
+<data key='user.files.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.files.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.files.selected' value='true'/>
+<data key='user.forum.dbHostName' value='db.ibm.com'/>
+<data key='user.forum.dbPort' value='1521'/>
+<data key='user.forum.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.forum.dbName' value='ORCL'/>
+<data key='user.forum.dbUser' value='DFUSER'/>
+<data key='user.forum.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.forum.dbType' value='oracle'/>
+<data key='user.forum.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.forum.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.forum.selected' value='true'/>
+<data key='user.homepage.dbHostName' value='db.ibm.com'/>
+<data key='user.homepage.dbPort' value='1521'/>
+<data key='user.homepage.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.homepage.dbName' value='ORCL'/>
+<data key='user.homepage.dbUser' value='HOMEPAGEUSER'/>
+<data key='user.homepage.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.homepage.dbType' value='oracle'/>
+<data key='user.homepage.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.homepage.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.homepage.selected' value='true'/>
+<data key='user.metrics.dbHostName' value='db.ibm.com'/>
+<data key='user.metrics.dbPort' value='1521'/>
+<data key='user.metrics.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.metrics.dbName' value='ORCL'/>
+<data key='user.metrics.dbUser' value='METRICSUSER'/>
+<data key='user.metrics.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.metrics.dbType' value='oracle'/>
+<data key='user.metrics.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.metrics.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.metrics.selected' value='true'/>
+<data key='user.mobile.dbHostName' value='db.ibm.com'/>
+<data key='user.mobile.dbPort' value='1521'/>
+<data key='user.mobile.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.mobile.dbName' value='ORCL'/>
+<data key='user.mobile.dbUser' value='MOBILEUSER'/>
+<data key='user.mobile.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.mobile.dbType' value='oracle'/>
+<data key='user.mobile.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.mobile.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.mobile.selected' value='true'/>
+<data key='user.moderation.selected' value='true'/>
+<data key='user.news.dbHostName' value='db.ibm.com'/>
+<data key='user.news.dbPort' value='1521'/>
+<data key='user.news.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.news.dbName' value='ORCL'/>
+<data key='user.news.dbUser' value='HOMEPAGEUSER'/>
+<data key='user.news.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.news.dbType' value='oracle'/>
+<data key='user.news.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.news.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.news.selected' value='true'/>
+<data key='user.profiles.dbHostName' value='db.ibm.com'/>
+<data key='user.profiles.dbPort' value='1521'/>
+<data key='user.profiles.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.profiles.dbName' value='ORCL'/>
+<data key='user.profiles.dbUser' value='PROFUSER'/>
+<data key='user.profiles.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.profiles.dbType' value='oracle'/>
+<data key='user.profiles.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.profiles.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.profiles.selected' value='true'/>
+<data key='user.search.dbHostName' value='db.ibm.com'/>
+<data key='user.search.dbPort' value='1521'/>
+<data key='user.search.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.search.dbName' value='ORCL'/>
+<data key='user.search.dbUser' value='HOMEPAGEUSER'/>
+<data key='user.search.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.search.dbType' value='oracle'/>
+<data key='user.search.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.search.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.search.selected' value='true'/>
+<data key='user.wikis.dbHostName' value='db.ibm.com'/>
+<data key='user.wikis.dbPort' value='1521'/>
+<data key='user.wikis.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.wikis.dbName' value='ORCL'/>
+<data key='user.wikis.dbUser' value='WIKISUSER'/>
+<data key='user.wikis.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.wikis.dbType' value='oracle'/>
+<data key='user.wikis.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.wikis.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.wikis.selected' value='true'/>
+<data key='user.pushNotification.dbHostName' value='db.ibm.com'/>
+<data key='user.pushNotification.dbPort' value='1521'/>
+<data key='user.pushNotification.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.pushNotification.dbName' value='ORCL'/>
+<data key='user.pushNotification.dbUser' value='LCUSER'/>
+<data key='user.pushNotification.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.pushNotification.dbType' value='oracle'/>
+<data key='user.pushNotification.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.pushNotification.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.pushNotification.selected' value='true'/>
+<data key='user.icec.dbHostName' value='db.ibm.com'/>
+<data key='user.icec.dbPort' value='1521'/>
+<data key='user.icec.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.icec.dbName' value='ORCL'/>
+<data key='user.icec.dbUser' value='LCUSER'/>
+<data key='user.icec.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.icec.dbType' value='oracle'/>
+<data key='user.icec.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.icec.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.icec.selected' value='true'/>
+<data key='user.ic360.dbHostName' value='db.ibm.com'/>
+<data key='user.ic360.dbPort' value='1521'/>
+<data key='user.ic360.jdbcLibraryPath' value='/opt/ShellScripts/HCL_Connections_Install_Linux/HCLConnections'/>
+<data key='user.ic360.dbName' value='ORCL'/>
+<data key='user.ic360.dbUser' value='LCUSER'/>
+<data key='user.ic360.dbUserPassword' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.ic360.dbType' value='oracle'/>
+<data key='user.ic360.dataSourceTemplateName' value='Oracle JDBC Driver DataSource'/>
+<data key='user.ic360.jdbcProviderTemplateName' value='Oracle JDBC Driver'/>
+<data key='user.ic360.selected' value='true'/>
+<data key='user.metrics.cognos.doCognosNow' value='false'/>
+<data key='user.metrics.cognos.hostname' value=''/>
+<data key='user.metrics.cognos.port' value=''/>
+<data key='user.metrics.cognos.node' value=''/>
+<data key='user.metrics.cognos.server' value=''/>
+<data key='user.metrics.cognos.userName' value=''/>
+<data key='user.metrics.cognos.password' value=''/>
+<data key='user.metrics.cognos.contextRoot' value=''/>
+<data key='user.contentStore.local.path' value='/opt/HCL/Connections/data/local'/>
+<data key='user.contentStore.shared.path' value='/opt/HCL/Connections/data/shared'/>
+<data key='user.messageStore.shared.path' value='/opt/HCL/Connections/data/shared'/>
+<data key='user.connections.installlocation' value='/opt/HCL/Connections'/>
+<data key='user.notification.replyto.enabled' value='false'/>
+<data key='user.notification.replyto.domain' value=''/>
+<data key='user.notification.replyto.localPart.type' value=''/>
+<data key='user.notification.replyto.localPart' value=''/>
+<data key='user.notification.replyto.mailFile.hostName' value=''/>
+<data key='user.notification.replyto.mailFile.userID' value=''/>
+<data key='user.notification.replyto.mailFile.password' value=''/>
+<data key='user.activities.new.add' value='false'/>
+<data key='user.blogs.new.add' value='false'/>
+<data key='user.communities.new.add' value='false'/>
+<data key='user.dogear.new.add' value='false'/>
+<data key='user.profiles.new.add' value='false'/>
+<data key='user.wikis.new.add' value='false'/>
+<data key='user.files.new.add' value='false'/>
+<data key='user.forum.new.add' value='false'/>
+<data key='user.mobile.new.add' value='false'/>
+<data key='user.metrics.new.add' value='false'/>
+<data key='user.moderation.new.add' value='false'/>
+<data key='user.rte.new.add' value='false'/>
+<data key='user.common.new.add' value='false'/>
+<data key='user.widgetContainer.new.add' value='false'/>
+<data key='user.pushNotification.new.add' value='false'/>
+<data key='user.ic360.new.add' value='false'/>
+<data key='user.icec.new.add' value='false'/>
+</profile>
+<install modify='false'>
+<offering id='com.ibm.connections' version='8.0.0.@QUALIFIER@' profile='HCL Connections' features='homepage,news,search,activities,blogs,communities,dogear,files,forum,metrics,mobile,moderation,profiles,wikis,common,pushNotification,rte,widgetContainer,icec,ic360' installFixes='none'/>
+</install>
+<preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='/opt/IBM/IMShared'/>
+<preference name='com.ibm.cic.common.core.preferences.connectTimeout' value='30'/>
+<preference name='com.ibm.cic.common.core.preferences.readTimeout' value='45'/>
+<preference name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount' value='0'/>
+<preference name='offering.service.repositories.areUsed' value='true'/>
+<preference name='com.ibm.cic.common.core.preferences.ssl.nonsecureMode' value='false'/>
+<preference name='com.ibm.cic.common.core.preferences.http.disablePreemptiveAuthentication' value='false'/>
+<preference name='http.ntlm.auth.kind' value='NTLM'/>
+<preference name='http.ntlm.auth.enableIntegrated.win32' value='true'/>
+<preference name='com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts' value='true'/>
+<preference name='com.ibm.cic.common.core.preferences.keepFetchedFiles' value='false'/>
+<preference name='PassportAdvantageIsEnabled' value='false'/>
+<preference name='com.ibm.cic.common.core.preferences.searchForUpdates' value='false'/>
+<preference name='com.ibm.cic.agent.ui.displayInternalVersion' value='false'/>
+<preference name='com.ibm.cic.common.sharedUI.showErrorLog' value='true'/>
+<preference name='com.ibm.cic.common.sharedUI.showWarningLog' value='true'/>
+<preference name='com.ibm.cic.common.sharedUI.showNoteLog' value='true'/>
+</agent-input>

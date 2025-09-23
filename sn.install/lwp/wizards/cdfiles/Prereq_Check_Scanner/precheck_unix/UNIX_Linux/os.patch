@@ -1,0 +1,13 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+###This script is only for AIX Operating System####
+if [ "`uname`" = "SunOS" ]; then
+patch=` uname -a | awk '{print $4}' | cut -d '_' -f2`
+echo $patch
+fi

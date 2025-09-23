@@ -1,0 +1,124 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.1, 9/3/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/xml/BaseHandlerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0101E=WVER0101E: Une exception s''est produite lors du chargement du document {1}, via le répertoire DTD {0}
+WVER0101E.explanation=L'exception relevée a entraîné l'échec du chargement du document spécifié.
+WVER0101E.useraction=L'intervention de l'utilisateur dépend de l'exception qui s'est produite.  En particulier, vérifiez que le fichier spécifié est disponible et que son format est correct.  Pour plus d'informations, contactez l'assistance technique.
+
+# 
+WVER0102E=WVER0102E: Une exception s''est produite lors du chargement du document {1}, via le répertoire DTD {0}.  Un ID système de {2} et un ID public de {3} ont été définis.  L''erreur s''est produite au niveau du numéro de ligne {4} et du numéro de colonne {5}
+WVER0102E.explanation=L'exception relevée a entraîné l'échec du chargement du document spécifié.
+WVER0102E.useraction=L'intervention de l'utilisateur dépend de l'exception qui s'est produite.  En particulier, vérifiez que le fichier spécifié est disponible et que son format est correct.  Pour plus d'informations, contactez l'assistance technique.
+
+# 
+WVER0104E=WVER0104E: Une exception s''est produite lors de la création d''un élément de document racine de type {0}
+WVER0104E.explanation=L'exception relevée s'est produite lors de la création d'un élément de document racine.
+WVER0104E.useraction=L'intervention de l'utilisateur dépend de l'exception qui s'est produite.  La plupart du temps, la configuration de l'analyseur syntaxique XML n'est pas correcte.  Vérifiez que les propriétés système Java ne créent pas une configuration d'analyseur syntaxique incorrecte.  Pour plus d'informations, contactez l'assistance technique.
+
+# 
+WVER0105E=WVER0105E: Une exception s''est produite lors de la création d''un objet de modèle XML (de type {0})
+WVER0105E.explanation=L'exception relevée s'est produite lors de la tentative de création d'un objet de modèle XML.
+WVER0105E.useraction=L'intervention de l'utilisateur dépend de l'exception qui s'est produite.  La plupart du temps, le type relevé n'est pas disponible avec le chemin de classes défini.  Pour plus d'informations, contactez l'assistance technique.
+
+# 
+WVER0106E=WVER0106E: Une tentative de placement d''un élément dans un objet de type simple {0} a eu lieu
+WVER0106E.explanation=Il s'agit d'une erreur interne.
+WVER0106E.useraction=Pour plus d'informations, contactez le support.
+
+# 
+WVER0107E=WVER0107E: Une exception s''est produite lors d''une tentative d''écriture d''informations de version dans le fichier {0}
+WVER0107E.explanation=L'exception relevée s'est produite lors de la tentative d'écriture dans le fichier spécifié.
+WVER0107E.useraction=L'intervention de l'utilisateur dépend de l'exception qui s'est produite.  En particulier, vérifiez que le fichier spécifié est inscriptible et que vous disposez de suffisamment d'espace pour le fichier relevé.
+
+# 
+WVER0108E=WVER0108E: Une exception s''est produite lors de l''exécution d''une résolution d''entité, avec l''ID public {0}, l''ID système {1} et le nom de fichier mappé {2}
+WVER0108E.explanation=L'exception relevée s'est produite lors de la définition des informations DTD au cours de l'analyse des informations de produits.  La DTD relevée n'a pas pu être définie.
+WVER0108E.useraction=L'intervention de l'utilisateur dépend de l'exception qui s'est produite.
+
+# 
+WVER0201E=WVER0201E: Attribut manquant {0} au sein de l''élément de type {1}
+WVER0201E.explanation=L'attribut cité n'est pas un attribut correct du type spécifié de l'élément.
+WVER0201E.useraction=Mettez à jour le fichier XML pour corriger les informations sur l'attribut.
+
+#
+WVER0202E=WVER0202E: Structure d'élément non équilibrée : clôtures d'éléments supplémentaires.
+WVER0202E.explanation=Un fichier XML contenant des informations de produits a une mauvaise structure d'élément.
+WVER0202E.useraction=Mettez à jour le fichier XML pour corriger la structure de l'élément.
+
+#
+WVER0203E=WVER0203E: Structure d'élément non équilibrée : clôtures d'éléments manquantes.
+WVER0203E.explanation=Un fichier XML contenant des informations de produits a une mauvaise structure d'élément.
+WVER0203E.useraction=Mettez à jour le fichier XML pour corriger la structure de l'élément.
+
+#
+WVER0204E=WVER0204E: L''élément {0} n''est pas un élément racine valide
+WVER0204E.explanation=Un fichier XML contenant des informations de produits a une mauvaise structure d'élément.
+WVER0204E.useraction=Mettez à jour le fichier XML pour corriger la structure de l'élément.
+
+#
+WVER0205E=WVER0205E: L''élément {0} n''est pas valide au sein de l''élément {1}
+WVER0205E.explanation=Un fichier XML contenant des informations de produits a une mauvaise structure d'élément.
+WVER0205E.useraction=Mettez à jour le fichier XML pour corriger la structure de l'élément.
+
+#
+WVER0206E=WVER0206E: Tentative de clôture de l''élément {0} au sein de l''élément {1}
+WVER0206E.explanation=Un fichier XML contenant des informations de produits a une mauvaise structure d'élément.
+WVER0206E.useraction=Mettez à jour le fichier XML pour corriger la structure de l'élément.

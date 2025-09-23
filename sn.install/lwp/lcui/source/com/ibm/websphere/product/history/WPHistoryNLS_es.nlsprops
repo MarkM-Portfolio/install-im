@@ -1,0 +1,304 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# xxxx-xxx (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WP Product History'
+#
+# History 1.4, 10/17/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/history/WPHistoryNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Portal Product History Information
+#
+# This module is assigned the range of 0200 to 0299.
+# See also WPProductNLS.nlsprops, which has 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.nlsprops, which has 0100 to 0199.
+
+# From WPHistory.java:
+#
+WVER0201E=WVER0201E: No se puede determinar el directorio de historial; no se ha podido determinar el directorio del producto
+WVER0201E.explanation=El directorio de historial es un subdirectorio del directorio del producto.  Consulte la explicación del error que se ha producido al determinar el directorio del producto para obtener más información.
+WVER0201E.useraction=Siga las instrucciones que aparecen con el error de versión.
+
+# 
+WVER0202E=WVER0202E: No se puede cargar la información de historial
+WVER0202E.explanation=No se ha podido cargar la información de historial del archivo de historial {0}.  Los detalles concretos corresponden al error que se ha producido.
+WVER0202E.useraction=Asegúrese de que el archivo de historial sea legible y tenga el formato correcto.
+
+# 
+WVER0203E=WVER0203E: Se ha producido una excepción al leer {0}
+WVER0203E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0203E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0204E=WVER0204E: Se ha producido una excepción al crear el directorio de historial {0}
+WVER0204E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0204E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0205E=WVER0205E: Se ha producido una excepción al crear una copia de seguridad para el archivo de historial {0} en {1}
+WVER0205E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0205E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0206E=WVER0206E: Se ha producido una excepción al escribir el historial de sucesos {0}
+WVER0206E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0206E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# From HistoryInfo.java:
+# 
+WVER0210I=WVER0210I: Copyright (c) IBM Corporation 2002, 2006; Reservados todos los derechos.
+WVER0210I.explanation=Es una declaración de copyright estándar.
+WVER0210I.useraction=No es necesaria ninguna acción por parte del usuario.  Es un mensaje informativo.
+
+# 
+WVER0211I=WVER0211I: WebSphere Portal
+WVER0211I.explanation=Es una declaración de descripción de producto estándar.
+WVER0211I.useraction=No es necesaria ninguna acción por parte del usuario.  Es un mensaje informativo.
+
+# 
+WVER0212I=WVER0212I: HistoryInfo Reporter Versión {0}, con fecha {1}
+WVER0212I.explanation=Es una declaración de descripción de módulo estándar.
+WVER0212I.useraction=No es necesaria ninguna acción por parte del usuario.  Es un mensaje informativo.
+
+# 
+WVER0225E=WVER0225E: No se ha especificado ningún valor para el argumento ''{0}''
+WVER0225E.explanation=El argumento listado exige un valor.  (Utilice '-help' o '-usage' para visualizar la información sobre utilización).
+WVER0225E.useraction=Especifique un valor para el argumento listado.
+
+# 
+WVER0226E=WVER0226E: El valor ''{0}'' no es un valor de formato válido.
+WVER0226E.explanation=Los valores de formato válidos son 'text' y 'html'. El valor especificado no es uno de estos valores.  (Utilice '-help' o '-usage' para visualizar la información sobre utilización).
+WVER0226E.useraction=Cambie el valor de formato por uno de los valores válidos, 'text' o 'html'.
+
+# 
+WVER0228E=WVER0228E: El argumento ''{0}'' no es un argumento válido.
+WVER0228E.explanation=El argumento especificado no es válido.  (Utilice '-help' o '-usage' para visualizar la información sobre utilización).
+WVER0228E.useraction=Cambie el argumento por un argumento válido.
+
+# 
+WVER0230I=WVER0230I: Uso: historyInfo ( [ -format <text | html> ] [ -file <archivo salida> ] [ -updateId <IDActualización> ] [ -component <nombreComponente> ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0230I.explanation=Este mensaje informativo describe los argumentos para el programa de utilidad historyInfo.  El programa de utilidad historyInfo acepta cinco argumentos de palabra clave opcionales: uno que especifica el formato de salida, uno que especifica un archivo de salida, uno que sólo muestra los sucesos asociados con un arreglo especificado, uno que sólo muestra los sucesos asociados con un componente especificado y uno que se utiliza para mostrar información de uso.  (Utilice '-usage' o '-help' para visualizar la información sobre utilización).
+WVER0230I.useraction=No es necesaria ninguna acción por parte del usuario.  La información de uso aparece si se solicita.
+
+# 
+WVER0231I=WVER0231I: El argumento '-format' se utiliza para especificar el formato de salida, que se debe especificar como 'text' o 'html'. El argumento '-file' se utiliza para especificar un archivo de salida. Debe proporcionarse un nombre de archivo.  El argumento '-updateId' se utiliza para especificar el ID de una actualización, que limitará los sucesos que se visualizan. El argumento '-component' se utiliza para especificar el nombre de un componente, que limitará los sucesos que se visualizan. El argumento '-help' se utiliza para visualizar información de versión. El argumento '-usage' se utiliza para visualizar este mensaje informativo.
+WVER0231I.explanation=El mensaje describe los argumentos válidos para el programa de utilidad versionInfo.
+WVER0231I.useraction=No es necesaria ninguna acción por parte del usuario.  La información de uso aparece si se solicita.
+
+# 
+WVER0240E=WVER0240E: Error al escribir el informe de versión en {0}: {1}
+WVER0240E.explanation=Se ha producido el error especificado al escribir el informe de historial en el archivo especificado.
+WVER0240E.useraction=La acción correctora depende de las características del error que se ha producido.  En concreto, asegúrese de que el archivo especificado se pueda escribir y que haya espacio suficiente disponible para el informe.
+
+# 
+WVER0241E=WVER0241E: Error al escribir el informe de historial en {0}.  El texto del error no se puede visualizar, pero es del tipo {1}.  Se ha producido un segundo error, del tipo {2}, al recuperar el texto de error.
+WVER0241E.explanation=Se ha producido un error al escribir un informe de historial en el archivo especificado.  Se ha producido un segundo error al recuperar el texto del error.
+WVER0241E.useraction=No hay ninguna acción de usuario disponible.  Vuelva a intentar la operación solicitada o póngase en contacto con el servicio de soporte para obtener más ayuda.
+
+# 
+WVER0242E=WVER0242E: Se ha producido una excepción al procesar la información de historial
+WVER0242E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0242E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0243E=WVER0243E: Se han producido excepciones al procesar la información de historial
+WVER0243E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0243E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0261E=WVER0261E: No se puede registrar la aplicación del arreglo {0} en el componente {1} del archivo {2}. No se ha podido guardar el archivo indicado.
+WVER0261E.explanation=No se ha podido guardar el archivo indicado.
+WVER0261E.useraction=Asegúrese de que el archivo de destino se pueda escribir y de que haya espacio disponible para un nuevo archivo.
+
+# 
+WVER0262E=WVER0262E: No se puede registrar la eliminación de la aplicación del arreglo {0} en el componente {1} del archivo {2}. No se ha podido guardar el archivo indicado.
+WVER0262E.explanation=No se ha podido guardar el archivo indicado.
+WVER0262E.useraction=Asegúrese de que el archivo de destino se pueda escribir y de que haya espacio disponible para un nuevo archivo.
+
+# 
+WVER0263E=WVER0263E: No se puede registrar la eliminación de la aplicación del arreglo {0} en el componente {1} almacenado en el archivo {2}. No se ha podido eliminar el archivo indicado.
+WVER0263E.explanation=No se ha podido eliminar el archivo indicado.
+WVER0263E.useraction=Asegúrese de que se pueda eliminar el archivo de destino.
+
+# 
+WVER0264E=WVER0264E: No se puede registrar la eliminación de la aplicación del arreglo {0} en el componente {1} -- no hay ninguna aplicación en el registro.
+WVER0264E.explanation=El componente no tiene ningún registro de una aplicación del arreglo especificado.  Puede que la información del producto esté corrompida o que se haya producido un error interno.
+WVER0264E.useraction=Póngase en contacto con el servicio de soporte para obtener información adicional.
+
+# 
+WVER0265E=WVER0265E: No se puede eliminar el controlador del arreglo {0} almacenado en el archivo {2}.
+WVER0265E.explanation=No se ha podido eliminar el archivo indicado.
+WVER0265E.useraction=Asegúrese de que se pueda eliminar el archivo de destino.
+
+# 
+WVER0266E=WVER0266E: Se han producido errores recuperables al analizar la información del controlador PTF.
+WVER0266E.explanation=Los errores, cuya lista se ofrece a continuación, se han producido al analizar la información de PTF.  Consulte los errores listados para obtener más información.
+WVER0266E.useraction=Consulte los errores listados para conocer las acciones de usuario que se sugieren.
+
+# 
+WVER0267E=WVER0267E: No se puede registrar la eliminación de la aplicación del PTF {0} en el componente {1} del archivo {2}. No se ha podido guardar el archivo indicado.
+WVER0267E.explanation=No se ha podido guardar el archivo indicado.
+WVER0267E.useraction=Asegúrese de que el archivo de destino se pueda escribir y de que haya espacio disponible para un nuevo archivo.
+
+# 
+WVER0268E=WVER0268E: No se puede registrar la eliminación de la aplicación del PTF {0} en el componente {1} almacenado en el archivo {2}. No se ha podido eliminar el archivo indicado.
+WVER0268E.explanation=No se ha podido eliminar el archivo indicado.
+WVER0268E.useraction=Asegúrese de que se pueda eliminar el archivo de destino.
+
+# 
+WVER0269E=WVER0269E: No se puede registrar la eliminación de la aplicación del PTF {0} en el componente {1} -- no hay ninguna aplicación en el registro.
+WVER0269E.explanation=El componente no tiene ningún registro de una aplicación del PTF especificado.  Puede que la información del producto esté corrompida o que se haya producido un error interno.
+WVER0269E.useraction=Póngase en contacto con el servicio de soporte para obtener información adicional.
+
+# 
+WVER0270E=WVER0270E: No se puede eliminar el controlador de PTF {0} almacenado en el archivo {2}.
+WVER0270E.explanation=No se ha podido eliminar el archivo indicado.
+WVER0270E.useraction=Asegúrese de que se pueda eliminar el archivo de destino.
+
+# 
+WVER0271E=WVER0271E: Extensión de archivo de historial del producto no reconocida ''{0}''.
+WVER0271E.explanation=Al cargar la información de historial, esta información se almacena en archivos que tienen extensiones específicas. Las extensiones determinan el tipo de información almacenada en cada archivo. Las extensiones válidas son '.fixDriver', '.fixApplied', '.efixDriver', '.efixApplied', '.ptfDriver' y '.ptfApplied'. Se ha intentado cargar un archivo que contiene información de versión en la que la extensión del archivo no es una de las válidas.
+WVER0271E.useraction=Esto indica un error interno.
+
+# 
+WVER0272E=WVER0272E: Se ha producido una excepción al leer {0}
+WVER0272E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0272E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+label.standard.out=Salida estándar
+
+listing.nested.error={0}: {1}
+
+report.header=Informe de historial de IBM WebSphere Portal
+report.header.update=Informe de historial de IBM WebSphere Portal Server para la actualización {0}
+report.header.component=Informe de historial de IBM WebSphere Portal para el componente {0}
+report.header.update.component=Informe de historial de IBM WebSphere Portal para la actualización {0} y el componente {1}
+
+warning.no.events=Aviso: no hay sucesos disponibles.
+warning.no.events.for.component=Aviso: no hay sucesos disponibles para el componente {0}.
+warning.no.events.for.update=Aviso: no hay sucesos disponibles para la actualización {0}.
+warning.no.events.for.update.component=Aviso: no hay sucesos disponibles para la actualización {0} y el componente {1}.
+
+info.report.on=Informe con fecha y hora {0}
+
+report.footer=Fin de informe de historial
+
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+history.substitution=${history.dir}
+
+info.source=Instalación
+label.product.dir=Directorio del producto
+label.version.dir=Directorio de versión
+label.version.dtd.dir=Directorio de DTD
+label.version.log.dir=Directorio de registro
+label.version.backup.dir=Directorio de copia de seguridad
+label.version.tmp.dir=Directorio temporal
+label.version.history.dir=Directorio de historial
+label.version.history.file=Archivo de historial
+
+info.event=Suceso de instalación
+info.component.event=Suceso de instalación de componente
+
+label.efix.id=ID de arreglo
+label.ptf.id=ID de PTF
+label.unknown.id=ID desconocido
+
+label.action=Acción
+
+label.start.time.stamp=Hora de inicio
+label.end.time.stamp=Hora de finalización
+
+label.log.file.name=Nombre del archivo de registro
+
+
+label.component.name=Nombre del componente
+
+label.is.custom=Es personalizado
+label.primary.content=Contenido primario
+
+label.update.type=Acción de actualización
+
+label.is.external=Es externo
+label.root.property.file=Archivo de propiedades raíz
+label.root.property.name=Nombre de propiedad raíz
+label.root.property.value=Valor de propiedad raíz
+
+label.backup.file.name=Nombre del archivo de copia de seguridad
+label.result=Resultado
+label.result.message=Mensaje de resultado
+
+label.initial.version=Versión inicial
+label.initial.spec.version=Especificación inicial
+label.initial.build.date=Fecha de compilación inicial
+
+label.final.version=Versión final
+label.final.spec.version=Especificación de versión final
+label.final.build.date=Fecha de compilación final
+
+
+label.install.action=instalación
+label.uninstall.action=desinstalación
+label.selective.install.action=instalación selectiva
+label.selective.uninstall.action=desinstalación selectiva
+label.unknown.action=*** ACCIÓN DE SUCESO DESCONOCIDA ***
+
+label.update.add.tag=añadir
+label.update.replace.tag=sustituir
+label.update.remove.tag=eliminar
+label.update.patch.tag=parche
+label.update.composite.tag=compuesto
+label.update.unknown.tag=*** TIPO DE ACTUALIZACIÓN DESCONOCIDO ***
+
+label.result.succeeded.tag=satisfactorio
+label.result.failed.tag=anómalo
+label.result.cancelled.tag=cancelado
+label.result.unknown.tag=*** RESULTADO DE SUCESO DESCONOCIDO ***
+
+label.true=verdadero
+label.false=falso

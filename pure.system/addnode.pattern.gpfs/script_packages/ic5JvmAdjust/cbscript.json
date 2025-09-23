@@ -1,0 +1,14 @@
+[
+   {
+      "command": "\/tmp\/ic5JvmAdjust\/ic5jvmAdjust.sh",
+      "description": "adjusts JVM settings for available WAS servers on current node",
+      "execmode": 3,
+      "filename": "ic5JvmAdjust.zip",
+      "location": "\/tmp\/ic5JvmAdjust",
+      "log": "\/tmp\/ic5JvmAdjust\/logs",
+      "name": "ic5JvmAdjust",
+      "ostype": "linux\/unix",
+      "timeout": 9000000,
+      "type": "APPLICATION"
+   }
+]

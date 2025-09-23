@@ -1,0 +1,14 @@
+#!/bin/bash
+i=0
+versions=`dspmqver`
+if [[ $? = 0 ]]; then  
+for vs in $versions
+  do
+     if [[ $i = 4 ]]; then
+     echo "$vs"
+    fi
+  ((i+=1))
+  done
+else
+  echo "Unavailable"
+fi

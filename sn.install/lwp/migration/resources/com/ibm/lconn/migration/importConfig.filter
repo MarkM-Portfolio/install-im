@@ -1,0 +1,72 @@
+## ***************************************************************** */
+##                                                                   */
+## IBM Confidential                                                  */
+##                                                                   */
+## OCO Source Materials                                              */
+##                                                                   */
+## (C) Copyright IBM Corp. 2008                                      */
+##                                                                   */
+## The source code for this program is not published or otherwise    */
+## divested of its trade secrets, irrespective of what has been      */
+## deposited with the U.S. Copyright Office.                         */
+##                                                                   */
+## ***************************************************************** */
+
+LOG ========== Starting importing configuration ===============
+
+CONDITION NULL
+CONDITION activities.installed true
+CONDITION activities.source.exist true
+#CONDITION activities.version 2.0.0
+LOG ========== Activities =====================================
+FILE_COPY ${activities.cell.config.home}/oa-config.xml>>migrationData/dest/config/activities/oa-config.xml
+FILE_COPY ${activities.cell.config.home}/extern/oa-jobs.xml>>migrationData/dest/config/activities/extern/oa-jobs.xml
+REPLACE_ELEMENT migrationData/source/config/activities/oa-config.xml migrationData/dest/config/activities/oa-config.xml objectStore/sizeLimits,objectStore/max-concurrent-downloads,stats,activeContentFilter,clusterScheduler,localScheduler objectStore/sizeLimits,objectStore/max-concurrent-downloads,stats,activeContentFilter,clusterScheduler,localScheduler ,
+EXPORT_IMPORT migrationData/source/config/activities/extern/oa-jobs.xml migrationData/dest/config/activities/extern/oa-jobs.xml job/job-detail/name/text()>job[job-detail/name=''{0}'']/trigger/cron/name/text()>job[job-detail/name=''{0}'']/trigger/cron[name=''{1}'']/cron-expression/text() job[job-detail/name=''{0}'']/trigger/cron[name=''{1}'']/cron-expression/text() 2 >
+
+FILE_COPY migrationData/dest/config/activities/oa-config.xml>>${activities.cell.config.home}/oa-config.xml
+FILE_COPY migrationData/dest/config/activities/extern/oa-jobs.xml>>${activities.cell.config.home}/extern/oa-jobs.xml
+
+CONDITION NULL
+CONDITION blogs.installed true
+CONDITION blogs.source.exist true
+#CONDITION blogs.version 2.0.0
+LOG ========== Blogs ==========================================
+LOG Nothing. 
+
+CONDITION NULL
+CONDITION communities.installed true
+CONDITION communities.source.exist true
+#CONDITION communities.version 2.0.0
+LOG ========== Communities ====================================
+LOG Nothing. 
+
+CONDITION NULL
+CONDITION dogear.installed true
+CONDITION dogear.source.exist true
+#CONDITION dogear.version 2.0.0
+LOG ========== Dogear =========================================
+FILE_COPY ${dogear.cell.config.home}/dogear-config-cell.xml>>migrationData/dest/config/dogear/dogear-config-cell.xml
+FILE_COPY ${dogear.node.config.home}/dogear-config-node.xml>>migrationData/dest/config/dogear/dogear-config-node.xml
+REPLACE_ELEMENT migrationData/source/config/dogear/dogear-config-cell.xml migrationData/dest/config/dogear/dogear-config-cell.xml fullTextServiceProvider,favIconService,privateIntranetAllocationTable,linkThresholds,tagThresholds,personThresholds,activeContentFilter fullTextServiceProvider,favIconService,privateIntranetAllocationTable,linkThresholds,tagThresholds,personThresholds,activeContentFilter ,
+REPLACE_ELEMENT migrationData/source/config/dogear/dogear-config-node.xml migrationData/dest/config/dogear/dogear-config-node.xml linkProcessingTasks linkProcessingTasks ,
+
+FILE_COPY migrationData/dest/config/dogear/dogear-config-cell.xml>>${dogear.cell.config.home}/dogear-config-cell.xml
+FILE_COPY migrationData/dest/config/dogear/dogear-config-node.xml>>${dogear.node.config.home}/dogear-config-node.xml
+
+CONDITION NULL
+CONDITION profiles.installed true
+CONDITION profiles.source.exist true
+#CONDITION profiles.version 2.0.0
+LOG ========== Profiles =======================================
+LOG Nothing. 
+
+CONDITION NULL
+CONDITION homepage.installed true
+CONDITION homepage.source.exist true
+#CONDITION homepage.version 2.0.0
+LOG ========== Homepage =======================================
+LOG Nothing. 
+
+CONDITION NULL
+LOG ========== Importing configuration completed =================

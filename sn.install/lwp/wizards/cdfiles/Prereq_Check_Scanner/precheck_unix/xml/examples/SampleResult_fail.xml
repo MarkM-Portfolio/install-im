@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Begin Standard Header
+
+    Licensed Materials - Property of IBM
+    (C) Copyright IBM Corp. 2009, 2011
+    All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+    
+    End Standard Header
+-->
+
+<Results schemaVersion="1.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="xml/schema/PRSResults.xsd"
+>
+
+    <PRSInfo>
+        <PRSName>IBM Prerequisite Scanner</PRSName>
+        <PRSVersion>1.2.0.0</PRSVersion>
+        <PRSBuild>20111216</PRSBuild>
+        <PRSOutputDir>C:\projects\PRS\builds\prs1.1.1.10\20120104-1518</PRSOutputDir>
+        <PRSResultXmlFile>C:\projects\PRS\builds\prs1.1.1.10\20120104-1518\result.xml</PRSResultXmlFile>
+    </PRSInfo>
+
+    <MachineInfo>
+        <MachineName>MYFAIRLADY</MachineName>
+        <MachineSerialNumber>R815WHN</MachineSerialNumber>
+        <MachineOSSerial>55041-007-1373257-86722</MachineOSSerial>
+        <MachineOSName>Windows Server 2008 R2 Standard</MachineOSName>
+    </MachineInfo>
+    
+    <UserInfo>
+        <UserName>jichen</UserName>
+    </UserInfo>
+
+    <ProductInfo>
+        <ProductElement>
+            <ProductCode>DMO</ProductCode>
+            <ProductName>Prerequisite Scanner Demo</ProductName>
+            <ProductVersion>01000000</ProductVersion>
+        </ProductElement>
+        <ProductElement>
+            <ProductCode>TCR</ProductCode>
+            <ProductName>Tivoli Commnon Reporting</ProductName>
+            <ProductVersion>02010100</ProductVersion>
+        </ProductElement>
+    </ProductInfo>
+
+    <DetailedResults>
+        <DetailedProductResultsElement>
+            <ProductCode>DMO</ProductCode>
+            <ResultElement>
+                <PropertyName>Memory</PropertyName>
+                <Result>PASS</Result>
+                <Found>15GB</Found>
+                <Expected>12GB</Expected>
+            </ResultElement>
+            <ResultElement>
+                <PropertyName>os.architecture</PropertyName>
+                <Result>PASS</Result>
+                <Found>64-bit</Found>
+                <Expected>64-bit</Expected>
+            </ResultElement>
+            <ResultElement>
+                <PropertyName>Disk#1 (C:\ibm\ITM)</PropertyName>
+                <Result>PASS</Result>
+                <Found>200.00GB</Found>
+                <Expected>1.00GB</Expected>
+            </ResultElement>
+        </DetailedProductResultsElement>
+        <DetailedProductResultsElement>
+            <ProductCode>TCR</ProductCode>
+            <ResultElement>
+                <PropertyName>Memory</PropertyName>
+                <Result>PASS</Result>
+                <Found>15GB</Found>
+                <Expected>12GB</Expected>
+            </ResultElement>
+            <ResultElement>
+                <PropertyName>intel.cpu</PropertyName>
+                <Result>FAIL</Result>
+                <Found>2GHz</Found>
+                <Expected>3GHz</Expected>
+            </ResultElement>
+            <ResultElement>
+                <PropertyName>Disk#1 (C:\IBM\tivoli)</PropertyName>
+                <Result>PASS</Result>
+                <Found>200.00GB</Found>
+                <Expected>2.40GB</Expected>
+            </ResultElement>
+            <ResultElement>
+                <PropertyName>Disk#2 (C:\Users\IBM_AD~1\AppData\Local\Temp)</PropertyName>
+                <Result>PASS</Result>
+                <Found>200.00GB</Found>
+                <Expected>800MB</Expected>
+            </ResultElement>
+        </DetailedProductResultsElement>
+    </DetailedResults>
+    
+    <AggregatedResults>
+        <ResultElement>
+            <PropertyName>Memory</PropertyName>
+            <Result>FAIL</Result>
+            <Found>15GB</Found>
+            <Expected>24GB</Expected>
+        </ResultElement>
+        <ResultElement>
+            <PropertyName>C:</PropertyName>
+            <Result>PASS</Result>
+            <Found>200.00GB</Found>
+            <Expected>4.18GB</Expected>
+        </ResultElement>
+    </AggregatedResults>
+    
+    <OverallResult>FAIL</OverallResult>
+    
+</Results>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="com.ibm.cic.agent.ui.commonCustomPanels">
+      <commonPanel
+            textClass="com.ibm.connections.install.BaseConfigConsolePanel"
+            class="com.ibm.connections.install.BaseConfigCustomPanel"
+            id="com.ibm.connections.install.PanelsOrder">
+         <wizardType
+               type="INSTALL">
+         </wizardType>
+         <wizardType
+               type="MODIFY">
+         </wizardType>
+         <wizardType
+               type="UPDATE">
+         </wizardType>
+         <wizardType
+               type="UNINSTALL">
+         </wizardType>
+         <wizardType
+               type="ROLLBACK">
+         </wizardType>
+      </commonPanel>
+   </extension>
+   <extension
+         point="com.ibm.cic.agent.ui.customPanelsOrder">
+      <wizardOfferingBinding
+            offeringId="com.ibm.connections"
+            offeringVersion="[0.0.0,0.0.0]">
+         <wizardExtension
+               wizardExtensionId="com.ibm.connections.panelsOrder.INSTALL"
+               wizardType="INSTALL">
+            <panel
+                  id="com.ibm.connections.wasPanel">
+            </panel>
+            <panel
+                  id="com.ibm.connections.ccmPanel">
+            </panel>
+            <panel
+                  id="com.ibm.connections.topologyPanel">
+            </panel>
+            <panel
+                  id="com.ibm.connections.databasePanel">
+            </panel>
+            <panel
+                  id="com.ibm.connections.webServerPanel">
+            </panel>
+            <panel
+                  id="com.ibm.connections.cognosPanel">
+            </panel>
+            <!--<panel
+                  id="com.ibm.connections.filesViewerPanel">
+            </panel>-->
+            <panel
+                  id="com.ibm.connections.contentStorePanel">
+            </panel>
+            <panel
+                  id="com.ibm.connections.notificationPanel">
+            </panel>
+         </wizardExtension>
+      </wizardOfferingBinding>
+   </extension>
+
+</plugin>

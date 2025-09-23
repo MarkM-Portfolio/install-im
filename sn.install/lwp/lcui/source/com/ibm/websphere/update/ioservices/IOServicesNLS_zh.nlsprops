@@ -1,0 +1,77 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (WAS Update Installation)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/ioservices.IOServicesNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0100 to 0199.
+
+WUPD0100E=WUPD0100E: 尝试从目录“{0}”读取，而该目录不存在。
+WUPD0100E.explanation=此问题说明发生内部错误。
+WUPD0100E.useraction=有关更多信息，请与 IBM 支持人员联系。
+
+WUPD0101E=WUPD0101E: 尝试从目录“{0}”读取，而它不是目录。
+WUPD0101E.explanation=此问题说明发生内部错误。
+WUPD0101E.useraction=有关更多信息，请与 IBM 支持人员联系。
+
+WUPD0102E=WUPD0102E: 无法在 JAR 文件“{1}”中找到 JAR 条目“{0}”。
+WUPD0102E=在指定的 JAR 文件中需要指定的条目。此问题说明发生内部错误。
+WUPD0102E=有关更多信息，请与 IBM 支持人员联系。
+
+WUPD0103E=WUPD0103E: 无法创建输出目录“{0}”。
+WUPD0103E=无法创建指定的目录。
+WUPD0103E=验证是否可以创建指定的目录。
+
+WUPD0104E=WUPD0104E: 输出目录“{0}”作为文件存在。
+WUPD0104E=正在尝试将指定的实体作为目录使用，但已存在具有该名称的文件。
+WUPD0104E=选择不同的输出目录，或除去指定的文件。

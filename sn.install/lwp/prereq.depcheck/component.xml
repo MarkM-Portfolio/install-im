@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component
+	name="prereq.depcheck"
+	type="binary"
+	description="Dependency checker files from Portal build"
+	spec-version="6.0"
+	build-version="6.0"
+	owner="Adam Reeves"
+	owner-email="areeves@us.ibm.com">
+	<output-group name="compile">
+		<output type="jar" visibility="public" platform="all" location="lib/wp.depcheck.jar"/>
+	</output-group>
+</component>

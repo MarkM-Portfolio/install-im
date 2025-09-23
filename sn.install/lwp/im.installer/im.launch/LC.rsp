@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--The "acceptLicense" attribute has been deprecated. Use "-acceptLicense" command line option to accept license agreements.-->
+<agent-input>
+  <variables>
+    <variable name='sharedLocation' value='/opt/IBM/IMShared'/>
+  </variables>
+  <server>
+  <!-- Location of the HCL Connections repository.config-->
+    <repository location='/opt/build/HCLConnections'/> 
+  </server>
+
+  <!-- Specify name and version data for IBM Installation Manager and HCL Connections, and specify which applications to install. -->
+  <profile id='HCL Connections' installLocation='/opt/HCL/Connections'>
+    <data key='cic.selector.arch' value='s390x'/>
+	<!-- Set the value for the current operation. The default value is "INSTALL" -->
+    <data key='user.job' value='INSTALL'/>
+    <data key='user.lcinstallscript.path' value='/tmp/LCInstallScript'/>
+    <data key='user.nodeslist' value='Node01,'/>
+    <data key='user.nodeAgentList' value='Node01:true;'/>
+    <data key='user.nodesServerlist' value='Node01:server1,webserver1;'/>
+    <data key='user.nodesHostnamelist' value='example.ibm.com,'/>
+    <data key='user.isGUIMode' value='F'/>
+	
+	<!-- Passwords should be encrpted. To learn how to create encrypted versions of passwords, go to the "Creating encrypted passwords for a response file" topic in the HCL Connections documentation wiki at
+	http://www-01.ibm.com/support/knowledgecenter/SSYGQH_5.5.0/welcome/welcome_admin.html -->
+    <data key='user.was.install.location' value='/opt/IBM/WebSphere/AppServer'/>
+    <data key='user.was.install.location.configproperties' value='/opt/IBM/WebSphere/AppServer'/>
+    <data key='user.was.install.location.win32format' value='/opt/IBM/WebSphere/AppServer'/>
+    <data key='user.was.userhome.original' value='/opt/IBM/WebSphere/AppServer/profiles/Dmgr01'/>
+    <data key='user.was.userhome' value='/opt/IBM/WebSphere/AppServer/profiles/Dmgr01'/>
+    <data key='user.was.userhome.configproperties' value='/opt/IBM/WebSphere/AppServer/profiles/Dmgr01'/>
+    <data key='user.was.wasSoapPort' value='8879'/>
+    <data key='user.was.profileName' value='Dmgr01'/>
+    <data key='user.was.dmCellName' value='Cell01'/>
+    <data key='user.was.dmHostname' value='example.ibm.com'/>
+    <data key='user.was.domainName' value='.example.ibm.com'/>
+    <data key='user.was.adminuser.id' value='wasadmin'/>
+    <data key='user.was.adminuser.password' value='password'/>
+	
+    <data key='user.activities.adminuser.id' value='wasadmin'/>
+    <data key='user.activities.adminuser.password' value='password'/>
+	
+    <data key='user.blogs.adminuser.id' value='wasadmin'/>
+    <data key='user.blogs.adminuser.password' value='password'/>
+	
+    <data key='user.dogear.adminuser.id' value='wasadmin'/>
+    <data key='user.dogear.adminuser.password' value='password'/>
+	
+    <data key='user.communities.adminuser.id' value='wasadmin'/>
+    <data key='user.communities.adminuser.password' value='password'/>
+	
+    <data key='user.files.adminuser.id' value='wasadmin'/>
+    <data key='user.files.adminuser.password' value='password'/>
+	
+    <data key='user.forums.adminuser.id' value='wasadmin'/>
+    <data key='user.forums.adminuser.password' value='password'/>
+	
+    <data key='user.homepage.adminuser.id' value='wasadmin'/>
+    <data key='user.homepage.adminuser.password' value='password'/>
+    
+	<data key='user.metrics.adminuser.id' value='wasadmin'/>
+    <data key='user.metrics.adminuser.password' value='password'/>
+    
+	<data key='user.mobile.adminuser.id' value='wasadmin'/>
+    <data key='user.mobile.adminuser.password' value='password'/>
+    
+	<data key='user.moderation.adminuser.id' value='wasadmin'/>
+    <data key='user.moderation.adminuser.password' value='password'/>
+    
+	<data key='user.news.adminuser.id' value='wasadmin'/>
+    <data key='user.news.adminuser.password' value='password'/>
+	
+    <data key='user.profiles.adminuser.id' value='wasadmin'/>
+    <data key='user.profiles.adminuser.password' value='password'/>
+    <data key='user.search.adminuser.id' value='wasadmin'/>
+    <data key='user.search.adminuser.password' value='password'/>
+    <data key='user.wikis.adminuser.id' value='wasadmin'/>
+    <data key='user.wikis.adminuser.password' value='password'/>
+    <data key='user.rte.adminuser.id' value='wasadmin'/>
+    <data key='user.rte.adminuser.password' value='password'/>
+    <data key='user.common.adminuser.id' value='wasadmin'/>
+    <data key='user.common.adminuser.password' value='password'/>
+    <data key='user.widgetContainer.adminuser.id' value='wasadmin'/>
+    <data key='user.widgetContainer.adminuser.password' value='password'/>
+    <data key='user.pushNotification.adminuser.id' value='wasadmin'/>
+    <data key='user.pushNotification.adminuser.password' value='password'/>
+    <data key='user.ic360.adminuser.id' value='wasadmin'/>
+    <data key='user.ic360.adminuser.password' value='password'/>
+	
+    <!-- Specify cluster parameters for each application. For example, shown below are the News cluster parameters -->
+    <!-- small:All applications are installed in one cluster; medium:The applications are installed in several clusters; large:Each application is installed in its own cluster -->
+    <data key='user.deployment.type' value='small'/>
+    
+	<!-- Specify the cluster, node and server parameters for each application. -->
+    <!-- The format is {applicationName}.{nodeName}.Servername=server name. If you use multiple nodes for an application, use the semicolon character(";") to separate them. For example, news.node1.ServerName=server1;news.node2.ServerName=server2;  -->
+    <!-- Specify whether to use an existing cluster -->
+	<data key='user.activities.clusterExist' value='false'/>
+	<!-- Cluster name -->
+    <data key='user.activities.clusterName' value='ICCluster'/>
+	<!-- Specify the name of the first federated node(alphabetical order) to deploy the application on. -->
+    <data key='user.activities.firstNodeName' value='Node01'/>
+	<!-- Specify the node and server parameters for each application. -->
+    <!-- The format is {applicationName}.{nodeName}.Servername=server name. If you use multiple nodes for an application, use the semicolon character(";") to separate them. For example, news.node1.ServerName=server1;news.node2.ServerName=server2;  -->
+    <data key='user.activities.serverInfo' value='activities.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.activities.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+	
+    <data key='user.blogs.clusterExist' value='false'/>
+    <data key='user.blogs.clusterName' value='ICCluster'/>
+    <data key='user.blogs.firstNodeName' value='Node01'/>
+    <data key='user.blogs.serverInfo' value='blogs.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.blogs.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+	
+    <data key='user.dogear.clusterExist' value='false'/>
+    <data key='user.dogear.clusterName' value='ICCluster'/>
+    <data key='user.dogear.firstNodeName' value='Node01'/>
+    <data key='user.dogear.serverInfo' value='dogear.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.dogear.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+	
+    <data key='user.communities.clusterExist' value='false'/>
+    <data key='user.communities.clusterName' value='ICCluster'/>
+    <data key='user.communities.firstNodeName' value='Node01'/>
+    <data key='user.communities.serverInfo' value='communities.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.communities.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+	
+    <data key='user.files.clusterExist' value='false'/>
+    <data key='user.files.clusterName' value='ICCluster'/>
+    <data key='user.files.firstNodeName' value='Node01'/>
+    <data key='user.files.serverInfo' value='files.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.files.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+	
+    <data key='user.forums.clusterExist' value='false'/>
+    <data key='user.forums.clusterName' value='ICCluster'/>
+    <data key='user.forums.firstNodeName' value='Node01'/>
+    <data key='user.forums.serverInfo' value='forums.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.forums.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+	
+    <data key='user.homepage.clusterExist' value='false'/>
+    <data key='user.homepage.clusterName' value='ICCluster'/>
+    <data key='user.homepage.firstNodeName' value='Node01'/>
+    <data key='user.homepage.serverInfo' value='homepage.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.homepage.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+	
+    <data key='user.metrics.clusterExist' value='false'/>
+    <data key='user.metrics.clusterName' value='ICCluster'/>
+    <data key='user.metrics.firstNodeName' value='Node01'/>
+    <data key='user.metrics.serverInfo' value='metrics.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.metrics.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.metrics.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.mobile.clusterExist' value='false'/>
+    <data key='user.mobile.clusterName' value='ICCluster'/>
+    <data key='user.mobile.firstNodeName' value='Node01'/>
+    <data key='user.mobile.serverInfo' value='mobile.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.mobile.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.mobile.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.moderation.clusterExist' value='false'/>
+    <data key='user.moderation.clusterName' value='ICCluster'/>
+    <data key='user.moderation.firstNodeName' value='Node01'/>
+    <data key='user.moderation.serverInfo' value='moderation.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.moderation.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.moderation.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.news.clusterExist' value='false'/>
+    <data key='user.news.clusterName' value='ICCluster'/>
+    <data key='user.news.firstNodeName' value='Node01'/>
+    <data key='user.news.serverInfo' value='news.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.news.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.news.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.profiles.clusterExist' value='false'/>
+    <data key='user.profiles.clusterName' value='ICCluster'/>
+    <data key='user.profiles.firstNodeName' value='Node01'/>
+    <data key='user.profiles.serverInfo' value='profiles.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.profiles.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.profiles.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.search.clusterExist' value='false'/>
+    <data key='user.search.clusterName' value='ICCluster'/>
+    <data key='user.search.firstNodeName' value='Node01'/>
+    <data key='user.search.serverInfo' value='search.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.search.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.search.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.wikis.clusterExist' value='false'/>
+    <data key='user.wikis.clusterName' value='ICCluster'/>
+    <data key='user.wikis.firstNodeName' value='Node01'/>
+    <data key='user.wikis.serverInfo' value='wikis.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.wikis.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.wikis.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.rte.clusterExist' value='false'/>
+    <data key='user.rte.clusterName' value='ICCluster'/>
+    <data key='user.rte.firstNodeName' value='Node01'/>
+    <data key='user.rte.serverInfo' value='rte.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.rte.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.rte.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.common.clusterExist' value='false'/>
+    <data key='user.common.clusterName' value='ICCluster'/>
+    <data key='user.common.firstNodeName' value='Node01'/>
+    <data key='user.common.serverInfo' value='common.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.common.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.common.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.widgetContainer.clusterExist' value='false'/>
+    <data key='user.widgetContainer.clusterName' value='ICCluster'/>
+    <data key='user.widgetContainer.firstNodeName' value='Node01'/>
+    <data key='user.widgetContainer.serverInfo' value='widgetContainer.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.widgetContainer.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.widgetContainer.serverName' value='ICCluster_server1'/>
+	
+    <data key='user.pushNotification.clusterExist' value='false'/>
+    <data key='user.pushNotification.clusterName' value='ICCluster'/>
+    <data key='user.pushNotification.firstNodeName' value='Node01'/>
+    <data key='user.pushNotification.serverInfo' value='pushNotification.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.pushNotification.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.pushNotification.serverName' value='ICCluster_server1'/>
+
+    <data key='user.ic360.clusterExist' value='false'/>
+    <data key='user.ic360.clusterName' value='ICCluster'/>
+    <data key='user.ic360.firstNodeName' value='Node01'/>
+    <data key='user.ic360.serverInfo' value='ic360.Node01.ServerName=ICCluster_server1;'/>
+    <data key='user.ic360.clusterInfo' value='[{&quot;node&quot;: &quot;Node01&quot;, &quot;name&quot;: &quot;ICCluster_server1&quot;},]'/>
+    <data key='user.database.type' value='DB2'/>
+	
+    <!-- Specifies the database parameters for each application.-->
+    <!-- The settings for the different database types are:-->
+    <!-- DB2:-->
+    <!-- dbType:DB2; -->
+    <!-- Oracle:-->
+    <!-- dbType:oracle; -->
+    <!-- SqlServer:-->
+    <!-- dbType:sqlserver; -->
+    <!-- Specify the database parameters, including database connection properties, for each application. For example, shown below are the Activities database parameters. -->
+    <data key='user.activities.dbHostName' value='example.ibm.com'/>
+    <data key='user.activities.dbPort' value='50000'/>
+    <data key='user.activities.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.activities.dbName' value='OPNACT'/>
+    <data key='user.activities.dbUser' value='LCUSER'/>
+    <data key='user.activities.dbUserPassword' value='password'/>
+    <data key='user.activities.dbType' value='DB2'/>
+	
+    <data key='user.blogs.dbHostName' value='example.ibm.com'/>
+    <data key='user.blogs.dbPort' value='50000'/>
+    <data key='user.blogs.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.blogs.dbName' value='BLOGS'/>
+    <data key='user.blogs.dbUser' value='LCUSER'/>
+    <data key='user.blogs.dbUserPassword' value='password'/>
+    <data key='user.blogs.dbType' value='DB2'/>
+	
+    <data key='user.communities.dbHostName' value='example.ibm.com'/>
+    <data key='user.communities.dbPort' value='50000'/>
+    <data key='user.communities.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.communities.dbName' value='SNCOMM'/>
+    <data key='user.communities.dbUser' value='LCUSER'/>
+    <data key='user.communities.dbUserPassword' value='password'/>
+    <data key='user.communities.dbType' value='DB2'/>
+	
+    <data key='user.dogear.dbHostName' value='example.ibm.com'/>
+    <data key='user.dogear.dbPort' value='50000'/>
+    <data key='user.dogear.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.dogear.dbName' value='DOGEAR'/>
+    <data key='user.dogear.dbUser' value='LCUSER'/>
+    <data key='user.dogear.dbUserPassword' value='password'/>
+    <data key='user.dogear.dbType' value='DB2'/>
+	
+    <data key='user.profiles.dbHostName' value='example.ibm.com'/>
+    <data key='user.profiles.dbPort' value='50000'/>
+    <data key='user.profiles.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.profiles.dbName' value='PEOPLEDB'/>
+    <data key='user.profiles.dbUser' value='LCUSER'/>
+    <data key='user.profiles.dbUserPassword' value='password'/>
+    <data key='user.profiles.dbType' value='DB2'/>
+	
+    <data key='user.wikis.dbHostName' value='example.ibm.com'/>
+    <data key='user.wikis.dbPort' value='50000'/>
+    <data key='user.wikis.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.wikis.dbName' value='WIKIS'/>
+    <data key='user.wikis.dbUser' value='LCUSER'/>
+    <data key='user.wikis.dbUserPassword' value='password'/>
+    <data key='user.wikis.dbType' value='DB2'/>
+	
+    <data key='user.files.dbHostName' value='example.ibm.com'/>
+    <data key='user.files.dbPort' value='50000'/>
+    <data key='user.files.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.files.dbName' value='FILES'/>
+    <data key='user.files.dbUser' value='LCUSER'/>
+    <data key='user.files.dbUserPassword' value='password'/>
+    <data key='user.files.dbType' value='DB2'/>
+	
+    <data key='user.forums.dbHostName' value='example.ibm.com'/>
+    <data key='user.forums.dbPort' value='50000'/>
+    <data key='user.forums.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.forums.dbName' value='FORUM'/>
+    <data key='user.forums.dbUser' value='LCUSER'/>
+    <data key='user.forums.dbUserPassword' value='password'/>
+    <data key='user.forums.dbType' value='DB2'/>
+	
+    <data key='user.news.dbHostName' value='example.ibm.com'/>
+    <data key='user.news.dbPort' value='50000'/>
+    <data key='user.news.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.news.dbName' value='HOMEPAGE'/>
+    <data key='user.news.dbUser' value='LCUSER'/>
+    <data key='user.news.dbUserPassword' value='password'/>
+    <data key='user.news.dbType' value='DB2'/>
+	
+    <data key='user.search.dbHostName' value='example.ibm.com'/>
+    <data key='user.search.dbPort' value='50000'/>
+    <data key='user.search.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.search.dbName' value='HOMEPAGE'/>
+    <data key='user.search.dbUser' value='LCUSER'/>
+    <data key='user.search.dbUserPassword' value='password'/>
+    <data key='user.search.dbType' value='DB2'/>
+	
+    <data key='user.homepage.dbHostName' value='example.ibm.com'/>
+    <data key='user.homepage.dbPort' value='50000'/>
+    <data key='user.homepage.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.homepage.dbName' value='HOMEPAGE'/>
+    <data key='user.homepage.dbUser' value='LCUSER'/>
+    <data key='user.homepage.dbUserPassword' value='password'/>
+    <data key='user.homepage.dbType' value='DB2'/>
+	
+    <data key='user.metrics.dbHostName' value='example.ibm.com'/>
+    <data key='user.metrics.dbPort' value='50000'/>
+    <data key='user.metrics.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.metrics.dbName' value='METRICS'/>
+    <data key='user.metrics.dbUser' value='LCUSER'/>
+    <data key='user.metrics.dbUserPassword' value='password'/>
+    <data key='user.metrics.dbType' value='DB2'/>
+	
+    <data key='user.mobile.dbHostName' value='example.ibm.com'/>
+    <data key='user.mobile.dbPort' value='50000'/>
+    <data key='user.mobile.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.mobile.dbName' value='MOBILE'/>
+    <data key='user.mobile.dbUser' value='LCUSER'/>
+    <data key='user.mobile.dbUserPassword' value='password'/>
+    <data key='user.mobile.dbType' value='DB2'/>
+	
+    <data key='user.pushNotification.dbHostName' value='example.ibm.com'/>
+    <data key='user.pushNotification.dbPort' value='50000'/>
+    <data key='user.pushNotification.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.pushNotification.dbName' value='PNS'/>
+    <data key='user.pushNotification.dbUser' value='LCUSER'/>
+    <data key='user.pushNotification.dbUserPassword' value='password'/>
+    <data key='user.pushNotification.dbType' value='DB2'/>
+
+    <data key='user.icec.dbHostName' value='example.ibm.com'/>
+    <data key='user.icec.dbPort' value='50000'/>
+    <data key='user.icec.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.icec.dbName' value='XCC'/>
+    <data key='user.icec.dbUser' value='LCUSER'/>
+    <data key='user.icec.dbUserPassword' value='password'/>
+    <data key='user.icec.dbType' value='DB2'/>
+
+    <data key='user.ic360.dbHostName' value='example.ibm.com'/>
+    <data key='user.ic360.dbPort' value='50000'/>
+    <data key='user.ic360.jdbcLibraryPath' value='/opt/jdbc'/>
+    <data key='user.ic360.dbName' value='ESSAPPS'/>
+    <data key='user.ic360.dbUser' value='LCUSER'/>
+    <data key='user.ic360.dbUserPassword' value='password'/>
+    <data key='user.ic360.dbType' value='DB2'/>
+	
+    <data key='user.web.server.name' value='webserver1'/>
+    <data key='user.web.server.node' value='Node01'/>
+	
+    <data key='user.contentStore.local.path' value='/opt/HCL/Connections_data/local'/>
+    <data key='user.contentStore.shared.path' value='/opt/HCL/Connections_data/shared'/>
+    <data key='user.contentStore.shared.path.configproperties' value='/opt/HCL/Connections_data/shared'/>
+	
+    <data key='user.messageStore.shared.path' value='/opt/HCL/Connections_data/shared'/>
+	
+    <data key='user.connections.install.location' value='/opt/HCL/Connections'/>
+	
+    <data key='user.ce.install.location' value='/opt/HCL/Connections/FileNet/ContentEngine'/>
+    <data key='user.ceclient.install.location' value='/opt/HCL/Connections/FileNet/CEClient'/>
+	
+    <data key='user.fncs.install.location' value='/opt/HCL/Connections/FNCS'/>
+	<data key='user.connections.install.location.win32format' value='C:\Program Files\IBM\Connections'/>
+    <data key='user.notification.replyto.enabled' value='false'/>
+	
+	<!-- Sepecify the usermapping -->
+    <data key='user.user.mapping.administrative.users' value='ajones1'/>
+    <data key='user.user.mapping.global.moderater.users' value='ajones2'/>
+  </profile>
+  
+  <!-- Specify name and version data for IBM Installation Manager and HCL Connections, and specify which applications to install. -->
+  <install>
+    <!-- HCL Connections 8.0.0.0 -->
+    <offering profile='HCL Connections' id='com.ibm.connections' version='8.0.0.0' features='main,common,files,homepage,news,pushNotification,search,rte,widgetContainer,activities,blogs,dogear,communities,forums,metrics,mobile,moderation,profiles,wikis,icec,ic360'/>
+  </install>
+  <preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='${sharedLocation}'/>
+</agent-input>

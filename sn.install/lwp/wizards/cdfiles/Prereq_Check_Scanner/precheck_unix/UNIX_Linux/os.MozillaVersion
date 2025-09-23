@@ -1,0 +1,17 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+
+res=`firefox -version`
+len=`echo $res | wc -w`
+if [ $len -ge 7 ]; then
+ line=`echo $res | cut -d ',' -f1 | awk '{print $3}'`
+ echo $line
+else
+ echo "$Msg_UNAVAILABLE"
+fi 

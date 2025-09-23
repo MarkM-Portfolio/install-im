@@ -1,0 +1,35 @@
+20.10.2014:
+- new version of "ic5optionalTasksIC5" package:
+	* added "wasEnableDictionary" function to enable German dictionary as default
+
+05.09.2014:
+- new version of "ic5setEnvPropertiesAddNode" package:
+	* fixed "scriptkey": "PROJECTNAME" in cbscript.json file - removed spaces before and after variable name
+
+04.09.2014:
+- new version of "ic5installIC5" package:
+	* fixed wasLDAPconfig script to only save added LDAP configuration at the end, so DMGR security settings dont get broken if an error occurs
+
+27.08.2014:
+- new version of "ic5setEnvProperties" package:
+	* fixed variable name from "DOMAIN" to "PROJDOMAIN" because of conflict with internal used PURE variables
+- new version of "ic5installIC5" package:
+	* fixed quotation mark in echo command which led to confusing error message, but which had no effect on the deployment
+
+25.08.2014:
+- new version of "ic5postInstalllC5" package:
+	* fixed a problem with 2nd ETH interface and different hostnames results in replace error in function "replaceICURL"
+- new version of "ic5jvmAdjust" package:
+	* fixed an error with 2nd ETH interface and different hostnames, while adding the node with a wrong NODENAME
+	
+22.08.2014:
+- new Pattern-Version  for Core- and AddOn Pattern....( *****former script-packages removed***** )
+	* GIS_IC-5-System-Pattern_GPFS_22082014
+	* GIS_IC-5-AddNode_Pattern_GPFS_22082014
+
+20.08.2014: 
+- new version of "ic5installIC5" package: 
+	* fixed a problem with GPFS permissions and DB2 instance owner access while adding DB2 HADR
+	* fixed a problem with ISC Admin user and missing roles
+- new version of "ic5jvmAdjust" package: 
+	* add the automatic start of the AppServers if the node is starting.  

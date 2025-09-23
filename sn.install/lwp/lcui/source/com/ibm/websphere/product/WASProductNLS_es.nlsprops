@@ -1,0 +1,392 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Product'
+#
+# History 1.4, 10/2/02
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WVER (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# This module is assigned the range of 0000 to 0099.
+# See also xmlschema/beans/FactoryNLS.props, which has 0100 to 0199.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WVER
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/product/WASProductNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WVER WebSphere Application Server Product Information
+#
+
+# 
+WVER0001E=WVER0001E: No se puede determinar el directorio de versión.
+WVER0001E.explanation=La ubicación del directorio de versión corresponde a la propiedad java del sistema 'was.version.dir', o bien, como '<raíz>\\properties\\version', donde <raíz> es un directorio especificado en una de las propiedades java del sistema 'was.install.root' o 'server.root'. Estas propiedades se examinan en orden y se adopta la primera propiedad disponible. El error indica que ninguna de las propiedades java del sistema está establecida, con la consecuencia de que no se ha podido determinar el directorio de versión.
+WVER0001E.useraction=Asegúrese de que se haya establecido una de las propiedades java del sistema listadas.  La propiedad java del sistema debe establecerse a través de la configuración de procesos o como opción para una proceso iniciado desde la línea de mandatos.
+
+# 
+WVER0002E=WVER0002E: Extensión de archivo de versión de producto no reconocida ''{0}''.
+WVER0002E.explanation=Al cargar la información de versión de producto, esta información se almacena en archivos que tienen extensiones específicas.  Las extensiones determinan el tipo de información almacenada en cada archivo.  Las extensiones válidas son '.websphere', '.component', '.product', '.efix' y '.extension'. Se ha intentado cargar un archivo que contiene información de versión en la que la extensión del archivo no es una de las válidas.
+WVER0002E.useraction=Esto indica un error interno.
+
+# 
+WVER0003I=WVER0003I: Uso: versionInfo ( [ -format <text | html> ] [ -file <archivo de salida> ] [ -long ] [ -efixes ] [ -efixDetail ] [ -ptfs ] [ -ptfDetail ] [ -components ] [ -componentDetail ] ) | ( [ -help | -? | /help | /? | -usage ] )
+WVER0003I.explanation=Este mensaje informativo describe las opciones del programa de utilidad versionInfo.  El programa de utilidad versionInfo acepta opciones de palabra clave opcionales: una que especifica el formato de salida, una que especifica un archivo de salida, una que hace que se muestren los arreglos electrónicos, una que hace que se muestren los detalles de los arreglos electrónicos, una que hace que se muestren los componentes y una que se utiliza para mostrar información de uso.
+WVER0003I.useraction=No es necesaria ninguna acción por parte del usuario.  La información de uso aparece si se solicita.
+
+# 
+WVER0004E=WVER0004E: Error al escribir el informe de versión en {0}: {1}
+WVER0004E.explanation=Se ha producido el error especificado al escribir un informe de versión en el archivo especificado.
+WVER0004E.useraction=La acción correctora depende de las características del error que se ha producido. En concreto, asegúrese de que el archivo especificado se pueda escribir y que haya espacio suficiente disponible para el informe.
+
+# 
+WVER0005E=WVER0005E: No se ha especificado ningún valor para la opción ''{0}''
+WVER0005E.explanation=La opción listada exige un valor.  (Utilice '-help' o '-usage' para visualizar la información sobre utilización).
+WVER0005E.useraction=Especifique un valor para la opción de la lista.
+
+# 
+WVER0006E=WVER0006E: El valor ''{0}'' no es un valor de formato válido.
+WVER0006E.explanation=Los valores de formato válidos son 'text' y 'html'. El valor especificado no es uno de estos valores.  (Utilice '-help' o '-usage' para visualizar la información sobre utilización).
+WVER0006E.useraction=Cambie el valor de formato por uno de los valores válidos, 'text' o 'html'.
+
+# 
+WVER0007E=WVER0007E: La opción ''{0}'' no es válida.
+WVER0007E.explanation=La opción especificada no es válida.  (Utilice '-help' o '-usage' para visualizar la información sobre utilización).
+WVER0007E.useraction=Cámbiela por una opción válida.
+
+# 
+WVER0008I=WVER0008I: La opción '-format' especifica el formato de salida, 'text' o 'html'. La opción '-file' especifica un archivo de salida. Se debe proporcionar un nombre de archivo con la opción '-file'. La opción '-long' hace que se muestre toda la información sobre los arreglos electrónicos, los ptf y los componentes. La opción '-efixes' hace que se muestren los arreglos electrónicos. La opción '-efixDetail' hace que se muestren los detalles de los arreglos electrónicos. La opción '-ptfs' hace que se muestren los PTF. La opción '-ptfDetail' hace que se muestren los detalles de los PTF. La opción '-components' hace que se muestren los componentes. La opción '-componentDetail' hace que se muestren los detalles de los componentes. La opción '-help' hace que se muestre texto de ayuda. La opción '-usage' hace que se muestre este texto de uso.
+WVER0008I.explanation=El mensaje describe las opciones válidas para el programa de utilidad versionInfo.
+WVER0008I.useraction=No es necesaria ninguna acción por parte del usuario.  La información de uso aparece si se solicita.
+
+# 
+WVER0009E=WVER0009E: Error al escribir el informe de versión en {0}. El texto del error no se puede visualizar, pero es del tipo {1}.  Se ha producido un segundo error, del tipo {2}, al recuperar el texto de error.
+WVER0009E.explanation=Se ha producido un error al escribir un informe de versión en el archivo especificado.  Se ha producido un segundo error al recuperar el texto del error.
+WVER0009E.useraction=No hay ninguna acción de usuario disponible.  Vuelva a intentar la operación solicitada o póngase en contacto con el servicio de soporte para obtener más ayuda.
+
+# 
+WVER0010I=WVER0010I: Copyright (c) IBM Corporation 2002, 2006; Reservados todos los derechos.
+WVER0010I.explanation=Es una declaración de copyright estándar.
+WVER0010I.useraction=No es necesaria ninguna acción por parte del usuario.  Es un mensaje informativo.
+
+# 
+WVER0011I=WVER0011I: WebSphere Application Server Release 5.0
+WVER0011I.explanation=Es una declaración de descripción de producto estándar.
+WVER0011I.useraction=No es necesaria ninguna acción por parte del usuario.  Es un mensaje informativo.
+
+# 
+WVER0012I=WVER0012I: VersionInfo Reporter Versión {0}, con fecha {1}
+WVER0012I.explanation=Es una declaración de descripción de módulo estándar.
+WVER0012I.useraction=No es necesaria ninguna acción por parte del usuario.  Es un mensaje informativo.
+
+# 
+WVER0013E=WVER0013E: Se ha producido una excepción al leer {0}
+WVER0013E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0013E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0014E=WVER0014E: Se ha producido una excepción al leer {0}
+WVER0014E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0014E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0015E=WVER0015E: Se ha producido una excepción al procesar la información de la versión
+WVER0015E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0015E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0016E=WVER0016E: Se han producido excepciones al procesar la información de la versión
+WVER0016E.explanation=Consulte la información detallada de la excepción anidada para obtener más información.
+WVER0016E.useraction=Consulte la información detallada de la excepción anidada para obtener más información.
+
+# 
+WVER0017E=WVER0017E: No se puede determinar el directorio de registros de actualización.
+WVER0017E.explanation=La ubicación del directorio de registros corresponde a la propiedad java del sistema 'was.version.log.dir' o el directorio 'log' del directorio de versión. No se han establecido ni la propiedad 'was.version.log.dir' ni el directorio de versión.
+WVER0017E.useraction=Asegúrese de que se haya establecido el directorio de versión o establezca la propiedad java del sistema 'was.version.log.dir'.
+
+# 
+WVER0018E=WVER0018E: No se puede determinar el directorio de copias de seguridad de actualización.
+WVER0018E.explanation=La ubicación del directorio de copias de seguridad corresponde a la propiedad java del sistema 'was.version.backup.dir' o al directorio 'log' del directorio de versión. No se han establecido ni la propiedad 'was.version.backup.dir' ni el directorio de versión.
+WVER0018E.useraction=Asegúrese de que se haya establecido el directorio de versión o establezca la propiedad java del sistema 'was.version.backup.dir'.
+
+# 
+WVER0019E=WVER0019E: No se puede determinar el directorio DTD para la información de versión del producto.
+WVER0019E.explanation=La ubicación del directorio DTD corresponde a la propiedad java del sistema 'was.version.dtd.dir' o el directorio 'dtd' del directorio de versión. No se han establecido ni la propiedad 'was.version.dtd.dir' ni el directorio de versión.
+WVER0019E.useraction=Asegúrese de que se haya establecido el directorio de versión o establezca la propiedad java del sistema 'was.version.dtd.dir'.
+
+# 
+WVER0021E=WVER0021E: Se han producido errores recuperables al analizar la información del arreglo electrónico.
+WVER0021E.explanation=Los errores, cuya lista se ofrece a continuación, se han producido al analizar la información del arreglo electrónico. Consulte los errores listados para obtener más información.
+WVER0021E.useraction=Consulte los errores listados para conocer las acciones de usuario que se sugieren.
+
+# 
+WVER0022E=WVER0022E: Se ha producido un error al leer la información sobre el producto. El error es recuperable; se ha continuado el análisis.  El error se ha producido en la entidad con el ID del sistema {0} y el ID público {1}, en el número de línea {2} y el número de columna {3}: {4}
+WVER0022E.explanation=La entidad especificada tiene una estructura que no es válida, como describe el error especificado.  No obstante, el error no era muy grave y el análisis ha continuado.
+WVER0022E.useraction=Debe revisarse el archivo especificado y, si es posible, debe corregirse.
+
+# 
+WVER0023E=WVER0023E: Se han producido avisos al analizar la información sobre el producto.
+WVER0023E.explanation=Los avisos, cuya lista se ofrece a continuación, se han producido al analizar la información del producto.  Consulte los avisos listados para obtener más información.
+WVER0023E.useraction=Consulte los avisos listados para conocer las acciones de usuario que se sugieren.
+
+# 
+WVER0024E=WVER0024E: Se ha producido un aviso al leer la información sobre el producto. El aviso se ha producido en la entidad con el ID del sistema {0} y el ID público {1}, en el número de línea {2} y el número de columna {3}: {4}
+WVER0024E.explanation=La entidad especificada tiene una estructura que no es válida, como describe el aviso especificado.  No obstante, el aviso no era muy grave y el análisis ha continuado.
+WVER0024E.useraction=Debe revisarse el archivo especificado y, si es posible, debe corregirse.
+
+# 
+WVER0029E=WVER0029E: No se puede eliminar el arreglo electrónico {0} almacenado en el archivo {2}.
+WVER0029E.explanation=No se ha podido eliminar el archivo indicado.
+WVER0029E.useraction=Asegúrese de que se pueda eliminar el archivo de destino.
+
+# 
+WVER0030E=WVER0030E: Se han producido errores recuperables al analizar la información de PTF.
+WVER0030E.explanation=Los errores, cuya lista se ofrece a continuación, se han producido al analizar la información de PTF.  Consulte los errores listados para obtener más información.
+WVER0030E.useraction=Consulte los errores listados para conocer las acciones de usuario que se sugieren.
+
+# 
+WVER0031E=WVER0031E: No se puede registrar la aplicación de PTF {0} en el componente {1} del archivo {2}. No se ha podido guardar el archivo indicado.
+WVER0031E.explanation=No se ha podido guardar el archivo indicado.
+WVER0031E.useraction=Asegúrese de que el archivo de destino se pueda escribir y de que haya espacio disponible para un nuevo archivo.
+
+# 
+WVER0035E=WVER0035E: No se puede eliminar el PTF {0} almacenado en el archivo {2}.
+WVER0035E.explanation=No se ha podido eliminar el archivo indicado.
+WVER0035E.useraction=Asegúrese de que se pueda eliminar el archivo de destino.
+
+# 
+WVER0040E=WVER0040E: El directorio de versión especificado ''{0}'' no existe.
+WVER0040E.explanation=El directorio de versión no existe.
+WVER0040E.useraction=Asegúrese de que el directorio especificado sea un directorio de versión de producto válido.
+
+# 
+WVER0041E=WVER0041E: El directorio de versión especificado ''{0}'' no es un directorio.
+WVER0041E.explanation=El directorio de versión no es un directorio.
+WVER0041E.useraction=Asegúrese de que el directorio especificado sea un directorio de versión de producto válido.
+
+# 
+WVER0042E=WVER0042E: El directorio de DTD especificado ''{0}'' no existe.
+WVER0042E.explanation=El directorio de DTD no existe.
+WVER0042E.useraction=Asegúrese de que el directorio especificado sea un directorio de DTD de producto válido.
+
+# 
+WVER0043E=WVER0043E: El directorio de DTD especificado ''{0}'' no es un directorio.
+WVER0043E.explanation=El directorio de DTD no es un directorio.
+WVER0043E.useraction=Asegúrese de que el directorio especificado sea un directorio de DTD de producto válido.
+
+# 
+WVER0044E=WVER0044E: El directorio de registro especificado ''{0}'' no se ha podido crear.
+WVER0044E.explanation=El directorio de DTD no es un directorio.
+WVER0044E.useraction=Asegúrese de que el directorio especificado sea un directorio de DTD de producto válido.
+
+# 
+WVER0045E=WVER0045E: El directorio de registro especificado ''{0}'' no es un directorio.
+WVER0045E.explanation=El directorio de DTD no es un directorio.
+WVER0045E.useraction=Asegúrese de que el directorio especificado sea un directorio de DTD de producto válido.
+
+# 
+WVER0046E=WVER0046E: El directorio de copia de seguridad especificado ''{0}'' no se ha podido crear
+WVER0046E.explanation=El directorio de DTD no es un directorio.
+WVER0046E.useraction=Asegúrese de que el directorio especificado sea un directorio de DTD de producto válido.
+
+# 
+WVER0047E=WVER0047E: El directorio de copia de seguridad especificado ''{0}'' no es un directorio.
+WVER0047E.explanation=El directorio de DTD no es un directorio.
+WVER0047E.useraction=Asegúrese de que el directorio especificado sea un directorio de DTD de producto válido.
+
+# 
+WVER0048E=WVER0048E: El directorio de producto especificado ''{0}'' no existe.
+WVER0048E.explanation=El directorio de producto no existe.
+WVER0048E.useraction=Asegúrese de que el directorio de producto sea una directorio de producto válido.
+
+# 
+WVER0049E=WVER0049E: El directorio de producto especificado ''{0}'' no es un directorio.
+WVER0049E.explanation=El directorio de producto no es un directorio.
+WVER0049E.useraction=Asegúrese de que el directorio especificado sea un directorio de producto válido.
+
+
+
+
+label.standard.out=Salida estándar
+
+listing.nested.error={0}: {1}
+
+report.header=Informe de estado de la instalación del producto IBM WebSphere Application Server
+report.footer=Fin del informe de estado de la instalación
+
+info.report.on=Informe con fecha y hora {0}
+
+info.source=Instalación
+product.substitution=${product.dir}
+version.substitution=${version.dir}
+
+label.product.dir=Directorio del producto
+label.version.dir=Directorio de versión
+label.version.dtd.dir=Directorio de DTD
+label.version.log.dir=Directorio de registro
+label.version.backup.dir=Directorio de copia de seguridad
+label.version.tmp.dir=Directorio temporal
+
+info.platform=Plataforma de instalación
+label.name=Nombre
+label.version=Versión
+
+info.technology=Lista de tecnología
+label.installed=instalada
+
+info.product=Producto instalado
+# label.name=Name
+# label.version=Version
+label.id=ID
+label.build.level=Nivel de compilación
+label.build.date=Fecha de compilación
+
+info.component=Componente instalado
+label.component.name=Nombre del componente
+label.spec.version=Versión de especificación
+label.build.version=Versión de compilación
+# label.build.date=Build Date
+
+info.update.on.component=Actualización de componente instalado
+#label.component.name=Component Name
+label.update.type=Tipo de actualización
+label.update.type.efix=arreglo electrónico
+label.update.type.ptf=PTF
+
+label.efix.id=ID de arreglo electrónico
+label.ptf.id=ID de PTF
+
+label.update.effect=Efecto de actualización
+
+label.is.required=Es obligatorio
+label.is.optional=Es opcional
+
+label.is.external=Es externo
+label.root.property.file=Archivo de propiedades raíz
+label.root.property.name=Nombre de propiedad raíz
+label.root.property.value=Valor de propiedad raíz
+
+label.is.custom=Es personalizado
+
+label.log.file.name=Nombre del archivo de registro
+label.backup.file.name=Nombre del archivo de copia de seguridad
+label.install.date=Fecha de instalación
+
+label.initial.spec.version=Versión de especificación inicial
+label.initial.build.date=Fecha de compilación inicial
+label.initial.build.version=Versión de compilación inicial
+
+label.final.spec.version=Versión de especificación final
+label.final.build.date=Fecha de compilación final
+label.final.build.version=Versión de compilación final
+
+info.extension=Extensión instalada
+# label.name=Name
+# label.id=ID
+
+info.efix=Arreglo electrónico instalado
+# label.id=ID
+label.short.description=Descripción
+label.is.trial=Es de prueba
+label.expiration.date=Fecha de caducidad
+# label.build.date=Build Date
+# label.build.version=Build Version
+label.long.description=Exposición
+
+label.apar=APAR
+label.apar.number=Número
+label.apar.date=Fecha
+label.apar.short.description=Descripción
+label.apar.long.description=Exposición
+
+label.supported.platforms=Plataformas soportadas
+label.supported.products=Plataformas soportadas
+
+label.efix.efix.prereqs=Arreglos electrónicos de requisitos previos
+
+label.component.updates=Actualizaciones de componentes
+label.component.requires=Exige {0} v {1}
+
+label.becomes=se convierte en especificación {0}, compilación {1} el {2}
+
+label.custom.properties=Propiedades personalizadas
+
+info.ptf=PTF instalado
+#label.id
+#label.short.description
+#label.build.date
+#label.build.version
+#label.long.description
+
+#label.supported.platforms
+#label.supported.products
+label.included.efixes=Arreglos electrónicos incluidos
+
+#label.component.updates
+#label.component.requires
+#label.becomes
+
+#label.custom.properties
+
+
+label.true=verdadero
+label.false=falso
+
+label.is.absent=ausente
+label.is.installed=instalado en {0}
+
+label.update.effect.add=añadir
+label.update.effect.replace=sustituir
+label.update.effect.remove=eliminar
+label.update.effect.patch=parche
+label.update.effect.unknown=desconocido
+
+label.is.negative=negativo
+label.is.positive=positivo
+
+label.is.required.tag=obligatorio
+label.if.possible.tag=si es posible
+label.is.optional.tag=opcional
+label.is.recommended.tag=recomendado
+
+label.is.custom.tag=actualización personalizada
+label.is.standard.tag=actualización estándar

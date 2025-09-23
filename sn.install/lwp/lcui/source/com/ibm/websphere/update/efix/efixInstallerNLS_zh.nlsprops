@@ -1,0 +1,182 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: 修订安装失败：更新 {0} 中存储的事件历史记录时发生了异常
+WUPD0200E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0200E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0201E=WUPD0201E: 修订安装失败：打开日志文件 {0} 时发生了异常
+WUPD0201E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0201E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0211E=WUPD0211E: 修订安装失败：检索当前更新中所包含组件的相关信息时发生了异常
+WUPD0211E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0211E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0212E=WUPD0212E: 修订安装失败：组件 {0} 作为此更新的一部分列出，但组件更新图像不可用
+WUPD0212E.explanation=一部分用于更新指定组件的修订不可用。
+WUPD0212E.useraction=该问题指示发生了内部错误。请联系 IBM 支持以获取其他信息。
+
+WUPD0214E=WUPD0214E: 修订安装失败：记录修订 JAR 文件 {1} 中修订 {0} 的应用程序时发生了异常
+WUPD0214E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0214E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0215E=WUPD0215E: 修订安装失败：组件 {0} 未能安装。
+WUPD0215E.explanation=请参阅安装日志和事件历史记录文件以获取其他详细信息。
+WUPD0215E.useraction=请参阅安装日志和事件历史记录文件以获取其他详细信息。
+
+WUPD0216E=WUPD0216E: 修订安装失败：标记组件 {1} 上修订 {0} 的应用程序时发生了异常
+WUPD0216E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0216E.useraction=请参阅异常以获取其他详细信息。
+
+
+WUPD0220E=WUPD0220E: 修订卸载失败：修订 {0} 的文件不存在。
+WUPD0220E.explanation=正在尝试除去未标记为“已安装”的修订。
+WUPD0220E.useraction=该问题指示发生了内部错误。不应尝试除去未安装的修订。
+
+WUPD0221E=WUPD0221E: 修订卸载失败：无法读取修订 {0} 的文件。
+WUPD0221E.explanation=无法读取指定修订的文件。卸载操作已中断。
+WUPD0221E.useraction=验证包含指定修订的文件是否有效。
+
+WUPD0222E=WUPD0222E: 修订卸载失败：清除修订 {0} 的应用程序时发生了异常
+WUPD0222E.explanation=修订卸载过程中发生了异常，这导致卸载失败。
+WUPD0222E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0223E=WUPD0223E: 修订卸载失败：无法卸载修订 {0} 的组件 {1} 的更新。
+WUPD0223E.explanation=已对作为指定修订的一部分的指定组件进行了更新。无法除去该组件更新。
+WUPD0223E.useraction=该问题指示发生了内部错误。请联系 IBM 支持以获取其他信息。
+
+WUPD0224E=WUPD0224E: 修订卸载失败：从组件 {1} 清除修订 {0} 的应用程序时发生了异常
+WUPD0224E.explanation=修订卸载过程中发生了异常，这导致卸载失败。
+WUPD0224E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0232E=WUPD0232E: 修订更新失败：检索修订 {0}、组件 {1}、修订 JAR 文件 {2}、条目 {3} 的内容时发生了异常
+WUPD0232E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0232E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0233E=WUPD0233E: 修订更新失败：预处理修订 {0}、组件 {1} 的内容时发生了异常
+WUPD0233E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0233E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0234E=WUPD0234E: 修订更新失败：处理修订 {0}、组件 {1} 的内容时发生了异常
+WUPD0234E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0234E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0235E=WUPD0235E: 修订更新失败：修订 {0}、组件 {1} 的处理失败。请参阅日志文件 {2} 以获取处理详细信息。
+WUPD0235E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0235E.useraction=请参阅所列出日志文件中的处理信息。
+
+WUPD0236E=WUPD0236E: 修订更新失败：准备记录和备份目录时发生了异常
+WUPD0236E.explanation=修订安装过程中发生了异常，这导致安装失败。
+WUPD0236E.useraction=请参阅所列出的异常以获取其他详细信息。
+
+WUPD0237E=WUPD0237E: 修订除去失败：预处理修订 {0}、组件 {1} 的内容时发生了异常
+WUPD0237E.explanation=修订卸载过程中发生了异常，这导致卸载失败。
+WUPD0237E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0238E=WUPD0238E: 修订除去失败：处理修订 {0}、组件 {1} 的内容时发生了异常
+WUPD0238E.explanation=修订卸载过程中发生了异常，这导致卸载失败。
+WUPD0238E.useraction=请参阅异常以获取其他详细信息。
+
+WUPD0239E=WUPD0239E: 修订除去失败：修订 {0}、组件 {1} 的处理失败。请参阅日志文件 {2} 以获取处理详细信息。
+WUPD0239E.explanation=修订卸载过程中发生了异常，这导致卸载失败。
+WUPD0239E.useraction=请参阅日志文件获取更多详细信息。
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =（第 {0} 个修订，共 {1} 个）正在安装修订 {2}。
+prefix.efix.revert   =（第 {0} 个修订，共 {1} 个）正在转换 {2} 的安装。
+prefix.efix.uninstall=（第 {0} 个修订，共 {1} 个）正在卸载修订 {2}。
+
+#NOTAMSG
+prepare.update.install  =正在准备进行安装
+prepare.update.uninstall=正在准备进行卸载
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =正在安装 {1} 的组件 {0}
+component.update.uninstall=正在卸载 {1} 的组件 {0}
+
+#NOTAMSG
+complete.update.install  =正在完成安装
+complete.update.uninstall=正在完成卸载
+
+#NOTAMSG
+result.cancelled.install=安装已取消
+result.succeeded.install=安装成功
+result.failed.install=安装失败
+
+result.cancelled.uninstall=卸载已取消
+result.succeeded.uninstall=卸载成功
+result.failed.uninstall=卸载失败

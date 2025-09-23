@@ -1,0 +1,49 @@
+## ***************************************************************** */
+##                                                                   */
+## IBM Confidential                                                  */
+##                                                                   */
+## OCO Source Materials                                              */
+##                                                                   */
+## (C) Copyright IBM Corp. 2008                                      */
+##                                                                   */
+## The source code for this program is not published or otherwise    */
+## divested of its trade secrets, irrespective of what has been      */
+## deposited with the U.S. Copyright Office.                         */
+##                                                                   */
+## ***************************************************************** */
+LOG ========== Starting to generate DBT config file ===============
+CONDITION NULL
+CONDITION activities.installed true
+#CONDITION activities.version 2.0.0
+#LOG ========== Activities =====================================
+CONDITION_EXEC activities.source.exist true CLASS com.ibm.lconn.migration.dbt.DBTConfigGen activities>>migrationData/dbt/102_20_Activities.xml>>migrationData/source/config/activities/activities.properties>>$<activities.home>/activities.properties
+
+CONDITION NULL
+CONDITION blogs.installed true
+#CONDITION blogs.version 2.0.0
+#LOG ========== Blogs ==========================================
+CONDITION_EXEC blogs.source.exist true CLASS com.ibm.lconn.migration.dbt.DBTConfigGen blogs>>migrationData/dbt/102_20_blogs.xml>>migrationData/source/config/blogs/blogs.properties>>$<blogs.home>/blogs.properties
+
+CONDITION NULL
+CONDITION communities.installed true
+#CONDITION communities.version 2.0.0
+#LOG ========== Communities ====================================
+CONDITION_EXEC communities.source.exist true CLASS com.ibm.lconn.migration.dbt.DBTConfigGen communities>>migrationData/dbt/102_20_communities.xml>>migrationData/source/config/communities/communities.properties>>$<communities.home>/communities.properties
+
+CONDITION NULL
+CONDITION dogear.installed true
+#CONDITION dogear.version 2.0.0
+#LOG ========== Dogear =========================================
+CONDITION_EXEC dogear.source.exist true CLASS com.ibm.lconn.migration.dbt.DBTConfigGen dogear>>migrationData/dbt/102_20_dogear.xml>>migrationData/source/config/dogear/dogear.properties>>$<dogear.home>/dogear.properties
+
+CONDITION NULL
+CONDITION profiles.installed true
+#CONDITION profiles.version 2.0.0
+#LOG ========== Profiles =======================================
+CONDITION_EXEC profiles.source.exist true CLASS com.ibm.lconn.migration.dbt.DBTConfigGen profiles>>migrationData/dbt/102_20_profiles.xml>>migrationData/source/config/profiles/profiles.properties>>$<profiles.home>/profiles.properties
+
+CONDITION NULL
+CONDITION homepage.installed true
+#CONDITION homepage.version 2.0.0
+#LOG ========== Homepage =======================================
+CONDITION_EXEC homepage.source.exist true CLASS com.ibm.lconn.migration.dbt.DBTConfigGen homepage>>migrationData/dbt/102_20_homepage.xml>>migrationData/source/config/homepage/homepage.properties>>$<homepage.home>/homepage.properties

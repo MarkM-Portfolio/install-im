@@ -1,0 +1,14 @@
+[
+   {
+      "command": "\/tmp\/ic5prepareHTTP\/ic5prepareHTTP.sh",
+      "description": "This script initially configure the HTTP Server",
+      "execmode": 3,
+      "filename": "ic5prepareHTTP.zip",
+      "location": "\/tmp\/ic5prepareHTTP",
+      "log": "\/tmp\/ic5prepareHTTP\/logs",
+      "name": "ic5prepareHTTP",
+      "ostype": "linux\/unix",
+      "timeout": 0,
+      "type": "APPLICATION"
+   }
+]

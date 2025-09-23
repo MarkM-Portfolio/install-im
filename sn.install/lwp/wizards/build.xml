@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Licensed Material                                             -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2006, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<project name="wizards" default="development" basedir=".">
+	<import file="${env.WPLC_IMPORT}/std_props.xml" />
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml" />
+
+	<import file="${env.WPLC_IMPORT}/copyright.xml" />
+	<import file="${env.WPLC_IMPORT}/clean.xml" />
+	<import file="${env.WPLC_IMPORT}/check.xml" />
+	<import file="${env.WPLC_IMPORT}/ismp_targets.xml" />
+	<import file="${env.WPLC_IMPORT}/nojavadoc.xml" />
+	<import file="${env.WPLC_IMPORT}/wp_globalize.xml" />
+	<import file="${env.WPLC_IMPORT}/process_nls.xml" />
+
+	<loadproperties srcFile="${basedir}/nls.properties" />
+
+	<target name="development" description="Performs a developement build of a single component." depends="make_jar_file" />
+	<target name="production" description="Performs a production build of a single component." depends="make_jar_file" />
+
+	<target name="init">
+		<property name="dir.base" value="${basedir}" />
+		<property name="dir.base.src" value="${dir.base}/source" />
+		<property name="dir.base.tempSrc" value="${dir.base}/tempSrc" />
+		<property name="dir.base.lib" value="${dir.base}/lib" />
+		<property name="dir.base.resource" value="${dir.base}/resources" />
+		<property name="dir.base.cdfiles" value="${dir.base}/cdfiles" />
+
+		<locateComponent component="prereq.itkdepcheck" locateBuildDir="false" property="itkdepcheck" />
+		<locateComponent component="prereq.depcheck" locateBuildDir="false" property="depcheck" />
+		<property name="lib.itkdepcheck" value="${itkdepcheck}/lib/itkdepcheck.jar" />
+		<property name="path.build" value="${dir.base.lib}/org.eclipse.core.commands_3.6.100.v20140528-1422.jar:${dir.base.lib}/org.eclipse.core.runtime.jar:${dir.base.lib}/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:${dir.base.lib}/org.eclipse.jface_3.10.2.v20141021-1035.jar:${dir.base.lib}/org.eclipse.osgi.jar:${dir.base.lib}/org.eclipse.swt.win32.win32.x86_64_3.103.2.v20150203-1351.jar:${dir.base.lib}/ibmjs.jar:${lib.itkdepcheck}" />
+		<property name="dir.build.base" value="${dir.build}" />
+		<property name="dir.build.jarbase" value="${dir.build.base}/jarbase" />
+		<property name="dir.build.cdfiles" value="${dir.build.base}/cdfiles" />
+		<property name="dir.build.lib" value="${dir.build.cdfiles}/lib" />
+		<property name="dir.build.link" value="${dir.build.lib}/linkfile" />
+		<property name="dir.build.zip" value="${env.BUILD_HOME}/WebKits/wizards" />
+		<property name="dir.build.sql" value="${dir.build.cdfiles}/connections.sql" />
+		<property name="name.zip" value="Wizards.zip" />
+		<property name="name.jar" value="Wizards.jar" />
+		<property name="file.build.jar" location="${dir.build.lib}/${name.jar}" />
+		<property name="file.build.zip" location="${dir.build.zip}/${name.zip}" />
+	</target>
+
+	<!-- Set up source files with build-specific information -->
+	<target name="update-text" description="prepare nls files" depends="load_nls_properties">
+		<!-- Make the build directory to store files -->
+		<mkdir dir="${dir.build}/messages" />
+
+		<!-- Copy the resources to the build dircetory -->
+		<copy todir="${dir.build}/messages/com/ibm/lconn/wizard/common/msg" filtering="off" overwrite="yes">
+			<fileset dir="${dir.build}/properties/resources/com/ibm/lconn/wizard/common/msg" includes="**/*.properties" />
+		</copy>
+
+		<!-- Convert PII files using native2ascii -->
+		<forlist list="${PII.languages}" target="do.installmsg.languages" param="language.code" />
+
+		<!-- Escape quotes by replacing each single quote with two single quotes. -->
+		<echo message="Replacing single quotes with two single quotes" />
+		<replace dir="${dir.build}/messages_unicode/com/ibm/lconn/wizard/common/msg">
+			<include name="**/*" />
+			<replacefilter token="'" value="''" />
+		</replace>
+	</target>
+
+	<!-- Convert PII files using native2ascii -->
+	<target name="do.installmsg.languages">
+		<propertycopy name="encoding" from="encoding_${language.code}" />
+		<copy todir="${dir.build}/messages_unicode" overwrite="yes" filtering="off">
+			<fileset dir="${dir.build}/messages" includes="**/*_${language.code}.properties" />
+		</copy>
+		<echo message="Completed language ${language.code}, encoding ${encoding}." />
+	</target>
+
+	<!-- compile -->
+	<target name="compile" depends="init,PropProcessing, update-text">
+		<delete dir="${dir.build.jarbase}" failonerror="false" />
+		<mkdir dir="${dir.build.jarbase}" />
+		<copy todir="${dir.build.jarbase}">
+			<fileset dir="${dir.base.resource}">
+				<include name="**/*.properties" />
+				<include name="**/*.JPG" />
+				<include name="**/*.GIF" />
+				<include name="**/*.gif" />
+				<!--<exclude name="**/*_*.properties"/>-->
+			</fileset>
+		</copy>
+		<copy todir="${dir.build.jarbase}/com/ibm/lconn/wizard/common/msg" filtering="off" overwrite="true">
+			<fileset dir="${dir.build}/messages/com/ibm/lconn/wizard/common/msg" includes="**/*.properties" />
+		</copy>
+
+		<!-- copy default language files -->
+		<copy file="${dir.build.jarbase}/com/ibm/lconn/wizard/common/msg/messages_en.properties" tofile="${dir.build.jarbase}/com/ibm/lconn/wizard/common/msg/messages.properties" overwrite="true" />
+		<copy file="${dir.build.jarbase}/com/ibm/lconn/wizard/common/msg/errorMsg_en.properties" tofile="${dir.build.jarbase}/com/ibm/lconn/wizard/common/msg/errorMsg.properties" overwrite="true" />
+		<copy file="${dir.build.jarbase}/com/ibm/lconn/wizard/common/logging/messages_en.properties" tofile="${dir.build.jarbase}/com/ibm/lconn/wizard/common/logging/messages.properties" overwrite="true" />
+		<copy file="${dir.build.jarbase}/com/ibm/lconn/wizard/common/exceptions/messages_en.properties" tofile="${dir.build.jarbase}/com/ibm/lconn/wizard/common/exceptions/messages.properties" overwrite="true" />
+		<javac srcdir="${dir.base.src}" destdir="${dir.build.jarbase}" classpath="${path.build}" fork="yes" verbose="no" executable="${env.JAVA_HOME}/bin/javac">
+			<!--<compilerarg value="-deprecation"/>-->
+		</javac>
+	</target>
+
+	<!-- copy cd files -->
+	<target name="copy_cd_files" depends="compile">
+		<locateComponent component="lc.live.installer" property="lc.live.installer" locatebuilddir="true" />
+		<!-- TODO: locateComponent in sn.infra component that contains lc.events.internal.jar -->
+
+		<delete dir="${dir.build.cdfiles}" failonerror="false" />
+		<mkdir dir="${dir.build.cdfiles}" />
+		<copy todir="${dir.build.cdfiles}">
+			<fileset dir="${dir.base.cdfiles}">
+				<include name="**/**" />
+				<exclude name="**/.copyarea.db" />
+				<exclude name="**/clusterWizard.*" />
+			</fileset>
+		</copy>
+		<copy todir="${dir.build.lib}">
+			<fileset dir="${dir.base.lib}">
+				<include name="**/**" />
+				<exclude name="**/.copyarea.db" />
+			</fileset>
+
+			<!-- For IC4.5 to IC5.0 migration -->
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/homepage/migration.lib">
+				<include name="*.jar" />
+			</fileset>
+			<!-- TODO: Add lc.events.internal.jar from sn.infra component -->
+		</copy>
+		<copy todir="${dir.build.lib}" file="${lib.itkdepcheck}" />
+
+		<antcall target="format_sh_files">
+		</antcall>
+	</target>
+
+	<!-- Following targets used for unpacking .zip or .tar packages -->
+	<target name="unpack-zip" if="zipExists">
+		<unzip src="${unpack.src}" dest="${unpack.dest}"/>
+	</target>
+	<target name="unpack-tar" if="tarExists">
+		<untar src="${unpack.src}" dest="${unpack.dest}"/>
+	</target>
+
+	<!-- create connections.sql -->
+	<target name="create_connections.sql" depends="copy_cd_files">
+		<locateComponent component="lc.live.installer" property="lc.live.installer" locatebuilddir="true" />
+
+		<delete dir="${dir.build.sql}" failonerror="false" />
+		<mkdir dir="${dir.build.sql}" />
+
+		<copy todir="${dir.build.sql}" overwrite="true" >
+			<fileset dir="${lc.live.installer}/xkit/connections.sql">
+				<include name="**/*" />
+				<!--exclude name="**/fixup/*" /-->
+				<exclude name="**/db2_IBMi/**" />
+				<exclude name="**/db2_IBMi" />
+				<exclude name="**/db2_i/**" />
+				<exclude name="**/db2_i" />
+				<exclude name="homepage/migration.lib" />
+			</fileset>
+		</copy>
+
+		<!--OS400_Enablement,OS400 sql  start >
+		<property name="dir.build.OS400.sql" value="${dir.build.cdfiles}/connections.OS400.sql" />
+
+		<delete dir="${dir.build.OS400.sql}" failonerror="false" />
+		<mkdir dir="${dir.build.OS400.sql}" />
+
+		<copy todir="${dir.build.OS400.sql}/wikis" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/wikis/db2_i" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/library.gcd" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/library.gcd" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/library.os" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/library.os" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/forum" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/forum/db2_IBMi" />
+        </copy>
+
+
+		<copy todir="${dir.build.OS400.sql}/files" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/files/db2_i" />
+		</copy>
+
+
+		<copy todir="${dir.build.OS400.sql}/activities" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/activities/db2_IBMi" />
+		</copy>
+
+
+		<copy todir="${dir.build.OS400.sql}/dogear" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/dogear/db2_IBMi" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/blogs" includeEmptyDirs="false" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/blogs/db2_IBMi" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/communities" includeEmptyDirs="false" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/communities/db2_IBMi" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/profiles" includeEmptyDirs="false" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/profiles/db2_IBMi" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/homepage" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/homepage/db2_IBMi" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/mobile" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/mobile/db2_IBMi" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/metrics" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/metrics/db2" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/cognos" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/cognos/db2" />
+		</copy>
+
+		<copy todir="${dir.build.OS400.sql}/pushnotification" failonerror="false" overwrite="true" verbose="true">
+			<fileset dir="${lc.live.installer}/xkit/connections.sql/pushnotification/db2_i" />
+		</copy>
+
+		<OS400_Enablement,OS400 sql  end -->
+	</target>
+
+	<!-- make jar -->
+	<target name="make_jar_file" depends="create_connections.sql">
+		<jar basedir="${dir.build.jarbase}" destfile="${file.build.jar}" />
+		<delete dir="${dir.build.jarbase}" failonerror="false" />
+	</target>
+
+	<!-- format sh -->
+	<target name="format_sh_files">
+		<fixcrlf srcdir="${dir.build.cdfiles}" eol="lf" includes="**/*.sh" />
+		<chmod dir="${dir.build.cdfiles}" includes="**/*.sh" perm="777" />
+	</target>
+</project>

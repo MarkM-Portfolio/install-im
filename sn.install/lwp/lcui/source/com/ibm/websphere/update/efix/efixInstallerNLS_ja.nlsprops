@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: フィックスのインストールに失敗しました: {0} に保存されているイベント履歴を更新中に例外が発生しました。
+WUPD0200E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0200E.useraction=詳細については、例外を参照してください。
+
+WUPD0201E=WUPD0201E: フィックスのインストールに失敗しました: ログ・ファイル {0} を開くときに例外が発生しました。
+WUPD0201E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0201E.useraction=詳細については、例外を参照してください。
+
+WUPD0211E=WUPD0211E: WUPD0211E: フィックスのインストールに失敗しました: 現在の更新に含まれるコンポーネントの情報を取得中に例外が発生しました。
+WUPD0211E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0211E.useraction=詳細については、例外を参照してください。
+
+WUPD0212E=WUPD0212E: フィックスのインストールに失敗しました: コンポーネント {0} は更新する部分としてリストされていますが、利用可能なコンポーネントの更新イメージがありません。
+WUPD0212E.explanation=指定されたコンポーネントの更新に使用されるフィックスの一部が使用できません。
+WUPD0212E.useraction=この問題は内部エラーであることを示しています。追加情報については IBM Support に連絡してください。
+
+WUPD0214E=WUPD0214E: フィックスのインストールに失敗しました: フィックス JAR ファイル {1} からのフィックス {0} のアプリケーションの記録中に例外が発生しました。
+WUPD0214E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0214E.useraction=詳細については、例外を参照してください。
+
+WUPD0215E=WUPD0215E: フィックスのインストールに失敗しました: コンポーネント {0} のインストールに失敗しました。
+WUPD0215E.explanation=詳細については、インストール・ログおよびイベント履歴ファイルを参照してください。
+WUPD0215E.useraction=詳細については、インストール・ログおよびイベント履歴ファイルを参照してください。
+
+WUPD0216E=WUPD0216E: フィックスのインストールに失敗しました: コンポーネント {1} のフィックス {0} のアプリケーションをマーキング中に例外が発生しました。
+WUPD0216E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0216E.useraction=詳細については、例外を参照してください。
+
+
+WUPD0220E=WUPD0220E: フィックスのアンインストールに失敗しました: フィックス {0} に対するファイルが存在しません。
+WUPD0220E.explanation=インストール済みとしてマーキングされていないフィックスを除去する操作が試行されています。
+WUPD0220E.useraction=この問題は内部エラーであることを示しています。インストールされていないフィックスを除去するために実行しなければならない操作はありません。
+
+WUPD0221E=WUPD0221E: フィックスのアンインストールに失敗しました: フィックス {0} に対するファイルが読み込めませんでした。
+WUPD0221E.explanation=指定されたフィックスのファイルが読み込めません。アンインストール操作を停止しました。
+WUPD0221E.useraction=指定されたフィックスを含むファイルが有効か、確認してください。
+
+WUPD0222E=WUPD0222E: フィックスのアンインストールに失敗しました: フィックス {0} のアプリケーションのクリア中に例外が発生しました。
+WUPD0222E.explanation=フィックスのアンインストール中に例外が発生し、アンインストールが失敗しました。
+WUPD0222E.useraction=詳細については、例外を参照してください。
+
+WUPD0223E=WUPD0223E: フィックスのアンインストールに失敗しました: フィックス {0} に対するコンポーネント {1} の更新をアンインストールできませんでした。
+WUPD0223E.explanation=指定されたフィックスの一部として、指定されたコンポーネントに対し更新が実行されました。このコンポーネントの更新は除去できません。
+WUPD0223E.useraction=この問題は内部エラーであることを示しています。追加情報については IBM Support に連絡してください。
+
+WUPD0224E=WUPD0224E: フィックスのアンインストールに失敗しました: コンポーネント {1} からのフィックス {0} のアプリケーションをクリア中に例外が発生しました。
+WUPD0224E.explanation=フィックスのインストール中に例外が発生し、アンインストールが失敗しました。
+WUPD0224E.useraction=詳細については、例外を参照してください。
+
+WUPD0232E=WUPD0232E: フィックスの更新に失敗しました: エントリー {3}、フィックス JAR ファイル {2}、コンポーネント {1}、フィックス {0}の内容の取得中に例外が発生しました。
+WUPD0232E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0232E.useraction=詳細については、例外を参照してください。
+
+WUPD0233E=WUPD0233E: フィックスの更新に失敗しました: コンポーネント {1}、フィックス {0} の内容の前処理中に例外が発生しました。
+WUPD0233E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0233E.useraction=詳細については、例外を参照してください。
+
+WUPD0234E=WUPD0234E: フィックスの更新に失敗しました: コンポーネント {1}、フィックス {0} の内容の処理中に例外が発生しました。
+WUPD0234E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0234E.useraction=詳細については、例外を参照してください。
+
+WUPD0235E=WUPD0235E: フィックスの更新に失敗しました: コンポーネント {1}、フィックス {0} の処理に失敗しました。処理の詳細については、ログ・ファイル {2} を参照してください。
+WUPD0235E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0235E.useraction=リストされたログ・ファイルの処理情報を検討してください。
+
+WUPD0236E=WUPD0236E: フィックスの更新に失敗しました: ログおよびバックアップ・ディレクトリーの作成中に例外が発生しました。
+WUPD0236E.explanation=フィックスのインストール中に例外が発生し、インストールが失敗しました。
+WUPD0236E.useraction=詳細については、リストの例外を参照してください。
+
+WUPD0237E=WUPD0237E: フィックスの除去に失敗しました: コンポーネント {1}、フィックス {0} の内容の前処理中に例外が発生しました。
+WUPD0237E.explanation=フィックスのアンインストール中に例外が発生し、アンインストールが失敗しました。
+WUPD0237E.useraction=詳細については、例外を参照してください。
+
+WUPD0238E=WUPD0238E: フィックスの除去に失敗しました: コンポーネント {1}、フィックス {0} の内容の処理中に例外が発生しました。
+WUPD0238E.explanation=フィックスのアンインストール中に例外が発生し、アンインストールが失敗しました。
+WUPD0238E.useraction=詳細については、例外を参照してください。
+
+WUPD0239E=WUPD0239E: フィックスの除去に失敗しました: コンポーネント {1}、フィックス {0} の処理に失敗しました。 処理の詳細については、ログ・ファイル {2} を参照してください。
+WUPD0239E.explanation=フィックスのアンインストール中に例外が発生し、アンインストールが失敗しました。
+WUPD0239E.useraction=詳細については、ログ・ファイルを参照してください。
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  =({0}/{1}) フィックス {2} をインストールしています。
+prefix.efix.revert   =({0}/{1}) フィックス {2} を戻しています。
+prefix.efix.uninstall=({0}/{1}/) フィックス {2} をアンインストールしています。
+
+#NOTAMSG
+prepare.update.install  =インストールの準備をしています
+prepare.update.uninstall=アンインストールの準備をしています
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  =コンポーネント {0}/{1} をインストールしています
+component.update.uninstall=コンポーネント {0}/{1} をアンインストールしています
+
+#NOTAMSG
+complete.update.install  =インストールの完了処理をしています
+complete.update.uninstall=アンインストールの完了処理をしています
+
+#NOTAMSG
+result.cancelled.install=キャンセルしたインストール
+result.succeeded.install=成功したインストール
+result.failed.install=失敗したインストール
+
+result.cancelled.uninstall=キャンセルしたアンインストール
+result.succeeded.uninstall=成功したアンインストール
+result.failed.uninstall=失敗したアンインストール

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DatabasePanel
+Bundle-SymbolicName: com.ibm.connections.databasePanel; singleton:=true
+Bundle-Version: 5.0.0.qualifier
+Bundle-Vendor: IBM
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ui.forms,
+ com.ibm.cic.common.core,
+ com.ibm.cic.agent.core,
+ com.ibm.cic.agent.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

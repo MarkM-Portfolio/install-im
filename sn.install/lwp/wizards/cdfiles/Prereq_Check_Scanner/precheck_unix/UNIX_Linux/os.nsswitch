@@ -1,0 +1,23 @@
+# ************** Begin Copyright - Do not add comments here ****************
+#
+#  Licensed Materials . Property of IBM
+#  (C) Copyright IBM Corp. 2009, 2011
+#  All Rights Reserved. US Government Users Restricted Rights - Use, duplication or
+#  disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# ************************ End Standard Header *************************
+if [ "`uname`" = "Linux" ]; then
+        NssFilefound=`ls /etc/nsswitch.conf  | cut -d " " -f1 2>/dev/null`
+        if [ $NssFilefound ]; then
+                ###Required check validation####
+                CheckFound=`cat /etc/nsswitch.conf | grep -v "^#"| egrep "^((passwd)|(shadow)|(group))" | grep -cv ldap`
+                if [ $CheckFound -lt 3 ]; then
+                        echo "$Msg_UNAVAILABLE"
+                else
+                        echo "$Msg_AVAILABLE"
+                fi
+        else
+                echo "$Msg_AVAILABLE"
+        fi
+fi
+

@@ -1,0 +1,183 @@
+# NLS_MESSAGEFORMAT_VAR
+#
+# IBM Confidential OCO Source Material
+# 5639-D57 (C) COPYRIGHT International Business Machines Corp. 2002, 2006.
+# The source code for this program is not published or otherwise divested
+# of its trade secrets, irrespective of what has been deposited with the
+# U.S. Copyright Office.
+#
+# NLS values file for 'WAS Update Installation'
+#
+# History 1.2, 3/14/03
+#
+# 25-Jun-2002 Added Explanation and User Action
+# 30-Jul-2002 Updated for release 5.0 guidelines.
+#
+# As of 12-Apr-2001, messages are according to the format at:
+#     hany.austin.ibm.com/messages/index.html#guidelines
+#
+# Briefly:
+#     MESSAGE_ID=<ComponentPrefix><MessageNumber><TypeCode>: <MessageText>
+#
+# The prefix for this component is:
+#     WUPD (IBM WebSphere Version Information)
+#
+# Message numbers are four digit numbers, from '0000' to '9999', inclusive.
+# Message numbers are filled to the left with '0', to a width of 4.
+#
+# Valid message type codes are:
+#     I (Informational)
+#     W (Warning)
+#     E (Error)
+#
+# Note the ": " that appears between the type code and the message text.
+#
+# As of 30-Jul-2002 this document has been updated to satisfy the requirements
+# of:
+#
+# http://seaux.raleigh.ibm.com/g11n/was/seae/45/messages/messagedocument.4.fileformat.html
+#
+# These requirements specify the use of the following keywords:
+#
+#    COMPONENTPREFIX
+#    CMVCPATHNAME
+#    ISMESSAGEFILE
+#    COMPONENTNAMEFOR
+#
+# These requirements also specify the format for message and non-message entries.
+#
+#COMPONENTPREFIX WUPD
+#
+#CMVCPATHNAME ws/code/wasproduct/src/com/ibm/websphere/update/efix/efixInstallerNLS.nlsprops
+#
+#ISMESSAGEFILE TRUE
+#
+#COMPONENTNAMEFOR WUPD WebSphere Update Installer
+
+# This module is assigned the range of 0200 to 0299.
+
+WUPD0200E=WUPD0200E: 수정사항 설치 장애: {0}에 저장되어 있는 이벤트 내역을 갱신하는 중에 예외가 발생했습니다.
+WUPD0200E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다. 
+WUPD0200E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0201E=WUPD0201E: 수정사항 설치 장애: {0} 로그 파일을 여는 중에 예외가 발생했습니다.
+WUPD0201E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다. 
+WUPD0201E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0211E=WUPD0211E: 수정사항 설치 장애: 현재 갱신에 포함되어 있는 구성요소에 대한 정보를 검색하는 중에 예외가 발생했습니다.
+WUPD0211E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다. 
+WUPD0211E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0212E=WUPD0212E: 수정사항 설치 장애: {0} 구성요소가 이 갱신 사항의 일부로 표시되어 있으나 구성요소 갱신 이미지가 없습니다.
+WUPD0212E.explanation=언급된 구성요소를 갱신하는 데 사용된 수정사항의 일부가 없습니다.
+WUPD0212E.useraction=이 문제점은 내부 오류를 나타냅니다. 자세한 정보는 IBM 지원에 문의하십시오.
+
+WUPD0214E=WUPD0214E: 수정사항 설치 장애: 수정사항 JAR 파일 {1}에서 {0} 수정사항의 응용프로그램을 기록하는 중에 예외가 발생했습니다.
+WUPD0214E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다. 
+WUPD0214E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0215E=WUPD0215E: 수정사항 설치 장애: {0} 구성요소 설치에 실패했습니다.
+WUPD0215E.explanation=자세한 내용은 설치 로그 및 히스토리 파일을 참조하십시오.
+WUPD0215E.useraction=자세한 내용은 설치 로그 및 히스토리 파일을 참조하십시오.
+
+WUPD0216E=WUPD0216E: 수정사항 설치 장애: {1} 구성요소에 대한 {0} 수정사항의 응용프로그램을 표시하는 중에 예외가 발생했습니다.
+WUPD0216E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다. 
+WUPD0216E.useraction=자세한 내용은 예외를 참조하십시오.
+
+
+WUPD0220E=WUPD0220E: 수정사항 설치 제거 장애: {0} 수정사항에 해당하는 파일이 없습니다.
+WUPD0220E.explanation=설치되어 있지 않은 수정사항을 제거하려고 합니다.
+WUPD0220E.useraction=이 문제점은 내부 오류를 나타냅니다. 설치되어 있지 않은 수정사항을 제거하려고 하지 마십시오.
+
+WUPD0221E=WUPD0221E: 수정사항 설치 제거 장애: {0} 수정사항에 해당하는 파일을 읽을 수 없습니다.
+WUPD0221E.explanation=지정된 수정사항에 해당하는 파일을 읽을 수 없습니다. 설치 제거 조작이 정지되었습니다.
+WUPD0221E.useraction=지정된 수정사항이 들어 있는 파일이 올바른지 검증하십시오.
+
+WUPD0222E=WUPD0222E: 수정사항 설치 제거 장애: {0} 수정사항의 응용프로그램을 지우는 중에 예외가 발생했습니다.
+WUPD0222E.explanation=수정사항 설치 제거 중에 예외가 발생하여 설치 제거에 실패했습니다. 
+WUPD0222E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0223E=WUPD0223E: 수정사항 설치 제거 장애: {0} 수정사항의 {1} 구성요소 갱신사항을 설치 제거할 수 없습니다.
+WUPD0223E.explanation=지정된 구성요소가 지정된 수정사항의 일부로서 갱신되었습니다. 해당 구성요소 갱신사항을 제거할 수 없습니다.
+WUPD0223E.useraction=이 문제점은 내부 오류를 나타냅니다. 자세한 정보는 IBM 지원에 문의하십시오.
+
+WUPD0224E=WUPD0224E: 수정사항 설치 제거 장애: {1} 구성요소에서 {0} 수정사항의 응용프로그램을 지우는 중에 예외가 발생했습니다.
+WUPD0224E.explanation=수정사항 설치 제거 중에 예외가 발생하여 설치 제거에 실패했습니다. 
+WUPD0224E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0232E=WUPD0232E: 수정사항 갱신 장애: {0} 수정사항, {1} 구성요소, 수정사항 JAR 파일 {2}, {3} 항목의 컨텐츠를 검색하는 중에 예외가 발생했습니다.
+WUPD0232E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다. 
+WUPD0232E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0233E=WUPD0233E: 수정사항 갱신 장애: {0} 수정사항, {1} 구성요소의 컨텐츠를 사전 처리하는 중에 예외가 발생했습니다.
+WUPD0233E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다.
+WUPD0233E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0234E=WUPD0234E: 수정사항 갱신 장애: {0} 수정사항, {1} 구성요소의 컨텐츠를 처리하는 중에 예외가 발생했습니다.
+WUPD0234E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다.
+WUPD0234E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0235E=WUPD0235E: 수정사항 갱신 장애: {0} 수정사항, {1} 구성요소 처리에 실패했습니다. 처리 세부사항은 로그 파일 {2}의 내용을 참조하십시오.
+WUPD0235E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다.
+WUPD0235E.useraction=표시된 로그 파일의 처리 정보를 검토하십시오.
+
+WUPD0236E=WUPD0236E: 수정사항 갱신 장애: 로그 및 백업 디렉토리를 준비하는 중에 예외가 발생했습니다.
+WUPD0236E.explanation=수정사항 설치 중에 예외가 발생하여 설치에 실패했습니다.
+WUPD0236E.useraction=자세한 내용은 표시된 예외를 참조하십시오.
+
+WUPD0237E=WUPD0237E: 수정사항 제거 장애: {0} 수정사항, {1} 구성요소의 컨텐츠를 사전 처리하는 중에 예외가 발생했습니다.
+WUPD0237E.explanation=수정사항 설치 제거 중에 예외가 발생하여 설치 제거에 실패했습니다.
+WUPD0237E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0238E=WUPD0238E: 수정사항 제거 장애: {0} 수정사항, {1} 구성요소의 컨텐츠를 처리하는 중에 예외가 발생했습니다.
+WUPD0238E.explanation=수정사항 설치 제거 중에 예외가 발생하여 설치 제거에 실패했습니다.
+WUPD0238E.useraction=자세한 내용은 예외를 참조하십시오.
+
+WUPD0239E=WUPD0239E: 수정사항 제거 장애: {0} 수정사항, {1} 구성요소 처리에 실패했습니다. 처리 세부사항은 로그 파일 {2}의 내용을 참조하십시오.
+WUPD0239E.explanation=수정사항 설치 제거 중에 예외가 발생하여 설치 제거에 실패했습니다.
+WUPD0239E.useraction=자세한 내용은 로그 파일을 참조하십시오.
+
+# Sample installation notification history:
+#
+# (1 of 3) Installing fix PQ_0;
+#   preparing for installation
+#   installing component {0} of {1}
+#   installing component {0} of {1}
+#   completing installation
+#
+# (1 of 3) Installing fix PQ_0; preparing for installation
+# (1 of 3) Installing fix PQ_0; installing component 1 of 2
+# (1 of 3) Installing fix PQ_0; installing component 2 of 2
+# (1 of 3) Installing fix PQ_0; completing installation
+
+#NOTAMSG
+# {0} is the number of this fix
+# {1} is the number of fixes being installed
+# {2} is the ID of this fix
+prefix.efix.install  ={1}개 중 {0}개의 {2} 수정사항 설치 중
+prefix.efix.revert   ={1}개 중 {0}개의 {2} 수정사항 설치를 되돌리는 중
+prefix.efix.uninstall={1}개 중 {0}개의 {2} 수정사항 설치 제거 중
+
+#NOTAMSG
+prepare.update.install  =설치 준비 중
+prepare.update.uninstall=설치 제거 준비 중
+
+#NOTAMSG
+# {0} is the number of this component
+# {1} is the number of components for this fix
+# {2} is the name of this component (not currently in use)
+component.update.install  ={1}개 중 {0}개의 구성요소 설치 중
+component.update.uninstall={1}개 중 {0}개의 구성요소 설치 제거 중
+
+#NOTAMSG
+complete.update.install  =설치 완료
+complete.update.uninstall=설치 제거 완료
+
+#NOTAMSG
+result.cancelled.install=설치 취소
+result.succeeded.install=설치 완료
+result.failed.install=설치 실패
+
+result.cancelled.uninstall=설치 제거 취소
+result.succeeded.uninstall=설치 제거 완료
+result.failed.uninstall=설치 제거 실패
